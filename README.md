@@ -12,7 +12,7 @@ Electron enables you to create desktop applications with pure JavaScript by prov
 
 ## About
 
-This an ebook published with `GitBook`, used and read easily. Its every language documents are cloned from `Electron` official documents， and updated regularly (**Tracking electron`s releases**).
+This is an ebook published with `GitBook`, used and read easily. Its every language documents are cloned from `Electron` official documents， and updated regularly (**Tracking electron`s releases**).
 
 ## Build
 
