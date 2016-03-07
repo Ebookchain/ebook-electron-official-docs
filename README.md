@@ -1,102 +1,102 @@
-# Electron 官方文档多语言电子书
+# Electron official document multi-language ebook
 
-版本： 0.1.0  
-时间： 2016-03-04
+Electron : v0.36.10
 
-## 关于`Electron`
+Date： 2016-03-07
 
-Electron 可以让你使用纯 JavaScript 调用丰富的原生 APIs 来创造桌面应用。你可以把它看作是专注于桌面应用而不是 web 服务器的，io.js 的一个变体。
+[中文说明](./README_zh-CN.md)
 
-## 关于本电子书
+## About Electron
 
-本书使用`gitbook`整理发布成电子书形式，方便使用和阅读。其中各语言版本，是`Electron`官方文档的拷贝，将跟踪更新。
+Electron enables you to create desktop applications with pure JavaScript by providing a runtime with rich native (operating system) APIs. You could see it as a variant of the Node.js runtime that is focused on desktop applications instead of web servers.
 
-## 构建
+## About
 
-自由写作、发布，搭建自出版平台的方法，请[点击这里][self-publishing]
+This an ebook published with `GitBook`, used and read easily. Its every language documents are cloned from `Electron` official documents， and updated regularly (**Tracking electron`s releases**).
 
-简要介绍如下：
+## Build
 
-(1)安装gitbook
+Free writing, publishing, and build a self publishing platform, [click here][self-publishing].
 
-```
-$ npm install -g gitbook-cli
-```
+Brief introduction：
 
-(2)克隆源文
+(1) Clone the project
 
 ```
 $ git clone　https://github.com/imfly/electron-docs-gitbook.git
 ```
 
-(3)安装依赖包
+(2) Install dependences
 
 ```
+$ npm install -g gitbook-cli
+
 $ cd electron-docs-gitbook
 $ npm install
 $ gitbook install
 ```
 
-(4)克隆electron源码
+(3) Get Electron
 
 ```
 $ git submodule init
-$ git submodule update
+$ git submodule update --remote
 ```
 
-(5)拷贝文档
+(4) Copy Documents
 
 ```
 $ npm run copy
 ```
 
-(6)修改构建
+(5) Build ebook
 
-修改、构建（开启服务）
+```
+$ gitbook build
+```
+
+or
 
 ```
 $ gitbook serve
 ```
 
-通过`http://localhost:4000`实时浏览
+Then you can read it from `http://localhost:4000`
 
-(7)一键发布
+(6) Deploy to gh-pages
 
 ```
 $ npm run deploy
 ```
 
-**以后，只要重复4-7的过程就是了。**
+Then, get it on http://doc-ebooks.github.io/electron-docs-gitbook
 
-## 链接
+## Links
 
-下载页： https://imfly.gitbooks.io/electron-docs-gitbook/ 各版本请自行选择
+Download： https://imfly.gitbooks.io/electron-docs-gitbook/
 
-中文版： https://imfly.gitbooks.io/electron-docs-gitbook/content/cn/index.html
+English： https://imfly.gitbooks.io/electron-docs-gitbook/content/en/index.html
 
-英文版： https://imfly.gitbooks.io/electron-docs-gitbook/content/en/index.html
+Chinese： https://imfly.gitbooks.io/electron-docs-gitbook/content/cn/index.html
 
-原码库： https://github.com/imfly/electron-docs-gitbook
+Code： https://github.com/doc-ebooks/electron-docs-gitbook
 
-预览页： http://imfly.github.io/electron-docs-gitbook
+Read： http://doc-ebooks.github.io/electron-docs-gitbook
 
-## 贡献
+Other books: [Bitcoin on Nodejs](https://github.com/doc-ebooks/bitcoin-on-nodejs)
 
-欢迎将您感兴趣应用，按照这个方法，简单的托管`doc-ebooks`名下。
-
-## 协议
+## License
 
 Copyright (c) 2016 imfly.
+
 Copyright (c) 2014 GitHub Inc.
 
 MIT LICENSE
 
-## 作者
+## Author
 
-我们始终关注C/C++、Nodejs等编程语言，在`区块链、电子商务、即时通信、电子书、自媒体、物联网`等领域的创新应用，已经汇聚了大批在该领域的`开发、设计、运营和管理`人才，如果您也有志于此，请联系
+WeChat：kubying
 
-微信：kubying
-
-Ebookcoin官方开发交流QQ群：185046161
+QQGroup：185046161
 
 [self-publishing]: https://github.com/imfly/how-to-create-self-publishing-platform

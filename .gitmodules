@@ -1,3 +1,4 @@
 [submodule "sources/electron"]
 	path = sources/electron
 	url = https://github.com/atom/electron.git
+	branch = release
