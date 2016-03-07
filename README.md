@@ -1,4 +1,4 @@
-# Electron official document multi-language ebook
+# Electron official document multi-languages ebook
 
 Electron : v0.36.10
 
