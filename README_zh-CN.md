@@ -1,7 +1,10 @@
 # Electron 官方文档多语言电子书
 
-Electron版本: v0.36.10
+初始提交：Electron-v0.36.10
+
 时间： 2016-03-07
+
+（更新情况请看[英文版说明](./README.md)）
 
 ## 关于Electron
 

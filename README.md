@@ -1,8 +1,10 @@
 # Electron official document multi-languages ebook
 
-Electron : v0.37.2
 
-Date： 2016-03-16
+## Changelog
+
+- [x] Update to Electron-v0.37.2 2016-03-16
+- [x] Initial commit Electron-v0.36.10 2016-03-07
 
 [中文说明](./README_zh-CN.md)
 
