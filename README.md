@@ -1,8 +1,8 @@
 # Electron official document multi-languages ebook
 
-Electron : v0.36.10
+Electron : v0.37.2
 
-Date： 2016-03-07
+Date： 2016-03-16
 
 [中文说明](./README_zh-CN.md)
 

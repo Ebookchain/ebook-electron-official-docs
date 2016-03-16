@@ -236,6 +236,10 @@ app.on('login', function(event, webContents, request, authInfo, callback) {
 
 GPU가 작동하던 중 크래시가 일어났을 때 발생하는 이벤트입니다.
 
+### Event: 'platform-theme-changed' _OS X_
+
+시스템의 다크 모드 테마가 토글되면 발생하는 이벤트입니다.
+
 ## Methods
 
 `app` 객체는 다음과 같은 메서드를 가지고 있습니다:
@@ -252,14 +256,6 @@ GPU가 작동하던 중 크래시가 일어났을 때 발생하는 이벤트입�
 `beforeunload` 이벤트 핸들러에서 `false`를 반환했을 때 윈도우 종료가 취소 될 수
 있습니다.
 
-### `app.hide()` _OS X_
-
-최소화를 하지 않고 어플리케이션의 모든 윈도우들을 숨깁니다.
-
-### `app.show()` _OS X_
-
-숨긴 어플리케이션 윈도우들을 다시 보이게 만듭니다. 자동으로 포커스되지 않습니다.
-
 ### `app.exit(exitCode)`
 
 * `exitCode` Integer
@@ -268,6 +264,19 @@ GPU가 작동하던 중 크래시가 일어났을 때 발생하는 이벤트입�
 
 모든 윈도우는 사용자의 동의 여부에 상관없이 즉시 종료되며 `before-quit` 이벤트와
 `will-quit` 이벤트가 발생하지 않습니다.
+
+### `app.focus()`
+
+Linux에선, 첫 번째로 보여지는 윈도우가 포커스됩니다. OS X에선, 어플리케이션을 활성화
+앱 상태로 만듭니다. Windows에선, 어플리케이션의 첫 윈도우에 포커스 됩니다.
+
+### `app.hide()` _OS X_
+
+최소화를 하지 않고 어플리케이션의 모든 윈도우들을 숨깁니다.
+
+### `app.show()` _OS X_
+
+숨긴 어플리케이션 윈도우들을 다시 보이게 만듭니다. 자동으로 포커스되지 않습니다.
 
 ### `app.getAppPath()`
 
@@ -470,6 +479,11 @@ if (browserOptions.transparent) {
   win.loadURL('file://' + __dirname + '/fallback.html');
 }
 ```
+
+### `app.isDarkMode()` _OS X_
+
+이 메서드는 시스템이 다크 모드 상태인 경우 `true`를 반환하고 아닐 경우 `false`를
+반환합니다.
 
 ### `app.commandLine.appendSwitch(switch[, value])`
 

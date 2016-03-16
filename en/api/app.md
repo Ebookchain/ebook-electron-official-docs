@@ -228,6 +228,10 @@ app.on('login', function(event, webContents, request, authInfo, callback) {
 
 Emitted when the gpu process crashes.
 
+### Event: 'platform-theme-changed' _OS X_
+
+Emitted when the system's Dark Mode theme is toggled.
+
 ## Methods
 
 The `app` object has the following methods:
@@ -244,14 +248,6 @@ This method guarantees that all `beforeunload` and `unload` event handlers are
 correctly executed. It is possible that a window cancels the quitting by
 returning `false` in the `beforeunload` event handler.
 
-### `app.hide()` _OS X_
-
-Hides all application windows without minimizing them.
-
-### `app.show()` _OS X_
-
-Shows application windows after they were hidden. Does not automatically focus them.
-
 ### `app.exit(exitCode)`
 
 * `exitCode` Integer
@@ -260,6 +256,19 @@ Exits immediately with `exitCode`.
 
 All windows will be closed immediately without asking user and the `before-quit`
 and `will-quit` events will not be emitted.
+
+### `app.focus()`
+
+On Linux, focuses on the first visible window. On OS X, makes the application
+the active app. On Windows, focuses on the application's first window.
+
+### `app.hide()` _OS X_
+
+Hides all application windows without minimizing them.
+
+### `app.show()` _OS X_
+
+Shows application windows after they were hidden. Does not automatically focus them.
 
 ### `app.getAppPath()`
 
@@ -460,6 +469,10 @@ if (browserOptions.transparent) {
   win.loadURL('file://' + __dirname + '/fallback.html');
 }
 ```
+
+### `app.isDarkMode()` _OS X_
+
+This method returns `true` if the system is in Dark Mode, and `false` otherwise.
 
 ### `app.commandLine.appendSwitch(switch[, value])`
 
