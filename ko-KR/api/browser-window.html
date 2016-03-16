@@ -53,7 +53,7 @@
         data-chapter-title="BrowserWindow"
         data-filepath="api/browser-window.md"
         data-basepath=".."
-        data-revision="Mon Mar 07 2016 20:50:44 GMT+0800 (CST)"
+        data-revision="Wed Mar 16 2016 20:01:39 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -976,8 +976,8 @@ win.show();
 <li><code>alwaysOnTop</code> Boolean - &#xC708;&#xB3C4;&#xC6B0;&#xC774; &#xC5B8;&#xC81C;&#xB098; &#xB2E4;&#xB978; &#xCC3D;&#xB4E4; &#xC704;&#xC5D0; &#xC720;&#xC9C0;&#xB418;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.
 &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>false</code>&#xC785;&#xB2C8;&#xB2E4;.</li>
 <li><code>fullscreen</code> Boolean - &#xC708;&#xB3C4;&#xC6B0;&#xC758; &#xC804;&#xCCB4;&#xD654;&#xBA74; &#xD65C;&#xC131;&#xD654; &#xC5EC;&#xBD80;. &#xC774; &#xC18D;&#xC131;&#xC744; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C;
-<code>false</code>&#xB85C; &#xC9C0;&#xC815;&#xD588;&#xC744; &#xACBD;&#xC6B0;, OS X&#xC5D0;&#xC120; &#xC804;&#xCCB4;&#xD654;&#xBA74; &#xBC84;&#xD2BC;&#xC774; &#xC228;&#xACA8;&#xC9C0;&#xAC70;&#xB098; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xB418;&#xACE0;,
-Windows&#xC5D0;&#xC120; &#xCD5C;&#xB300;&#xD654; &#xBC84;&#xD2BC;&#xC774; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xB429;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>false</code> &#xC785;&#xB2C8;&#xB2E4;.</li>
+<code>false</code>&#xB85C; &#xC9C0;&#xC815;&#xD588;&#xC744; &#xACBD;&#xC6B0;, OS X&#xC5D0;&#xC120; &#xC804;&#xCCB4;&#xD654;&#xBA74; &#xBC84;&#xD2BC;&#xC774; &#xC228;&#xACA8;&#xC9C0;&#xAC70;&#xB098; &#xBE44;&#xD65C;&#xC131;&#xB429;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740;
+<code>false</code> &#xC785;&#xB2C8;&#xB2E4;.</li>
 <li><code>fullscreenable</code> Boolean - OS X&#xC758; &#xCD5C;&#xB300;&#xD654;/&#xC90C; &#xBC84;&#xD2BC;&#xC774; &#xC804;&#xCCB4;&#xD654;&#xBA74; &#xBAA8;&#xB4DC; &#xB610;&#xB294; &#xC708;&#xB3C4;&#xC6B0;
 &#xCD5C;&#xB300;&#xD654;&#xB97C; &#xD1A0;&#xAE00;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xD560;&#xC9C0; &#xC5EC;&#xBD80;&#xC785;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>true</code> &#xC785;&#xB2C8;&#xB2E4;.</li>
 <li><code>skipTaskbar</code> Boolean - &#xC791;&#xC5C5;&#xD45C;&#xC2DC;&#xC904; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC544;&#xC774;&#xCF58; &#xD45C;&#xC2DC; &#xC2A4;&#xD0B5; &#xC5EC;&#xBD80;. &#xAE30;&#xBCF8;&#xAC12;&#xC740;
@@ -1142,6 +1142,10 @@ Electron&#xC5D0;&#xC120; &#xBE48; &#xBB38;&#xC790;&#xC5F4; &#xB610;&#xB294; <cod
 <p>&#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xD3EC;&#xCEE4;&#xC2A4;&#xB97C; &#xC783;&#xC5C8;&#xC744; &#xB584; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-focus">Event: &apos;focus&apos;</h3>
 <p>&#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xD3EC;&#xCEE4;&#xC2A4;&#xB97C; &#xAC00;&#xC84C;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="event-show">Event: &apos;show&apos;</h3>
+<p>&#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xBCF4;&#xC5EC;&#xC9C4; &#xC0C1;&#xD0DC;&#xC77C; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="event-hide">Event: &apos;hide&apos;</h3>
+<p>&#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xC228;&#xACA8;&#xC9C4; &#xC0C1;&#xD0DC;&#xC77C; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-maximize">Event: &apos;maximize&apos;</h3>
 <p>&#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xCD5C;&#xB300;&#xD654;&#xB410;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-unmaximize">Event: &apos;unmaximize&apos;</h3>
@@ -1235,6 +1239,8 @@ Electron&#xC5D0;&#xC120; &#xBE48; &#xBB38;&#xC790;&#xC5F4; &#xB610;&#xB294; <cod
 <a href="#event-close">close &#xC774;&#xBCA4;&#xD2B8;</a>&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
 <h3 id="winfocus"><code>win.focus()</code></h3>
 <p>&#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xD3EC;&#xCEE4;&#xC2A4;&#xB97C; &#xB9DE;&#xCDA5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="winblur"><code>win.blur()</code></h3>
+<p>&#xC708;&#xB3C4;&#xC6B0;&#xC758; &#xD3EC;&#xCEE4;&#xC2A4;&#xB97C; &#xC5C6;&#xC571;&#xB2C8;&#xB2E4;.</p>
 <h3 id="winisfocused"><code>win.isFocused()</code></h3>
 <p>&#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xD3EC;&#xCEE4;&#xC2A4;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="winshow"><code>win.show()</code></h3>
@@ -1367,15 +1373,15 @@ Electron&#xC5D0;&#xC120; &#xBE48; &#xBB38;&#xC790;&#xC5F4; &#xB610;&#xB294; <cod
 <h3 id="winismaximizable-os-x-windows"><code>win.isMaximizable()</code> <em>OS X</em> <em>Windows</em></h3>
 <p>&#xC0AC;&#xC6A9;&#xC790;&#xC5D0; &#xC758;&#xD574; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xCD5C;&#xB300;&#xD654;&#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. Linux&#xC5D0;&#xC120; &#xD56D;&#xC0C1; <code>true</code>&#xB97C;
 &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="winsetfullscreenablefullscreenable-os-x"><code>win.setFullScreenable(fullscreenable)</code> <em>OS X</em></h3>
+<h3 id="winsetfullscreenablefullscreenable"><code>win.setFullScreenable(fullscreenable)</code></h3>
 <ul>
 <li><code>fullscreenable</code> Boolean</li>
 </ul>
 <p>&#xCD5C;&#xB300;&#xD654;/&#xC90C; &#xBC84;&#xD2BC;&#xC774; &#xC804;&#xCCB4;&#xD654;&#xBA74; &#xBAA8;&#xB4DC; &#xB610;&#xB294; &#xC708;&#xB3C4;&#xC6B0; &#xCD5C;&#xB300;&#xD654;&#xB97C; &#xD1A0;&#xAE00;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xD560;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C;
-&#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. Windows&#xC640; Linux&#xC5D0;&#xC120; &#xC544;&#xBB34; &#xC77C;&#xB3C4; &#xC77C;&#xC5B4;&#xB098;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h3 id="winisfullscreenable-os-x"><code>win.isFullScreenable()</code> <em>OS X</em></h3>
+&#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="winisfullscreenable"><code>win.isFullScreenable()</code></h3>
 <p>&#xCD5C;&#xB300;&#xD654;/&#xC90C; &#xBC84;&#xD2BC;&#xC774; &#xC804;&#xCCB4;&#xD654;&#xBA74; &#xBAA8;&#xB4DC; &#xB610;&#xB294; &#xC708;&#xB3C4;&#xC6B0; &#xCD5C;&#xB300;&#xD654;&#xB97C; &#xD1A0;&#xAE00;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xD560;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C;
-&#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. Windows&#xC640; Linux&#xC5D0;&#xC120; &#xD56D;&#xC0C1; <code>true</code>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+&#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="winsetclosableclosable-os-x-windows"><code>win.setClosable(closable)</code> <em>OS X</em> <em>Windows</em></h3>
 <ul>
 <li><code>closable</code> Boolean</li>

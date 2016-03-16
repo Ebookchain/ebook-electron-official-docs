@@ -53,7 +53,7 @@
         data-chapter-title="webContents"
         data-filepath="api/web-contents.md"
         data-basepath=".."
-        data-revision="Mon Mar 07 2016 20:50:41 GMT+0800 (CST)"
+        data-revision="Wed Mar 16 2016 20:01:34 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -1132,6 +1132,7 @@ are clicked or when the DOM <code>hashchange</code> event is triggered.</p>
 <li><code>result</code> Object<ul>
 <li><code>requestId</code> Integer</li>
 <li><code>finalUpdate</code> Boolean - Indicates if more responses are to follow.</li>
+<li><code>activeMatchOrdinal</code> Integer (optional) - Position of the active match.</li>
 <li><code>matches</code> Integer (optional) - Number of Matches.</li>
 <li><code>selectionArea</code> Object (optional) - Coordinates of first match region.</li>
 </ul>
@@ -1542,13 +1543,9 @@ include <code>shift</code>, <code>control</code>, <code>alt</code>, <code>meta</
 <p>Sends an input <code>event</code> to the page.</p>
 <p>For keyboard events, the <code>event</code> object also have following properties:</p>
 <ul>
-<li><code>keyCode</code> Char or String (<strong>required</strong>) - The character that will be sent
-as the keyboard event. Can be a single UTF-8 character, or the name of the
-key that generates the event. Accepted key names are <code>enter</code>, <code>backspace</code>,
-<code>delete</code>, <code>tab</code>, <code>escape</code>, <code>control</code>, <code>alt</code>, <code>altgr</code> (Windows only), <code>shift</code>,
-<code>end</code>, <code>home</code>, <code>insert</code>, <code>left</code>, <code>up</code>, <code>right</code>, <code>down</code>, <code>pageUp</code>, <code>pageDown</code>,
-<code>printScreen</code>, <code>meta</code>, <code>cmd</code> (OSX only), <code>command</code> (OSX only), <code>option</code>
-(OSX only)</li>
+<li><code>keyCode</code> String (<strong>required</strong>) - The character that will be sent
+as the keyboard event. Should only use the valid key codes in
+<a href="accelerator.md">Accelerator</a>.</li>
 </ul>
 <p>For mouse events, the <code>event</code> object also have following properties:</p>
 <ul>

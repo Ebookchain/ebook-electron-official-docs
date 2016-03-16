@@ -53,7 +53,7 @@
         data-chapter-title="BrowserWindow"
         data-filepath="api/browser-window.md"
         data-basepath=".."
-        data-revision="Mon Mar 07 2016 20:50:41 GMT+0800 (CST)"
+        data-revision="Wed Mar 16 2016 20:01:34 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -977,9 +977,8 @@ on Linux. Default is <code>true</code>.</li>
 <li><code>alwaysOnTop</code> Boolean - Whether the window should always stay on top of
 other windows. Default is <code>false</code>.</li>
 <li><code>fullscreen</code> Boolean - Whether the window should show in fullscreen. When
-explicitly set to <code>false</code> the fullscreen button will be hidden or disabled
-on OS X, or the maximize button will be disabled on Windows. Default is
-<code>false</code>.</li>
+explicity set to <code>false</code> the fullscreen button will be hidden or disabled
+on OS X. Default is <code>false</code>.</li>
 <li><code>fullscreenable</code> Boolean - Whether the maximize/zoom button on OS X should
 toggle full screen mode or maximize window. Default is <code>true</code>.</li>
 <li><code>skipTaskbar</code> Boolean - Whether to show the window in taskbar. Default is
@@ -1151,6 +1150,10 @@ remove the reference to the window and avoid using it anymore.</p>
 <p>Emitted when the window loses focus.</p>
 <h3 id="event-focus">Event: &apos;focus&apos;</h3>
 <p>Emitted when the window gains focus.</p>
+<h3 id="event-show">Event: &apos;show&apos;</h3>
+<p>Emitted when the window is shown.</p>
+<h3 id="event-hide">Event: &apos;hide&apos;</h3>
+<p>Emitted when the window is hidden.</p>
 <h3 id="event-maximize">Event: &apos;maximize&apos;</h3>
 <p>Emitted when window is maximized.</p>
 <h3 id="event-unmaximize">Event: &apos;unmaximize&apos;</h3>
@@ -1243,6 +1246,8 @@ the close button of the window. The web page may cancel the close though, see
 the <a href="#event-close">close event</a>.</p>
 <h3 id="winfocus"><code>win.focus()</code></h3>
 <p>Focus on the window.</p>
+<h3 id="winblur"><code>win.blur()</code></h3>
+<p>Remove focus on the window.</p>
 <h3 id="winisfocused"><code>win.isFocused()</code></h3>
 <p>Returns a boolean, whether the window is focused.</p>
 <h3 id="winshow"><code>win.show()</code></h3>
@@ -1377,15 +1382,15 @@ nothing.</p>
 <h3 id="winismaximizable-os-x-windows"><code>win.isMaximizable()</code> <em>OS X</em> <em>Windows</em></h3>
 <p>Returns whether the window can be manually maximized by user. On Linux always
 returns <code>true</code>.</p>
-<h3 id="winsetfullscreenablefullscreenable-os-x"><code>win.setFullScreenable(fullscreenable)</code> <em>OS X</em></h3>
+<h3 id="winsetfullscreenablefullscreenable"><code>win.setFullScreenable(fullscreenable)</code></h3>
 <ul>
 <li><code>fullscreenable</code> Boolean</li>
 </ul>
 <p>Sets whether the maximize/zoom window button toggles fullscreen mode or
-maximizes the window. On Windows and Linux does nothing.</p>
-<h3 id="winisfullscreenable-os-x"><code>win.isFullScreenable()</code> <em>OS X</em></h3>
+maximizes the window.</p>
+<h3 id="winisfullscreenable"><code>win.isFullScreenable()</code></h3>
 <p>Returns whether the maximize/zoom window button toggles fullscreen mode or
-maximizes the window. On Windows and Linux always returns <code>true</code>.</p>
+maximizes the window.</p>
 <h3 id="winsetclosableclosable-os-x-windows"><code>win.setClosable(closable)</code> <em>OS X</em> <em>Windows</em></h3>
 <ul>
 <li><code>closable</code> Boolean</li>

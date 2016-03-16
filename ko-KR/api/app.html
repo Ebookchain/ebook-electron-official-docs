@@ -53,7 +53,7 @@
         data-chapter-title="app"
         data-filepath="api/app.md"
         data-basepath=".."
-        data-revision="Mon Mar 07 2016 20:50:44 GMT+0800 (CST)"
+        data-revision="Wed Mar 16 2016 20:01:39 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -1114,6 +1114,8 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 </code></pre>
 <h3 id="event-gpuprocesscrashed">Event: &apos;gpu-process-crashed&apos;</h3>
 <p>GPU&#xAC00; &#xC791;&#xB3D9;&#xD558;&#xB358; &#xC911; &#xD06C;&#xB798;&#xC2DC;&#xAC00; &#xC77C;&#xC5B4;&#xB0AC;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="event-platformthemechanged-os-x">Event: &apos;platform-theme-changed&apos; <em>OS X</em></h3>
+<p>&#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xB2E4;&#xD06C; &#xBAA8;&#xB4DC; &#xD14C;&#xB9C8;&#xAC00; &#xD1A0;&#xAE00;&#xB418;&#xBA74; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h2 id="methods">Methods</h2>
 <p><code>app</code> &#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <p><strong>&#xCC38;&#xACE0;:</strong> &#xBA87;&#xBA87; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xD2B9;&#xC815; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xC11C;&#xB9CC; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -1124,10 +1126,6 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 <p>&#xC774; &#xD568;&#xC218;&#xB294; &#xBAA8;&#xB4E0; <code>beforeunload</code>&#xC640; <code>unload</code> &#xC774;&#xBCA4;&#xD2B8; &#xD578;&#xB4E4;&#xB7EC;&#xAC00; &#xC81C;&#xB300;&#xB85C; &#xC2E4;&#xD589;&#xB428;&#xC744; &#xBCF4;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.
 <code>beforeunload</code> &#xC774;&#xBCA4;&#xD2B8; &#xD578;&#xB4E4;&#xB7EC;&#xC5D0;&#xC11C; <code>false</code>&#xB97C; &#xBC18;&#xD658;&#xD588;&#xC744; &#xB54C; &#xC708;&#xB3C4;&#xC6B0; &#xC885;&#xB8CC;&#xAC00; &#xCDE8;&#xC18C; &#xB420; &#xC218;
 &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h3 id="apphide-os-x"><code>app.hide()</code> <em>OS X</em></h3>
-<p>&#xCD5C;&#xC18C;&#xD654;&#xB97C; &#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC744; &#xC228;&#xAE41;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appshow-os-x"><code>app.show()</code> <em>OS X</em></h3>
-<p>&#xC228;&#xAE34; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC744; &#xB2E4;&#xC2DC; &#xBCF4;&#xC774;&#xAC8C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD3EC;&#xCEE4;&#xC2A4;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appexitexitcode"><code>app.exit(exitCode)</code></h3>
 <ul>
 <li><code>exitCode</code> Integer</li>
@@ -1135,6 +1133,13 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 <p><code>exitCode</code>&#xC640; &#xD568;&#xAED8; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC989;&#xC2DC; &#xC885;&#xB8CC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xB3D9;&#xC758; &#xC5EC;&#xBD80;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xC989;&#xC2DC; &#xC885;&#xB8CC;&#xB418;&#xBA70; <code>before-quit</code> &#xC774;&#xBCA4;&#xD2B8;&#xC640;
 <code>will-quit</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appfocus"><code>app.focus()</code></h3>
+<p>Linux&#xC5D0;&#xC120;, &#xCCAB; &#xBC88;&#xC9F8;&#xB85C; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xD3EC;&#xCEE4;&#xC2A4;&#xB429;&#xB2C8;&#xB2E4;. OS X&#xC5D0;&#xC120;, &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD65C;&#xC131;&#xD654;
+&#xC571; &#xC0C1;&#xD0DC;&#xB85C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. Windows&#xC5D0;&#xC120;, &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xCCAB; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xD3EC;&#xCEE4;&#xC2A4; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<h3 id="apphide-os-x"><code>app.hide()</code> <em>OS X</em></h3>
+<p>&#xCD5C;&#xC18C;&#xD654;&#xB97C; &#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC744; &#xC228;&#xAE41;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appshow-os-x"><code>app.show()</code> <em>OS X</em></h3>
+<p>&#xC228;&#xAE34; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC744; &#xB2E4;&#xC2DC; &#xBCF4;&#xC774;&#xAC8C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD3EC;&#xCEE4;&#xC2A4;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appgetapppath"><code>app.getAppPath()</code></h3>
 <p>&#xD604;&#xC7AC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appgetpathname"><code>app.getPath(name)</code></h3>
@@ -1303,6 +1308,9 @@ win = <span class="hljs-keyword">new</span> BrowserWindow(browserOptions);
   win.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/fallback.html&apos;</span>);
 }
 </code></pre>
+<h3 id="appisdarkmode-os-x"><code>app.isDarkMode()</code> <em>OS X</em></h3>
+<p>&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xB2E4;&#xD06C; &#xBAA8;&#xB4DC; &#xC0C1;&#xD0DC;&#xC778; &#xACBD;&#xC6B0; <code>true</code>&#xB97C; &#xBC18;&#xD658;&#xD558;&#xACE0; &#xC544;&#xB2D0; &#xACBD;&#xC6B0; <code>false</code>&#xB97C;
+&#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appcommandlineappendswitchswitch-value"><code>app.commandLine.appendSwitch(switch[, value])</code></h3>
 <p>Chrominum&#xC758; &#xBA85;&#xB839;&#xC904;&#xC5D0; &#xC2A4;&#xC704;&#xCE58;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. <code>value</code>&#xB294; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xAC12;&#xC744; &#xB73B;&#xD558;&#xBA70; &#xC635;&#xC158;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p><strong>&#xCC38;&#xACE0;:</strong> &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; <code>process.argv</code>&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC1C;&#xBC1C;&#xC790;&#xB4E4;&#xC740; &#xBCF4;&#xD1B5;

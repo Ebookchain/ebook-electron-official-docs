@@ -53,7 +53,7 @@
         data-chapter-title="Desktop Environment Integration"
         data-filepath="tutorial/desktop-environment-integration.md"
         data-basepath=".."
-        data-revision="Mon Mar 07 2016 20:50:41 GMT+0800 (CST)"
+        data-revision="Wed Mar 16 2016 20:01:34 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -1108,16 +1108,15 @@ with an empty array:</p>
 <code>.desktop</code> file, see <a href="https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles#Adding_shortcuts_to_a_launcher" target="_blank">Adding Shortcuts to a Launcher</a>.</p>
 <p><strong>Launcher shortcuts of Audacious:</strong></p>
 <p><img src="https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles?action=AttachFile&amp;do=get&amp;target=shortcuts.png" alt="audacious"></p>
-<h2 id="progress-bar-in-taskbar-windows--unity">Progress Bar in Taskbar (Windows &amp; Unity)</h2>
+<h2 id="progress-bar-in-taskbar-windows-os-x-unity">Progress Bar in Taskbar (Windows, OS X, Unity)</h2>
 <p>On Windows a taskbar button can be used to display a progress bar. This enables
 a window to provide progress information to the user without the user having to
 switch to the window itself.</p>
+<p>On OS X the progress bar will be displayed as a part of the dock icon.</p>
 <p>The Unity DE also has a similar feature that allows you to specify the progress
 bar in the launcher.</p>
 <p><strong>Progress bar in taskbar button:</strong></p>
 <p><img src="https://cloud.githubusercontent.com/assets/639601/5081682/16691fda-6f0e-11e4-9676-49b6418f1264.png" alt="Taskbar Progress Bar"></p>
-<p><strong>Progress bar in Unity launcher:</strong></p>
-<p><img src="https://cloud.githubusercontent.com/assets/639601/5081747/4a0a589e-6f0f-11e4-803f-91594716a546.png" alt="Unity Launcher"></p>
 <p>To set the progress bar for a Window, you can use the
 <a href="../api/browser-window.html#winsetprogressbarprogress">BrowserWindow.setProgressBar</a> API:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});

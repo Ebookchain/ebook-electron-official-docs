@@ -1,0 +1,868 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>支持的 Chrome 命令行开关 | 常见问题</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="Imfly">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../api/environment-variables.html" />
+    
+    
+    <link rel="prev" href="../api/process.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="17"
+        data-chapter-title="支持的 Chrome 命令行开关"
+        data-filepath="api/chrome-command-line-switches.md"
+        data-basepath=".."
+        data-revision="Wed Mar 16 2016 20:01:46 GMT+0800 (CST)"
+        data-innerlanguage="zh-CN">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        介紹
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="faq/electron-faq.html">
+            
+                
+                    <a href="../faq/electron-faq.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Electron 常见问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="tutorial/supported-platforms.html">
+            
+                
+                    <a href="../tutorial/supported-platforms.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        支持平台
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="tutorial/application-distribution.html">
+            
+                
+                    <a href="../tutorial/application-distribution.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        分发应用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="tutorial/mac-app-store-submission-guide.html">
+            
+            <span><b>4.</b> 提交应用到 Mac App Store</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="tutorial/application-packaging.html">
+            
+                
+                    <a href="../tutorial/application-packaging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        打包应用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="tutorial/using-native-node-modules.html">
+            
+                
+                    <a href="../tutorial/using-native-node-modules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        使用 Node 原生模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="tutorial/debugging-main-process.html">
+            
+                
+                    <a href="../tutorial/debugging-main-process.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        主进程调试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="tutorial/using-selenium-and-webdriver.html">
+            
+                
+                    <a href="../tutorial/using-selenium-and-webdriver.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        使用 Selenium 和 WebDriver
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="tutorial/devtools-extension.html">
+            
+                
+                    <a href="../tutorial/devtools-extension.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        使用开发人员工具扩展
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="tutorial/using-pepper-flash-plugin.html">
+            
+                
+                    <a href="../tutorial/using-pepper-flash-plugin.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        使用 Pepper Flash 插件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="tutorial/using-widevine-cdm-plugin.html">
+            
+            <span><b>11.</b> 使用 Widevine CDM 插件</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="tutorial/quick-start.html">
+            
+                
+                    <a href="../tutorial/quick-start.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        快速入门
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="tutorial/desktop-environment-integration.html">
+            
+                
+                    <a href="../tutorial/desktop-environment-integration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        桌面环境集成
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="tutorial/online-offline-events.html">
+            
+                
+                    <a href="../tutorial/online-offline-events.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        在线/离线事件探测
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="api/synopsis.html">
+            
+                
+                    <a href="../api/synopsis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="api/process.html">
+            
+                
+                    <a href="../api/process.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        进程对象
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="17" data-path="api/chrome-command-line-switches.html">
+            
+                
+                    <a href="../api/chrome-command-line-switches.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        支持的 Chrome 命令行开关
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="api/environment-variables.html">
+            
+                
+                    <a href="../api/environment-variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        环境变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="19" data-path="api/file-object.html">
+            
+                
+                    <a href="../api/file-object.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.</b>
+                        
+                        `File` 对象
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="20" data-path="api/web-view-tag.html">
+            
+                
+                    <a href="../api/web-view-tag.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>20.</b>
+                        
+                        `&lt;webview&gt;` 标签
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="21" data-path="api/window-open.html">
+            
+                
+                    <a href="../api/window-open.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>21.</b>
+                        
+                        `window.open` 函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="22" data-path="api/app.html">
+            
+                
+                    <a href="../api/app.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.</b>
+                        
+                        app
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="23" data-path="api/auto-updater.html">
+            
+                
+                    <a href="../api/auto-updater.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>23.</b>
+                        
+                        autoUpdater
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="24" data-path="api/browser-window.html">
+            
+                
+                    <a href="../api/browser-window.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>24.</b>
+                        
+                        BrowserWindow
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="25" data-path="api/content-tracing.html">
+            
+                
+                    <a href="../api/content-tracing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>25.</b>
+                        
+                        contentTracing
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="26" data-path="api/dialog.html">
+            
+                
+                    <a href="../api/dialog.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>26.</b>
+                        
+                        dialog
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="27" data-path="api/global-shortcut.html">
+            
+                
+                    <a href="../api/global-shortcut.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>27.</b>
+                        
+                        globalShortcut
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="28" data-path="api/ipc-main.html">
+            
+            <span><b>28.</b> ipcMain</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="29" data-path="api/menu.html">
+            
+            <span><b>29.</b> Menu</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="30" data-path="api/menu-item.html">
+            
+                
+                    <a href="../api/menu-item.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>30.</b>
+                        
+                        MenuItem
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="31" data-path="api/power-monitor.html">
+            
+            <span><b>31.</b> powerMonitor</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="32" data-path="api/power-save-blocker.html">
+            
+            <span><b>32.</b> powerSaveBlocker</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="33" data-path="api/protocol.html">
+            
+            <span><b>33.</b> protocol</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="34" data-path="api/session.html">
+            
+            <span><b>34.</b> session</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="35" data-path="api/web-contents.html">
+            
+            <span><b>35.</b> webContents</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="36" data-path="api/tray.html">
+            
+            <span><b>36.</b> Tray</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="37" data-path="api/desktop-capturer.html">
+            
+            <span><b>37.</b> desktopCapturer</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="38" data-path="api/ipc-renderer.html">
+            
+            <span><b>38.</b> ipcRenderer</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="39" data-path="api/remote.html">
+            
+                
+                    <a href="../api/remote.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>39.</b>
+                        
+                        remote
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="40" data-path="api/web-frame.html">
+            
+            <span><b>40.</b> webFrame</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="41" data-path="api/clipboard.html">
+            
+            <span><b>41.</b> clipboard</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42" data-path="api/crash-reporter.html">
+            
+            <span><b>42.</b> crashReporter</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="43" data-path="api/native-image.html">
+            
+            <span><b>43.</b> nativeImage</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="44" data-path="api/screen.html">
+            
+            <span><b>44.</b> screen</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="45" data-path="api/shell.html">
+            
+                
+                    <a href="../api/shell.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>45.</b>
+                        
+                        shell
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="46" data-path="development/coding-style.html">
+            
+                
+                    <a href="../development/coding-style.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>46.</b>
+                        
+                        代码规范
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="47" data-path="development/source-code-directory-structure.html">
+            
+                
+                    <a href="../development/source-code-directory-structure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>47.</b>
+                        
+                        源码目录结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="48" data-path="development/atom-shell-vs-node-webkit.html">
+            
+                
+                    <a href="../development/atom-shell-vs-node-webkit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>48.</b>
+                        
+                        与 NW.js（原 node-webkit）在技术上的差异
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="49" data-path="development/build-system-overview.html">
+            
+            <span><b>49.</b> 构建系统概览</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="50" data-path="development/build-instructions-mac.html">
+            
+            <span><b>50.</b> 构建步骤（Mac）</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="51" data-path="development/build-instructions-windows.html">
+            
+            <span><b>51.</b> 构建步骤（Windows）</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="52" data-path="development/build-instructions-linux.html">
+            
+            <span><b>52.</b> 构建步骤（Linux）</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="53" data-path="development/setting-up-symbol-server.html">
+            
+            <span><b>53.</b> 在调试中使用 Symbol Server</span>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >常见问题</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x652F;&#x6301;&#x7684;-chrome-&#x547D;&#x4EE4;&#x884C;&#x5F00;&#x5173;">&#x652F;&#x6301;&#x7684; Chrome &#x547D;&#x4EE4;&#x884C;&#x5F00;&#x5173;</h1>
+<p>&#x8FD9;&#x9875;&#x5217;&#x51FA;&#x4E86;Chrome&#x6D4F;&#x89C8;&#x5668;&#x548C;Electron&#x652F;&#x6301;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5F00;&#x5173;. &#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;<a href="app.html">app</a>&#x6A21;&#x5757;&#x7684;<a href="app.html#event-ready">ready</a>&#x4E8B;&#x4EF6;&#x53D1;&#x51FA;&#x4E4B;&#x524D;&#x4F7F;&#x7528;<a href="app.html#appcommandlineappendswitchswitch-value">app.commandLine.appendSwitch</a> &#x6765;&#x6DFB;&#x52A0;&#x5B83;&#x4EEC;&#x5230;&#x4F60;&#x5E94;&#x7528;&#x7684;main&#x811A;&#x672C;&#x91CC;&#x9762;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).app;
+app.commandLine.appendSwitch(<span class="hljs-string">&apos;remote-debugging-port&apos;</span>, <span class="hljs-string">&apos;8315&apos;</span>);
+app.commandLine.appendSwitch(<span class="hljs-string">&apos;host-rules&apos;</span>, <span class="hljs-string">&apos;MAP * 127.0.0.1&apos;</span>);
+
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Your code here</span>
+});
+</code></pre>
+<h2 id="clientcertificatepath">--client-certificate=<code>path</code></h2>
+<p>&#x8BBE;&#x7F6E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8BC1;&#x4E66;&#x6587;&#x4EF6; <code>path</code> .</p>
+<h2 id="ignoreconnectionslimitdomains">--ignore-connections-limit=<code>domains</code></h2>
+<p>&#x5FFD;&#x7565;&#x7528; <code>,</code> &#x5206;&#x9694;&#x7684; <code>domains</code> &#x5217;&#x8868;&#x7684;&#x8FDE;&#x63A5;&#x9650;&#x5236;.</p>
+<h2 id="disablehttpcache">--disable-http-cache</h2>
+<p>&#x7981;&#x7528; HTTP &#x8BF7;&#x6C42;.</p>
+<h2 id="remotedebuggingportport">--remote-debugging-port=<code>port</code></h2>
+<p>&#x5728;&#x6307;&#x5B9A;&#x7684; <code>&#x7AEF;&#x53E3;</code> &#x901A;&#x8FC7; HTTP &#x5F00;&#x542F;&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;.</p>
+<h2 id="jsflagsflags">--js-flags=<code>flags</code></h2>
+<p>&#x6307;&#x5B9A;&#x5F15;&#x64CE;&#x8FC7;&#x6E21;&#x5230; JS &#x5F15;&#x64CE;. </p>
+<p>&#x5728;&#x542F;&#x52A8;Electron&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;&#x4E3B;&#x8FDB;&#x7A0B;&#x4E2D;&#x6FC0;&#x6D3B; <code>flags</code> &#xFF0C;&#x5B83;&#x5C06;&#x88AB;&#x8F6C;&#x6362;.</p>
+<pre><code class="lang-bash">$ electron --js-flags=<span class="hljs-string">&quot;--harmony_proxies --harmony_collections&quot;</span> your-app
+</code></pre>
+<h2 id="proxyserveraddressport">--proxy-server=<code>address:port</code></h2>
+<p>&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5B83;&#x5C06;&#x6BD4;&#x7CFB;&#x7EDF;&#x8BBE;&#x7F6E;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x66F4;&#x9AD8;.&#x8FD9;&#x4E2A;&#x5F00;&#x5173;&#x53EA;&#x6709;&#x5728;&#x4F7F;&#x7528; HTTP &#x534F;&#x8BAE;&#x65F6;&#x6709;&#x6548;&#xFF0C;&#x5B83;&#x5305;&#x542B; HTTPS &#x548C; WebSocket &#x8BF7;&#x6C42;. &#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x90FD;&#x652F;&#x6301; HTTPS &#x548C; WebSocket &#x8BF7;&#x6C42;.</p>
+<h2 id="proxybypasslisthosts">--proxy-bypass-list=<code>hosts</code></h2>
+<p>&#x8BA9; Electron &#x4F7F;&#x7528;(&#x539F;&#x6587;:bypass) &#x63D0;&#x4F9B;&#x7684;&#x4EE5; semi-colon &#x5206;&#x9694;&#x7684;hosts&#x5217;&#x8868;&#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;.&#x8FD9;&#x4E2A;&#x5F00;&#x5173;&#x53EA;&#x6709;&#x5728;&#x4F7F;&#x7528; <code>--proxy-server</code> &#x65F6;&#x6709;&#x6548;.</p>
+<p>&#x4F8B;&#x5982;:</p>
+<pre><code class="lang-javascript">app.commandLine.appendSwitch(<span class="hljs-string">&apos;proxy-bypass-list&apos;</span>, <span class="hljs-string">&apos;&lt;local&gt;;*.google.com;*foo.com;1.2.3.4:5678&apos;</span>)
+</code></pre>
+<p>&#x5C06;&#x4F1A;&#x4E3A;&#x6240;&#x6709;&#x7684;hosts&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x9664;&#x4E86;&#x672C;&#x5730;&#x5730;&#x5740; (<code>localhost</code>,
+<code>127.0.0.1</code> etc.), <code>google.com</code> &#x5B50;&#x57DF;, &#x4EE5; <code>foo.com</code> &#x7ED3;&#x5C3E;&#x7684;hosts&#xFF0C;&#x548C;&#x6240;&#x6709;&#x7C7B;&#x4F3C; <code>1.2.3.4:5678</code>&#x7684;.</p>
+<h2 id="proxypacurlurl">--proxy-pac-url=<code>url</code></h2>
+<p>&#x5728;&#x6307;&#x5B9A;&#x7684; <code>url</code> &#x4E0A;&#x4F7F;&#x7528; PAC &#x811A;&#x672C;.</p>
+<h2 id="noproxyserver">--no-proxy-server</h2>
+<p>&#x4E0D;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5E76;&#x4E14;&#x603B;&#x662F;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x8FDE;&#x63A5;.&#x5FFD;&#x7565;&#x6240;&#x6709;&#x7684;&#x5408;&#x7406;&#x4EE3;&#x7406;&#x6807;&#x5FD7;.</p>
+<h2 id="hostrulesrules">--host-rules=<code>rules</code></h2>
+<p>&#x4E00;&#x4E2A;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684; <code>rule</code> &#x5217;&#x8868;&#x6765;&#x63A7;&#x5236;&#x4E3B;&#x673A;&#x540D;&#x5982;&#x4F55;&#x6620;&#x5C04;.</p>
+<p>&#x4F8B;&#x5982;:</p>
+<ul>
+<li><code>MAP * 127.0.0.1</code> &#x5F3A;&#x5236;&#x6240;&#x6709;&#x4E3B;&#x673A;&#x540D;&#x6620;&#x5C04;&#x5230; 127.0.0.1</li>
+<li><code>MAP *.google.com proxy</code> &#x5F3A;&#x5236;&#x6240;&#x6709; google.com &#x5B50;&#x57DF; &#x4F7F;&#x7528; &quot;proxy&quot;.</li>
+<li><code>MAP test.com [::1]:77</code> &#x5F3A;&#x5236; &quot;test.com&quot; &#x4F7F;&#x7528; IPv6 &#x56DE;&#x73AF;&#x5730;&#x5740;. &#x4E5F;&#x5F3A;&#x5236;&#x4F7F;&#x7528;&#x7AEF;&#x53E3; 77.</li>
+<li><code>MAP * baz, EXCLUDE www.google.com</code> &#x91CD;&#x65B0;&#x5168;&#x90E8;&#x6620;&#x5C04;&#x5230; &quot;baz&quot;, &#x9664;&#x4E86;
+&quot;www.google.com&quot;.</li>
+</ul>
+<p>&#x8FD9;&#x4E9B;&#x6620;&#x5C04;&#x9002;&#x7528;&#x4E8E;&#x7EC8;&#x7AEF;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;
+(TCP &#x8FDE;&#x63A5;
+&#x548C; &#x4E3B;&#x673A;&#x89E3;&#x6790; &#x4EE5;&#x76F4;&#x63A5;&#x8FDE;&#x63A5;&#x7684;&#x65B9;&#x5F0F;, &#x548C; <code>CONNECT</code> &#x4EE5;&#x4EE3;&#x7406;&#x8FDE;&#x63A5;, &#x8FD8;&#x6709; &#x7EC8;&#x7AEF; host &#x4F7F;&#x7528; <code>SOCKS</code> &#x4EE3;&#x7406;&#x8FDE;&#x63A5;).</p>
+<h2 id="hostresolverrulesrules">--host-resolver-rules=<code>rules</code></h2>
+<p>&#x7C7B;&#x4F3C; <code>--host-rules</code> &#xFF0C;&#x4F46;&#x662F; <code>rules</code> &#x53EA;&#x9002;&#x5408;&#x4E3B;&#x673A;&#x89E3;&#x6790;.</p>
+<h2 id="ignorecertificateerrors">--ignore-certificate-errors</h2>
+<p>&#x5FFD;&#x7565;&#x4E0E;&#x8BC1;&#x4E66;&#x76F8;&#x5173;&#x7684;&#x9519;&#x8BEF;.</p>
+<h2 id="ppapiflashpathpath">--ppapi-flash-path=<code>path</code></h2>
+<p>&#x8BBE;&#x7F6E;Pepper Flash&#x63D2;&#x4EF6;&#x7684;&#x8DEF;&#x5F84; <code>path</code> .</p>
+<h2 id="ppapiflashversionversion">--ppapi-flash-version=<code>version</code></h2>
+<p>&#x8BBE;&#x7F6E;Pepper Flash&#x63D2;&#x4EF6;&#x7248;&#x672C;&#x53F7;.</p>
+<h2 id="lognetlogpath">--log-net-log=<code>path</code></h2>
+<p>&#x4F7F;&#x7F51;&#x7EDC;&#x65E5;&#x5FD7;&#x4E8B;&#x4EF6;&#x80FD;&#x591F;&#x88AB;&#x8BFB;&#x5199;&#x5230; <code>path</code>.</p>
+<h2 id="sslversionfallbackminversion">--ssl-version-fallback-min=<code>version</code></h2>
+<p>&#x8BBE;&#x7F6E;&#x6700;&#x7B80;&#x5316;&#x7684; SSL/TLS &#x7248;&#x672C;&#x53F7; (&quot;tls1&quot;, &quot;tls1.1&quot; or &quot;tls1.2&quot;)&#xFF0C;TLS &#x53EF;&#x63A5;&#x53D7;&#x56DE;&#x9000;.</p>
+<h2 id="ciphersuiteblacklistciphersuites">--cipher-suite-blacklist=<code>cipher_suites</code></h2>
+<p>&#x6307;&#x5B9A;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684; SSL &#x5BC6;&#x7801;&#x5957;&#x4EF6; &#x5217;&#x8868;&#x5B9E;&#x6548;.</p>
+<h2 id="disablerendererbackgrounding">--disable-renderer-backgrounding</h2>
+<p>&#x9632;&#x6B62; Chromium &#x964D;&#x4F4E;&#x9690;&#x85CF;&#x7684;&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;.</p>
+<p>&#x8FD9;&#x4E2A;&#x6807;&#x5FD7;&#x5BF9;&#x6240;&#x6709;&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#x5168;&#x5C40;&#x6709;&#x6548;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x53EA;&#x60F3;&#x5728;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x4E2D;&#x7981;&#x6B62;&#x4F7F;&#x7528;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x91C7;&#x7528; hack &#x65B9;&#x6CD5;<a href="https://github.com/atom/atom/pull/9485/files" target="_blank">playing silent audio</a>.</p>
+<h2 id="enablelogging">--enable-logging</h2>
+<p>&#x6253;&#x5370; Chromium &#x4FE1;&#x606F;&#x8F93;&#x51FA;&#x5230;&#x63A7;&#x5236;&#x53F0;.</p>
+<p>&#x5982;&#x679C;&#x5728;&#x7528;&#x6237;&#x5E94;&#x7528;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#x4E4B;&#x524D;&#x89E3;&#x6790;<code>app.commandLine.appendSwitch</code> &#xFF0C;&#x8FD9;&#x4E2A;&#x5F00;&#x5173;&#x5C06;&#x5B9E;&#x6548;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; <code>ELECTRON_ENABLE_LOGGING</code> &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x6765;&#x8FBE;&#x5230;&#x76F8;&#x540C;&#x7684;&#x6548;&#x679C;.</p>
+<h2 id="vloglevel">--v=<code>log_level</code></h2>
+<p>&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x6700;&#x5927;&#x6D3B;&#x8DC3; V-logging &#x6807;&#x51C6;; &#x9ED8;&#x8BA4;&#x4E3A; 0.&#x901A;&#x5E38; V-logging &#x6807;&#x51C6;&#x503C;&#x4E3A;&#x80AF;&#x5B9A;&#x503C;.</p>
+<p>&#x8FD9;&#x4E2A;&#x5F00;&#x5173;&#x53EA;&#x6709;&#x5728; <code>--enable-logging</code> &#x5F00;&#x542F;&#x65F6;&#x6709;&#x6548;.</p>
+<h2 id="vmodulepattern">--vmodule=<code>pattern</code></h2>
+<p>&#x8D4B;&#x4E88;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x6700;&#x5927;&#x7684; V-logging levels &#x6765;&#x8986;&#x76D6; <code>--v</code> &#x7ED9;&#x7684;&#x503C;.E.g. <code>my_module=2,foo*=3</code> &#x4F1A;&#x6539;&#x53D8;&#x6240;&#x6709;&#x6E90;&#x6587;&#x4EF6; <code>my_module.*</code> and <code>foo*.*</code> &#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x7684; logging level .</p>
+<p>&#x4EFB;&#x4F55;&#x5305;&#x542B;&#x5411;&#x524D;&#x7684;(forward slash)&#x6216;&#x8005;&#x5411;&#x540E;&#x7684;(backward slash)&#x6A21;&#x5F0F;&#x5C06;&#x88AB;&#x6D4B;&#x8BD5;&#x7528;&#x4E8E;&#x963B;&#x6B62;&#x6574;&#x4E2A;&#x8DEF;&#x5F84;&#x540D;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4EC5;&#x662F;E.g&#x6A21;&#x5757;.<code>*/foo/bar/*=2</code> &#x5C06;&#x4F1A;&#x6539;&#x53D8;&#x6240;&#x6709;&#x5728; <code>foo/bar</code> &#x4E0B;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#x4EE3;&#x7801;&#x4E2D;&#x7684; logging level .</p>
+<p>&#x8FD9;&#x4E2A;&#x5F00;&#x5173;&#x53EA;&#x6709;&#x5728; <code>--enable-logging</code> &#x5F00;&#x542F;&#x65F6;&#x6709;&#x6548;.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../api/process.html" class="navigation navigation-prev " aria-label="Previous page: 进程对象"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../api/environment-variables.html" class="navigation navigation-next " aria-label="Next page: 环境变量"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-baidu/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <script>var _hmt = _hmt || [];(function() {var hm = document.createElement('script');hm.src = '//hm.baidu.com/hm.js?acfc5cd60db044270ff996429917c2b7';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(hm, s);})();</script>
+    </body>
+    
+</html>

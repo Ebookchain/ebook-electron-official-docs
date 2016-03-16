@@ -53,7 +53,7 @@
         data-chapter-title="app"
         data-filepath="api/app.md"
         data-basepath=".."
-        data-revision="Mon Mar 07 2016 20:50:41 GMT+0800 (CST)"
+        data-revision="Wed Mar 16 2016 20:01:34 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -1110,6 +1110,8 @@ should prevent the default behavior with <code>event.preventDefault()</code> and
 </code></pre>
 <h3 id="event-gpuprocesscrashed">Event: &apos;gpu-process-crashed&apos;</h3>
 <p>Emitted when the gpu process crashes.</p>
+<h3 id="event-platformthemechanged-os-x">Event: &apos;platform-theme-changed&apos; <em>OS X</em></h3>
+<p>Emitted when the system&apos;s Dark Mode theme is toggled.</p>
 <h2 id="methods">Methods</h2>
 <p>The <code>app</code> object has the following methods:</p>
 <p><strong>Note:</strong> Some methods are only available on specific operating systems and are labeled as such.</p>
@@ -1120,10 +1122,6 @@ default the application will terminate.</p>
 <p>This method guarantees that all <code>beforeunload</code> and <code>unload</code> event handlers are
 correctly executed. It is possible that a window cancels the quitting by
 returning <code>false</code> in the <code>beforeunload</code> event handler.</p>
-<h3 id="apphide-os-x"><code>app.hide()</code> <em>OS X</em></h3>
-<p>Hides all application windows without minimizing them.</p>
-<h3 id="appshow-os-x"><code>app.show()</code> <em>OS X</em></h3>
-<p>Shows application windows after they were hidden. Does not automatically focus them.</p>
 <h3 id="appexitexitcode"><code>app.exit(exitCode)</code></h3>
 <ul>
 <li><code>exitCode</code> Integer</li>
@@ -1131,6 +1129,13 @@ returning <code>false</code> in the <code>beforeunload</code> event handler.</p>
 <p>Exits immediately with <code>exitCode</code>.</p>
 <p>All windows will be closed immediately without asking user and the <code>before-quit</code>
 and <code>will-quit</code> events will not be emitted.</p>
+<h3 id="appfocus"><code>app.focus()</code></h3>
+<p>On Linux, focuses on the first visible window. On OS X, makes the application
+the active app. On Windows, focuses on the application&apos;s first window.</p>
+<h3 id="apphide-os-x"><code>app.hide()</code> <em>OS X</em></h3>
+<p>Hides all application windows without minimizing them.</p>
+<h3 id="appshow-os-x"><code>app.show()</code> <em>OS X</em></h3>
+<p>Shows application windows after they were hidden. Does not automatically focus them.</p>
 <h3 id="appgetapppath"><code>app.getAppPath()</code></h3>
 <p>Returns the current application directory.</p>
 <h3 id="appgetpathname"><code>app.getPath(name)</code></h3>
@@ -1299,6 +1304,8 @@ win = <span class="hljs-keyword">new</span> BrowserWindow(browserOptions);
   win.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/fallback.html&apos;</span>);
 }
 </code></pre>
+<h3 id="appisdarkmode-os-x"><code>app.isDarkMode()</code> <em>OS X</em></h3>
+<p>This method returns <code>true</code> if the system is in Dark Mode, and <code>false</code> otherwise.</p>
 <h3 id="appcommandlineappendswitchswitch-value"><code>app.commandLine.appendSwitch(switch[, value])</code></h3>
 <p>Append a switch (with optional <code>value</code>) to Chromium&apos;s command line.</p>
 <p><strong>Note:</strong> This will not affect <code>process.argv</code>, and is mainly used by developers

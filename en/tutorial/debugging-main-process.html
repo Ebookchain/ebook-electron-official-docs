@@ -53,7 +53,7 @@
         data-chapter-title="Debugging Main Process"
         data-filepath="tutorial/debugging-main-process.md"
         data-basepath=".."
-        data-revision="Mon Mar 07 2016 20:50:41 GMT+0800 (CST)"
+        data-revision="Wed Mar 16 2016 20:01:34 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -948,10 +948,10 @@ with node-inspector, and the main process will crash if you inspect the
 <pre><code class="lang-bash">$ npm install git+https://git@github.com/enlight/node-pre-gyp.git<span class="hljs-comment">#detect-electron-runtime-in-find</span>
 </code></pre>
 <h3 id="4-recompile-the-nodeinspector-v8-modules-for-electron-change-the-target-to-your-electron-version-number">4. Recompile the <code>node-inspector</code> <code>v8</code> modules for electron (change the target to your electron version number)</h3>
-<pre><code class="lang-bash">$ node_modules/.bin/node-pre-gyp --target=<span class="hljs-number">0.36</span>.<span class="hljs-number">2</span> --runtime=electron --fallback-to-build --directory node_modules/v8-debug/ --dist-url=https://atom.io/download/atom-shell reinstall
-$ node_modules/.bin/node-pre-gyp --target=<span class="hljs-number">0.36</span>.<span class="hljs-number">2</span> --runtime=electron --fallback-to-build --directory node_modules/v8-profiler/ --dist-url=https://atom.io/download/atom-shell reinstall
+<pre><code class="lang-bash">$ node_modules/.bin/node-pre-gyp --target=<span class="hljs-number">0.36</span>.<span class="hljs-number">11</span> --runtime=electron --fallback-to-build --directory node_modules/v8-debug/ --dist-url=https://atom.io/download/atom-shell reinstall
+$ node_modules/.bin/node-pre-gyp --target=<span class="hljs-number">0.36</span>.<span class="hljs-number">11</span> --runtime=electron --fallback-to-build --directory node_modules/v8-profiler/ --dist-url=https://atom.io/download/atom-shell reinstall
 </code></pre>
-<p>See also <a href="how-to-install-native-modules">How to install native modules</a>.</p>
+<p>See also <a href="using-native-node-modules.html">How to install native modules</a>.</p>
 <h3 id="5-enable-debug-mode-for-electron">5. Enable debug mode for Electron</h3>
 <p>You can either start Electron with a debug flag like:</p>
 <pre><code class="lang-bash">$ electron --debug=<span class="hljs-number">5858</span> your/app

@@ -53,7 +53,7 @@
         data-chapter-title="Coding Style"
         data-filepath="development/coding-style.md"
         data-basepath=".."
-        data-revision="Mon Mar 07 2016 20:50:41 GMT+0800 (CST)"
+        data-revision="Wed Mar 16 2016 20:01:34 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -927,6 +927,8 @@
                     
                         <h1 id="coding-style">Coding Style</h1>
 <p>These are the style guidelines for coding in Electron.</p>
+<p>You can run <code>npm run lint</code> to show any style issues detected by <code>cpplint</code> and
+<code>eslint</code>.</p>
 <h2 id="c-and-python">C++ and Python</h2>
 <p>For C++ and Python, we follow Chromium&apos;s <a href="http://www.chromium.org/developers/coding-style" target="_blank">Coding
 Style</a>. There is also a
@@ -938,16 +940,27 @@ Chromium&apos;s <a href="https://www.chromium.org/developers/coding-style/import
 document. The document mentions some special types, scoped types (that
 automatically release their memory when going out of scope), logging mechanisms
 etc.</p>
-<h2 id="coffeescript">CoffeeScript</h2>
-<p>For CoffeeScript, we follow GitHub&apos;s <a href="https://github.com/styleguide/javascript" target="_blank">Style
-Guide</a> and the following rules:</p>
+<h2 id="javascript">JavaScript</h2>
 <ul>
+<li>Use a two space indent, no hard tabs.</li>
+<li>End lines with a <code>;</code></li>
 <li>Files should <strong>NOT</strong> end with new line, because we want to match Google&apos;s
 styles.</li>
 <li>File names should be concatenated with <code>-</code> instead of <code>_</code>, e.g.
-<code>file-name.coffee</code> rather than <code>file_name.coffee</code>, because in
+<code>file-name.js</code> rather than <code>file_name.js</code>, because in
 <a href="https://github.com/github/atom" target="_blank">github/atom</a> module names are usually in
-the <code>module-name</code> form. This rule only applies to <code>.coffee</code> files.</li>
+the <code>module-name</code> form. This rule only applies to <code>.js</code> files.</li>
+<li>Use newer ES6/ES2015 syntax where appropriate<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const" target="_blank"><code>const</code></a>
+for requires and other constants</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let" target="_blank"><code>let</code></a>
+for defining variables</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">Arrow functions</a>
+instead of <code>function () { }</code></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">Template literals</a>
+instead of string concatenation using <code>+</code></li>
+</ul>
+</li>
 </ul>
 <h2 id="api-names">API Names</h2>
 <p>When creating a new API, we should prefer getters and setters instead of
