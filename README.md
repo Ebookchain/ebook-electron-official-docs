@@ -3,6 +3,7 @@
 
 ## Changelog
 
+- [x] Update to Electron-v0.37.2 2016-03-26
 - [x] Update to Electron-v0.37.2 2016-03-16
 - [x] Initial commit Electron-v0.36.10 2016-03-07
 
@@ -75,15 +76,21 @@ Then, get it on http://doc-ebooks.github.io/electron-docs-gitbook
 
 ## Links
 
+* [gitbook]
+
 Download： https://imfly.gitbooks.io/electron-docs-gitbook/
 
 English： https://imfly.gitbooks.io/electron-docs-gitbook/content/en/index.html
 
-Chinese： https://imfly.gitbooks.io/electron-docs-gitbook/content/cn/index.html
+简体中文： https://imfly.gitbooks.io/electron-docs-gitbook/content/zh-CN/index.html
+
+* [github]
 
 Code： https://github.com/doc-ebooks/electron-docs-gitbook
 
 Read： http://doc-ebooks.github.io/electron-docs-gitbook
+
+* [others]
 
 Other books: [Bitcoin on Nodejs](https://github.com/doc-ebooks/bitcoin-on-nodejs)
 
