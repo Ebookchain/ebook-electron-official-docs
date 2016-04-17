@@ -2,6 +2,12 @@
 
 This module provides an interface for the `Squirrel` auto-updater framework.
 
+You can quickly launch a multi-platform release server for distributing your
+application by using one of these projects:
+
+- [electron-release-server][electron-release-server]: *A fully featured, self-hosted release server for electron applications, compatible with auto-updater*
+- [squirrel-updates-server][squirrel-updates-server]: *A simple node.js server for Squirrel.Mac and Squirrel.Windows which uses GitHub releases*
+
 ## Platform notices
 
 Though `autoUpdater` provides a uniform API for different platforms, there are
@@ -12,6 +18,9 @@ still some subtle differences on each platform.
 On OS X, the `autoUpdater` module is built upon [Squirrel.Mac][squirrel-mac],
 meaning you don't need any special setup to make it work. For server-side
 requirements, you can read [Server Support][server-support].
+
+**Note:** Your application must be signed for automatic updates on Mac OS X.
+This is a requirement of `Squirrel.Mac`.
 
 ### Windows
 
@@ -99,3 +108,5 @@ should only be called after `update-downloaded` has been emitted.
 [squirrel-windows]: https://github.com/Squirrel/Squirrel.Windows
 [installer]: https://github.com/atom/grunt-electron-installer
 [app-user-model-id]: https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85).aspx
+[electron-release-server]: https://github.com/ArekSredzki/electron-release-server
+[squirrel-updates-server]: https://github.com/Aluxian/squirrel-updates-server

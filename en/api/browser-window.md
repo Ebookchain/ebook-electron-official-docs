@@ -83,8 +83,7 @@ It creates a new `BrowserWindow` with native properties as set by the `options`.
     than screen. Default is `false`.
   * `backgroundColor` String - Window's background color as Hexadecimal value,
     like `#66CD00` or `#FFF` or `#80FFFFFF` (alpha is supported). Default is
-    `#000` (black) for Linux and Windows, `#FFF` for Mac (or clear if
-    transparent).
+    `#FFF` (white).
   * `hasShadow` Boolean - Whether window should have a shadow. This is only
     implemented on OS X. Default is `true`.
   * `darkTheme` Boolean - Forces using dark theme for the window, only works on
@@ -180,6 +179,8 @@ The `webPreferences` option is an object that can have following properties:
 * `defaultMonospaceFontSize` Integer - Defaults to `13`.
 * `minimumFontSize` Integer - Defaults to `0`.
 * `defaultEncoding` String - Defaults to `ISO-8859-1`.
+* `backgroundThrottling` Boolean - Whether to throttle animations and timers
+  when the page becomes background. Defaults to `true`.
 
 ## Events
 
@@ -301,9 +302,17 @@ Emitted when the window leaves full screen state triggered by html api.
 
 ### Event: 'app-command' _Windows_
 
+Returns:
+
+* `event` Event
+* `command` String
+
 Emitted when an [App Command](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646275(v=vs.85).aspx)
 is invoked. These are typically related to keyboard media keys or browser
 commands, as well as the "Back" button built into some mice on Windows.
+
+Commands are lowercased with underscores replaced with hyphens and the `APPCOMMAND_` prefix stripped off.
+e.g. `APPCOMMAND_BROWSER_BACKWARD` is emitted as `browser-backward`.
 
 ```js
 someWindow.on('app-command', function(e, cmd) {
@@ -321,6 +330,15 @@ Emitted when scroll wheel event phase has begun.
 ### Event: 'scroll-touch-end' _OS X_
 
 Emitted when scroll wheel event phase has ended.
+
+### Event: 'swipe' _OS X_
+
+Returns:
+
+* `event` Event
+* `direction` String
+
+Emitted on 3-finger swipe. Possible directions are `up`, `right`, `down`, `left`.
 
 ## Methods
 

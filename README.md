@@ -3,6 +3,7 @@
 
 ## Changelog
 
+- [x] Update to Electron-v0.37.6 2016-04-17
 - [x] Update to Electron-v0.37.2 2016-03-26
 - [x] Update to Electron-v0.37.2 2016-03-16
 - [x] Initial commit Electron-v0.36.10 2016-03-07
@@ -92,7 +93,7 @@ Read： http://doc-ebooks.github.io/electron-docs-gitbook
 
 * [others]
 
-Other books: [Bitcoin on Nodejs](https://github.com/doc-ebooks/bitcoin-on-nodejs)
+Other books: [Bitcoin on Nodejs](http://bitcoin-on-nodejs.ebookchain.org)
 
 ## License
 

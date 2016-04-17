@@ -17,8 +17,14 @@
 수 있습니다:
 
 ```html
-<webview id="foo" src="https://www.github.com/" style="display:inline-block; width:640px; height:480px"></webview>
+<webview id="foo" src="https://www.github.com/" style="display:inline-flex; width:640px; height:480px"></webview>
 ```
+
+주의할 점은 `webview` 태그의 스타일은 전통적인 flexbox 레이아웃을 사용했을 때 자식
+`object` 요소가 해당 `webview` 컨테이너의 전체 높이와 넓이를 확실히 채우도록
+내부적으로 `display:flex;`를 사용합니다. (v0.36.11 부터) 따라서 인라인 레이아웃을
+위해 `display:inline-flex;`를 쓰지 않는 한, 기본 `display:flex;` CSS 속성을
+덮어쓰지 않도록 주의해야 합니다.
 
 게스트 컨텐츠를 조작하기 위해 자바스크립트로 `webview` 태그의 이벤트를 리스닝 하여
 응답을 받을 수 있습니다. 다음 예제를 참고하세요: 첫번째 리스너는 페이지 로딩 시작시의
@@ -79,6 +85,9 @@
 
 "on"으로 지정하면 `webview` 페이지 내에서 `require`와 `process 객체`같은 node.js
 API를 사용할 수 있습니다. 이를 지정하면 내부에서 로우레벨 리소스에 접근할 수 있습니다.
+
+**참고:** Node 통합 기능은 `webview`에서 부모 윈도우가 해당 옵션이 비활성화되어있는
+경우 항상 비활성화됩니다.
 
 ### `plugins`
 
@@ -492,6 +501,7 @@ Returns:
 * `requestMethod` String
 * `referrer` String
 * `headers` Object
+* `resourceType` String
 
 요청한 리소스에 관해 자세한 내용을 알 수 있을 때 발생하는 이벤트입니다.
 `status`는 리소스를 다운로드할 소켓 커낵션을 나타냅니다.
@@ -563,6 +573,7 @@ Returns:
 * `result` Object
   * `requestId` Integer
   * `finalUpdate` Boolean - 더 많은 응답이 따르는 경우를 표시합니다.
+  * `activeMatchOrdinal` Integer (optional) - 활성화 일치의 위치.
   * `matches` Integer (optional) - 일치하는 개수.
   * `selectionArea` Object (optional) - 첫 일치 부위의 좌표.
 
@@ -594,7 +605,10 @@ Returns:
 
 ```javascript
 webview.addEventListener('new-window', function(e) {
-  require('electron').shell.openExternal(e.url);
+  var protocol = require('url').parse(e.url).protocol;
+  if (protocol === 'http:' || protocol === 'https:') {
+    require('electron').shell.openExternal(e.url);
+  }
 });
 ```
 

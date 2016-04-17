@@ -21,7 +21,7 @@ Ubuntu를 사용하고 있다면 다음과 같이 라이브러리를 설치해�
 $ sudo apt-get install build-essential clang libdbus-1-dev libgtk2.0-dev \
                        libnotify-dev libgnome-keyring-dev libgconf2-dev \
                        libasound2-dev libcap-dev libcups2-dev libxtst-dev \
-                       libxss1 libnss3-dev gcc-multilib g++-multilib
+                       libxss1 libnss3-dev gcc-multilib g++-multilib curl
 ```
 
 Fedora를 사용하고 있다면 다음과 같이 라이브러리를 설치해야 합니다:
@@ -44,7 +44,7 @@ $ sudo yum install clang dbus-devel gtk2-devel libnotify-devel libgnome-keyring-
 ## 코드 가져오기
 
 ```bash
-$ git clone https://github.com/atom/electron.git
+$ git clone https://github.com/electron/electron.git
 ```
 
 ## 부트 스트랩

@@ -31,6 +31,7 @@ Returns:
 * `errorCode` Integer
 * `errorDescription` String
 * `validatedURL` String
+* `isMainFrame` Boolean
 
 이 이벤트는 `did-finish-load`와 비슷하나, 로드가 실패했거나 취소되었을 때 발생합니다.
 예를 들면 `window.stop()`이 실행되었을 때 발생합니다. 발생할 수 있는 전체 에러 코드의
@@ -66,6 +67,7 @@ Returns:
 * `requestMethod` String
 * `referrer` String
 * `headers` Object
+* `resourceType` String
 
 요청한 리소스에 관련된 자세한 정보를 사용할 수 있을 때 발생하는 이벤트입니다.
 `status`는 리소스를 다운로드하기 위한 소켓 연결을 나타냅니다.
@@ -255,6 +257,7 @@ Returns:
 * `result` Object
   * `requestId` Integer
   * `finalUpdate` Boolean - 더 많은 응답이 따르는 경우를 표시합니다.
+  * `activeMatchOrdinal` Integer (optional) - 활성화 일치의 위치.
   * `matches` Integer (optional) - 일치하는 개수.
   * `selectionArea` Object (optional) - 첫 일치 부위의 좌표.
 

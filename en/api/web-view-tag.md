@@ -18,8 +18,13 @@ form, the `webview` tag includes the `src` of the web page and css styles that
 control the appearance of the `webview` container:
 
 ```html
-<webview id="foo" src="https://www.github.com/" style="display:inline-block; width:640px; height:480px"></webview>
+<webview id="foo" src="https://www.github.com/" style="display:inline-flex; width:640px; height:480px"></webview>
 ```
+Please note that the `webview` tag's style uses `display:flex;` internally to 
+ensure the child `object` element fills the full height and width of its `webview` 
+container when used with traditional and flexbox layouts (since v0.36.11). Please 
+do not overwrite the default `display:flex;` CSS property, unless specifying 
+`display:inline-flex;` for inline layout.
 
 If you want to control the guest content in any way, you can write JavaScript
 that listens for `webview` events and responds to those events using the
@@ -83,6 +88,9 @@ than the minimum values or greater than the maximum.
 
 If "on", the guest page in `webview` will have node integration and can use node
 APIs like `require` and `process` to access low level system resources.
+
+**Note:** Node integration will always be disabled in the `webview` if it is
+disabled on the parent window.
 
 ### `plugins`
 
@@ -502,6 +510,7 @@ Returns:
 * `requestMethod` String
 * `referrer` String
 * `headers` Object
+* `resourceType` String
 
 Fired when details regarding a requested resource is available.
 `status` indicates socket connection to download the resource.
@@ -606,7 +615,10 @@ The following example code opens the new url in system's default browser.
 
 ```javascript
 webview.addEventListener('new-window', function(e) {
-  require('electron').shell.openExternal(e.url);
+  var protocol = require('url').parse(e.url).protocol;
+  if (protocol === 'http:' || protocol === 'https:') {
+    require('electron').shell.openExternal(e.url);
+  }
 });
 ```
 

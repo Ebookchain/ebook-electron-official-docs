@@ -33,6 +33,7 @@ Returns:
 * `errorCode` Integer
 * `errorDescription` String
 * `validatedURL` String
+* `isMainFrame` Boolean
 
 This event is like `did-finish-load` but emitted when the load failed or was
 cancelled, e.g. `window.stop()` is invoked.
@@ -67,6 +68,7 @@ Returns:
 * `requestMethod` String
 * `referrer` String
 * `headers` Object
+* `resourceType` String
 
 Emitted when details regarding a requested resource are available.
 `status` indicates the socket connection to download the resource.

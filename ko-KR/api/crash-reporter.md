@@ -16,6 +16,12 @@ crashReporter.start({
 });
 ```
 
+서버가 크래시 리포트를 받을 수 있도록 설정하기 위해 다음과 같은 프로젝트를 사용할 수도
+있습니다:
+
+* [socorro](https://github.com/mozilla/socorro)
+* [mini-breakpad-server](https://github.com/electron/mini-breakpad-server)
+
 ## Methods
 
 `crash-reporter` 모듈은 다음과 같은 메서드를 가지고 있습니다:
@@ -37,7 +43,7 @@ crashReporter.start({
 **참고:** OS X에선 Windows와 Linux의 `breakpad`와 달리 새로운 `crashpad`
 클라이언트를 사용합니다. 오류 수집 기능을 활성화 시키려면 오류를 수집하고 싶은 메인
 프로세스나 랜더러 프로세스에서 `crashReporter.start` 메서드를 호출하여 `crashpad`를
-초기화 해야합니다.
+초기화해야 합니다.
 
 ### `crashReporter.getLastCrashReport()`
 
@@ -50,15 +56,15 @@ crashReporter.start({
 
 ## crash-reporter 업로드 형식
 
-Crash Reporter는 다음과 같은 데이터를 `submitURL`에 `POST` 방식으로 전송합니다:
+Crash Reporter는 다음과 같은 데이터를 `submitURL`에 `multipart/form-data` `POST` 방식으로 전송합니다:
 
-* `ver` String - Electron의 버전
-* `platform` String - 예시 'win32'
-* `process_type` String - 예시 'renderer'
-* `guid` String - e.g. '5e1286fc-da97-479e-918b-6bfb0c3d1c72'
-* `_version` String - `package.json`내의 `version` 필드
+* `ver` String - Electron의 버전.
+* `platform` String - e.g. 'win32'.
+* `process_type` String - e.g. 'renderer'.
+* `guid` String - e.g. '5e1286fc-da97-479e-918b-6bfb0c3d1c72'.
+* `_version` String - `package.json`내의 `version` 필드.
 * `_productName` String - Crash Reporter의 `options` 객체에서 정의한 제품명.
 * `prod` String - 기본 제품의 이름. 이 경우 Electron으로 표시됩니다.
 * `_companyName` String - Crash Reporter의 `options` 객체에서 정의한 회사명.
-* `upload_file_minidump` File - 크래시 리포트 파일
+* `upload_file_minidump` File - `minidump` 형식의 크래시 리포트 파일.
 * Crash Reporter의 `options` 객체에서 정의한 `extra` 객체의 속성들.
