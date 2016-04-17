@@ -51,8 +51,13 @@ gulp.task('copy', ['copy-tmp'], function() {
   return del([settings.tmp + '/**'], {force: true});
 });
 
+// Domain
+gulp.task('domain', function() {
+  return gulp.src('CNAME').pipe(gulp.dest('./_book/'));
+});
+
 //Deploy
-gulp.task('deploy', function() {
+gulp.task('deploy', ['domain'], function() {
   return gulp.src('./_book/**/*')
     .pipe(ghPages());
 });
