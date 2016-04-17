@@ -53,7 +53,7 @@
         data-chapter-title="Diferencias Técnicas con NW.js (anteriormente conocido como node-webkit)"
         data-filepath="development/atom-shell-vs-node-webkit.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:33 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:14 GMT+0800 (CST)"
         data-innerlanguage="es">
     
 
@@ -623,7 +623,7 @@
 <p>Con el fin de evitar la complejidad de la construcci&#xF3;n de todo Chromium, Electron utiliza <code>libchromiumcontent</code> para acceder a al contenido  Chromium&apos;s API. <code>libchromiumcontent</code> es solo una liberia compartida que incluye el m&#xF3;dulo de contenido de Chromium y todas sus dependencias. Los usuarios no necesitan una m&#xE1;quina potente para construir con Electron.</p>
 <p><strong>3.Integraci&#xF3;n de Node</strong></p>
 <p>In NW.js, the Node integration in web pages requires patching Chromium to work, while in Electron we chose a different way to integrate the libuv loop with each platform&apos;s message loop to avoid hacking Chromium. See the node_bindings code for how that was done.</p>
-<p>En NW.js, la integraci&#xF3;n de Node en las p&#xE1;ginas web requiere parchear Chromium para que funcione, mientras que en Electron elegimos una manera diferente para integrar el cilco libuv con cada ciclo de mensaje de las plataformas para evitar el hacking en Chromium. Ver el c&#xF3;digo <a href="https://github.com/atom/electron/tree/master/atom/common" target="_blank"><code>node_bindings</code></a> de c&#xF3;mo se hizo.</p>
+<p>En NW.js, la integraci&#xF3;n de Node en las p&#xE1;ginas web requiere parchear Chromium para que funcione, mientras que en Electron elegimos una manera diferente para integrar el cilco libuv con cada ciclo de mensaje de las plataformas para evitar el hacking en Chromium. Ver el c&#xF3;digo <a href="https://github.com/electron/electron/tree/master/atom/common" target="_blank"><code>node_bindings</code></a> de c&#xF3;mo se hizo.</p>
 <p><strong>4. Multi-contexto</strong></p>
 <p>Si usted es un usuario experimentado NW.js, usted debe estar familiarizado con el concepto de contexto Node y el contexto web. Estos conceptos fueron inventados debido a la forma c&#xF3;mo se implement&#xF3; NW.js.</p>
 <p>Mediante el uso de la caracter&#xED;stica <a href="http://strongloop.com/strongblog/whats-new-node-js-v0-12-multiple-context-execution/" target="_blank">multi-contexto</a> de Node, Electron no introduce un nuevo contexto JavaScript en p&#xE1;ginas web.Resultados de b&#xFA;squeda</p>
@@ -668,13 +668,9 @@
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

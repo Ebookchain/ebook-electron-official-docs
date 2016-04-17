@@ -53,7 +53,7 @@
         data-chapter-title="Using Native Node Modules"
         data-filepath="tutorial/using-native-node-modules.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -934,8 +934,8 @@ the location of Electron&apos;s headers when building native modules.</p>
 To make sure the module you&apos;re interested in will work with Electron, you should
 check if it supports the internal Node version used by Electron.
 You can check what version of Node is used in Electron by looking it up in
-the <a href="https://github.com/atom/electron/releases" target="_blank">releases</a> page or by using
-<code>process.version</code> (see <a href="https://github.com/atom/electron/blob/master/docs/tutorial/quick-start.md" target="_blank">Quick Start</a>
+the <a href="https://github.com/electron/electron/releases" target="_blank">releases</a> page or by using
+<code>process.version</code> (see <a href="https://github.com/electron/electron/blob/master/docs/tutorial/quick-start.md" target="_blank">Quick Start</a>
 for example).</p>
 <p>Consider using <a href="https://github.com/nodejs/nan/" target="_blank">NAN</a> for your own modules, since
 it makes it easier to support multiple versions of Node. It&apos;s also helpful for
@@ -1014,13 +1014,9 @@ where to download the headers. The <code>--arch=x64</code> says the module is bu
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

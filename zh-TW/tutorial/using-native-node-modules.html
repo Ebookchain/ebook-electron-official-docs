@@ -53,7 +53,7 @@
         data-chapter-title="使用原生 node 模組"
         data-filepath="tutorial/using-native-node-modules.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:35 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:17 GMT+0800 (CST)"
         data-innerlanguage="zh-TW">
     
 
@@ -605,7 +605,7 @@
                         <h1 id="&#x4F7F;&#x7528;&#x539F;&#x751F;-node-&#x6A21;&#x7D44;">&#x4F7F;&#x7528;&#x539F;&#x751F; node &#x6A21;&#x7D44;</h1>
 <p>&#x539F;&#x751F;&#x7684; Node &#x6A21;&#x7D44; Electron &#x90FD;&#x6709;&#x652F;&#x63F4;&#xFF0C;&#x4F46;&#x81EA;&#x5F9E; Electron &#x4F7F;&#x7528;&#x4E86;&#x8207; Node &#x5B98;&#x65B9;&#x4E0D;&#x540C;&#x7684; V8 &#x7248;&#x672C;&#x5F8C;&#xFF0C;&#x7576;&#x4F60;&#x8981;&#x5EFA;&#x7F6E;&#x539F;&#x751F;&#x6A21;&#x7D44;&#x7684;&#x6642;&#x5019;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x624B;&#x52D5;&#x6307;&#x5B9A; Electron &#x6A19;&#x982D;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
 <h2 id="&#x539F;&#x751F;-node-&#x6A21;&#x7D44;&#x7684;&#x76F8;&#x5BB9;&#x6027;">&#x539F;&#x751F; Node &#x6A21;&#x7D44;&#x7684;&#x76F8;&#x5BB9;&#x6027;</h2>
-<p>&#x539F;&#x751F;&#x6A21;&#x7D44;&#x53EF;&#x80FD;&#x5728; Node &#x958B;&#x59CB;&#x4F7F;&#x7528;&#x4E00;&#x500B;&#x65B0;&#x7248;&#x672C;&#x7684; V8 &#x6642;&#x6BC0;&#x640D;&#xFF0C;&#x70BA;&#x4E86;&#x78BA;&#x4FDD;&#x4F60;&#x60F3;&#x8981;&#x7528;&#x7684;&#x6A21;&#x7D44;&#x80FD;&#x6B63;&#x78BA;&#x8207; Electron &#x4E00;&#x8D77;&#x904B;&#x884C;&#xFF0C;&#x4F60;&#x61C9;&#x8A72;&#x6AA2;&#x67E5;&#x662F;&#x5426;&#x652F;&#x63F4; Electron &#x5167;&#x90E8; Node &#x7248;&#x672C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x770B; <a href="https://github.com/atom/electron/releases" target="_blank">releases</a> &#x6216;&#x662F;&#x4F7F;&#x7528; <code>process.version</code> (&#x7BC4;&#x4F8B;&#x8ACB;&#x898B; <a href="https://github.com/atom/electron/blob/master/docs/tutorial/quick-start.md" target="_blank">Quick Start</a>) &#x4F86;&#x6AA2;&#x67E5;&#x54EA;&#x500B; Node &#x7248;&#x672C;&#x662F;&#x73FE;&#x5728;&#x7684; Electron &#x4F7F;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x539F;&#x751F;&#x6A21;&#x7D44;&#x53EF;&#x80FD;&#x5728; Node &#x958B;&#x59CB;&#x4F7F;&#x7528;&#x4E00;&#x500B;&#x65B0;&#x7248;&#x672C;&#x7684; V8 &#x6642;&#x6BC0;&#x640D;&#xFF0C;&#x70BA;&#x4E86;&#x78BA;&#x4FDD;&#x4F60;&#x60F3;&#x8981;&#x7528;&#x7684;&#x6A21;&#x7D44;&#x80FD;&#x6B63;&#x78BA;&#x8207; Electron &#x4E00;&#x8D77;&#x904B;&#x884C;&#xFF0C;&#x4F60;&#x61C9;&#x8A72;&#x6AA2;&#x67E5;&#x662F;&#x5426;&#x652F;&#x63F4; Electron &#x5167;&#x90E8; Node &#x7248;&#x672C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x770B; <a href="https://github.com/electron/electron/releases" target="_blank">releases</a> &#x6216;&#x662F;&#x4F7F;&#x7528; <code>process.version</code> (&#x7BC4;&#x4F8B;&#x8ACB;&#x898B; <a href="https://github.com/electron/electron/blob/master/docs/tutorial/quick-start.md" target="_blank">Quick Start</a>) &#x4F86;&#x6AA2;&#x67E5;&#x54EA;&#x500B; Node &#x7248;&#x672C;&#x662F;&#x73FE;&#x5728;&#x7684; Electron &#x4F7F;&#x7528;&#x7684;&#x3002;</p>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x8003;&#x616E;&#x7D66;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x6A21;&#x7D44;&#x4F7F;&#x7528; <a href="https://github.com/nodejs/nan/" target="_blank">NAN</a>&#xFF0C;&#x56E0;&#x70BA;&#x5B83;&#x53EF;&#x4EE5;&#x8F03;&#x8F15;&#x6613;&#x7684;&#x652F;&#x63F4;&#x591A;&#x7A2E;&#x7248;&#x672C;&#x7684; Node&#xFF0C;&#x5B83;&#x5C0D;&#x65BC;&#x79FB;&#x690D;&#x820A;&#x7684;&#x6A21;&#x7D44;&#x5230;&#x65B0;&#x7248;&#x672C;&#x7684; Node &#x4EE5;&#x4FBF;&#x8207; Electron &#x4E00;&#x8D77;&#x904B;&#x4F5C;&#x4E5F;&#x662F;&#x5F88;&#x6709;&#x7528;&#x7684;&#x3002;</p>
 <h2 id="&#x5982;&#x4F55;&#x5B89;&#x88DD;&#x539F;&#x751F;&#x6A21;&#x7D44;">&#x5982;&#x4F55;&#x5B89;&#x88DD;&#x539F;&#x751F;&#x6A21;&#x7D44;</h2>
 <p>&#x4E09;&#x7A2E;&#x5B89;&#x88DD;&#x539F;&#x751F;&#x6A21;&#x7D44;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
@@ -674,13 +674,9 @@ $ HOME=~/.electron-gyp node-gyp rebuild --target=<span class="hljs-number">0.29<
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

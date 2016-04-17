@@ -53,7 +53,7 @@
         data-chapter-title="BrowserWindow"
         data-filepath="api/browser-window.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -1002,8 +1002,7 @@ key is pressed. Default is <code>false</code>.</li>
 than screen. Default is <code>false</code>.</li>
 <li><code>backgroundColor</code> String - Window&apos;s background color as Hexadecimal value,
 like <code>#66CD00</code> or <code>#FFF</code> or <code>#80FFFFFF</code> (alpha is supported). Default is
-<code>#000</code> (black) for Linux and Windows, <code>#FFF</code> for Mac (or clear if
-transparent).</li>
+<code>#FFF</code> (white).</li>
 <li><code>hasShadow</code> Boolean - Whether window should have a shadow. This is only
 implemented on OS X. Default is <code>true</code>.</li>
 <li><code>darkTheme</code> Boolean - Forces using dark theme for the window, only works on
@@ -1105,6 +1104,8 @@ function.</li>
 <li><code>defaultMonospaceFontSize</code> Integer - Defaults to <code>13</code>.</li>
 <li><code>minimumFontSize</code> Integer - Defaults to <code>0</code>.</li>
 <li><code>defaultEncoding</code> String - Defaults to <code>ISO-8859-1</code>.</li>
+<li><code>backgroundThrottling</code> Boolean - Whether to throttle animations and timers
+when the page becomes background. Defaults to <code>true</code>.</li>
 </ul>
 <h2 id="events">Events</h2>
 <p>The <code>BrowserWindow</code> object emits the following events:</p>
@@ -1178,9 +1179,16 @@ remove the reference to the window and avoid using it anymore.</p>
 <h3 id="event-leavehtmlfullscreen">Event: &apos;leave-html-full-screen&apos;</h3>
 <p>Emitted when the window leaves full screen state triggered by html api.</p>
 <h3 id="event-appcommand-windows">Event: &apos;app-command&apos; <em>Windows</em></h3>
+<p>Returns:</p>
+<ul>
+<li><code>event</code> Event</li>
+<li><code>command</code> String</li>
+</ul>
 <p>Emitted when an <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms646275(v=vs.85" target="_blank">App Command</a>.aspx)
 is invoked. These are typically related to keyboard media keys or browser
 commands, as well as the &quot;Back&quot; button built into some mice on Windows.</p>
+<p>Commands are lowercased with underscores replaced with hyphens and the <code>APPCOMMAND_</code> prefix stripped off.
+e.g. <code>APPCOMMAND_BROWSER_BACKWARD</code> is emitted as <code>browser-backward</code>.</p>
 <pre><code class="lang-js">someWindow.on(<span class="hljs-string">&apos;app-command&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e, cmd</span>) </span>{
   <span class="hljs-comment">// Navigate the window back when the user hits their mouse back button</span>
   <span class="hljs-keyword">if</span> (cmd === <span class="hljs-string">&apos;browser-backward&apos;</span> &amp;&amp; someWindow.webContents.canGoBack()) {
@@ -1192,6 +1200,13 @@ commands, as well as the &quot;Back&quot; button built into some mice on Windows
 <p>Emitted when scroll wheel event phase has begun.</p>
 <h3 id="event-scrolltouchend-os-x">Event: &apos;scroll-touch-end&apos; <em>OS X</em></h3>
 <p>Emitted when scroll wheel event phase has ended.</p>
+<h3 id="event-swipe-os-x">Event: &apos;swipe&apos; <em>OS X</em></h3>
+<p>Returns:</p>
+<ul>
+<li><code>event</code> Event</li>
+<li><code>direction</code> String</li>
+</ul>
+<p>Emitted on 3-finger swipe. Possible directions are <code>up</code>, <code>right</code>, <code>down</code>, <code>left</code>.</p>
 <h2 id="methods">Methods</h2>
 <p>The <code>BrowserWindow</code> object has the following methods:</p>
 <h3 id="browserwindowgetallwindows"><code>BrowserWindow.getAllWindows()</code></h3>
@@ -1655,13 +1670,9 @@ can still bring up the menu bar by pressing the single <code>Alt</code> key.</p>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

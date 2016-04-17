@@ -53,7 +53,7 @@
         data-chapter-title="BrowserWindow"
         data-filepath="api/browser-window.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:28 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:09 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -998,8 +998,7 @@ win.show();
 <li><code>enableLargerThanScreen</code> Boolean - &#xC708;&#xB3C4;&#xC6B0; &#xD06C;&#xAE30;&#xAC00; &#xD654;&#xBA74; &#xD06C;&#xAE30;&#xBCF4;&#xB2E4; &#xD06C;&#xAC8C; &#xC7AC;&#xC870;&#xC815; &#xB420;
 &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>false</code>&#xC785;&#xB2C8;&#xB2E4;.</li>
 <li><code>backgroundColor</code> String - <code>#66CD00</code> &#xC640; <code>#FFF</code>, <code>#80FFFFFF</code> (&#xC54C;&#xD30C; &#xC9C0;&#xC6D0;&#xB428;) &#xAC19;&#xC774;
-16&#xC9C4;&#xC218;&#xB85C; &#xD45C;&#xD604;&#xB41C; &#xC708;&#xB3C4;&#xC6B0;&#xC758; &#xBC30;&#xACBD; &#xC0C9;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; Linux&#xC640; Windows&#xC5D0;&#xC120; <code>#000</code> (&#xAC80;&#xC815;)&#xC774;&#xBA70;,
-Mac&#xC5D0;&#xC120; <code>#FFF</code> (&#xB610;&#xB294;, transparent(&#xD22C;&#xBA85;)&#xC77C; &#xACBD;&#xC6B0; clear(&#xC0C9; &#xC5C6;&#xC74C;)&#xB85C; &#xC124;&#xC815;)</li>
+16&#xC9C4;&#xC218;&#xB85C; &#xD45C;&#xD604;&#xB41C; &#xC708;&#xB3C4;&#xC6B0;&#xC758; &#xBC30;&#xACBD; &#xC0C9;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>#FFF</code> (white).</li>
 <li><code>hasShadow</code> Boolean - &#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xADF8;&#xB9BC;&#xC790;&#xB97C; &#xAC00;&#xC9C8;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC18D;&#xC131;&#xC740;
 OS X&#xC5D0;&#xC11C;&#xB9CC; &#xAD6C;&#xD604;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>true</code>&#xC785;&#xB2C8;&#xB2E4;.</li>
 <li><code>darkTheme</code> Boolean - &#xC124;&#xC815;&#xC5D0; &#xC0C1;&#xAD00; &#xC5C6;&#xC774; &#xBB34;&#xC870;&#xAC74; &#xC5B4;&#xB450;&#xC6B4; &#xC708;&#xB3C4;&#xC6B0; &#xD14C;&#xB9C8;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
@@ -1097,6 +1096,8 @@ JavaScript&#xC640; CSS &#xB610;&#xB294; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC744;
 <li><code>defaultMonospaceFontSize</code> Integer - &#xAE30;&#xBCF8;&#xAC12; <code>13</code>.</li>
 <li><code>minimumFontSize</code> Integer - &#xAE30;&#xBCF8;&#xAC12; <code>0</code>.</li>
 <li><code>defaultEncoding</code> String - &#xAE30;&#xBCF8;&#xAC12; <code>ISO-8859-1</code>.</li>
+<li><code>backgroundThrottling</code> Boolean - &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xBC31;&#xADF8;&#xB77C;&#xC6B4;&#xB4DC; &#xC0C1;&#xD0DC;&#xC5D0; &#xC9C4;&#xC785;&#xD560; &#xB54C; &#xC560;&#xB2C8;&#xBA54;&#xC774;&#xC158;&#xACFC;
+&#xD0C0;&#xC774;&#xBA38;&#xC5D0; &#xC2A4;&#xB85C;&#xD2C0;&#xC744; &#xC801;&#xC6A9;&#xD560;&#xC9C0; &#xC5EC;&#xBD80;&#xC785;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>true</code>&#xC785;&#xB2C8;&#xB2E4;.</li>
 </ul>
 <h2 id="events">Events</h2>
 <p><code>BrowserWindow</code> &#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;:</p>
@@ -1170,10 +1171,18 @@ Electron&#xC5D0;&#xC120; &#xBE48; &#xBB38;&#xC790;&#xC5F4; &#xB610;&#xB294; <cod
 <h3 id="event-leavehtmlfullscreen">Event: &apos;leave-html-full-screen&apos;</h3>
 <p>&#xC708;&#xB3C4;&#xC6B0;&#xAC00; HTML API&#xC5D0; &#xC758;&#xD574; &#xD480; &#xC2A4;&#xD06C;&#xB9B0; &#xBAA8;&#xB4DC;&#xC5D0;&#xC11C; &#xD574;&#xC81C;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-appcommand-windows">Event: &apos;app-command&apos; <em>Windows</em></h3>
+<p>Returns:</p>
+<ul>
+<li><code>event</code> Event</li>
+<li><code>command</code> String</li>
+</ul>
 <p><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms646275(v=vs.85" target="_blank">App Command</a>.aspx)&#xAC00;
 &#xD638;&#xCD9C;&#xB410;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xD0A4;&#xBCF4;&#xB4DC; &#xBBF8;&#xB514;&#xC5B4; &#xD0A4; &#xB610;&#xB294;
 &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xCEE4;&#xB9E8;&#xB4DC;(&#xAE30;&#xBCF8; &#xB3D9;&#xC791; &#xD0A4;)&#xC5D0; &#xAD00;&#xB828;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4; Windows&#xC5D0;&#xC11C; &#xC791;&#xB3D9;&#xD558;&#xB294;
 &#xBA87;&#xBA87; &#xB9C8;&#xC6B0;&#xC2A4;&#xB294; &quot;&#xB4A4;&#xB85C;&#xAC00;&#xAE30;&quot; &#xAC19;&#xC740; &#xB3D9;&#xC791;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBC18;&#xD658;&#xB418;&#xB294; &#xCEE4;&#xB9E8;&#xB4DC;&#xB4E4;&#xC740; &#xBAA8;&#xB450; &#xC18C;&#xBB38;&#xC790;&#xD654;&#xB418;&#xBA70; &#xC5B8;&#xB354;&#xC2A4;&#xCF54;&#xC5B4;(<code>_</code>)&#xB294; &#xD558;&#xC774;&#xD508;(<code>-</code>)&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB418;&#xBA70;
+<code>APPCOMMAND_</code> &#xC811;&#xB450;&#xC5B4;&#xB294; &#xC81C;&#xAC70;&#xB429;&#xB2C8;&#xB2E4;.
+e.g. <code>APPCOMMAND_BROWSER_BACKWARD</code> &#xB294; <code>browser-backward</code>&#xC640; &#xAC19;&#xC774; &#xBC18;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-javascript">someWindow.on(<span class="hljs-string">&apos;app-command&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e, cmd</span>) </span>{
   <span class="hljs-comment">// &#xB9C8;&#xC6B0;&#xC2A4;&#xC758; &#xB4A4;&#xB85C;&#xAC00;&#xAE30; &#xBC84;&#xD2BC;&#xC744; &#xB20C;&#xB800;&#xC744; &#xB54C; &#xB4A4;&#xB85C;&#xAC00;&#xAE30; &#xD0D0;&#xC0C9;&#xC744; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;</span>
   <span class="hljs-keyword">if</span> (cmd === <span class="hljs-string">&apos;browser-backward&apos;</span> &amp;&amp; someWindow.webContents.canGoBack()) {
@@ -1185,6 +1194,14 @@ Electron&#xC5D0;&#xC120; &#xBE48; &#xBB38;&#xC790;&#xC5F4; &#xB610;&#xB294; <cod
 <p>&#xC2A4;&#xD06C;&#xB864; &#xD720; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xB3D9;&#xC791;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD588;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-scrolltouchend-os-x">Event: &apos;scroll-touch-end&apos; <em>OS X</em></h3>
 <p>&#xC2A4;&#xD06C;&#xB864; &#xD720; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xB3D9;&#xC791;&#xC744; &#xBA48;&#xCDC4;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="event-swipe-os-x">Event: &apos;swipe&apos; <em>OS X</em></h3>
+<p>Returns:</p>
+<ul>
+<li><code>event</code> Event</li>
+<li><code>direction</code> String</li>
+</ul>
+<p>3-&#xC190;&#xAC00;&#xB77D; &#xC2A4;&#xC640;&#xC774;&#xD504;&#xAC00; &#xC791;&#xB3D9;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xBC29;&#xD5A5;&#xC740; <code>up</code>, <code>right</code>, <code>down</code>,
+<code>left</code>&#xAC00; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="methods">Methods</h2>
 <p><code>BrowserWindow</code> &#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <h3 id="browserwindowgetallwindows"><code>BrowserWindow.getAllWindows()</code></h3>
@@ -1639,13 +1656,9 @@ Electron&#xC5D0;&#xC120; &#xBE48; &#xBB38;&#xC790;&#xC5F4; &#xB610;&#xB294; <cod
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

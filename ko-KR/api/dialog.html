@@ -53,7 +53,7 @@
         data-chapter-title="dialog"
         data-filepath="api/dialog.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:28 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:09 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -934,6 +934,10 @@
 <span class="hljs-keyword">const</span> dialog = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).dialog;
 <span class="hljs-built_in">console</span>.log(dialog.showOpenDialog({ properties: [ <span class="hljs-string">&apos;openFile&apos;</span>, <span class="hljs-string">&apos;openDirectory&apos;</span>, <span class="hljs-string">&apos;multiSelections&apos;</span> ]}));
 </code></pre>
+<p>&#xB300;&#xD654; &#xC0C1;&#xC790;&#xB294; Electron&#xC758; &#xBA54;&#xC778; &#xC2A4;&#xB808;&#xB4DC;&#xC5D0;&#xC11C; &#xC5F4;&#xB9BD;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB300;&#xD654; &#xC0C1;&#xC790;
+&#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, <code>remote</code>&#xB97C; &#xD1B5;&#xD574; &#xC811;&#xADFC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xACE0;&#xB824;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> dialog = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote.dialog;
+</code></pre>
 <p><strong>OS X &#xCC38;&#xACE0;</strong>: &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xC2DC;&#xD2B8;&#xCC98;&#xB7FC; &#xBCF4;&#xC5EC;&#xC9C0;&#xAC8C; &#xD558;&#xB824;&#xBA74; <code>browserWindow</code> &#xC778;&#xC790;&#xC5D0;
 <code>BrowserWindow</code> &#xAC1D;&#xCCB4;&#xC758; &#xCC38;&#xC870;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="methods">Methods</h2>
@@ -1074,13 +1078,9 @@ OS X &#xB610;&#xB294; Windows&#xC5D0;&#xC11C; &quot;&#xD655;&#xC778;&quot;, &quo
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

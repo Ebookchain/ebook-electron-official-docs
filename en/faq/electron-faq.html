@@ -53,7 +53,7 @@
         data-chapter-title="Electron FAQ"
         data-filepath="faq/electron-faq.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -929,7 +929,7 @@
 <h2 id="when-will-electron-upgrade-to-latest-chrome">When will Electron upgrade to latest Chrome?</h2>
 <p>The Chrome version of Electron is usually bumped within one or two weeks after
 a new stable Chrome version gets released.</p>
-<p>Also we only use stable channel of Chrome, if an important fix is in beta or dev
+<p>Also we only use stable channel of Chrome. If an important fix is in beta or dev
 channel, we will back-port it.</p>
 <h2 id="when-will-electron-upgrade-to-latest-nodejs">When will Electron upgrade to latest Node.js?</h2>
 <p>When a new version of Node.js gets released, we usually wait for about a month
@@ -943,7 +943,7 @@ new Node.js version is usually already in Electron.</p>
 use HTML5 APIs which are already available in browsers. Good candidates are
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage" target="_blank">Storage API</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank"><code>localStorage</code></a>,
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage" target="_blank"><code>sessionStorage</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank">IndexedDB</a>.</p>
-<p>Or you can use the IPC system, which are specific to Electron, to store objects
+<p>Or you can use the IPC system, which is specific to Electron, to store objects
 in the main process as a global variable, and then to access them from the
 renderers through the <code>remote</code> module:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In the main process.</span>
@@ -960,8 +960,7 @@ global.sharedObject = {
 <h2 id="my-apps-windowtray-disappeared-after-a-few-minutes">My app&apos;s window/tray disappeared after a few minutes.</h2>
 <p>This happens when the variable which is used to store the window/tray gets
 garbage collected.</p>
-<p>It is recommended to have a reading of following articles you encountered this
-problem:</p>
+<p>If you encounter this problem, the following articles may prove helpful:</p>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management" target="_blank">Memory Management</a></li>
 <li><a href="https://msdn.microsoft.com/library/bzt2dkta(v=vs.94).aspx" target="_blank">Variable Scope</a></li>
@@ -980,8 +979,8 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 </code></pre>
 <h2 id="i-can-not-use-jqueryrequirejsmeteorangularjs-in-electron">I can not use jQuery/RequireJS/Meteor/AngularJS in Electron.</h2>
 <p>Due to the Node.js integration of Electron, there are some extra symbols
-inserted into DOM, like <code>module</code>, <code>exports</code>, <code>require</code>. This causes troubles for
-some libraries since they want to insert the symbols with same names.</p>
+inserted into the DOM like <code>module</code>, <code>exports</code>, <code>require</code>. This causes problems for
+some libraries since they want to insert the symbols with the same names.</p>
 <p>To solve this, you can turn off node integration in Electron:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In the main process.</span>
 <span class="hljs-keyword">var</span> mainWindow = <span class="hljs-keyword">new</span> BrowserWindow({
@@ -1020,7 +1019,7 @@ either remove the npm <code>electron</code> module, or rename it.</p>
 npm uninstall -g electron
 </code></pre>
 <p>However if your are using the built-in module but still getting this error, it
-is very likely you are using the module in wrong process. For example
+is very likely you are using the module in the wrong process. For example
 <code>electron.app</code> can only be used in the main process, while <code>electron.webFrame</code>
 is only available in renderer processes.</p>
 
@@ -1064,13 +1063,9 @@ is only available in renderer processes.</p>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

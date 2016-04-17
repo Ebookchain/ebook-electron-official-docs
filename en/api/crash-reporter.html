@@ -53,7 +53,7 @@
         data-chapter-title="crashReporter"
         data-filepath="api/crash-reporter.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -938,6 +938,12 @@ crashReporter.start({
   autoSubmit: <span class="hljs-literal">true</span>
 });
 </code></pre>
+<p>For setting up a server to accept and process crash reports, you can use
+following projects:</p>
+<ul>
+<li><a href="https://github.com/mozilla/socorro" target="_blank">socorro</a></li>
+<li><a href="https://github.com/atom/mini-breakpad-server" target="_blank">mini-breakpad-server</a></li>
+</ul>
 <h2 id="methods">Methods</h2>
 <p>The <code>crash-reporter</code> module has the following methods:</p>
 <h3 id="crashreporterstartoptions"><code>crashReporter.start(options)</code></h3>
@@ -969,7 +975,7 @@ sent or the crash reporter has not been started, <code>null</code> is returned.<
 <p>Returns all uploaded crash reports. Each report contains the date and uploaded
 ID.</p>
 <h2 id="crashreporter-payload">crash-reporter Payload</h2>
-<p>The crash reporter will send the following data to the <code>submitURL</code> as <code>POST</code>:</p>
+<p>The crash reporter will send the following data to the <code>submitURL</code> as a <code>multipart/form-data</code> <code>POST</code>:</p>
 <ul>
 <li><code>ver</code> String - The version of Electron.</li>
 <li><code>platform</code> String - e.g. &apos;win32&apos;.</li>
@@ -981,7 +987,7 @@ object.</li>
 <li><code>prod</code> String - Name of the underlying product. In this case Electron.</li>
 <li><code>_companyName</code> String - The company name in the <code>crashReporter</code> <code>options</code>
 object.</li>
-<li><code>upload_file_minidump</code> File - The crash report as file.</li>
+<li><code>upload_file_minidump</code> File - The crash report in the format of <code>minidump</code>.</li>
 <li>All level one properties of the <code>extra</code> object in the <code>crashReporter</code>.
 <code>options</code> object</li>
 </ul>
@@ -1026,13 +1032,9 @@ object.</li>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

@@ -53,7 +53,7 @@
         data-chapter-title="Coding Style"
         data-filepath="development/coding-style.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -942,8 +942,7 @@ automatically release their memory when going out of scope), logging mechanisms
 etc.</p>
 <h2 id="javascript">JavaScript</h2>
 <ul>
-<li>Use a two space indent, no hard tabs.</li>
-<li>End lines with a <code>;</code></li>
+<li>Write <a href="http://npm.im/standard" target="_blank">standard</a> JavaScript style.</li>
 <li>Files should <strong>NOT</strong> end with new line, because we want to match Google&apos;s
 styles.</li>
 <li>File names should be concatenated with <code>-</code> instead of <code>_</code>, e.g.
@@ -962,11 +961,18 @@ instead of string concatenation using <code>+</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="api-names">API Names</h2>
-<p>When creating a new API, we should prefer getters and setters instead of
+<h2 id="naming-things">Naming Things</h2>
+<p>Electron APIs uses the same capitalization scheme as Node.js:</p>
+<ul>
+<li>When the module itself is a class like <code>BrowserWindow</code>, use <code>CamelCase</code>.</li>
+<li>When the module is a set of APIs, like <code>globalShortcut</code>, use <code>mixedCase</code>.</li>
+<li>When the API is a property of object, and it is complex enough to be in a separate chapter like <code>win.webContents</code>, use <code>mixedCase</code>.</li>
+<li>For other non-module APIs, use natural titles, like <code>&lt;webview&gt; Tag</code> or <code>Process Object</code>.</li>
+</ul>
+<p>When creating a new API, it is preferred to use getters and setters instead of
 jQuery&apos;s one-function style. For example, <code>.getText()</code> and <code>.setText(text)</code>
 are preferred to <code>.text([text])</code>. There is a
-<a href="https://github.com/atom/electron/issues/46" target="_blank">discussion</a> on this.</p>
+<a href="https://github.com/electron/electron/issues/46" target="_blank">discussion</a> on this.</p>
 
                     
                     </section>
@@ -1008,13 +1014,9 @@ are preferred to <code>.text([text])</code>. There is a
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

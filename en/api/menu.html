@@ -53,7 +53,7 @@
         data-chapter-title="Menu"
         data-filepath="api/menu.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -1148,7 +1148,9 @@ for more information on OS X&apos;s native actions.</p>
 <a href="menu-item.html">MenuItem</a>. The usage can be referenced above.</p>
 <p>You can also attach other fields to the element of the <code>template</code> and they
 will become properties of the constructed menu items.</p>
-<h3 id="menupopupbrowserwindow-x-y-positioningitem"><code>Menu.popup([browserWindow, x, y, positioningItem])</code></h3>
+<h2 id="instance-methods">Instance Methods</h2>
+<p>The <code>menu</code> object has the following instance methods:</p>
+<h3 id="menupopupbrowserwindow-x-y-positioningitem"><code>menu.popup([browserWindow, x, y, positioningItem])</code></h3>
 <ul>
 <li><code>browserWindow</code> BrowserWindow (optional) - Default is <code>null</code>.</li>
 <li><code>x</code> Number (optional) - Default is -1.</li>
@@ -1160,18 +1162,20 @@ be positioned under the mouse cursor at the specified coordinates. Default is
 <p>Pops up this menu as a context menu in the <code>browserWindow</code>. You can optionally
 provide a <code>x, y</code> coordinate to place the menu at, otherwise it will be placed
 at the current mouse cursor position.</p>
-<h3 id="menuappendmenuitem"><code>Menu.append(menuItem)</code></h3>
+<h3 id="menuappendmenuitem"><code>menu.append(menuItem)</code></h3>
 <ul>
 <li><code>menuItem</code> MenuItem</li>
 </ul>
 <p>Appends the <code>menuItem</code> to the menu.</p>
-<h3 id="menuinsertpos-menuitem"><code>Menu.insert(pos, menuItem)</code></h3>
+<h3 id="menuinsertpos-menuitem"><code>menu.insert(pos, menuItem)</code></h3>
 <ul>
 <li><code>pos</code> Integer</li>
 <li><code>menuItem</code> MenuItem</li>
 </ul>
 <p>Inserts the <code>menuItem</code> to the <code>pos</code> position of the menu.</p>
-<h3 id="menuitems"><code>Menu.items()</code></h3>
+<h2 id="instance-properties">Instance Properties</h2>
+<p><code>menu</code> objects also have the following properties:</p>
+<h3 id="menuitems"><code>menu.items</code></h3>
 <p>Get an array containing the menu&apos;s items.</p>
 <h2 id="notes-on-os-x-application-menu">Notes on OS X Application Menu</h2>
 <p>OS X has a completely different style of application menu from Windows and
@@ -1196,7 +1200,7 @@ no matter what label you set. To change it you have to change your app&apos;s na
 by modifying your app bundle&apos;s <code>Info.plist</code> file. See <a href="https://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html" target="_blank">About Information
 Property List Files</a> for more information.</p>
 <h2 id="setting-menu-for-specific-browser-window-linux-windows">Setting Menu for Specific Browser Window (<em>Linux</em> <em>Windows</em>)</h2>
-<p>The [<code>setMenu</code> method][setMenu] of browser windows can set the menu of certain
+<p>The <a href="https://github.com/electron/electron/blob/master/docs/api/browser-window.md#winsetmenumenu-linux-windows" target="_blank"><code>setMenu</code> method</a> of browser windows can set the menu of certain
 browser window.</p>
 <h2 id="menu-item-position">Menu Item Position</h2>
 <p>You can make use of <code>position</code> and <code>id</code> to control how the item will be placed
@@ -1254,9 +1258,7 @@ the first item.</p>
 - 1
 - 2
 - 3
-</code></pre><p>[setMenu]:
-<a href="https://github.com/atom/electron/blob/master/docs/api/browser-window.md#winsetmenumenu-linux-windows" target="_blank">https://github.com/atom/electron/blob/master/docs/api/browser-window.md#winsetmenumenu-linux-windows</a></p>
-
+</code></pre>
                     
                     </section>
                 
@@ -1297,13 +1299,9 @@ the first item.</p>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

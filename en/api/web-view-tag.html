@@ -53,7 +53,7 @@
         data-chapter-title="`&lt;webview&gt;` Tag"
         data-filepath="api/web-view-tag.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -939,8 +939,13 @@ safe from the embedded content.</p>
 page (this is the app page that will display the guest content). In its simplest
 form, the <code>webview</code> tag includes the <code>src</code> of the web page and css styles that
 control the appearance of the <code>webview</code> container:</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;foo&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.github.com/&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;display:inline-block; width:640px; height:480px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;foo&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.github.com/&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;display:inline-flex; width:640px; height:480px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
 </code></pre>
+<p>Please note that the <code>webview</code> tag&apos;s style uses <code>display:flex;</code> internally to 
+ensure the child <code>object</code> element fills the full height and width of its <code>webview</code> 
+container when used with traditional and flexbox layouts (since v0.36.11). Please 
+do not overwrite the default <code>display:flex;</code> CSS property, unless specifying 
+<code>display:inline-flex;</code> for inline layout.</p>
 <p>If you want to control the guest content in any way, you can write JavaScript
 that listens for <code>webview</code> events and responds to those events using the
 <code>webview</code> methods. Here&apos;s sample code with two event listeners: one that listens
@@ -985,6 +990,8 @@ than the minimum values or greater than the maximum.</p>
 </code></pre>
 <p>If &quot;on&quot;, the guest page in <code>webview</code> will have node integration and can use node
 APIs like <code>require</code> and <code>process</code> to access low level system resources.</p>
+<p><strong>Note:</strong> Node integration will always be disabled in the <code>webview</code> if it is
+disabled on the parent window.</p>
 <h3 id="plugins"><code>plugins</code></h3>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.github.com/&quot;</span> <span class="hljs-attribute">plugins</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
 </code></pre>
@@ -1274,6 +1281,7 @@ cancelled, e.g. <code>window.stop()</code> is invoked.</p>
 <li><code>requestMethod</code> String</li>
 <li><code>referrer</code> String</li>
 <li><code>headers</code> Object</li>
+<li><code>resourceType</code> String</li>
 </ul>
 <p>Fired when details regarding a requested resource is available.
 <code>status</code> indicates socket connection to download the resource.</p>
@@ -1354,7 +1362,10 @@ without regard for log level or other properties.</p>
 <p>Fired when the guest page attempts to open a new browser window.</p>
 <p>The following example code opens the new url in system&apos;s default browser.</p>
 <pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;new-window&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-  <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).shell.openExternal(e.url);
+  <span class="hljs-keyword">var</span> protocol = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;url&apos;</span>).parse(e.url).protocol;
+  <span class="hljs-keyword">if</span> (protocol === <span class="hljs-string">&apos;http:&apos;</span> || protocol === <span class="hljs-string">&apos;https:&apos;</span>) {
+    <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).shell.openExternal(e.url);
+  }
 });
 </code></pre>
 <h3 id="event-willnavigate">Event: &apos;will-navigate&apos;</h3>
@@ -1486,13 +1497,9 @@ ipcRenderer.on(<span class="hljs-string">&apos;ping&apos;</span>, <span class="h
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

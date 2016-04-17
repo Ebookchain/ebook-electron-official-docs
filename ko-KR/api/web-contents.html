@@ -53,7 +53,7 @@
         data-chapter-title="webContents"
         data-filepath="api/web-contents.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:28 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:09 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -949,6 +949,7 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 <li><code>errorCode</code> Integer</li>
 <li><code>errorDescription</code> String</li>
 <li><code>validatedURL</code> String</li>
+<li><code>isMainFrame</code> Boolean</li>
 </ul>
 <p>&#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; <code>did-finish-load</code>&#xC640; &#xBE44;&#xC2B7;&#xD558;&#xB098;, &#xB85C;&#xB4DC;&#xAC00; &#xC2E4;&#xD328;&#xD588;&#xAC70;&#xB098; &#xCDE8;&#xC18C;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.
 &#xC608;&#xB97C; &#xB4E4;&#xBA74; <code>window.stop()</code>&#xC774; &#xC2E4;&#xD589;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xB294; &#xC804;&#xCCB4; &#xC5D0;&#xB7EC; &#xCF54;&#xB4DC;&#xC758;
@@ -976,6 +977,7 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 <li><code>requestMethod</code> String</li>
 <li><code>referrer</code> String</li>
 <li><code>headers</code> Object</li>
+<li><code>resourceType</code> String</li>
 </ul>
 <p>&#xC694;&#xCCAD;&#xD55C; &#xB9AC;&#xC18C;&#xC2A4;&#xC5D0; &#xAD00;&#xB828;&#xB41C; &#xC790;&#xC138;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.
 <code>status</code>&#xB294; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xC18C;&#xCF13; &#xC5F0;&#xACB0;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
@@ -1129,6 +1131,7 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 <li><code>result</code> Object<ul>
 <li><code>requestId</code> Integer</li>
 <li><code>finalUpdate</code> Boolean - &#xB354; &#xB9CE;&#xC740; &#xC751;&#xB2F5;&#xC774; &#xB530;&#xB974;&#xB294; &#xACBD;&#xC6B0;&#xB97C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>activeMatchOrdinal</code> Integer (optional) - &#xD65C;&#xC131;&#xD654; &#xC77C;&#xCE58;&#xC758; &#xC704;&#xCE58;.</li>
 <li><code>matches</code> Integer (optional) - &#xC77C;&#xCE58;&#xD558;&#xB294; &#xAC1C;&#xC218;.</li>
 <li><code>selectionArea</code> Object (optional) - &#xCCAB; &#xC77C;&#xCE58; &#xBD80;&#xC704;&#xC758; &#xC88C;&#xD45C;.</li>
 </ul>
@@ -1707,13 +1710,9 @@ win.webContents.debugger.sendCommand(<span class="hljs-string">&quot;Network.ena
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

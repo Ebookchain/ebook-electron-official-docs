@@ -53,7 +53,7 @@
         data-chapter-title="MenuItem"
         data-filepath="api/menu-item.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -936,7 +936,7 @@
 <li><code>options</code> Object<ul>
 <li><code>click</code> Function - Will be called with <code>click(menuItem, browserWindow)</code> when
  the menu item is clicked</li>
-<li><code>role</code> String - Define the action of the menu item, when specified the
+<li><code>role</code> String - Define the action of the menu item; when specified the
  <code>click</code> property will be ignored</li>
 <li><code>type</code> String - Can be <code>normal</code>, <code>separator</code>, <code>submenu</code>, <code>checkbox</code> or
  <code>radio</code></li>
@@ -944,13 +944,14 @@
 <li><code>sublabel</code> String</li>
 <li><code>accelerator</code> <a href="accelerator.md">Accelerator</a></li>
 <li><code>icon</code> <a href="native-image.html">NativeImage</a></li>
-<li><code>enabled</code> Boolean</li>
-<li><code>visible</code> Boolean</li>
-<li><code>checked</code> Boolean</li>
-<li><code>submenu</code> Menu - Should be specified for <code>submenu</code> type menu item, when
- it&apos;s specified the <code>type: &apos;submenu&apos;</code> can be omitted for the menu item.
- If the value is not a <code>Menu</code> then it will be automatically converted to one
- using <code>Menu.buildFromTemplate</code>.</li>
+<li><code>enabled</code> Boolean - If false, the menu item will be greyed out and unclickable.</li>
+<li><code>visible</code> Boolean - If false, the menu item will be entirely hidden.</li>
+<li><code>checked</code> Boolean - Should only be specified for <code>checkbox</code> or <code>radio</code> type 
+  menu items.</li>
+<li><code>submenu</code> Menu - Should be specified for <code>submenu</code> type menu items. If
+ <code>submenu</code> is specified, the <code>type: &apos;submenu&apos;</code> can be omitted. If the value
+ is not a <code>Menu</code> then it will be automatically converted to one using
+ <code>Menu.buildFromTemplate</code>.</li>
 <li><code>id</code> String - Unique within a single menu. If defined then it can be used
  as a reference to this item by the position attribute.</li>
 <li><code>position</code> String - This field allows fine-grained definition of the
@@ -958,9 +959,9 @@
 </ul>
 </li>
 </ul>
-<p>When creating menu items, it is recommended to specify <code>role</code> instead of
-manually implementing the behavior if there is matching action, so menu can have
-best native experience.</p>
+<p>It is best to specify <code>role</code> for any menu item that matches a standard role,
+rather than trying to manually implement the behavior in a <code>click</code> function.
+The built-in <code>role</code> behavior will give the best native experience.</p>
 <p>The <code>role</code> property can have following values:</p>
 <ul>
 <li><code>undo</code></li>
@@ -983,6 +984,19 @@ best native experience.</p>
 <li><code>help</code> - The submenu is a &quot;Help&quot; menu</li>
 <li><code>services</code> - The submenu is a &quot;Services&quot; menu</li>
 </ul>
+<h2 id="instance-properties">Instance Properties</h2>
+<p>The following properties (and no others) can be updated on an existing <code>MenuItem</code>:</p>
+<ul>
+<li><code>enabled</code> Boolean</li>
+<li><code>visible</code> Boolean</li>
+<li><code>checked</code> Boolean</li>
+</ul>
+<p>Their meanings are as described above.</p>
+<p>A <code>checkbox</code> menu item will toggle its <code>checked</code> property on and off when
+selected. You can add a <code>click</code> function to do additional work.</p>
+<p>A <code>radio</code> menu item will turn on its <code>checked</code> property when clicked, and
+will turn off that property for all adjacent items in the same menu. Again,
+you can add a <code>click</code> function for additional behavior.</p>
 
                     
                     </section>
@@ -1024,13 +1038,9 @@ best native experience.</p>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

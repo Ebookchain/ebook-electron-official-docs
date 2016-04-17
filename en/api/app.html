@@ -53,7 +53,7 @@
         data-chapter-title="app"
         data-filepath="api/app.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -1188,8 +1188,16 @@ executable is returned.</p>
 to the npm modules spec. You should usually also specify a <code>productName</code>
 field, which is your application&apos;s full capitalized name, and which will be
 preferred over <code>name</code> by Electron.</p>
+<h3 id="appsetnamename"><code>app.setName(name)</code></h3>
+<ul>
+<li><code>name</code> String</li>
+</ul>
+<p>Overrides the current application&apos;s name.</p>
 <h3 id="appgetlocale"><code>app.getLocale()</code></h3>
 <p>Returns the current application locale.</p>
+<p><strong>Note:</strong> When distributing your packaged app, you have to also ship the
+<code>locales</code> folder.</p>
+<p><strong>Note:</strong> On Windows you have to call it after the <code>ready</code> events gets emitted.</p>
 <h3 id="appaddrecentdocumentpath-os-x-windows"><code>app.addRecentDocument(path)</code> <em>OS X</em> <em>Windows</em></h3>
 <ul>
 <li><code>path</code> String</li>
@@ -1199,6 +1207,30 @@ preferred over <code>name</code> by Electron.</p>
 bar, and on OS X you can visit it from dock menu.</p>
 <h3 id="appclearrecentdocuments-os-x-windows"><code>app.clearRecentDocuments()</code> <em>OS X</em> <em>Windows</em></h3>
 <p>Clears the recent documents list.</p>
+<h3 id="appsetasdefaultprotocolclientprotocol-os-x-windows"><code>app.setAsDefaultProtocolClient(protocol)</code> <em>OS X</em> <em>Windows</em></h3>
+<ul>
+<li><code>protocol</code> String - The name of your protocol, without <code>://</code>. If you want your
+app to handle <code>electron://</code> links, call this method with <code>electron</code> as the
+parameter.</li>
+</ul>
+<p>This method sets the current executable as the default handler for a protocol
+(aka URI scheme). It allows you to integrate your app deeper into the operating
+system. Once registered, all links with <code>your-protocol://</code> will be openend with
+the current executable. The whole link, including protocol, will be passed to
+your application as a parameter.</p>
+<p><strong>Note:</strong> On OS X, you can only register protocols that have been added to
+your app&apos;s <code>info.plist</code>, which can not be modified at runtime. You can however
+change the file with a simple text editor or script during build time.
+Please refer to <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-102207-TPXREF115" target="_blank">Apple&apos;s documentation</a> for details.</p>
+<p>The API uses the Windows Registry and LSSetDefaultHandlerForURLScheme internally.</p>
+<h3 id="appremoveasdefaultprotocolclientprotocol-windows"><code>app.removeAsDefaultProtocolClient(protocol)</code> <em>Windows</em></h3>
+<ul>
+<li><code>protocol</code> String - The name of your protocol, without <code>://</code>.</li>
+</ul>
+<p>This method checks if the current executable as the default handler for a protocol
+(aka URI scheme). If so, it will remove the app as the default handler.</p>
+<p><strong>Note:</strong> On OS X, removing the app will automatically remove the app as the
+default protocol handler.</p>
 <h3 id="appsetusertaskstasks-windows"><code>app.setUserTasks(tasks)</code> <em>Windows</em></h3>
 <ul>
 <li><code>tasks</code> Array - Array of <code>Task</code> objects</li>
@@ -1392,13 +1424,9 @@ or the request is canceled.</p>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

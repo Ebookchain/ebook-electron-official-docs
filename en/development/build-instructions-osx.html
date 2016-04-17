@@ -53,7 +53,7 @@
         data-chapter-title="Build Instructions (OS X)"
         data-filepath="development/build-instructions-osx.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -939,11 +939,11 @@ following python modules:</p>
 <li>pyobjc</li>
 </ul>
 <h2 id="getting-the-code">Getting the Code</h2>
-<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/atom/electron.git
+<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/electron/electron.git
 </code></pre>
 <h2 id="bootstrapping">Bootstrapping</h2>
 <p>The bootstrap script will download all necessary build dependencies and create
-the build project files. Notice that we&apos;re using <code>ninja</code> to build Electron so
+the build project files. Notice that we&apos;re using <a href="https://ninja-build.org/" target="_blank">ninja</a> to build Electron so
 there is no Xcode project generated.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> electron
 $ ./script/bootstrap.py -v
@@ -1007,13 +1007,9 @@ support 32bit OS X in future.</p>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

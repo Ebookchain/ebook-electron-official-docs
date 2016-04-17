@@ -53,7 +53,7 @@
         data-chapter-title="Build Instructions (Windows)"
         data-filepath="development/build-instructions-windows.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -946,7 +946,7 @@ building with Visual Studio will come in the future.</p>
 <p><strong>Note:</strong> Visual Studio 2015 will not work. Please make sure to get MSVS
 <strong>2013</strong>.</p>
 <h2 id="getting-the-code">Getting the Code</h2>
-<pre><code class="lang-powershell">$ git clone https://github.com/atom/electron.git
+<pre><code class="lang-powershell">$ git clone https://github.com/electron/electron.git
 </code></pre>
 <h2 id="bootstrapping">Bootstrapping</h2>
 <p>The bootstrap script will download all necessary build dependencies and create
@@ -978,7 +978,7 @@ the bootstrap script:</p>
 <pre><code class="lang-powershell">$ python script\test.py
 </code></pre>
 <p>Tests that include native modules (e.g. <code>runas</code>) can&apos;t be executed with the
-debug build (see <a href="https://github.com/atom/electron/issues/2558" target="_blank">#2558</a> for
+debug build (see <a href="https://github.com/electron/electron/issues/2558" target="_blank">#2558</a> for
 details), but they will work with the release build.</p>
 <p>To run the tests with the release build use:</p>
 <pre><code class="lang-powershell">$ python script\test.py -R
@@ -1059,13 +1059,9 @@ PowerShell or VS2012 Command Prompt instead.</p>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

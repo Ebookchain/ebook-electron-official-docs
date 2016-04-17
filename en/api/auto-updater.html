@@ -53,7 +53,7 @@
         data-chapter-title="autoUpdater"
         data-filepath="api/auto-updater.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -927,6 +927,12 @@
                     
                         <h1 id="autoupdater">autoUpdater</h1>
 <p>This module provides an interface for the <code>Squirrel</code> auto-updater framework.</p>
+<p>You can quickly launch a multi-platform release server for distributing your
+application by using one of these projects:</p>
+<ul>
+<li><a href="https://github.com/ArekSredzki/electron-release-server" target="_blank">electron-release-server</a>: <em>A fully featured, self-hosted release server for electron applications, compatible with auto-updater</em></li>
+<li><a href="https://github.com/Aluxian/squirrel-updates-server" target="_blank">squirrel-updates-server</a>: <em>A simple node.js server for Squirrel.Mac and Squirrel.Windows which uses GitHub releases</em></li>
+</ul>
 <h2 id="platform-notices">Platform notices</h2>
 <p>Though <code>autoUpdater</code> provides a uniform API for different platforms, there are
 still some subtle differences on each platform.</p>
@@ -934,6 +940,8 @@ still some subtle differences on each platform.</p>
 <p>On OS X, the <code>autoUpdater</code> module is built upon <a href="https://github.com/Squirrel/Squirrel.Mac" target="_blank">Squirrel.Mac</a>,
 meaning you don&apos;t need any special setup to make it work. For server-side
 requirements, you can read <a href="https://github.com/Squirrel/Squirrel.Mac#server-support" target="_blank">Server Support</a>.</p>
+<p><strong>Note:</strong> Your application must be signed for automatic updates on Mac OS X.
+This is a requirement of <code>Squirrel.Mac</code>.</p>
 <h3 id="windows">Windows</h3>
 <p>On Windows, you have to install your app into a user&apos;s machine before you can
 use the auto-updater, so it is recommended to use
@@ -1030,13 +1038,9 @@ should only be called after <code>update-downloaded</code> has been emitted.</p>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

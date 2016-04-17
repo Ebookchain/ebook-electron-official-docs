@@ -41,7 +41,7 @@ Electron 문서를 작성하는 규칙은 다음과 같습니다.
   유지합니다.
 - 문서를 번역합니다.
 - 언어 디렉터리 내의 `README.md`에 번역한 문서의 링크를 추가합니다.
-- 메인(upstream) Electron의 [README](https://github.com/atom/electron#documentation-translations)에
+- 메인(upstream) Electron의 [README](https://github.com/electron/electron#documentation-translations)에
   번역된 언어 디렉터리의 링크를 추가합니다.
 
 ## Electron 문서 읽기
@@ -50,7 +50,7 @@ Electron 문서 구조를 이해하는 데 참고할 수 있는 유용한 도움
 
 ### Methods
 
-[Method](https://developer.mozilla.org/en-US/docs/Glossary/Method) 문서의
+[Method](https://developer.mozilla.org/ko/docs/Glossary/Method) 문서의
 예제입니다:
 
 ---
@@ -66,16 +66,16 @@ Electron 문서 구조를 이해하는 데 참고할 수 있는 유용한 도움
 묶어 이 인수가 다른 인수뒤에서 선택적으로 사용될 수 있다는 것을 표시합니다.
 
 메서드 이름 하단에선 각 인수에 대해 자세한 설명을 합니다. 인수의 타입은:
-[`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String),
-[`Number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number),
-[`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object),
-[`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+[`String`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String),
+[`Number`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number),
+[`Object`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object),
+[`Array`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array)
 와 같은 일반적으로 쓰이는 타입 중 하나를 받거나 Electron의 [`webContent`](api/web-content.md)
 같은 커스텀 타입을 받습니다.
 
 ### Events
 
-[Event](https://developer.mozilla.org/en-US/docs/Web/API/Event) 문서의 예제입니다:
+[Event](https://developer.mozilla.org/ko/docs/Web/API/Event) 문서의 예제입니다:
 
 ---
 

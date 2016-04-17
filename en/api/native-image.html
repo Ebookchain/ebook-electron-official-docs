@@ -53,7 +53,7 @@
         data-chapter-title="nativeImage"
         data-filepath="api/native-image.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:24 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:04 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -1020,6 +1020,12 @@ adapt to both light and dark menu bars.</p>
 <p>Returns a <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer" target="_blank">Buffer</a> that contains the image&apos;s <code>JPEG</code> encoded data.</p>
 <h3 id="imagetodataurl"><code>image.toDataURL()</code></h3>
 <p>Returns the data URL of the image.</p>
+<h3 id="imagegetnativehandle-os-x"><code>image.getNativeHandle()</code> <em>OS X</em></h3>
+<p>Returns a <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer" target="_blank">Buffer</a> that stores C pointer to underlying native handle of
+the image. On OS X, a pointer to <code>NSImage</code> instance would be returned.</p>
+<p>Notice that the returned pointer is a weak pointer to the underlying native
+image instead of a copy, so you <em>must</em> ensure that the associated
+<code>nativeImage</code> instance is kept around.</p>
 <h3 id="imageisempty"><code>image.isEmpty()</code></h3>
 <p>Returns a boolean whether the image is empty.</p>
 <h3 id="imagegetsize"><code>image.getSize()</code></h3>
@@ -1072,13 +1078,9 @@ adapt to both light and dark menu bars.</p>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

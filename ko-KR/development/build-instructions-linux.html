@@ -53,7 +53,7 @@
         data-chapter-title="빌드 설명서 (Linux)"
         data-filepath="development/build-instructions-linux.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:28 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:09 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -944,7 +944,7 @@
 <pre><code class="lang-bash">$ sudo apt-get install build-essential clang libdbus-<span class="hljs-number">1</span>-dev libgtk2.<span class="hljs-number">0</span>-dev \
                        libnotify-dev libgnome-keyring-dev libgconf2-dev \
                        libasound2-dev libcap-dev libcups2-dev libxtst-dev \
-                       libxss1 libnss3-dev gcc-multilib g++-multilib
+                       libxss1 libnss3-dev gcc-multilib g++-multilib curl
 </code></pre>
 <p>Fedora&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB2E4;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC124;&#xCE58;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-bash">$ sudo yum install clang dbus-devel gtk2-devel libnotify-devel libgnome-keyring-devel \
@@ -958,7 +958,7 @@
 <p>&#xB9CC;&#xC57D; Electron&#xC744; &#xAC00;&#xC0C1;&#xBA38;&#xC2E0;&#xC73C;&#xB85C; &#xBE4C;&#xB4DC; &#xD560; &#xACC4;&#xD68D;&#xC774;&#xB77C;&#xBA74; &#xD574;&#xB2F9; &#xAC00;&#xC0C1;&#xBA38;&#xC2E0;&#xC758; &#xC2A4;&#xD1A0;&#xB9AC;&#xC9C0;&#xB97C; &#xCD5C;&#xC18C; 25GB
 &#xC774;&#xC0C1; &#xD655;&#xBCF4;&#xD574; &#xB193;&#xC544;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xCF54;&#xB4DC;-&#xAC00;&#xC838;&#xC624;&#xAE30;">&#xCF54;&#xB4DC; &#xAC00;&#xC838;&#xC624;&#xAE30;</h2>
-<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/atom/electron.git
+<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/electron/electron.git
 </code></pre>
 <h2 id="&#xBD80;&#xD2B8;-&#xC2A4;&#xD2B8;&#xB7A9;">&#xBD80;&#xD2B8; &#xC2A4;&#xD2B8;&#xB7A9;</h2>
 <p>&#xBD80;&#xD2B8;&#xC2A4;&#xD2B8;&#xB7A9; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xD544;&#xC218;&#xC801;&#xC778; &#xBE4C;&#xB4DC; &#xC885;&#xC18D;&#xC131; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB4E4;&#xC744; &#xBAA8;&#xB450; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD558;&#xACE0; &#xD504;&#xB85C;&#xC81D;&#xD2B8;
@@ -1053,13 +1053,9 @@ $ ./script/bootstrap.py -v
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

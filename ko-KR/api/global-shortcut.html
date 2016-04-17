@@ -53,7 +53,7 @@
         data-chapter-title="globalShortcut"
         data-filepath="api/global-shortcut.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:28 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:09 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -937,9 +937,9 @@
 <span class="hljs-keyword">const</span> globalShortcut = electron.globalShortcut;
 
 app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// &apos;ctrl+x&apos; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xB9AC;&#xC2A4;&#xB108;&#xC5D0; &#xB4F1;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;.</span>
-  <span class="hljs-keyword">var</span> ret = globalShortcut.register(<span class="hljs-string">&apos;ctrl+x&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ctrl+x is pressed&apos;</span>);
+  <span class="hljs-comment">// &apos;CommandOrControl+X&apos; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xB9AC;&#xC2A4;&#xB108;&#xC5D0; &#xB4F1;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;.</span>
+  <span class="hljs-keyword">var</span> ret = globalShortcut.register(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;CommandOrControl+X is pressed&apos;</span>);
   });
 
   <span class="hljs-keyword">if</span> (!ret) {
@@ -947,12 +947,12 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
   }
 
   <span class="hljs-comment">// &#xB2E8;&#xCD95;&#xD0A4;&#xAC00; &#xB4F1;&#xB85D;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</span>
-  <span class="hljs-built_in">console</span>.log(globalShortcut.isRegistered(<span class="hljs-string">&apos;ctrl+x&apos;</span>));
+  <span class="hljs-built_in">console</span>.log(globalShortcut.isRegistered(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>));
 });
 
 app.on(<span class="hljs-string">&apos;will-quit&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-comment">// &#xB2E8;&#xCD95;&#xD0A4;&#xC758; &#xB4F1;&#xB85D;&#xC744; &#xD574;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</span>
-  globalShortcut.unregister(<span class="hljs-string">&apos;ctrl+x&apos;</span>);
+  globalShortcut.unregister(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>);
 
   <span class="hljs-comment">// &#xBAA8;&#xB4E0; &#xB2E8;&#xCD95;&#xD0A4;&#xC758; &#xB4F1;&#xB85D;&#xC744; &#xD574;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</span>
   globalShortcut.unregisterAll();
@@ -1026,13 +1026,9 @@ app.on(<span class="hljs-string">&apos;will-quit&apos;</span>, <span class="hljs
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

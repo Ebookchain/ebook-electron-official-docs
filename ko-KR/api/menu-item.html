@@ -53,7 +53,7 @@
         data-chapter-title="MenuItem"
         data-filepath="api/menu-item.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 20:36:28 GMT+0800 (CST)"
+        data-revision="Sun Apr 17 2016 19:23:09 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -936,7 +936,7 @@
 <li><code>options</code> Object<ul>
 <li><code>click</code> Function - &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC774; &#xD074;&#xB9AD;&#xB420; &#xB54C; <code>click(menuItem, browserWindow)</code>
 &#xD615;&#xD0DC;&#xB85C; &#xD638;&#xCD9C; &#xB418;&#xB294; &#xCF5C;&#xBC31; &#xD568;&#xC218;</li>
-<li><code>role</code> String - &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC758; &#xC561;&#xC158;&#xC744; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC18D;&#xC131;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xBA74; <code>click</code>
+<li><code>role</code> String - &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC758; &#xC561;&#xC158;&#xC744; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;; &#xC774; &#xC18D;&#xC131;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xBA74; <code>click</code>
 &#xC18D;&#xC131;&#xC774; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</li>
 <li><code>type</code> String - <code>MenuItem</code>&#xC758; &#xD0C0;&#xC785; <code>normal</code>, <code>separator</code>, <code>submenu</code>,
 <code>checkbox</code> &#xB610;&#xB294; <code>radio</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xAC12;&#xC774; <code>Menu</code>&#xAC00; &#xC544;&#xB2C8;&#xBA74;
@@ -945,11 +945,14 @@
 <li><code>sublabel</code> String</li>
 <li><code>accelerator</code> <a href="accelerator.md">Accelerator</a></li>
 <li><code>icon</code> <a href="native-image.html">NativeImage</a></li>
-<li><code>enabled</code> Boolean</li>
-<li><code>visible</code> Boolean</li>
-<li><code>checked</code> Boolean</li>
-<li><code>submenu</code> Menu - &#xBCF4;&#xC870;&#xBA54;&#xB274;&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. <code>type</code>&#xC774; <code>submenu</code>&#xC77C; &#xACBD;&#xC6B0; &#xBC18;&#xB4DC;&#xC2DC;
-&#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC77C;&#xBC18; &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC77C; &#xACBD;&#xC6B0; &#xC0DD;&#xB7B5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.     </li>
+<li><code>enabled</code> Boolean - &#xB9CC;&#xC57D; <code>false</code>&#xB85C; &#xC124;&#xC815;&#xB418;&#xBA74;, &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC774; &#xD68C;&#xC0C9;&#xC73C;&#xB85C; &#xBCC0;&#xD558;&#xBA70;
+&#xD074;&#xB9AD;&#xD560; &#xC218; &#xC5C6;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</li>
+<li><code>visible</code> Boolean - &#xB9CC;&#xC57D; <code>false</code>&#xB85C; &#xC124;&#xC815;&#xB418;&#xBA74;, &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC774; &#xC644;&#xC804;&#xD788; &#xC228;&#xACA8;&#xC9D1;&#xB2C8;&#xB2E4;.</li>
+<li><code>checked</code> Boolean - &#xBC18;&#xB4DC;&#xC2DC; <code>checkbox</code> &#xB610;&#xB294; <code>radio</code> &#xD0C0;&#xC785;&#xC758; &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC5D0;&#xB9CC;
+&#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>submenu</code> Menu - &#xBC18;&#xB4DC;&#xC2DC; <code>submenu</code> &#xD0C0;&#xC785;&#xC758; &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC5D0;&#xB9CC; &#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D;
+<code>submenu</code>&#xAC00; &#xC9C0;&#xC815;&#xB418;&#xBA74; <code>type: &apos;submenu&apos;</code>&#xB294; &#xC0DD;&#xB7B5;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xAC12;&#xC774; <code>Menu</code>&#xAC00;
+&#xC544;&#xB2D0; &#xACBD;&#xC6B0; <code>Menu.buildFromTemplate</code>&#xC744; &#xD1B5;&#xD574; &#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.     </li>
 <li><code>id</code> String - &#xD604;&#xC7AC; &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC5D0; &#xB300;&#xD574; &#xC720;&#xC77C;&#xD0A4;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xD0A4;&#xB294; &#xC774;&#xD6C4;
 <code>position</code> &#xC635;&#xC158;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 <li><code>position</code> String - &#xBBF8;&#xB9AC; &#xC9C0;&#xC815;&#xD55C; <code>id</code>&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC758; &#xC704;&#xCE58;&#xB97C; &#xC138;&#xBC00;&#xD558;&#xAC8C;
@@ -957,8 +960,9 @@
 </ul>
 </li>
 </ul>
-<p>&#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC744; &#xC0DD;&#xC131;&#xD560; &#xB54C;, &#xB2E4;&#xC74C; &#xBAA9;&#xB85D;&#xACFC; &#xC77C;&#xCE58;&#xD558;&#xB294; &#xD45C;&#xC900; &#xB3D9;&#xC791;&#xC740; &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xC9C1;&#xC811; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xB300;&#xC2E0;
-<code>role</code> &#xC18D;&#xC131;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xACE0;&#xC720; OS &#xACBD;&#xD5D8;&#xC744; &#xCD5C;&#xB300;&#xD55C; &#xC0B4;&#xB9B4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC5B4;&#xB5A0;&#xD55C; &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC774; &#xD45C;&#xC900; &#xB864;&#xC5D0; &#xC77C;&#xCE58;&#xD55C;&#xB2E4;&#xBA74;, <code>role</code>&#xC744; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB3D9;&#xC791;&#xC744; <code>click</code>
+&#xD568;&#xC218;&#xB85C; &#xC77C;&#xC77C;&#xC774; &#xAD6C;&#xD604;&#xD558;&#xB824; &#xC2DC;&#xB3C4;&#xD558;&#xB294; &#xAC83; &#xBCF4;&#xB2E4; &#xB354; &#xC88B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBE4C;&#xD2B8;-&#xC778; <code>role</code> &#xB3D9;&#xC791;&#xC740;
+&#xB354; &#xC88B;&#xC740; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xACBD;&#xD5D8;&#xC744; &#xC81C;&#xACF5;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p><code>role</code> &#xC18D;&#xC131;&#xC740; &#xB2E4;&#xC74C; &#xAC12;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
 <li><code>undo</code></li>
@@ -981,6 +985,20 @@
 <li><code>help</code> - &#xBD80; &#xBA54;&#xB274;&#xB97C; &#xAC00;&#xC9C0;&#xB294; &quot;Help&quot; &#xBA54;&#xB274;</li>
 <li><code>services</code> - &#xBD80; &#xBA54;&#xB274;&#xB97C; &#xAC00;&#xC9C0;&#xB294; &quot;Services&quot; &#xBA54;&#xB274;</li>
 </ul>
+<h2 id="instance-properties">Instance Properties</h2>
+<p>&#xB2E4;&#xC74C; &#xC18D;&#xC131;&#xB4E4;&#xC740; &#xC874;&#xC7AC;&#xD558;&#xB294; <code>MenuItem</code>&#xC5D0;&#xC11C; &#xACC4;&#xC18D; &#xBCC0;&#xACBD;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li><code>enabled</code> Boolean</li>
+<li><code>visible</code> Boolean</li>
+<li><code>checked</code> Boolean</li>
+</ul>
+<p>&#xC774; &#xC18D;&#xC131;&#xB4E4;&#xC758; &#xC758;&#xBBF8;&#xB294; &#xC704; &#xC635;&#xC158;&#xC5D0;&#xC11C; &#xC124;&#xBA85;&#xD55C; &#xAC83;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>checkbox</code> &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC740; &#xC120;&#xD0DD;&#xB420; &#xB54C; &#xD574;&#xB2F9; &#xC544;&#xC774;&#xD15C;&#xC758; <code>checked</code> &#xC18D;&#xC131;&#xC744; &#xD1B5;&#xD574; &#xD65C;&#xC131;&#xD654; &#xADF8;&#xB9AC;&#xACE0;
+&#xBE44;&#xD65C;&#xC131;&#xD654; &#xC0C1;&#xD0DC;&#xC778;&#xC9C0;&#xB97C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; <code>click</code> &#xD568;&#xC218;&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xC791;&#xC5C5;&#xC744; &#xD560; &#xC218;&#xB3C4;
+&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>radio</code> &#xBA54;&#xB274; &#xC544;&#xC774;&#xD15C;&#xC740; &#xD074;&#xB9AD;&#xB418;&#xC5C8;&#xC744; &#xB54C; <code>checked</code> &#xC18D;&#xC131;&#xC744; &#xD65C;&#xC131;&#xD654; &#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xAC19;&#xC740;
+&#xBA54;&#xB274;&#xC758; &#xC778;&#xC811;&#xD55C; &#xBAA8;&#xB4E0; &#xB2E4;&#xB978; &#xC544;&#xC774;&#xD15C;&#xC740; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xB429;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; <code>click</code> &#xD568;&#xC218;&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xCD94;&#xAC00;&#xC801;&#xC778;
+&#xC791;&#xC5C5;&#xC744; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 
                     
                     </section>
@@ -1022,13 +1040,9 @@
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
