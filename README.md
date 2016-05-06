@@ -1,5 +1,6 @@
 # Electron official document multi-languages ebook
 
+[Back Home](http://ebookchain.org)
 
 ## Changelog
 
