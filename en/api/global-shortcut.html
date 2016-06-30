@@ -53,7 +53,7 @@
         data-chapter-title="globalShortcut"
         data-filepath="api/global-shortcut.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,19 +926,20 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="globalshortcut">globalShortcut</h1>
+<blockquote>
+<p>Detect keyboard events when the application does not have keyboard focus.</p>
+</blockquote>
 <p>The <code>globalShortcut</code> module can register/unregister a global keyboard shortcut
 with the operating system so that you can customize the operations for various
 shortcuts.</p>
 <p><strong>Note:</strong> The shortcut is global; it will work even if the app does
 not have the keyboard focus. You should not use this module until the <code>ready</code>
 event of the app module is emitted.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
-<span class="hljs-keyword">const</span> globalShortcut = electron.globalShortcut;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, globalShortcut} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
   <span class="hljs-comment">// Register a &apos;CommandOrControl+X&apos; shortcut listener.</span>
-  <span class="hljs-keyword">var</span> ret = globalShortcut.register(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> ret = globalShortcut.register(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>, () =&gt; {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;CommandOrControl+X is pressed&apos;</span>);
   });
 
@@ -950,7 +951,7 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
   <span class="hljs-built_in">console</span>.log(globalShortcut.isRegistered(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>));
 });
 
-app.on(<span class="hljs-string">&apos;will-quit&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+app.on(<span class="hljs-string">&apos;will-quit&apos;</span>, () =&gt; {
   <span class="hljs-comment">// Unregister a shortcut.</span>
   globalShortcut.unregister(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>);
 

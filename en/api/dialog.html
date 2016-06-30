@@ -53,7 +53,7 @@
         data-chapter-title="dialog"
         data-filepath="api/dialog.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,20 +926,19 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="dialog">dialog</h1>
-<p>The <code>dialog</code> module provides APIs to show native system dialogs, such as opening
-files or alerting, so web applications can deliver the same user experience as
-native applications.</p>
+<blockquote>
+<p>Display native system dialogs for opening and saving files, alerting, etc.</p>
+</blockquote>
 <p>An example of showing a dialog to select multiple files and directories:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> win = ...;  <span class="hljs-comment">// BrowserWindow in which to show the dialog</span>
-<span class="hljs-keyword">const</span> dialog = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).dialog;
-<span class="hljs-built_in">console</span>.log(dialog.showOpenDialog({ properties: [ <span class="hljs-string">&apos;openFile&apos;</span>, <span class="hljs-string">&apos;openDirectory&apos;</span>, <span class="hljs-string">&apos;multiSelections&apos;</span> ]}));
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> win = ...;  <span class="hljs-comment">// BrowserWindow in which to show the dialog</span>
+<span class="hljs-keyword">const</span> {dialog} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+
+<span class="hljs-built_in">console</span>.log(dialog.showOpenDialog({properties: [<span class="hljs-string">&apos;openFile&apos;</span>, <span class="hljs-string">&apos;openDirectory&apos;</span>, <span class="hljs-string">&apos;multiSelections&apos;</span>]}));
 </code></pre>
-<p>The Dialog is opened from Electron&apos;s main thread. If you want to use the dialog object from a renderer process, remember to access it using the remote:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> dialog = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote.dialog;
+<p>The Dialog is opened from Electron&apos;s main thread. If you want to use the dialog
+object from a renderer process, remember to access it using the remote:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {dialog} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote;
 </code></pre>
-<p><strong>Note for OS X</strong>: If you want to present dialogs as sheets, the only thing you
-have to do is provide a <code>BrowserWindow</code> reference in the <code>browserWindow</code>
-parameter.</p>
 <h2 id="methods">Methods</h2>
 <p>The <code>dialog</code> module has the following methods:</p>
 <h3 id="dialogshowopendialogbrowserwindow-options-callback"><code>dialog.showOpenDialog([browserWindow, ]options[, callback])</code></h3>
@@ -948,6 +947,8 @@ parameter.</p>
 <li><code>options</code> Object<ul>
 <li><code>title</code> String</li>
 <li><code>defaultPath</code> String</li>
+<li><code>buttonLabel</code> String - Custom label for the confirmation button, when
+left empty the default label will be used.</li>
 <li><code>filters</code> Array</li>
 <li><code>properties</code> Array - Contains which features the dialog should use, can
 contain <code>openFile</code>, <code>openDirectory</code>, <code>multiSelections</code> and
@@ -962,10 +963,10 @@ otherwise it returns <code>undefined</code>.</p>
 selected when you want to limit the user to a specific type. For example:</p>
 <pre><code class="lang-javascript">{
   filters: [
-    { name: <span class="hljs-string">&apos;Images&apos;</span>, extensions: [<span class="hljs-string">&apos;jpg&apos;</span>, <span class="hljs-string">&apos;png&apos;</span>, <span class="hljs-string">&apos;gif&apos;</span>] },
-    { name: <span class="hljs-string">&apos;Movies&apos;</span>, extensions: [<span class="hljs-string">&apos;mkv&apos;</span>, <span class="hljs-string">&apos;avi&apos;</span>, <span class="hljs-string">&apos;mp4&apos;</span>] },
-    { name: <span class="hljs-string">&apos;Custom File Type&apos;</span>, extensions: [<span class="hljs-string">&apos;as&apos;</span>] },
-    { name: <span class="hljs-string">&apos;All Files&apos;</span>, extensions: [<span class="hljs-string">&apos;*&apos;</span>] }
+    {name: <span class="hljs-string">&apos;Images&apos;</span>, extensions: [<span class="hljs-string">&apos;jpg&apos;</span>, <span class="hljs-string">&apos;png&apos;</span>, <span class="hljs-string">&apos;gif&apos;</span>]},
+    {name: <span class="hljs-string">&apos;Movies&apos;</span>, extensions: [<span class="hljs-string">&apos;mkv&apos;</span>, <span class="hljs-string">&apos;avi&apos;</span>, <span class="hljs-string">&apos;mp4&apos;</span>]},
+    {name: <span class="hljs-string">&apos;Custom File Type&apos;</span>, extensions: [<span class="hljs-string">&apos;as&apos;</span>]},
+    {name: <span class="hljs-string">&apos;All Files&apos;</span>, extensions: [<span class="hljs-string">&apos;*&apos;</span>]}
   ]
 }
 </code></pre>
@@ -984,6 +985,8 @@ shown.</p>
 <li><code>options</code> Object<ul>
 <li><code>title</code> String</li>
 <li><code>defaultPath</code> String</li>
+<li><code>buttonLabel</code> String - Custom label for the confirmation button, when
+left empty the default label will be used.</li>
 <li><code>filters</code> Array</li>
 </ul>
 </li>
@@ -1002,7 +1005,8 @@ will be passed via <code>callback(filename)</code></p>
 <li><code>type</code> String - Can be <code>&quot;none&quot;</code>, <code>&quot;info&quot;</code>, <code>&quot;error&quot;</code>, <code>&quot;question&quot;</code> or
 <code>&quot;warning&quot;</code>. On Windows, &quot;question&quot; displays the same icon as &quot;info&quot;, unless
 you set an icon using the &quot;icon&quot; option.</li>
-<li><code>buttons</code> Array - Array of texts for buttons.</li>
+<li><code>buttons</code> Array - Array of texts for buttons. On Windows, an empty array
+will result in one button labeled &quot;OK&quot;.</li>
 <li><code>defaultId</code> Integer - Index of the button in the buttons array which will
 be selected by default when the message box opens.</li>
 <li><code>title</code> String - Title of the message box, some platforms will not show it.</li>
@@ -1012,7 +1016,7 @@ be selected by default when the message box opens.</li>
 <li><code>cancelId</code> Integer - The value will be returned when user cancels the dialog
 instead of clicking the buttons of the dialog. By default it is the index
 of the buttons that have &quot;cancel&quot; or &quot;no&quot; as label, or 0 if there is no such
-buttons. On OS X and Windows the index of &quot;Cancel&quot; button will always be
+buttons. On macOS and Windows the index of &quot;Cancel&quot; button will always be
 used as <code>cancelId</code>, not matter whether it is already specified.</li>
 <li><code>noLink</code> Boolean - On Windows Electron will try to figure out which one of
 the <code>buttons</code> are common buttons (like &quot;Cancel&quot; or &quot;Yes&quot;), and show the
@@ -1033,6 +1037,12 @@ will be passed via <code>callback(response)</code>.</p>
 it is usually used to report errors in early stage of startup.  If called
 before the app <code>ready</code>event on Linux, the message will be emitted to stderr,
 and no GUI dialog will appear.</p>
+<h2 id="sheets">Sheets</h2>
+<p>On macOS, dialogs are presented as sheets attached to a window if you provide
+a <code>BrowserWindow</code> reference in the <code>browserWindow</code> parameter, or modals if no
+window is provided.</p>
+<p>You can call <code>BrowserWindow.getCurrentWindow().setSheetOffset(offset)</code> to change
+the offset from the window frame where sheets are attached.</p>
 
                     
                     </section>

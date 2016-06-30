@@ -53,7 +53,7 @@
         data-chapter-title="MenuItem"
         data-filepath="api/menu-item.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,9 +926,10 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="menuitem">MenuItem</h1>
-<p><code>menu-item</code> &#xBAA8;&#xB4C8;&#xC740; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB610;&#xB294; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; <a href="menu.html"><code>menu</code></a>&#xC5D0; &#xD56D;&#xBAA9; &#xC544;&#xC774;&#xD15C;&#xC744;
-&#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xAD00;&#xB828; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p><a href="menu.html"><code>menu</code></a>&#xC5D0;&#xC11C; &#xC608;&#xC81C;&#xB97C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xBA54;&#xB274;&#xC640; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xC5D0; &#xC544;&#xC774;&#xD15C;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p><a href="menu.html"><code>menu</code></a>&#xC5D0;&#xC11C; &#xC608;&#xC2DC;&#xB97C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="class-menuitem">Class: MenuItem</h2>
 <p><code>MenuItem</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
 <h3 id="new-menuitemoptions">new MenuItem(options)</h3>
@@ -970,21 +971,26 @@
 <li><code>cut</code></li>
 <li><code>copy</code></li>
 <li><code>paste</code></li>
+<li><code>pasteandmatchstyle</code></li>
 <li><code>selectall</code></li>
+<li><code>delete</code></li>
 <li><code>minimize</code> - &#xD604;&#xC7AC; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xCD5C;&#xC18C;&#xD654;&#xD569;&#xB2C8;&#xB2E4;</li>
 <li><code>close</code> - &#xD604;&#xC7AC; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xB2EB;&#xC2B5;&#xB2C8;&#xB2E4;</li>
 </ul>
-<p>OS X&#xC5D0;&#xC11C;&#xC758; <code>role</code>&#xC740; &#xB2E4;&#xC74C; &#xAC12;&#xC744; &#xCD94;&#xAC00;&#xB85C; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p>macOS&#xC5D0;&#xC11C;&#xC758; <code>role</code>&#xC740; &#xB2E4;&#xC74C; &#xAC12;&#xC744; &#xCD94;&#xAC00;&#xB85C; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
 <li><code>about</code> - <code>orderFrontStandardAboutPanel</code> &#xC561;&#xC158;&#xC5D0; &#xB300;&#xC751;</li>
 <li><code>hide</code> - <code>hide</code> &#xC561;&#xC158;&#xC5D0; &#xB300;&#xC751;</li>
 <li><code>hideothers</code> - <code>hideOtherApplications</code> &#xC561;&#xC158;&#xC5D0; &#xB300;&#xC751;</li>
 <li><code>unhide</code> - <code>unhideAllApplications</code> &#xC561;&#xC158;&#xC5D0; &#xB300;&#xC751;</li>
 <li><code>front</code> - <code>arrangeInFront</code> &#xC561;&#xC158;&#xC5D0; &#xB300;&#xC751;</li>
+<li><code>zoom</code> - <code>performZoom</code> &#xC561;&#xC158;&#xC5D0; &#xB300;&#xC751;</li>
 <li><code>window</code> - &#xBD80; &#xBA54;&#xB274;&#xB97C; &#xAC00;&#xC9C0;&#xB294; &quot;Window&quot; &#xBA54;&#xB274;</li>
 <li><code>help</code> - &#xBD80; &#xBA54;&#xB274;&#xB97C; &#xAC00;&#xC9C0;&#xB294; &quot;Help&quot; &#xBA54;&#xB274;</li>
 <li><code>services</code> - &#xBD80; &#xBA54;&#xB274;&#xB97C; &#xAC00;&#xC9C0;&#xB294; &quot;Services&quot; &#xBA54;&#xB274;</li>
 </ul>
+<p>macOS&#xC5D0;&#xC11C;&#xB294; <code>role</code>&#xC744; &#xC9C0;&#xC815;&#xD560; &#xB54C;, <code>label</code>&#xACFC; <code>accelerator</code>&#xB9CC; MenuItem&#xC5D0; &#xD6A8;&#xACFC;&#xAC00;
+&#xC801;&#xC6A9;&#xB418;&#xB3C4;&#xB85D; &#xBCC0;&#xACBD;&#xB418;&#xBA70;, &#xB2E4;&#xB978; &#xC635;&#xC158;&#xB4E4;&#xC740; &#xBAA8;&#xB450; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="instance-properties">Instance Properties</h2>
 <p>&#xB2E4;&#xC74C; &#xC18D;&#xC131;&#xB4E4;&#xC740; &#xC874;&#xC7AC;&#xD558;&#xB294; <code>MenuItem</code>&#xC5D0;&#xC11C; &#xACC4;&#xC18D; &#xBCC0;&#xACBD;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>

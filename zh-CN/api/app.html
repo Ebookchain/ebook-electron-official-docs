@@ -53,7 +53,7 @@
         data-chapter-title="app"
         data-filepath="api/app.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:59 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:40 GMT+0800 (CST)"
         data-innerlanguage="zh-CN">
     
 
@@ -914,7 +914,7 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 <p><code>app</code> &#x5BF9;&#x8C61;&#x4F1A;&#x89E6;&#x53D1;&#x4EE5;&#x4E0B;&#x7684;&#x4E8B;&#x4EF6;&#xFF1A;</p>
 <h3 id="&#x4E8B;&#x4EF6;&#xFF1A;willfinishlaunching">&#x4E8B;&#x4EF6;&#xFF1A;&apos;will-finish-launching&apos;</h3>
 <p>&#x5F53;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5B8C;&#x6210;&#x57FA;&#x7840;&#x7684;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x88AB;&#x89E6;&#x53D1;&#x3002;&#x5728; Windows &#x548C; Linux &#x4E2D;&#xFF0C;
-<code>will-finish-launching</code> &#x4E8B;&#x4EF6;&#x4E0E; <code>ready</code> &#x4E8B;&#x4EF6;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF1B; &#x5728; OS X &#x4E2D;&#xFF0C;
+<code>will-finish-launching</code> &#x4E8B;&#x4EF6;&#x4E0E; <code>ready</code> &#x4E8B;&#x4EF6;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF1B; &#x5728; macOS &#x4E2D;&#xFF0C;
 &#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x76F8;&#x5F53;&#x4E8E; <code>NSApplication</code> &#x4E2D;&#x7684; <code>applicationWillFinishLaunching</code> &#x63D0;&#x793A;&#x3002;
 &#x4F60;&#x5E94;&#x8BE5;&#x7ECF;&#x5E38;&#x5728;&#x8FD9;&#x91CC;&#x4E3A; <code>open-file</code> &#x548C; <code>open-url</code> &#x8BBE;&#x7F6E;&#x76D1;&#x542C;&#x5668;&#xFF0C;&#x5E76;&#x542F;&#x52A8;&#x5D29;&#x6E83;&#x62A5;&#x544A;&#x548C;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x3002;</p>
 <p>&#x5728;&#x5927;&#x591A;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x53EA;&#x5728; <code>ready</code> &#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#x4E2D;&#x5B8C;&#x6210;&#x6240;&#x6709;&#x7684;&#x4E1A;&#x52A1;&#x3002;</p>
@@ -922,7 +922,7 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 <p>&#x5F53; Electron &#x5B8C;&#x6210;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
 <h3 id="&#x4E8B;&#x4EF6;&#xFF1A;windowallclosed">&#x4E8B;&#x4EF6;&#xFF1A;&apos;window-all-closed&apos;</h3>
 <p>&#x5F53;&#x6240;&#x6709;&#x7684;&#x7A97;&#x53E3;&#x90FD;&#x88AB;&#x5173;&#x95ED;&#x65F6;&#x89E6;&#x53D1;&#x3002;</p>
-<p>&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x4EC5;&#x5728;&#x5E94;&#x7528;&#x8FD8;&#x6CA1;&#x6709;&#x9000;&#x51FA;&#x65F6;&#x624D;&#x80FD;&#x89E6;&#x53D1;&#x3002; &#x5982;&#x679C;&#x7528;&#x6237;&#x6309;&#x4E0B;&#x4E86; <code>Cmd + Q</code>&#xFF0C;
+<p>&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x4EC5;&#x5728;&#x5E94;&#x7528;&#x8FD8;&#x6CA1;&#x6709;&#x9000;&#x51FA;&#x65F6;&#x624D;&#x80FD;&#x89E6;&#x53D1;&#x3002; &#x5982;&#x679C;&#x7528;&#x6237;&#x6309;&#x4E0B;&#x4E86; <code>Cmd + Q</code>&#xFF0C;
 &#x6216;&#x8005;&#x5F00;&#x53D1;&#x8005;&#x8C03;&#x7528;&#x4E86; <code>app.quit()</code> &#xFF0C;Electron &#x5C06;&#x4F1A;&#x5148;&#x5C1D;&#x8BD5;&#x5173;&#x95ED;&#x6240;&#x6709;&#x7684;&#x7A97;&#x53E3;&#x518D;&#x89E6;&#x53D1; <code>will-quit</code> &#x4E8B;&#x4EF6;&#xFF0C;
 &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B; <code>window-all-closed</code> &#x4E0D;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
 <h3 id="&#x4E8B;&#x4EF6;&#xFF1A;beforequit">&#x4E8B;&#x4EF6;&#xFF1A;&apos;before-quit&apos;</h3>
@@ -948,7 +948,7 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 <li><code>exitCode</code> Integer</li>
 </ul>
 <p>&#x5F53;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6B63;&#x5728;&#x9000;&#x51FA;&#x65F6;&#x89E6;&#x53D1;&#x3002;</p>
-<h3 id="&#x4E8B;&#x4EF6;&#xFF1A;openfile-os-x">&#x4E8B;&#x4EF6;&#xFF1A;&apos;open-file&apos; <em>OS X</em></h3>
+<h3 id="&#x4E8B;&#x4EF6;&#xFF1A;openfile-macos">&#x4E8B;&#x4EF6;&#xFF1A;&apos;open-file&apos; <em>macOS</em></h3>
 <p>&#x8FD4;&#x56DE;&#xFF1A;</p>
 <ul>
 <li><code>event</code> Event</li>
@@ -959,7 +959,7 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 &#x8BF7;&#x786E;&#x8BA4;&#x5728;&#x5E94;&#x7528;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#xFF08;&#x751A;&#x81F3;&#x5728; <code>ready</code> &#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1;&#x524D;&#xFF09;&#x5C31;&#x5BF9; <code>open-file</code> &#x4E8B;&#x4EF6;&#x8FDB;&#x884C;&#x76D1;&#x542C;&#xFF0C;&#x4EE5;&#x5904;&#x7406;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x8C03;&#x7528; <code>event.preventDefault()</code> &#x3002;
 &#x5728; Windows&#x7CFB;&#x7EDF;&#x4E2D;, &#x4F60;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x89E3;&#x6790; process.argv &#x6765;&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</p>
-<h3 id="&#x4E8B;&#x4EF6;&#xFF1A;openurl-os-x">&#x4E8B;&#x4EF6;&#xFF1A;&apos;open-url&apos; <em>OS X</em></h3>
+<h3 id="&#x4E8B;&#x4EF6;&#xFF1A;openurl-macos">&#x4E8B;&#x4EF6;&#xFF1A;&apos;open-url&apos; <em>macOS</em></h3>
 <p>&#x8FD4;&#x56DE;&#xFF1A;</p>
 <ul>
 <li><code>event</code> Event</li>
@@ -967,7 +967,7 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 </ul>
 <p>&#x5F53;&#x7528;&#x6237;&#x60F3;&#x8981;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x6253;&#x5F00;&#x4E00;&#x4E2A;url&#x7684;&#x65F6;&#x5019;&#x88AB;&#x89E6;&#x53D1;&#x3002;URL&#x683C;&#x5F0F;&#x5FC5;&#x987B;&#x8981;&#x63D0;&#x524D;&#x6807;&#x8BC6;&#x624D;&#x80FD;&#x88AB;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x6253;&#x5F00;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x8C03;&#x7528; <code>event.preventDefault()</code> &#x3002;</p>
-<h3 id="&#x4E8B;&#x4EF6;&#xFF1A;activate-os-x">&#x4E8B;&#x4EF6;&#xFF1A;&apos;activate&apos; <em>OS X</em></h3>
+<h3 id="&#x4E8B;&#x4EF6;&#xFF1A;activate-macos">&#x4E8B;&#x4EF6;&#xFF1A;&apos;activate&apos; <em>macOS</em></h3>
 <p>&#x8FD4;&#x56DE;&#xFF1A;</p>
 <ul>
 <li><code>event</code> Event</li>
@@ -1080,9 +1080,9 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 <p>&#x8BD5;&#x56FE;&#x5173;&#x6389;&#x6240;&#x6709;&#x7684;&#x7A97;&#x53E3;&#x3002;<code>before-quit</code> &#x4E8B;&#x4EF6;&#x5C06;&#x4F1A;&#x6700;&#x5148;&#x88AB;&#x89E6;&#x53D1;&#x3002;&#x5982;&#x679C;&#x6240;&#x6709;&#x7684;&#x7A97;&#x53E3;&#x90FD;&#x88AB;&#x6210;&#x529F;&#x5173;&#x95ED;&#x4E86;&#xFF0C;
 <code>will-quit</code> &#x4E8B;&#x4EF6;&#x5C06;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0B;&#x5E94;&#x7528;&#x5C06;&#x4F1A;&#x88AB;&#x5173;&#x95ED;&#x3002;</p>
 <p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4FDD;&#x8BC1;&#x4E86;&#x6240;&#x6709;&#x7684; <code>beforeunload</code> &#x548C; <code>unload</code> &#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#x88AB;&#x6B63;&#x786E;&#x6267;&#x884C;&#x3002;&#x5047;&#x5982;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x7684; <code>beforeunload</code> &#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#x8FD4;&#x56DE; <code>false</code>&#xFF0C;&#x90A3;&#x4E48;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x53EF;&#x80FD;&#x4F1A;&#x53D6;&#x6D88;&#x9000;&#x51FA;&#x3002;</p>
-<h3 id="apphide-os-x"><code>app.hide()</code> <em>OS X</em></h3>
+<h3 id="apphide-macos"><code>app.hide()</code> <em>macOS</em></h3>
 <p>&#x9690;&#x85CF;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x7A97;&#x53E3;&#xFF0C;&#x4E0D;&#x662F;&#x6700;&#x5C0F;&#x5316;.</p>
-<h3 id="appshow-os-x"><code>app.show()</code> <em>OS X</em></h3>
+<h3 id="appshow-macos"><code>app.show()</code> <em>macOS</em></h3>
 <p>&#x9690;&#x85CF;&#x540E;&#x91CD;&#x65B0;&#x663E;&#x793A;&#x6240;&#x6709;&#x7684;&#x7A97;&#x53E3;&#xFF0C;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x9009;&#x4E2D;&#x4ED6;&#x4EEC;&#x3002;</p>
 <h3 id="appexitexitcode"><code>app.exit(exitCode)</code></h3>
 <ul>
@@ -1103,7 +1103,7 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 <li><code>appData</code> &#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;&#x5E94;&#x7528;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x9ED8;&#x8BA4;&#x5BF9;&#x5E94;&#xFF1A;<ul>
 <li><code>%APPDATA%</code> Windows &#x4E2D;</li>
 <li><code>$XDG_CONFIG_HOME</code> or <code>~/.config</code> Linux &#x4E2D;</li>
-<li><code>~/Library/Application Support</code> OS X &#x4E2D;</li>
+<li><code>~/Library/Application Support</code> macOS &#x4E2D;</li>
 </ul>
 </li>
 <li><code>userData</code> &#x50A8;&#x5B58;&#x4F60;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F; <code>appData</code> &#x6587;&#x4EF6;&#x5939;&#x9644;&#x52A0;&#x5E94;&#x7528;&#x7684;&#x540D;&#x79F0;</li>
@@ -1142,13 +1142,13 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 <p>&#x91CD;&#x5199;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x7684;&#x540D;&#x5B57;</p>
 <h3 id="appgetlocale"><code>app.getLocale()</code></h3>
 <p>&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x8BED;&#x8A00;&#x3002;</p>
-<h3 id="appaddrecentdocumentpath--os-x-windows"><code>app.addRecentDocument(path)</code>  <em>OS X</em> <em>Windows</em></h3>
+<h3 id="appaddrecentdocumentpath--macos-windows"><code>app.addRecentDocument(path)</code>  <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>path</code> String</li>
 </ul>
 <p>&#x5728;&#x6700;&#x8FD1;&#x8BBF;&#x95EE;&#x7684;&#x6587;&#x6863;&#x5217;&#x8868;&#x4E2D;&#x6DFB;&#x52A0; <code>path</code>&#x3002;</p>
-<p>&#x8FD9;&#x4E2A;&#x5217;&#x8868;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002;&#x5728; Windows &#x4E2D;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EFB;&#x52A1;&#x6761;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#xFF0C;&#x5728; OS X &#x4E2D;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; dock &#x83DC;&#x5355;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x3002;</p>
-<h3 id="appclearrecentdocuments-os-x-windows"><code>app.clearRecentDocuments()</code> <em>OS X</em> <em>Windows</em></h3>
+<p>&#x8FD9;&#x4E2A;&#x5217;&#x8868;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002;&#x5728; Windows &#x4E2D;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EFB;&#x52A1;&#x6761;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#xFF0C;&#x5728; macOS &#x4E2D;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; dock &#x83DC;&#x5355;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x3002;</p>
+<h3 id="appclearrecentdocuments-macos-windows"><code>app.clearRecentDocuments()</code> <em>macOS</em> <em>Windows</em></h3>
 <p>&#x6E05;&#x9664;&#x6700;&#x8FD1;&#x8BBF;&#x95EE;&#x7684;&#x6587;&#x6863;&#x5217;&#x8868;&#x3002;</p>
 <h3 id="appsetusertaskstasks-windows"><code>app.setUserTasks(tasks)</code> <em>Windows</em></h3>
 <ul>
@@ -1185,7 +1185,7 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 &#x4E3B;&#x5C4F;&#x5E55;&#x4E0A;&#x6FC0;&#x6D3B;&#xFF0C;&#x5E76;&#x4E14;&#x53D6;&#x6D88;&#x6700;&#x5C0F;&#x5316;&#xFF0C;&#x6765;&#x63D0;&#x9192;&#x7528;&#x6237;&#x8FD9;&#x4E2A;&#x5E94;&#x7528;&#x5DF2;&#x7ECF;&#x88AB;&#x6253;&#x5F00;&#x4E86;&#x3002;</p>
 <p>&#x5728; <code>app</code> &#x7684; <code>ready</code> &#x4E8B;&#x4EF6;&#x540E;&#xFF0C;<code>callback</code> &#x624D;&#x6709;&#x53EF;&#x80FD;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x5F53;&#x524D;&#x5B9E;&#x4F8B;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE; <code>false</code> &#x6765;&#x4FDD;&#x8BC1;&#x5B83;&#x7EE7;&#x7EED;&#x8FD0;&#x884C;&#x3002;&#x5426;&#x5219;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE; <code>true</code> &#x6765;&#x8BA9;&#x5B83;&#x7ACB;&#x523B;&#x9000;&#x51FA;&#x3002;</p>
-<p>&#x5728; OS X &#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6237;&#x901A;&#x8FC7; Finder&#x3001;<code>open-file</code> &#x6216;&#x8005; <code>open-url</code> &#x6253;&#x5F00;&#x5E94;&#x7528;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x5F3A;&#x5236;&#x786E;&#x4FDD;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5728;&#x8FD0;&#x884C;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x7528;&#x6237;&#x662F;&#x901A;&#x8FC7;
+<p>&#x5728; macOS &#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6237;&#x901A;&#x8FC7; Finder&#x3001;<code>open-file</code> &#x6216;&#x8005; <code>open-url</code> &#x6253;&#x5F00;&#x5E94;&#x7528;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x5F3A;&#x5236;&#x786E;&#x4FDD;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5728;&#x8FD0;&#x884C;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x7528;&#x6237;&#x662F;&#x901A;&#x8FC7;
 &#x547D;&#x4EE4;&#x884C;&#x6253;&#x5F00;&#xFF0C;&#x8FD9;&#x4E2A;&#x7CFB;&#x7EDF;&#x673A;&#x5236;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x9760;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x4FDD;&#x8BC1;&#x5E94;&#x7528;&#x4E3A;&#x5355;&#x5B9E;&#x4F8B;&#x8FD0;&#x884C;&#x7684;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E86;&#x89E3;&#x5982;&#x4F55;&#x786E;&#x4FDD;&#x5E94;&#x7528;&#x4E3A;&#x5355;&#x5B9E;&#x4F8B;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x3002;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> myWindow = <span class="hljs-literal">null</span>;
@@ -1244,35 +1244,35 @@ win = <span class="hljs-keyword">new</span> BrowserWindow(browserOptions);
 <h3 id="appcommandlineappendargumentvalue"><code>app.commandLine.appendArgument(value)</code></h3>
 <p>&#x7ED9; Chromium &#x4E2D;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570; <code>value</code> &#x7684;&#x5F15;&#x53F7;&#x548C;&#x683C;&#x5F0F;&#x5FC5;&#x987B;&#x6B63;&#x786E;&#x3002;</p>
 <p><strong>&#x6CE8;&#x610F;</strong> &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD; <code>process.argv</code>&#x3002;</p>
-<h3 id="appdockbouncetype-os-x"><code>app.dock.bounce([type])</code> <em>OS X</em></h3>
+<h3 id="appdockbouncetype-macos"><code>app.dock.bounce([type])</code> <em>macOS</em></h3>
 <ul>
 <li><code>type</code> String - &#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; <code>critical</code> &#x6216; <code>informational</code>&#x3002;&#x9ED8;&#x8BA4;&#x4E3A; <code>informational</code>&#x3002;</li>
 </ul>
 <p>&#x5F53;&#x4F20;&#x5165;&#x7684;&#x662F; <code>critical</code> &#x65F6;&#xFF0C;dock &#x4E2D;&#x7684;&#x5E94;&#x7528;&#x5C06;&#x4F1A;&#x5F00;&#x59CB;&#x5F39;&#x8DF3;&#xFF0C;&#x76F4;&#x5230;&#x8FD9;&#x4E2A;&#x5E94;&#x7528;&#x88AB;&#x6FC0;&#x6D3B;&#x6216;&#x8005;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x88AB;&#x53D6;&#x6D88;&#x3002;</p>
 <p>&#x5F53;&#x4F20;&#x5165;&#x7684;&#x662F; <code>informational</code> &#x65F6;&#xFF0C;dock &#x4E2D;&#x7684;&#x56FE;&#x6807;&#x53EA;&#x4F1A;&#x5F39;&#x8DF3;&#x4E00;&#x79D2;&#x949F;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x4ECD;&#x7136;&#x4F1A;&#x6FC0;&#x6D3B;&#xFF0C;&#x76F4;&#x5230;&#x5E94;&#x7528;&#x88AB;&#x6FC0;&#x6D3B;&#x6216;&#x8005;&#x8BF7;&#x6C42;&#x88AB;&#x53D6;&#x6D88;&#x3002;</p>
 <p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x7684; ID&#x3002;</p>
-<h3 id="appdockcancelbounceid-os-x"><code>app.dock.cancelBounce(id)</code> <em>OS X</em></h3>
+<h3 id="appdockcancelbounceid-macos"><code>app.dock.cancelBounce(id)</code> <em>macOS</em></h3>
 <ul>
 <li><code>id</code> Integer</li>
 </ul>
 <p>&#x53D6;&#x6D88;&#x8FD9;&#x4E2A; <code>id</code> &#x5BF9;&#x5E94;&#x7684;&#x8BF7;&#x6C42;&#x3002;</p>
-<h3 id="appdocksetbadgetext-os-x"><code>app.dock.setBadge(text)</code> <em>OS X</em></h3>
+<h3 id="appdocksetbadgetext-macos"><code>app.dock.setBadge(text)</code> <em>macOS</em></h3>
 <ul>
 <li><code>text</code> String</li>
 </ul>
 <p>&#x8BBE;&#x7F6E;&#x5E94;&#x7528;&#x5728; dock &#x4E2D;&#x663E;&#x793A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<h3 id="appdockgetbadge-os-x"><code>app.dock.getBadge()</code> <em>OS X</em></h3>
+<h3 id="appdockgetbadge-macos"><code>app.dock.getBadge()</code> <em>macOS</em></h3>
 <p>&#x8FD4;&#x56DE;&#x5E94;&#x7528;&#x5728; dock &#x4E2D;&#x663E;&#x793A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<h3 id="appdockhide-os-x"><code>app.dock.hide()</code> <em>OS X</em></h3>
+<h3 id="appdockhide-macos"><code>app.dock.hide()</code> <em>macOS</em></h3>
 <p>&#x9690;&#x85CF;&#x5E94;&#x7528;&#x5728; dock &#x4E2D;&#x7684;&#x56FE;&#x6807;&#x3002;</p>
-<h3 id="appdockshow-os-x"><code>app.dock.show()</code> <em>OS X</em></h3>
+<h3 id="appdockshow-macos"><code>app.dock.show()</code> <em>macOS</em></h3>
 <p>&#x663E;&#x793A;&#x5E94;&#x7528;&#x5728; dock &#x4E2D;&#x7684;&#x56FE;&#x6807;&#x3002;</p>
-<h3 id="appdocksetmenumenu-os-x"><code>app.dock.setMenu(menu)</code> <em>OS X</em></h3>
+<h3 id="appdocksetmenumenu-macos"><code>app.dock.setMenu(menu)</code> <em>macOS</em></h3>
 <ul>
 <li><code>menu</code> <a href="menu.html">Menu</a></li>
 </ul>
 <p>&#x8BBE;&#x7F6E;&#x5E94;&#x7528;&#x7684; <a href="https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/customizing_docktile/concepts/dockconcepts.html#//apple_ref/doc/uid/TP30000986-CH2-TPXREF103" target="_blank">dock &#x83DC;&#x5355;</a>.</p>
-<h3 id="appdockseticonimage-os-x"><code>app.dock.setIcon(image)</code> <em>OS X</em></h3>
+<h3 id="appdockseticonimage-macos"><code>app.dock.setIcon(image)</code> <em>macOS</em></h3>
 <ul>
 <li><code>image</code> <a href="native-image.html">NativeImage</a></li>
 </ul>

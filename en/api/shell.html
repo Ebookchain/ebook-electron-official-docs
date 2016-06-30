@@ -53,7 +53,7 @@
         data-chapter-title="shell"
         data-filepath="api/shell.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,9 +926,12 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="shell">shell</h1>
+<blockquote>
+<p>Manage files and URLs using their default applications.</p>
+</blockquote>
 <p>The <code>shell</code> module provides functions related to desktop integration.</p>
 <p>An example of opening a URL in the user&apos;s default browser:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> shell = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).shell;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {shell} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
 shell.openExternal(<span class="hljs-string">&apos;https://github.com&apos;</span>);
 </code></pre>
@@ -947,7 +950,7 @@ shell.openExternal(<span class="hljs-string">&apos;https://github.com&apos;</spa
 <h3 id="shellopenexternalurl-options"><code>shell.openExternal(url[, options])</code></h3>
 <ul>
 <li><code>url</code> String</li>
-<li><code>options</code> Object (optional) <em>OS X</em><ul>
+<li><code>options</code> Object (optional) <em>macOS</em><ul>
 <li><code>activate</code> Boolean - <code>true</code> to bring the opened application to the
 foreground. The default is <code>true</code>.</li>
 </ul>

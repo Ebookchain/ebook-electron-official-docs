@@ -53,7 +53,7 @@
         data-chapter-title="Process Object"
         data-filepath="api/process.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:56 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:31 GMT+0800 (CST)"
         data-innerlanguage="jp">
     
 
@@ -844,18 +844,14 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="process">process</h1>
-<p>Electron&#x306E;<code>process</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x4E0A;&#x6D41;node&#x306E;1&#x3064;&#x304B;&#x3089;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x9055;&#x3044;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
-<ul>
-<li><code>process.type</code> String - &#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306E;&#x7A2E;&#x985E;&#x3067;&#x3001;<code>browser</code> (&#x4F8B;&#x3000;&#x30E1;&#x30A4;&#x30F3;&#x30D7;&#x30ED;&#x30BB;&#x30B9;)&#x307E;&#x305F;&#x306F; <code>renderer</code>&#x3092;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</li>
-<li><code>process.versions[&apos;electron&apos;]</code> String - Electron&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;</li>
-<li><code>process.versions[&apos;chrome&apos;]</code> String - Chromium&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;</li>
-<li><code>process.resourcesPath</code> String - JavaScript&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x30D1;&#x30B9;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;</li>
-<li><code>process.mas</code> Boolean - Mac app Store&#x7528;&#x306E;&#x30D3;&#x30EB;&#x30C9;&#x3067;&#x3001;&#x5024;&#x306F;<code>true</code>&#x3067;&#x3059;&#x3002;&#x307B;&#x304B;&#x306E;&#x30D3;&#x30EB;&#x30C9;&#x306E;&#x5834;&#x5408;&#x306F;<code>undefined</code>&#x3067;&#x3059;&#x3002;</li>
-</ul>
+<blockquote>
+<p>process&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x62E1;&#x5F35;&#x3002;</p>
+</blockquote>
+<p>Electron&#x306E;<code>process</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;API&#x3067;&#x62E1;&#x5F35;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <h2 id="&#x30A4;&#x30D9;&#x30F3;&#x30C8;">&#x30A4;&#x30D9;&#x30F3;&#x30C8;</h2>
 <h3 id="&#x30A4;&#x30D9;&#x30F3;&#x30C8;-loaded">&#x30A4;&#x30D9;&#x30F3;&#x30C8;: &apos;loaded&apos;</h3>
-<p>Electron&#x306F;&#x5185;&#x90E8;&#x306E;&#x521D;&#x671F;&#x5316;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x305F;&#x3068;&#x304D;&#x51FA;&#x529B;&#x3055;&#x308C;&#x3001;&#x30A6;&#x30A7;&#x30D6;&#x30DA;&#x30FC;&#x30B8;&#x307E;&#x305F;&#x306F;&#x30E1;&#x30A4;&#x30F3;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x306E;&#x30ED;&#x30FC;&#x30C9;&#x304C;&#x59CB;&#x307E;&#x308A;&#x307E;&#x3059;&#x3002;</p>
-<p>Node&#x7D71;&#x5408;&#x304C;&#x30AA;&#x30D5;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x3068;&#x304D;&#x3001;&#x524A;&#x9664;&#x3057;&#x305F;Node&#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x3092;&#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB;&#x30B9;&#x30B3;&#x30FC;&#x30D7;&#x3078;&#x623B;&#x3057;&#x3066;&#x30D7;&#x30EA;&#x30ED;&#x30FC;&#x30C9;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3067;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x306F;Electron&#x304C;&#x5185;&#x90E8;&#x306E;&#x521D;&#x671F;&#x5316;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x3001;&#x30A6;&#x30A7;&#x30D6;&#x30DA;&#x30FC;&#x30B8;&#x307E;&#x305F;&#x306F;&#x30E1;&#x30A4;&#x30F3;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x306E;&#x30ED;&#x30FC;&#x30C9;&#x304C;&#x59CB;&#x307E;&#x308B;&#x3068;&#x304D;&#x306B;&#x767A;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>Node&#x7D71;&#x5408;&#x304C;&#x30AA;&#x30D5;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x3068;&#x304D;&#x3001;&#x524A;&#x9664;&#x3057;&#x305F;Node&#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x3092;&#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB;&#x30B9;&#x30B3;&#x30FC;&#x30D7;&#x3078;&#x623B;&#x3059;&#x305F;&#x3081;&#x306B;&#x3001;&#x30D7;&#x30EA;&#x30ED;&#x30FC;&#x30C9;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3067;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-js"><span class="hljs-comment">// preload.js</span>
 <span class="hljs-keyword">var</span> _setImmediate = setImmediate;
 <span class="hljs-keyword">var</span> _clearImmediate = clearImmediate;
@@ -867,15 +863,51 @@ process.once(<span class="hljs-string">&apos;loaded&apos;</span>, <span class="h
 <h2 id="&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;">&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;</h2>
 <h3 id="processnoasar"><code>process.noAsar</code></h3>
 <p>&#x3053;&#x308C;&#x3092;<code>true</code>&#x306B;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x3068;&#x3001;Node&#x306E;&#x30D3;&#x30EB;&#x30C8;&#x30A4;&#x30F3;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3001;<code>asar</code>&#x30A2;&#x30FC;&#x30AB;&#x30A4;&#x30D6;&#x306E;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3092;&#x7121;&#x52B9;&#x306B;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="processtype"><code>process.type</code></h3>
+<p>&#x73FE;&#x5728;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306E;&#x30BF;&#x30A4;&#x30D7;&#x3067;&#x3001;<code>&quot;browser&quot;</code>(&#x4F8B;: &#x30E1;&#x30A4;&#x30F3;&#x30D7;&#x30ED;&#x30BB;&#x30B9;) &#x307E;&#x305F;&#x306F; <code>&quot;renderer&quot;</code>&#x306E;&#x5024;&#x3092;&#x3068;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="processversionselectron"><code>process.versions.electron</code></h3>
+<p>Electron&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x6587;&#x5B57;&#x5217;&#x3067;&#x3059;&#x3002;</p>
+<h3 id="processversionschrome"><code>process.versions.chrome</code></h3>
+<p>Chrome&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x6587;&#x5B57;&#x5217;&#x3067;&#x3059;&#x3002;</p>
+<h3 id="processresourcespath"><code>process.resourcesPath</code></h3>
+<p>&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306E;&#x30D1;&#x30B9;&#x3067;&#x3059;&#x3002;</p>
+<h3 id="processmas"><code>process.mas</code></h3>
+<p>Mac app Store&#x7528;&#x306E;&#x30D3;&#x30EB;&#x30C9;&#x3067;&#x306F;&#x5024;&#x306F;<code>true</code>&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;&#x307B;&#x304B;&#x306E;&#x30D3;&#x30EB;&#x30C9;&#x306E;&#x5834;&#x5408;&#x306F;<code>undefined</code>&#x3067;&#x3059;&#x3002;</p>
+<h3 id="processwindowsstore"><code>process.windowsStore</code></h3>
+<p>Windows Store App (appx)&#x3068;&#x3057;&#x3066;&#x52D5;&#x4F5C;&#x4E2D;&#x306E;&#x5834;&#x5408;&#x306F;&#x3001;&#x5024;&#x306F;<code>true</code>&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;&#x305D;&#x308C;&#x4EE5;&#x5916;&#x3067;&#x306F;<code>undefined</code>&#x3067;&#x3059;&#x3002;</p>
+<h3 id="processdefaultapp"><code>process.defaultApp</code></h3>
+<p>&#x30A2;&#x30D7;&#x30EA;&#x304C;default app&#x306E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3068;&#x3057;&#x3066;&#x6E21;&#x3055;&#x308C;&#x3066;&#x8D77;&#x52D5;&#x3055;&#x308C;&#x305F;&#x5834;&#x5408;&#x306F;&#x3001;&#x5024;&#x306F;<code>true</code>&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x8A33;&#x6CE8;: <a href="https://github.com/electron/electron/issues/4690" target="_blank">issue #4690</a>&#x304C;&#x53C2;&#x8003;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <h2 id="&#x30E1;&#x30BD;&#x30C3;&#x30C9;">&#x30E1;&#x30BD;&#x30C3;&#x30C9;</h2>
-<p><code>process</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x6B21;&#x306E;&#x3081;&#x3063;&#x305D;&#x3069;&#x3092;&#x6301;&#x3061;&#x307E;&#x3059;&#x3002;</p>
+<p><code>process</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x6B21;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3061;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="processcrash"><code>process.crash()</code></h3>
+<p>&#x3053;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306E;&#x30E1;&#x30A4;&#x30F3;&#x30B9;&#x30EC;&#x30C3;&#x30C9;&#x3092;&#x30AF;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x3055;&#x305B;&#x307E;&#x3059;&#x3002;</p>
 <h3 id="processhang"><code>process.hang()</code></h3>
-<p>&#x73FE;&#x5728;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x304C;&#x30CF;&#x30F3;&#x30B0;&#x3057;&#x3066;&#x3044;&#x308B;&#x30E1;&#x30A4;&#x30F3;&#x30B9;&#x30EC;&#x30C3;&#x30C9;&#x304C;&#x539F;&#x56E0;&#x3067;&#x767A;&#x751F;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<h3 id="processsetfdlimitmaxdescriptors-os-x-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>OS X</em> <em>Linux</em></h3>
+<p>&#x3053;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306E;&#x30E1;&#x30A4;&#x30F3;&#x30B9;&#x30EC;&#x30C3;&#x30C9;&#x3092;&#x30CF;&#x30F3;&#x30B0;&#x3055;&#x305B;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="processsetfdlimitmaxdescriptors-macos-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>macOS</em> <em>Linux</em></h3>
 <ul>
 <li><code>maxDescriptors</code> Integer</li>
 </ul>
-<p>&#x73FE;&#x5728;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3067;&#x3001;<code>maxDescriptors</code>&#x307E;&#x305F;&#x306F;OS&#x30CF;&#x30FC;&#x30C9;&#x5236;&#x9650;&#x306E;&#x3069;&#x3061;&#x3089;&#x304B;&#x4F4E;&#x3044;&#x307B;&#x3046;&#x3067;&#x3001;&#x30BD;&#x30D5;&#x30C8;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30C7;&#x30A3;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30BF;&#x30FC;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30C7;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30BF;&#x306E;&#x6700;&#x5927;&#x6570;&#x306E;&#x30BD;&#x30D5;&#x30C8;&#x30EA;&#x30DF;&#x30C3;&#x30C8;&#x3092;&#x3001;<code>maxDescriptors</code>&#x304B;OS&#x306E;&#x30CF;&#x30FC;&#x30C9;&#x30EA;&#x30DF;&#x30C3;&#x30C8;&#x306E;&#x3001;&#x3069;&#x3061;&#x3089;&#x304B;&#x4F4E;&#x3044;&#x65B9;&#x306B;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="processgetprocessmemoryinfo"><code>process.getProcessMemoryInfo()</code></h3>
+<p>&#x672C;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306E;&#x30E1;&#x30E2;&#x30EA;&#x4F7F;&#x7528;&#x7D71;&#x8A08;&#x306B;&#x95A2;&#x3059;&#x308B;&#x60C5;&#x5831;&#x3092;&#x5F97;&#x308B;&#x3053;&#x3068;&#x306E;&#x3067;&#x304D;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;&#x5168;&#x3066;&#x306E;&#x5831;&#x544A;&#x5024;&#x306F;&#x30AD;&#x30ED;&#x30D0;&#x30A4;&#x30C8;&#x5358;&#x4F4D;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<ul>
+<li><code>workingSetSize</code> - &#x5B9F;&#x969B;&#x306E;&#x7269;&#x7406;&#x30E1;&#x30E2;&#x30EA;&#x306B;&#x56FA;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30E1;&#x30E2;&#x30EA;&#x30B5;&#x30A4;&#x30BA;&#x3067;&#x3059;&#x3002;</li>
+<li><code>peakWorkingSetSize</code> - &#x3053;&#x308C;&#x307E;&#x3067;&#x306B;&#x5B9F;&#x969B;&#x306E;&#x7269;&#x7406;&#x30E1;&#x30E2;&#x30EA;&#x306B;&#x56FA;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x6700;&#x5927;&#x306E;&#x30E1;&#x30E2;&#x30EA;&#x30B5;&#x30A4;&#x30BA;&#x3067;&#x3059;&#x3002;</li>
+<li><code>privateBytes</code> - JS heap&#x3084;HTML content&#x306A;&#x3069;&#x3001;&#x4ED6;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306B;&#x5171;&#x6709;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x30E1;&#x30E2;&#x30EA;&#x30B5;&#x30A4;&#x30BA;&#x3067;&#x3059;&#x3002;</li>
+<li><code>sharedBytes</code> - &#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x9593;&#x3067;&#x5171;&#x6709;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30E1;&#x30E2;&#x30EA;&#x30B5;&#x30A4;&#x30BA;&#x3067;&#x3059;&#x3002;&#x4F8B;&#x3048;&#x3070;Electron&#x305D;&#x306E;&#x3082;&#x306E;&#x306B;&#x3088;&#x308A;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x305F;&#x30E1;&#x30E2;&#x30EA;&#x304C;&#x3053;&#x308C;&#x306B;&#x5F53;&#x305F;&#x308A;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<h3 id="processgetsystemmemoryinfo"><code>process.getSystemMemoryInfo()</code></h3>
+<p>&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x5168;&#x4F53;&#x3067;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30E1;&#x30E2;&#x30EA;&#x4F7F;&#x7528;&#x7D71;&#x8A08;&#x306B;&#x95A2;&#x3059;&#x308B;&#x60C5;&#x5831;&#x3092;&#x5F97;&#x308B;&#x3053;&#x3068;&#x306E;&#x3067;&#x304D;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;&#x5168;&#x3066;&#x306E;&#x5831;&#x544A;&#x5024;&#x306F;&#x30AD;&#x30ED;&#x30D0;&#x30A4;&#x30C8;&#x5358;&#x4F4D;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<ul>
+<li><code>total</code> - &#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3067;&#x4F7F;&#x7528;&#x53EF;&#x80FD;&#x306A;&#x5168;&#x3066;&#x306E;&#x7269;&#x7406;&#x30E1;&#x30E2;&#x30EA;&#x306E;&#x30B5;&#x30A4;&#x30BA;(KB)&#x3067;&#x3059;&#x3002;</li>
+<li><code>free</code> - &#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3084;&#x30C7;&#x30A3;&#x30B9;&#x30AF;&#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x3067;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x30E1;&#x30E2;&#x30EA;&#x306E;&#x30B5;&#x30A4;&#x30BA;&#x3067;&#x3059;&#x3002;</li>
+</ul>
+<p>Windows / Linux&#x7528;:</p>
+<ul>
+<li><code>swapTotal</code> - &#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3067;&#x4F7F;&#x7528;&#x53EF;&#x80FD;&#x306A;&#x30B9;&#x30EF;&#x30C3;&#x30D7;&#x30E1;&#x30E2;&#x30EA;&#x306E;&#x7DCF;&#x30B5;&#x30A4;&#x30BA;&#x3067;&#x3059;&#x3002;</li>
+<li><code>swapFree</code> - &#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3067;&#x4F7F;&#x7528;&#x53EF;&#x80FD;&#x306A;&#x30B9;&#x30EF;&#x30C3;&#x30D7;&#x30E1;&#x30E2;&#x30EA;&#x306E;&#x7A7A;&#x304D;&#x30B5;&#x30A4;&#x30BA;&#x3067;&#x3059;&#x3002;</li>
+</ul>
 
                     
                     </section>

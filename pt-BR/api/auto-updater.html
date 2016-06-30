@@ -53,7 +53,7 @@
         data-chapter-title="autoUpdater"
         data-filepath="api/auto-updater.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:51 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:22 GMT+0800 (CST)"
         data-innerlanguage="pt-BR">
     
 
@@ -617,12 +617,12 @@
 <p>Este m&#xF3;dulo oferece uma interface para o framework de atualiza&#xE7;&#xE3;o autom&#xE1;tica <code>Squirrel</code>.</p>
 <h2 id="avisos-sobre-plataformas">Avisos sobre Plataformas</h2>
 <p>Embora o <code>autoUpdater</code> ofere&#xE7;a uma API uniforme para diferentes plataformas, existem diferen&#xE7;as sutis em cada plataforma.</p>
-<h3 id="os-x">OS X</h3>
-<p>No OS X, o m&#xF3;dulo <code>autoUpdater</code> &#xE9; constru&#xED;do sobre o <a href="https://github.com/Squirrel/Squirrel.Mac" target="_blank">Squirrel.Mac</a>, o que significa que voc&#xEA; n&#xE3;o precisa de nenhuma configura&#xE7;&#xE3;o especial para faz&#xEA;-lo funcionar. Para requerimentos de servidor, voc&#xEA; pode ler <a href="https://github.com/Squirrel/Squirrel.Mac#server-support" target="_blank">Server Support</a>.</p>
+<h3 id="macos">macOS</h3>
+<p>No macOS, o m&#xF3;dulo <code>autoUpdater</code> &#xE9; constru&#xED;do sobre o <a href="https://github.com/Squirrel/Squirrel.Mac" target="_blank">Squirrel.Mac</a>, o que significa que voc&#xEA; n&#xE3;o precisa de nenhuma configura&#xE7;&#xE3;o especial para faz&#xEA;-lo funcionar. Para requerimentos de servidor, voc&#xEA; pode ler <a href="https://github.com/Squirrel/Squirrel.Mac#server-support" target="_blank">Server Support</a>.</p>
 <h3 id="windows">Windows</h3>
 <p>No Windows, voc&#xEA; deve instalar seu aplicativo na m&#xE1;quina de um usu&#xE1;rio antes que possa usar o auto-updater, ent&#xE3;o &#xE9; recomendado utilizar o m&#xF3;dulo <a href="https://github.com/atom/grunt-electron-installer" target="_blank">grunt-electron-installer</a> para gerar um instalador do Windows.</p>
 <p>O instalador gerado com Squirrel ir&#xE1; criar um &#xED;cone de atalho com um <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85).aspx" target="_blank">Application User Model ID</a> no formato <code>com.squirrel.PACKAGE_ID.YOUR_EXE_WITHOUT_DOT_EXE</code>, por exemplo: <code>com.squirrel.slack.Slack</code> e <code>com.squirrel.code.Code</code>. Voc&#xEA; precisa usar o mesmo ID para seu aplicativo a API <code>app.setAppUserModelId</code>, sen&#xE3;o o Windows n&#xE3;o conseguir&#xE1; fixar seu aplicativo corretamente na barra de tarefas.</p>
-<p>A configura&#xE7;&#xE3;o do servidor tamb&#xE9;m &#xE9; diferente do OS X. Voc&#xEA; pode ler a documenta&#xE7;&#xE3;o do <a href="https://github.com/Squirrel/Squirrel.Windows" target="_blank">Squirrel.Windows</a> para mais detalhes.</p>
+<p>A configura&#xE7;&#xE3;o do servidor tamb&#xE9;m &#xE9; diferente do macOS. Voc&#xEA; pode ler a documenta&#xE7;&#xE3;o do <a href="https://github.com/Squirrel/Squirrel.Windows" target="_blank">Squirrel.Windows</a> para mais detalhes.</p>
 <h3 id="linux">Linux</h3>
 <p>N&#xE3;o h&#xE1; suporte nativo do auto-updater para Linux, ent&#xE3;o &#xE9; recomendado utilizar o gerenciador de pacotes da distribui&#xE7;&#xE3;o para atualizar seu aplicativo.</p>
 <h2 id="eventos">Eventos</h2>
@@ -636,7 +636,7 @@
 <h3 id="evento-checkingforupdate">Evento: &apos;checking-for-update&apos;</h3>
 <p>Emitido quando est&#xE1; verificando se uma atualiza&#xE7;&#xE3;o foi inicializada.</p>
 <h3 id="evento-updateavailable">Evento: &apos;update-available&apos;</h3>
-<p>Emitido quando h&#xE1; uma atualiza&#xE7;&#xE3;o dispon&#xED;vel. A autaliza&#xE7;&#xE3;o &#xE9; baixada automaticamente.</p>
+<p>Emitido quando h&#xE1; uma atualiza&#xE7;&#xE3;o dispon&#xED;vel. A atualiza&#xE7;&#xE3;o &#xE9; baixada automaticamente.</p>
 <h3 id="evento-updatenotavailable">Evento: &apos;update-not-available&apos;</h3>
 <p>Emitido quando n&#xE3;o h&#xE1; uma atualiza&#xE7;&#xE3;o dispon&#xED;vel.</p>
 <h3 id="evento-updatedownloaded">Evento: &apos;update-downloaded&apos;</h3>

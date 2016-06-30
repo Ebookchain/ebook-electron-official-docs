@@ -53,7 +53,7 @@
         data-chapter-title="환경 변수"
         data-filepath="api/environment-variables.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,8 +926,11 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#xD658;&#xACBD;-&#xBCC0;&#xC218;">&#xD658;&#xACBD; &#xBCC0;&#xC218;</h1>
-<p>Electron&#xC758; &#xBA87;&#xBA87; &#xB3D9;&#xC791;&#xC740; &#xBA85;&#xB839; &#xC904;&#xACFC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xCF54;&#xB4DC;&#xBCF4;&#xB2E4; &#xBA3C;&#xC800; &#xCD08;&#xAE30;&#xD654;&#xB418;&#xC5B4;&#xC57C; &#xD558;&#xBBC0;&#xB85C; &#xD658;&#xACBD;
-&#xBCC0;&#xC218;&#xC5D0; &#xC758;&#xD574; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xAD6C;&#xC131;&#xACFC; &#xB3D9;&#xC791;&#xC744; &#xCF54;&#xB4DC; &#xBCC0;&#xACBD; &#xC5C6;&#xC774; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xD2B9;&#xC815; Electron &#xB3D9;&#xC791;&#xC740; &#xBA85;&#xB839;&#xC904; &#xD50C;&#xB798;&#xADF8;&#xC640; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xCF54;&#xB4DC;&#xBCF4;&#xB2E4; &#xBA3C;&#xC800; &#xCD08;&#xAE30;&#xD654;&#xB418;&#xC5B4;&#xC57C; &#xD558;&#xBBC0;&#xB85C;
+&#xD658;&#xACBD; &#xBCC0;&#xC218;&#xC5D0; &#xC758;&#xD574; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>POSIX &#xC258;&#xC758; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">export</span> ELECTRON_ENABLE_LOGGING=<span class="hljs-literal">true</span>
 $ electron
@@ -936,25 +939,23 @@ $ electron
 <pre><code class="lang-powershell">&gt; set ELECTRON_ENABLE_LOGGING=true
 &gt; electron
 </code></pre>
-<h2 id="electronrunasnode"><code>ELECTRON_RUN_AS_NODE</code></h2>
+<h3 id="electronrunasnode"><code>ELECTRON_RUN_AS_NODE</code></h3>
 <p>&#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xC77C;&#xBC18; Node.js &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xCC98;&#xB7FC; &#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;. (electron &#xBAA8;&#xB4C8; &#xC81C;&#xC678;)</p>
-<h2 id="electronenablelogging"><code>ELECTRON_ENABLE_LOGGING</code></h2>
+<h3 id="electronenablelogging"><code>ELECTRON_ENABLE_LOGGING</code></h3>
 <p>Chrome&#xC758; &#xB0B4;&#xBD80; &#xB85C;&#xADF8;&#xB97C; &#xCF58;&#xC194;&#xC5D0; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h2 id="electronlogasarreads"><code>ELECTRON_LOG_ASAR_READS</code></h2>
+<h3 id="electronlogasarreads"><code>ELECTRON_LOG_ASAR_READS</code></h3>
 <p>Electron&#xC774; ASAR &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xC744; &#xB54C;, &#xC77D;&#xAE30; &#xC624;&#xD504;&#xC14B;&#xC758; &#xB85C;&#xADF8;&#xB97C; &#xB0A8;&#xAE30;&#xACE0; &#xC2DC;&#xC2A4;&#xD15C; <code>tmpdir</code>&#xC5D0; &#xD30C;&#xC77C;&#xB85C;
 &#xC800;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;. &#xACB0;&#xACFC; &#xD30C;&#xC77C;&#xC740; ASAR &#xBAA8;&#xB4C8;&#xC758; &#xD30C;&#xC77C; &#xC21C;&#xC11C;&#xB97C; &#xCD5C;&#xC801;&#xD654; &#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h2 id="electronenablestackdumping"><code>ELECTRON_ENABLE_STACK_DUMPING</code></h2>
+<h3 id="electronenablestackdumping"><code>ELECTRON_ENABLE_STACK_DUMPING</code></h3>
 <p>Electron&#xC774; &#xD06C;&#xB798;&#xC2DC;&#xB418;&#xBA74;, &#xCF58;&#xC194;&#xC5D0; stack trace&#xB97C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC774; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xB294; <code>crashReporter</code>&#xAC00; &#xC2DC;&#xC791;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xACBD;&#xC6B0; &#xC791;&#xB3D9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h2 id="electrondefaulterrormode-windows"><code>ELECTRON_DEFAULT_ERROR_MODE</code> <em>Windows</em></h2>
-<p>Electron&#xC774; &#xD06C;&#xB798;&#xC2DC;&#xB418;&#xBA74;, &#xD06C;&#xB798;&#xC2DC; &#xC815;&#xBCF4; &#xCC3D;&#xC744; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="electrondefaulterrormode-windows"><code>ELECTRON_DEFAULT_ERROR_MODE</code> <em>Windows</em></h3>
+<p>Electron&#xC774; &#xD06C;&#xB798;&#xC2DC;&#xB418;&#xBA74; &#xC2A4;&#xD0DD; &#xCD9C;&#xB825; &#xC815;&#xBCF4;&#xB97C; &#xCF58;&#xC194;&#xC5D0; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC774; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xB294; <code>crashReporter</code>&#xAC00; &#xC2DC;&#xC791;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xACBD;&#xC6B0; &#xC791;&#xB3D9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h2 id="electronnoattachconsole-windows"><code>ELECTRON_NO_ATTACH_CONSOLE</code> <em>Windows</em></h2>
+<h3 id="electronnoattachconsole-windows"><code>ELECTRON_NO_ATTACH_CONSOLE</code> <em>Windows</em></h3>
 <p>&#xD604;&#xC7AC; &#xCF58;&#xC194; &#xC138;&#xC158;&#xC5D0; &#xC18C;&#xC18D;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h2 id="electronforcewindowmenubar-linux"><code>ELECTRON_FORCE_WINDOW_MENU_BAR</code> <em>Linux</em></h2>
-<p>Linux&#xC758; &#xAE00;&#xB85C;&#xBC8C; &#xBA54;&#xB274; &#xB9C9;&#xB300;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h2 id="electronhideinternalmodules"><code>ELECTRON_HIDE_INTERNAL_MODULES</code></h2>
-<p><code>require(&apos;ipc&apos;)</code>&#xAC19;&#xC740; &#xC608;&#xC804; &#xBC29;&#xC2DD;&#xC758; &#xBE4C;&#xD2B8;&#xC778; &#xBAA8;&#xB4C8;&#xC744; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="electronforcewindowmenubar-linux"><code>ELECTRON_FORCE_WINDOW_MENU_BAR</code> <em>Linux</em></h3>
+<p>Linux&#xC758; &#xC804;&#xC5ED; &#xBA54;&#xB274;&#xBC14;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 
                     
                     </section>

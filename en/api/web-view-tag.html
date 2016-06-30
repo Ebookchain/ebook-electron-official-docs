@@ -53,7 +53,7 @@
         data-chapter-title="`&lt;webview&gt;` Tag"
         data-filepath="api/web-view-tag.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -925,7 +925,10 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="the-webview-tag">The <code>&lt;webview&gt;</code> tag</h1>
+                        <h1 id="webview-tag"><code>&lt;webview&gt;</code> Tag</h1>
+<blockquote>
+<p>Display external web content in an isolated frame and process.</p>
+</blockquote>
 <p>Use the <code>webview</code> tag to embed &apos;guest&apos; content (such as web pages) in your
 Electron app. The guest content is contained within the <code>webview</code> container.
 An embedded page within your app controls how the guest content is laid out and
@@ -934,6 +937,8 @@ rendered.</p>
 app. It doesn&apos;t have the same permissions as your web page and all interactions
 between your app and embedded content will be asynchronous. This keeps your app
 safe from the embedded content.</p>
+<p>For security purpose, <code>webview</code> can only be used in <code>BrowserWindow</code>s that have
+<code>nodeIntegration</code> enabled.</p>
 <h2 id="example">Example</h2>
 <p>To embed a web page in your app, add the <code>webview</code> tag to your app&apos;s embedder
 page (this is the app page that will display the guest content). In its simplest
@@ -941,31 +946,53 @@ form, the <code>webview</code> tag includes the <code>src</code> of the web page
 control the appearance of the <code>webview</code> container:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;foo&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.github.com/&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;display:inline-flex; width:640px; height:480px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
 </code></pre>
-<p>Please note that the <code>webview</code> tag&apos;s style uses <code>display:flex;</code> internally to 
-ensure the child <code>object</code> element fills the full height and width of its <code>webview</code> 
-container when used with traditional and flexbox layouts (since v0.36.11). Please 
-do not overwrite the default <code>display:flex;</code> CSS property, unless specifying 
-<code>display:inline-flex;</code> for inline layout.</p>
 <p>If you want to control the guest content in any way, you can write JavaScript
 that listens for <code>webview</code> events and responds to those events using the
 <code>webview</code> methods. Here&apos;s sample code with two event listeners: one that listens
 for the web page to start loading, the other for the web page to stop loading,
 and displays a &quot;loading...&quot; message during the load time:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> webview = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;foo&quot;</span>);
-    <span class="hljs-keyword">var</span> indicator = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.indicator&quot;</span>);
+  onload = () =&gt; {
+    <span class="hljs-keyword">const</span> webview = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;foo&apos;</span>);
+    <span class="hljs-keyword">const</span> indicator = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;.indicator&apos;</span>);
 
-    <span class="hljs-keyword">var</span> loadstart = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-      indicator.innerText = <span class="hljs-string">&quot;loading...&quot;</span>;
-    }
-    <span class="hljs-keyword">var</span> loadstop = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-      indicator.innerText = <span class="hljs-string">&quot;&quot;</span>;
-    }
-    webview.addEventListener(<span class="hljs-string">&quot;did-start-loading&quot;</span>, loadstart);
-    webview.addEventListener(<span class="hljs-string">&quot;did-stop-loading&quot;</span>, loadstop);
-  }
+    <span class="hljs-keyword">const</span> loadstart = () =&gt; {
+      indicator.innerText = <span class="hljs-string">&apos;loading...&apos;</span>;
+    };
+
+    <span class="hljs-keyword">const</span> loadstop = () =&gt; {
+      indicator.innerText = <span class="hljs-string">&apos;&apos;</span>;
+    };
+
+    webview.addEventListener(<span class="hljs-string">&apos;did-start-loading&apos;</span>, loadstart);
+    webview.addEventListener(<span class="hljs-string">&apos;did-stop-loading&apos;</span>, loadstop);
+  };
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h2 id="css-styling-notes">CSS Styling Notes</h2>
+<p>Please note that the <code>webview</code> tag&apos;s style uses <code>display:flex;</code> internally to
+ensure the child <code>object</code> element fills the full height and width of its <code>webview</code>
+container when used with traditional and flexbox layouts (since v0.36.11). Please
+do not overwrite the default <code>display:flex;</code> CSS property, unless specifying
+<code>display:inline-flex;</code> for inline layout.</p>
+<p><code>webview</code> has issues being hidden using the <code>hidden</code> attribute or using <code>display: none;</code>.
+It can cause unusual rendering behaviour within its child <code>browserplugin</code> object
+and the web page is reloaded, when the <code>webview</code> is un-hidden, as opposed to just
+becoming visible again. The recommended approach is to hide the <code>webview</code> using
+CSS by zeroing the <code>width</code> &amp; <code>height</code> and allowing the element to shrink to the 0px
+dimensions via <code>flex</code>.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+  <span class="hljs-tag">webview</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">inline-flex</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">640px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">480px</span></span></span>;
+  }</span>
+  <span class="hljs-tag">webview</span><span class="hljs-class">.hide</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">flex</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">0px</span></span></span>;
+  }</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
 </code></pre>
 <h2 id="tag-attributes">Tag Attributes</h2>
 <p>The <code>webview</code> tag has the following attributes:</p>
@@ -1018,7 +1045,7 @@ page is loaded, use the <code>setUserAgent</code> method to change the user agen
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.github.com/&quot;</span> <span class="hljs-attribute">disablewebsecurity</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
 </code></pre>
 <p>If &quot;on&quot;, the guest page will have web security disabled.</p>
-<h3 id="partition">partition</h3>
+<h3 id="partition"><code>partition</code></h3>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://github.com&quot;</span> <span class="hljs-attribute">partition</span>=<span class="hljs-value">&quot;persist:github&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;http://electron.atom.io&quot;</span> <span class="hljs-attribute">partition</span>=<span class="hljs-value">&quot;electron&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
 </code></pre>
@@ -1040,12 +1067,18 @@ value will fail with a DOM exception.</p>
 </code></pre>
 <p>A list of strings which specifies the blink features to be enabled separated by <code>,</code>.
 The full list of supported feature strings can be found in the
-<a href="https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/platform/RuntimeEnabledFeatures.cpp&amp;sq=package:chromium&amp;type=cs&amp;l=527" target="_blank">setFeatureEnabledFromString</a> function.</p>
+<a href="https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/RuntimeEnabledFeatures.in" target="_blank">RuntimeEnabledFeatures.in</a> file.</p>
+<h3 id="disableblinkfeatures"><code>disableblinkfeatures</code></h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.github.com/&quot;</span> <span class="hljs-attribute">disableblinkfeatures</span>=<span class="hljs-value">&quot;PreciseMemoryInfo, CSSVariables&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
+</code></pre>
+<p>A list of strings which specifies the blink features to be disabled separated by <code>,</code>.
+The full list of supported feature strings can be found in the
+<a href="https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/RuntimeEnabledFeatures.in" target="_blank">RuntimeEnabledFeatures.in</a> file.</p>
 <h2 id="methods">Methods</h2>
 <p>The <code>webview</code> tag has the following methods:</p>
 <p><strong>Note:</strong> The webview element must be loaded before using the methods.</p>
 <p><strong>Example</strong></p>
-<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&quot;dom-ready&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;dom-ready&apos;</span>, () =&gt; {
   webview.openDevTools();
 });
 </code></pre>
@@ -1208,8 +1241,8 @@ obtained by subscribing to <a href="web-view-tag.html#event-found-in-page"><code
 <ul>
 <li><code>action</code> String - Specifies the action to take place when ending
 <a href="web-view-tag.html#webviewtagfindinpage"><code>&lt;webview&gt;.findInPage</code></a> request.<ul>
-<li><code>clearSelection</code> - Translate the selection into a normal selection.</li>
-<li><code>keepSelection</code> - Clear the selection.</li>
+<li><code>clearSelection</code> - Clear the selection.</li>
+<li><code>keepSelection</code> - Translate the selection into a normal selection.</li>
 <li><code>activateSelection</code> - Focus and click the selection node.</li>
 </ul>
 </li>
@@ -1218,7 +1251,7 @@ obtained by subscribing to <a href="web-view-tag.html#event-found-in-page"><code
 <h3 id="webviewprintoptions"><code>&lt;webview&gt;.print([options])</code></h3>
 <p>Prints <code>webview</code>&apos;s web page. Same with <code>webContents.print([options])</code>.</p>
 <h3 id="webviewprinttopdfoptions-callback"><code>&lt;webview&gt;.printToPDF(options, callback)</code></h3>
-<p>Prints webview&apos;s web page as PDF, Same with <code>webContents.printToPDF(options, callback)</code></p>
+<p>Prints <code>webview</code>&apos;s web page as PDF, Same with <code>webContents.printToPDF(options, callback)</code></p>
 <h3 id="webviewsendchannel-arg1-arg2-"><code>&lt;webview&gt;.send(channel[, arg1][, arg2][, ...])</code></h3>
 <ul>
 <li><code>channel</code> String</li>
@@ -1236,6 +1269,8 @@ examples.</p>
 <p>Sends an input <code>event</code> to the page.</p>
 <p>See <a href="web-contents.html##webcontentssendinputeventevent">webContents.sendInputEvent</a>
 for detailed description of <code>event</code> object.</p>
+<h3 id="webviewshowdefinitionforselection-macos"><code>&lt;webview&gt;.showDefinitionForSelection()</code> <em>macOS</em></h3>
+<p>Shows pop-up dictionary that searches the selected word on the page.</p>
 <h3 id="webviewgetwebcontents"><code>&lt;webview&gt;.getWebContents()</code></h3>
 <p>Returns the <a href="web-contents.html">WebContents</a> associated with this <code>webview</code>.</p>
 <h2 id="dom-events">DOM events</h2>
@@ -1258,6 +1293,7 @@ spinning, and the <code>onload</code> event is dispatched.</p>
 <li><code>errorCode</code> Integer</li>
 <li><code>errorDescription</code> String</li>
 <li><code>validatedURL</code> String</li>
+<li><code>isMainFrame</code> Boolean</li>
 </ul>
 <p>This event is like <code>did-finish-load</code>, but fired when the load failed or was
 cancelled, e.g. <code>window.stop()</code> is invoked.</p>
@@ -1324,7 +1360,7 @@ title is synthesized from file url.</p>
 <p>Fired when the guest window logs a console message.</p>
 <p>The following example code forwards all log messages to the embedder&apos;s console
 without regard for log level or other properties.</p>
-<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;console-message&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;console-message&apos;</span>, (e) =&gt; {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Guest page logged a message:&apos;</span>, e.message);
 });
 </code></pre>
@@ -1342,12 +1378,12 @@ without regard for log level or other properties.</p>
 </ul>
 <p>Fired when a result is available for
 <a href="web-view-tag.html#webviewtagfindinpage"><code>webview.findInPage</code></a> request.</p>
-<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;found-in-page&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;found-in-page&apos;</span>, (e) =&gt; {
   <span class="hljs-keyword">if</span> (e.result.finalUpdate)
-    webview.stopFindInPage(<span class="hljs-string">&quot;keepSelection&quot;</span>);
+    webview.stopFindInPage(<span class="hljs-string">&apos;keepSelection&apos;</span>);
 });
 
-<span class="hljs-keyword">const</span> rquestId = webview.findInPage(<span class="hljs-string">&quot;test&quot;</span>);
+<span class="hljs-keyword">const</span> requestId = webview.findInPage(<span class="hljs-string">&apos;test&apos;</span>);
 </code></pre>
 <h3 id="event-newwindow">Event: &apos;new-window&apos;</h3>
 <p>Returns:</p>
@@ -1361,10 +1397,12 @@ without regard for log level or other properties.</p>
 </ul>
 <p>Fired when the guest page attempts to open a new browser window.</p>
 <p>The following example code opens the new url in system&apos;s default browser.</p>
-<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;new-window&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-  <span class="hljs-keyword">var</span> protocol = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;url&apos;</span>).parse(e.url).protocol;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {shell} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+
+webview.addEventListener(<span class="hljs-string">&apos;new-window&apos;</span>, (e) =&gt; {
+  <span class="hljs-keyword">const</span> protocol = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;url&apos;</span>).parse(e.url).protocol;
   <span class="hljs-keyword">if</span> (protocol === <span class="hljs-string">&apos;http:&apos;</span> || protocol === <span class="hljs-string">&apos;https:&apos;</span>) {
-    <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).shell.openExternal(e.url);
+    shell.openExternal(e.url);
   }
 });
 </code></pre>
@@ -1403,7 +1441,7 @@ are clicked or when the DOM <code>hashchange</code> event is triggered.</p>
 <p>Fired when the guest page attempts to close itself.</p>
 <p>The following example code navigates the <code>webview</code> to <code>about:blank</code> when the
 guest attempts to close itself.</p>
-<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;close&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;close&apos;</span>, () =&gt; {
   webview.src = <span class="hljs-string">&apos;about:blank&apos;</span>;
 });
 </code></pre>
@@ -1417,15 +1455,15 @@ guest attempts to close itself.</p>
 <p>With <code>sendToHost</code> method and <code>ipc-message</code> event you can easily communicate
 between guest page and embedder page:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In embedder page.</span>
-webview.addEventListener(<span class="hljs-string">&apos;ipc-message&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+webview.addEventListener(<span class="hljs-string">&apos;ipc-message&apos;</span>, (event) =&gt; {
   <span class="hljs-built_in">console</span>.log(event.channel);
   <span class="hljs-comment">// Prints &quot;pong&quot;</span>
 });
 webview.send(<span class="hljs-string">&apos;ping&apos;</span>);
 </code></pre>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In guest page.</span>
-<span class="hljs-keyword">var</span> ipcRenderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).ipcRenderer;
-ipcRenderer.on(<span class="hljs-string">&apos;ping&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-keyword">const</span> {ipcRenderer} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+ipcRenderer.on(<span class="hljs-string">&apos;ping&apos;</span>, () =&gt; {
   ipcRenderer.sendToHost(<span class="hljs-string">&apos;pong&apos;</span>);
 });
 </code></pre>
@@ -1447,9 +1485,19 @@ ipcRenderer.on(<span class="hljs-string">&apos;ping&apos;</span>, <span class="h
 <h3 id="event-mediapaused">Event: &apos;media-paused&apos;</h3>
 <p>Emitted when media is paused or done playing.</p>
 <h3 id="event-didchangethemecolor">Event: &apos;did-change-theme-color&apos;</h3>
+<p>Returns:</p>
+<ul>
+<li><code>themeColor</code> String</li>
+</ul>
 <p>Emitted when a page&apos;s theme color changes. This is usually due to encountering a meta tag:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&apos;theme-color&apos;</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">&apos;#ff0000&apos;</span>&gt;</span>
 </code></pre>
+<h3 id="event-updatetargeturl">Event: &apos;update-target-url&apos;</h3>
+<p>Returns:</p>
+<ul>
+<li><code>url</code> String</li>
+</ul>
+<p>Emitted when mouse moves over a link or the keyboard moves the focus to a link.</p>
 <h3 id="event-devtoolsopened">Event: &apos;devtools-opened&apos;</h3>
 <p>Emitted when DevTools is opened.</p>
 <h3 id="event-devtoolsclosed">Event: &apos;devtools-closed&apos;</h3>

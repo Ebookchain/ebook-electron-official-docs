@@ -53,7 +53,7 @@
         data-chapter-title="Build System Overview"
         data-filepath="development/build-system-overview.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,12 +926,13 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="build-system-overview">Build System Overview</h1>
-<p>Electron uses <a href="https://gyp.gsrc.io/" target="_blank">gyp</a> for project generation and <a href="https://ninja-build.org/" target="_blank">ninja</a> for building. Project
-configurations can be found in the <code>.gyp</code> and <code>.gypi</code> files.</p>
+<p>Electron uses <a href="https://gyp.gsrc.io/" target="_blank">gyp</a> for project generation and
+<a href="https://ninja-build.org/" target="_blank">ninja</a> for building. Project configurations can
+be found in the <code>.gyp</code> and <code>.gypi</code> files.</p>
 <h2 id="gyp-files">Gyp Files</h2>
 <p>Following <code>gyp</code> files contain the main rules for building Electron:</p>
 <ul>
-<li><code>atom.gyp</code> defines how Electron itself is built.</li>
+<li><code>electron.gyp</code> defines how Electron itself is built.</li>
 <li><code>common.gypi</code> adjusts the build configurations of Node to make it build
 together with Chromium.</li>
 <li><code>vendor/brightray/brightray.gyp</code> defines how <code>brightray</code> is built and

@@ -53,7 +53,7 @@
         data-chapter-title="globalShortcut"
         data-filepath="api/global-shortcut.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,19 +926,20 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="globalsortcut">globalSortcut</h1>
+<blockquote>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0; &#xD0A4;&#xBCF4;&#xB4DC; &#xD3EC;&#xCEE4;&#xC2A4;&#xAC00; &#xC5C6;&#xC744; &#xB54C;&#xB3C4; &#xD0A4;&#xBCF4;&#xB4DC; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 <p><code>globalShortcut</code> &#xBAA8;&#xB4C8;&#xC740; &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xC758; &#xC804;&#xC5ED; &#xD0A4;&#xBCF4;&#xB4DC; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xB4F1;&#xB85D;/&#xD574;&#xC81C; &#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744;
 &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB2E4;&#xC591;&#xD55C; &#xC791;&#xC5C5;&#xC744; &#xD3B8;&#xD558;&#xAC8C; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C;
 &#xC815;&#xC758; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xCC38;&#xACE0;:</strong> &#xB4F1;&#xB85D;&#xB41C; &#xB2E8;&#xCD95;&#xD0A4;&#xB294; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xBC31;&#xADF8;&#xB77C;&#xC6B4;&#xB4DC;&#xB85C; &#xC791;&#xB3D9;(&#xCC3D;&#xC774; &#xD3EC;&#xCEE4;&#xC2A4; &#xB418;&#xC9C0; &#xC54A;&#xC74C;) &#xD560;
-&#xB54C;&#xB3C4; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xBAA8;&#xB4C8;&#xC740; <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8; &#xC774;&#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218;
-&#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
-<span class="hljs-keyword">const</span> globalShortcut = electron.globalShortcut;
+<p><strong>&#xCC38;&#xACE0;:</strong> &#xB4F1;&#xB85D;&#xB41C; &#xB2E8;&#xCD95;&#xD0A4;&#xB294; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xBC31;&#xADF8;&#xB77C;&#xC6B4;&#xB4DC;&#xB85C; &#xC791;&#xB3D9;(&#xCC3D;&#xC774; &#xD3EC;&#xCEE4;&#xC2A4; &#xB418;&#xC9C0; &#xC54A;&#xC74C;) &#xD560;
+&#xB54C;&#xB3C4; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xBAA8;&#xB4C8;&#xC740; <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC804;&#xAE4C;&#xC9C0;
+&#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, globalShortcut} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
   <span class="hljs-comment">// &apos;CommandOrControl+X&apos; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xB9AC;&#xC2A4;&#xB108;&#xC5D0; &#xB4F1;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;.</span>
-  <span class="hljs-keyword">var</span> ret = globalShortcut.register(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> ret = globalShortcut.register(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>, () =&gt; {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;CommandOrControl+X is pressed&apos;</span>);
   });
 
@@ -950,7 +951,7 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
   <span class="hljs-built_in">console</span>.log(globalShortcut.isRegistered(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>));
 });
 
-app.on(<span class="hljs-string">&apos;will-quit&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+app.on(<span class="hljs-string">&apos;will-quit&apos;</span>, () =&gt; {
   <span class="hljs-comment">// &#xB2E8;&#xCD95;&#xD0A4;&#xC758; &#xB4F1;&#xB85D;&#xC744; &#xD574;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</span>
   globalShortcut.unregister(<span class="hljs-string">&apos;CommandOrControl+X&apos;</span>);
 
@@ -967,16 +968,16 @@ app.on(<span class="hljs-string">&apos;will-quit&apos;</span>, <span class="hljs
 </ul>
 <p><code>accelerator</code>&#xC758; &#xC804;&#xC5ED; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xB4F1;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;. &#xC720;&#xC800;&#xB85C;&#xBD80;&#xD130; &#xB4F1;&#xB85D;&#xB41C; &#xB2E8;&#xCD95;&#xD0A4;&#xAC00; &#xB20C;&#xB838;&#xC744; &#xACBD;&#xC6B0;
 <code>callback</code> &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>accelerator&#xAC00; &#xC774;&#xBBF8; &#xB2E4;&#xB978; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9; &#xC911;&#xC77C; &#xACBD;&#xC6B0;, &#xC774; &#xC791;&#xC5C5;&#xC740; &#xC870;&#xC6A9;&#xD788; &#xC2E4;&#xD328;&#xD569;&#xB2C8;&#xB2E4;.
-&#xC774;&#xB7EC;&#xD55C; &#xB3D9;&#xC791;&#xC740; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC804;&#xC5ED; &#xD0A4;&#xBCF4;&#xB4DC; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xCDA9;&#xB3CC;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD558;&#xAE30;
+<p>accelerator&#xAC00; &#xC774;&#xBBF8; &#xB2E4;&#xB978; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9; &#xC911;&#xC77C; &#xACBD;&#xC6B0;, &#xC774; &#xC791;&#xC5C5;&#xC740; &#xC870;&#xC6A9;&#xD788; &#xC2E4;&#xD328;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7EC;&#xD55C; &#xB3D9;&#xC791;&#xC740; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC804;&#xC5ED; &#xD0A4;&#xBCF4;&#xB4DC; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xCDA9;&#xB3CC;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD558;&#xAE30;
 &#xC704;&#xD574; &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xC5D0; &#xC758;&#xD574; &#xC608;&#xC815;&#xB41C; &#xB3D9;&#xC791;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="globalshortcutisregisteredaccelerator"><code>globalShortcut.isRegistered(accelerator)</code></h3>
 <ul>
 <li><code>accelerator</code> <a href="accelerator.md">Accelerator</a></li>
 </ul>
 <p>&#xC9C0;&#xC815;&#xB41C; <code>accelerator</code> &#xB2E8;&#xCD95;&#xD0A4;&#xAC00; &#xB4F1;&#xB85D;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>Accelerator&#xAC00; &#xC774;&#xBBF8; &#xB2E4;&#xB978; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9; &#xC911;&#xC77C; &#xACBD;&#xC6B0;, &#xC5EC;&#xC804;&#xD788; <code>false</code>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
-&#xC774;&#xB7EC;&#xD55C; &#xB3D9;&#xC791;&#xC740; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC804;&#xC5ED; &#xD0A4;&#xBCF4;&#xB4DC; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xCDA9;&#xB3CC;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD558;&#xAE30;
+<p>Accelerator&#xAC00; &#xC774;&#xBBF8; &#xB2E4;&#xB978; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9; &#xC911;&#xC77C; &#xACBD;&#xC6B0;, &#xC5EC;&#xC804;&#xD788; <code>false</code>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7EC;&#xD55C; &#xB3D9;&#xC791;&#xC740; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC804;&#xC5ED; &#xD0A4;&#xBCF4;&#xB4DC; &#xB2E8;&#xCD95;&#xD0A4;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xCDA9;&#xB3CC;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD558;&#xAE30;
 &#xC704;&#xD574; &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xC5D0; &#xC758;&#xD574; &#xC608;&#xC815;&#xB41C; &#xB3D9;&#xC791;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="globalshortcutunregisteraccelerator"><code>globalShortcut.unregister(accelerator)</code></h3>
 <ul>

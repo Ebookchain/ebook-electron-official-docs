@@ -53,7 +53,7 @@
         data-chapter-title="desktopCapturer"
         data-filepath="api/desktop-capturer.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,15 +926,17 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="desktopcapturer">desktopCapturer</h1>
-<p>The <code>desktopCapturer</code> module can be used to get available sources that can be
-used to be captured with <code>getUserMedia</code>.</p>
+<blockquote>
+<p>List <code>getUserMedia</code> sources for capturing audio, video, and images from a
+microphone, camera, or screen.</p>
+</blockquote>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In the renderer process.</span>
-<span class="hljs-keyword">var</span> desktopCapturer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).desktopCapturer;
+<span class="hljs-keyword">const</span> {desktopCapturer} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-desktopCapturer.getSources({types: [<span class="hljs-string">&apos;window&apos;</span>, <span class="hljs-string">&apos;screen&apos;</span>]}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, sources</span>) </span>{
+desktopCapturer.getSources({types: [<span class="hljs-string">&apos;window&apos;</span>, <span class="hljs-string">&apos;screen&apos;</span>]}, (error, sources) =&gt; {
   <span class="hljs-keyword">if</span> (error) <span class="hljs-keyword">throw</span> error;
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; sources.length; ++i) {
-    <span class="hljs-keyword">if</span> (sources[i].name == <span class="hljs-string">&quot;Electron&quot;</span>) {
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; sources.length; ++i) {
+    <span class="hljs-keyword">if</span> (sources[i].name === <span class="hljs-string">&apos;Electron&apos;</span>) {
       navigator.webkitGetUserMedia({
         audio: <span class="hljs-literal">false</span>,
         video: {
@@ -963,7 +965,7 @@ desktopCapturer.getSources({types: [<span class="hljs-string">&apos;window&apos;
 </code></pre>
 <p>When creating a constraints object for the <code>navigator.webkitGetUserMedia</code> call,
 if you are using a source from <code>desktopCapturer</code> your <code>chromeMediaSource</code> must
-be set to <code>&quot;desktop&quot;</code> and your <code>audio</code> must be set to <code>false</code>. </p>
+be set to <code>&quot;desktop&quot;</code> and your <code>audio</code> must be set to <code>false</code>.</p>
 <p>If you wish to
 capture the audio and video from the entire desktop you can set
 <code>chromeMediaSource</code> to <code>&quot;screen&quot;</code> and <code>audio</code> to <code>true</code>. When using this method
@@ -992,7 +994,7 @@ captured screen or individual window, and has following properties:</p>
 <li><code>name</code> String - The described name of the capturing screen or window. If the
 source is a screen, the name will be <code>Entire Screen</code> or <code>Screen &lt;index&gt;</code>; if
 it is a window, the name will be the window&apos;s title.</li>
-<li><code>thumbnail</code> <a href="NativeImage.md">NativeImage</a> - A thumbnail image.</li>
+<li><code>thumbnail</code> <a href="native-image.html">NativeImage</a> - A thumbnail native image.</li>
 </ul>
 <p><strong>Note:</strong> There is no guarantee that the size of <code>source.thumbnail</code> is always
 the same as the <code>thumnbailSize</code> in <code>options</code>. It also depends on the scale of

@@ -53,7 +53,7 @@
         data-chapter-title="Proceso"
         data-filepath="api/process.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:58 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:39 GMT+0800 (CST)"
         data-innerlanguage="es">
     
 
@@ -617,8 +617,8 @@ al node convencional:</p>
 <ul>
 <li><code>process.type</code> String - El tipo del proceso puede ser <code>browser</code> (ej. proceso
  principal) o <code>renderer</code>.</li>
-<li><code>process.versions[&apos;electron&apos;]</code> String - Versi&#xF3;n de Electron.</li>
-<li><code>process.versions[&apos;chrome&apos;]</code> String - Versi&#xF3;n de Chromium.</li>
+<li><code>process.versions.electron</code> String - Versi&#xF3;n de Electron.</li>
+<li><code>process.versions.chrome</code> String - Versi&#xF3;n de Chromium.</li>
 <li><code>process.resourcesPath</code> String - Ruta al c&#xF3;digo fuente JavaScript.</li>
 </ul>
 <h2 id="events">Events</h2>
@@ -639,7 +639,7 @@ process.once(<span class="hljs-string">&apos;loaded&apos;</span>, <span class="h
 <p>El objeto <code>process</code> tiene los siguientes m&#xE9;todos:</p>
 <h3 id="processhang"><code>process.hang</code></h3>
 <p>Interrumpe el hilo principal del proceso actual.</p>
-<h3 id="processsetfdlimitmaxdescriptors-os-x-linux">process.setFdLimit(maxDescriptors) <em>OS X</em> <em>Linux</em></h3>
+<h3 id="processsetfdlimitmaxdescriptors-macos-linux">process.setFdLimit(maxDescriptors) <em>macOS</em> <em>Linux</em></h3>
 <ul>
 <li><code>maxDescriptors</code> Integer</li>
 </ul>

@@ -53,7 +53,7 @@
         data-chapter-title="Headless CI 시스템에서 테스팅하기 (Travis, Jenkins)"
         data-filepath="tutorial/testing-on-headless-ci.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -925,11 +925,11 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="headless-ci-&#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC11C;-&#xD14C;&#xC2A4;&#xD305;&#xD558;&#xAE30;-travis-jenkins-travis-ci-jenkins">Headless CI &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC11C; &#xD14C;&#xC2A4;&#xD305;&#xD558;&#xAE30; (Travis, Jenkins) (Travis CI, Jenkins)</h1>
+                        <h1 id="headless-ci-&#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC11C;-&#xD14C;&#xC2A4;&#xD305;&#xD558;&#xAE30;-travis-jenkins">Headless CI &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC11C; &#xD14C;&#xC2A4;&#xD305;&#xD558;&#xAE30; (Travis, Jenkins)</h1>
 <p>Chromium&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD55C; Electron&#xC740; &#xC791;&#xC5C5;&#xC744; &#xC704;&#xD574; &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774; &#xB4DC;&#xB77C;&#xC774;&#xBC84;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.
 &#xB9CC;&#xC57D; Chromium&#xC774; &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774; &#xB4DC;&#xB77C;&#xC774;&#xBC84;&#xB97C; &#xCC3E;&#xAE30; &#xBABB;&#xD55C;&#xB2E4;&#xBA74;, Electron&#xC740; &#xADF8;&#xB300;&#xB85C; &#xC2E4;&#xD589;&#xC5D0;
 &#xC2E4;&#xD328;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xAD00;&#xACC4;&#xC5C6;&#xC774; &#xBAA8;&#xB4E0; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
-Electron &#xAE30;&#xBC18; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; Travis, Circle, Jenkins &#xB610;&#xB294; &#xC720;&#xC0AC;&#xD55C; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC11C; &#xD14C;&#xC2A4;&#xD305;&#xC744;
+Electron &#xAE30;&#xBC18; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; Travis, Circle, Jenkins &#xB610;&#xB294; &#xC720;&#xC0AC;&#xD55C; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC11C; &#xD14C;&#xC2A4;&#xD305;&#xC744;
 &#xC9C4;&#xD589;&#xD558;&#xB824;&#xBA74; &#xC57D;&#xAC04;&#xC758; &#xC124;&#xC815;&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. &#xC694;&#xC810;&#xB9CC; &#xB9D0;&#xD558;&#xC790;&#xBA74;, &#xAC00;&#xC0C1; &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774; &#xB4DC;&#xB77C;&#xC774;&#xBC84;&#xAC00;
 &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xAC00;&#xC0C1;-&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;-&#xB4DC;&#xB77C;&#xC774;&#xBC84;-&#xC124;&#xC815;">&#xAC00;&#xC0C1; &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774; &#xB4DC;&#xB77C;&#xC774;&#xBC84; &#xC124;&#xC815;</h2>
@@ -939,17 +939,17 @@ Electron &#xAE30;&#xBC18; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC74
 <p>&#xADF8;&#xB9AC;&#xACE0;, &#xAC00;&#xC0C1; xvfb &#xC2A4;&#xD06C;&#xB9B0;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xACE0; DISPLAY&#xB77C;&#xACE0; &#xBD88;&#xB9AC;&#xC6B0;&#xB294; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.
 Electron&#xC758; Chromium&#xC740; &#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; <code>$DISPLAY</code> &#xBCC0;&#xC218;&#xB97C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC571;&#xC758; &#xCD94;&#xAC00;&#xC801;&#xC778;
 &#xB2E4;&#xB978; &#xC124;&#xC815;&#xC774; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC791;&#xC5C5;&#xC740; Paul Betts&#xC758;
-<a href="https://github.com/paulcbetts/xvfb-maybe" target="_blank">xfvb-maybe</a>&#xB97C; &#xD1B5;&#xD574; &#xC790;&#xB3D9;&#xD654; &#xD560; &#xC218;
-&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;: <code>xfvb-maybe</code>&#xB97C; &#xD14C;&#xC2A4;&#xD2B8; &#xCEE4;&#xB9E8;&#xB4DC; &#xC55E;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xACE0; &#xD604;&#xC7AC; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC11C; &#xC694;&#xAD6C;&#xD558;&#xBA74;
-&#xC774; &#xC791;&#xC740; &#xD234;&#xC774; &#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; xfvb&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. Windows&#xC640; Mac OS X&#xC5D0;&#xC120; &#xAC04;&#xB2E8;&#xD788; &#xC544;&#xBB34; &#xC791;&#xC5C5;&#xB3C4;
+<a href="https://github.com/paulcbetts/xvfb-maybe" target="_blank">xvfb-maybe</a>&#xB97C; &#xD1B5;&#xD574; &#xC790;&#xB3D9;&#xD654; &#xD560; &#xC218;
+&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;: <code>xvfb-maybe</code>&#xB97C; &#xD14C;&#xC2A4;&#xD2B8; &#xCEE4;&#xB9E8;&#xB4DC; &#xC55E;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xACE0; &#xD604;&#xC7AC; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC11C; &#xC694;&#xAD6C;&#xD558;&#xBA74;
+&#xC774; &#xC791;&#xC740; &#xD234;&#xC774; &#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; xvfb&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. Windows&#xC640; macOS&#xC5D0;&#xC120; &#xAC04;&#xB2E8;&#xD788; &#xC544;&#xBB34; &#xC791;&#xC5C5;&#xB3C4;
 &#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code>## Windows&#xC640; OS X&#xC5D0;&#xC120;, &#xADF8;&#xC800; electron-mocha&#xB97C; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;
+<pre><code>## Windows&#xC640; macOS&#xC5D0;&#xC120;, &#xADF8;&#xC800; electron-mocha&#xB97C; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;
 ## Linux&#xC5D0;&#xC120;, &#xD604;&#xC7AC; headless &#xD658;&#xACBD;&#xC5D0; &#xC788;&#xB294; &#xACBD;&#xC6B0;
 ## xvfb-run electron-mocha ./test/*.js&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;
 xvfb-maybe electron-mocha ./test/*.js
 </code></pre><h3 id="travis-ci">Travis CI</h3>
 <p>Travis&#xC5D0;&#xC120;, <code>.travis.yml</code>&#xC774; &#xB300;&#xCDA9; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code>addons:
+<pre><code class="lang-yml">addons:
   apt:
     packages:
       - xvfb
@@ -957,8 +957,9 @@ xvfb-maybe electron-mocha ./test/*.js
 install:
   - export DISPLAY=&apos;:99.0&apos;
   - Xvfb :99 -screen 0 1024x768x24 &gt; /dev/null 2&gt;&amp;1 &amp;
-</code></pre><h3 id="jenkins">Jenkins</h3>
-<p>Jenkins&#xB294; <a href="https://wiki.jenkins-ci.org/display/JENKINS/Xvfb+Plugin" target="_blank">Xfvb &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC774; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;</a>.</p>
+</code></pre>
+<h3 id="jenkins">Jenkins</h3>
+<p>Jenkins&#xB294; <a href="https://wiki.jenkins-ci.org/display/JENKINS/Xvfb+Plugin" target="_blank">Xvfb &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC774; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;</a>.</p>
 <h3 id="circle-ci">Circle CI</h3>
 <p>Circle CI&#xB294; &#xBA4B;&#xC9C0;&#xAC8C;&#xB3C4; &#xC774;&#xBBF8; xvfb&#xC640; <code>$DISPLY</code> &#xBCC0;&#xC218;&#xAC00; &#xC900;&#xBE44;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C;
 <a href="https://circleci.com/docs/environment#browsers" target="_blank">&#xCD94;&#xAC00;&#xC801;&#xC778; &#xC124;&#xC815;&#xC774; &#xD544;&#xC694;&#xD558;&#xC9C0;</a> &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>

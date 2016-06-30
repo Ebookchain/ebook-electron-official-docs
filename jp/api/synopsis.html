@@ -53,7 +53,7 @@
         data-chapter-title="概要"
         data-filepath="api/synopsis.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:56 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:31 GMT+0800 (CST)"
         data-innerlanguage="jp">
     
 
@@ -844,19 +844,20 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#x6982;&#x8981;">&#x6982;&#x8981;</h1>
+<blockquote>
+<p>&#x3069;&#x3046;&#x3084;&#x3063;&#x3066;Node.js&#x3068;Electron&#x306E;API&#x3092;&#x4F7F;&#x3046;&#x304B;&#x3002;</p>
+</blockquote>
 <p>Electron &#x3067;&#x306F;&#x5168;&#x3066;&#x306E; <a href="http://nodejs.org/api/" target="_blank">Node.js &#x306E;&#x30D3;&#x30EB;&#x30C8;&#x30A4;&#x30F3;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;</a> &#x5229;&#x7528;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;&#x307E;&#x305F;&#x3001;&#x30B5;&#x30FC;&#x30C9;&#x30D1;&#x30FC;&#x30C6;&#x30A3;&#x306E; Node &#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB; (<a href="../tutorial/using-native-node-modules.html">&#x30CD;&#x30A4;&#x30C6;&#x30A3;&#x30D6;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;</a>&#x3082;&#x542B;&#x3080;) &#x3082;&#x5B8C;&#x5168;&#x306B;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <p>Electron &#x306F;&#x30CD;&#x30A4;&#x30C6;&#x30A3;&#x30D6;&#x306E;&#x30C7;&#x30B9;&#x30AF;&#x30C8;&#x30C3;&#x30D7;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x958B;&#x767A;&#x306E;&#x305F;&#x3081;&#x306E;&#x5E7E;&#x3064;&#x304B;&#x306E;&#x8FFD;&#x52A0;&#x306E;&#x30D3;&#x30EB;&#x30C8;&#x30A4;&#x30F3;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3082;&#x63D0;&#x4F9B;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x30E1;&#x30A4;&#x30F3;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3067;&#x3060;&#x3051;&#x4F7F;&#x3048;&#x308B;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3082;&#x3042;&#x308C;&#x3070;&#x3001;&#x30EC;&#x30F3;&#x30C0;&#x30E9;&#x30D7;&#x30ED;&#x30BB;&#x30B9;(&#x30A6;&#x30A7;&#x30D6;&#x30DA;&#x30FC;&#x30B8;)&#x3067;&#x3060;&#x3051;&#x4F7F;&#x3048;&#x308B;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3001;&#x3042;&#x308B;&#x3044;&#x306F;&#x30E1;&#x30A4;&#x30F3;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3001;&#x30EC;&#x30F3;&#x30C0;&#x30E9;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3069;&#x3061;&#x3089;&#x3067;&#x3082;&#x4F7F;&#x3048;&#x308B;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x57FA;&#x672C;&#x7684;&#x306A;&#x30EB;&#x30FC;&#x30EB;&#x306F;&#xFF1A;<a href="https://en.wikipedia.org/wiki/Graphical_user_interface" target="_blank">GUI</a>&#x3001;&#x307E;&#x305F;&#x306F;&#x4F4E;&#x30EC;&#x30D9;&#x30EB;&#x306E;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306B;&#x95A2;&#x9023;&#x3059;&#x308B;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306F;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3060;&#x3051;&#x5229;&#x7528;&#x3067;&#x304D;&#x308B;&#x3079;&#x304D;&#x3067;&#x3059;&#x3002;&#x3053;&#x308C;&#x3089;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x306F; <a href="../tutorial/quick-start.html#&#x30E1;&#x30A4;&#x30F3;&#x30D7;&#x30ED;&#x30BB;&#x30B9;">&#x30E1;&#x30A4;&#x30F3;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x5BFE;&#x30EC;&#x30F3;&#x30C0;&#x30E9;&#x30D7;&#x30ED;&#x30BB;&#x30B9;</a>&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x306E;&#x6982;&#x5FF5;&#x3092;&#x7406;&#x89E3;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x30E1;&#x30A4;&#x30F3;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x306F;&#x666E;&#x901A;&#x306E; Node.js &#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x306E;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E;&#x3067;&#x3059;&#xFF1A;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
-<span class="hljs-keyword">const</span> BrowserWindow = electron.BrowserWindow;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-<span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-literal">null</span>;
+<span class="hljs-keyword">let</span> win = <span class="hljs-literal">null</span>;
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
-  <span class="hljs-built_in">window</span>.loadURL(<span class="hljs-string">&apos;https://github.com&apos;</span>);
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
+  win.loadURL(<span class="hljs-string">&apos;https://github.com&apos;</span>);
 });
 </code></pre>
 <p>&#x30EC;&#x30F3;&#x30C0;&#x30E9;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306F; Node &#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x3046;&#x305F;&#x3081;&#x306E;&#x8FFD;&#x52A0;&#x6A5F;&#x80FD;&#x3092;&#x9664;&#x3044;&#x3066;&#x3001;&#x901A;&#x5E38;&#x306E;&#x30A6;&#x30A7;&#x30D6;&#x30DA;&#x30FC;&#x30B8;&#x3068;&#x306A;&#x3093;&#x3089;&#x9055;&#x3044;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#xFF1A;</p>
@@ -864,25 +865,25 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">const</span> remote = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote;
-  <span class="hljs-built_in">console</span>.log(remote.app.getVersion());
+  <span class="hljs-keyword">const</span> {app} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote;
+  <span class="hljs-built_in">console</span>.log(app.getVersion());
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
 </code></pre>
 <p>&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5B9F;&#x884C;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3001;<a href="../tutorial/quick-start.html#&#x30A2;&#x30D7;&#x30EA;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;">&#x30A2;&#x30D7;&#x30EA;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;</a>&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
 <h2 id="&#x5206;&#x5272;&#x4EE3;&#x5165;">&#x5206;&#x5272;&#x4EE3;&#x5165;</h2>
-<p>CoffeeScript &#x304B; Babel &#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;&#x306A;&#x3089;&#x3001;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank">&#x5206;&#x5272;&#x4EE3;&#x5165;</a>&#x3067;&#x30D3;&#x30EB;&#x30C8;&#x30A4;&#x30F3;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;&#x4F7F;&#x7528;&#x3092;&#x3088;&#x308A;&#x7C21;&#x5358;&#x306B;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF1A;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<p>0.37&#x306E;&#x6642;&#x70B9;&#x3067;&#x3001; &#x3001;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank">&#x5206;&#x5272;&#x4EE3;&#x5165;</a>&#x3067;&#x30D3;&#x30EB;&#x30C8;&#x30A4;&#x30F3;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;&#x4F7F;&#x7528;&#x3092;&#x3088;&#x308A;&#x7C21;&#x5358;&#x306B;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 </code></pre>
-<p>&#x3057;&#x304B;&#x3057;&#x3001;&#x7D20;&#x306E; JavaScript &#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x3001;Chrome &#x304C; ES6 &#x3092;&#x5B8C;&#x5168;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3059;&#x308B;&#x307E;&#x3067;&#x5F85;&#x305F;&#x306A;&#x3051;&#x308C;&#x3070;&#x3044;&#x3051;&#x307E;&#x305B;&#x3093;&#x3002;</p>
-<h2 id="disable-old-styles-of-using-builtin-modules">Disable old styles of using built-in modules</h2>
-<p>v0.35.0 &#x4EE5;&#x524D;&#x306F;&#x5168;&#x3066;&#x306E;&#x30D3;&#x30EB;&#x30C8;&#x30A4;&#x30F3;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306F; <code>require(&apos;module-name&apos;)</code> &#x306E;&#x5F62;&#x5F0F;&#x3067;&#x4F7F;&#x308F;&#x308C;&#x306A;&#x3051;&#x308C;&#x3070;&#x3044;&#x3051;&#x307E;&#x305B;&#x3093;&#x3002;&#x3053;&#x306E;&#x5F62;&#x5F0F;&#x306F;<a href="https://github.com/electron/electron/issues/387" target="_blank">&#x591A;&#x304F;&#x306E;&#x6B20;&#x70B9;</a>&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x53E4;&#x3044;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3068;&#x306E;&#x4E92;&#x63DB;&#x6027;&#x306E;&#x305F;&#x3081;&#x306B;&#x307E;&#x3060;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x53E4;&#x3044;&#x5F62;&#x5F0F;&#x3092;&#x5B8C;&#x5168;&#x306B;&#x7121;&#x52B9;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x74B0;&#x5883;&#x5909;&#x6570; <code>ELECTRON_HIDE_INTERNAL_MODULES</code> &#x3092;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF1A;</p>
-<pre><code class="lang-javascript">process.env.ELECTRON_HIDE_INTERNAL_MODULES = <span class="hljs-string">&apos;true&apos;</span>
+<p>&#x3082;&#x3057;<code>electron</code>&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x5168;&#x4F53;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3042;&#x308C;&#x3070;&#x3001;require&#x3057;&#x3066;&#x3001;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;<code>electron</code>&#x304B;&#x3089;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+<span class="hljs-keyword">const</span> {app, BrowserWindow} = electron;
 </code></pre>
-<p>&#x3082;&#x3057;&#x304F;&#x306F; <code>hideInternalModules</code> API &#x3092;&#x547C;&#x3093;&#x3067;&#x304F;&#x3060;&#x3055;&#x3044;&#xFF1A;</p>
-<pre><code class="lang-javascript"><span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).hideInternalModules()
+<p>&#x3053;&#x308C;&#x306F;&#x3001;&#x6B21;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3068;&#x540C;&#x3058;&#x610F;&#x5473;&#x3092;&#x6301;&#x3061;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+<span class="hljs-keyword">const</span> app = electron.app;
+<span class="hljs-keyword">const</span> BrowserWindow = electron.BrowserWindow;
 </code></pre>
 
                     

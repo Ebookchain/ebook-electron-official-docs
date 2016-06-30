@@ -53,7 +53,7 @@
         data-chapter-title="Evento de Detecção Online/Offline"
         data-filepath="tutorial/online-offline-events.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:51 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:22 GMT+0800 (CST)"
         data-innerlanguage="pt-BR">
     
 
@@ -614,9 +614,9 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="onlineoffline-event-detection">Online/Offline Event Detection</h1>
-<p>Os eventos de detec&#xE3;o Online e Offile podem ser implementados no processo
+<p>Os eventos de detec&#xE7;&#xE3;o Online e Offline podem ser implementados no processo
 de renderiza&#xE7;&#xE3;o utilizando a API padr&#xE3;o do HTML, como &#xE9; mostrado no exemplo
-a seguir.</p>
+a seguir:</p>
 <p><em>main.js</em></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;app&apos;</span>);
 <span class="hljs-keyword">var</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;browser-window&apos;</span>);
@@ -648,7 +648,7 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 Mas o processo principal n&#xE3;o consegue detectar esses eventos diretamente, pois n&#xE3;o possui
 um objeto <code>navigator</code>. Utilizando a ferramentas para comunica&#xE7;&#xE3;o entre processos, os eventos
 podem ser direcionados para o processo principal e manipulados quando necess&#xE1;rio. Voc&#xEA;
-pode ver isto no exemplo abaixo.</p>
+pode ver isto no exemplo abaixo:</p>
 <p><em>main.js</em></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;app&apos;</span>);
 <span class="hljs-keyword">var</span> ipc = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;ipc&apos;</span>);

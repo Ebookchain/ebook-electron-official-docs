@@ -53,7 +53,7 @@
         data-chapter-title="Tray"
         data-filepath="api/tray.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,25 +926,23 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="tray">Tray</h1>
-<p>A <code>Tray</code> represents an icon in an operating system&apos;s notification area, it is
-usually attached with a context menu.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
-<span class="hljs-keyword">const</span> Menu = electron.Menu;
-<span class="hljs-keyword">const</span> Tray = electron.Tray;
+<blockquote>
+<p>Add icons and context menus to the system&apos;s notification area.</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, Menu, Tray} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
 
-<span class="hljs-keyword">var</span> appIcon = <span class="hljs-literal">null</span>;
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-  appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/my/icon&apos;</span>);
-  <span class="hljs-keyword">var</span> contextMenu = Menu.buildFromTemplate([
-    { label: <span class="hljs-string">&apos;Item1&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span> },
-    { label: <span class="hljs-string">&apos;Item2&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span> },
-    { label: <span class="hljs-string">&apos;Item3&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span>, checked: <span class="hljs-literal">true</span> },
-    { label: <span class="hljs-string">&apos;Item4&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span> }
+<span class="hljs-keyword">let</span> tray = <span class="hljs-literal">null</span>
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  tray = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/my/icon&apos;</span>)
+  <span class="hljs-keyword">const</span> contextMenu = Menu.buildFromTemplate([
+    {label: <span class="hljs-string">&apos;Item1&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span>},
+    {label: <span class="hljs-string">&apos;Item2&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span>},
+    {label: <span class="hljs-string">&apos;Item3&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span>, checked: <span class="hljs-literal">true</span>},
+    {label: <span class="hljs-string">&apos;Item4&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span>}
   ]);
-  appIcon.setToolTip(<span class="hljs-string">&apos;This is my application.&apos;</span>);
-  appIcon.setContextMenu(contextMenu);
-});
+  tray.setToolTip(<span class="hljs-string">&apos;This is my application.&apos;</span>)
+  tray.setContextMenu(contextMenu)
+})
 </code></pre>
 <p><strong>Platform limitations:</strong></p>
 <ul>
@@ -960,6 +958,9 @@ you have to call <code>setContextMenu</code> again. For example:</li>
 <pre><code class="lang-javascript">contextMenu.items[<span class="hljs-number">2</span>].checked = <span class="hljs-literal">false</span>;
 appIcon.setContextMenu(contextMenu);
 </code></pre>
+<ul>
+<li>On Windows it is recommended to use <code>ICO</code> icons to get best visual effects.</li>
+</ul>
 <p>If you want to keep exact same behaviors on all platforms, you should not
 rely on the <code>click</code> event and always attach a context menu to the tray icon.</p>
 <h2 id="class-tray">Class: Tray</h2>
@@ -969,11 +970,9 @@ rely on the <code>click</code> event and always attach a context menu to the tra
 <li><code>image</code> <a href="native-image.html">NativeImage</a></li>
 </ul>
 <p>Creates a new tray icon associated with the <code>image</code>.</p>
-<h2 id="events">Events</h2>
+<h3 id="instance-events">Instance Events</h3>
 <p>The <code>Tray</code> module emits the following events:</p>
-<p><strong>Note:</strong> Some events are only available on specific operating systems and are
-labeled as such.</p>
-<h3 id="event-click">Event: &apos;click&apos;</h3>
+<h4 id="event-click">Event: &apos;click&apos;</h4>
 <ul>
 <li><code>event</code> Event<ul>
 <li><code>altKey</code> Boolean</li>
@@ -982,7 +981,7 @@ labeled as such.</p>
 <li><code>metaKey</code> Boolean</li>
 </ul>
 </li>
-<li><code>bounds</code> Object - the bounds of tray icon.<ul>
+<li><code>bounds</code> Object <em>macOS</em> <em>Windows</em> - the bounds of tray icon.<ul>
 <li><code>x</code> Integer</li>
 <li><code>y</code> Integer</li>
 <li><code>width</code> Integer</li>
@@ -991,8 +990,7 @@ labeled as such.</p>
 </li>
 </ul>
 <p>Emitted when the tray icon is clicked.</p>
-<p><strong>Note:</strong> The <code>bounds</code> payload is only implemented on OS X and Windows.</p>
-<h3 id="event-rightclick-os-x-windows">Event: &apos;right-click&apos; <em>OS X</em> <em>Windows</em></h3>
+<h4 id="event-rightclick-macos-windows">Event: &apos;right-click&apos; <em>macOS</em> <em>Windows</em></h4>
 <ul>
 <li><code>event</code> Event<ul>
 <li><code>altKey</code> Boolean</li>
@@ -1010,7 +1008,7 @@ labeled as such.</p>
 </li>
 </ul>
 <p>Emitted when the tray icon is right clicked.</p>
-<h3 id="event-doubleclick-os-x-windows">Event: &apos;double-click&apos; <em>OS X</em> <em>Windows</em></h3>
+<h4 id="event-doubleclick-macos-windows">Event: &apos;double-click&apos; <em>macOS</em> <em>Windows</em></h4>
 <ul>
 <li><code>event</code> Event<ul>
 <li><code>altKey</code> Boolean</li>
@@ -1028,60 +1026,58 @@ labeled as such.</p>
 </li>
 </ul>
 <p>Emitted when the tray icon is double clicked.</p>
-<h3 id="event-balloonshow-windows">Event: &apos;balloon-show&apos; <em>Windows</em></h3>
+<h4 id="event-balloonshow-windows">Event: &apos;balloon-show&apos; <em>Windows</em></h4>
 <p>Emitted when the tray balloon shows.</p>
-<h3 id="event-balloonclick-windows">Event: &apos;balloon-click&apos; <em>Windows</em></h3>
+<h4 id="event-balloonclick-windows">Event: &apos;balloon-click&apos; <em>Windows</em></h4>
 <p>Emitted when the tray balloon is clicked.</p>
-<h3 id="event-balloonclosed-windows">Event: &apos;balloon-closed&apos; <em>Windows</em></h3>
+<h4 id="event-balloonclosed-windows">Event: &apos;balloon-closed&apos; <em>Windows</em></h4>
 <p>Emitted when the tray balloon is closed because of timeout or user manually
 closes it.</p>
-<h3 id="event-drop-os-x">Event: &apos;drop&apos; <em>OS X</em></h3>
+<h4 id="event-drop-macos">Event: &apos;drop&apos; <em>macOS</em></h4>
 <p>Emitted when any dragged items are dropped on the tray icon.</p>
-<h3 id="event-dropfiles-os-x">Event: &apos;drop-files&apos; <em>OS X</em></h3>
+<h4 id="event-dropfiles-macos">Event: &apos;drop-files&apos; <em>macOS</em></h4>
 <ul>
-<li><code>event</code></li>
+<li><code>event</code> Event</li>
 <li><code>files</code> Array - the file path of dropped files.</li>
 </ul>
 <p>Emitted when dragged files are dropped in the tray icon.</p>
-<h3 id="event-dragenter-os-x">Event: &apos;drag-enter&apos; <em>OS X</em></h3>
+<h4 id="event-dragenter-macos">Event: &apos;drag-enter&apos; <em>macOS</em></h4>
 <p>Emitted when a drag operation enters the tray icon.</p>
-<h3 id="event-dragleave-os-x">Event: &apos;drag-leave&apos; <em>OS X</em></h3>
+<h4 id="event-dragleave-macos">Event: &apos;drag-leave&apos; <em>macOS</em></h4>
 <p>Emitted when a drag operation exits the tray icon.</p>
-<h3 id="event-dragend-os-x">Event: &apos;drag-end&apos; <em>OS X</em></h3>
+<h4 id="event-dragend-macos">Event: &apos;drag-end&apos; <em>macOS</em></h4>
 <p>Emitted when a drag operation ends on the tray or ends at another location.</p>
-<h2 id="methods">Methods</h2>
-<p>The <code>Tray</code> module has the following methods:</p>
-<p><strong>Note:</strong> Some methods are only available on specific operating systems and are
-labeled as such.</p>
-<h3 id="traydestroy"><code>Tray.destroy()</code></h3>
+<h3 id="instance-methods">Instance Methods</h3>
+<p>The <code>Tray</code> class has the following methods:</p>
+<h4 id="traydestroy"><code>tray.destroy()</code></h4>
 <p>Destroys the tray icon immediately.</p>
-<h3 id="traysetimageimage"><code>Tray.setImage(image)</code></h3>
+<h4 id="traysetimageimage"><code>tray.setImage(image)</code></h4>
 <ul>
 <li><code>image</code> <a href="native-image.html">NativeImage</a></li>
 </ul>
 <p>Sets the <code>image</code> associated with this tray icon.</p>
-<h3 id="traysetpressedimageimage-os-x"><code>Tray.setPressedImage(image)</code> <em>OS X</em></h3>
+<h4 id="traysetpressedimageimage-macos"><code>tray.setPressedImage(image)</code> <em>macOS</em></h4>
 <ul>
 <li><code>image</code> <a href="native-image.html">NativeImage</a></li>
 </ul>
-<p>Sets the <code>image</code> associated with this tray icon when pressed on OS X.</p>
-<h3 id="traysettooltiptooltip"><code>Tray.setToolTip(toolTip)</code></h3>
+<p>Sets the <code>image</code> associated with this tray icon when pressed on macOS.</p>
+<h4 id="traysettooltiptooltip"><code>tray.setToolTip(toolTip)</code></h4>
 <ul>
 <li><code>toolTip</code> String</li>
 </ul>
 <p>Sets the hover text for this tray icon.</p>
-<h3 id="traysettitletitle-os-x"><code>Tray.setTitle(title)</code> <em>OS X</em></h3>
+<h4 id="traysettitletitle-macos"><code>tray.setTitle(title)</code> <em>macOS</em></h4>
 <ul>
 <li><code>title</code> String</li>
 </ul>
 <p>Sets the title displayed aside of the tray icon in the status bar.</p>
-<h3 id="traysethighlightmodehighlight-os-x"><code>Tray.setHighlightMode(highlight)</code> <em>OS X</em></h3>
+<h4 id="traysethighlightmodehighlight-macos"><code>tray.setHighlightMode(highlight)</code> <em>macOS</em></h4>
 <ul>
 <li><code>highlight</code> Boolean</li>
 </ul>
 <p>Sets whether the tray icon&apos;s background becomes highlighted (in blue)
 when the tray icon is clicked. Defaults to true.</p>
-<h3 id="traydisplayballoonoptions-windows"><code>Tray.displayBalloon(options)</code> <em>Windows</em></h3>
+<h4 id="traydisplayballoonoptions-windows"><code>tray.displayBalloon(options)</code> <em>Windows</em></h4>
 <ul>
 <li><code>options</code> Object<ul>
 <li><code>icon</code> <a href="native-image.html">NativeImage</a></li>
@@ -1091,7 +1087,7 @@ when the tray icon is clicked. Defaults to true.</p>
 </li>
 </ul>
 <p>Displays a tray balloon.</p>
-<h3 id="traypopupcontextmenumenu-position-os-x-windows"><code>Tray.popUpContextMenu([menu, position])</code> <em>OS X</em> <em>Windows</em></h3>
+<h4 id="traypopupcontextmenumenu-position-macos-windows"><code>tray.popUpContextMenu([menu, position])</code> <em>macOS</em> <em>Windows</em></h4>
 <ul>
 <li><code>menu</code> Menu (optional)</li>
 <li><code>position</code> Object (optional) - The pop up position.<ul>
@@ -1100,14 +1096,25 @@ when the tray icon is clicked. Defaults to true.</p>
 </ul>
 </li>
 </ul>
-<p>Popups the context menu of tray icon. When <code>menu</code> is passed, the <code>menu</code> will
-showed instead of the tray&apos;s context menu.</p>
+<p>Pops up the context menu of the tray icon. When <code>menu</code> is passed, the <code>menu</code> will
+be shown instead of the tray icon&apos;s context menu.</p>
 <p>The <code>position</code> is only available on Windows, and it is (0, 0) by default.</p>
-<h3 id="traysetcontextmenumenu"><code>Tray.setContextMenu(menu)</code></h3>
+<h4 id="traysetcontextmenumenu"><code>tray.setContextMenu(menu)</code></h4>
 <ul>
 <li><code>menu</code> Menu</li>
 </ul>
 <p>Sets the context menu for this icon.</p>
+<h4 id="traygetbounds-macos-windows"><code>tray.getBounds()</code> <em>macOS</em> <em>Windows</em></h4>
+<p>Returns the <code>bounds</code> of this tray icon as <code>Object</code>.</p>
+<ul>
+<li><code>bounds</code> Object<ul>
+<li><code>x</code> Integer</li>
+<li><code>y</code> Integer</li>
+<li><code>width</code> Integer</li>
+<li><code>height</code> Integer</li>
+</ul>
+</li>
+</ul>
 
                     
                     </section>

@@ -53,7 +53,7 @@
         data-chapter-title="온라인/오프라인 이벤트 감지"
         data-filepath="tutorial/online-offline-events.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,16 +926,15 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#xC628;&#xB77C;&#xC778;&#xC624;&#xD504;&#xB77C;&#xC778;-&#xC774;&#xBCA4;&#xD2B8;-&#xAC10;&#xC9C0;">&#xC628;&#xB77C;&#xC778;/&#xC624;&#xD504;&#xB77C;&#xC778; &#xC774;&#xBCA4;&#xD2B8; &#xAC10;&#xC9C0;</h1>
-<p>&#xC628;&#xB77C;&#xC778;/&#xC624;&#xD504;&#xB77C;&#xC778; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xC640; &#xAC19;&#xC774; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xD45C;&#xC900; HTML5 API&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC;
+<p>&#xC628;&#xB77C;&#xC778;/&#xC624;&#xD504;&#xB77C;&#xC778; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xC640; &#xAC19;&#xC774; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xD45C;&#xC900; HTML5 API&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC;
 &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p><em>main.js</em></p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
-<span class="hljs-keyword">const</span> BrowserWindow = electron.BrowserWindow;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-<span class="hljs-keyword">var</span> onlineStatusWindow;
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  onlineStatusWindow = <span class="hljs-keyword">new</span> BrowserWindow({ width: <span class="hljs-number">0</span>, height: <span class="hljs-number">0</span>, show: <span class="hljs-literal">false</span> });
+<span class="hljs-keyword">let</span> onlineStatusWindow;
+
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  onlineStatusWindow = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">0</span>, height: <span class="hljs-number">0</span>, show: <span class="hljs-literal">false</span>});
   onlineStatusWindow.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/online-status.html&apos;</span>);
 });
 </code></pre>
@@ -944,7 +943,7 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">var</span> alertOnlineStatus = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> alertOnlineStatus = () =&gt; {
     <span class="hljs-built_in">window</span>.alert(navigator.onLine ? <span class="hljs-string">&apos;online&apos;</span> : <span class="hljs-string">&apos;offline&apos;</span>);
   };
 
@@ -959,21 +958,19 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 <p>&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xCC98;&#xB9AC;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xB294; &#xACBD;&#xC6B0; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xBCF4;&#xB0BC; &#xC218;
 &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB294; <code>navigator</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC9C1;&#xC811;
 &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB300;&#xC2E0; &#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xC640; &#xAC19;&#xC774; Electron&#xC758; inter-process communication(ipc) &#xC720;&#xD2F8;&#xB9AC;&#xD2F0;&#xB97C;
+<p>&#xB300;&#xC2E0; &#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xC640; &#xAC19;&#xC774; Electron&#xC758; inter-process communication(ipc) &#xC720;&#xD2F8;&#xB9AC;&#xD2F0;&#xB97C;
 &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p><em>main.js</em></p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
-<span class="hljs-keyword">const</span> ipcMain = electron.ipcMain;
-<span class="hljs-keyword">const</span> BrowserWindow = electron.BrowserWindow;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, ipcMain, BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-<span class="hljs-keyword">var</span> onlineStatusWindow;
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  onlineStatusWindow = <span class="hljs-keyword">new</span> BrowserWindow({ width: <span class="hljs-number">0</span>, height: <span class="hljs-number">0</span>, show: <span class="hljs-literal">false</span> });
-  onlineStatusWindow.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/online-status.html&apos;</span>);
+<span class="hljs-keyword">let</span> onlineStatusWindow;
+
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  onlineStatusWindow = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">0</span>, height: <span class="hljs-number">0</span>, show: <span class="hljs-literal">false</span>});
+  onlineStatusWindow.loadURL(<span class="hljs-string">`file://<span class="hljs-subst">${__dirname}</span>/online-status.html`</span>);
 });
 
-ipcMain.on(<span class="hljs-string">&apos;online-status-changed&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, status</span>) </span>{
+ipcMain.on(<span class="hljs-string">&apos;online-status-changed&apos;</span>, (event, status) =&gt; {
   <span class="hljs-built_in">console</span>.log(status);
 });
 </code></pre>
@@ -982,8 +979,8 @@ ipcMain.on(<span class="hljs-string">&apos;online-status-changed&apos;</span>, <
 <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">const</span> ipcRenderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).ipcRenderer;
-  <span class="hljs-keyword">var</span> updateOnlineStatus = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> {ipcRenderer} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+  <span class="hljs-keyword">const</span> updateOnlineStatus = () =&gt; {
     ipcRenderer.send(<span class="hljs-string">&apos;online-status-changed&apos;</span>, navigator.onLine ? <span class="hljs-string">&apos;online&apos;</span> : <span class="hljs-string">&apos;offline&apos;</span>);
   };
 

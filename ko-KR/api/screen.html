@@ -53,7 +53,7 @@
         data-chapter-title="screen"
         data-filepath="api/screen.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,50 +926,45 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="screen">screen</h1>
-<p><code>screen</code> &#xBAA8;&#xB4C8;&#xC740; &#xD654;&#xBA74; &#xD06C;&#xAE30;, &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;, &#xCEE4;&#xC11C; &#xC704;&#xCE58; &#xB4F1;&#xB4F1;&#xC758; &#xB2E4;&#xC591;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;.
-&#xC774; &#xBAA8;&#xB4C8;&#xC740; <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xD654;&#xBA74; &#xD06C;&#xAE30;, &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;, &#xCEE4;&#xC11C; &#xC704;&#xCE58; &#xB4F1;&#xC758; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xC774; &#xBAA8;&#xB4C8;&#xC740; <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. (&#xD638;&#xCD9C; &#xB610;&#xB294;
+&#xBAA8;&#xB4C8; &#xD3EC;&#xD568;)</p>
 <p><code>screen</code>&#xC740; <a href="http://nodejs.org/api/events.html#events_class_events_eventemitter" target="_blank">EventEmitter</a>&#xB97C;
 &#xC0C1;&#xC18D; &#xBC1B;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xCC38;&#xACE0;:</strong> &#xB79C;&#xB354;&#xB7EC; / DevTools&#xC5D0;&#xC120; &#xC774;&#xBBF8; DOM &#xC18D;&#xC131;&#xC774; <code>window.screen</code>&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBBC0;&#xB85C;
-<code>screen = require(&apos;screen&apos;)</code> &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC544;&#xB798;&#xC758; &#xC608;&#xC81C;&#xC640; &#xAC19;&#xC774;
-<code>electronScreen</code> &#xAC19;&#xC740; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8; &#xC774;&#xB984;&#xC744; &#xB300;&#xCCB4;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; &#xD654;&#xBA74; &#xC804;&#xCCB4;&#xB97C; &#xCC44;&#xC6B0;&#xB294; &#xC708;&#xB3C4;&#xC6B0; &#xCC3D;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
-<span class="hljs-keyword">const</span> BrowserWindow = electron.BrowserWindow;
+<p><strong>&#xCC38;&#xACE0;:</strong> &#xB80C;&#xB354;&#xB7EC; / DevTools&#xC5D0;&#xC120; &#xC774;&#xBBF8; DOM &#xC18D;&#xC131;&#xC774; <code>window.screen</code>&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBBC0;&#xB85C;
+<code>screen = require(&apos;screen&apos;)</code> &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xD654;&#xBA74; &#xC804;&#xCCB4;&#xB97C; &#xCC44;&#xC6B0;&#xB294; &#xC708;&#xB3C4;&#xC6B0; &#xCC3D;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">const</span> {app, BrowserWindow} = electron
 
-<span class="hljs-keyword">var</span> mainWindow;
+<span class="hljs-keyword">let</span> win
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">var</span> electronScreen = electron.screen;
-  <span class="hljs-keyword">var</span> size = electronScreen.getPrimaryDisplay().workAreaSize;
-  mainWindow = <span class="hljs-keyword">new</span> BrowserWindow({ width: size.width, height: size.height });
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
+  win = <span class="hljs-keyword">new</span> BrowserWindow({width, height})
 });
 </code></pre>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; &#xD655;&#xC7A5; &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xC5D0; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;app&apos;</span>);
-<span class="hljs-keyword">var</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;browser-window&apos;</span>);
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xD655;&#xC7A5; &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xC5D0; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">const</span> {app, BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
 
-<span class="hljs-keyword">var</span> mainWindow;
+<span class="hljs-keyword">let</span> win
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">var</span> electronScreen = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;screen&apos;</span>);
-  <span class="hljs-keyword">var</span> displays = electronScreen.getAllDisplays();
-  <span class="hljs-keyword">var</span> externalDisplay = <span class="hljs-literal">null</span>;
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> displays) {
-    <span class="hljs-keyword">if</span> (displays[i].bounds.x != <span class="hljs-number">0</span> || displays[i].bounds.y != <span class="hljs-number">0</span>) {
-      externalDisplay = displays[i];
-      <span class="hljs-keyword">break</span>;
-    }
-  }
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">let</span> displays = electron.screen.getAllDisplays()
+  <span class="hljs-keyword">let</span> externalDisplay = displays.find((display) =&gt; {
+    <span class="hljs-keyword">return</span> display.bounds.x !== <span class="hljs-number">0</span> || display.bounds.y !== <span class="hljs-number">0</span>
+  })
 
   <span class="hljs-keyword">if</span> (externalDisplay) {
-    mainWindow = <span class="hljs-keyword">new</span> BrowserWindow({
+    win = <span class="hljs-keyword">new</span> BrowserWindow({
       x: externalDisplay.bounds.x + <span class="hljs-number">50</span>,
       y: externalDisplay.bounds.y + <span class="hljs-number">50</span>
-    });
+    })
   }
-});
+})
 </code></pre>
 <h2 id="display-&#xAC1D;&#xCCB4;"><code>Display</code> &#xAC1D;&#xCCB4;</h2>
 <p><code>Display</code> &#xAC1D;&#xCCB4;&#xB294; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0; &#xC5F0;&#xACB0;&#xB41C; &#xBB3C;&#xB9AC;&#xC801;&#xC778; &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xB97C; &#xD45C;&#xD604;&#xD569;&#xB2C8;&#xB2E4;. &#xD5E4;&#xB4DC;&#xB808;&#xC2A4;(headless)
@@ -978,8 +973,8 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 <ul>
 <li><code>display</code> object<ul>
 <li><code>id</code> Integer - &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xC5D0; &#xAD00;&#xB828;&#xB41C; &#xC720;&#xC77C; &#xC2DD;&#xBCC4;&#xC790;.</li>
-<li><code>rotation</code> Integer - &#xAC12;&#xC740; 0, 1, 2, 3&#xC774; &#xB420; &#xC218; &#xC788;&#xACE0;, &#xAC01; &#xAC12;&#xC740; &#xC2DC;&#xACC4; &#xBC29;&#xD5A5;&#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C;
-0, 90, 180, 270&#xB3C4;&#xC758; &#xD654;&#xBA74; &#xD68C;&#xC804; &#xC0C1;&#xD0DC;&#xB85C; &#xD45C;&#xD604;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li><code>rotation</code> Integer - &#xAC12;&#xC740; 0, 90, 180, 270&#xC774; &#xB420; &#xC218; &#xC788;&#xACE0;, &#xAC01; &#xAC12;&#xC740; &#xC2DC;&#xACC4; &#xBC29;&#xD5A5;&#xC744;
+&#xAE30;&#xC900;&#xC73C;&#xB85C; 0, 90, 180, 270&#xB3C4;&#xC758; &#xD654;&#xBA74; &#xD68C;&#xC804; &#xC0C1;&#xD0DC;&#xB97C; &#xD45C;&#xD604;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li><code>scaleFactor</code> Number - &#xAE30;&#xAE30;&#xC758; &#xD53D;&#xC140; &#xC2A4;&#xCF00;&#xC77C; &#xD06C;&#xAE30;.</li>
 <li><code>touchSupport</code> String - &#xD130;&#xCE58; &#xC2A4;&#xD06C;&#xB9B0;&#xC758; &#xC5EC;&#xBD80;, <code>available</code>, <code>unavailable</code>,
 <code>unknown</code> &#xAC12;&#xC73C;&#xB85C; &#xBC18;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.</li>

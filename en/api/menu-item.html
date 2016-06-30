@@ -53,7 +53,7 @@
         data-chapter-title="MenuItem"
         data-filepath="api/menu-item.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,42 +926,46 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="menuitem">MenuItem</h1>
-<p>The <code>menu-item</code> module allows you to add items to an application or context
-<a href="menu.html"><code>menu</code></a>.</p>
-<p>See <a href="menu.html"><code>menu</code></a> for examples.</p>
+<blockquote>
+<p>Add items to native application menus and context menus.</p>
+</blockquote>
+<p>See <a href="menu.html"><code>Menu</code></a> for examples.</p>
 <h2 id="class-menuitem">Class: MenuItem</h2>
 <p>Create a new <code>MenuItem</code> with the following method:</p>
 <h3 id="new-menuitemoptions">new MenuItem(options)</h3>
 <ul>
 <li><code>options</code> Object<ul>
-<li><code>click</code> Function - Will be called with <code>click(menuItem, browserWindow)</code> when
- the menu item is clicked</li>
-<li><code>role</code> String - Define the action of the menu item; when specified the
- <code>click</code> property will be ignored</li>
+<li><code>click</code> Function - Will be called with
+<code>click(menuItem, browserWindow, event)</code> when the menu item is clicked.</li>
+<li><code>role</code> String - Define the action of the menu item, when specified the
+<code>click</code> property will be ignored.</li>
 <li><code>type</code> String - Can be <code>normal</code>, <code>separator</code>, <code>submenu</code>, <code>checkbox</code> or
- <code>radio</code></li>
+<code>radio</code>.</li>
 <li><code>label</code> String</li>
 <li><code>sublabel</code> String</li>
 <li><code>accelerator</code> <a href="accelerator.md">Accelerator</a></li>
 <li><code>icon</code> <a href="native-image.html">NativeImage</a></li>
-<li><code>enabled</code> Boolean - If false, the menu item will be greyed out and unclickable.</li>
+<li><code>enabled</code> Boolean - If false, the menu item will be greyed out and
+unclickable.</li>
 <li><code>visible</code> Boolean - If false, the menu item will be entirely hidden.</li>
-<li><code>checked</code> Boolean - Should only be specified for <code>checkbox</code> or <code>radio</code> type 
-  menu items.</li>
+<li><code>checked</code> Boolean - Should only be specified for <code>checkbox</code> or <code>radio</code> type
+menu items.</li>
 <li><code>submenu</code> Menu - Should be specified for <code>submenu</code> type menu items. If
- <code>submenu</code> is specified, the <code>type: &apos;submenu&apos;</code> can be omitted. If the value
- is not a <code>Menu</code> then it will be automatically converted to one using
- <code>Menu.buildFromTemplate</code>.</li>
+<code>submenu</code> is specified, the <code>type: &apos;submenu&apos;</code> can be omitted. If the value
+is not a <code>Menu</code> then it will be automatically converted to one using
+<code>Menu.buildFromTemplate</code>.</li>
 <li><code>id</code> String - Unique within a single menu. If defined then it can be used
- as a reference to this item by the position attribute.</li>
+as a reference to this item by the position attribute.</li>
 <li><code>position</code> String - This field allows fine-grained definition of the
- specific location within a given menu.</li>
+specific location within a given menu.</li>
 </ul>
 </li>
 </ul>
 <p>It is best to specify <code>role</code> for any menu item that matches a standard role,
 rather than trying to manually implement the behavior in a <code>click</code> function.
 The built-in <code>role</code> behavior will give the best native experience.</p>
+<p>The <code>label</code> and <code>accelerator</code> are optional when using a <code>role</code> and will default
+to appropriate values for each platform.</p>
 <p>The <code>role</code> property can have following values:</p>
 <ul>
 <li><code>undo</code></li>
@@ -969,34 +973,44 @@ The built-in <code>role</code> behavior will give the best native experience.</p
 <li><code>cut</code></li>
 <li><code>copy</code></li>
 <li><code>paste</code></li>
+<li><code>pasteandmatchstyle</code></li>
 <li><code>selectall</code></li>
+<li><code>delete</code></li>
 <li><code>minimize</code> - Minimize current window</li>
 <li><code>close</code> - Close current window</li>
+<li><code>quit</code>- Quit the application</li>
+<li><code>togglefullscreen</code>- Toggle full screen mode on the current window</li>
 </ul>
-<p>On OS X <code>role</code> can also have following additional values:</p>
+<p>On macOS <code>role</code> can also have following additional values:</p>
 <ul>
 <li><code>about</code> - Map to the <code>orderFrontStandardAboutPanel</code> action</li>
 <li><code>hide</code> - Map to the <code>hide</code> action</li>
 <li><code>hideothers</code> - Map to the <code>hideOtherApplications</code> action</li>
 <li><code>unhide</code> - Map to the <code>unhideAllApplications</code> action</li>
 <li><code>front</code> - Map to the <code>arrangeInFront</code> action</li>
+<li><code>zoom</code> - Map to the <code>performZoom</code> action</li>
 <li><code>window</code> - The submenu is a &quot;Window&quot; menu</li>
 <li><code>help</code> - The submenu is a &quot;Help&quot; menu</li>
 <li><code>services</code> - The submenu is a &quot;Services&quot; menu</li>
 </ul>
-<h2 id="instance-properties">Instance Properties</h2>
-<p>The following properties (and no others) can be updated on an existing <code>MenuItem</code>:</p>
-<ul>
-<li><code>enabled</code> Boolean</li>
-<li><code>visible</code> Boolean</li>
-<li><code>checked</code> Boolean</li>
-</ul>
-<p>Their meanings are as described above.</p>
-<p>A <code>checkbox</code> menu item will toggle its <code>checked</code> property on and off when
-selected. You can add a <code>click</code> function to do additional work.</p>
+<p>When specifying <code>role</code> on macOS, <code>label</code> and <code>accelerator</code> are the only options
+that will affect the MenuItem. All other options will be ignored.</p>
+<h3 id="instance-properties">Instance Properties</h3>
+<p>The following properties are available on instances of <code>MenuItem</code>:</p>
+<h4 id="menuitemenabled"><code>menuItem.enabled</code></h4>
+<p>A Boolean indicating whether the item is enabled, this property can be
+dynamically changed.</p>
+<h4 id="menuitemvisible"><code>menuItem.visible</code></h4>
+<p>A Boolean indicating whether the item is visible, this property can be
+dynamically changed.</p>
+<h4 id="menuitemchecked"><code>menuItem.checked</code></h4>
+<p>A Boolean indicating whether the item is checked, this property can be
+dynamically changed.</p>
+<p>A <code>checkbox</code> menu item will toggle the <code>checked</code> property on and off when
+selected.</p>
 <p>A <code>radio</code> menu item will turn on its <code>checked</code> property when clicked, and
-will turn off that property for all adjacent items in the same menu. Again,
-you can add a <code>click</code> function for additional behavior.</p>
+will turn off that property for all adjacent items in the same menu.</p>
+<p>You can add a <code>click</code> function for additional behavior.</p>
 
                     
                     </section>

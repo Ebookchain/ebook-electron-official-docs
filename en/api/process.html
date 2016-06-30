@@ -53,7 +53,7 @@
         data-chapter-title="Process Object"
         data-filepath="api/process.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,27 +926,20 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="process">process</h1>
-<p>The <code>process</code> object in Electron has the following differences from the one in
-upstream node:</p>
-<ul>
-<li><code>process.type</code> String - Process&apos;s type, can be <code>browser</code> (i.e. main process)
-or <code>renderer</code>.</li>
-<li><code>process.versions[&apos;electron&apos;]</code> String - Version of Electron.</li>
-<li><code>process.versions[&apos;chrome&apos;]</code> String - Version of Chromium.</li>
-<li><code>process.resourcesPath</code> String - Path to JavaScript source code.</li>
-<li><code>process.mas</code> Boolean - For Mac App Store build, this value is <code>true</code>, for
-other builds it is <code>undefined</code>.</li>
-</ul>
+<blockquote>
+<p>Extensions to process object.</p>
+</blockquote>
+<p>The <code>process</code> object is extended in Electron with following APIs:</p>
 <h2 id="events">Events</h2>
 <h3 id="event-loaded">Event: &apos;loaded&apos;</h3>
 <p>Emitted when Electron has loaded its internal initialization script and is
 beginning to load the web page or the main script.</p>
 <p>It can be used by the preload script to add removed Node global symbols back to
 the global scope when node integration is turned off:</p>
-<pre><code class="lang-js"><span class="hljs-comment">// preload.js</span>
-<span class="hljs-keyword">var</span> _setImmediate = setImmediate;
-<span class="hljs-keyword">var</span> _clearImmediate = clearImmediate;
-process.once(<span class="hljs-string">&apos;loaded&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<pre><code class="lang-javascript"><span class="hljs-comment">// preload.js</span>
+<span class="hljs-keyword">const</span> _setImmediate = setImmediate;
+<span class="hljs-keyword">const</span> _clearImmediate = clearImmediate;
+process.once(<span class="hljs-string">&apos;loaded&apos;</span>, () =&gt; {
   global.setImmediate = _setImmediate;
   global.clearImmediate = _clearImmediate;
 });
@@ -955,16 +948,64 @@ process.once(<span class="hljs-string">&apos;loaded&apos;</span>, <span class="h
 <h3 id="processnoasar"><code>process.noAsar</code></h3>
 <p>Setting this to <code>true</code> can disable the support for <code>asar</code> archives in Node&apos;s
 built-in modules.</p>
+<h3 id="processtype"><code>process.type</code></h3>
+<p>Current process&apos;s type, can be <code>&quot;browser&quot;</code> (i.e. main process) or <code>&quot;renderer&quot;</code>.</p>
+<h3 id="processversionselectron"><code>process.versions.electron</code></h3>
+<p>Electron&apos;s version string.</p>
+<h3 id="processversionschrome"><code>process.versions.chrome</code></h3>
+<p>Chrome&apos;s version string.</p>
+<h3 id="processresourcespath"><code>process.resourcesPath</code></h3>
+<p>Path to the resources directory.</p>
+<h3 id="processmas"><code>process.mas</code></h3>
+<p>For Mac App Store build, this property is <code>true</code>, for other builds it is
+<code>undefined</code>.</p>
+<h3 id="processwindowsstore"><code>process.windowsStore</code></h3>
+<p>If the app is running as a Windows Store app (appx), this property is <code>true</code>,
+for otherwise it is <code>undefined</code>.</p>
+<h3 id="processdefaultapp"><code>process.defaultApp</code></h3>
+<p>When app is started by being passed as parameter to the default app, this
+property is <code>true</code> in the main process, otherwise it is <code>undefined</code>.</p>
 <h2 id="methods">Methods</h2>
 <p>The <code>process</code> object has the following method:</p>
+<h3 id="processcrash"><code>process.crash()</code></h3>
+<p>Causes the main thread of the current process crash.</p>
 <h3 id="processhang"><code>process.hang()</code></h3>
 <p>Causes the main thread of the current process hang.</p>
-<h3 id="processsetfdlimitmaxdescriptors-os-x-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>OS X</em> <em>Linux</em></h3>
+<h3 id="processsetfdlimitmaxdescriptors-macos-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>macOS</em> <em>Linux</em></h3>
 <ul>
 <li><code>maxDescriptors</code> Integer</li>
 </ul>
 <p>Sets the file descriptor soft limit to <code>maxDescriptors</code> or the OS hard
 limit, whichever is lower for the current process.</p>
+<h3 id="processgetprocessmemoryinfo"><code>process.getProcessMemoryInfo()</code></h3>
+<p>Returns an object giving memory usage statistics about the current process. Note
+that all statistics are reported in Kilobytes.</p>
+<ul>
+<li><code>workingSetSize</code> - The amount of memory currently pinned to actual physical
+RAM.</li>
+<li><code>peakWorkingSetSize</code> - The maximum amount of memory that has ever been pinned
+to actual physical RAM.</li>
+<li><code>privateBytes</code> - The amount of memory not shared by other processes, such as
+JS heap or HTML content.</li>
+<li><code>sharedBytes</code> - The amount of memory shared between processes, typically
+memory consumed by the Electron code itself</li>
+</ul>
+<h3 id="processgetsystemmemoryinfo"><code>process.getSystemMemoryInfo()</code></h3>
+<p>Returns an object giving memory usage statistics about the entire system. Note
+that all statistics are reported in Kilobytes.</p>
+<ul>
+<li><code>total</code> - The total amount of physical memory in Kilobytes available to the
+system.</li>
+<li><code>free</code> - The total amount of memory not being used by applications or disk
+cache.</li>
+</ul>
+<p>On Windows / Linux:</p>
+<ul>
+<li><code>swapTotal</code> - The total amount of swap memory in Kilobytes available to the
+system.</li>
+<li><code>swapFree</code> - The free amount of swap memory in Kilobytes available to the
+system.</li>
+</ul>
 
                     
                     </section>

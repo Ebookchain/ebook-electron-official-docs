@@ -53,7 +53,7 @@
         data-chapter-title="`File` 객체"
         data-filepath="api/file-object.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,25 +926,28 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="file-&#xAC1D;&#xCCB4;"><code>File</code> &#xAC1D;&#xCCB4;</h1>
-<p>DOM&#xC758; File &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xD30C;&#xC77C;&#xC744; &#xCD94;&#xC0C1;&#xD654; &#xD569;&#xB2C8;&#xB2E4;. &#xC720;&#xC800;&#xAC00; &#xC9C1;&#xC811; HTML5 File API&#xB97C;
-&#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC791;&#xC5C5;&#xD560; &#xB54C; &#xC120;&#xD0DD;&#xB41C; &#xD30C;&#xC77C;&#xC758; &#xACBD;&#xB85C;&#xB97C; &#xC54C; &#xC218; &#xC788;&#xB3C4;&#xB85D; Electron&#xC740; &#xD30C;&#xC77C;&#xC758; &#xC2E4;&#xC81C; &#xACBD;&#xB85C;&#xB97C;
-&#xB2F4;&#xC740; <code>path</code> &#xC18D;&#xC131;&#xC744; File &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; &#xC571;&#xC73C;&#xB85C; &#xB4DC;&#xB798;&#xADF8; &#xC564; &#xB4DC;&#xB86D;&#xD55C; &#xD30C;&#xC77C;&#xC758; &#xC2E4;&#xC81C; &#xACBD;&#xB85C;&#xB97C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;:</p>
+<blockquote>
+<p>HTML5 <code>File</code> API&#xB97C; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xD30C;&#xC77C; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xD30C;&#xC77C;&#xCC98;&#xB7FC; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>DOM&#xC758; File &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xD30C;&#xC77C;&#xC744; &#xCD94;&#xC0C1;&#xD654; &#xD569;&#xB2C8;&#xB2E4;. &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC9C1;&#xC811; HTML5 File
+API&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC791;&#xC5C5;&#xD560; &#xB54C; &#xC120;&#xD0DD;&#xB41C; &#xD30C;&#xC77C;&#xC758; &#xACBD;&#xB85C;&#xB97C; &#xC54C; &#xC218; &#xC788;&#xB3C4;&#xB85D;, Electron&#xC740; &#xD30C;&#xC77C;&#xC758; &#xC2E4;&#xC81C;
+&#xACBD;&#xB85C;&#xB97C; &#xB2F4;&#xC740; <code>path</code> &#xC18D;&#xC131;&#xC744; File &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xCD94;&#xAC00;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xC571;&#xC73C;&#xB85C; &#xB4DC;&#xB798;&#xADF8; &#xC564; &#xB4DC;&#xB86D;&#xD55C; &#xD30C;&#xC77C;&#xC758; &#xC2E4;&#xC81C; &#xACBD;&#xB85C;&#xB97C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;holder&quot;</span>&gt;</span>
   Drag your file here
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">var</span> holder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;holder&apos;</span>);
-  holder.ondragover = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> holder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;holder&apos;</span>);
+  holder.ondragover = () =&gt; {
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
   };
-  holder.ondragleave = holder.ondragend = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  holder.ondragleave = holder.ondragend = () =&gt; {
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
   };
-  holder.ondrop = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+  holder.ondrop = (e) =&gt; {
     e.preventDefault();
-    <span class="hljs-keyword">var</span> file = e.dataTransfer.files[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">const</span> file = e.dataTransfer.files[<span class="hljs-number">0</span>];
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;File you dragged here is&apos;</span>, file.path);
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
   };

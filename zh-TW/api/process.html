@@ -53,7 +53,7 @@
         data-chapter-title="行程物件"
         data-filepath="api/process.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:59:02 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:42 GMT+0800 (CST)"
         data-innerlanguage="zh-TW">
     
 
@@ -606,15 +606,15 @@
 <p>&#x5728; Electron &#x88E1;&#x7684; <code>process</code> &#x7269;&#x4EF6;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x5E7E;&#x500B;&#x8207; upstream node &#x7684;&#x4E0D;&#x540C;&#x9EDE;:</p>
 <ul>
 <li><code>process.type</code> String - Process &#x7684;&#x578B;&#x614B;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; <code>browser</code> (i.e. &#x4E3B;&#x884C;&#x7A0B;) &#x6216; <code>renderer</code>.</li>
-<li><code>process.versions[&apos;electron&apos;]</code> String - Electron &#x7684;&#x7248;&#x672C;</li>
-<li><code>process.versions[&apos;chrome&apos;]</code> String - Chromium &#x7684;&#x7248;&#x672C;</li>
+<li><code>process.versions.electron</code> String - Electron &#x7684;&#x7248;&#x672C;</li>
+<li><code>process.versions.chrome</code> String - Chromium &#x7684;&#x7248;&#x672C;</li>
 <li><code>process.resourcesPath</code> String - JavaScript &#x6E90;&#x78BC;&#x7684;&#x8DEF;&#x5F91;</li>
 </ul>
 <h1 id="&#x65B9;&#x6CD5;-methods">&#x65B9;&#x6CD5; (Methods)</h1>
 <p><code>process</code> &#x7269;&#x4EF6;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x7684;&#x65B9;&#x6CD5;:</p>
 <h3 id="processhang"><code>process.hang</code></h3>
 <p>&#x6703;&#x5C0E;&#x81F4;&#x76EE;&#x524D;&#x884C;&#x7A0B;&#x7684;&#x4E3B;&#x57F7;&#x884C;&#x7DD2;&#x505C;&#x4F4F;</p>
-<h2 id="processsetfdlimitmaxdescriptors-os-x-linux">process.setFdLimit(maxDescriptors) <em>OS X</em> <em>Linux</em></h2>
+<h2 id="processsetfdlimitmaxdescriptors-macos-linux">process.setFdLimit(maxDescriptors) <em>macOS</em> <em>Linux</em></h2>
 <ul>
 <li><code>maxDescriptors</code> Integer</li>
 </ul>

@@ -53,7 +53,7 @@
         data-chapter-title="Introducción"
         data-filepath="tutorial/quick-start.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:58 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:39 GMT+0800 (CST)"
         data-innerlanguage="es">
     
 
@@ -611,9 +611,8 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="intro">Intro</h1>
-<h2 id="introducci&#xF3;n">Introducci&#xF3;n</h2>
-<p>Electron permite la creaci&#xF3;n de aplicaciones de escritorio utilizando JavaScript puro, a trav&#xE9;s de un runtime con APIs nativas. Puedes verlo como una variante de io.js, enfocado en aplicaciones de escritorio, en vez de servidores web.</p>
+                        <h2 id="introducci&#xF3;n">Introducci&#xF3;n</h2>
+<p>Electron permite la creaci&#xF3;n de aplicaciones de escritorio utilizando JavaScript puro, a trav&#xE9;s de un runtime con APIs nativas. Puedes verlo como una variante de io.js, enfocado a aplicaciones de escritorio, en vez de servidores web.</p>
 <p>Esto no significa que Electron sea un binding de librer&#xED;as GUI para JavaScript.
 Electron utiliza p&#xE1;ginas web como su GUI, por lo cual puedes verlo como un navegador Chromium m&#xED;nimo,
 controlado por JavaScript.</p>
@@ -666,7 +665,7 @@ a ser ejecutado por el proceso principal. Un ejemplo de <code>package.json</code
 
 <span class="hljs-comment">// Salir de todas las ventanas cuando se cierren.</span>
 app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// En OS X es com&#xFA;n que las aplicaciones y su barra de men&#xFA;</span>
+  <span class="hljs-comment">// En macOS es com&#xFA;n que las aplicaciones y su barra de men&#xFA;</span>
   <span class="hljs-comment">// se mantengan activas hasta que el usuario cierre la aplicaci&#xF3;n</span>
   <span class="hljs-comment">// expl&#xED;citamente utilizando Cmd + Q</span>
   <span class="hljs-keyword">if</span> (process.platform != <span class="hljs-string">&apos;darwin&apos;</span>) {
@@ -704,7 +703,7 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
   <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello World!<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
     We are using io.js <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript"><span class="hljs-built_in">document</span>.write(process.version)</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-    and Electron <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript"><span class="hljs-built_in">document</span>.write(process.versions[<span class="hljs-string">&apos;electron&apos;</span>])</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>.
+    and Electron <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript"><span class="hljs-built_in">document</span>.write(process.versions.electron)</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>.
   <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
 </code></pre>
@@ -719,7 +718,7 @@ para ejecutar tu aplicaci&#xF3;n de forma directa.</p>
 <p>En Linux:</p>
 <pre><code class="lang-bash">$ ./electron/electron your-app/
 </code></pre>
-<p>En OS X:</p>
+<p>En macOS:</p>
 <pre><code class="lang-bash">$ ./Electron.app/Contents/MacOS/Electron your-app/
 </code></pre>
 <p><code>Electron.app</code> es parte del paquete de release de Electron, puedes descargarlo <a href="https://github.com/electron/electron/releases" target="_blank">aqu&#xED;</a>.</p>

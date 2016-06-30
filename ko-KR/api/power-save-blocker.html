@@ -53,7 +53,7 @@
         data-chapter-title="powerSaveBlocker"
         data-filepath="api/power-save-blocker.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,12 +926,13 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="powersaveblocker">powerSaveBlocker</h1>
-<p><code>powerSaveBlocker</code> &#xBAA8;&#xB4C8;&#xC740; &#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xC800;&#xC804;&#xB825;(&#xC2AC;&#xB9BD;) &#xBAA8;&#xB4DC;&#xB85C; &#xC9C4;&#xC785;&#xD558;&#xB294; &#xAC83;&#xC744; &#xB9C9;&#xACE0; &#xC571; &#xC2DC;&#xC2A4;&#xD15C;&#xACFC;
-&#xD654;&#xBA74;&#xC774; &#xD56D;&#xC0C1; &#xD65C;&#xC131;&#xD654; &#xC0C1;&#xD0DC;&#xB97C; &#xC720;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD558;&#xB294; &#xBA87;&#xAC00;&#xC9C0; &#xC720;&#xD2F8;&#xB9AC;&#xD2F0;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC608;&#xC81C;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> powerSaveBlocker = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).powerSaveBlocker;
+<blockquote>
+<p>&#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xC800;&#xC804;&#xB825; (&#xC2AC;&#xB9BD;) &#xBAA8;&#xB4DC;&#xB85C; &#xC9C4;&#xC785;&#xD558;&#xB294; &#xAC83;&#xC744; &#xB9C9;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xC608;&#xC2DC;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {powerSaveBlocker} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-<span class="hljs-keyword">var</span> id = powerSaveBlocker.start(<span class="hljs-string">&apos;prevent-display-sleep&apos;</span>);
+<span class="hljs-keyword">const</span> id = powerSaveBlocker.start(<span class="hljs-string">&apos;prevent-display-sleep&apos;</span>);
 <span class="hljs-built_in">console</span>.log(powerSaveBlocker.isStarted(id));
 
 powerSaveBlocker.stop(id);
@@ -941,10 +942,10 @@ powerSaveBlocker.stop(id);
 <h3 id="powersaveblockerstarttype"><code>powerSaveBlocker.start(type)</code></h3>
 <ul>
 <li><code>type</code> String - Power save blocker &#xC885;&#xB958;<ul>
-<li><code>prevent-app-suspension</code> - &#xC800;&#xC804;&#xB825; &#xBAA8;&#xB4DC; &#xB4F1;&#xC73C;&#xB85C; &#xC778;&#xD55C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC791;&#xB3D9; &#xC911;&#xB2E8;&#xC744;
+<li><code>prevent-app-suspension</code> - &#xC800;&#xC804;&#xB825; &#xBAA8;&#xB4DC; &#xB4F1;&#xC73C;&#xB85C; &#xC778;&#xD55C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC791;&#xB3D9; &#xC911;&#xB2E8;&#xC744;
 &#xBC29;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;. &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xD56D;&#xC2DC; &#xD65C;&#xC131;&#xD654; &#xC0C1;&#xD0DC;&#xB85C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xD654;&#xBA74;&#xC740; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xAEBC;&#xC9C8; &#xC218;
 &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;: &#xD30C;&#xC77C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;, &#xC74C;&#xC545; &#xC7AC;&#xC0DD; &#xB4F1;.</li>
-<li><code>prevent-display-sleep</code>- &#xC2AC;&#xB9BD; &#xBAA8;&#xB4DC; &#xB4F1;&#xC73C;&#xB85C; &#xC778;&#xD55C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC791;&#xB3D9; &#xC911;&#xB2E8;&#xC744;
+<li><code>prevent-display-sleep</code>- &#xC2AC;&#xB9BD; &#xBAA8;&#xB4DC; &#xB4F1;&#xC73C;&#xB85C; &#xC778;&#xD55C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC791;&#xB3D9; &#xC911;&#xB2E8;&#xC744;
 &#xBC29;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;. &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xD56D;&#xC2DC; &#xD65C;&#xC131;&#xD654; &#xC0C1;&#xD0DC;&#xB85C; &#xB9CC;&#xB4E4;&#xACE0; &#xC2AC;&#xB9BD; &#xBAA8;&#xB4DC;(&#xD654;&#xBA74; &#xAEBC;&#xC9D0;)&#xB97C; &#xBC29;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.
 &#xC0AC;&#xC6A9; &#xC608;&#xC2DC;: &#xBE44;&#xB514;&#xC624; &#xC7AC;&#xC0DD; &#xB4F1;.</li>
 </ul>

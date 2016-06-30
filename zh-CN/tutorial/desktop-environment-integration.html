@@ -53,7 +53,7 @@
         data-chapter-title="桌面环境集成"
         data-filepath="tutorial/desktop-environment-integration.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:59 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:40 GMT+0800 (CST)"
         data-innerlanguage="zh-CN">
     
 
@@ -905,8 +905,37 @@
                         <h1 id="&#x684C;&#x9762;&#x73AF;&#x5883;&#x96C6;&#x6210;">&#x684C;&#x9762;&#x73AF;&#x5883;&#x96C6;&#x6210;</h1>
 <p>&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5728;&#x5404;&#x81EA;&#x7684;&#x684C;&#x9762;&#x5E94;&#x7528;&#x4E0A;&#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x7279;&#x6027;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728; windows &#x4E0A;&#x5E94;&#x7528;&#x66FE;&#x7ECF;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x4EFB;&#x52A1;&#x680F;&#x7684;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#xFF0C;&#x5728; Mac &#x4E0A;&#xFF0C;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x628A;&#x81EA;&#x5B9A;&#x4E49;&#x83DC;&#x5355;&#x653E;&#x5728;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#x4E0A;&#x3002;</p>
 <p>&#x672C;&#x7AE0;&#x5C06;&#x4F1A;&#x8BF4;&#x660E;&#x600E;&#x6837;&#x4F7F;&#x7528; Electron APIs &#x628A;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x548C;&#x684C;&#x9762;&#x73AF;&#x5883;&#x96C6;&#x6210;&#x5230;&#x4E00;&#x5757;&#x3002;</p>
-<h2 id="&#x6700;&#x8FD1;&#x6587;&#x6863;-windows--os-x">&#x6700;&#x8FD1;&#x6587;&#x6863; (Windows &amp; OS X)</h2>
-<p>Windows &#x548C; OS X &#x63D0;&#x4F9B;&#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x6587;&#x6863;&#x5217;&#x8868;&#x7684;&#x4FBF;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x6253;&#x5F00;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x6216;&#x8005;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#x3002;</p>
+<h2 id="notifications-windows-linux-macos">Notifications (Windows, Linux, macOS)</h2>
+<p>&#x8FD9;&#x4E09;&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x90FD;&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x4E86;&#x53D1;&#x9001;&#x901A;&#x77E5;&#x7684;&#x65B9;&#x6CD5;&#x3002;Electron&#x8BA9;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x901A;&#x8FC7;
+<a href="https://notifications.spec.whatwg.org/" target="_blank">HTML5 Notification API</a>
+&#x4FBF;&#x5229;&#x7684;&#x53BB;&#x53D1;&#x9001;&#x901A;&#x77E5;&#xFF0C;&#x7528;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684;&#x901A;&#x77E5;APIs&#x53BB;&#x663E;&#x793A;&#x3002;</p>
+<p><strong>Note:</strong> &#x56E0;&#x4E3A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;HTML5API&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x5728;&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#x4E2D;&#x8D77;&#x4F5C;&#x7528;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myNotification = <span class="hljs-keyword">new</span> Notification(<span class="hljs-string">&apos;Title&apos;</span>, {
+  body: <span class="hljs-string">&apos;Lorem Ipsum Dolor Sit Amet&apos;</span>
+});
+
+myNotification.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Notification clicked&apos;</span>)
+}
+</code></pre>
+<p>&#x5C3D;&#x7BA1;&#x4EE3;&#x7801;&#x548C;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x6709;&#x4E00;&#x4E9B;&#x5DEE;&#x5F02;&#x3002;</p>
+<h3 id="windows">Windows</h3>
+<ul>
+<li>&#x5728;Windows 10&#x4E0A;, &#x901A;&#x77E5;&quot;&#x53EF;&#x4EE5;&#x5DE5;&#x4F5C;&quot;.</li>
+<li>&#x5728;Windows 8.1&#x548C;Windows 8&#x7CFB;&#x7EDF;&#x4E0B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5C06;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85).aspx" target="_blank">Application User
+Model ID</a>&#x5B89;&#x88C5;&#x5230;&#x5F00;&#x59CB;&#x5C4F;&#x5E55;&#x4E0A;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E0D;&#x662F;&#x5C06;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x56FA;&#x5B9A;&#x5230;&#x5F00;&#x59CB;&#x5C4F;&#x5E55;&#x3002;</li>
+<li>&#x5728;Windows 7&#x4EE5;&#x53CA;&#x66F4;&#x4F4E;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x901A;&#x77E5;&#x4E0D;&#x88AB;&#x652F;&#x6301;&#x3002;&#x4E0D;&#x8FC7;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="../api/tray.html#traydisplayballoonoptions-windows">Tray API</a>&#x53D1;&#x9001;&#x4E00;&#x4E2A;&quot;&#x6C14;&#x6CE1;&#x901A;&#x77E5;&quot;&#x3002;</li>
+</ul>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x901A;&#x77E5;&#x652F;&#x6301;&#x7684;&#x6700;&#x5927;&#x5B57;&#x7B26;&#x957F;&#x961F;&#x4E3A;250&#x3002;Windows&#x56E2;&#x961F;&#x5EFA;&#x8BAE;&#x901A;&#x77E5;&#x5E94;&#x8BE5;&#x4FDD;&#x6301;&#x5728;200&#x4E2A;&#x5B57;&#x7B26;&#x4EE5;&#x4E0B;&#x3002;</p>
+<h3 id="linux">Linux</h3>
+<p>&#x901A;&#x77E5;&#x4F7F;&#x7528;<code>libnotify</code>&#x53D1;&#x9001;&#xFF0C;&#x5B83;&#x80FD;&#x5728;&#x4EFB;&#x4F55;&#x652F;&#x6301;<a href="https://developer.gnome.org/notification-spec/" target="_blank">Desktop Notifications
+Specification</a>&#x7684;&#x684C;&#x9762;&#x73AF;&#x5883;&#x4E2D;&#x663E;&#x793A;&#xFF0C;&#x5305;&#x62EC; Cinnamon, Enlightenment, Unity,
+GNOME, KDE&#x3002;</p>
+<h3 id="macos">macOS</h3>
+<p>&#x5728;macOS&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x901A;&#x77E5;&#x662F;&#x76F4;&#x63A5;&#x8F6C;&#x53D1;&#x7684;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x4E86;&#x89E3;<a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/NotificationCenter.html" target="_blank">Apple&apos;s Human Interface guidelines regarding notifications</a>&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#x901A;&#x77E5;&#x88AB;&#x9650;&#x5236;&#x5728;256&#x4E2A;&#x5B57;&#x8282;&#x4EE5;&#x5185;&#xFF0C;&#x5982;&#x679C;&#x8D85;&#x51FA;&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x622A;&#x65AD;&#x3002;</p>
+<h2 id="&#x6700;&#x8FD1;&#x6587;&#x6863;-windows--macos">&#x6700;&#x8FD1;&#x6587;&#x6863; (Windows &amp; macOS)</h2>
+<p>Windows &#x548C; macOS &#x63D0;&#x4F9B;&#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x6587;&#x6863;&#x5217;&#x8868;&#x7684;&#x4FBF;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x6253;&#x5F00;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x6216;&#x8005;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#x3002;</p>
 <p>&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#xFF1A;
 <img src="https://camo.githubusercontent.com/3310597e01f138b1d687e07aa618c50908a88dec/687474703a2f2f692e6d73646e2e6d6963726f736f66742e636f6d2f64796e696d672f49433432303533382e706e67" alt="JumpList"></p>
 <p>&#x9C7C;&#x773C;&#x83DC;&#x5355;&#xFF1A;
@@ -920,13 +949,13 @@ app.addRecentDocument(<span class="hljs-string">&apos;/Users/USERNAME/Desktop/wo
 </code></pre>
 <h2 id="windows-&#x9700;&#x6CE8;&#x610F;">Windows &#x9700;&#x6CE8;&#x610F;</h2>
 <p>&#x4E3A;&#x4E86;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x5728; Windows &#x4E0A;&#x8868;&#x73B0;&#x6B63;&#x5E38;&#xFF0C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x9700;&#x8981;&#x88AB;&#x6CE8;&#x518C;&#x6210;&#x4E3A;&#x4E00;&#x79CD;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x7684;&#x53E5;&#x67C4;&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x5728;&#x4F60;&#x6CE8;&#x518C;&#x4E4B;&#x524D;&#xFF0C;&#x6587;&#x4EF6;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ee872121%28v=vs.85%29.aspx" target="_blank">Application Registration</a> &#x91CC;&#x627E;&#x5230;&#x4EFB;&#x4F55;&#x5173;&#x4E8E;&#x6CE8;&#x518C;&#x4E8B;&#x5B9C;&#x7684;&#x8BF4;&#x660E;&#x3002;</p>
-<h2 id="os-x-&#x9700;&#x6CE8;&#x610F;">OS X &#x9700;&#x6CE8;&#x610F;</h2>
+<h2 id="macos-&#x9700;&#x6CE8;&#x610F;">macOS &#x9700;&#x6CE8;&#x610F;</h2>
 <p>&#x5F53;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x88AB;&#x6700;&#x8FD1;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;<code>app</code> &#x6A21;&#x5757;&#x91CC;&#x7684; <code>open-file</code> &#x4E8B;&#x4EF6;&#x5C06;&#x4F1A;&#x88AB;&#x53D1;&#x51FA;&#x3002;</p>
-<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;os-x">&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;(OS X)</h2>
-<p>OS X &#x53EF;&#x4EE5;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x5B9A;&#x5236;&#x81EA;&#x5DF1;&#x7684;&#x83DC;&#x5355;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7279;&#x6027;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x3002;</p>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;macos">&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;(macOS)</h2>
+<p>macOS &#x53EF;&#x4EE5;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x5B9A;&#x5236;&#x81EA;&#x5DF1;&#x7684;&#x83DC;&#x5355;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7279;&#x6027;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x3002;</p>
 <h3 id="&#x83DC;&#x5355;&#x4E2D;&#x7684;&#x7EC8;&#x7AEF;">&#x83DC;&#x5355;&#x4E2D;&#x7684;&#x7EC8;&#x7AEF;</h3>
 <p><img src="https://cloud.githubusercontent.com/assets/639601/5069962/6032658a-6e9c-11e4-9953-aa84006bdfff.png" alt="Dock menu of Terminal.app"></p>
-<p>&#x4F7F;&#x7528; <code>app.dock.setMenu</code> API &#x6765;&#x8BBE;&#x7F6E;&#x4F60;&#x7684;&#x83DC;&#x5355;&#xFF0C;&#x8FD9;&#x4EC5;&#x5728; OS X &#x4E0A;&#x53EF;&#x884C;&#xFF1A;</p>
+<p>&#x4F7F;&#x7528; <code>app.dock.setMenu</code> API &#x6765;&#x8BBE;&#x7F6E;&#x4F60;&#x7684;&#x83DC;&#x5355;&#xFF0C;&#x8FD9;&#x4EC5;&#x5728; macOS &#x4E0A;&#x53EF;&#x884C;&#xFF1A;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;app&apos;</span>);
 <span class="hljs-keyword">var</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;menu&apos;</span>);
 <span class="hljs-keyword">var</span> dockMenu = Menu.buildFromTemplate([
@@ -947,7 +976,7 @@ app.dock.setMenu(dockMenu);
 </blockquote>
 <h3 id="ie-&#x7684;&#x4EFB;&#x52A1;">IE &#x7684;&#x4EFB;&#x52A1;</h3>
 <p><img src="https://camo.githubusercontent.com/30154e0cc36acfc968ac9ae076a8f0d6600dd736/687474703a2f2f692e6d73646e2e6d6963726f736f66742e636f6d2f64796e696d672f49433432303533392e706e67" alt="IE">
-&#x4E0D;&#x540C;&#x4E8E; OS X &#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#xFF0C;Windows &#x4E0A;&#x7684;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#x8868;&#x73B0;&#x5F97;&#x66F4;&#x50CF;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x5F53;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x5C06;&#x4F1A;&#x88AB;&#x4F20;&#x5165;&#x7279;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x5E76;&#x4E14;&#x8FD0;&#x884C;&#x3002;</p>
+&#x4E0D;&#x540C;&#x4E8E; macOS &#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#xFF0C;Windows &#x4E0A;&#x7684;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#x8868;&#x73B0;&#x5F97;&#x66F4;&#x50CF;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x5F53;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x5C06;&#x4F1A;&#x88AB;&#x4F20;&#x5165;&#x7279;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x5E76;&#x4E14;&#x8FD0;&#x884C;&#x3002;</p>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://github.com/electron/electron/blob/master/docs/api/app.md#appsetusertaskstasks" target="_blank">app.setUserTasks</a> API &#x6765;&#x8BBE;&#x7F6E;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#xFF1A;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;app&apos;</span>);
 app.setUserTasks([
@@ -1013,7 +1042,7 @@ win.setThumbarButtons([
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});
 <span class="hljs-built_in">window</span>.setProgressBar(<span class="hljs-number">0.5</span>);
 </code></pre>
-<p>&#x5728; OS X&#xFF0C;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5B83;&#x5C55;&#x793A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x7684;&#x56FE;&#x6807;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x6807;&#x9898;&#x680F;&#xFF0C;&#x5F53;&#x7528;&#x6237; Command-Click &#x6216;&#x8005; Control-Click &#x6807;&#x9898;&#x680F;&#xFF0C;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x5F39;&#x7A97;&#x5C06;&#x4F1A;&#x51FA;&#x73B0;&#x3002;</p>
+<p>&#x5728; macOS&#xFF0C;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5B83;&#x5C55;&#x793A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x7684;&#x56FE;&#x6807;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x6807;&#x9898;&#x680F;&#xFF0C;&#x5F53;&#x7528;&#x6237; Command-Click &#x6216;&#x8005; Control-Click &#x6807;&#x9898;&#x680F;&#xFF0C;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x5F39;&#x7A97;&#x5C06;&#x4F1A;&#x51FA;&#x73B0;&#x3002;</p>
 <h3 id="&#x5C55;&#x793A;&#x6587;&#x4EF6;&#x5F39;&#x7A97;&#x83DC;&#x5355;&#xFF1A;">&#x5C55;&#x793A;&#x6587;&#x4EF6;&#x5F39;&#x7A97;&#x83DC;&#x5355;&#xFF1A;</h3>
 <p><img src="https://cloud.githubusercontent.com/assets/639601/5082061/670a949a-6f14-11e4-987a-9aaa04b23c1d.png" alt="Represented file popup menu"></p>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x7528; <a href="https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/browser-window.md" target="_blank">BrowserWindow.setRepresentedFilename</a> &#x548C; <a href="https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/browser-window.md" target="_blank">BrowserWindow.setDocumentEdited</a> APIs&#xFF1A;</p>

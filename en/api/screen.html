@@ -53,7 +53,7 @@
         data-chapter-title="screen"
         data-filepath="api/screen.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,51 +926,44 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="screen">screen</h1>
-<p>The <code>screen</code> module retrieves information about screen size, displays, cursor
-position, etc. You should not use this module until the <code>ready</code> event of the
-<code>app</code> module is emitted.</p>
+<blockquote>
+<p>Retrieve information about screen size, displays, cursor position, etc.</p>
+</blockquote>
+<p>You cannot use this module until the <code>ready</code> event of the <code>app</code> module is
+emitted (by invoking or requiring it).</p>
 <p><code>screen</code> is an <a href="http://nodejs.org/api/events.html#events_class_events_eventemitter" target="_blank">EventEmitter</a>.</p>
 <p><strong>Note:</strong> In the renderer / DevTools, <code>window.screen</code> is a reserved DOM
-property, so writing <code>var screen = require(&apos;electron&apos;).screen</code> will not work.
-In our examples below, we use <code>electronScreen</code> as the variable name instead.
-An example of creating a window that fills the whole screen:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
-<span class="hljs-keyword">const</span> BrowserWindow = electron.BrowserWindow;
+property, so writing <code>let {screen} = require(&apos;electron&apos;)</code> will not work.</p>
+<p>An example of creating a window that fills the whole screen:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">const</span> {app, BrowserWindow} = electron
 
-<span class="hljs-keyword">var</span> mainWindow;
+<span class="hljs-keyword">let</span> win
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">var</span> electronScreen = electron.screen;
-  <span class="hljs-keyword">var</span> size = electronScreen.getPrimaryDisplay().workAreaSize;
-  mainWindow = <span class="hljs-keyword">new</span> BrowserWindow({ width: size.width, height: size.height });
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
+  win = <span class="hljs-keyword">new</span> BrowserWindow({width, height})
 });
 </code></pre>
 <p>Another example of creating a window in the external display:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
-<span class="hljs-keyword">const</span> BrowserWindow = electron.BrowserWindow;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">const</span> {app, BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
 
-<span class="hljs-keyword">var</span> mainWindow;
+<span class="hljs-keyword">let</span> win
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">var</span> electronScreen = electron.screen;
-  <span class="hljs-keyword">var</span> displays = electronScreen.getAllDisplays();
-  <span class="hljs-keyword">var</span> externalDisplay = <span class="hljs-literal">null</span>;
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> displays) {
-    <span class="hljs-keyword">if</span> (displays[i].bounds.x != <span class="hljs-number">0</span> || displays[i].bounds.y != <span class="hljs-number">0</span>) {
-      externalDisplay = displays[i];
-      <span class="hljs-keyword">break</span>;
-    }
-  }
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">let</span> displays = electron.screen.getAllDisplays()
+  <span class="hljs-keyword">let</span> externalDisplay = displays.find((display) =&gt; {
+    <span class="hljs-keyword">return</span> display.bounds.x !== <span class="hljs-number">0</span> || display.bounds.y !== <span class="hljs-number">0</span>
+  })
 
   <span class="hljs-keyword">if</span> (externalDisplay) {
-    mainWindow = <span class="hljs-keyword">new</span> BrowserWindow({
+    win = <span class="hljs-keyword">new</span> BrowserWindow({
       x: externalDisplay.bounds.x + <span class="hljs-number">50</span>,
       y: externalDisplay.bounds.y + <span class="hljs-number">50</span>
-    });
+    })
   }
-});
+})
 </code></pre>
 <h2 id="the-display-object">The <code>Display</code> object</h2>
 <p>The <code>Display</code> object represents a physical display connected to the system. A
@@ -979,8 +972,8 @@ a remote, virtual display.</p>
 <ul>
 <li><code>display</code> object<ul>
 <li><code>id</code> Integer - Unique identifier associated with the display.</li>
-<li><code>rotation</code> Integer - Can be 0, 1, 2, 3, each represents screen rotation in
-clock-wise degrees of 0, 90, 180, 270.</li>
+<li><code>rotation</code> Integer - Can be 0, 90, 180, 270, represents screen rotation in
+clock-wise degrees.</li>
 <li><code>scaleFactor</code> Number - Output device&apos;s pixel scale factor.</li>
 <li><code>touchSupport</code> String - Can be <code>available</code>, <code>unavailable</code>, <code>unknown</code>.</li>
 <li><code>bounds</code> Object</li>

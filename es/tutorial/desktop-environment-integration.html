@@ -53,7 +53,7 @@
         data-chapter-title="Integración con el entorno de escritorio"
         data-filepath="tutorial/desktop-environment-integration.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:58 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:39 GMT+0800 (CST)"
         data-innerlanguage="es">
     
 
@@ -616,8 +616,8 @@
 en sus entornos de escritorio. Por ejemplo, en Windows, las aplicaciones pueden agregar accesos directos
 en la JumpList de la barra de tareas, y en Mac, las aplicaciones pueden agregar un men&#xFA; personalizado en el dock.</p>
 <p>Esta gu&#xED;a explica c&#xF3;mo integrar tu aplicaci&#xF3;n en esos entornos de escritorio a trav&#xE9;s de las APIs de Electron.</p>
-<h2 id="documentos-recientes-windows-y-os-x">Documentos recientes (Windows y OS X)</h2>
-<p>Windows y OS X proveen un acceso sencillo a la lista de documentos recientes.</p>
+<h2 id="documentos-recientes-windows-y-macos">Documentos recientes (Windows y macOS)</h2>
+<p>Windows y macOS proveen un acceso sencillo a la lista de documentos recientes.</p>
 <p><strong>JumpList:</strong></p>
 <p><img src="http://i.msdn.microsoft.com/dynimg/IC420538.png" alt="JumpList, Archivos recientes"></p>
 <p><strong>Men&#xFA; Dock:</strong></p>
@@ -637,11 +637,11 @@ en la JumpList, a&#xFA;n despu&#xE9;s de agregarlo. Puedes encontrar m&#xE1;s in
 registrar tu aplicaci&#xF3;n en <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ee872121(v=vs.85).aspx" target="_blank">Application Registration</a>.</p>
 <p>Cuando un usuario haga click en un archivo de la JumpList, una nueva instancia de tu aplicaci&#xF3;n
 se iniciar&#xE1;, la ruta del archivo se agregar&#xE1; como un argumento de la l&#xED;nea de comandos.</p>
-<h3 id="notas-sobre-os-x">Notas sobre OS X</h3>
+<h3 id="notas-sobre-macos">Notas sobre macOS</h3>
 <p>Cuando un archivo es solicitado desde el men&#xFA; de documentos recientes, el evento <code>open-file</code>
 del m&#xF3;dulo <code>app</code> ser&#xE1; emitido.</p>
-<h2 id="men&#xFA;-dock-personalizado-os-x">Men&#xFA; dock personalizado (OS X)</h2>
-<p>OS X permite a los desarrolladores definir un men&#xFA; personalizado para el dock,
+<h2 id="men&#xFA;-dock-personalizado-macos">Men&#xFA; dock personalizado (macOS)</h2>
+<p>macOS permite a los desarrolladores definir un men&#xFA; personalizado para el dock,
 el cual usualmente contiene algunos accesos directos a las caracter&#xED;sticas m&#xE1;s comunes
 de tu aplicaci&#xF3;n:</p>
 <p><strong>Men&#xFA; dock de Terminal.app:</strong></p>
@@ -680,7 +680,7 @@ para un usuario que no espera que el destino de la lista cambie.</p>
 </blockquote>
 <p><strong>Tareas de Internet Explorer:</strong></p>
 <p><img src="http://i.msdn.microsoft.com/dynimg/IC420539.png" alt="IE"></p>
-<p>A diferencia del men&#xFA; dock en OS X, el cual es un men&#xFA; real, las tareas de usuario en Windows
+<p>A diferencia del men&#xFA; dock en macOS, el cual es un men&#xFA; real, las tareas de usuario en Windows
 funcionan como accesos directos de aplicaci&#xF3;n, que al ser clickeados, lanzan el programa
 con argumentos espec&#xED;ficos.</p>
 <p>Para establecer las tareas de usuario en tu aplicaci&#xF3;n, puedes utilizar:

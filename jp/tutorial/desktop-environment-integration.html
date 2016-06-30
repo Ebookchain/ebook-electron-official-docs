@@ -53,7 +53,7 @@
         data-chapter-title="デスクトップ環境の統合"
         data-filepath="tutorial/desktop-environment-integration.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:56 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:31 GMT+0800 (CST)"
         data-innerlanguage="jp">
     
 
@@ -846,15 +846,16 @@
                         <h1 id="&#x30C7;&#x30B9;&#x30AF;&#x30C8;&#x30C3;&#x30D7;&#x74B0;&#x5883;&#x306E;&#x7D71;&#x5408;">&#x30C7;&#x30B9;&#x30AF;&#x30C8;&#x30C3;&#x30D7;&#x74B0;&#x5883;&#x306E;&#x7D71;&#x5408;</h1>
 <p>&#x7570;&#x306A;&#x308B;&#x30AA;&#x30DA;&#x30EC;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306F;&#x3001;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30C7;&#x30B9;&#x30AF;&#x30C8;&#x30C3;&#x30D7;&#x74B0;&#x5883;&#x3067;&#x30C7;&#x30B9;&#x30AF;&#x30C8;&#x30C3;&#x30D7;&#x306B;&#x7D71;&#x5408;&#x3055;&#x308C;&#x305F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x7528;&#x306B;&#x7570;&#x306A;&#x308B;&#x6A5F;&#x80FD;&#x3092;&#x63D0;&#x4F9B;&#x3057;&#x307E;&#x3059;&#x3002;&#x4F8B;&#x3048;&#x3070;&#x3001;Windows &#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x306F;&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x306E;&#x30B8;&#x30E3;&#x30F3;&#x30D7;&#x30D0;&#x30FC;&#x30EA;&#x30B9;&#x30C8;&#x306B;&#x30B7;&#x30E7;&#x30FC;&#x30C8;&#x30AB;&#x30C3;&#x30C8;&#x3092;&#x304A;&#x3051;&#x3001;Mac&#x3067;&#x306F;&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x306B;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x3092;&#x304A;&#x3051;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x3053;&#x306E;&#x30AC;&#x30A4;&#x30C9;&#x3067;&#x306F;&#x3001;Electron API&#x3067;&#x30C7;&#x30B9;&#x30AF;&#x30C8;&#x30C3;&#x30D7;&#x74B0;&#x5883;&#x306B;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x7D71;&#x5408;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3092;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<h2 id="&#x901A;&#x77E5;-windows-linux-os-x">&#x901A;&#x77E5; (Windows, Linux, OS X)</h2>
+<h2 id="&#x901A;&#x77E5;-windows-linux-macos">&#x901A;&#x77E5; (Windows, Linux, macOS)</h2>
 <p>3&#x3064;&#x306E;&#x30AA;&#x30DA;&#x30EC;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x5168;&#x3066;&#x3067;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304B;&#x3089;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306B;&#x901A;&#x77E5;&#x3092;&#x9001;&#x308B;&#x624B;&#x6BB5;&#x304C;&#x63D0;&#x4F9B;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x901A;&#x77E5;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x30AA;&#x30DA;&#x30EC;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x30CD;&#x30A4;&#x30C6;&#x30A3;&#x30D6;&#x901A;&#x77E5;API&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3059;&#x308B;<a href="https://notifications.spec.whatwg.org/" target="_blank">HTML5 Notification API</a>&#x3067;&#x3001;Electron&#x306F;&#x3001;&#x958B;&#x767A;&#x8005;&#x306B;&#x901A;&#x77E5;&#x3092;&#x9001;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myNotification = <span class="hljs-keyword">new</span> Notification(<span class="hljs-string">&apos;Title&apos;</span>, {
+<p><strong>&#x6CE8;&#x610F;:</strong> &#x3053;&#x308C;&#x306F;HTML5 API&#x3067;&#x3059;&#x306E;&#x3067;&#x3001;&#x30EC;&#x30F3;&#x30C0;&#x30E9;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x5185;&#x306E;&#x307F;&#x3067;&#x6709;&#x52B9;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> myNotification = <span class="hljs-keyword">new</span> Notification(<span class="hljs-string">&apos;Title&apos;</span>, {
   body: <span class="hljs-string">&apos;Lorem Ipsum Dolor Sit Amet&apos;</span>
 });
 
-myNotification.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Notification clicked&apos;</span>)
-}
+myNotification.onclick = () =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Notification clicked&apos;</span>);
+};
 </code></pre>
 <p>&#x30AA;&#x30DA;&#x30EC;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x9593;&#x3067;&#x30B3;&#x30FC;&#x30C9;&#x3068;&#x30E6;&#x30FC;&#x30B6;&#x4F53;&#x9A13;&#x306F;&#x4F3C;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;&#x7D30;&#x304B;&#x3044;&#x9055;&#x3044;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <h3 id="windows">Windows</h3>
@@ -867,11 +868,11 @@ Model ID</a>&#x3067;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x3078;&#x306E;&#x30B7;&#x3
 <p>&#x305D;&#x306E;&#x4E0A;&#x3067;&#x3001;body&#x306E;&#x6700;&#x5927;&#x30B5;&#x30A4;&#x30BA;&#x306F;250&#x6587;&#x5B57;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x306B;&#x7559;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;Windows&#x30C1;&#x30FC;&#x30E0;&#x306F;&#x3001;&#x901A;&#x77E5;&#x306F;200&#x6587;&#x5B57;&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x63A8;&#x5968;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <h3 id="linux">Linux</h3>
 <p>&#x901A;&#x77E5;&#x306F;&#x3001;<code>libnotify</code>&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x9001;&#x4FE1;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;<a href="https://developer.gnome.org/notification-spec/" target="_blank">&#x30C7;&#x30B9;&#x30AF;&#x30C8;&#x30C3;&#x30D7;&#x901A;&#x77E5;&#x4ED5;&#x69D8;</a>&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x305F;&#x30C7;&#x30B9;&#x30AF;&#x30C8;&#x30C3;&#x30D7;&#x74B0;&#x5883;&#x4E0A;&#xFF08;Cinnamon&#x3001;Enlightenment&#x3001;Unity&#x3001;GNOME&#x3001;KDE&#x306A;&#x3069;&#xFF09;&#x3067;&#x901A;&#x77E5;&#x3092;&#x8868;&#x793A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
-<h3 id="os-x">OS X</h3>
-<p>&#x901A;&#x77E5;&#x306F;&#x3001;&#x305D;&#x306E;&#x307E;&#x307E;OS X&#x306B;&#x901A;&#x77E5;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x3057;&#x304B;&#x3057;&#x3001;<a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/NotificationCenter.html" target="_blank">&#x901A;&#x77E5;&#x306B;&#x95A2;&#x3059;&#x308B;Apple&#x306E;&#x30D2;&#x30E5;&#x30FC;&#x30DE;&#x30F3;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30A4;&#x30B9;&#x30AC;&#x30A4;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#xFF08;&#x82F1;&#x8A9E;&#x7248;&#xFF09;</a>&#x3092;&#x77E5;&#x3063;&#x3066;&#x304A;&#x304F;&#x3079;&#x304D;&#x3067;&#x3059;&#x3002;</p>
+<h3 id="macos">macOS</h3>
+<p>&#x901A;&#x77E5;&#x306F;&#x3001;&#x305D;&#x306E;&#x307E;&#x307E;macOS&#x306B;&#x901A;&#x77E5;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x3057;&#x304B;&#x3057;&#x3001;<a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/NotificationCenter.html" target="_blank">&#x901A;&#x77E5;&#x306B;&#x95A2;&#x3059;&#x308B;Apple&#x306E;&#x30D2;&#x30E5;&#x30FC;&#x30DE;&#x30F3;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30A4;&#x30B9;&#x30AC;&#x30A4;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#xFF08;&#x82F1;&#x8A9E;&#x7248;&#xFF09;</a>&#x3092;&#x77E5;&#x3063;&#x3066;&#x304A;&#x304F;&#x3079;&#x304D;&#x3067;&#x3059;&#x3002;</p>
 <p>&#x901A;&#x77E5;&#x306F;&#x3001;256&#x30D0;&#x30A4;&#x30C8;&#x30B5;&#x30A4;&#x30BA;&#x306B;&#x5236;&#x9650;&#x3055;&#x308C;&#x3066;&#x304A;&#x308A;&#x3001;&#x5236;&#x9650;&#x3092;&#x8D85;&#x3048;&#x3066;&#x3044;&#x305F;&#x5834;&#x5408;&#x3001;&#x901A;&#x77E5;&#x304C;&#x7834;&#x68C4;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
-<h2 id="&#x6700;&#x8FD1;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;-windows-&#x3068;-os-x">&#x6700;&#x8FD1;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8; (Windows &#x3068; OS X)</h2>
-<p>Windows &#x3068; OS X&#x306F;&#x3001;&#x30B8;&#x30E3;&#x30F3;&#x30D7;&#x30EA;&#x30B9;&#x30C8;&#x3084;&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x7D4C;&#x7531;&#x3067;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x958B;&#x3044;&#x305F;&#x6700;&#x8FD1;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x4E00;&#x89A7;&#x306B;&#x7C21;&#x5358;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x6700;&#x8FD1;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;-windows-&#x3068;-macos">&#x6700;&#x8FD1;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8; (Windows &#x3068; macOS)</h2>
+<p>Windows &#x3068; macOS&#x306F;&#x3001;&#x30B8;&#x30E3;&#x30F3;&#x30D7;&#x30EA;&#x30B9;&#x30C8;&#x3084;&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x7D4C;&#x7531;&#x3067;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x958B;&#x3044;&#x305F;&#x6700;&#x8FD1;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x4E00;&#x89A7;&#x306B;&#x7C21;&#x5358;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <p><strong>JumpList:</strong></p>
 <p><img src="http://i.msdn.microsoft.com/dynimg/IC420538.png" alt="JumpList Recent Files"></p>
 <p><strong>Application dock menu:</strong></p>
@@ -885,19 +886,19 @@ Model ID</a>&#x3067;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x3078;&#x306E;&#x30B7;&#x3
 <h3 id="windows-&#x7559;&#x610F;&#x70B9;">Windows &#x7559;&#x610F;&#x70B9;</h3>
 <p>Windows &#x3067;&#x3001;&#x3053;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30BF;&#x30A4;&#x30D7;&#x306E;&#x30CF;&#x30F3;&#x30C9;&#x30E9;&#x30FC;&#x3092;&#x767B;&#x9332;&#x3059;&#x3079;&#x304D;&#x3067;&#x3059;&#x3002;&#x3055;&#x3082;&#x306A;&#x3051;&#x308C;&#x3070;&#x3001;&#x30B8;&#x30E3;&#x30F3;&#x30D7;&#x30EA;&#x30B9;&#x30C8;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ee872121(v=vs.85).aspx" target="_blank">Application Registration</a>&#x3067;&#x3001;&#x767B;&#x9332;&#x3057;&#x3066;&#x3044;&#x308B;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x3059;&#x3079;&#x3066;&#x898B;&#x308C;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x304C;&#x30B8;&#x30E3;&#x30F3;&#x30D7;&#x30EA;&#x30B9;&#x30C8;&#x304B;&#x3089;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x305F;&#x3068;&#x304D;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x65B0;&#x3057;&#x3044;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306F;&#x3001;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30D1;&#x30B9;&#x3092;&#x6E21;&#x3057;&#x3066;&#x958B;&#x59CB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<h3 id="os-x-&#x7559;&#x610F;&#x70B9;">OS X &#x7559;&#x610F;&#x70B9;</h3>
+<h3 id="macos-&#x7559;&#x610F;&#x70B9;">macOS &#x7559;&#x610F;&#x70B9;</h3>
 <p>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x6700;&#x8FD1;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x304B;&#x3089;&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x3055;&#x308C;&#x305F;&#x6642;&#x3001; <code>app</code> &#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E; <code>open-file</code> &#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x304C;&#x767A;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
-<h2 id="&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC;-os-x&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;">&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC; (OS X)&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;</h2>
-<p>&#x901A;&#x5E38;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x5171;&#x901A;&#x6A5F;&#x80FD;&#x7528;&#x306E;&#x30B7;&#x30E7;&#x30FC;&#x30C8;&#x30AB;&#x30C3;&#x30C8;&#x3092;&#x542B;&#x3081;&#x308B;&#x3001;&#x30C9;&#x30C3;&#x30AF;&#x7528;&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x3092;OS X&#x3067;&#x306F;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC;-macos&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;">&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC; (macOS)&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;</h2>
+<p>&#x901A;&#x5E38;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x5171;&#x901A;&#x6A5F;&#x80FD;&#x7528;&#x306E;&#x30B7;&#x30E7;&#x30FC;&#x30C8;&#x30AB;&#x30C3;&#x30C8;&#x3092;&#x542B;&#x3081;&#x308B;&#x3001;&#x30C9;&#x30C3;&#x30AF;&#x7528;&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x3092;macOS&#x3067;&#x306F;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <p><strong>Dock menu of Terminal.app:</strong></p>
 <p><img src="https://cloud.githubusercontent.com/assets/639601/5069962/6032658a-6e9c-11e4-9953-aa84006bdfff.png" height="354" width="341"></p>
-<p>&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;OS X&#x306E;&#x307F;&#x306B;&#x63D0;&#x4F9B;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B; <code>app.dock.setMenu</code> API&#x3092;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;macOS&#x306E;&#x307F;&#x306B;&#x63D0;&#x4F9B;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B; <code>app.dock.setMenu</code> API&#x3092;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 <span class="hljs-keyword">const</span> app = electron.app;
 <span class="hljs-keyword">const</span> Menu = electron.Menu;
 
-<span class="hljs-keyword">var</span> dockMenu = Menu.buildFromTemplate([
-  { label: <span class="hljs-string">&apos;New Window&apos;</span>, click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;New Window&apos;</span>); } },
+<span class="hljs-keyword">const</span> dockMenu = Menu.buildFromTemplate([
+  { label: <span class="hljs-string">&apos;New Window&apos;</span>, click() { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;New Window&apos;</span>); } },
   { label: <span class="hljs-string">&apos;New Window with Settings&apos;</span>, submenu: [
     { label: <span class="hljs-string">&apos;Basic&apos;</span> },
     { label: <span class="hljs-string">&apos;Pro&apos;</span>}
@@ -915,7 +916,7 @@ MSDN&#x304B;&#x3089;&#x5F15;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 </blockquote>
 <p><strong>Internet Explorer&#x306E;&#x30BF;&#x30B9;&#x30AF;:</strong></p>
 <p><img src="http://i.msdn.microsoft.com/dynimg/IC420539.png" alt="IE"></p>
-<p>&#x5B9F;&#x969B;&#x306E;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x3067;&#x3042;&#x308B;OS X&#x306E;&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x3068;&#x306F;&#x7570;&#x306A;&#x308A;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x304C;&#x30BF;&#x30B9;&#x30AF;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x305F;&#x3068;&#x304D;&#x3001;Windows&#x3067;&#x306F;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x30BF;&#x30B9;&#x30AF;&#x306F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30B7;&#x30E7;&#x30FC;&#x30C8;&#x30AB;&#x30C3;&#x30C8;&#x306E;&#x3088;&#x3046;&#x306B;&#x52D5;&#x4F5C;&#x3057;&#x3001;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306F;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x5F15;&#x6570;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x5B9F;&#x969B;&#x306E;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x3067;&#x3042;&#x308B;macOS&#x306E;&#x30C9;&#x30C3;&#x30AF;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x3068;&#x306F;&#x7570;&#x306A;&#x308A;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x304C;&#x30BF;&#x30B9;&#x30AF;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x305F;&#x3068;&#x304D;&#x3001;Windows&#x3067;&#x306F;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x30BF;&#x30B9;&#x30AF;&#x306F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30B7;&#x30E7;&#x30FC;&#x30C8;&#x30AB;&#x30C3;&#x30C8;&#x306E;&#x3088;&#x3046;&#x306B;&#x52D5;&#x4F5C;&#x3057;&#x3001;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306F;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x5F15;&#x6570;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x7528;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x30BF;&#x30B9;&#x30AF;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;<a href="../api/app.html#appsetusertaskstasks-windows">app.setUserTasks</a> API&#x3092;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;:</p>
 <pre><code class="lang-javascript">app.setUserTasks([
   {
@@ -942,24 +943,24 @@ MSDN&#x304B;&#x3089;&#x5F15;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <p><strong>Windows Media Player&#x306E;&#x7E2E;&#x5C0F;&#x8868;&#x793A;&#x30C4;&#x30FC;&#x30EB;&#x30D0;&#x30FC;:</strong></p>
 <p><img src="https://i-msdn.sec.s-msft.com/dynimg/IC420540.png" alt="player"></p>
 <p>&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x7E2E;&#x5C0F;&#x8868;&#x793A;&#x30C4;&#x30FC;&#x30EB;&#x30D0;&#x30FC;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;<a href="../api/browser-window.md#winsetthumbarbuttonsbuttons-windows-7">BrowserWindow.setThumbarButtons</a>&#x3092;&#x4F7F;&#x3048;&#x307E;&#x3059;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).BrowserWindow;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
 
-<span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({
   width: <span class="hljs-number">800</span>,
   height: <span class="hljs-number">600</span>
 });
 win.setThumbarButtons([
   {
-    tooltip: <span class="hljs-string">&quot;button1&quot;</span>,
+    tooltip: <span class="hljs-string">&apos;button1&apos;</span>,
     icon: path.join(__dirname, <span class="hljs-string">&apos;button1.png&apos;</span>),
-    click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;button2 clicked&quot;</span>); }
+    click() { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;button2 clicked&quot;</span>); }
   },
   {
-    tooltip: <span class="hljs-string">&quot;button2&quot;</span>,
+    tooltip: <span class="hljs-string">&apos;button2&apos;</span>,
     icon: path.join(__dirname, <span class="hljs-string">&apos;button2.png&apos;</span>),
-    flags:[<span class="hljs-string">&apos;enabled&apos;</span>, <span class="hljs-string">&apos;dismissonclick&apos;</span>],
-    click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;button2 clicked.&quot;</span>); }
+    flags: [<span class="hljs-string">&apos;enabled&apos;</span>, <span class="hljs-string">&apos;dismissonclick&apos;</span>],
+    click() { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;button2 clicked.&quot;</span>); }
   }
 ]);
 </code></pre>
@@ -970,16 +971,15 @@ win.setThumbarButtons([
 <p>Unity&#x3067;&#x306F;&#x3001;<code>.desktop</code> &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4FEE;&#x6B63;&#x3092;&#x7D4C;&#x7531;&#x3057;&#x3066;&#x30E9;&#x30F3;&#x30C1;&#x30E3;&#x30FC;&#x306B;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30A8;&#x30F3;&#x30C8;&#x30EA;&#x30FC;&#x3092;&#x8FFD;&#x52A0;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<a href="https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles#Adding_shortcuts_to_a_launcher" target="_blank">Adding Shortcuts to a Launcher</a>&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
 <p><strong>Audacious&#x306E;&#x30E9;&#x30F3;&#x30C1;&#x30E3;&#x30FC;&#x30B7;&#x30E7;&#x30FC;&#x30C8;&#x30AB;&#x30C3;&#x30C8;:</strong></p>
 <p><img src="https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles?action=AttachFile&amp;do=get&amp;target=shortcuts.png" alt="audacious"></p>
-<h2 id="&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x306E;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x30D0;&#x30FC;-windows--unity">&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x306E;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x30D0;&#x30FC; (Windows &amp; Unity)</h2>
+<h2 id="&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x306E;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x30D0;&#x30FC;-windows-macos-unity">&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x306E;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x30D0;&#x30FC; (Windows, macOS, Unity)</h2>
 <p>Windows&#x3067;&#x306F;&#x3001;&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x30DC;&#x30BF;&#x30F3;&#x306F;&#x3001;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x30D0;&#x30FC;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x306E;&#x306B;&#x4F7F;&#x3048;&#x307E;&#x3059;&#x3002;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x3092;&#x5207;&#x308A;&#x66FF;&#x3048;&#x308B;&#x3053;&#x3068;&#x306A;&#x304F;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306E;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x60C5;&#x5831;&#x3092;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306B;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
-<p>Unity DE&#x306F;&#x3001;&#x30E9;&#x30F3;&#x30C1;&#x30E3;&#x30FC;&#x306B;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x30D0;&#x30FC;&#x306E;&#x8868;&#x793A;&#x3092;&#x3059;&#x308B;&#x306E;&#x3068;&#x540C;&#x69D8;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>macOS&#x3067;&#x306F;&#x30D7;&#x30ED;&#x30B0;&#x30EC;&#x30B9;&#x30D0;&#x30FC;&#x306F;&#x30C9;&#x30C3;&#x30AF;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x306E;&#x4E00;&#x90E8;&#x3068;&#x3057;&#x3066;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+Unity DE&#x306F;&#x3001;&#x30E9;&#x30F3;&#x30C1;&#x30E3;&#x30FC;&#x306B;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x30D0;&#x30FC;&#x306E;&#x8868;&#x793A;&#x3092;&#x3059;&#x308B;&#x306E;&#x3068;&#x540C;&#x69D8;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <p><strong>&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x30DC;&#x30BF;&#x30F3;&#x4E0A;&#x306E;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x30D0;&#x30FC;:</strong></p>
 <p><img src="https://cloud.githubusercontent.com/assets/639601/5081682/16691fda-6f0e-11e4-9676-49b6418f1264.png" alt="Taskbar Progress Bar"></p>
-<p><strong>Unity&#x30E9;&#x30F3;&#x30C1;&#x30E3;&#x30FC;&#x3067;&#x306E;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x30D0;&#x30FC;:</strong></p>
-<p><img src="https://cloud.githubusercontent.com/assets/639601/5081747/4a0a589e-6f0f-11e4-803f-91594716a546.png" alt="Unity Launcher"></p>
 <p>&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306B;&#x9032;&#x884C;&#x72B6;&#x6CC1;&#x30D0;&#x30FC;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;<a href="../api/browser-window.md#winsetprogressbarprogress">BrowserWindow.setProgressBar</a> API&#x3092;&#x4F7F;&#x3048;&#x307E;&#x3059;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});
-<span class="hljs-built_in">window</span>.setProgressBar(<span class="hljs-number">0.5</span>);
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({...});
+win.setProgressBar(<span class="hljs-number">0.5</span>);
 </code></pre>
 <h2 id="&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x3067;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3092;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30A4;&#x3059;&#x308B;-windows">&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x3067;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3092;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30A4;&#x3059;&#x308B; (Windows)</h2>
 <p>Windows&#x3067;&#x3001;&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x30DC;&#x30BF;&#x30F3;&#x306F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x5C0F;&#x3055;&#x306A;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30A4;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;MSDN&#x304B;&#x3089;&#x5F15;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
@@ -989,18 +989,18 @@ win.setThumbarButtons([
 <p><strong>&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x30DC;&#x30BF;&#x30F3;&#x3067;&#x306E;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30A4;:</strong></p>
 <p><img src="https://i-msdn.sec.s-msft.com/dynimg/IC420441.png" alt="Overlay on taskbar button"></p>
 <p>&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x3067;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30A4;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;<a href="../api/browser-window.md#winsetoverlayiconoverlay-description-windows-7">BrowserWindow.setOverlayIcon</a> API&#x3092;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});
-<span class="hljs-built_in">window</span>.setOverlayIcon(<span class="hljs-string">&apos;path/to/overlay.png&apos;</span>, <span class="hljs-string">&apos;Description for overlay&apos;</span>);
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({...});
+win.setOverlayIcon(<span class="hljs-string">&apos;path/to/overlay.png&apos;</span>, <span class="hljs-string">&apos;Description for overlay&apos;</span>);
 </code></pre>
-<h2 id="window&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x8868;&#x793A;-os-x">Window&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x8868;&#x793A; (OS X)</h2>
-<p>OS X&#x3067;&#x306F;&#x3001;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x304C;represented file&#x3092;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x3001;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x30D0;&#x30FC;&#x4E0A;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3092;&#x8868;&#x793A;&#x3067;&#x304D;&#x3001;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x4E0A;&#x3067;Command-&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x307E;&#x305F;&#x306F;Control-&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3092;&#x3059;&#x308B;&#x3068;&#x3001;&#x30D1;&#x30B9;&#x304C;&#x30DD;&#x30C3;&#x30D7;&#x30A2;&#x30C3;&#x30D7;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="window&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x8868;&#x793A;-macos">Window&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x8868;&#x793A; (macOS)</h2>
+<p>macOS&#x3067;&#x306F;&#x3001;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x304C;represented file&#x3092;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x3001;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x30D0;&#x30FC;&#x4E0A;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3092;&#x8868;&#x793A;&#x3067;&#x304D;&#x3001;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x4E0A;&#x3067;Command-&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x307E;&#x305F;&#x306F;Control-&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3092;&#x3059;&#x308B;&#x3068;&#x3001;&#x30D1;&#x30B9;&#x304C;&#x30DD;&#x30C3;&#x30D7;&#x30A2;&#x30C3;&#x30D7;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306E;&#x7DE8;&#x96C6;&#x72B6;&#x614B;&#x3092;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3001;&#x3053;&#x306E;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x304C;&#x5909;&#x66F4;&#x3055;&#x308C;&#x305F;&#x304B;&#x3069;&#x3046;&#x304B;&#x3092;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3067;&#x793A;&#x305B;&#x307E;&#x3059;&#x3002;</p>
 <p><strong>Represented file &#x30DD;&#x30C3;&#x30D7;&#x30A2;&#x30C3;&#x30D7;&#x30E1;&#x30CB;&#x30E5;&#x30FC;:</strong></p>
 <p><img src="https://cloud.githubusercontent.com/assets/639601/5082061/670a949a-6f14-11e4-987a-9aaa04b23c1d.png" height="232" width="663"></p>
 <p>&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306B;represented file&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;<a href="../api/browser-window.md#winsetrepresentedfilenamefilename-os-x">BrowserWindow.setRepresentedFilename</a> &#x3068; <a href="../api/browser-window.md#winsetdocumenteditededited-os-x">BrowserWindow.setDocumentEdited</a> APIs&#x3092;&#x4F7F;&#x3048;&#x307E;&#x3059;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});
-<span class="hljs-built_in">window</span>.setRepresentedFilename(<span class="hljs-string">&apos;/etc/passwd&apos;</span>);
-<span class="hljs-built_in">window</span>.setDocumentEdited(<span class="hljs-literal">true</span>);
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({...});
+win.setRepresentedFilename(<span class="hljs-string">&apos;/etc/passwd&apos;</span>);
+win.setDocumentEdited(<span class="hljs-literal">true</span>);
 </code></pre>
 
                     

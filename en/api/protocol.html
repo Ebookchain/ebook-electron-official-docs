@@ -53,7 +53,7 @@
         data-chapter-title="protocol"
         data-filepath="api/protocol.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,36 +926,54 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="protocol">protocol</h1>
-<p>The <code>protocol</code> module can register a custom protocol or intercept an existing
-protocol.</p>
+<blockquote>
+<p>Register a custom protocol and intercept existing protocol requests.</p>
+</blockquote>
 <p>An example of implementing a protocol that has the same effect as the
 <code>file://</code> protocol:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, protocol} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> protocol = electron.protocol;
-    protocol.registerFileProtocol(<span class="hljs-string">&apos;atom&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">request, callback</span>) </span>{
-      <span class="hljs-keyword">var</span> url = request.url.substr(<span class="hljs-number">7</span>);
-      callback({path: path.normalize(__dirname + <span class="hljs-string">&apos;/&apos;</span> + url)});
-    }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
-      <span class="hljs-keyword">if</span> (error)
-        <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Failed to register protocol&apos;</span>)
-    });
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  protocol.registerFileProtocol(<span class="hljs-string">&apos;atom&apos;</span>, (request, callback) =&gt; {
+    <span class="hljs-keyword">const</span> url = request.url.substr(<span class="hljs-number">7</span>);
+    callback({path: path.normalize(__dirname + <span class="hljs-string">&apos;/&apos;</span> + url)});
+  }, (error) =&gt; {
+    <span class="hljs-keyword">if</span> (error)
+      <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Failed to register protocol&apos;</span>);
+  });
 });
 </code></pre>
-<p><strong>Note:</strong> This module can only be used after the <code>ready</code> event in the <code>app</code>
-module is emitted.</p>
+<p><strong>Note:</strong> All methods unless specified can only be used after the <code>ready</code> event
+of the <code>app</code> module gets emitted.</p>
 <h2 id="methods">Methods</h2>
 <p>The <code>protocol</code> module has the following methods:</p>
 <h3 id="protocolregisterstandardschemesschemes"><code>protocol.registerStandardSchemes(schemes)</code></h3>
 <ul>
 <li><code>schemes</code> Array - Custom schemes to be registered as standard schemes.</li>
 </ul>
-<p>A standard <code>scheme</code> adheres to what RFC 3986 calls
-<a href="https://tools.ietf.org/html/rfc3986#section-3" target="_blank">generic URI syntax</a>. This
-includes <code>file:</code> and <code>filesystem:</code>.</p>
+<p>A standard scheme adheres to what RFC 3986 calls <a href="https://tools.ietf.org/html/rfc3986#section-3" target="_blank">generic URI
+syntax</a>. For example <code>http</code> and
+<code>https</code> are standard schemes, while <code>file</code> is not.</p>
+<p>Registering a scheme as standard, will allow relative and absolute resources to
+be resolved correctly when served. Otherwise the scheme will behave like the
+<code>file</code> protocol, but without the ability to resolve relative URLs.</p>
+<p>For example when you load following page with custom protocol without
+registering it as standard scheme, the image will not be loaded because
+non-standard schemes can not recognize relative URLs:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&apos;test.png&apos;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+</code></pre>
+<p>So if you want to register a custom protocol to replace the <code>http</code> protocol, you
+have to register it as standard scheme:</p>
+<pre><code class="lang-javascript">protocol.registerStandardSchemes([<span class="hljs-string">&apos;atom&apos;</span>]);
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  protocol.registerHttpProtocol(<span class="hljs-string">&apos;atom&apos;</span>, ...);
+});
+</code></pre>
+<p><strong>Note:</strong> This method can only be used before the <code>ready</code> event of the <code>app</code>
+module gets emitted.</p>
 <h3 id="protocolregisterserviceworkerschemesschemes"><code>protocol.registerServiceWorkerSchemes(schemes)</code></h3>
 <ul>
 <li><code>schemes</code> Array - Custom schemes to be registered to handle service workers.</li>
@@ -1011,11 +1029,11 @@ treated as a standard scheme.</p>
 should be called with either a <code>Buffer</code> object or an object that has the <code>data</code>,
 <code>mimeType</code>, and <code>charset</code> properties.</p>
 <p>Example:</p>
-<pre><code class="lang-javascript">protocol.registerBufferProtocol(<span class="hljs-string">&apos;atom&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">request, callback</span>) </span>{
+<pre><code class="lang-javascript">protocol.registerBufferProtocol(<span class="hljs-string">&apos;atom&apos;</span>, (request, callback) =&gt; {
   callback({mimeType: <span class="hljs-string">&apos;text/html&apos;</span>, data: <span class="hljs-keyword">new</span> Buffer(<span class="hljs-string">&apos;&lt;h5&gt;Response&lt;/h5&gt;&apos;</span>)});
-}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+}, (error) =&gt; {
   <span class="hljs-keyword">if</span> (error)
-    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Failed to register protocol&apos;</span>)
+    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Failed to register protocol&apos;</span>);
 });
 </code></pre>
 <h3 id="protocolregisterstringprotocolscheme-handler-completion"><code>protocol.registerStringProtocol(scheme, handler[, completion])</code></h3>

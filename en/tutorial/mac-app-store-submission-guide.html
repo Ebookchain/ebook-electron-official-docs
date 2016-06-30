@@ -53,7 +53,7 @@
         data-chapter-title="Mac App Store Submission Guide"
         data-filepath="tutorial/mac-app-store-submission-guide.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -929,9 +929,6 @@
 <p>Since v0.34.0, Electron allows submitting packaged apps to the Mac App Store
 (MAS). This guide provides information on: how to submit your app and the
 limitations of the MAS build.</p>
-<p><strong>Note:</strong> From v0.36.0 there was a bug preventing GPU process to start after
-the app being sandboxed, so it is recommended to use v0.35.x before this bug
-gets fixed. You can find more about this in <a href="https://github.com/electron/electron/issues/3871" target="_blank">issue #3871</a>.</p>
 <p><strong>Note:</strong> Submitting an app to Mac App Store requires enrolling <a href="https://developer.apple.com/support/compare-memberships/" target="_blank">Apple Developer
 Program</a>, which costs money.</p>
 <h2 id="how-to-submit-your-app">How to Submit Your App</h2>
@@ -942,12 +939,26 @@ how to meet the Mac App Store requirements.</p>
 <h3 id="get-certificate">Get Certificate</h3>
 <p>To submit your app to the Mac App Store, you first must get a certificate from
 Apple. You can follow these <a href="https://github.com/nwjs/nw.js/wiki/Mac-App-Store-%28MAS%29-Submission-Guideline#first-steps" target="_blank">existing guides</a> on web.</p>
+<h3 id="get-team-id">Get Team ID</h3>
+<p>Before signing your app, you need to know the Team ID of your account. To locate
+your Team ID, Sign in to <a href="https://developer.apple.com/account/" target="_blank">Apple Developer Center</a>,
+and click Membership in the sidebar. Your Team ID appears in the Membership
+Information section under the team name.</p>
 <h3 id="sign-your-app">Sign Your App</h3>
-<p>After getting the certificate from Apple, you can package your app by following
+<p>After finishing the preparation work, you can package your app by following
 <a href="application-distribution.html">Application Distribution</a>, and then proceed to
-signing your app. This step is basically the same with other programs, but the
-key is to sign every dependency of Electron one by one.</p>
-<p>First, you need to prepare two entitlements files.</p>
+signing your app.</p>
+<p>First, you have to add a <code>ElectronTeamID</code> key to your app&apos;s <code>Info.plist</code>, which
+has your Team ID as key:</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">plist</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;1.0&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">dict</span>&gt;</span>
+  ...
+  <span class="hljs-tag">&lt;<span class="hljs-title">key</span>&gt;</span>ElectronTeamID<span class="hljs-tag">&lt;/<span class="hljs-title">key</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">string</span>&gt;</span>TEAM_ID<span class="hljs-tag">&lt;/<span class="hljs-title">string</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dict</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">plist</span>&gt;</span>
+</code></pre>
+<p>Then, you need to prepare two entitlements files.</p>
 <p><code>child.plist</code>:</p>
 <pre><code class="lang-xml"><span class="hljs-pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="hljs-doctype">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
@@ -967,45 +978,67 @@ key is to sign every dependency of Electron one by one.</p>
   <span class="hljs-tag">&lt;<span class="hljs-title">dict</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">key</span>&gt;</span>com.apple.security.app-sandbox<span class="hljs-tag">&lt;/<span class="hljs-title">key</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">true</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">key</span>&gt;</span>com.apple.security.application-groups<span class="hljs-tag">&lt;/<span class="hljs-title">key</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">string</span>&gt;</span>TEAM_ID.your.bundle.id<span class="hljs-tag">&lt;/<span class="hljs-title">string</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">dict</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">plist</span>&gt;</span>
 </code></pre>
+<p>You have to replace <code>TEAM_ID</code> with your Team ID, and replace <code>your.bundle.id</code>
+with the Bundle ID of your app.</p>
 <p>And then sign your app with the following script:</p>
 <pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
 </span>
 <span class="hljs-comment"># Name of your app.</span>
 APP=<span class="hljs-string">&quot;YourApp&quot;</span>
-<span class="hljs-comment"># The path of you app to sign.</span>
-APP_PATH=<span class="hljs-string">&quot;/path/to/YouApp.app&quot;</span>
+<span class="hljs-comment"># The path of your app to sign.</span>
+APP_PATH=<span class="hljs-string">&quot;/path/to/YourApp.app&quot;</span>
 <span class="hljs-comment"># The path to the location you want to put the signed package.</span>
 RESULT_PATH=<span class="hljs-string">&quot;~/Desktop/<span class="hljs-variable">$APP</span>.pkg&quot;</span>
 <span class="hljs-comment"># The name of certificates you requested.</span>
 APP_KEY=<span class="hljs-string">&quot;3rd Party Mac Developer Application: Company Name (APPIDENTITY)&quot;</span>
 INSTALLER_KEY=<span class="hljs-string">&quot;3rd Party Mac Developer Installer: Company Name (APPIDENTITY)&quot;</span>
+<span class="hljs-comment"># The path of your plist files.</span>
+CHILD_PLIST=<span class="hljs-string">&quot;/path/to/child.plist&quot;</span>
+PARENT_PLIST=<span class="hljs-string">&quot;/path/to/parent.plist&quot;</span>
 
 FRAMEWORKS_PATH=<span class="hljs-string">&quot;<span class="hljs-variable">$APP_PATH</span>/Contents/Frameworks&quot;</span>
 
-codesign --deep -fs <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Electron Framework.framework/Versions/A&quot;</span>
-codesign --deep -fs <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper.app/&quot;</span>
-codesign --deep -fs <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper EH.app/&quot;</span>
-codesign --deep -fs <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper NP.app/&quot;</span>
-<span class="hljs-keyword">if</span> [ <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Squirrel.framework/Versions/A&quot;</span> ]; <span class="hljs-keyword">then</span>
-  <span class="hljs-comment"># Signing a non-MAS build.</span>
-  codesign --deep -fs <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Mantle.framework/Versions/A&quot;</span>
-  codesign --deep -fs <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/ReactiveCocoa.framework/Versions/A&quot;</span>
-  codesign --deep -fs <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Squirrel.framework/Versions/A&quot;</span>
-<span class="hljs-keyword">fi</span>
-codesign -fs <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> --entitlements parent.plist <span class="hljs-string">&quot;<span class="hljs-variable">$APP_PATH</span>&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Electron Framework.framework/Versions/A/Electron Framework&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Electron Framework.framework/Versions/A/Libraries/libffmpeg.dylib&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Electron Framework.framework/Versions/A/Libraries/libnode.dylib&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Electron Framework.framework&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper.app/Contents/MacOS/<span class="hljs-variable">$APP</span> Helper&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper.app/&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper EH.app/Contents/MacOS/<span class="hljs-variable">$APP</span> Helper EH&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper EH.app/&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper NP.app/Contents/MacOS/<span class="hljs-variable">$APP</span> Helper NP&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper NP.app/&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$CHILD_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_PATH</span>/Contents/MacOS/<span class="hljs-variable">$APP</span>&quot;</span>
+codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements <span class="hljs-string">&quot;<span class="hljs-variable">$PARENT_PLIST</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_PATH</span>&quot;</span>
 
 productbuild --component <span class="hljs-string">&quot;<span class="hljs-variable">$APP_PATH</span>&quot;</span> /Applications --sign <span class="hljs-string">&quot;<span class="hljs-variable">$INSTALLER_KEY</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$RESULT_PATH</span>&quot;</span>
 </code></pre>
-<p>If you are new to app sandboxing under OS X, you should also read through
+<p>If you are new to app sandboxing under macOS, you should also read through
 Apple&apos;s <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html" target="_blank">Enabling App Sandbox</a> to have a basic idea, then
 add keys for the permissions needed by your app to the entitlements files.</p>
-<h3 id="upload-your-app-and-submit-for-review">Upload Your App and Submit for Review</h3>
+<p>Apart from manually signing your app, you can also choose to use the
+<a href="https://github.com/electron-userland/electron-osx-sign" target="_blank">electron-osx-sign</a> module to do the job.</p>
+<h4 id="sign-native-modules">Sign Native Modules</h4>
+<p>Native modules used in your app also need to be signed. If using
+electron-osx-sign, be sure to include the path to the built binaries in the
+argument list:</p>
+<pre><code class="lang-bash">electron-osx-sign YourApp.app YourApp.app/Contents/Resources/app/node_modules/nativemodule/build/release/nativemodule
+</code></pre>
+<p>Also note that native modules may have intermediate files produced which should
+not be included (as they would also need to be signed). If you use
+<a href="https://github.com/electron-userland/electron-packager" target="_blank">electron-packager</a>, add <code>--ignore=.+\.o$</code> to build step to
+ignore these files.</p>
+<h3 id="upload-your-app">Upload Your App</h3>
 <p>After signing your app, you can use Application Loader to upload it to iTunes
 Connect for processing, making sure you have <a href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/CreatingiTunesConnectRecord.html" target="_blank">created a record</a>
-before uploading. Then you can <a href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/SubmittingTheApp.html" target="_blank">submit your app for review</a>.</p>
+before uploading.</p>
+<h3 id="submit-your-app-for-review">Submit Your App for Review</h3>
+<p>After these steps, you can <a href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/SubmittingTheApp.html" target="_blank">submit your app for review</a>.</p>
 <h2 id="limitations-of-mas-build">Limitations of MAS Build</h2>
 <p>In order to satisfy all requirements for app sandboxing, the following modules
 have been disabled in the MAS build:</p>
@@ -1022,6 +1055,22 @@ have been disabled in the MAS build:</p>
 <p>Also, due to the usage of app sandboxing, the resources which can be accessed by
 the app are strictly limited; you can read <a href="https://developer.apple.com/app-sandboxing/" target="_blank">App Sandboxing</a> for
 more information.</p>
+<h3 id="additional-entitlements">Additional Entitlements</h3>
+<p>Depending on which Electron APIs your app uses, you may need to add additional
+entitlements to your <code>parent.plist</code> file to be able to use these APIs from your
+app&apos;s Mac App Store build.</p>
+<h4 id="dialogshowopendialog">dialog.showOpenDialog</h4>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">key</span>&gt;</span>com.apple.security.files.user-selected.read-only<span class="hljs-tag">&lt;/<span class="hljs-title">key</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">true</span>/&gt;</span>
+</code></pre>
+<p>See the <a href="https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW6" target="_blank">Enabling User-Selected File Access documentation</a> for
+more details.</p>
+<h4 id="dialogshowsavedialog">dialog.showSaveDialog</h4>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">key</span>&gt;</span>com.apple.security.files.user-selected.read-write<span class="hljs-tag">&lt;/<span class="hljs-title">key</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">true</span>/&gt;</span>
+</code></pre>
+<p>See the <a href="https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW6" target="_blank">Enabling User-Selected File Access documentation</a> for
+more details.</p>
 <h2 id="cryptographic-algorithms-used-by-electron">Cryptographic Algorithms Used by Electron</h2>
 <p>Depending on the country and region you are located, Mac App Store may require
 documenting the cryptographic algorithms used in your app, and even ask you to

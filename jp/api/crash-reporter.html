@@ -53,7 +53,7 @@
         data-chapter-title="crashReporter"
         data-filepath="api/crash-reporter.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:56 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:31 GMT+0800 (CST)"
         data-innerlanguage="jp">
     
 
@@ -879,7 +879,7 @@ crashReporter.start({
 </li>
 </ul>
 <p>&#x4ED6;&#x306E;<code>crashReporter</code>API&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x524D;&#x306B;&#x3053;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x30B3;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
-<p><strong>Note:</strong> OS X&#x3067;&#x306F;&#x3001;Electron&#x306F;&#x3001;Windows&#x3068;Linux&#x4E0A;&#x306E;<code>breakpad</code> &#x3068;&#x306F;&#x7570;&#x306A;&#x308B;&#x3001;&#x65B0;&#x3057;&#x3044;<code>crashpad</code>&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;&#x30AF;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x53CE;&#x96C6;&#x6A5F;&#x80FD;&#x3092;&#x6709;&#x52B9;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x30E1;&#x30A4;&#x30F3;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3084;&#x3001;&#x30AF;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x3092;&#x53CE;&#x96C6;&#x3057;&#x305F;&#x3044;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30EC;&#x30F3;&#x30C0;&#x30E9;&#x30FC;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3067;&#x3001;<code>crashpad</code>&#x3092;&#x521D;&#x671F;&#x5316;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;<code>crashReporter.start</code>API&#x3092;&#x30B3;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><strong>Note:</strong> macOS&#x3067;&#x306F;&#x3001;Electron&#x306F;&#x3001;Windows&#x3068;Linux&#x4E0A;&#x306E;<code>breakpad</code> &#x3068;&#x306F;&#x7570;&#x306A;&#x308B;&#x3001;&#x65B0;&#x3057;&#x3044;<code>crashpad</code>&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;&#x30AF;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x53CE;&#x96C6;&#x6A5F;&#x80FD;&#x3092;&#x6709;&#x52B9;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x30E1;&#x30A4;&#x30F3;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3084;&#x3001;&#x30AF;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x3092;&#x53CE;&#x96C6;&#x3057;&#x305F;&#x3044;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30EC;&#x30F3;&#x30C0;&#x30E9;&#x30FC;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3067;&#x3001;<code>crashpad</code>&#x3092;&#x521D;&#x671F;&#x5316;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;<code>crashReporter.start</code>API&#x3092;&#x30B3;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <h3 id="crashreportergetlastcrashreport"><code>crashReporter.getLastCrashReport()</code></h3>
 <p>&#x65E5;&#x4ED8;&#x3068;&#x6700;&#x5F8C;&#x306E;&#x30AF;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x306E;ID&#x3092;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;&#x3082;&#x3057;&#x306A;&#x3093;&#x306E;&#x30AF;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x3082;&#x9001;&#x4FE1;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x304B;&#x3001;&#x30AF;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x30EC;&#x30DD;&#x30FC;&#x30BF;&#x30FC;&#x304C;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#x3001;<code>null</code>&#x3092;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <h3 id="crashreportergetuploadedreports"><code>crashReporter.getUploadedReports()</code></h3>

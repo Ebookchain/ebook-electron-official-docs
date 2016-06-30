@@ -53,7 +53,7 @@
         data-chapter-title="소스 코드 디렉터리 구조"
         data-filepath="development/source-code-directory-structure.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -932,35 +932,35 @@
 &#xC775;&#xC219;&#xD574;&#xC838; &#xC788;&#xB2E4;&#xBA74; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xB97C; &#xC774;&#xD574;&#xD558;&#xAE30; &#xC26C;&#xC6B8; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xC18C;&#xC2A4;-&#xCF54;&#xB4DC;-&#xAD6C;&#xC870;">&#xC18C;&#xC2A4; &#xCF54;&#xB4DC; &#xAD6C;&#xC870;</h2>
 <pre><code>Electron
-&#x251C;&#x2500;&#x2500; atom - C++ &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
-|   &#x251C;&#x2500;&#x2500; app - &#xC2DC;&#xC2A4;&#xD15C; &#xC5D4;&#xD2B8;&#xB9AC; &#xCF54;&#xB4DC;.
-|   &#x251C;&#x2500;&#x2500; browser - &#xC8FC; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xD3EC;&#xD568;&#xD55C; &#xD504;&#xB860;&#xD2B8;&#xC5D4;&#xB4DC;, UI, &#xADF8;&#xB9AC;&#xACE0; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xAD00;&#xB828;&#xB41C;
-|   |   &#xCF54;&#xB4DC;&#xC640; &#xB79C;&#xB354;&#xB7EC; &#xBC0F; &#xC6F9; &#xD398;&#xC774;&#xC9C0; &#xAD00;&#xB9AC; &#xAD00;&#xB828; &#xCF54;&#xB4DC;.
-|   |   &#x251C;&#x2500;&#x2500; ui - &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0; &#xB300;&#xD55C; UI &#xAD00;&#xB828; &#xAD6C;&#xD604; &#xCF54;&#xB4DC;.
-|   |   |   &#x251C;&#x2500;&#x2500; cocoa - Cocoa &#xD2B9;&#xC815; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
-|   |   |   &#x251C;&#x2500;&#x2500; gtk - GTK+ &#xD2B9;&#xC815; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
-|   |   |   &#x2514;&#x2500;&#x2500; win - Windows GUI &#xD2B9;&#xC815; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
-|   |   &#x251C;&#x2500;&#x2500; api - &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4; API&#xC758; &#xAD6C;&#xD604;.
-|   |   &#x251C;&#x2500;&#x2500; net - &#xB124;&#xD2B8;&#xC6CC;&#xD0B9; &#xAD00;&#xB828; &#xCF54;&#xB4DC;.
-|   |   &#x251C;&#x2500;&#x2500; mac - Mac &#xD2B9;&#xC815; Objective-C &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
-|   |   &#x2514;&#x2500;&#x2500; resources - &#xC544;&#xC774;&#xCF58;&#xB4E4;, &#xD50C;&#xB7AB;&#xD3FC; &#xC885;&#xC18D;&#xC131; &#xD30C;&#xC77C;&#xB4E4;, &#xAE30;&#xD0C0; &#xB4F1;&#xB4F1;..
-|   &#x251C;&#x2500;&#x2500; renderer - &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC791;&#xB3D9;&#xD558;&#xB294; &#xCF54;&#xB4DC;.
-|   |   &#x2514;&#x2500;&#x2500; api - &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4; API&#xC758; &#xAD6C;&#xD604;.
-|   &#x2514;&#x2500;&#x2500; common - &#xBA54;&#xC778;&#xACFC; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xBAA8;&#xB450; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xCF54;&#xB4DC;, &#xBA87;&#xAC00;&#xC9C0; &#xC720;&#xD2F8;&#xB9AC;&#xD2F0;
+&#x251C;&#x2500;&#x2500; atom/ - C++ &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
+|   &#x251C;&#x2500;&#x2500; app/ - &#xC2DC;&#xC2A4;&#xD15C; &#xC5D4;&#xD2B8;&#xB9AC; &#xCF54;&#xB4DC;.
+|   &#x251C;&#x2500;&#x2500; browser/ - &#xC8FC; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xD3EC;&#xD568;&#xD55C; &#xD504;&#xB860;&#xD2B8;&#xC5D4;&#xB4DC;, UI, &#xADF8;&#xB9AC;&#xACE0; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xAD00;&#xB828;&#xB41C;
+|   |   &#xCF54;&#xB4DC;&#xC640; &#xB80C;&#xB354;&#xB7EC; &#xBC0F; &#xC6F9; &#xD398;&#xC774;&#xC9C0; &#xAD00;&#xB9AC; &#xAD00;&#xB828; &#xCF54;&#xB4DC;.
+|   |   &#x251C;&#x2500;&#x2500; ui/ - &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0; &#xB300;&#xD55C; UI &#xAD00;&#xB828; &#xAD6C;&#xD604; &#xCF54;&#xB4DC;.
+|   |   |   &#x251C;&#x2500;&#x2500; cocoa/ - Cocoa &#xD2B9;&#xC815; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
+|   |   |   &#x251C;&#x2500;&#x2500; win/ - Windows GUI &#xD2B9;&#xC815; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
+|   |   |   &#x2514;&#x2500;&#x2500; x/ - X11 &#xD2B9;&#xC815; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
+|   |   &#x251C;&#x2500;&#x2500; api/ - &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4; API&#xC758; &#xAD6C;&#xD604;.
+|   |   &#x251C;&#x2500;&#x2500; net/ - &#xB124;&#xD2B8;&#xC6CC;&#xD0B9; &#xAD00;&#xB828; &#xCF54;&#xB4DC;.
+|   |   &#x251C;&#x2500;&#x2500; mac/ - Mac &#xD2B9;&#xC815; Objective-C &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
+|   |   &#x2514;&#x2500;&#x2500; resources/ - &#xC544;&#xC774;&#xCF58;&#xB4E4;, &#xD50C;&#xB7AB;&#xD3FC; &#xC885;&#xC18D;&#xC131; &#xD30C;&#xC77C;&#xB4E4;, &#xAE30;&#xD0C0; &#xB4F1;&#xB4F1;..
+|   &#x251C;&#x2500;&#x2500; renderer/ - &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC791;&#xB3D9;&#xD558;&#xB294; &#xCF54;&#xB4DC;.
+|   |   &#x2514;&#x2500;&#x2500; api/ - &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4; API&#xC758; &#xAD6C;&#xD604;.
+|   &#x2514;&#x2500;&#x2500; common/ - &#xBA54;&#xC778;&#xACFC; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xBAA8;&#xB450; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xCF54;&#xB4DC;, &#xBA87;&#xAC00;&#xC9C0; &#xC720;&#xD2F8;&#xB9AC;&#xD2F0;
 |       &#xD568;&#xC218;&#xB4E4;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xACE0; node&#xC758; &#xBA54;&#xC2DC;&#xC9C0; &#xB8E8;&#xD504;&#xC640; Chromium&#xC758; &#xBA54;&#xC2DC;&#xC9C0; &#xB8E8;&#xD504;&#xB97C; &#xD1B5;&#xD569;.
-|       &#x2514;&#x2500;&#x2500; api - &#xACF5;&#xD1B5; API &#xAD6C;&#xD604;&#xB4E4;, &#xAE30;&#xCD08; Electron &#xBE4C;&#xD2B8;-&#xC778; &#xBAA8;&#xB4C8;&#xB4E4;.
-&#x251C;&#x2500;&#x2500; chromium_src - Chromium&#xC5D0;&#xC11C; &#xBCF5;&#xC0AC;&#xD558;&#xC5EC; &#xAC00;&#xC838;&#xC628; &#xC18C;&#xC2A4;&#xCF54;&#xB4DC;.
-&#x251C;&#x2500;&#x2500; default_app - Electron&#xC5D0; &#xC571;&#xC774; &#xC81C;&#xACF5;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB54C; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xAE30;&#xBCF8; &#xD398;&#xC774;&#xC9C0;.
-&#x251C;&#x2500;&#x2500; docs - &#xCC38;&#xC870; &#xBB38;&#xC11C;.
-&#x251C;&#x2500;&#x2500; lib  - JavaScript &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
-|   &#x251C;&#x2500;&#x2500; browser - Javascript &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xCD08;&#xAE30;&#xD654; &#xCF54;&#xB4DC;.
-|   |   &#x2514;&#x2500;&#x2500; api - Javascript API &#xAD6C;&#xD604; &#xCF54;&#xB4DC;.
-|   &#x251C;&#x2500;&#x2500; common - &#xBA54;&#xC778;&#xACFC; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xBAA8;&#xB450; &#xC0AC;&#xC6A9;&#xD558;&#xB294; JavaScript
-|   |   &#x2514;&#x2500;&#x2500; api - Javascript API &#xAD6C;&#xD604; &#xCF54;&#xB4DC;.
-|   &#x2514;&#x2500;&#x2500; renderer - Javascript &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xCD08;&#xAE30;&#xD654; &#xCF54;&#xB4DC;.
-|       &#x2514;&#x2500;&#x2500; api - Javascript API &#xAD6C;&#xD604; &#xCF54;&#xB4DC;.
-&#x251C;&#x2500;&#x2500; spec - &#xC790;&#xB3D9;&#xD654; &#xD14C;&#xC2A4;&#xD2B8;.
-&#x251C;&#x2500;&#x2500; atom.gyp - Electron&#xC758; &#xBE4C;&#xB4DC; &#xADDC;&#xCE59;.
+|       &#x2514;&#x2500;&#x2500; api/ - &#xACF5;&#xD1B5; API &#xAD6C;&#xD604;&#xB4E4;, &#xAE30;&#xCD08; Electron &#xBE4C;&#xD2B8;-&#xC778; &#xBAA8;&#xB4C8;&#xB4E4;.
+&#x251C;&#x2500;&#x2500; chromium_src/ - Chromium&#xC5D0;&#xC11C; &#xBCF5;&#xC0AC;&#xD558;&#xC5EC; &#xAC00;&#xC838;&#xC628; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
+&#x251C;&#x2500;&#x2500; default_app/ - Electron&#xC5D0; &#xC571;&#xC774; &#xC81C;&#xACF5;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB54C; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xAE30;&#xBCF8; &#xD398;&#xC774;&#xC9C0;.
+&#x251C;&#x2500;&#x2500; docs/ - &#xCC38;&#xC870; &#xBB38;&#xC11C;.
+&#x251C;&#x2500;&#x2500; lib/ - JavaScript &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;.
+|   &#x251C;&#x2500;&#x2500; browser/ - Javascript &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xCD08;&#xAE30;&#xD654; &#xCF54;&#xB4DC;.
+|   |   &#x2514;&#x2500;&#x2500; api/ - Javascript API &#xAD6C;&#xD604; &#xCF54;&#xB4DC;.
+|   &#x251C;&#x2500;&#x2500; common/ - &#xBA54;&#xC778;&#xACFC; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xBAA8;&#xB450; &#xC0AC;&#xC6A9;&#xD558;&#xB294; JavaScript
+|   |   &#x2514;&#x2500;&#x2500; api/ - Javascript API &#xAD6C;&#xD604; &#xCF54;&#xB4DC;.
+|   &#x2514;&#x2500;&#x2500; renderer/ - Javascript &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xCD08;&#xAE30;&#xD654; &#xCF54;&#xB4DC;.
+|       &#x2514;&#x2500;&#x2500; api/ - Javascript API &#xAD6C;&#xD604; &#xCF54;&#xB4DC;.
+&#x251C;&#x2500;&#x2500; spec/ - &#xC790;&#xB3D9;&#xD654; &#xD14C;&#xC2A4;&#xD2B8;.
+&#x251C;&#x2500;&#x2500; electron.gyp - Electron&#xC758; &#xBE4C;&#xB4DC; &#xADDC;&#xCE59;.
 &#x2514;&#x2500;&#x2500; common.gypi - &#xCEF4;&#xD30C;&#xC77C;&#xB7EC; &#xC124;&#xC815; &#xBC0F; `node` &#xC640; `breakpad` &#xB4F1;&#xC758; &#xAD6C;&#xC131;&#xC694;&#xC18C;&#xB97C; &#xC704;&#xD55C; &#xBE4C;&#xB4DC;
     &#xADDC;&#xCE59;.
 </code></pre><h2 id="&#xADF8;&#xC678;-&#xB514;&#xB809;&#xD130;&#xB9AC;-&#xAD6C;&#xC870;">&#xADF8;&#xC678; &#xB514;&#xB809;&#xD130;&#xB9AC; &#xAD6C;&#xC870;</h2>
@@ -968,7 +968,7 @@
 <li><strong>script</strong> - &#xAC1C;&#xBC1C;&#xBAA9;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBE4C;&#xB4DC;, &#xD328;&#xD0A4;&#xC9D5;, &#xD14C;&#xC2A4;&#xD2B8;, &#xAE30;&#xD0C0;&#xB4F1;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;.</li>
 <li><strong>tools</strong> - gyp &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xD5EC;&#xD37C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; <code>script</code>&#xC640;&#xB294; &#xB2E4;&#xB974;&#xAC8C; &#xC720;&#xC800;&#xB85C;&#xBD80;&#xD130; &#xC9C1;&#xC811;
 &#xC2E4;&#xD589;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB4E4;&#xC744; &#xC774;&#xACF3;&#xC5D0; &#xB123;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-<li><strong>vendor</strong> - &#xC18C;&#xC2A4;&#xCF54;&#xB4DC;&#xC758; &#xC11C;&#xB4DC;&#xD30C;&#xD2F0; &#xC885;&#xC18D;&#xC131; &#xCF54;&#xB4DC; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xAC00; &#xACB9;&#xCCD0; &#xD63C;&#xB780;&#xC744; &#xC77C;&#xC73C;&#xD0AC;
+<li><strong>vendor</strong> - &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xC758; &#xC11C;&#xB4DC;&#xD30C;&#xD2F0; &#xC885;&#xC18D;&#xC131; &#xCF54;&#xB4DC; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xAC00; &#xACB9;&#xCCD0; &#xD63C;&#xB780;&#xC744; &#xC77C;&#xC73C;&#xD0AC;
 &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>third_party</code>&#xC640; &#xAC19;&#xC740; Chromium &#xC18C;&#xC2A4; &#xCF54;&#xB4DC; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xD3F4;&#xB354;
 &#xC774;&#xB984;&#xC740; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 <li><strong>node_modules</strong> - &#xBE4C;&#xB4DC;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; node &#xC11C;&#xB4DC;&#xD30C;&#xD2F0; &#xBAA8;&#xB4C8;.</li>
@@ -978,7 +978,23 @@
 <li><strong>external_binaries</strong> - <code>gyp</code> &#xBE4C;&#xB4DC;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC544; &#xB530;&#xB85C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xB41C; &#xC11C;&#xB4DC;&#xD30C;&#xD2F0;
 &#xD504;&#xB808;&#xC784;&#xC6CC;&#xD06C; &#xBC14;&#xC774;&#xB108;&#xB9AC;&#xB4E4;.</li>
 </ul>
+<h2 id="git-&#xC11C;&#xBE0C;-&#xBAA8;&#xB4C8;-&#xCD5C;&#xC2E0;-&#xBC84;&#xC804;&#xC73C;&#xB85C;-&#xC720;&#xC9C0;">Git &#xC11C;&#xBE0C; &#xBAA8;&#xB4C8; &#xCD5C;&#xC2E0; &#xBC84;&#xC804;&#xC73C;&#xB85C; &#xC720;&#xC9C0;</h2>
+<p>Electron &#xC800;&#xC7A5;&#xC18C;&#xB294; &#xBA87; &#xAC00;&#xC9C0; &#xC678;&#xBD80; &#xBCA4;&#xB354; &#xC885;&#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xBA70; <a href="https://github.com/electron/electron/tree/master/vendor" target="_blank">/vendor</a>
+&#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB54C;&#xB54C;&#xB85C; <code>git status</code>&#xB97C; &#xC2E4;&#xD589;&#xD588;&#xC744; &#xB54C; &#xC544;&#xB9C8; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740;
+&#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD754;&#xD788; &#xBAA9;&#xACA9;&#xD560; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-sh">$ git status
 
+    modified:   vendor/brightray (new commits)
+    modified:   vendor/node (new commits)
+</code></pre>
+<p>&#xC774; &#xC678;&#xBD80; &#xC885;&#xC18D;&#xC131; &#xBAA8;&#xB4C8;&#xB4E4;&#xC744; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xD558;&#xB824;&#xBA74;, &#xB2E4;&#xC74C; &#xCEE4;&#xB9E8;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-sh">git submodule update --init --recursive
+</code></pre>
+<p>&#xB9CC;&#xC57D; &#xC790;&#xAE30; &#xC790;&#xC2E0;&#xC774; &#xB108;&#xBB34; &#xC774; &#xCEE4;&#xB9E8;&#xB4DC;&#xB97C; &#xC790;&#xC8FC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83; &#xAC19;&#xB2E4;&#xBA74;, <code>~/.gitconfig</code> &#xD30C;&#xC77C;&#xC744;
+&#xC0DD;&#xC131;&#xD558;&#xC5EC; &#xD3B8;&#xD558;&#xAC8C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code>[alias]
+    su = submodule update --init --recursive
+</code></pre>
                     
                     </section>
                 

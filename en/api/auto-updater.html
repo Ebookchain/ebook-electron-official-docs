@@ -53,7 +53,7 @@
         data-chapter-title="autoUpdater"
         data-filepath="api/auto-updater.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,33 +926,41 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="autoupdater">autoUpdater</h1>
-<p>This module provides an interface for the <code>Squirrel</code> auto-updater framework.</p>
+<blockquote>
+<p>Enable apps to automatically update themselves.</p>
+</blockquote>
+<p>The <code>autoUpdater</code> module provides an interface for the
+<a href="https://github.com/Squirrel" target="_blank">Squirrel</a> framework.</p>
 <p>You can quickly launch a multi-platform release server for distributing your
 application by using one of these projects:</p>
 <ul>
-<li><a href="https://github.com/ArekSredzki/electron-release-server" target="_blank">electron-release-server</a>: <em>A fully featured, self-hosted release server for electron applications, compatible with auto-updater</em></li>
-<li><a href="https://github.com/Aluxian/squirrel-updates-server" target="_blank">squirrel-updates-server</a>: <em>A simple node.js server for Squirrel.Mac and Squirrel.Windows which uses GitHub releases</em></li>
+<li><a href="https://github.com/GitbookIO/nuts" target="_blank">nuts</a>: <em>A smart release server for your applications, using GitHub as a backend. Auto-updates with Squirrel (Mac &amp; Windows)</em></li>
+<li><a href="https://github.com/ArekSredzki/electron-release-server" target="_blank">electron-release-server</a>: <em>A fully featured,
+self-hosted release server for electron applications, compatible with
+auto-updater</em></li>
+<li><a href="https://github.com/Aluxian/squirrel-updates-server" target="_blank">squirrel-updates-server</a>: <em>A simple node.js server
+for Squirrel.Mac and Squirrel.Windows which uses GitHub releases</em></li>
 </ul>
 <h2 id="platform-notices">Platform notices</h2>
 <p>Though <code>autoUpdater</code> provides a uniform API for different platforms, there are
 still some subtle differences on each platform.</p>
-<h3 id="os-x">OS X</h3>
-<p>On OS X, the <code>autoUpdater</code> module is built upon <a href="https://github.com/Squirrel/Squirrel.Mac" target="_blank">Squirrel.Mac</a>,
+<h3 id="macos">macOS</h3>
+<p>On macOS, the <code>autoUpdater</code> module is built upon <a href="https://github.com/Squirrel/Squirrel.Mac" target="_blank">Squirrel.Mac</a>,
 meaning you don&apos;t need any special setup to make it work. For server-side
 requirements, you can read <a href="https://github.com/Squirrel/Squirrel.Mac#server-support" target="_blank">Server Support</a>.</p>
-<p><strong>Note:</strong> Your application must be signed for automatic updates on Mac OS X.
+<p><strong>Note:</strong> Your application must be signed for automatic updates on macOS.
 This is a requirement of <code>Squirrel.Mac</code>.</p>
 <h3 id="windows">Windows</h3>
 <p>On Windows, you have to install your app into a user&apos;s machine before you can
-use the auto-updater, so it is recommended to use
-<a href="https://github.com/atom/grunt-electron-installer" target="_blank">grunt-electron-installer</a> module to generate a Windows installer.</p>
+use the <code>autoUpdater</code>, so it is recommended that you use the
+<a href="https://github.com/electron/windows-installer" target="_blank">electron-winstaller</a>, <a href="https://github.com/electron-userland/electron-builder" target="_blank">electron-builder</a> or the <a href="https://github.com/electron/grunt-electron-installer" target="_blank">grunt-electron-installer</a> package to generate a Windows installer.</p>
 <p>The installer generated with Squirrel will create a shortcut icon with an
 <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85).aspx" target="_blank">Application User Model ID</a> in the format of
 <code>com.squirrel.PACKAGE_ID.YOUR_EXE_WITHOUT_DOT_EXE</code>, examples are
 <code>com.squirrel.slack.Slack</code> and <code>com.squirrel.code.Code</code>. You have to use the
 same ID for your app with <code>app.setAppUserModelId</code> API, otherwise Windows will
 not be able to pin your app properly in task bar.</p>
-<p>The server-side setup is also different from OS X. You can read the documents of
+<p>The server-side setup is also different from macOS. You can read the documents of
 <a href="https://github.com/Squirrel/Squirrel.Windows" target="_blank">Squirrel.Windows</a> to get more details.</p>
 <h3 id="linux">Linux</h3>
 <p>There is no built-in support for auto-updater on Linux, so it is recommended to
@@ -985,12 +993,12 @@ automatically.</p>
 <p>On Windows only <code>releaseName</code> is available.</p>
 <h2 id="methods">Methods</h2>
 <p>The <code>autoUpdater</code> object has the following methods:</p>
-<h3 id="autoupdatersetfeedurlurl"><code>autoUpdater.setFeedURL(url)</code></h3>
+<h3 id="autoupdatersetfeedurlurl-requestheaders"><code>autoUpdater.setFeedURL(url[, requestHeaders])</code></h3>
 <ul>
 <li><code>url</code> String</li>
+<li><code>requestHeaders</code> Object <em>macOS</em> - HTTP request headers.</li>
 </ul>
-<p>Sets the <code>url</code> and initialize the auto updater. The <code>url</code> cannot be changed
-once it is set.</p>
+<p>Sets the <code>url</code> and initialize the auto updater.</p>
 <h3 id="autoupdatercheckforupdates"><code>autoUpdater.checkForUpdates()</code></h3>
 <p>Asks the server whether there is an update. You must call <code>setFeedURL</code> before
 using this API.</p>

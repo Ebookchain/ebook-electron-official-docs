@@ -53,7 +53,7 @@
         data-chapter-title="Quick Start"
         data-filepath="tutorial/quick-start.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -984,45 +984,59 @@ like this:</p>
 attempt to load an <code>index.js</code>.</p>
 <p>The <code>main.js</code> should create windows and handle system events, a typical
 example being:</p>
-<pre><code class="lang-javascript"><span class="hljs-pi">&apos;use strict&apos;</span>;
-
-<span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;  <span class="hljs-comment">// Module to control application life.</span>
-<span class="hljs-keyword">const</span> BrowserWindow = electron.BrowserWindow;  <span class="hljs-comment">// Module to create native browser window.</span>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+<span class="hljs-comment">// Module to control application life.</span>
+<span class="hljs-keyword">const</span> {app} = electron;
+<span class="hljs-comment">// Module to create native browser window.</span>
+<span class="hljs-keyword">const</span> {BrowserWindow} = electron;
 
 <span class="hljs-comment">// Keep a global reference of the window object, if you don&apos;t, the window will</span>
 <span class="hljs-comment">// be closed automatically when the JavaScript object is garbage collected.</span>
-<span class="hljs-keyword">var</span> mainWindow = <span class="hljs-literal">null</span>;
+<span class="hljs-keyword">let</span> win;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createWindow</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Create the browser window.</span>
+  win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
+
+  <span class="hljs-comment">// and load the index.html of the app.</span>
+  win.loadURL(<span class="hljs-string">`file://<span class="hljs-subst">${__dirname}</span>/index.html`</span>);
+
+  <span class="hljs-comment">// Open the DevTools.</span>
+  win.webContents.openDevTools();
+
+  <span class="hljs-comment">// Emitted when the window is closed.</span>
+  win.on(<span class="hljs-string">&apos;closed&apos;</span>, () =&gt; {
+    <span class="hljs-comment">// Dereference the window object, usually you would store windows</span>
+    <span class="hljs-comment">// in an array if your app supports multi windows, this is the time</span>
+    <span class="hljs-comment">// when you should delete the corresponding element.</span>
+    win = <span class="hljs-literal">null</span>;
+  });
+}
+
+<span class="hljs-comment">// This method will be called when Electron has finished</span>
+<span class="hljs-comment">// initialization and is ready to create browser windows.</span>
+<span class="hljs-comment">// Some APIs can only be used after this event occurs.</span>
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, createWindow);
 
 <span class="hljs-comment">// Quit when all windows are closed.</span>
-app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// On OS X it is common for applications and their menu bar</span>
+app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, () =&gt; {
+  <span class="hljs-comment">// On macOS it is common for applications and their menu bar</span>
   <span class="hljs-comment">// to stay active until the user quits explicitly with Cmd + Q</span>
-  <span class="hljs-keyword">if</span> (process.platform != <span class="hljs-string">&apos;darwin&apos;</span>) {
+  <span class="hljs-keyword">if</span> (process.platform !== <span class="hljs-string">&apos;darwin&apos;</span>) {
     app.quit();
   }
 });
 
-<span class="hljs-comment">// This method will be called when Electron has finished</span>
-<span class="hljs-comment">// initialization and is ready to create browser windows.</span>
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// Create the browser window.</span>
-  mainWindow = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
-
-  <span class="hljs-comment">// and load the index.html of the app.</span>
-  mainWindow.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/index.html&apos;</span>);
-
-  <span class="hljs-comment">// Open the DevTools.</span>
-  mainWindow.webContents.openDevTools();
-
-  <span class="hljs-comment">// Emitted when the window is closed.</span>
-  mainWindow.on(<span class="hljs-string">&apos;closed&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-comment">// Dereference the window object, usually you would store windows</span>
-    <span class="hljs-comment">// in an array if your app supports multi windows, this is the time</span>
-    <span class="hljs-comment">// when you should delete the corresponding element.</span>
-    mainWindow = <span class="hljs-literal">null</span>;
-  });
+app.on(<span class="hljs-string">&apos;activate&apos;</span>, () =&gt; {
+  <span class="hljs-comment">// On macOS it&apos;s common to re-create a window in the app when the</span>
+  <span class="hljs-comment">// dock icon is clicked and there are no other windows open.</span>
+  <span class="hljs-keyword">if</span> (win === <span class="hljs-literal">null</span>) {
+    createWindow();
+  }
 });
+
+<span class="hljs-comment">// In this file you can include the rest of your app&apos;s specific main process</span>
+<span class="hljs-comment">// code. You can also put them in separate files and require them here.</span>
 </code></pre>
 <p>Finally the <code>index.html</code> is the web page you want to show:</p>
 <pre><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
@@ -1044,8 +1058,10 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 you&apos;ll probably want to try running your app locally to test it and make sure it&apos;s
 working as expected.</p>
 <h3 id="electronprebuilt">electron-prebuilt</h3>
-<p>If you&apos;ve installed <code>electron-prebuilt</code> globally with <code>npm</code>, then you will only need
-to run the following in your app&apos;s source directory:</p>
+<p><a href="https://github.com/electron-userland/electron-prebuilt" target="_blank"><code>electron-prebuilt</code></a> is
+an <code>npm</code> module that contains pre-compiled versions of Electron.</p>
+<p>If you&apos;ve installed it globally with <code>npm</code>, then you will only need to run the
+following in your app&apos;s source directory:</p>
 <pre><code class="lang-bash">electron .
 </code></pre>
 <p>If you&apos;ve installed it locally, then run:</p>
@@ -1060,7 +1076,7 @@ binary to execute your app directly.</p>
 <h4 id="linux">Linux</h4>
 <pre><code class="lang-bash">$ ./electron/electron your-app/
 </code></pre>
-<h4 id="os-x">OS X</h4>
+<h4 id="macos">macOS</h4>
 <pre><code class="lang-bash">$ ./Electron.app/Contents/MacOS/Electron your-app/
 </code></pre>
 <p><code>Electron.app</code> here is part of the Electron&apos;s release package, you can download
@@ -1070,7 +1086,7 @@ it from <a href="https://github.com/electron/electron/releases" target="_blank">
 following the <a href="application-distribution.html">Application Distribution</a> guide
 and then executing the packaged app.</p>
 <h3 id="try-this-example">Try this Example</h3>
-<p>Clone and run the code in this tutorial by using the <a href="https://github.com/electron/electron-quick-start" target="_blank"><code>atom/electron-quick-start</code></a>
+<p>Clone and run the code in this tutorial by using the <a href="https://github.com/electron/electron-quick-start" target="_blank"><code>electron/electron-quick-start</code></a>
 repository.</p>
 <p><strong>Note</strong>: Running this requires <a href="https://git-scm.com" target="_blank">Git</a> and <a href="https://nodejs.org/en/download/" target="_blank">Node.js</a> (which includes <a href="https://npmjs.org" target="_blank">npm</a>) on your system.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># Clone the repository</span>

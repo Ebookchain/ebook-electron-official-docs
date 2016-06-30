@@ -53,7 +53,7 @@
         data-chapter-title="코딩 스타일"
         data-filepath="development/coding-style.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -961,10 +961,20 @@
 </ul>
 </li>
 </ul>
-<h2 id="api-&#xC774;&#xB984;">API &#xC774;&#xB984;</h2>
-<p>&#xC0C8;&#xB85C;&#xC6B4; API&#xB97C; &#xB9CC;&#xB4E4; &#xB550; getter, setter&#xC2A4;&#xD0C0;&#xC77C; &#xB300;&#xC2E0; jQuery&#xC758; one-function &#xC2A4;&#xD0C0;&#xC77C;&#xC744;
-&#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>.getText()</code>&#xC640; <code>.setText(text)</code>&#xB300;&#xC2E0;&#xC5D0; <code>.text([text])</code>
-&#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xC124;&#xACC4;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xD3EC;&#xB7FC;&#xC5D0; &#xC774; &#xBB38;&#xC81C;&#xC5D0; &#xB300;&#xD55C; <a href="https://github.com/electron/electron/issues/46" target="_blank">&#xB17C;&#xC758;</a>&#xAC00;
+<h2 id="&#xC774;&#xB984;-&#xC9D3;&#xAE30;">&#xC774;&#xB984; &#xC9D3;&#xAE30;</h2>
+<p>Electron API&#xB294; Node.js&#xC640; &#xBE44;&#xC2B7;&#xD55C; &#xBA85;&#xBA85;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li><code>BrowserWindow</code>&#xC640; &#xAC19;&#xC740; &#xBAA8;&#xB4C8; &#xC790;&#xCCB4;&#xB97C; &#xB73B;&#xD558;&#xB294; &#xC774;&#xB984;&#xC740;, <code>CamelCase</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>globalShortcut</code>&#xACFC; &#xAC19;&#xC740; API&#xC758; &#xC138;&#xD2B8;&#xC77C; &#xB550;, <code>mixedCase</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>API&#xAC00; &#xAC1D;&#xCCB4;&#xC758; &#xC18D;&#xC131;&#xC77C; &#xACBD;&#xC6B0;, &#xADF8;&#xB9AC;&#xACE0; <code>win.webContents</code>&#xC640; &#xAC19;&#xC774; &#xCDA9;&#xBD84;&#xD788; &#xBCF5;&#xC7A1;&#xD558;&#xACE0; &#xBD84;&#xB9AC;&#xB41C;
+&#xBD80;&#xBD84;&#xC77C; &#xACBD;&#xC6B0;, <code>mixedCase</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xB2E4;&#xB978; &#xBAA8;&#xB4C8;&#xC774; &#xC544;&#xB2CC; API&#xB97C; &#xAD6C;&#xD604;&#xD560; &#xB550;, <code>&lt;webview&gt; Tag</code> &#xB610;&#xB294; <code>Process Object</code>&#xC640; &#xAC19;&#xC774;
+&#xB2E8;&#xC21C;&#xD558;&#xACE0; &#xC790;&#xC5F0;&#xC2A4;&#xB7EC;&#xC6B4; &#xC81C;&#xBAA9;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#xC0C8;&#xB85C;&#xC6B4; API&#xB97C; &#xB9CC;&#xB4E4; &#xB550; jQuery&#xC758; one-function &#xC2A4;&#xD0C0;&#xC77C; &#xB300;&#xC2E0; getter, setter&#xC2A4;&#xD0C0;&#xC77C;&#xC744;
+&#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>.text([text])</code> &#xB300;&#xC2E0; <code>.getText()</code>&#xC640; <code>.setText(text)</code>
+&#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xC124;&#xACC4;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xD3EC;&#xB7FC;&#xC5D0;&#xC11C; &#xC774; &#xBB38;&#xC81C;&#xC5D0; &#xB300;&#xD55C;
+<a href="https://github.com/electron/electron/issues/46" target="_blank">&#xB17C;&#xC758;</a>&#xAC00;
 &#xC9C4;&#xD589;&#xB418;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 
                     

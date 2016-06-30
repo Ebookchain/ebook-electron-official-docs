@@ -53,7 +53,7 @@
         data-chapter-title="Application Packaging"
         data-filepath="tutorial/application-packaging.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -928,10 +928,10 @@
                         <h1 id="application-packaging">Application Packaging</h1>
 <p>To mitigate <a href="https://github.com/joyent/node/issues/6960" target="_blank">issues</a> around long
 path names on Windows, slightly speed up <code>require</code> and conceal your source code
-from cursory inspection, you can choose to package your app into an <a href="https://github.com/atom/asar" target="_blank">asar</a>
+from cursory inspection, you can choose to package your app into an <a href="https://github.com/electron/asar" target="_blank">asar</a>
 archive with little changes to your source code.</p>
 <h2 id="generating-asar-archive">Generating <code>asar</code> Archive</h2>
-<p>An <a href="https://github.com/atom/asar" target="_blank">asar</a> archive is a simple tar-like format that concatenates files
+<p>An <a href="https://github.com/electron/asar" target="_blank">asar</a> archive is a simple tar-like format that concatenates files
 into a single file. Electron can read arbitrary files from it without unpacking
 the whole file.</p>
 <p>Steps to package your app into an <code>asar</code> archive:</p>
@@ -969,8 +969,8 @@ fs.readdirSync(<span class="hljs-string">&apos;/path/to/example.asar&apos;</span
 <pre><code class="lang-javascript"><span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;/path/to/example.asar/dir/module.js&apos;</span>);
 </code></pre>
 <p>You can also display a web page in an <code>asar</code> archive with <code>BrowserWindow</code>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).BrowserWindow;
-<span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
 win.loadURL(<span class="hljs-string">&apos;file:///path/to/example.asar/static/index.html&apos;</span>);
 </code></pre>
 <h3 id="web-api">Web API</h3>
@@ -978,8 +978,8 @@ win.loadURL(<span class="hljs-string">&apos;file:///path/to/example.asar/static/
 Like the Node API, <code>asar</code> archives are treated as directories.</p>
 <p>For example, to get a file with <code>$.get</code>:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-<span class="hljs-keyword">var</span> $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./jquery.min.js&apos;</span>);
-$.get(<span class="hljs-string">&apos;file:///path/to/example.asar/file.txt&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+<span class="hljs-keyword">let</span> $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./jquery.min.js&apos;</span>);
+$.get(<span class="hljs-string">&apos;file:///path/to/example.asar/file.txt&apos;</span>, (data) =&gt; {
   <span class="hljs-built_in">console</span>.log(data);
 });
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
@@ -988,7 +988,7 @@ $.get(<span class="hljs-string">&apos;file:///path/to/example.asar/file.txt&apos
 <p>For some cases like verifying the <code>asar</code> archive&apos;s checksum, we need to read the
 content of <code>asar</code> archive as file. For this purpose you can use the built-in
 <code>original-fs</code> module which provides original <code>fs</code> APIs without <code>asar</code> support:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> originalFs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;original-fs&apos;</span>);
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> originalFs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;original-fs&apos;</span>);
 originalFs.readFileSync(<span class="hljs-string">&apos;/path/to/example.asar&apos;</span>);
 </code></pre>
 <p>You can also set <code>process.noAsar</code> to <code>true</code> to disable the support for <code>asar</code> in

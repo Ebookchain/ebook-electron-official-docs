@@ -53,7 +53,7 @@
         data-chapter-title="session"
         data-filepath="api/session.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,16 +926,18 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="session">session</h1>
+<blockquote>
+<p>Manage browser sessions, cookies, cache, proxy settings, etc.</p>
+</blockquote>
 <p>The <code>session</code> module can be used to create new <code>Session</code> objects.</p>
 <p>You can also access the <code>session</code> of existing pages by using the <code>session</code>
-property of <a href="web-contents.html"><code>webContents</code></a> which is a property of
-<a href="browser-window.html"><code>BrowserWindow</code></a>.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).BrowserWindow;
+property of <a href="web-contents.html"><code>WebContents</code></a>, or from the <code>session</code> module.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {session, BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
 
-<span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({ width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span> });
-win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>})
+win.loadURL(<span class="hljs-string">&apos;http://github.com&apos;</span>)
 
-<span class="hljs-keyword">var</span> ses = win.webContents.session;
+<span class="hljs-keyword">const</span> ses = win.webContents.session
 </code></pre>
 <h2 id="methods">Methods</h2>
 <p>The <code>session</code> module has the following methods:</p>
@@ -956,7 +958,7 @@ empty then default session of the app will be returned.</p>
 <p>You can create a <code>Session</code> object in the <code>session</code> module:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> session = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).session;
 
-<span class="hljs-keyword">var</span> ses = session.fromPartition(<span class="hljs-string">&apos;persist:name&apos;</span>);
+<span class="hljs-keyword">const</span> ses = session.fromPartition(<span class="hljs-string">&apos;persist:name&apos;</span>);
 </code></pre>
 <h3 id="instance-events">Instance Events</h3>
 <p>The following events are available on instances of <code>Session</code>:</p>
@@ -969,98 +971,15 @@ empty then default session of the app will be returned.</p>
 <p>Emitted when Electron is about to download <code>item</code> in <code>webContents</code>.</p>
 <p>Calling <code>event.preventDefault()</code> will cancel the download and <code>item</code> will not be
 available from next tick of the process.</p>
-<pre><code class="lang-javascript">session.defaultSession.on(<span class="hljs-string">&apos;will-download&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, item, webContents</span>) </span>{
+<pre><code class="lang-javascript">session.defaultSession.on(<span class="hljs-string">&apos;will-download&apos;</span>, (event, item, webContents) =&gt; {
   event.preventDefault();
-  <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;request&apos;</span>)(item.getURL(), <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+  <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;request&apos;</span>)(item.getURL(), (data) =&gt; {
     <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>).writeFileSync(<span class="hljs-string">&apos;/somewhere&apos;</span>, data);
   });
 });
 </code></pre>
 <h3 id="instance-methods">Instance Methods</h3>
 <p>The following methods are available on instances of <code>Session</code>:</p>
-<h4 id="sescookies"><code>ses.cookies</code></h4>
-<p>The <code>cookies</code> gives you ability to query and modify cookies. For example:</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// Query all cookies.</span>
-session.defaultSession.cookies.get({}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, cookies</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(cookies);
-});
-
-<span class="hljs-comment">// Query all cookies associated with a specific url.</span>
-session.defaultSession.cookies.get({ url : <span class="hljs-string">&quot;http://www.github.com&quot;</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, cookies</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(cookies);
-});
-
-<span class="hljs-comment">// Set a cookie with the given cookie data;</span>
-<span class="hljs-comment">// may overwrite equivalent cookies if they exist.</span>
-<span class="hljs-keyword">var</span> cookie = { url : <span class="hljs-string">&quot;http://www.github.com&quot;</span>, name : <span class="hljs-string">&quot;dummy_name&quot;</span>, value : <span class="hljs-string">&quot;dummy&quot;</span> };
-session.defaultSession.cookies.set(cookie, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
-  <span class="hljs-keyword">if</span> (error)
-    <span class="hljs-built_in">console</span>.error(error);
-});
-</code></pre>
-<h4 id="sescookiesgetfilter-callback"><code>ses.cookies.get(filter, callback)</code></h4>
-<ul>
-<li><code>filter</code> Object<ul>
-<li><code>url</code> String (optional) - Retrieves cookies which are associated with
-<code>url</code>. Empty implies retrieving cookies of all urls.</li>
-<li><code>name</code> String (optional) - Filters cookies by name.</li>
-<li><code>domain</code> String (optional) - Retrieves cookies whose domains match or are
-subdomains of <code>domains</code></li>
-<li><code>path</code> String (optional) - Retrieves cookies whose path matches <code>path</code>.</li>
-<li><code>secure</code> Boolean (optional) - Filters cookies by their Secure property.</li>
-<li><code>session</code> Boolean (optional) - Filters out session or persistent cookies.</li>
-</ul>
-</li>
-<li><code>callback</code> Function</li>
-</ul>
-<p>Sends a request to get all cookies matching <code>details</code>, <code>callback</code> will be called
-with <code>callback(error, cookies)</code> on complete.</p>
-<p><code>cookies</code> is an Array of <code>cookie</code> objects.</p>
-<ul>
-<li><code>cookie</code> Object<ul>
-<li><code>name</code> String - The name of the cookie.</li>
-<li><code>value</code> String - The value of the cookie.</li>
-<li><code>domain</code> String - The domain of the cookie.</li>
-<li><code>hostOnly</code> String - Whether the cookie is a host-only cookie.</li>
-<li><code>path</code> String - The path of the cookie.</li>
-<li><code>secure</code> Boolean - Whether the cookie is marked as secure.</li>
-<li><code>httpOnly</code> Boolean - Whether the cookie is marked as HTTP only.</li>
-<li><code>session</code> Boolean - Whether the cookie is a session cookie or a persistent
-cookie with an expiration date.</li>
-<li><code>expirationDate</code> Double (optional) - The expiration date of the cookie as
-the number of seconds since the UNIX epoch. Not provided for session
-cookies.</li>
-</ul>
-</li>
-</ul>
-<h4 id="sescookiessetdetails-callback"><code>ses.cookies.set(details, callback)</code></h4>
-<ul>
-<li><code>details</code> Object<ul>
-<li><code>url</code> String - Retrieves cookies which are associated with <code>url</code></li>
-<li><code>name</code> String - The name of the cookie. Empty by default if omitted.</li>
-<li><code>value</code> String - The value of the cookie. Empty by default if omitted.</li>
-<li><code>domain</code> String - The domain of the cookie. Empty by default if omitted.</li>
-<li><code>path</code> String - The path of the cookie. Empty by default if omitted.</li>
-<li><code>secure</code> Boolean - Whether the cookie should be marked as Secure. Defaults to
-false.</li>
-<li><code>session</code> Boolean - Whether the cookie should be marked as HttpOnly. Defaults
-to false.</li>
-<li><code>expirationDate</code> Double -    The expiration date of the cookie as the number of
-seconds since the UNIX epoch. If omitted, the cookie becomes a session cookie.</li>
-</ul>
-</li>
-<li><code>callback</code> Function</li>
-</ul>
-<p>Sets the cookie with <code>details</code>, <code>callback</code> will be called with <code>callback(error)</code>
-on complete.</p>
-<h4 id="sescookiesremoveurl-name-callback"><code>ses.cookies.remove(url, name, callback)</code></h4>
-<ul>
-<li><code>url</code> String - The URL associated with the cookie.</li>
-<li><code>name</code> String - The name of cookie to remove.</li>
-<li><code>callback</code> Function</li>
-</ul>
-<p>Removes the cookies matching <code>url</code> and <code>name</code>, <code>callback</code> will called with
-<code>callback()</code> on complete.</p>
 <h4 id="sesgetcachesizecallback"><code>ses.getCacheSize(callback)</code></h4>
 <ul>
 <li><code>callback</code> Function<ul>
@@ -1103,7 +1022,7 @@ on complete.</p>
 <p>Sets the proxy settings.</p>
 <p>When <code>pacScript</code> and <code>proxyRules</code> are provided together, the <code>proxyRules</code>
 option is ignored and <code>pacScript</code> configuration is applied.</p>
-<p>The <code>proxyRules</code> has to follow the rules bellow:</p>
+<p>The <code>proxyRules</code> has to follow the rules below:</p>
 <pre><code>proxyRules = schemeProxies[&quot;;&quot;&lt;schemeProxies&gt;]
 schemeProxies = [&lt;urlScheme&gt;&quot;=&quot;]&lt;proxyURIList&gt;
 urlScheme = &quot;http&quot; | &quot;https&quot; | &quot;ftp&quot; | &quot;socks&quot;
@@ -1171,8 +1090,8 @@ verification is requested. Calling <code>callback(true)</code> accepts the certi
 calling <code>callback(false)</code> rejects it.</p>
 <p>Calling <code>setCertificateVerifyProc(null)</code> will revert back to default certificate
 verify proc.</p>
-<pre><code class="lang-javascript">myWindow.webContents.session.setCertificateVerifyProc(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">hostname, cert, callback</span>) </span>{
-  <span class="hljs-keyword">if</span> (hostname == <span class="hljs-string">&apos;github.com&apos;</span>)
+<pre><code class="lang-javascript">myWindow.webContents.session.setCertificateVerifyProc((hostname, cert, callback) =&gt; {
+  <span class="hljs-keyword">if</span> (hostname === <span class="hljs-string">&apos;github.com&apos;</span>)
     callback(<span class="hljs-literal">true</span>);
   <span class="hljs-keyword">else</span>
     callback(<span class="hljs-literal">false</span>);
@@ -1182,16 +1101,17 @@ verify proc.</p>
 <ul>
 <li><code>handler</code> Function<ul>
 <li><code>webContents</code> Object - <a href="web-contents.html">WebContents</a> requesting the permission.</li>
-<li><code>permission</code>  String - Enum of &apos;media&apos;, &apos;geolocation&apos;, &apos;notifications&apos;, &apos;midiSysex&apos;, &apos;pointerLock&apos;, &apos;fullscreen&apos;.</li>
-<li><code>callback</code>  Function - Allow or deny the permission.</li>
+<li><code>permission</code> String - Enum of &apos;media&apos;, &apos;geolocation&apos;, &apos;notifications&apos;, &apos;midiSysex&apos;,
+&apos;pointerLock&apos;, &apos;fullscreen&apos;, &apos;openExternal&apos;.</li>
+<li><code>callback</code> Function - Allow or deny the permission.</li>
 </ul>
 </li>
 </ul>
 <p>Sets the handler which can be used to respond to permission requests for the <code>session</code>.
 Calling <code>callback(true)</code> will allow the permission and <code>callback(false)</code> will reject it.</p>
-<pre><code class="lang-javascript">session.fromPartition(partition).setPermissionRequestHandler(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">webContents, permission, callback</span>) </span>{
+<pre><code class="lang-javascript">session.fromPartition(partition).setPermissionRequestHandler((webContents, permission, callback) =&gt; {
   <span class="hljs-keyword">if</span> (webContents.getURL() === host) {
-    <span class="hljs-keyword">if</span> (permission == <span class="hljs-string">&quot;notifications&quot;</span>) {
+    <span class="hljs-keyword">if</span> (permission === <span class="hljs-string">&apos;notifications&apos;</span>) {
       callback(<span class="hljs-literal">false</span>); <span class="hljs-comment">// denied.</span>
       <span class="hljs-keyword">return</span>;
     }
@@ -1205,29 +1125,169 @@ Calling <code>callback(true)</code> will allow the permission and <code>callback
 <li><code>callback</code> Function (optional) - Called when operation is done.</li>
 </ul>
 <p>Clears the host resolver cache.</p>
+<h4 id="sesallowntlmcredentialsfordomainsdomains"><code>ses.allowNTLMCredentialsForDomains(domains)</code></h4>
+<ul>
+<li><code>domains</code> String - A comma-seperated list of servers for which
+integrated authentication is enabled.</li>
+</ul>
+<p>Dynamically sets whether to always send credentials for HTTP NTLM or Negotiate
+authentication.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// consider any url ending with `example.com`, `foobar.com`, `baz`</span>
+<span class="hljs-comment">// for integrated authentication.</span>
+session.defaultSession.allowNTLMCredentialsForDomains(<span class="hljs-string">&apos;*example.com, *foobar.com, *baz&apos;</span>)
+
+<span class="hljs-comment">// consider all urls for integrated authentication.</span>
+session.defaultSession.allowNTLMCredentialsForDomains(<span class="hljs-string">&apos;*&apos;</span>)
+</code></pre>
+<h4 id="sessetuseragentuseragent-acceptlanguages"><code>ses.setUserAgent(userAgent[, acceptLanguages])</code></h4>
+<ul>
+<li><code>userAgent</code> String</li>
+<li><code>acceptLanguages</code> String (optional)</li>
+</ul>
+<p>Overrides the <code>userAgent</code> and <code>acceptLanguages</code> for this session.</p>
+<p>The <code>acceptLanguages</code> must a comma separated ordered list of language codes, for
+example <code>&quot;en-US,fr,de,ko,zh-CN,ja&quot;</code>.</p>
+<p>This doesn&apos;t affect existing <code>WebContents</code>, and each <code>WebContents</code> can use
+<code>webContents.setUserAgent</code> to override the session-wide user agent.</p>
+<h4 id="sesgetuseragent"><code>ses.getUserAgent()</code></h4>
+<p>Returns a <code>String</code> representing the user agent for this session.</p>
+<h3 id="instance-properties">Instance Properties</h3>
+<p>The following properties are available on instances of <code>Session</code>:</p>
+<h4 id="sescookies"><code>ses.cookies</code></h4>
+<p>Returns an instance of <code>Cookies</code> class for this session.</p>
 <h4 id="seswebrequest"><code>ses.webRequest</code></h4>
-<p>The <code>webRequest</code> API set allows to intercept and modify contents of a request at
-various stages of its lifetime.</p>
-<p>Each API accepts an optional <code>filter</code> and a <code>listener</code>, the <code>listener</code> will be
-called with <code>listener(details)</code> when the API&apos;s event has happened, the <code>details</code>
-is an object that describes the request. Passing <code>null</code> as <code>listener</code> will
-unsubscribe from the event.</p>
+<p>Returns an instance of <code>WebRequest</code> class for this session.</p>
+<h4 id="sesprotocol"><code>ses.protocol</code></h4>
+<p>Returns an instance of <a href="protocol.html">protocol</a> module for this session.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, session} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>)
+
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> protocol = session.fromPartition(partitionName).protocol
+  protocol.registerFileProtocol(<span class="hljs-string">&apos;atom&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request, callback</span>) </span>{
+    <span class="hljs-keyword">var</span> url = request.url.substr(<span class="hljs-number">7</span>)
+    callback({path: path.normalize(__dirname + <span class="hljs-string">&apos;/&apos;</span> + url)})
+  }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-keyword">if</span> (error)
+      <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Failed to register protocol&apos;</span>)
+  })
+})
+</code></pre>
+<h2 id="class-cookies">Class: Cookies</h2>
+<p>The <code>Cookies</code> class gives you ability to query and modify cookies. Instances of
+<code>Cookies</code> class must be received by using <code>cookies</code> property of <code>Session</code> class.</p>
+<p>For example:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Query all cookies.</span>
+session.defaultSession.cookies.get({}, (error, cookies) =&gt; {
+  <span class="hljs-built_in">console</span>.log(cookies)
+})
+
+<span class="hljs-comment">// Query all cookies associated with a specific url.</span>
+session.defaultSession.cookies.get({url: <span class="hljs-string">&apos;http://www.github.com&apos;</span>}, (error, cookies) =&gt; {
+  <span class="hljs-built_in">console</span>.log(cookies)
+})
+
+<span class="hljs-comment">// Set a cookie with the given cookie data;</span>
+<span class="hljs-comment">// may overwrite equivalent cookies if they exist.</span>
+<span class="hljs-keyword">const</span> cookie = {url: <span class="hljs-string">&apos;http://www.github.com&apos;</span>, name: <span class="hljs-string">&apos;dummy_name&apos;</span>, value: <span class="hljs-string">&apos;dummy&apos;</span>}
+session.defaultSession.cookies.set(cookie, (error) =&gt; {
+  <span class="hljs-keyword">if</span> (error)
+    <span class="hljs-built_in">console</span>.error(error)
+})
+</code></pre>
+<h3 id="instance-methods">Instance Methods</h3>
+<p>The following methods are available on instances of <code>Cookies</code>:</p>
+<h4 id="cookiesgetfilter-callback"><code>cookies.get(filter, callback)</code></h4>
+<ul>
+<li><code>filter</code> Object<ul>
+<li><code>url</code> String (optional) - Retrieves cookies which are associated with
+<code>url</code>. Empty implies retrieving cookies of all urls.</li>
+<li><code>name</code> String (optional) - Filters cookies by name.</li>
+<li><code>domain</code> String (optional) - Retrieves cookies whose domains match or are
+subdomains of <code>domains</code></li>
+<li><code>path</code> String (optional) - Retrieves cookies whose path matches <code>path</code>.</li>
+<li><code>secure</code> Boolean (optional) - Filters cookies by their Secure property.</li>
+<li><code>session</code> Boolean (optional) - Filters out session or persistent cookies.</li>
+</ul>
+</li>
+<li><code>callback</code> Function</li>
+</ul>
+<p>Sends a request to get all cookies matching <code>details</code>, <code>callback</code> will be called
+with <code>callback(error, cookies)</code> on complete.</p>
+<p><code>cookies</code> is an Array of <code>cookie</code> objects.</p>
+<ul>
+<li><code>cookie</code> Object<ul>
+<li><code>name</code> String - The name of the cookie.</li>
+<li><code>value</code> String - The value of the cookie.</li>
+<li><code>domain</code> String - The domain of the cookie.</li>
+<li><code>hostOnly</code> String - Whether the cookie is a host-only cookie.</li>
+<li><code>path</code> String - The path of the cookie.</li>
+<li><code>secure</code> Boolean - Whether the cookie is marked as secure.</li>
+<li><code>httpOnly</code> Boolean - Whether the cookie is marked as HTTP only.</li>
+<li><code>session</code> Boolean - Whether the cookie is a session cookie or a persistent
+cookie with an expiration date.</li>
+<li><code>expirationDate</code> Double (optional) - The expiration date of the cookie as
+the number of seconds since the UNIX epoch. Not provided for session
+cookies.</li>
+</ul>
+</li>
+</ul>
+<h4 id="cookiessetdetails-callback"><code>cookies.set(details, callback)</code></h4>
+<ul>
+<li><code>details</code> Object<ul>
+<li><code>url</code> String - The url to associate the cookie with.</li>
+<li><code>name</code> String - The name of the cookie. Empty by default if omitted.</li>
+<li><code>value</code> String - The value of the cookie. Empty by default if omitted.</li>
+<li><code>domain</code> String - The domain of the cookie. Empty by default if omitted.</li>
+<li><code>path</code> String - The path of the cookie. Empty by default if omitted.</li>
+<li><code>secure</code> Boolean - Whether the cookie should be marked as Secure. Defaults to
+false.</li>
+<li><code>httpOnly</code> Boolean - Whether the cookie should be marked as HTTP only.
+Defaults to false.</li>
+<li><code>expirationDate</code> Double -    The expiration date of the cookie as the number of
+seconds since the UNIX epoch. If omitted then the cookie becomes a session
+cookie and will not be retained between sessions.</li>
+</ul>
+</li>
+<li><code>callback</code> Function</li>
+</ul>
+<p>Sets a cookie with <code>details</code>, <code>callback</code> will be called with <code>callback(error)</code>
+on complete.</p>
+<h4 id="cookiesremoveurl-name-callback"><code>cookies.remove(url, name, callback)</code></h4>
+<ul>
+<li><code>url</code> String - The URL associated with the cookie.</li>
+<li><code>name</code> String - The name of cookie to remove.</li>
+<li><code>callback</code> Function</li>
+</ul>
+<p>Removes the cookies matching <code>url</code> and <code>name</code>, <code>callback</code> will called with
+<code>callback()</code> on complete.</p>
+<h2 id="class-webrequest">Class: WebRequest</h2>
+<p>The <code>WebRequest</code> class allows to intercept and modify contents of a request at
+various stages of its lifetime. Instances of <code>WebRequest</code> class must be received
+by using <code>webRequest</code> property of <code>Session</code> class.</p>
+<p>The methods of <code>WebRequest</code> accept an optional <code>filter</code> and a <code>listener</code>, the
+<code>listener</code> will be called with <code>listener(details)</code> when the API&apos;s event has
+happened, the <code>details</code> is an object that describes the request. Passing <code>null</code>
+as <code>listener</code> will unsubscribe from the event.</p>
 <p>The <code>filter</code> is an object that has an <code>urls</code> property, which is an Array of URL
 patterns that will be used to filter out the requests that do not match the URL
 patterns. If the <code>filter</code> is omitted then all requests will be matched.</p>
 <p>For certain events the <code>listener</code> is passed with a <code>callback</code>, which should be
 called with an <code>response</code> object when <code>listener</code> has done its work.</p>
+<p>An example of adding <code>User-Agent</code> header for requests:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// Modify the user agent for all requests to the following urls.</span>
-<span class="hljs-keyword">var</span> filter = {
-  urls: [<span class="hljs-string">&quot;https://*.github.com/*&quot;</span>, <span class="hljs-string">&quot;*://electron.github.io&quot;</span>]
-};
+<span class="hljs-keyword">const</span> filter = {
+  urls: [<span class="hljs-string">&apos;https://*.github.com/*&apos;</span>, <span class="hljs-string">&apos;*://electron.github.io&apos;</span>]
+}
 
-session.defaultSession.webRequest.onBeforeSendHeaders(filter, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">details, callback</span>) </span>{
-  details.requestHeaders[<span class="hljs-string">&apos;User-Agent&apos;</span>] = <span class="hljs-string">&quot;MyAgent&quot;</span>;
-  callback({cancel: <span class="hljs-literal">false</span>, requestHeaders: details.requestHeaders});
-});
+session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details, callback) =&gt; {
+  details.requestHeaders[<span class="hljs-string">&apos;User-Agent&apos;</span>] = <span class="hljs-string">&quot;MyAgent&quot;</span>
+  callback({cancel: <span class="hljs-literal">false</span>, requestHeaders: details.requestHeaders})
+})
 </code></pre>
-<h4 id="seswebrequestonbeforerequestfilter-listener"><code>ses.webRequest.onBeforeRequest([filter, ]listener)</code></h4>
+<h3 id="instance-methods">Instance Methods</h3>
+<p>The following methods are available on instances of <code>WebRequest</code>:</p>
+<h4 id="webrequestonbeforerequestfilter-listener"><code>webRequest.onBeforeRequest([filter, ]listener)</code></h4>
 <ul>
 <li><code>filter</code> Object</li>
 <li><code>listener</code> Function</li>
@@ -1263,7 +1323,7 @@ being sent or completed, and is instead redirected to the given URL.</li>
 </ul>
 </li>
 </ul>
-<h4 id="seswebrequestonbeforesendheadersfilter-listener"><code>ses.webRequest.onBeforeSendHeaders([filter, ]listener)</code></h4>
+<h4 id="webrequestonbeforesendheadersfilter-listener"><code>webRequest.onBeforeSendHeaders([filter, ]listener)</code></h4>
 <ul>
 <li><code>filter</code> Object</li>
 <li><code>listener</code> Function</li>
@@ -1292,7 +1352,7 @@ with these headers.</li>
 </ul>
 </li>
 </ul>
-<h4 id="seswebrequestonsendheadersfilter-listener"><code>ses.webRequest.onSendHeaders([filter, ]listener)</code></h4>
+<h4 id="webrequestonsendheadersfilter-listener"><code>webRequest.onSendHeaders([filter, ]listener)</code></h4>
 <ul>
 <li><code>filter</code> Object</li>
 <li><code>listener</code> Function</li>
@@ -1311,7 +1371,7 @@ response are visible by the time this listener is fired.</p>
 </ul>
 </li>
 </ul>
-<h4 id="seswebrequestonheadersreceivedfilter-listener"><code>ses.webRequest.onHeadersReceived([filter,] listener)</code></h4>
+<h4 id="webrequestonheadersreceivedfilterlistener"><code>webRequest.onHeadersReceived([filter,]listener)</code></h4>
 <ul>
 <li><code>filter</code> Object</li>
 <li><code>listener</code> Function</li>
@@ -1338,12 +1398,13 @@ response headers of a request have been received.</p>
 <li><code>cancel</code> Boolean</li>
 <li><code>responseHeaders</code> Object (optional) - When provided, the server is assumed
 to have responded with these headers.</li>
-<li><code>statusLine</code> String (optional) - Should be provided when overriding <code>responseHeaders</code>
-to change header status otherwise original response header&apos;s status will be used.</li>
+<li><code>statusLine</code> String (optional) - Should be provided when overriding
+<code>responseHeaders</code> to change header status otherwise original response
+header&apos;s status will be used.</li>
 </ul>
 </li>
 </ul>
-<h4 id="seswebrequestonresponsestartedfilter-listener"><code>ses.webRequest.onResponseStarted([filter, ]listener)</code></h4>
+<h4 id="webrequestonresponsestartedfilter-listener"><code>webRequest.onResponseStarted([filter, ]listener)</code></h4>
 <ul>
 <li><code>filter</code> Object</li>
 <li><code>listener</code> Function</li>
@@ -1359,14 +1420,14 @@ and response headers are available.</p>
 <li><code>resourceType</code> String</li>
 <li><code>timestamp</code> Double</li>
 <li><code>responseHeaders</code> Object</li>
-<li><code>fromCache</code> Boolean  - Indicates whether the response was fetched from disk
+<li><code>fromCache</code> Boolean - Indicates whether the response was fetched from disk
 cache.</li>
 <li><code>statusCode</code> Integer</li>
 <li><code>statusLine</code> String</li>
 </ul>
 </li>
 </ul>
-<h4 id="seswebrequestonbeforeredirectfilter-listener"><code>ses.webRequest.onBeforeRedirect([filter, ]listener)</code></h4>
+<h4 id="webrequestonbeforeredirectfilter-listener"><code>webRequest.onBeforeRedirect([filter, ]listener)</code></h4>
 <ul>
 <li><code>filter</code> Object</li>
 <li><code>listener</code> Function</li>
@@ -1389,7 +1450,7 @@ actually sent to.</li>
 </ul>
 </li>
 </ul>
-<h4 id="seswebrequestoncompletedfilter-listener"><code>ses.webRequest.onCompleted([filter, ]listener)</code></h4>
+<h4 id="webrequestoncompletedfilter-listener"><code>webRequest.onCompleted([filter, ]listener)</code></h4>
 <ul>
 <li><code>filter</code> Object</li>
 <li><code>listener</code> Function</li>
@@ -1410,7 +1471,7 @@ completed.</p>
 </ul>
 </li>
 </ul>
-<h4 id="seswebrequestonerroroccurredfilter-listener"><code>ses.webRequest.onErrorOccurred([filter, ]listener)</code></h4>
+<h4 id="webrequestonerroroccurredfilter-listener"><code>webRequest.onErrorOccurred([filter, ]listener)</code></h4>
 <ul>
 <li><code>filter</code> Object</li>
 <li><code>listener</code> Function</li>

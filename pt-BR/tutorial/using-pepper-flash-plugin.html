@@ -53,7 +53,7 @@
         data-chapter-title="Usando o Plugin Pepper Flash"
         data-filepath="tutorial/using-pepper-flash-plugin.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:51 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:22 GMT+0800 (CST)"
         data-innerlanguage="pt-BR">
     
 
@@ -618,7 +618,7 @@
 voc&#xEA; deve especificar manualmente a localiza&#xE7;&#xE3;o do plugin e ent&#xE3;o ele ser&#xE1;
 habilitado em sua aplica&#xE7;&#xE3;o.</p>
 <h2 id="prepare-uma-c&#xF3;pia-do-plugin-flash">Prepare uma c&#xF3;pia do plugin Flash</h2>
-<p>Tanto no OS X como no Linux, os detalhes do plugin Pepper Flash podem ser
+<p>Tanto no macOS como no Linux, os detalhes do plugin Pepper Flash podem ser
 encontrados navegando por <code>chrome://plugins</code> no navegador Chrome. Essa
 localiza&#xE7;&#xE3;o e vers&#xE3;o s&#xE3;o &#xFA;teis para o suporte do plugin Electron&apos;s Pepper Flash.
 Voc&#xEA; pode tamb&#xE9;m copiar para outra localiza&#xE7;&#xE3;o.</p>
@@ -644,7 +644,7 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 
 <span class="hljs-comment">// Epecifica o caminho do flash.</span>
 <span class="hljs-comment">// No Windows, deve ser /path/to/pepflashplayer.dll</span>
-<span class="hljs-comment">// No OS X, /path/to/PepperFlashPlayer.plugin</span>
+<span class="hljs-comment">// No macOS, /path/to/PepperFlashPlayer.plugin</span>
 <span class="hljs-comment">// No Linux, /path/to/libpepflashplayer.so</span>
 app.commandLine.appendSwitch(<span class="hljs-string">&apos;ppapi-flash-path&apos;</span>, <span class="hljs-string">&apos;/path/to/libpepflashplayer.so&apos;</span>);
 

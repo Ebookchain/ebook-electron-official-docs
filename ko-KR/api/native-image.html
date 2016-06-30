@@ -53,7 +53,7 @@
         data-chapter-title="nativeImage"
         data-filepath="api/native-image.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,21 +926,31 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="nativeimage">nativeImage</h1>
+<blockquote>
+<p>PNG &#xB610;&#xB294; JPG &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD2B8;&#xB808;&#xC774;, &#xB3C5;, &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC544;&#xC774;&#xCF58;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 <p>Electron&#xC740; &#xD30C;&#xC77C; &#xACBD;&#xB85C; &#xB610;&#xB294; <code>nativeImage</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xD1B5;&#xD574; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; API&#xB97C;
 &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. <code>null</code>&#xC744; &#xC804;&#xB2EC;&#xD560; &#xACBD;&#xC6B0; &#xBE48; &#xC774;&#xBBF8;&#xC9C0;&#xAC00; &#xC0DD;&#xC131;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xD2B8;&#xB808;&#xC774; &#xBA54;&#xB274;&#xB97C; &#xB9CC;&#xB4E4;&#xAC70;&#xB098; &#xC708;&#xB3C4;&#xC6B0;&#xC758; &#xC544;&#xC774;&#xCF58;&#xC744; &#xC124;&#xC815;&#xD560; &#xB54C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD30C;&#xC77C; &#xACBD;&#xB85C;&#xB97C;
 &#xC804;&#xB2EC;&#xD558;&#xC5EC; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
-<span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({icon: <span class="hljs-string">&apos;/Users/somebody/images/window.png&apos;</span>});
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({icon: <span class="hljs-string">&apos;/Users/somebody/images/window.png&apos;</span>});
 </code></pre>
-<p>&#xC774; &#xC608;&#xC81C;&#xB294; &#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xB85C;&#xBD80;&#xD130; &#xAC00;&#xC838;&#xC628; <code>nativeImage</code>&#xB85C; &#xD2B8;&#xB808;&#xC774; &#xBA54;&#xB274;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> image = clipboard.readImage();
-<span class="hljs-keyword">var</span> appIcon = <span class="hljs-keyword">new</span> Tray(image);
+<p>&#xC774; &#xC608;&#xC2DC;&#xB294; &#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xB85C;&#xBD80;&#xD130; &#xAC00;&#xC838;&#xC628; <code>nativeImage</code>&#xB85C; &#xD2B8;&#xB808;&#xC774; &#xBA54;&#xB274;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> image = clipboard.readImage();
+<span class="hljs-keyword">const</span> appIcon = <span class="hljs-keyword">new</span> Tray(image);
 </code></pre>
 <h2 id="&#xC9C0;&#xC6D0;&#xD558;&#xB294;-&#xD3EC;&#xB9F7;">&#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xD3EC;&#xB9F7;</h2>
 <p>&#xD604;&#xC7AC; <code>PNG</code> &#xC640; <code>JPEG</code> &#xC774;&#xBBF8;&#xC9C0; &#xD3EC;&#xB9F7;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC190;&#xC2E4; &#xC5C6;&#xB294; &#xC774;&#xBBF8;&#xC9C0; &#xC555;&#xCD95;&#xACFC; &#xD22C;&#xBA85;&#xB3C4; &#xC9C0;&#xC6D0;&#xC744; &#xC704;&#xD574; <code>PNG</code> &#xC0AC;&#xC6A9;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xADF8;&#xB9AC;&#xACE0; Windows&#xC5D0;&#xC11C;&#xB294; <code>ICO</code> &#xD3EC;&#xB9F7;&#xB3C4; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>Windows&#xC5D0;&#xC11C;&#xB294; &#xD30C;&#xC77C; &#xACBD;&#xB85C;&#xB85C;&#xBD80;&#xD130; <code>ICO</code> &#xD3EC;&#xB9F7;&#xB3C4; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70;, &#xAC00;&#xC7A5; &#xC88B;&#xC740; &#xC2DC;&#xAC01;&#xC801; &#xD6A8;&#xACFC;&#xB97C;
+&#xC5BB;&#xAE30; &#xC704;&#xD574; &#xCD5C;&#xC18C;&#xD55C; &#xC544;&#xC774;&#xCF58;&#xC5D0; &#xB2E4;&#xC74C; &#xC0AC;&#xC774;&#xC988;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li>16x16</li>
+<li>32x32</li>
+<li>64x64</li>
+<li>256x256</li>
+</ul>
 <h2 id="&#xACE0;&#xD574;&#xC0C1;&#xB3C4;-&#xC774;&#xBBF8;&#xC9C0;">&#xACE0;&#xD574;&#xC0C1;&#xB3C4; &#xC774;&#xBBF8;&#xC9C0;</h2>
 <p>&#xD50C;&#xB7AB;&#xD3FC;&#xC774; high-DPI&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xACBD;&#xC6B0; <code>@2x</code>&#xC640; &#xAC19;&#xC774; &#xC774;&#xBBF8;&#xC9C0;&#xC758; &#xD30C;&#xC77C;&#xBA85; &#xB4A4;&#xC5D0; &#xC811;&#xBBF8;&#xC0AC;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC;
 &#xACE0;&#xD574;&#xC0C1;&#xB3C4; &#xC774;&#xBBF8;&#xC9C0;&#xB85C; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -954,7 +964,7 @@
 &#x251C;&#x2500;&#x2500; icon@2x.png
 &#x2514;&#x2500;&#x2500; icon@3x.png
 </code></pre>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
 </code></pre>
 <p>&#xC9C0;&#xC6D0;&#xD558;&#xB294; DPI &#xC811;&#xBBF8;&#xC0AC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
@@ -972,11 +982,11 @@
 </ul>
 <h2 id="&#xD15C;&#xD50C;&#xB9BF;-&#xC774;&#xBBF8;&#xC9C0;">&#xD15C;&#xD50C;&#xB9BF; &#xC774;&#xBBF8;&#xC9C0;</h2>
 <p>&#xD15C;&#xD50C;&#xB9BF; &#xC774;&#xBBF8;&#xC9C0;&#xB294; &#xAC80;&#xC740;&#xC0C9;&#xACFC; &#xBA85;&#xD655;&#xD55C; &#xC0C9;&#xC0C1;(&#xC54C;&#xD30C; &#xCC44;&#xB110;)&#xC73C;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC838; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD15C;&#xD50C;&#xB9BF; &#xC774;&#xBBF8;&#xC9C0;&#xB294;
-&#xB2E8;&#xB3C5; &#xC774;&#xBBF8;&#xC9C0;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xB2E4;&#xB978; &#xCEE8;&#xD150;&#xCE20;&#xC640; &#xD63C;&#xD569;&#xB418;&#xC5B4; &#xCD5C;&#xC885; &#xC678;&#xAD00; &#xB9CC;&#xB4DC;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+&#xB2E8;&#xB3C5; &#xC774;&#xBBF8;&#xC9C0;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xB2E4;&#xB978; &#xCF58;&#xD150;&#xCE20;&#xC640; &#xD63C;&#xD569;&#xB418;&#xC5B4; &#xCD5C;&#xC885; &#xC678;&#xAD00; &#xB9CC;&#xB4DC;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>&#xAC00;&#xC7A5; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xD15C;&#xD50C;&#xB9BF; &#xC774;&#xBBF8;&#xC9C0;&#xB294; &#xBC1D;&#xACE0; &#xC5B4;&#xB450;&#xC6B4; &#xD14C;&#xB9C8; &#xC0C9;&#xC0C1;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xB294; &#xBA54;&#xB274; &#xBC14; &#xC544;&#xC774;&#xCF58;
 &#xB4F1;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xCC38;&#xACE0;:</strong> &#xD15C;&#xD50C;&#xB9BF; &#xC774;&#xBBF8;&#xC9C0;&#xB294; OS X &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xB9CC; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xD15C;&#xD50C;&#xB9BF; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xC640; &#xAC19;&#xC774; &#xD30C;&#xC77C;&#xBA85;&#xC5D0; <code>Template</code> &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xCD94;&#xAC00;&#xD574;&#xC57C;
+<p><strong>&#xCC38;&#xACE0;:</strong> &#xD15C;&#xD50C;&#xB9BF; &#xC774;&#xBBF8;&#xC9C0;&#xB294; macOS &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xB9CC; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD15C;&#xD50C;&#xB9BF; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xC640; &#xAC19;&#xC774; &#xD30C;&#xC77C;&#xBA85;&#xC5D0; <code>Template</code> &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xCD94;&#xAC00;&#xD574;&#xC57C;
 &#xD569;&#xB2C8;&#xB2E4;:</p>
 <ul>
 <li><code>xxxTemplate.png</code></li>
@@ -991,6 +1001,10 @@
 <li><code>path</code> String</li>
 </ul>
 <p><code>path</code>&#xB85C;&#xBD80;&#xD130; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xB85C;&#xB4DC;&#xD558;&#xC5EC; &#xC0C8;&#xB85C;&#xC6B4; <code>nativeImage</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> nativeImage = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).nativeImage;
+
+<span class="hljs-keyword">let</span> image = nativeImage.createFromPath(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
+</code></pre>
 <h3 id="nativeimagecreatefrombufferbuffer-scalefactor"><code>nativeImage.createFromBuffer(buffer[, scaleFactor])</code></h3>
 <ul>
 <li><code>buffer</code> <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer" target="_blank">Buffer</a></li>
@@ -1004,23 +1018,19 @@
 </ul>
 <p><code>dataURL</code>&#xB85C;&#xBD80;&#xD130; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xB85C;&#xB4DC;&#xD558;&#xC5EC; &#xC0C8;&#xB85C;&#xC6B4; <code>nativeImage</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
 <h2 id="instance-methods">Instance Methods</h2>
-<p><code>nativeImage</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xBA54;&#xC11C;&#xB4DC; &#xC785;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> nativeImage = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).nativeImage;
-
-<span class="hljs-keyword">var</span> image = nativeImage.createFromPath(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
-</code></pre>
-<h3 id="imagetopng"><code>image.toPng()</code></h3>
+<p><code>nativeImage</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="imagetopng"><code>image.toPNG()</code></h3>
 <p><code>PNG</code> &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC778;&#xCF54;&#xB529;&#xD55C; &#xB370;&#xC774;&#xD130;&#xB97C; <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer" target="_blank">Buffer</a>&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="imagetojpegquality"><code>image.toJpeg(quality)</code></h3>
+<h3 id="imagetojpegquality"><code>image.toJPEG(quality)</code></h3>
 <ul>
 <li><code>quality</code> Integer (<strong>required</strong>) 0 - 100 &#xC0AC;&#xC774;&#xC758; &#xAC12;</li>
 </ul>
 <p><code>JPEG</code> &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC778;&#xCF54;&#xB529;&#xD55C; &#xB370;&#xC774;&#xD130;&#xB97C; <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer" target="_blank">Buffer</a>&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="imagetodataurl"><code>image.toDataURL()</code></h3>
 <p>&#xC774;&#xBBF8;&#xC9C0;&#xB97C; data URL&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="imagegetnativehandle-os-x"><code>image.getNativeHandle()</code> <em>OS X</em></h3>
+<h3 id="imagegetnativehandle-macos"><code>image.getNativeHandle()</code> <em>macOS</em></h3>
 <p>&#xC774;&#xBBF8;&#xC9C0;&#xC758; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xD578;&#xB4E4; &#xBC11;&#xC5D0; &#xC788;&#xB294; C &#xD3EC;&#xC778;&#xD130;&#xB97C; &#xB2F4;&#xC740; <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer" target="_blank">Buffer</a>&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
-OS X&#xC5D0;&#xC120;, <code>NSImage</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xBC18;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.</p>
+macOS&#xC5D0;&#xC120;, <code>NSImage</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xBC18;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>&#xCC38;&#xACE0;&#xB85C; &#xBC18;&#xD658;&#xB41C; &#xD3EC;&#xC778;&#xD130;&#xB294; &#xBCF5;&#xC0AC;&#xBCF8;&#xC774; &#xC544;&#xB2CC; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC774;&#xBBF8;&#xC9C0;&#xC758; &#xBC11;&#xC5D0; &#xC788;&#xB294; &#xC57D;&#xD55C; &#xD3EC;&#xC778;&#xD130;&#xC774;&#xBA70;,
 &#xB530;&#xB77C;&#xC11C; &#xBC18;&#xB4DC;&#xC2DC; &#xAD00;&#xB828;&#xB41C; <code>nativeImage</code> &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xD655;&#xC2E4;&#xD558;&#xAC8C; &#xC720;&#xC9C0;&#xB418;&#xACE0; &#xC788;&#xB294;&#xC9C0;&#xB97C; &#xC778;&#xC9C0;&#xD574;&#xC57C;
 &#xD569;&#xB2C8;&#xB2E4;.</p>

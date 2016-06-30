@@ -53,7 +53,7 @@
         data-chapter-title="ipcMain"
         data-filepath="api/ipc-main.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,6 +926,9 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="ipcmain">ipcMain</h1>
+<blockquote>
+<p>Communicate asynchronously from the main process to renderer processes.</p>
+</blockquote>
 <p>The <code>ipcMain</code> module is an instance of the
 <a href="https://nodejs.org/api/events.html" target="_blank">EventEmitter</a> class. When used in the main
 process, it handles asynchronous and synchronous messages sent from a renderer
@@ -943,22 +946,22 @@ process, see <a href="web-contents.html#webcontentssendchannel-arg1-arg2-">webCo
 <p>An example of sending and handling messages between the render and main
 processes:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In main process.</span>
-<span class="hljs-keyword">const</span> ipcMain = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).ipcMain;
-ipcMain.on(<span class="hljs-string">&apos;asynchronous-message&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, arg</span>) </span>{
+<span class="hljs-keyword">const</span> {ipcMain} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+ipcMain.on(<span class="hljs-string">&apos;asynchronous-message&apos;</span>, (event, arg) =&gt; {
   <span class="hljs-built_in">console</span>.log(arg);  <span class="hljs-comment">// prints &quot;ping&quot;</span>
   event.sender.send(<span class="hljs-string">&apos;asynchronous-reply&apos;</span>, <span class="hljs-string">&apos;pong&apos;</span>);
 });
 
-ipcMain.on(<span class="hljs-string">&apos;synchronous-message&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, arg</span>) </span>{
+ipcMain.on(<span class="hljs-string">&apos;synchronous-message&apos;</span>, (event, arg) =&gt; {
   <span class="hljs-built_in">console</span>.log(arg);  <span class="hljs-comment">// prints &quot;ping&quot;</span>
   event.returnValue = <span class="hljs-string">&apos;pong&apos;</span>;
 });
 </code></pre>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In renderer process (web page).</span>
-<span class="hljs-keyword">const</span> ipcRenderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).ipcRenderer;
+<span class="hljs-keyword">const</span> {ipcRenderer} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 <span class="hljs-built_in">console</span>.log(ipcRenderer.sendSync(<span class="hljs-string">&apos;synchronous-message&apos;</span>, <span class="hljs-string">&apos;ping&apos;</span>)); <span class="hljs-comment">// prints &quot;pong&quot;</span>
 
-ipcRenderer.on(<span class="hljs-string">&apos;asynchronous-reply&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, arg</span>) </span>{
+ipcRenderer.on(<span class="hljs-string">&apos;asynchronous-reply&apos;</span>, (event, arg) =&gt; {
   <span class="hljs-built_in">console</span>.log(arg); <span class="hljs-comment">// prints &quot;pong&quot;</span>
 });
 ipcRenderer.send(<span class="hljs-string">&apos;asynchronous-message&apos;</span>, <span class="hljs-string">&apos;ping&apos;</span>);

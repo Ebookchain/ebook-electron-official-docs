@@ -53,7 +53,7 @@
         data-chapter-title="使用 Pepper Flash 插件"
         data-filepath="tutorial/using-pepper-flash-plugin.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:59 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:40 GMT+0800 (CST)"
         data-innerlanguage="zh-CN">
     
 
@@ -906,7 +906,7 @@
 <p>Electron &#x73B0;&#x5728;&#x652F;&#x6301; Pepper Flash &#x63D2;&#x4EF6;&#x3002;&#x8981;&#x5728; Electron &#x91CC;&#x9762;&#x4F7F;&#x7528; Pepper Flash &#x63D2;&#x4EF6;&#xFF0C;&#x4F60;&#x9700;
 &#x8981;&#x624B;&#x52A8;&#x8BBE;&#x7F6E; Pepper Flash &#x7684;&#x8DEF;&#x5F84;&#x548C;&#x5728;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x91CC;&#x542F;&#x7528; Pepper Flash&#x3002;</p>
 <h2 id="&#x4FDD;&#x7559;&#x4E00;&#x4EFD;-flash-&#x63D2;&#x4EF6;&#x7684;&#x526F;&#x672C;">&#x4FDD;&#x7559;&#x4E00;&#x4EFD; Flash &#x63D2;&#x4EF6;&#x7684;&#x526F;&#x672C;</h2>
-<p>&#x5728; OS X &#x548C; Linux &#x4E0A;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728; Chrome &#x6D4F;&#x89C8;&#x5668;&#x7684; <code>chrome://plugins</code> &#x9875;&#x9762;&#x4E0A;&#x627E;&#x5230; Pepper
+<p>&#x5728; macOS &#x548C; Linux &#x4E0A;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728; Chrome &#x6D4F;&#x89C8;&#x5668;&#x7684; <code>chrome://plugins</code> &#x9875;&#x9762;&#x4E0A;&#x627E;&#x5230; Pepper
 Flash &#x7684;&#x63D2;&#x4EF6;&#x4FE1;&#x606F;&#x3002;&#x63D2;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x548C;&#x7248;&#x672C;&#x4F1A;&#x5BF9; Election &#x5BF9;&#x5176;&#x7684;&#x652F;&#x6301;&#x6709;&#x5E2E;&#x52A9;&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x628A;&#x63D2;&#x4EF6;
 &#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#x4EE5;&#x4FDD;&#x7559;&#x4E00;&#x4EFD;&#x526F;&#x672C;&#x3002;</p>
 <h2 id="&#x6DFB;&#x52A0;&#x63D2;&#x4EF6;&#x5728;-electron-&#x91CC;&#x7684;&#x5F00;&#x5173;">&#x6DFB;&#x52A0;&#x63D2;&#x4EF6;&#x5728; Electron &#x91CC;&#x7684;&#x5F00;&#x5173;</h2>
@@ -916,7 +916,7 @@ Flash &#x7684;&#x63D2;&#x4EF6;&#x4FE1;&#x606F;&#x3002;&#x63D2;&#x4EF6;&#x7684;&#
 &#x4F8B;&#x5982;&#xFF1A;</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// Specify flash path. &#x8BBE;&#x7F6E; flash &#x8DEF;&#x5F84;</span>
 <span class="hljs-comment">// On Windows, it might be /path/to/pepflashplayer.dll</span>
-<span class="hljs-comment">// On OS X, /path/to/PepperFlashPlayer.plugin</span>
+<span class="hljs-comment">// On macOS, /path/to/PepperFlashPlayer.plugin</span>
 <span class="hljs-comment">// On Linux, /path/to/libpepflashplayer.so</span>
 app.commandLine.appendSwitch(<span class="hljs-string">&apos;ppapi-flash-path&apos;</span>, <span class="hljs-string">&apos;/path/to/libpepflashplayer.so&apos;</span>);
 

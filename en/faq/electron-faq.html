@@ -53,7 +53,7 @@
         data-chapter-title="Electron FAQ"
         data-filepath="faq/electron-faq.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -928,9 +928,11 @@
                         <h1 id="electron-faq">Electron FAQ</h1>
 <h2 id="when-will-electron-upgrade-to-latest-chrome">When will Electron upgrade to latest Chrome?</h2>
 <p>The Chrome version of Electron is usually bumped within one or two weeks after
-a new stable Chrome version gets released.</p>
-<p>Also we only use stable channel of Chrome. If an important fix is in beta or dev
+a new stable Chrome version gets released. This estimate is not guaranteed and
+depends on the amount of work involved with upgrading.</p>
+<p>Only the stable channel of Chrome is used. If an important fix is in beta or dev
 channel, we will back-port it.</p>
+<p>For more information, please see the <a href="../tutorial/security.md">security introduction</a>.</p>
 <h2 id="when-will-electron-upgrade-to-latest-nodejs">When will Electron upgrade to latest Node.js?</h2>
 <p>When a new version of Node.js gets released, we usually wait for about a month
 before upgrading the one in Electron. So we can avoid getting affected by bugs
@@ -945,17 +947,17 @@ use HTML5 APIs which are already available in browsers. Good candidates are
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage" target="_blank"><code>sessionStorage</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank">IndexedDB</a>.</p>
 <p>Or you can use the IPC system, which is specific to Electron, to store objects
 in the main process as a global variable, and then to access them from the
-renderers through the <code>remote</code> module:</p>
+renderers through the <code>remote</code> property of <code>electron</code> module:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In the main process.</span>
 global.sharedObject = {
   someProperty: <span class="hljs-string">&apos;default value&apos;</span>
 };
 </code></pre>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In page 1.</span>
-<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;remote&apos;</span>).getGlobal(<span class="hljs-string">&apos;sharedObject&apos;</span>).someProperty = <span class="hljs-string">&apos;new value&apos;</span>;
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote.getGlobal(<span class="hljs-string">&apos;sharedObject&apos;</span>).someProperty = <span class="hljs-string">&apos;new value&apos;</span>;
 </code></pre>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In page 2.</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;remote&apos;</span>).getGlobal(<span class="hljs-string">&apos;sharedObject&apos;</span>).someProperty);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote.getGlobal(<span class="hljs-string">&apos;sharedObject&apos;</span>).someProperty);
 </code></pre>
 <h2 id="my-apps-windowtray-disappeared-after-a-few-minutes">My app&apos;s window/tray disappeared after a few minutes.</h2>
 <p>This happens when the variable which is used to store the window/tray gets
@@ -967,23 +969,23 @@ garbage collected.</p>
 </ul>
 <p>If you want a quick fix, you can make the variables global by changing your
 code from this:</p>
-<pre><code class="lang-javascript">app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">var</span> tray = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/icon.png&apos;</span>);
-})
+<pre><code class="lang-javascript">app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> tray = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/icon.png&apos;</span>);
+});
 </code></pre>
 <p>to this:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> tray = <span class="hljs-literal">null</span>;
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> tray = <span class="hljs-literal">null</span>;
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
   tray = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/icon.png&apos;</span>);
-})
+});
 </code></pre>
 <h2 id="i-can-not-use-jqueryrequirejsmeteorangularjs-in-electron">I can not use jQuery/RequireJS/Meteor/AngularJS in Electron.</h2>
 <p>Due to the Node.js integration of Electron, there are some extra symbols
-inserted into the DOM like <code>module</code>, <code>exports</code>, <code>require</code>. This causes problems for
-some libraries since they want to insert the symbols with the same names.</p>
+inserted into the DOM like <code>module</code>, <code>exports</code>, <code>require</code>. This causes problems
+for some libraries since they want to insert the symbols with the same names.</p>
 <p>To solve this, you can turn off node integration in Electron:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In the main process.</span>
-<span class="hljs-keyword">var</span> mainWindow = <span class="hljs-keyword">new</span> BrowserWindow({
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({
   webPreferences: {
     nodeIntegration: <span class="hljs-literal">false</span>
   }

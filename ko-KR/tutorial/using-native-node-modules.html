@@ -53,7 +53,7 @@
         data-chapter-title="네이티브 Node 모듈 사용하기"
         data-filepath="tutorial/using-native-node-modules.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -925,55 +925,70 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#xB124;&#xC774;&#xD2F0;&#xBE0C;-node-&#xBAA8;&#xB4C8;-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;">&#xB124;&#xC774;&#xD2F0;&#xBE0C; node &#xBAA8;&#xB4C8; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</h1>
-<p>Electron&#xC5D0;&#xC120; node.js &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC774; &#xC9C0;&#xC6D0;&#xB429;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; Electron&#xC740; &#xACF5;&#xC2DD; node.js&#xC758;
-V8 &#xC5D4;&#xC9C4;&#xACFC;&#xB294; &#xB2E4;&#xB978; V8 &#xBC84;&#xC804;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC774;&#xC720;&#xB85C; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC120;
-Electron&#xC758; V8 &#xBC84;&#xC804;&#xC5D0; &#xB9DE;&#xCDB0; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD558;&#xACE0; &#xD5E4;&#xB354;&#xB97C; &#xBCC0;&#xACBD;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<h2 id="&#xB124;&#xC774;&#xD2F0;&#xBE0C;-node-&#xBAA8;&#xB4C8;-&#xD638;&#xD658;&#xC131;">&#xB124;&#xC774;&#xD2F0;&#xBE0C; node &#xBAA8;&#xB4C8; &#xD638;&#xD658;&#xC131;</h2>
-<p>&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC740; node.js&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; V8 &#xBC84;&#xC804;&#xC744; &#xC0AC;&#xC6A9;&#xD568;&#xC73C;&#xB85C; &#xC778;&#xD574; &#xC791;&#xB3D9;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC774; Electron&#xC5D0; &#xB9DE;&#xCDB0; &#xC791;&#xB3D9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD558;&#xB824;&#xBA74; Electron&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;
-node.js&#xC758; &#xBC84;&#xC804;&#xC744; &#xD655;&#xC778;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. Electron&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; node &#xBC84;&#xC804;&#xC740;
-<a href="https://github.com/electron/electron/releases" target="_blank">releases</a>&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70;
-<code>process.version</code>&#xC744; &#xCD9C;&#xB825;&#xD558;&#xC5EC; &#xBC84;&#xC804;&#xC744; &#xD655;&#xC778;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-(<a href="quick-start.html">&#xC2DC;&#xC791;&#xD558;&#xAE30;</a>&#xC758;
-&#xC608;&#xC81C;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;)</p>
-<p>&#xD639;&#xC2DC; &#xC9C1;&#xC811; &#xB9CC;&#xB4E0; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC774; &#xC788;&#xB2E4;&#xBA74; <a href="https://github.com/nodejs/nan/" target="_blank">NAN</a> &#xBAA8;&#xB4C8;&#xC744;
-&#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC744; &#xACE0;&#xB824;&#xD574;&#xBCF4;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xBAA8;&#xB4C8;&#xC740; &#xB2E4;&#xC911; &#xBC84;&#xC804;&#xC758; node.js&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xC27D;&#xAC8C;
-&#xB9CC;&#xB4E4;&#xC5B4; &#xC90D;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xD1B5;&#xD574; &#xC624;&#xB798;&#xB41C; &#xBAA8;&#xB4C8;&#xC744; &#xC0C8; &#xBC84;&#xC804;&#xC758; node.js&#xC5D0; &#xB9DE;&#xAC8C; &#xD3EC;&#xD305; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-Electron&#xB3C4; &#xC774; &#xBAA8;&#xB4C8;&#xC744; &#xD1B5;&#xD574; &#xD3EC;&#xD305;&#xB41C; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+                        <h1 id="&#xB124;&#xC774;&#xD2F0;&#xBE0C;-node-&#xBAA8;&#xB4C8;-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;">&#xB124;&#xC774;&#xD2F0;&#xBE0C; Node &#xBAA8;&#xB4C8; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</h1>
+<p>Electron&#xC5D0;&#xC120; &#xB124;&#xC774;&#xD2F0;&#xBE0C; Node &#xBAA8;&#xB4C8;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; Electron&#xC774; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0; &#xC124;&#xCE58;&#xB41C;
+Node&#xC758; &#xBC84;&#xC804;&#xACFC; &#xC804;&#xD600; &#xB2E4;&#xB978; V8 &#xBC84;&#xC804;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xC744; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xB192;&#xC740; &#xAD00;&#xACC4;&#xB85C;, &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744;
+&#xBE4C;&#xB4DC;&#xD560; &#xB54C; Electron&#xC758; &#xD5E4;&#xB354;&#xB97C; &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD574; &#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xB124;&#xC774;&#xD2F0;&#xBE0C;-&#xBAA8;&#xB4C8;&#xC744;-&#xC124;&#xCE58;&#xD558;&#xB294;-&#xBC29;&#xBC95;">&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xC124;&#xCE58;&#xD558;&#xB294; &#xBC29;&#xBC95;</h2>
-<p>&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xC124;&#xCE58;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xC138; &#xAC00;&#xC9C0; &#xC885;&#xB958;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h3 id="&#xC26C;&#xC6B4;-&#xBC29;&#xBC95;">&#xC26C;&#xC6B4; &#xBC29;&#xBC95;</h3>
-<p><a href="https://github.com/paulcbetts/electron-rebuild" target="_blank"><code>electron-rebuild</code></a> &#xD328;&#xD0A4;&#xC9C0;&#xB97C;
-&#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xBE60;&#xB974;&#xACE0; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; <code>electron-rebuild</code>&#xB97C; &#xD1B5;&#xD574; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xC758; &#xD5E4;&#xB354;&#xB97C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD558;&#xACE0; &#xB124;&#xC774;&#xD2F0;&#xBE0C;
-&#xBAA8;&#xB4C8;&#xC744; &#xBE4C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-sh">npm install --save-dev electron-rebuild
+<p>&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xC124;&#xCE58;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0;&#xB294; &#xC138; &#xAC00;&#xC9C0; &#xBC29;&#xBC95;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<h3 id="npm-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;"><code>npm</code> &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</h3>
+<p>&#xBA87; &#xAC00;&#xC9C0; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xB97C; &#xC124;&#xCE58;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C;, &#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C; <code>npm</code>&#xC744; &#xBAA8;&#xB4C8;&#xC744; &#xC124;&#xCE58;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218;
+&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; Electron&#xC5D0; &#xB300;&#xD55C; &#xBAA8;&#xB4E0; &#xC885;&#xC18D;&#xC131;&#xC744; &#xC124;&#xCE58;&#xD558;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Electron&#xC758; &#xBC84;&#xC804;.</span>
+<span class="hljs-built_in">export</span> npm_config_target=<span class="hljs-number">1.2</span>.<span class="hljs-number">3</span>
+<span class="hljs-comment"># Electron&#xC758; &#xC544;&#xD0A4;&#xD14D;&#xCCD0;, ia32 &#xB610;&#xB294; x64&#xAC00; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">export</span> npm_config_arch=x64
+<span class="hljs-comment"># Electron&#xC5D0; &#xB300;&#xD55C; &#xD5E4;&#xB354; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xB9C1;&#xD06C;.</span>
+<span class="hljs-built_in">export</span> npm_config_disturl=https://atom.io/download/atom-shell
+<span class="hljs-comment"># node-pre-gyp&#xC5D0; Electron&#xC744; &#xBE4C;&#xB4DC;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">export</span> npm_config_runtime=electron
+<span class="hljs-comment"># node-pre-gyp&#xC5D0; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xB85C;&#xBD80;&#xD130; &#xBAA8;&#xB4C8;&#xC744; &#xBE4C;&#xB4DC;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-built_in">export</span> npm_config_build_from_<span class="hljs-built_in">source</span>=<span class="hljs-literal">true</span>
+<span class="hljs-comment"># &#xBAA8;&#xB4E0; &#xC885;&#xC18D;&#xC131;&#xC744; &#xC124;&#xCE58;&#xD558;&#xACE0; &#xCE90;&#xC2DC;&#xB97C; ~/.electron-gyp&#xC5D0; &#xC800;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</span>
+HOME=~/.electron-gyp npm install
+</code></pre>
+<h3 id="&#xBAA8;&#xB4C8;&#xC744;-&#xC124;&#xCE58;&#xD558;&#xACE0;-electron&#xC744;-&#xC704;&#xD574;-&#xB2E4;&#xC2DC;-&#xBE4C;&#xB4DC;&#xD558;&#xAE30;">&#xBAA8;&#xB4C8;&#xC744; &#xC124;&#xCE58;&#xD558;&#xACE0; Electron&#xC744; &#xC704;&#xD574; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD558;&#xAE30;</h3>
+<p>&#xB2E4;&#xB978; Node &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC640; &#xAC19;&#xC774; &#xBAA8;&#xB4C8;&#xC744; &#xC124;&#xCE58;&#xD558;&#xB294; &#xAC83;&#xC744; &#xC120;&#xD0DD;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0;
+<a href="https://github.com/paulcbetts/electron-rebuild" target="_blank"><code>electron-rebuild</code></a> &#xD328;&#xD0A4;&#xC9C0;&#xC640; &#xD568;&#xAED8; Electron&#xC5D0; &#xB300;&#xD574; &#xBAA8;&#xB4C8;&#xC744; &#xB2E4;&#xC2DC;
+&#xBE4C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xBAA8;&#xB4C8;&#xC740; Electron&#xC758; &#xBC84;&#xC804;&#xC744; &#xAC00;&#xC838;&#xC62C; &#xC218; &#xC788;&#xACE0; &#xD5E4;&#xB354;&#xB97C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xD558;&#xAC70;&#xB098;
+&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xBE4C;&#xB4DC;&#xD558;&#xB294; &#xB4F1;&#xC758; &#xC791;&#xC5C5;&#xC744; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; <code>electron-rebuild</code>&#xC744; &#xC124;&#xCE58;&#xD558;&#xACE0; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xC744; &#xBE4C;&#xB4DC;&#xD558;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-bash">npm install --save-dev electron-rebuild
 
-<span class="hljs-comment"># &#xD544;&#xC694;&#xD55C; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; `npm install`&#xB85C; &#xC124;&#xCE58;&#xD55C; &#xD6C4; &#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xC138;&#xC694;:</span>
+<span class="hljs-comment"># &quot;npm install&quot;&#xC744; &#xC2E4;&#xD589;&#xD560; &#xB54C;&#xB9C8;&#xB2E4; &#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xC138;&#xC694;:</span>
 ./node_modules/.bin/electron-rebuild
 
 <span class="hljs-comment"># Windows&#xC5D0;&#xC11C; &#xBB38;&#xC81C;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xBA74; &#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC744; &#xB300;&#xC2E0; &#xC2E4;&#xD589;&#xD558;&#xC138;&#xC694;:</span>
 .\node_modules\.bin\electron-rebuild.cmd
 </code></pre>
-<h3 id="npm&#xC744;-&#xC774;&#xC6A9;&#xD55C;-&#xBC29;&#xBC95;"><code>npm</code>&#xC744; &#xC774;&#xC6A9;&#xD55C; &#xBC29;&#xBC95;</h3>
-<p>&#xB610;&#xD55C; <code>npm</code>&#xC744; &#xD1B5;&#xD574; &#xC124;&#xCE58;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xD658;&#xACBD;&#xBCC0;&#xC218;&#xAC00; &#xD544;&#xC694;&#xD55C; &#xAC83;&#xC744; &#xC81C;&#xC678;&#xD558;&#xACE0; &#xC77C;&#xBC18; Node &#xBAA8;&#xB4C8;&#xC744; &#xC124;&#xCE58;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xACFC; &#xC644;&#xC804;&#xD788; &#xB611;&#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">export</span> npm_config_disturl=https://atom.io/download/atom-shell
-<span class="hljs-built_in">export</span> npm_config_target=<span class="hljs-number">0.33</span>.<span class="hljs-number">1</span>
-<span class="hljs-built_in">export</span> npm_config_arch=x64
-<span class="hljs-built_in">export</span> npm_config_runtime=electron
-HOME=~/.electron-gyp npm install module-name
-</code></pre>
-<h3 id="nodegyp&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xBC29;&#xBC95;"><code>node-gyp</code>&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xBC29;&#xBC95;</h3>
-<p>Node &#xBAA8;&#xB4C8;&#xC744; <code>node-gyp</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; Electron&#xC744; &#xD0C0;&#xAC9F;&#xC73C;&#xB85C; &#xBE4C;&#xB4DC;&#xD560; &#xB54C;&#xB294; <code>node-gyp</code>&#xC5D0; &#xD5E4;&#xB354;
-&#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xC8FC;&#xC18C;&#xC640; &#xBC84;&#xC804;&#xC744; &#xC54C;&#xB824;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> /path-to-module/
-$ HOME=~/.electron-gyp node-gyp rebuild --target=<span class="hljs-number">0.29</span>.<span class="hljs-number">1</span> --arch=x64 --dist-url=https://atom.io/download/atom-shell
+<p><strong>&#xC5ED;&#xC790;&#xC8FC;:</strong> <code>npm script</code>&#xC758; <code>postinstall</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC774; &#xC791;&#xC5C5;&#xC744; &#xC790;&#xB3D9;&#xD654; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="electron&#xC744;-&#xC704;&#xD574;-&#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C;-&#xBE4C;&#xB4DC;&#xD558;&#xAE30;">Electron&#xC744; &#xC704;&#xD574; &#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C; &#xBE4C;&#xB4DC;&#xD558;&#xAE30;</h3>
+<p>&#xD604;&#xC7AC; &#xBCF8;&#xC778;&#xC774; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xAC1C;&#xBC1C;&#xD558;&#xACE0; &#xC788;&#xB294; &#xAC1C;&#xBC1C;&#xC790;&#xC774;&#xACE0; Electron&#xC5D0; &#xB300;&#xD574; &#xC2E4;&#xD5D8;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;,
+&#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB4C8;&#xC744; Electron&#xC5D0; &#xB300;&#xD574; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD558;&#xACE0; &#xC2F6;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. <code>node-gyp</code>&#xB97C; &#xD1B5;&#xD574;
+&#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C; Electron&#xC5D0; &#xB300;&#xD574; &#xBE4C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> /path-to-module/
+HOME=~/.electron-gyp node-gyp rebuild --target=<span class="hljs-number">1.2</span>.<span class="hljs-number">3</span> --arch=x64 --dist-url=https://atom.io/download/atom-shell
 </code></pre>
 <p><code>HOME=~/.electron-gyp</code>&#xC740; &#xBCC0;&#xACBD;&#xD560; &#xD5E4;&#xB354;&#xC758; &#xC704;&#xCE58;&#xB97C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;. <code>--target=0.29.1</code>&#xC740;
 Electron&#xC758; &#xBC84;&#xC804;&#xC785;&#xB2C8;&#xB2E4;. <code>--dist-url=...</code>&#xC740; &#xD5E4;&#xB354;&#xB97C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xD558;&#xB294; &#xC8FC;&#xC18C;&#xC785;&#xB2C8;&#xB2E4;.
 <code>--arch=x64</code>&#xB294; 64&#xBE44;&#xD2B8; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xD0C0;&#xAC9F;&#xC73C;&#xB85C; &#xBE4C;&#xB4DC; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; <code>node-gyp</code>&#xC5D0;&#xAC8C; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xBB38;&#xC81C;-&#xD574;&#xACB0;">&#xBB38;&#xC81C; &#xD574;&#xACB0;</h2>
+<p>&#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xC124;&#xCE58;&#xD588;&#xB294;&#xB370; &#xC798; &#xC791;&#xB3D9;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;&#xBA74;, &#xB2E4;&#xC74C; &#xBA87; &#xAC00;&#xC9C0;&#xB97C; &#xD655;&#xC778;&#xD574;&#xBD10;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li>&#xBAA8;&#xB4C8;&#xC758; &#xC544;&#xD0A4;&#xD14D;&#xCCD0;&#xAC00; Electron&#xC758; &#xC544;&#xD0A4;&#xD14D;&#xCCD0;&#xC640; &#xC77C;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;. (ia32 &#xB610;&#xB294; x64)</li>
+<li>Electron&#xC744; &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC;&#xD55C; &#xD6C4;, &#xBCF4;&#xD1B5;&#xC740; &#xBAA8;&#xB4C8;&#xC744; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xBB38;&#xC81C;&#xAC00; &#xC758;&#xC2EC;&#xB41C;&#xB2E4;&#xBA74;, &#xBA3C;&#xC800; <code>electron-rebuild</code>&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xC138;&#xC694;.</li>
+</ul>
+<h2 id="&#xBAA8;&#xB4C8;&#xC774;-nodepregyp&#xC5D0;-&#xC758;&#xC874;&#xD569;&#xB2C8;&#xB2E4;">&#xBAA8;&#xB4C8;&#xC774; <code>node-pre-gyp</code>&#xC5D0; &#xC758;&#xC874;&#xD569;&#xB2C8;&#xB2E4;</h2>
+<p><a href="https://github.com/mapbox/node-pre-gyp" target="_blank"><code>node-pre-gyp</code> &#xD234;</a>&#xC740; &#xBBF8;&#xB9AC; &#xBE4C;&#xB4DC;&#xB41C; &#xBC14;&#xC774;&#xB108;&#xB9AC;&#xC640; &#xD568;&#xAED8; &#xB124;&#xC774;&#xD2F0;&#xBE0C; Node &#xBAA8;&#xB4C8;&#xC744;
+&#xBC30;&#xCE58;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xBA70; &#xC218; &#xB9CE;&#xC740; &#xC720;&#xBA85;&#xD55C; &#xBAA8;&#xB4C8;&#xB4E4;&#xC774; &#xC774;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBCF4;&#xD1B5; &#xC774; &#xBAA8;&#xB4C8;&#xC740; Electron&#xACFC; &#xD568;&#xAED8; &#xC798; &#xC791;&#xB3D9;&#xD558;&#xC9C0;&#xB9CC;, Electron&#xC774; Node&#xBCF4;&#xB2E4; &#xC0C8;&#xB85C;&#xC6B4; V8 &#xBC84;&#xC804;&#xC744;
+&#xC0AC;&#xC6A9;&#xD560; &#xB54C;, &#xB9CC;&#xC57D; ABI&#xAC00; &#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xB2E4;&#xBA74;, &#xB54C;&#xB54C;&#xB85C; &#xC548; &#xC88B;&#xC740; &#xC77C;&#xC774; &#xC77C;&#xC5B4;&#xB0A9;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB860;
+&#xC5B8;&#xC81C;&#xB098; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC758; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xB97C; &#xAC00;&#xC838;&#xC640;&#xC11C; &#xBE4C;&#xB4DC;&#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>npm</code>&#xC744; &#xD1B5;&#xD55C; &#xBC29;&#xBC95;&#xC744; &#xB530;&#xB974;&#xACE0; &#xC788;&#xB2E4;&#xBA74;, &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC774; &#xC18C;&#xC2A4;&#xB97C; &#xBC1B;&#xC544;&#xC640;&#xC11C; &#xBE4C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D;
+&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74;, <code>npm</code>&#xC5D0; <code>--build-from-source</code>&#xB97C; &#xC804;&#xB2EC;&#xD574; &#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC544;&#xB2C8;&#xBA74;
+<code>npm_config_build_from_source</code>&#xB97C; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xC5D0; &#xC124;&#xC815;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 
                     
                     </section>

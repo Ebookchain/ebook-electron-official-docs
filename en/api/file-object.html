@@ -53,7 +53,7 @@
         data-chapter-title="`File` Object"
         data-filepath="api/file-object.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -925,7 +925,10 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="file-object"><code>File</code> object</h1>
+                        <h1 id="file-object"><code>File</code> Object</h1>
+<blockquote>
+<p>Use the HTML5 <code>File</code> API to work natively with files on the filesystem.</p>
+</blockquote>
 <p>The DOM&apos;s File interface provides abstraction around native files in order to
 let users work on native files directly with the HTML5 file API. Electron has
 added a <code>path</code> attribute to the <code>File</code> interface which exposes the file&apos;s real
@@ -936,16 +939,16 @@ path on filesystem.</p>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">var</span> holder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;holder&apos;</span>);
-  holder.ondragover = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> holder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;holder&apos;</span>);
+  holder.ondragover = () =&gt; {
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
   };
-  holder.ondragleave = holder.ondragend = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  holder.ondragleave = holder.ondragend = () =&gt; {
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
   };
-  holder.ondrop = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+  holder.ondrop = (e) =&gt; {
     e.preventDefault();
-    <span class="hljs-keyword">var</span> file = e.dataTransfer.files[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">const</span> file = e.dataTransfer.files[<span class="hljs-number">0</span>];
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;File you dragged here is&apos;</span>, file.path);
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
   };

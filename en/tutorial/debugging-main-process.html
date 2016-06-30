@@ -53,7 +53,7 @@
         data-chapter-title="Debugging Main Process"
         data-filepath="tutorial/debugging-main-process.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -933,23 +933,24 @@ process, Electron has provided the <code>--debug</code> and <code>--debug-brk</c
 <p>Use the following command line switches to debug Electron&apos;s main process:</p>
 <h3 id="debugport"><code>--debug=[port]</code></h3>
 <p>When this switch is used Electron will listen for V8 debugger protocol
-messages on <code>port</code>. The default <code>port</code> is <code>5858</code>.</p>
+messages on the <code>port</code>. The default <code>port</code> is <code>5858</code>.</p>
 <h3 id="debugbrkport"><code>--debug-brk=[port]</code></h3>
 <p>Like <code>--debug</code> but pauses the script on the first line.</p>
 <h2 id="use-nodeinspector-for-debugging">Use node-inspector for Debugging</h2>
-<p><strong>Note:</strong> Electron doesn&apos;t currently work very well
-with node-inspector, and the main process will crash if you inspect the
-<code>process</code> object under node-inspector&apos;s console.</p>
-<h3 id="1-make-sure-you-have-nodegyp-required-tools-installed">1. Make sure you have <a href="https://github.com/nodejs/node-gyp#installation" target="_blank">node-gyp required tools</a> installed</h3>
+<p><strong>Note:</strong> Electron doesn&apos;t currently work very well with node-inspector, and the
+main process will crash if you inspect the <code>process</code> object under
+node-inspector&apos;s console.</p>
+<h3 id="1-install-the-nodegyp-required-tools">1. Install the <a href="https://github.com/nodejs/node-gyp#installation" target="_blank">node-gyp required tools</a></h3>
 <h3 id="2-install-nodeinspector">2. Install <a href="https://github.com/node-inspector/node-inspector" target="_blank">node-inspector</a></h3>
 <pre><code class="lang-bash">$ npm install node-inspector
 </code></pre>
-<h3 id="3-install-a-patched-version-of-nodepregyp">3. Install a patched version of <code>node-pre-gyp</code></h3>
-<pre><code class="lang-bash">$ npm install git+https://git@github.com/enlight/node-pre-gyp.git<span class="hljs-comment">#detect-electron-runtime-in-find</span>
+<h3 id="3-install-nodepregyp">3. Install <a href="https://github.com/mapbox/node-pre-gyp" target="_blank">node-pre-gyp</a></h3>
+<pre><code class="lang-bash">$ npm install node-pre-gyp
 </code></pre>
-<h3 id="4-recompile-the-nodeinspector-v8-modules-for-electron-change-the-target-to-your-electron-version-number">4. Recompile the <code>node-inspector</code> <code>v8</code> modules for electron (change the target to your electron version number)</h3>
-<pre><code class="lang-bash">$ node_modules/.bin/node-pre-gyp --target=<span class="hljs-number">0.36</span>.<span class="hljs-number">11</span> --runtime=electron --fallback-to-build --directory node_modules/v8-debug/ --dist-url=https://atom.io/download/atom-shell reinstall
-$ node_modules/.bin/node-pre-gyp --target=<span class="hljs-number">0.36</span>.<span class="hljs-number">11</span> --runtime=electron --fallback-to-build --directory node_modules/v8-profiler/ --dist-url=https://atom.io/download/atom-shell reinstall
+<h3 id="4-recompile-the-nodeinspector-v8-modules-for-electron">4. Recompile the <code>node-inspector</code> <code>v8</code> modules for Electron</h3>
+<p><strong>Note:</strong> Update the target argument to be your Electron version number</p>
+<pre><code class="lang-bash">$ node_modules/.bin/node-pre-gyp --target=<span class="hljs-number">1.2</span>.<span class="hljs-number">5</span> --runtime=electron --fallback-to-build --directory node_modules/v8-debug/ --dist-url=https://atom.io/download/atom-shell reinstall
+$ node_modules/.bin/node-pre-gyp --target=<span class="hljs-number">1.2</span>.<span class="hljs-number">5</span> --runtime=electron --fallback-to-build --directory node_modules/v8-profiler/ --dist-url=https://atom.io/download/atom-shell reinstall
 </code></pre>
 <p>See also <a href="using-native-node-modules.html#how-to-install-native-modules">How to install native modules</a>.</p>
 <h3 id="5-enable-debug-mode-for-electron">5. Enable debug mode for Electron</h3>
@@ -959,11 +960,13 @@ $ node_modules/.bin/node-pre-gyp --target=<span class="hljs-number">0.36</span>.
 <p>or, to pause your script on the first line:</p>
 <pre><code class="lang-bash">$ electron --debug-brk=<span class="hljs-number">5858</span> your/app
 </code></pre>
-<h3 id="6-start-the-nodeinspector-server-using-electron">6. Start the <a href="https://github.com/node-inspector/node-inspector" target="_blank">node-inspector</a> server using electron</h3>
+<h3 id="6-start-the-nodeinspector-server-using-electron">6. Start the <a href="https://github.com/node-inspector/node-inspector" target="_blank">node-inspector</a> server using Electron</h3>
 <pre><code class="lang-bash">$ ELECTRON_RUN_AS_NODE=<span class="hljs-literal">true</span> path/to/electron.exe node_modules/node-inspector/bin/inspector.js
 </code></pre>
 <h3 id="7-load-the-debugger-ui">7. Load the debugger UI</h3>
-<p>Open <a href="http://127.0.0.1:8080/debug?ws=127.0.0.1:8080&amp;port=5858" target="_blank">http://127.0.0.1:8080/debug?ws=127.0.0.1:8080&amp;port=5858</a> in the Chrome browser. You may have to click pause if starting with debug-brk to see the entry line.</p>
+<p>Open <a href="http://127.0.0.1:8080/debug?ws=127.0.0.1:8080&amp;port=5858" target="_blank">http://127.0.0.1:8080/debug?ws=127.0.0.1:8080&amp;port=5858</a> in the Chrome
+browser. You may have to click pause if starting with <code>debug-brk</code> to see the
+entry line.</p>
 
                     
                     </section>

@@ -53,7 +53,7 @@
         data-chapter-title="clipboard"
         data-filepath="api/clipboard.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,9 +926,11 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="clipboard">clipboard</h1>
-<p>The <code>clipboard</code> module provides methods to perform copy and paste operations.
-The following example shows how to write a string to the clipboard:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> clipboard = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).clipboard;
+<blockquote>
+<p>Perform copy and paste operations on the system clipboard.</p>
+</blockquote>
+<p>The following example shows how to write a string to the clipboard:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {clipboard} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 clipboard.writeText(<span class="hljs-string">&apos;Example String&apos;</span>);
 </code></pre>
 <p>On X Window systems, there is also a selection clipboard. To manipulate it
@@ -950,12 +952,12 @@ you need to pass <code>selection</code> to each method:</p>
 <li><code>type</code> String (optional)</li>
 </ul>
 <p>Writes the <code>text</code> into the clipboard as plain text.</p>
-<h3 id="clipboardreadhtmltype"><code>clipboard.readHtml([type])</code></h3>
+<h3 id="clipboardreadhtmltype"><code>clipboard.readHTML([type])</code></h3>
 <ul>
 <li><code>type</code> String (optional)</li>
 </ul>
 <p>Returns the content in the clipboard as markup.</p>
-<h3 id="clipboardwritehtmlmarkup-type"><code>clipboard.writeHtml(markup[, type])</code></h3>
+<h3 id="clipboardwritehtmlmarkup-type"><code>clipboard.writeHTML(markup[, type])</code></h3>
 <ul>
 <li><code>markup</code> String</li>
 <li><code>type</code> String (optional)</li>
@@ -972,17 +974,28 @@ you need to pass <code>selection</code> to each method:</p>
 <li><code>type</code> String (optional)</li>
 </ul>
 <p>Writes <code>image</code> to the clipboard.</p>
-<h3 id="clipboardreadrtftype"><code>clipboard.readRtf([type])</code></h3>
+<h3 id="clipboardreadrtftype"><code>clipboard.readRTF([type])</code></h3>
 <ul>
 <li><code>type</code> String (optional)</li>
 </ul>
 <p>Returns the content in the clipboard as RTF.</p>
-<h3 id="clipboardwritertftext-type"><code>clipboard.writeRtf(text[, type])</code></h3>
+<h3 id="clipboardwritertftext-type"><code>clipboard.writeRTF(text[, type])</code></h3>
 <ul>
 <li><code>text</code> String</li>
 <li><code>type</code> String (optional)</li>
 </ul>
 <p>Writes the <code>text</code> into the clipboard in RTF.</p>
+<h3 id="clipboardreadbookmark-macos-windows"><code>clipboard.readBookmark()</code> <em>macOS</em> <em>Windows</em></h3>
+<p>Returns an Object containing <code>title</code> and <code>url</code> keys representing the bookmark in
+the clipboard. The <code>title</code> and <code>url</code> values will be empty strings when the
+bookmark is unavailable.</p>
+<h3 id="clipboardwritebookmarktitle-url-type-macos-windows"><code>clipboard.writeBookmark(title, url[, type])</code> <em>macOS</em> <em>Windows</em></h3>
+<ul>
+<li><code>title</code> String</li>
+<li><code>url</code> String</li>
+<li><code>type</code> String (optional)</li>
+</ul>
+<p>Writes the <code>title</code> and <code>url</code> into the clipboard as a bookmark.</p>
 <h3 id="clipboardcleartype"><code>clipboard.clear([type])</code></h3>
 <ul>
 <li><code>type</code> String (optional)</li>
@@ -1013,6 +1026,8 @@ you need to pass <code>selection</code> to each method:</p>
 <li><code>text</code> String</li>
 <li><code>html</code> String</li>
 <li><code>image</code> <a href="native-image.html">NativeImage</a></li>
+<li><code>rtf</code> String</li>
+<li><code>bookmark</code> String - The title of the url at <code>text</code>.</li>
 </ul>
 </li>
 <li><code>type</code> String (optional)</li>

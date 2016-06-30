@@ -53,7 +53,7 @@
         data-chapter-title="app"
         data-filepath="api/app.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:51 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:22 GMT+0800 (CST)"
         data-innerlanguage="pt-BR">
     
 
@@ -625,7 +625,7 @@ app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span cla
 <p>O objeto <code>app</code> emite os seguintes eventos:</p>
 <h3 id="evento-willfinishlaunching">Evento: &apos;will-finish-launching&apos;</h3>
 <p>Emitido quando o aplicativo finaliza a inicializa&#xE7;&#xE3;o b&#xE1;sica. No Windows e no Linux,
-o evento <code>will-finish-launching</code> &#xE9; o mesmo que o evento <code>ready</code>; No OS X,
+o evento <code>will-finish-launching</code> &#xE9; o mesmo que o evento <code>ready</code>; No macOS,
 esse evento representa a notifica&#xE7;&#xE3;o <code>applicationWillFinishLaunching</code> do <code>NSApplication</code>.
 Normalmente aqui seriam criados <em>listeners</em> para os eventos <code>open-file</code> e <code>open-url</code>, e inicializar o <em>crash reporter</em> e atualizador autom&#xE1;tico.</p>
 <p>Na maioria dos casos, voc&#xEA; deve fazer tudo no manipulador de eventos do <code>ready</code>.</p>
@@ -658,7 +658,7 @@ que &#xE9; terminar o aplicativo.</p>
 evento <code>will-quit</code> e <code>window-all-closed</code>.</p>
 <h3 id="evento-quit">Evento: &apos;quit&apos;</h3>
 <p>Emitido quando o aplicativo est&#xE1; finalizando.</p>
-<h3 id="evento-openfile-os-x">Evento: &apos;open-file&apos; <em>OS X</em></h3>
+<h3 id="evento-openfile-macos">Evento: &apos;open-file&apos; <em>macOS</em></h3>
 <p>Retorna:</p>
 <ul>
 <li><code>event</code> Event</li>
@@ -674,7 +674,7 @@ inicializa&#xE7;&#xE3;o do seu aplicativo para cuidar deste caso (antes mesmo do
 <p>Voc&#xEA; deve chamar <code>event.preventDefault()</code> se quiser cuidar deste caso.</p>
 <p>No Windows, voc&#xEA; deve fazer o <em>parse</em> do <code>process.argv</code> para pegar o
 endere&#xE7;o do arquivo.</p>
-<h3 id="evento-openurl-os-x">Evento: &apos;open-url&apos; <em>OS X</em></h3>
+<h3 id="evento-openurl-macos">Evento: &apos;open-url&apos; <em>macOS</em></h3>
 <p>Retorna:</p>
 <ul>
 <li><code>event</code> Event</li>
@@ -683,7 +683,7 @@ endere&#xE7;o do arquivo.</p>
 <p>Emitido quando o usu&#xE1;rio deseja abrir uma URL com o aplicativo. O esquema deve
 ser registrado para ser aberto pelo seu aplicativo.</p>
 <p>Voc&#xEA; deve chamar <code>event.preventDefault()</code> se quiser cuidar deste caso.</p>
-<h3 id="evento-activate-os-x">Evento: &apos;activate&apos; <em>OS X</em></h3>
+<h3 id="evento-activate-macos">Evento: &apos;activate&apos; <em>macOS</em></h3>
 <p>Retorna:</p>
 <ul>
 <li><code>event</code> Event</li>
@@ -825,7 +825,7 @@ Numa falha um <code>Error</code> &#xE9; lan&#xE7;ado.</p>
 <li><code>appData</code> Diret&#xF3;rio de dados do aplicativo por usu&#xE1;rio, que por padr&#xE3;o aponta para:<ul>
 <li><code>%APPDATA%</code> no Windows</li>
 <li><code>$XDG_CONFIG_HOME</code> ou <code>~/.config</code> no Linux</li>
-<li><code>~/Library/Application Support</code> no OS X</li>
+<li><code>~/Library/Application Support</code> no macOS</li>
 </ul>
 </li>
 <li><code>userData</code> O diret&#xF3;rio para guardar os arquivos de configura&#xE7;&#xE3;o do seu aplicativo,  que por padr&#xE3;o &#xE9; o diret&#xF3;rio <code>appData</code> concatenado com o nome do seu aplicativo.</li>
@@ -863,14 +863,14 @@ especificar um campo <code>productName</code>, que &#xE9; o nome completo em let
 seu aplicativo, e que ser&#xE1; preferido ao <code>name</code> pelo Electron.</p>
 <h3 id="appgetlocale"><code>app.getLocale()</code></h3>
 <p>Retorna a localidade atual do aplicativo.</p>
-<h3 id="appaddrecentdocumentpath-os-x-windows"><code>app.addRecentDocument(path)</code> <em>OS X</em> <em>Windows</em></h3>
+<h3 id="appaddrecentdocumentpath-macos-windows"><code>app.addRecentDocument(path)</code> <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>path</code> String</li>
 </ul>
 <p>Adiciona <code>path</code> &#xE0; lista de documentos recentes.</p>
 <p>Esta lista &#xE9; gerenciada pelo S.O.. No Windows voc&#xEA; pode visitar a lista pela
-barra de tarefas, e no OS X voc&#xEA; pode visita-la pelo <em>dock</em>.</p>
-<h3 id="appclearrecentdocuments-os-x-windows"><code>app.clearRecentDocuments()</code> <em>OS X</em> <em>Windows</em></h3>
+barra de tarefas, e no macOS voc&#xEA; pode visita-la pelo <em>dock</em>.</p>
+<h3 id="appclearrecentdocuments-macos-windows"><code>app.clearRecentDocuments()</code> <em>macOS</em> <em>Windows</em></h3>
 <p>Limpa a lista de documentos recentes.</p>
 <h3 id="appsetusertaskstasks-windows"><code>app.setUserTasks(tasks)</code> <em>Windows</em></h3>
 <ul>
@@ -902,7 +902,7 @@ Entretanto, esta detec&#xE7;&#xE3;o frequentemente falha quando redes corporativ
 Normalmente aplicativos respondem &#xE0; isso n&#xE3;o minimizando sua janela prim&#xE1;ria e dando foco &#xE0; ela.</p>
 <p>&#xC9; garantida a execu&#xE7;&#xE3;o do <code>callback</code> ap&#xF3;s o evento <code>ready</code> do <code>app</code> ser emitido.</p>
 <p>Este m&#xE9;todo retorna <code>false</code> caso seu processo seja a inst&#xE2;ncia prim&#xE1;ria do aplicativo e seu aplicativo deve continuar carregando. E retorna <code>true</code> caso seu processo tenha enviado seus par&#xE2;metros para outra inst&#xE2;ncia, e voc&#xEA; deve imediatamente finalizar.</p>
-<p>No OS X o sistema enfor&#xE7;a inst&#xE2;ncia &#xFA;nica automaticamente quando usu&#xE1;rios tentam abrir uma segunda inst&#xE2;ncia do seu aplicativo no <em>Finder</em>, e os eventos <code>open-file</code> e <code>open-url</code> ser&#xE3;o emitidos para isso. Entretanto, quando usu&#xE1;rios inicializam seu aplicativo na linha de comando, o mecanismo de inst&#xE2;ncia &#xFA;nica do sistema ser&#xE1; ignorado e voc&#xEA; ter&#xE1; de utilizar esse m&#xE9;todo para assegurar-se de ter uma inst&#xE2;ncia &#xFA;nica.</p>
+<p>No macOS o sistema enfor&#xE7;a inst&#xE2;ncia &#xFA;nica automaticamente quando usu&#xE1;rios tentam abrir uma segunda inst&#xE2;ncia do seu aplicativo no <em>Finder</em>, e os eventos <code>open-file</code> e <code>open-url</code> ser&#xE3;o emitidos para isso. Entretanto, quando usu&#xE1;rios inicializam seu aplicativo na linha de comando, o mecanismo de inst&#xE2;ncia &#xFA;nica do sistema ser&#xE1; ignorado e voc&#xEA; ter&#xE1; de utilizar esse m&#xE9;todo para assegurar-se de ter uma inst&#xE2;ncia &#xFA;nica.</p>
 <p>Um exemplo de ativa&#xE7;&#xE3;o da janela de primeira inst&#xE2;ncia quando uma segunda inst&#xE2;ncia inicializa:</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> myWindow = <span class="hljs-literal">null</span>;
 
@@ -935,7 +935,7 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 <h3 id="appcommandlineappendargumentvalue"><code>app.commandLine.appendArgument(value)</code></h3>
 <p>Adiciona um argumento &#xE0; linha de comando do Chromium. O argumento ser&#xE1; passado com aspas corretamente.</p>
 <p><strong>Nota:</strong> Isto n&#xE3;o ir&#xE1; afetar <code>process.argv</code>.</p>
-<h3 id="appdockbouncetype-os-x"><code>app.dock.bounce([type])</code> <em>OS X</em></h3>
+<h3 id="appdockbouncetype-macos"><code>app.dock.bounce([type])</code> <em>macOS</em></h3>
 <ul>
 <li><code>type</code> String (opcional) - Pode ser <code>critical</code> ou <code>informational</code>. O padr&#xE3;o &#xE9;
 <code>informational</code></li>
@@ -944,23 +944,23 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 <p>Quando <code>informational</code> &#xE9; passado, o &#xED;cone do <em>dock</em> ir&#xE1; pular por um segundo.
 Entretanto, a requisi&#xE7;&#xE3;o se mant&#xE9;m ativa at&#xE9; que o aplicativo se torne ativo ou a requisi&#xE7;&#xE3;o seja cancelada.</p>
 <p>Retorna um ID representando a requisi&#xE7;&#xE3;o.</p>
-<h3 id="appdockcancelbounceid-os-x"><code>app.dock.cancelBounce(id)</code> <em>OS X</em></h3>
+<h3 id="appdockcancelbounceid-macos"><code>app.dock.cancelBounce(id)</code> <em>macOS</em></h3>
 <ul>
 <li><code>id</code> Integer</li>
 </ul>
 <p>Cancela o salto do <code>id</code>.</p>
-<h3 id="appdocksetbadgetext-os-x"><code>app.dock.setBadge(text)</code> <em>OS X</em></h3>
+<h3 id="appdocksetbadgetext-macos"><code>app.dock.setBadge(text)</code> <em>macOS</em></h3>
 <ul>
 <li><code>text</code> String</li>
 </ul>
 <p>Define a string a ser exibida na &#xE1;rea de <em>badging</em> do <em>dock</em>.</p>
-<h3 id="appdockgetbadge-os-x"><code>app.dock.getBadge()</code> <em>OS X</em></h3>
+<h3 id="appdockgetbadge-macos"><code>app.dock.getBadge()</code> <em>macOS</em></h3>
 <p>Retorna a string da <em>badge</em> do <em>dock</em>.</p>
-<h3 id="appdockhide-os-x"><code>app.dock.hide()</code> <em>OS X</em></h3>
+<h3 id="appdockhide-macos"><code>app.dock.hide()</code> <em>macOS</em></h3>
 <p>Esconde o &#xED;cone do <em>dock</em>.</p>
-<h3 id="appdockshow-os-x"><code>app.dock.show()</code> <em>OS X</em></h3>
+<h3 id="appdockshow-macos"><code>app.dock.show()</code> <em>macOS</em></h3>
 <p>Exibe o &#xED;cone do <em>dock</em>.</p>
-<h3 id="appdocksetmenumenu-os-x"><code>app.dock.setMenu(menu)</code> <em>OS X</em></h3>
+<h3 id="appdocksetmenumenu-macos"><code>app.dock.setMenu(menu)</code> <em>macOS</em></h3>
 <ul>
 <li><code>menu</code> Menu</li>
 </ul>

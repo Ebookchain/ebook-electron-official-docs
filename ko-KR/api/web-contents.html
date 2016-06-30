@@ -53,7 +53,7 @@
         data-chapter-title="webContents"
         data-filepath="api/web-contents.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,16 +926,19 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="webcontents">webContents</h1>
+<blockquote>
+<p>&#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xACE0; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 <p><code>webContents</code>&#xB294; <a href="http://nodejs.org/api/events.html#events_class_events_eventemitter" target="_blank">EventEmitter</a>&#xB97C;
 &#xC0C1;&#xC18D;&#xBC1B;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xB80C;&#xB354;&#xB9C1;&#xACFC; &#xAD00;&#xB9AC;&#xB97C; &#xCC45;&#xC784;&#xC9C0;&#xBA70;
 <a href="browser-window.html"><code>BrowserWindow</code></a>&#xC758; &#xC18D;&#xC131;&#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xC740; <code>webContents</code> &#xAC1D;&#xCCB4;&#xC5D0;
-&#xC811;&#xADFC;&#xD558;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).BrowserWindow;
+&#xC811;&#xADFC;&#xD558;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-<span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">1500</span>});
-win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">1500</span>});
+win.loadURL(<span class="hljs-string">&apos;http://github.com&apos;</span>);
 
-<span class="hljs-keyword">var</span> webContents = win.webContents;
+<span class="hljs-keyword">let</span> webContents = win.webContents;
 </code></pre>
 <h2 id="events">Events</h2>
 <p><code>webContents</code> &#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC774;&#xBCA4;&#xD2B8;&#xB4E4;&#xC744; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;:</p>
@@ -953,8 +956,9 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 </ul>
 <p>&#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; <code>did-finish-load</code>&#xC640; &#xBE44;&#xC2B7;&#xD558;&#xB098;, &#xB85C;&#xB4DC;&#xAC00; &#xC2E4;&#xD328;&#xD588;&#xAC70;&#xB098; &#xCDE8;&#xC18C;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.
 &#xC608;&#xB97C; &#xB4E4;&#xBA74; <code>window.stop()</code>&#xC774; &#xC2E4;&#xD589;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xB294; &#xC804;&#xCCB4; &#xC5D0;&#xB7EC; &#xCF54;&#xB4DC;&#xC758;
-&#xBAA9;&#xB85D;&#xACFC; &#xC124;&#xBA85;&#xC740; <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/base/net_error_list.h" target="_blank">&#xC5EC;&#xAE30;</a>&#xC11C;
-&#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+&#xBAA9;&#xB85D;&#xACFC; &#xC124;&#xBA85;&#xC740; <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/base/net_error_list.h" target="_blank">&#xC5EC;&#xAE30;&#xC11C;</a>
+&#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCC38;&#xACE0;&#xB85C; &#xB9AC;&#xB2E4;&#xC774;&#xB809;&#xD2B8; &#xC751;&#xB2F5;&#xC740; <code>errorCode</code> -3&#xACFC; &#xD568;&#xAED8; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;; &#xC774;
+&#xC5D0;&#xB7EC;&#xB294; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xBB34;&#xC2DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-didframefinishload">Event: &apos;did-frame-finish-load&apos;</h3>
 <p>Returns:</p>
 <ul>
@@ -1099,7 +1103,7 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 </li>
 <li><code>callback</code> Function</li>
 </ul>
-<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC778;&#xC99D;&#xC774; &#xC694;&#xCCAD;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC778;&#xC99D;&#xC774; &#xC694;&#xCCAD;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC0AC;&#xC6A9;&#xBC95;&#xC740; <a href="app.html#event-select-client-certificate"><code>app</code>&#xC758; <code>select-client-certificate</code> &#xC774;&#xBCA4;&#xD2B8;</a>&#xC640;
 &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-login">Event: &apos;login&apos;</h3>
@@ -1148,6 +1152,13 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 &#xC758;&#xD574;&#xC11C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&apos;theme-color&apos;</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">&apos;#ff0000&apos;</span>&gt;</span>
 </code></pre>
+<h3 id="event-updatetargeturl">Event: &apos;update-target-url&apos;</h3>
+<p>Returns:</p>
+<ul>
+<li><code>event</code> Event</li>
+<li><code>url</code> String</li>
+</ul>
+<p>&#xB9C8;&#xC6B0;&#xC2A4;&#xB098; &#xD0A4;&#xBCF4;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xB9C1;&#xD06C;&#xC5D0; &#xD3EC;&#xCEE4;&#xC2A4;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-cursorchanged">Event: &apos;cursor-changed&apos;</h3>
 <p>Returns:</p>
 <ul>
@@ -1156,7 +1167,7 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 <li><code>image</code> NativeImage (optional)</li>
 <li><code>scale</code> Float (optional)</li>
 </ul>
-<p>&#xCEE4;&#xC11C; &#xD0C0;&#xC785;&#xC774; &#xBCC0;&#xACBD;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. <code>type</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xB2E4;&#xC74C; &#xAC12;&#xC774; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:
+<p>&#xCEE4;&#xC11C; &#xC885;&#xB958;&#xAC00; &#xBCC0;&#xACBD;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. <code>type</code> &#xC778;&#xC218;&#xB294; &#xB2E4;&#xC74C; &#xAC12;&#xC774; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:
 <code>default</code>, <code>crosshair</code>, <code>pointer</code>, <code>text</code>, <code>wait</code>, <code>help</code>, <code>e-resize</code>, <code>n-resize</code>,
 <code>ne-resize</code>, <code>nw-resize</code>, <code>s-resize</code>, <code>se-resize</code>, <code>sw-resize</code>, <code>w-resize</code>,
 <code>ns-resize</code>, <code>ew-resize</code>, <code>nesw-resize</code>, <code>nwse-resize</code>, <code>col-resize</code>,
@@ -1164,9 +1175,100 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 <code>s-panning</code>, <code>se-panning</code>, <code>sw-panning</code>, <code>w-panning</code>, <code>move</code>, <code>vertical-text</code>,
 <code>cell</code>, <code>context-menu</code>, <code>alias</code>, <code>progress</code>, <code>nodrop</code>, <code>copy</code>, <code>none</code>,
 <code>not-allowed</code>, <code>zoom-in</code>, <code>zoom-out</code>, <code>grab</code>, <code>grabbing</code>, <code>custom</code>.</p>
-<p>&#xB9CC;&#xC57D; <code>type</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; <code>custom</code> &#xC774;&#xACE0; <code>image</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; <code>NativeImage</code>&#xB97C; &#xD1B5;&#xD55C; &#xCEE4;&#xC2A4;&#xD140;
-&#xCEE4;&#xC11C;&#xB97C; &#xC9C0;&#xC815;&#xD588;&#xC744; &#xB54C;, &#xD574;&#xB2F9; &#xC774;&#xBBF8;&#xC9C0;&#xB85C; &#xCEE4;&#xC11C;&#xAC00; &#xBCC0;&#xACBD;&#xB429;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; <code>scale</code> &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xC758;
+<p>&#xB9CC;&#xC57D; <code>type</code> &#xC778;&#xC218;&#xAC00; <code>custom</code> &#xC774;&#xACE0; <code>image</code> &#xC778;&#xC218;&#xAC00; <code>NativeImage</code>&#xB97C; &#xD1B5;&#xD55C; &#xCEE4;&#xC2A4;&#xD140;
+&#xCEE4;&#xC11C;&#xB97C; &#xC9C0;&#xC815;&#xD588;&#xC744; &#xB54C;, &#xD574;&#xB2F9; &#xC774;&#xBBF8;&#xC9C0;&#xB85C; &#xCEE4;&#xC11C;&#xAC00; &#xBCC0;&#xACBD;&#xB429;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; <code>scale</code> &#xC778;&#xC218;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xC758;
 &#xD06C;&#xAE30;&#xB97C; &#xC870;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="event-contextmenu">Event: &apos;context-menu&apos;</h3>
+<p>Returns:</p>
+<ul>
+<li><code>event</code> Event</li>
+<li><code>params</code> Object<ul>
+<li><code>x</code> Integer - x &#xC88C;&#xD45C;</li>
+<li><code>y</code> Integer - y &#xC88C;&#xD45C;</li>
+<li><code>linkURL</code> String - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xAC00; &#xD638;&#xCD9C;&#xB41C; &#xB178;&#xB4DC;&#xB97C; &#xB458;&#xB7EC;&#xC2F8;&#xB294; &#xB9C1;&#xD06C;&#xC758; URL.</li>
+<li><code>linkText</code> String - &#xB9C1;&#xD06C;&#xC5D0; &#xC5F0;&#xAD00;&#xB41C; &#xD14D;&#xC2A4;&#xD2B8;. &#xCF58;&#xD150;&#xCE20;&#xC758; &#xB9C1;&#xD06C;&#xAC00; &#xC774;&#xBBF8;&#xC9C0;&#xC778; &#xACBD;&#xC6B0; &#xBE48;
+&#xBB38;&#xC790;&#xC5F4;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</li>
+<li><code>pageURL</code> String - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xAC00; &#xD638;&#xCD9C;&#xB41C; &#xC0C1;&#xC704; &#xC218;&#xC900; &#xD398;&#xC774;&#xC9C0;&#xC758; URL.</li>
+<li><code>frameURL</code> String - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xAC00; &#xD638;&#xCD9C;&#xB41C; &#xC11C;&#xBE0C; &#xD504;&#xB808;&#xC784;&#xC758; URL.</li>
+<li><code>srcURL</code> String - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xAC00; &#xD638;&#xCD9C;&#xB41C; &#xC694;&#xC18C;&#xC5D0; &#xB300;&#xD55C; &#xC18C;&#xC2A4; URL. &#xC694;&#xC18C;&#xC640; &#xC18C;&#xC2A4; URL&#xC740;
+&#xC774;&#xBBF8;&#xC9C0;, &#xC624;&#xB514;&#xC624;, &#xBE44;&#xB514;&#xC624;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>mediaType</code> String - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xAC00; &#xD638;&#xCD9C;&#xB41C; &#xB178;&#xB4DC;&#xC758; &#xC885;&#xB958;. &#xAC12;&#xC740; <code>none</code>, <code>image</code>,
+<code>audio</code>, <code>video</code>, <code>canvas</code>, <code>file</code> &#xB610;&#xB294; <code>plugin</code>&#xC774; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>hasImageContent</code> Boolean - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xAC00; &#xB0B4;&#xC6A9;&#xC774; &#xC788;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xB418;&#xC5C8;&#xB294;&#xC9C0;
+&#xC5EC;&#xBD80;.</li>
+<li><code>isEditable</code> Boolean - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xD3B8;&#xC9D1;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>selectionText</code> String - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xAC00; &#xD638;&#xCD9C;&#xB41C; &#xBD80;&#xBD84;&#xC5D0; &#xC788;&#xB294; &#xC120;&#xD0DD;&#xB41C; &#xD14D;&#xC2A4;&#xD2B8;.</li>
+<li><code>titleText</code> String - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xAC00; &#xD638;&#xCD9C;&#xB41C; &#xC120;&#xD0DD;&#xB41C; &#xC81C;&#xBAA9; &#xB610;&#xB294; &#xC54C;&#xB9BC; &#xD14D;&#xC2A4;&#xD2B8;.</li>
+<li><code>misspelledWord</code> String - &#xB9CC;&#xC57D; &#xC788;&#xB294; &#xACBD;&#xC6B0;, &#xCEE4;&#xC11C;&#xAC00; &#xAC00;&#xB974;&#xD0A4;&#xB294; &#xACF3;&#xC5D0;&#xC11C; &#xBC1C;&#xC0DD;&#xD55C; &#xC624;&#xD0C0;.</li>
+<li><code>frameCharset</code> String - &#xBA54;&#xB274;&#xAC00; &#xD638;&#xCD9C;&#xB41C; &#xD504;&#xB808;&#xC784;&#xC758; &#xBB38;&#xC790;&#xC5F4; &#xC778;&#xCF54;&#xB529;.</li>
+<li><code>inputFieldType</code> String - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xAC00; &#xC785;&#xB825; &#xD544;&#xB4DC;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xB418;&#xC5C8;&#xC744; &#xB54C;, &#xADF8; &#xD544;&#xB4DC;&#xC758;
+&#xC885;&#xB958;. &#xAC12;&#xC740; <code>none</code>, <code>plainText</code>, <code>password</code>, <code>other</code> &#xC911; &#xD55C; &#xAC00;&#xC9C0;&#xAC00; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>menuSourceType</code> String - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xB97C; &#xD638;&#xCD9C;&#xD55C; &#xC785;&#xB825; &#xC18C;&#xC2A4;. &#xAC12;&#xC740; <code>none</code>,
+<code>mouse</code>, <code>keyboard</code>, <code>touch</code>, <code>touchMenu</code> &#xC911; &#xD55C; &#xAC00;&#xC9C0;&#xAC00; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>mediaFlags</code> Object - &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xAC00; &#xD638;&#xCD9C;&#xB41C; &#xBBF8;&#xB514;&#xC5B4; &#xC694;&#xC18C;&#xC5D0; &#xB300;&#xD55C; &#xD50C;&#xB798;&#xADF8;. &#xC790;&#xC138;&#xD55C;
+&#xC0AC;&#xD56D;&#xC740; &#xC544;&#xB798;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</li>
+<li><code>editFlags</code> Object - &#xC774; &#xD50C;&#xB798;&#xADF8;&#xB294; &#xB80C;&#xB354;&#xB7EC;&#xAC00; &#xC5B4;&#xB5A4; &#xD589;&#xB3D9;&#xC744; &#xC774;&#xD589;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C;
+&#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC0AC;&#xD56D;&#xC740; &#xC544;&#xB798;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</li>
+</ul>
+</li>
+</ul>
+<p><code>mediaFlags</code>&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li><code>inError</code> Boolean - &#xBBF8;&#xB514;&#xC5B4; &#xAC1D;&#xCCB4;&#xAC00; &#xD06C;&#xB798;&#xC2DC;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>isPaused</code> Boolean - &#xBBF8;&#xB514;&#xC5B4; &#xAC1D;&#xCCB4;&#xAC00; &#xC77C;&#xC2DC;&#xC911;&#xC9C0;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>isMuted</code> Boolean - &#xBBF8;&#xB514;&#xC5B4; &#xAC1D;&#xCCB4;&#xAC00; &#xC74C;&#xC18C;&#xAC70;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>hasAudio</code> Boolean - &#xBBF8;&#xB514;&#xC5B4; &#xAC1D;&#xCCB4;&#xAC00; &#xC624;&#xB514;&#xC624;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>isLooping</code> Boolean - &#xBBF8;&#xB514;&#xC5B4; &#xAC1D;&#xCCB4;&#xAC00; &#xB8E8;&#xD504;&#xC911;&#xC778;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>isControlsVisible</code> Boolean - &#xBBF8;&#xB514;&#xC5B4; &#xAC1D;&#xCCB4;&#xC758; &#xCEE8;&#xD2B8;&#xB864;&#xC774; &#xBCF4;&#xC774;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>canToggleControls</code> Boolean - &#xBBF8;&#xB514;&#xC5B4; &#xAC1D;&#xCCB4;&#xC758; &#xCEE8;&#xD2B8;&#xB864;&#xC744; &#xD1A0;&#xAE00;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>canRotate</code> Boolean - &#xBBF8;&#xB514;&#xC5B4; &#xAC1D;&#xCCB4;&#xB97C; &#xB3CC;&#xB9B4; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+</ul>
+<p><code>editFlags</code>&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li><code>canUndo</code> Boolean - &#xB80C;&#xB354;&#xB7EC;&#xC5D0;&#xC11C; &#xC2E4;&#xD589; &#xCDE8;&#xC18C;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>canRedo</code> Boolean - &#xB80C;&#xB354;&#xB7EC;&#xC5D0;&#xC11C; &#xB2E4;&#xC2DC; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>canCut</code> Boolean - &#xB80C;&#xB354;&#xB7EC;&#xC5D0;&#xC11C; &#xC798;&#xB77C;&#xB0B4;&#xAE30;&#xB97C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>canCopy</code> Boolean - &#xB80C;&#xB354;&#xB7EC;&#xC5D0;&#xC11C; &#xBCF5;&#xC0AC;&#xB97C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>canPaste</code> Boolean - &#xB80C;&#xB354;&#xB7EC;&#xC5D0;&#xC11C; &#xBD99;&#xC5EC;&#xB123;&#xAE30;&#xB97C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>canDelete</code> Boolean - &#xB80C;&#xB354;&#xB7EC;&#xC5D0;&#xC11C; &#xC0AD;&#xC81C;&#xB97C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+<li><code>canSelectAll</code> Boolean - &#xB80C;&#xB354;&#xB7EC;&#xC5D0;&#xC11C; &#xBAA8;&#xB450; &#xC120;&#xD0DD;&#xC744; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;.</li>
+</ul>
+<p>&#xC0C8;&#xB85C;&#xC6B4; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xC758; &#xC81C;&#xC5B4;&#xAC00; &#xD544;&#xC694;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="event-selectbluetoothdevice">Event: &apos;select-bluetooth-device&apos;</h3>
+<p>Returns:</p>
+<ul>
+<li><code>event</code> Event</li>
+<li><code>devices</code> [Objects]<ul>
+<li><code>deviceName</code> String</li>
+<li><code>deviceId</code> String</li>
+</ul>
+</li>
+<li><code>callback</code> Function<ul>
+<li><code>deviceId</code> String</li>
+</ul>
+</li>
+</ul>
+<p><code>navigator.bluetooth.requestDevice</code>&#xC758; &#xD638;&#xCD9C;&#xC5D0; &#xC758;&#xD574; &#xBE14;&#xB8E8;&#xD22C;&#xC2A4; &#xAE30;&#xAE30;&#xAC00; &#xC120;&#xD0DD;&#xB418;&#xC5B4;&#xC57C; &#xD560; &#xB54C;
+&#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. <code>navigator.bluetooth</code> API&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>webBluetooth</code>&#xAC00;
+&#xD65C;&#xC131;&#xD654;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; <code>event.preventDefault</code>&#xC774; &#xD638;&#xCD9C;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;, &#xCCAB; &#xBC88;&#xC9F8;&#xB85C;
+&#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xAE30;&#xAE30;&#xAC00; &#xC120;&#xD0DD;&#xB429;&#xB2C8;&#xB2E4;. <code>callback</code>&#xC740; &#xBC18;&#xB4DC;&#xC2DC; &#xC120;&#xD0DD;&#xB420; <code>deviceId</code>&#xC640; &#xD568;&#xAED8;
+&#xD638;&#xCD9C;&#xB418;&#xC5B4;&#xC57C; &#xD558;&#xBA70;, &#xBE48; &#xBB38;&#xC790;&#xC5F4;&#xC744; <code>callback</code>&#xC5D0; &#xBCF4;&#xB0B4;&#xBA74; &#xC694;&#xCCAD;&#xC774; &#xCDE8;&#xC18C;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-javascript">app.commandLine.appendSwitch(<span class="hljs-string">&apos;enable-web-bluetooth&apos;</span>)
+
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  webContents.on(<span class="hljs-string">&apos;select-bluetooth-device&apos;</span>, (event, deviceList, callback) =&gt; {
+    event.preventDefault()
+    <span class="hljs-keyword">let</span> result = deviceList.find((device) =&gt; {
+      <span class="hljs-keyword">return</span> device.deviceName === <span class="hljs-string">&apos;test&apos;</span>
+    })
+    <span class="hljs-keyword">if</span> (!result) {
+      callback(<span class="hljs-string">&apos;&apos;</span>)
+    } <span class="hljs-keyword">else</span> {
+      callback(result.deviceId)
+    }
+  })
+})
+</code></pre>
 <h2 id="instance-methods">Instance Methods</h2>
 <p><code>webContents</code>&#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xBA54;&#xC11C;&#xB4DC;&#xB4E4;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webcontentsloadurlurl-options"><code>webContents.loadURL(url[, options])</code></h3>
@@ -1182,7 +1284,7 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 <p>&#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xC6F9; &#xD398;&#xC774;&#xC9C0; <code>url</code>&#xC744; &#xB85C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;. <code>url</code>&#xC740; <code>http://</code>, <code>file://</code>&#xACFC; &#xAC19;&#xC740;
 &#xD504;&#xB85C;&#xD1A0;&#xCF5C; &#xC811;&#xB450;&#xC0AC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xBC18;&#xB4DC;&#xC2DC; http &#xCE90;&#xC2DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xB85C;&#xB4DC;&#xD574;&#xC57C;
 &#xD558;&#xB294; &#xACBD;&#xC6B0; <code>pragma</code> &#xD5E4;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> options = {<span class="hljs-string">&quot;extraHeaders&quot;</span> : <span class="hljs-string">&quot;pragma: no-cache\n&quot;</span>}
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> options = {extraHeaders: <span class="hljs-string">&apos;pragma: no-cache\n&apos;</span>};
 webContents.loadURL(url, options)
 </code></pre>
 <h3 id="webcontentsdownloadurlurl"><code>webContents.downloadURL(url)</code></h3>
@@ -1193,15 +1295,17 @@ webContents.loadURL(url, options)
 &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webcontentsgeturl"><code>webContents.getURL()</code></h3>
 <p>&#xD604;&#xC7AC; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC758; URL&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
-win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
+win.loadURL(<span class="hljs-string">&apos;http://github.com&apos;</span>);
 
-<span class="hljs-keyword">var</span> currentURL = win.webContents.getURL();
+<span class="hljs-keyword">let</span> currentURL = win.webContents.getURL();
 </code></pre>
 <h3 id="webcontentsgettitle"><code>webContents.getTitle()</code></h3>
 <p>&#xD604;&#xC7AC; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xC81C;&#xBAA9;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webcontentsisloading"><code>webContents.isLoading()</code></h3>
 <p>&#xD604;&#xC7AC; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C; &#xB85C;&#xB4DC;&#xC911;&#xC778;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="webcontentsisloadingmainframe"><code>webContents.isLoadingMainFrame()</code></h3>
+<p>&#xBA54;&#xC778; &#xD504;&#xB808;&#xC784;&#xC774; &#xC5EC;&#xC804;&#xD788; &#xB85C;&#xB529;&#xC911;&#xC778;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. (&#xB0B4;&#xBD80; iframe &#xB610;&#xB294; frame &#xD3EC;&#xD568;)</p>
 <h3 id="webcontentsiswaitingforresponse"><code>webContents.isWaitingForResponse()</code></h3>
 <p>&#xD604;&#xC7AC; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xBA54;&#xC778; &#xB9AC;&#xC18C;&#xC2A4;&#xB85C;&#xBD80;&#xD130; &#xCCAB; &#xC751;&#xB2F5;&#xC744; &#xAE30;&#xB2E4;&#xB9AC;&#xACE0;&#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webcontentsstop"><code>webContents.stop()</code></h3>
@@ -1297,9 +1401,14 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 <li><code>text</code> String</li>
 </ul>
 <p>&#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; <code>replaceMisspelling</code> &#xD3B8;&#xC9D1; &#xCEE4;&#xB9E8;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="webcontentsinserttexttext"><code>webContents.insertText(text)</code></h3>
+<ul>
+<li><code>text</code> String</li>
+</ul>
+<p>&#xD3EC;&#xCEE4;&#xC2A4;&#xB41C; &#xC694;&#xC18C;&#xC5D0; <code>text</code>&#xB97C; &#xC0BD;&#xC785;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webcontentsfindinpagetext-options"><code>webContents.findInPage(text[, options])</code></h3>
 <ul>
-<li><code>text</code> String - &#xCC3E;&#xC744; &#xCEE8;&#xD150;&#xCE20;, &#xBC18;&#xB4DC;&#xC2DC; &#xACF5;&#xBC31;&#xC774; &#xC544;&#xB2C8;&#xC5EC;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>text</code> String - &#xCC3E;&#xC744; &#xCF58;&#xD150;&#xCE20;, &#xBC18;&#xB4DC;&#xC2DC; &#xACF5;&#xBC31;&#xC774; &#xC544;&#xB2C8;&#xC5EC;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
 <li><code>options</code> Object (optional)<ul>
 <li><code>forward</code> Boolean - &#xC55E;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xAC80;&#xC0C9;&#xD560;&#xC9C0; &#xB4A4;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xAC80;&#xC0C9;&#xD560;&#xC9C0; &#xC5EC;&#xBD80;&#xC785;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740;
 <code>true</code>&#xC785;&#xB2C8;&#xB2E4;.</li>
@@ -1330,12 +1439,12 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 </li>
 </ul>
 <p>&#xC81C;&#xACF5;&#xB41C; <code>action</code>&#xC5D0; &#xB300;&#xD55C; <code>webContents</code>&#xC758; &#xBAA8;&#xB4E0; <code>findInPage</code> &#xC694;&#xCCAD;&#xC744; &#xC911;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript">webContents.on(<span class="hljs-string">&apos;found-in-page&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, result</span>) </span>{
+<pre><code class="lang-javascript">webContents.on(<span class="hljs-string">&apos;found-in-page&apos;</span>, (event, result) =&gt; {
   <span class="hljs-keyword">if</span> (result.finalUpdate)
-    webContents.stopFindInPage(<span class="hljs-string">&quot;clearSelection&quot;</span>);
+    webContents.stopFindInPage(<span class="hljs-string">&apos;clearSelection&apos;</span>);
 });
 
-<span class="hljs-keyword">const</span> requestId = webContents.findInPage(<span class="hljs-string">&quot;api&quot;</span>);
+<span class="hljs-keyword">const</span> requestId = webContents.findInPage(<span class="hljs-string">&apos;api&apos;</span>);
 </code></pre>
 <h3 id="webcontentshasserviceworkercallback"><code>webContents.hasServiceWorker(callback)</code></h3>
 <ul>
@@ -1361,7 +1470,7 @@ win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
 <p>&#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; <code>window.print()</code>&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xAC83;&#xC740;
 <code>webContents.print({silent: false, printBackground: false})</code>&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xAC83;&#xACFC;
 &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xCC38;&#xACE0;:</strong> Windows&#xC5D0;&#xC11C;&#xC758; &#xD504;&#xB9B0;&#xD130; API&#xB294; <code>pdf.dll</code>&#xC5D0; &#xC758;&#xC874;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774;
+<p><strong>&#xCC38;&#xACE0;:</strong> Windows&#xC5D0;&#xC11C;&#xC758; &#xD504;&#xB9B0;&#xD130; API&#xB294; <code>pdf.dll</code>&#xC5D0; &#xC758;&#xC874;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774;
 print&#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xACBD;&#xC6B0; &#xC804;&#xCCB4; &#xBC14;&#xC774;&#xB108;&#xB9AC; &#xD06C;&#xAE30;&#xB97C; &#xC904;&#xC774;&#xAE30; &#xC704;&#xD574; <code>pdf.dll</code>&#xC744; &#xC0AD;&#xC81C;&#xD574;&#xB3C4;
 &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webcontentsprinttopdfoptions-callback"><code>webContents.printToPDF(options, callback)</code></h3>
@@ -1370,14 +1479,15 @@ print&#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; 
 <li><code>marginsType</code> Integer - &#xC0AC;&#xC6A9;&#xD560; &#xB9C8;&#xC9C4;&#xC758; &#xC885;&#xB958;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. 0 &#xBD80;&#xD130; 2 &#xC0AC;&#xC774; &#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD560;
 &#xC218; &#xC788;&#xACE0; &#xAC01;&#xAC01; &#xAE30;&#xBCF8; &#xB9C8;&#xC9C4;, &#xB9C8;&#xC9C4; &#xC5C6;&#xC74C;, &#xCD5C;&#xC18C; &#xB9C8;&#xC9C4;&#xC785;&#xB2C8;&#xB2E4;.</li>
 <li><code>pageSize</code> String - &#xC0DD;&#xC131;&#xB418;&#xB294; PDF&#xC758; &#xD398;&#xC774;&#xC9C0; &#xD06C;&#xAE30;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xAC12;&#xC740; <code>A3</code>, <code>A4</code>,
-<code>A5</code>, <code>Legal</code>, <code>Letter</code> &#xC640; <code>Tabloid</code>&#xAC00; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<code>A5</code>, <code>Legal</code>, <code>Letter</code>, <code>Tabloid</code> &#xB610;&#xB294; &#xB9C8;&#xC774;&#xD06C;&#xB860; &#xB2E8;&#xC704;&#xC758; <code>height</code> &amp; <code>width</code>&#xAC00;
+&#xD3EC;&#xD568;&#xB41C; &#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 <li><code>printBackground</code> Boolean - CSS &#xBC30;&#xACBD;&#xC744; &#xD504;&#xB9B0;&#xD2B8;&#xD560;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xC815;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li><code>printSelectionOnly</code> Boolean - &#xC120;&#xD0DD;&#xB41C; &#xC601;&#xC5ED;&#xB9CC; &#xD504;&#xB9B0;&#xD2B8;&#xD560;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xC815;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li><code>landscape</code> Boolean - landscape&#xC744; &#xC704;&#xD574;&#xC120; <code>true</code>&#xB97C;, portrait&#xB97C; &#xC704;&#xD574;&#xC120; <code>false</code>&#xB97C;
   &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ul>
 </li>
-<li><code>callback</code> Function - <code>function(error, data) {}</code></li>
+<li><code>callback</code> Function - <code>(error, data) =&gt; {}</code></li>
 </ul>
 <p>Chromium&#xC758; &#xBBF8;&#xB9AC;&#xBCF4;&#xAE30; &#xD504;&#xB9B0;&#xD305; &#xCEE4;&#xC2A4;&#xD140; &#xC124;&#xC815;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC708;&#xB3C4;&#xC6B0;&#xC758; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xB97C; PDF&#xB85C;
 &#xD504;&#xB9B0;&#xD2B8;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -1391,22 +1501,23 @@ print&#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; 
   landscape: <span class="hljs-literal">false</span>
 }
 </code></pre>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).BrowserWindow;
+<p>&#xB2E4;&#xC74C;&#xC740; <code>webContents.printToPDF</code>&#xC758; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 <span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>);
 
-<span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
-win.loadURL(<span class="hljs-string">&quot;http://github.com&quot;</span>);
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
+win.loadURL(<span class="hljs-string">&apos;http://github.com&apos;</span>);
 
-win.webContents.on(<span class="hljs-string">&quot;did-finish-load&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// Use default printing options</span>
-  win.webContents.printToPDF({}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, data</span>) </span>{
+win.webContents.on(<span class="hljs-string">&apos;did-finish-load&apos;</span>, () =&gt; {
+  <span class="hljs-comment">// &#xAE30;&#xBCF8; &#xD504;&#xB9B0;&#xD2B8; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;</span>
+  win.webContents.printToPDF({}, (error, data) =&gt; {
     <span class="hljs-keyword">if</span> (error) <span class="hljs-keyword">throw</span> error;
-    fs.writeFile(<span class="hljs-string">&quot;/tmp/print.pdf&quot;</span>, data, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
+    fs.writeFile(<span class="hljs-string">&apos;/tmp/print.pdf&apos;</span>, data, (error) =&gt; {
       <span class="hljs-keyword">if</span> (error)
         <span class="hljs-keyword">throw</span> error;
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Write PDF successfully.&quot;</span>);
-    })
-  })
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Write PDF successfully.&apos;</span>);
+    });
+  });
 });
 </code></pre>
 <h3 id="webcontentsaddworkspacepath"><code>webContents.addWorkSpace(path)</code></h3>
@@ -1415,8 +1526,8 @@ win.webContents.on(<span class="hljs-string">&quot;did-finish-load&quot;</span>,
 </ul>
 <p>&#xD2B9;&#xC815; &#xACBD;&#xB85C;&#xB97C; &#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C;&#xC758; &#xC6CC;&#xD06C;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. &#xBC18;&#xB4DC;&#xC2DC; &#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C;&#xC758; &#xC0DD;&#xC131;&#xC774; &#xC644;&#xB8CC;&#xB41C;
 &#xC774;&#xD6C4;&#xC5D0; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript">mainWindow.webContents.on(<span class="hljs-string">&apos;devtools-opened&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  mainWindow.webContents.addWorkSpace(__dirname);
+<pre><code class="lang-javascript">win.webContents.on(<span class="hljs-string">&apos;devtools-opened&apos;</span>, () =&gt; {
+  win.webContents.addWorkSpace(__dirname);
 });
 </code></pre>
 <h3 id="webcontentsremoveworkspacepath"><code>webContents.removeWorkSpace(path)</code></h3>
@@ -1428,6 +1539,10 @@ win.webContents.on(<span class="hljs-string">&quot;did-finish-load&quot;</span>,
 <ul>
 <li><code>options</code> Object (optional)<ul>
 <li><code>detach</code> Boolean - &#xC0C8; &#xCC3D;&#xC5D0;&#xC11C; &#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C;&#xB97C; &#xC5FD;&#xB2C8;&#xB2E4;.</li>
+<li><code>mode</code> String - &#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C; &#xD45C;&#xC2DC; &#xC0C1;&#xD0DC;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xC635;&#xC158;&#xC740; &quot;right&quot;, &quot;bottom&quot;,
+&quot;undocked&quot;, &quot;detach&quot;&#xAC00; &#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; &#xB9C8;&#xC9C0;&#xB9C9; &#xD45C;&#xC2DC; &#xC0C1;&#xD0DC;&#xB97C;
+&#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. <code>undocked</code> &#xBAA8;&#xB4DC;&#xC5D0;&#xC120; &#xB2E4;&#xC2DC; &#xB3C4;&#xD0B9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; <code>detach</code>
+&#xBAA8;&#xB4DC;&#xC5D0;&#xC120; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 </ul>
 </li>
 </ul>
@@ -1445,7 +1560,7 @@ win.webContents.on(<span class="hljs-string">&quot;did-finish-load&quot;</span>,
 <li><code>x</code> Integer</li>
 <li><code>y</code> Integer</li>
 </ul>
-<p>(<code>x</code>, <code>y</code>)&#xC704;&#xCE58;&#xC758; &#xC5D8;&#xB808;&#xBA3C;&#xD2B8;&#xB97C; &#xC870;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>(<code>x</code>, <code>y</code>)&#xC704;&#xCE58;&#xC758; &#xC694;&#xC18C;&#xB97C; &#xC870;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webcontentsinspectserviceworker"><code>webContents.inspectServiceWorker()</code></h3>
 <p>&#xC11C;&#xBE44;&#xC2A4; &#xC6CC;&#xCEE4; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;(service worker context)&#xB97C; &#xC704;&#xD55C; &#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C;&#xB97C; &#xC5FD;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webcontentssendchannel-arg1-arg2-"><code>webContents.send(channel[, arg1][, arg2][, ...])</code></h3>
@@ -1460,12 +1575,12 @@ win.webContents.on(<span class="hljs-string">&quot;did-finish-load&quot;</span>,
 &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0B4;&#xB294; &#xC608;&#xC2DC; &#xC785;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In the main process.</span>
-<span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-literal">null</span>;
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
-  <span class="hljs-built_in">window</span>.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/index.html&apos;</span>);
-  <span class="hljs-built_in">window</span>.webContents.on(<span class="hljs-string">&apos;did-finish-load&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-built_in">window</span>.webContents.send(<span class="hljs-string">&apos;ping&apos;</span>, <span class="hljs-string">&apos;whoooooooh!&apos;</span>);
+<span class="hljs-keyword">let</span> win = <span class="hljs-literal">null</span>;
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
+  win.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/index.html&apos;</span>);
+  win.webContents.on(<span class="hljs-string">&apos;did-finish-load&apos;</span>, () =&gt; {
+    win.webContents.send(<span class="hljs-string">&apos;ping&apos;</span>, <span class="hljs-string">&apos;whoooooooh!&apos;</span>);
   });
 });
 </code></pre>
@@ -1473,8 +1588,8 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).ipcRenderer.on(<span class="hljs-string">&apos;ping&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, message</span>) </span>{
-      <span class="hljs-built_in">console</span>.log(message);  <span class="hljs-comment">// Prints &quot;whoooooooh!&quot;</span>
+    <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).ipcRenderer.on(<span class="hljs-string">&apos;ping&apos;</span>, (event, message) =&gt; {
+      <span class="hljs-built_in">console</span>.log(message);  <span class="hljs-comment">// &quot;whoooooooh!&quot; &#xCD9C;&#xB825;</span>
     });
   </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
@@ -1526,7 +1641,7 @@ to view &#xBAA8;&#xB4DC; &#xC678;&#xC5D0;&#xC11C;) (&#xAE30;&#xBCF8;&#xAC12;: <c
 <h3 id="webcontentssendinputeventevent"><code>webContents.sendInputEvent(event)</code></h3>
 <ul>
 <li><code>event</code> Object<ul>
-<li><code>type</code> String (<strong>required</strong>) - &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xD0C0;&#xC785;. &#xB2E4;&#xC74C; &#xAC12;&#xB4E4;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:
+<li><code>type</code> String (<strong>required</strong>) - &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xC885;&#xB958;. &#xB2E4;&#xC74C; &#xAC12;&#xB4E4;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:
 <code>mouseDown</code>,     <code>mouseUp</code>, <code>mouseEnter</code>, <code>mouseLeave</code>, <code>contextMenu</code>,
 <code>mouseWheel</code>, <code>mouseMove</code>, <code>keyDown</code>, <code>keyUp</code>, <code>char</code>.</li>
 <li><code>modifiers</code> Array - &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xC218;&#xC815;&#xC790;(modifier)&#xB4E4;&#xC5D0; &#xB300;&#xD55C; &#xBC30;&#xC5F4;. &#xB2E4;&#xC74C; &#xAC12;&#xB4E4;&#xC744; &#xD3EC;&#xD568;
@@ -1580,13 +1695,13 @@ to view &#xBAA8;&#xB4DC; &#xC678;&#xC5D0;&#xC11C;) (&#xAE30;&#xBCF8;&#xAC12;: <c
 <h3 id="webcontentssavepagefullpath-savetype-callback"><code>webContents.savePage(fullPath, saveType, callback)</code></h3>
 <ul>
 <li><code>fullPath</code> String - &#xC804;&#xCCB4; &#xD30C;&#xC77C; &#xACBD;&#xB85C;.</li>
-<li><code>saveType</code> String - &#xC800;&#xC7A5; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.<ul>
+<li><code>saveType</code> String - &#xC800;&#xC7A5; &#xC885;&#xB958;&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.<ul>
 <li><code>HTMLOnly</code> - &#xD398;&#xC774;&#xC9C0;&#xC758; HTML&#xB9CC; &#xC800;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li><code>HTMLComplete</code> - &#xD398;&#xC774;&#xC9C0;&#xC758; &#xC644;&#xC131;&#xB41C; HTML&#xC744; &#xC800;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li><code>MHTML</code> - &#xD398;&#xC774;&#xC9C0;&#xC758; &#xC644;&#xC131;&#xB41C; HTML&#xC744; MHTML&#xB85C; &#xC800;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ul>
 </li>
-<li><code>callback</code> Function - <code>function(error) {}</code>.<ul>
+<li><code>callback</code> Function - <code>(error) =&gt; {}</code>.<ul>
 <li><code>error</code> Error</li>
 </ul>
 </li>
@@ -1594,15 +1709,19 @@ to view &#xBAA8;&#xB4DC; &#xC678;&#xC5D0;&#xC11C;) (&#xAE30;&#xBCF8;&#xAC12;: <c
 <p>&#xB9CC;&#xC57D; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C; &#xB05D;&#xB0AC;&#xC744; &#xACBD;&#xC6B0; true&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-javascript">win.loadURL(<span class="hljs-string">&apos;https://github.com&apos;</span>);
 
-win.webContents.on(<span class="hljs-string">&apos;did-finish-load&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  win.webContents.savePage(<span class="hljs-string">&apos;/tmp/test.html&apos;</span>, <span class="hljs-string">&apos;HTMLComplete&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
+win.webContents.on(<span class="hljs-string">&apos;did-finish-load&apos;</span>, () =&gt; {
+  win.webContents.savePage(<span class="hljs-string">&apos;/tmp/test.html&apos;</span>, <span class="hljs-string">&apos;HTMLComplete&apos;</span>, (error) =&gt; {
     <span class="hljs-keyword">if</span> (!error)
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Save page successfully&quot;</span>);
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Save page successfully&apos;</span>);
   });
 });
 </code></pre>
+<h3 id="webcontentsshowdefinitionforselection-macos"><code>webContents.showDefinitionForSelection()</code> <em>macOS</em></h3>
+<p>&#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; &#xC120;&#xD0DD;&#xB41C; &#xB2E8;&#xC5B4;&#xC5D0; &#xB300;&#xD55C; &#xC0AC;&#xC804; &#xAC80;&#xC0C9; &#xACB0;&#xACFC; &#xD31D;&#xC5C5;&#xC744; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="instance-properties">Instance Properties</h2>
 <p><code>WebContents</code>&#xAC1D;&#xCCB4;&#xB4E4;&#xC740; &#xB2E4;&#xC74C; &#xC18D;&#xC131;&#xB4E4;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<h3 id="webcontentsid"><code>webContents.id</code></h3>
+<p>&#xC774; WebContents&#xC758; &#xC720;&#xC77C; ID.</p>
 <h3 id="webcontentssession"><code>webContents.session</code></h3>
 <p>&#xC774; webContents&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <a href="session.html">session</a> &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webcontentshostwebcontents"><code>webContents.hostWebContents</code></h3>
@@ -1614,23 +1733,23 @@ win.webContents.on(<span class="hljs-string">&apos;did-finish-load&apos;</span>,
 <h3 id="webcontentsdebugger"><code>webContents.debugger</code></h3>
 <p>&#xB514;&#xBC84;&#xAC70; API&#xB294; <a href="https://developer.chrome.com/devtools/docs/debugger-protocol" target="_blank">&#xC6D0;&#xACA9; &#xB514;&#xBC84;&#xAE45; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;</a>&#xC5D0; &#xB300;&#xD55C; &#xB300;&#xCCB4; &#xC218;&#xC1A1;&#xC790; &#xC5ED;&#xD560;&#xC744; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">try</span> {
-  win.webContents.debugger.attach(<span class="hljs-string">&quot;1.1&quot;</span>);
+  win.webContents.debugger.attach(<span class="hljs-string">&apos;1.1&apos;</span>);
 } <span class="hljs-keyword">catch</span>(err) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Debugger attach failed : &quot;</span>, err);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Debugger attach failed : &apos;</span>, err);
 };
 
-win.webContents.debugger.on(<span class="hljs-string">&apos;detach&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, reason</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Debugger detached due to : &quot;</span>, reason);
+win.webContents.debugger.on(<span class="hljs-string">&apos;detach&apos;</span>, (event, reason) =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Debugger detached due to : &apos;</span>, reason);
 });
 
-win.webContents.debugger.on(<span class="hljs-string">&apos;message&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, method, params</span>) </span>{
-  <span class="hljs-keyword">if</span> (method == <span class="hljs-string">&quot;Network.requestWillBeSent&quot;</span>) {
-    <span class="hljs-keyword">if</span> (params.request.url == <span class="hljs-string">&quot;https://www.github.com&quot;</span>)
+win.webContents.debugger.on(<span class="hljs-string">&apos;message&apos;</span>, (event, method, params) =&gt; {
+  <span class="hljs-keyword">if</span> (method === <span class="hljs-string">&apos;Network.requestWillBeSent&apos;</span>) {
+    <span class="hljs-keyword">if</span> (params.request.url === <span class="hljs-string">&apos;https://www.github.com&apos;</span>)
       win.webContents.debugger.detach();
   }
-})
+});
 
-win.webContents.debugger.sendCommand(<span class="hljs-string">&quot;Network.enable&quot;</span>);
+win.webContents.debugger.sendCommand(<span class="hljs-string">&apos;Network.enable&apos;</span>);
 </code></pre>
 <h4 id="webcontentsdebuggerattachprotocolversion"><code>webContents.debugger.attach([protocolVersion])</code></h4>
 <ul>
@@ -1645,7 +1764,7 @@ win.webContents.debugger.sendCommand(<span class="hljs-string">&quot;Network.ena
 <ul>
 <li><code>method</code> String - &#xBA54;&#xC11C;&#xB4DC; &#xC774;&#xB984;, &#xBC18;&#xB4DC;&#xC2DC; &#xC6D0;&#xACA9; &#xB514;&#xBC84;&#xAE45; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC5D0; &#xC758;&#xD574; &#xC815;&#xC758;&#xB41C; &#xBA54;&#xC11C;&#xB4DC;&#xC911;
 &#xD558;&#xB098;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</li>
-<li><code>commandParams</code> Object (optional) - &#xC694;&#xCCAD; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xD45C;&#xD604;&#xD55C; JSON &#xAC1D;&#xCCB4;.</li>
+<li><code>commandParams</code> Object (optional) - &#xC694;&#xCCAD; &#xC778;&#xC218;&#xB97C; &#xD45C;&#xD604;&#xD55C; JSON &#xAC1D;&#xCCB4;.</li>
 <li><code>callback</code> Function (optional) - &#xC751;&#xB2F5;<ul>
 <li><code>error</code> Object -  &#xCEE4;&#xB9E8;&#xB4DC;&#xC758; &#xC2E4;&#xD328;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xC5D0;&#xB7EC; &#xBA54;&#xC2DC;&#xC9C0;.</li>
 <li><code>result</code> Object - &#xC6D0;&#xACA9; &#xB514;&#xBC84;&#xAE45; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC5D0;&#xC11C; &#xCEE4;&#xB9E8;&#xB4DC; &#xC124;&#xBA85;&#xC758; &apos;returns&apos; &#xC18D;&#xC131;&#xC5D0; &#xC758;&#xD574;
@@ -1654,19 +1773,18 @@ win.webContents.debugger.sendCommand(<span class="hljs-string">&quot;Network.ena
 </li>
 </ul>
 <p>&#xC9C0;&#xC815;&#xD55C; &#xCEE4;&#xB9E8;&#xB4DC;&#xB97C; &#xB514;&#xBC84;&#xAE45; &#xB300;&#xC0C1;&#xC5D0;&#xAC8C; &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h4 id="event-detach">Event: &apos;detach&apos;</h4>
+<h3 id="event-detach">Event: &apos;detach&apos;</h3>
 <ul>
 <li><code>event</code> Event</li>
 <li><code>reason</code> String - &#xB514;&#xBC84;&#xAC70; &#xBD84;&#xB9AC; &#xC0AC;&#xC720;.</li>
 </ul>
 <p>&#xB514;&#xBC84;&#xAE45; &#xC138;&#xC158;&#xC774; &#xC885;&#xB8CC;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. <code>webContents</code>&#xAC00; &#xB2EB;&#xD788;&#xAC70;&#xB098; &#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C;&#xAC00;
 &#xBD80;&#xCC29;&#xB41C; <code>webContents</code>&#xC5D0; &#xB300;&#xD574; &#xD638;&#xCD9C;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h4 id="event-message">Event: &apos;message&apos;</h4>
+<h3 id="event-message">Event: &apos;message&apos;</h3>
 <ul>
 <li><code>event</code> Event</li>
 <li><code>method</code> String - &#xBA54;&#xC11C;&#xB4DC; &#xC774;&#xB984;.</li>
-<li><code>params</code> Object - &#xC6D0;&#xACA9; &#xB514;&#xBC84;&#xAE45; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC758; &apos;parameters&apos; &#xC18D;&#xC131;&#xC5D0;&#xC11C; &#xC815;&#xC758;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;
-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;</li>
+<li><code>params</code> Object - &#xC6D0;&#xACA9; &#xB514;&#xBC84;&#xAE45; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC758; &apos;parameters&apos; &#xC18D;&#xC131;&#xC5D0;&#xC11C; &#xC815;&#xC758;&#xB41C; &#xC774;&#xBCA4;&#xD2B8; &#xC778;&#xC218;</li>
 </ul>
 <p>&#xB514;&#xBC84;&#xAE45; &#xD0C0;&#xAC9F;&#xC774; &#xAD00;&#xB828; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0AC; &#xB54C; &#xB9C8;&#xB2E4; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 

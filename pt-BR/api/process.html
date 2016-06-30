@@ -53,7 +53,7 @@
         data-chapter-title="Processos"
         data-filepath="api/process.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:51 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:22 GMT+0800 (CST)"
         data-innerlanguage="pt-BR">
     
 
@@ -618,8 +618,8 @@
 <ul>
 <li><code>process.type</code> String - Tipo de processo, pode ser <code>browser</code> (processo principal) 
 ou <code>renderer</code>.</li>
-<li><code>process.versions[&apos;electron&apos;]</code> String - Vers&#xE3;o do Electron.</li>
-<li><code>process.versions[&apos;chrome&apos;]</code> String - Vers&#xE3;o do Chromium.</li>
+<li><code>process.versions.electron</code> String - Vers&#xE3;o do Electron.</li>
+<li><code>process.versions.chrome</code> String - Vers&#xE3;o do Chromium.</li>
 <li><code>process.resourcesPath</code> String - Caminho para o c&#xF3;digo fonte JavaScript.</li>
 <li><code>process.mas</code> Boolean - Para build da Mac App Store, este valor &#xE9; <code>true</code>, para outros builds &#xE9; <code>undefined</code>.</li>
 </ul>
@@ -642,7 +642,7 @@ process.once(<span class="hljs-string">&apos;loaded&apos;</span>, <span class="h
 <p>O objeto <code>process</code> tem os seguintes m&#xE9;todos:</p>
 <h3 id="processhang"><code>process.hang</code></h3>
 <p>Faz com que o <em>thread</em> principal do processo congele.</p>
-<h3 id="processsetfdlimitmaxdescriptors-os-x-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>OS X</em> <em>Linux</em></h3>
+<h3 id="processsetfdlimitmaxdescriptors-macos-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>macOS</em> <em>Linux</em></h3>
 <ul>
 <li><code>maxDescriptors</code> Integer</li>
 </ul>

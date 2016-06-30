@@ -53,7 +53,7 @@
         data-chapter-title="Using Widevine CDM Plugin"
         data-filepath="tutorial/using-widevine-cdm-plugin.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -934,17 +934,17 @@ the architecture and Chrome version of the Electron build you use.</p>
 <p><strong>Note:</strong> The major version of Chrome browser has to be the same with the Chrome
 version used by Electron, otherwise the plugin will not work even though
 <code>navigator.plugins</code> would show it has been loaded.</p>
-<h3 id="windows--os-x">Windows &amp; OS X</h3>
+<h3 id="windows--macos">Windows &amp; macOS</h3>
 <p>Open <code>chrome://components/</code> in Chrome browser, find <code>WidevineCdm</code> and make
 sure it is up to date, then you can find all the plugin binaries from the
 <code>APP_DATA/Google/Chrome/WidevineCDM/VERSION/_platform_specific/PLATFORM_ARCH/</code>
 directory.</p>
 <p><code>APP_DATA</code> is system&apos;s location for storing app data, on Windows it is
-<code>%LOCALAPPDATA%</code>, on OS X it is <code>~/Library/Application Support</code>. <code>VERSION</code> is
+<code>%LOCALAPPDATA%</code>, on macOS it is <code>~/Library/Application Support</code>. <code>VERSION</code> is
 Widevine CDM plugin&apos;s version string, like <code>1.4.8.866</code>. <code>PLATFORM</code> is <code>mac</code> or
 <code>win</code>. <code>ARCH</code> is <code>x86</code> or <code>x64</code>.</p>
 <p>On Windows the required binaries are <code>widevinecdm.dll</code> and
-<code>widevinecdmadapter.dll</code>, on OS X they are <code>libwidevinecdm.dylib</code> and
+<code>widevinecdmadapter.dll</code>, on macOS they are <code>libwidevinecdm.dylib</code> and
 <code>widevinecdmadapter.plugin</code>. You can copy them to anywhere you like, but they
 have to be put together.</p>
 <h3 id="linux">Linux</h3>
@@ -962,21 +962,21 @@ module gets emitted, and the page that uses this plugin must have plugin
 enabled.</p>
 <p>Example code:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// You have to pass the filename of `widevinecdmadapter` here, it is</span>
-<span class="hljs-comment">// * `widevinecdmadapter.plugin` on OS X,</span>
+<span class="hljs-comment">// * `widevinecdmadapter.plugin` on macOS,</span>
 <span class="hljs-comment">// * `libwidevinecdmadapter.so` on Linux,</span>
 <span class="hljs-comment">// * `widevinecdmadapter.dll` on Windows.</span>
 app.commandLine.appendSwitch(<span class="hljs-string">&apos;widevine-cdm-path&apos;</span>, <span class="hljs-string">&apos;/path/to/widevinecdmadapter.plugin&apos;</span>);
 <span class="hljs-comment">// The version of plugin can be got from `chrome://plugins` page in Chrome.</span>
 app.commandLine.appendSwitch(<span class="hljs-string">&apos;widevine-cdm-version&apos;</span>, <span class="hljs-string">&apos;1.4.8.866&apos;</span>);
 
-<span class="hljs-keyword">var</span> mainWindow = <span class="hljs-literal">null</span>;
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  mainWindow = <span class="hljs-keyword">new</span> BrowserWindow({
+<span class="hljs-keyword">let</span> win = <span class="hljs-literal">null</span>;
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  win = <span class="hljs-keyword">new</span> BrowserWindow({
     webPreferences: {
       <span class="hljs-comment">// The `plugins` have to be enabled.</span>
       plugins: <span class="hljs-literal">true</span>
     }
-  })
+  });
 });
 </code></pre>
 <h2 id="verifying-the-plugin">Verifying the plugin</h2>

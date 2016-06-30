@@ -53,7 +53,7 @@
         data-chapter-title="protocol"
         data-filepath="api/protocol.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,36 +926,56 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="protocol">protocol</h1>
-<p><code>protocol</code> &#xBAA8;&#xB4C8;&#xC740; &#xC774;&#xBBF8; &#xC788;&#xB294; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC758; &#xB3D9;&#xC791;&#xC744; &#xAC00;&#xB85C;&#xCC44;&#xAC70;&#xB098; &#xC0C8;&#xB85C;&#xC6B4; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xB9CC;&#xB4E4; &#xC218;
-&#xC788;&#xB294; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; <code>file://</code> &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xC77C;&#xC744; &#xD558;&#xB294; &#xCEE4;&#xC2A4;&#xD140; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
+<blockquote>
+<p>&#xCEE4;&#xC2A4;&#xD140; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xB4F1;&#xB85D;&#xD558;&#xAC70;&#xB098; &#xC774;&#xBBF8; &#xC874;&#xC7AC;&#xD558;&#xB2A5; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC758; &#xC694;&#xCCAD;&#xC758; &#xB3D9;&#xC791;&#xC744; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; <code>file://</code> &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xC77C;&#xC744; &#xD558;&#xB294; &#xCEE4;&#xC2A4;&#xD140; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, protocol} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> protocol = electron.protocol;
-    protocol.registerFileProtocol(<span class="hljs-string">&apos;atom&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">request, callback</span>) </span>{
-      <span class="hljs-keyword">var</span> url = request.url.substr(<span class="hljs-number">7</span>);
-      callback({path: path.normalize(__dirname + <span class="hljs-string">&apos;/&apos;</span> + url)});
-    }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
-      <span class="hljs-keyword">if</span> (error)
-        <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Failed to register protocol&apos;</span>)
-    });
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  protocol.registerFileProtocol(<span class="hljs-string">&apos;atom&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request, callback</span>) </span>{
+    <span class="hljs-keyword">const</span> url = request.url.substr(<span class="hljs-number">7</span>);
+    callback({path: path.normalize(__dirname + <span class="hljs-string">&apos;/&apos;</span> + url)});
+  }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-keyword">if</span> (error)
+      <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Failed to register protocol&apos;</span>);
+  });
 });
 </code></pre>
-<p><strong>&#xCC38;&#xACE0;:</strong> &#xC774; &#xBAA8;&#xB4C8;&#xC740; <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C; &#xC774;&#xD6C4;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><strong>&#xCC38;&#xACE0;:</strong> &#xBAA8;&#xB4E0; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xB530;&#xB85C; &#xD45C;&#xAE30;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD55C; <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;
+&#xC774;&#xD6C4;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="methods">Methods</h2>
 <p><code>protocol</code> &#xBAA8;&#xB4C8;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <h3 id="protocolregisterstandardschemesschemes"><code>protocol.registerStandardSchemes(schemes)</code></h3>
 <ul>
 <li><code>schemes</code> Array - &#xD45C;&#xC900; &#xC2A4;&#xD0B4;&#xC73C;&#xB85C; &#xB4F1;&#xB85D;&#xD560; &#xCEE4;&#xC2A4;&#xD140; &#xC2A4;&#xD0B4; &#xB9AC;&#xC2A4;&#xD2B8;</li>
 </ul>
-<p>&#xD45C;&#xC900; <code>scheme</code>&#xC758; &#xD615;&#xC2DD;&#xC740; RFC 3986 <a href="https://tools.ietf.org/html/rfc3986#section-3" target="_blank">&#xC77C;&#xBC18; URI &#xAD6C;&#xBB38;</a>
-&#xD45C;&#xC900;&#xC744; &#xB530;&#xB985;&#xB2C8;&#xB2E4;. &#xC774; &#xD615;&#xC2DD;&#xC740; <code>file:</code>&#xACFC; <code>filesystem:</code>&#xC744; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD45C;&#xC900; &#xC2A4;&#xD0B4;&#xC758; &#xD615;&#xC2DD;&#xC740; RFC 3986 <a href="https://tools.ietf.org/html/rfc3986#section-3" target="_blank">&#xC77C;&#xBC18; URI &#xBB38;&#xBC95;</a>
+&#xD45C;&#xC900;&#xC744; &#xB530;&#xB985;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>http</code>&#xC640; <code>https</code> &#xAC19;&#xC740; &#xD45C;&#xC900; &#xC2A4;&#xD0B4;&#xACFC; <code>file</code>&#xACFC; &#xAC19;&#xC740; &#xD45C;&#xC900;&#xC774;
+&#xC544;&#xB2CC; &#xC2A4;&#xD0B4;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD45C;&#xC900; &#xC2A4;&#xD0B4;&#xC73C;&#xB85C; &#xB4F1;&#xB85D;&#xD558;&#xBA74;, &#xC0C1;&#xB300;, &#xC808;&#xB300; &#xACBD;&#xB85C;&#xC758; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xCDE8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB978;
+&#xACBD;&#xC6B0;&#xC5D4; &#xC2A4;&#xD0B4;&#xC774; &#xC0C1;&#xB300; &#xACBD;&#xB85C; URL&#xC5D0; &#xB300;&#xD55C; &#xBD84;&#xC11D; &#xAE30;&#xB2A5;&#xC774; &#xC81C;&#xC678;&#xB41C; <code>file</code> &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xACFC; &#xAC19;&#xC774;
+&#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; &#xD45C;&#xC900; &#xC2A4;&#xD0B4; &#xB4F1;&#xB85D; &#xC808;&#xCC28; &#xC5C6;&#xC774; &#xCEE4;&#xC2A4;&#xD140; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC;
+&#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xB85C;&#xB4DC;&#xD558;&#xB824; &#xD588;&#xC744; &#xB54C;, &#xD45C;&#xC900; &#xC2A4;&#xD0B4;&#xC73C;&#xB85C; &#xB4F1;&#xB85D;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xC0C1;&#xB300; &#xACBD;&#xB85C; URL&#xC744; &#xC778;&#xC2DD;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xACE0;
+&#xB85C;&#xB4DC;&#xC5D0; &#xC2E4;&#xD328;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&apos;test.png&apos;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+</code></pre>
+<p>&#xB530;&#xB77C;&#xC11C; &#xCEE4;&#xC2A4;&#xD140; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xB4F1;&#xB85D;&#xD558;&#xC5EC; <code>http</code> &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xB36E;&#xC5B4; &#xC4F0;&#xB824;&#xBA74;, &#xD45C;&#xC900; &#xC2A4;&#xD0B4;&#xC73C;&#xB85C;
+&#xB4F1;&#xB85D;&#xD574;&#xC57C;&#xB9CC; &#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript">protocol.registerStandardSchemes([<span class="hljs-string">&apos;atom&apos;</span>]);
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  protocol.registerHttpProtocol(<span class="hljs-string">&apos;atom&apos;</span>, ...);
+});
+</code></pre>
+<p><strong>&#xCC38;&#xACE0;:</strong> &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC774;&#xC804;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218;
+&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="protocolregisterserviceworkerschemesschemes"><code>protocol.registerServiceWorkerSchemes(schemes)</code></h3>
 <ul>
-<li><code>schemes</code> Array - &#xB4F1;&#xB85D;&#xB420; &#xC11C;&#xBE44;&#xC2A4; &#xC6CC;&#xCEE4;&#xB97C; &#xC870;&#xC791;&#xD560; &#xCEE4;&#xC2A4;&#xD140; &#xC2A4;&#xD0A4;&#xB9C8;</li>
+<li><code>schemes</code> Array - &#xC11C;&#xBE44;&#xC2A4; &#xC6CC;&#xCEE4;&#xB97C; &#xC81C;&#xC5B4;&#xD558;&#xAE30; &#xC704;&#xD574; &#xB4F1;&#xB85D;&#xB420; &#xCEE4;&#xC2A4;&#xD140; &#xC2A4;&#xD0B4;.</li>
 </ul>
 <h3 id="protocolregisterfileprotocolscheme-handler-completion"><code>protocol.registerFileProtocol(scheme, handler[, completion])</code></h3>
 <ul>
@@ -985,11 +1005,11 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 </ul>
 </li>
 </ul>
-<p><code>request</code>&#xB97C; &#xCC98;&#xB9AC;&#xD560; &#xB54C; &#xBC18;&#xB4DC;&#xC2DC; &#xD30C;&#xC77C; &#xACBD;&#xB85C; &#xB610;&#xB294; <code>path</code> &#xC18D;&#xC131;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC778;&#xC790;&#xC5D0;
+<p><code>request</code>&#xB97C; &#xCC98;&#xB9AC;&#xD560; &#xB54C; &#xBC18;&#xB4DC;&#xC2DC; &#xD30C;&#xC77C; &#xACBD;&#xB85C; &#xB610;&#xB294; <code>path</code> &#xC18D;&#xC131;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC778;&#xC218;&#xC5D0;
 &#xD3EC;&#xD568;&#xD558;&#xC5EC; <code>callback</code>&#xC744; &#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC608;: <code>callback(filePath)</code> &#xB610;&#xB294;
 <code>callback({path: filePath})</code>.</p>
-<p>&#xB9CC;&#xC57D; <code>callback</code>&#xC774; &#xC544;&#xBB34; &#xC778;&#xC790;&#xB3C4; &#xC5C6;&#xC774; &#xD638;&#xCD9C;&#xB418;&#xAC70;&#xB098; &#xC22B;&#xC790;&#xB098; <code>error</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC00;&#xC9C4; &#xAC1D;&#xCCB4;&#xAC00;
-&#xC778;&#xC790;&#xB85C; &#xC804;&#xB2EC;&#xB420; &#xACBD;&#xC6B0; <code>request</code>&#xB294; &#xC9C0;&#xC815;&#xD55C; <code>error</code> &#xCF54;&#xB4DC;(&#xC22B;&#xC790;)&#xB97C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;. &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294;
+<p>&#xB9CC;&#xC57D; <code>callback</code>&#xC774; &#xC544;&#xBB34; &#xC778;&#xC218;&#xB3C4; &#xC5C6;&#xC774; &#xD638;&#xCD9C;&#xB418;&#xAC70;&#xB098; &#xC22B;&#xC790;&#xB098; <code>error</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xAC00;&#xC9C4; &#xAC1D;&#xCCB4;&#xAC00;
+&#xC778;&#xC218;&#xB85C; &#xC804;&#xB2EC;&#xB420; &#xACBD;&#xC6B0; <code>request</code>&#xB294; &#xC9C0;&#xC815;&#xD55C; <code>error</code> &#xCF54;&#xB4DC;(&#xC22B;&#xC790;)&#xB97C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;. &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294;
 &#xC5D0;&#xB7EC; &#xCF54;&#xB4DC;&#xB294; <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/base/net_error_list.h" target="_blank">&#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC5D0;&#xB7EC; &#xBAA9;&#xB85D;</a>&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>scheme</code>&#xC740; <code>http:</code>&#xC640; &#xAC19;&#xC774; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;. <code>file:</code>&#xACFC; &#xAC19;&#xC774; &quot;&#xC77C;&#xBC18;&#xC801;&#xC778; URI &#xBB38;&#xBC95;&quot;
 &#xACFC;&#xB294; &#xB2E4;&#xB974;&#xAC8C; &#xC778;&#xC2DD;&#xB418;&#xB294; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC740; <code>protocol.registerStandardSchemes</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD45C;&#xC900;
@@ -1004,12 +1024,12 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 <p>&#xC0AC;&#xC6A9;&#xBC95;&#xC740; <code>callback</code>&#xC774; &#xBC18;&#xB4DC;&#xC2DC; <code>Buffer</code> &#xAC1D;&#xCCB4; &#xB610;&#xB294; <code>data</code>, <code>mimeType</code>, <code>charset</code>
 &#xC18D;&#xC131;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xC640; &#xD568;&#xAED8; &#xD638;&#xCD9C;&#xB418;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xC810;&#xC744; &#xC81C;&#xC678;&#xD558;&#xBA74; <code>registerFileProtocol</code>&#xACFC;
 &#xC0AC;&#xC6A9;&#xBC95;&#xC774; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC608;&#xC81C;:</p>
-<pre><code class="lang-javascript">protocol.registerBufferProtocol(<span class="hljs-string">&apos;atom&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">request, callback</span>) </span>{
+<p>&#xC608;&#xC2DC;:</p>
+<pre><code class="lang-javascript">protocol.registerBufferProtocol(<span class="hljs-string">&apos;atom&apos;</span>, (request, callback) =&gt; {
   callback({mimeType: <span class="hljs-string">&apos;text/html&apos;</span>, data: <span class="hljs-keyword">new</span> Buffer(<span class="hljs-string">&apos;&lt;h5&gt;Response&lt;/h5&gt;&apos;</span>)});
-}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+}, (error) =&gt; {
   <span class="hljs-keyword">if</span> (error)
-    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Failed to register protocol&apos;</span>)
+    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Failed to register protocol&apos;</span>);
 });
 </code></pre>
 <h3 id="protocolregisterstringprotocolscheme-handler-completion"><code>protocol.registerStringProtocol(scheme, handler[, completion])</code></h3>
@@ -1046,8 +1066,8 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 <p>POST &#xC694;&#xCCAD;&#xC5D0;&#xB294; &#xBC18;&#xB4DC;&#xC2DC; <code>uploadData</code> &#xAC1D;&#xCCB4;&#xAC00; &#xC81C;&#xACF5;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <ul>
 <li><code>uploadData</code> object<ul>
-<li><code>contentType</code> String - &#xCEE8;&#xD150;&#xCE20;&#xC758; MIME &#xD0C0;&#xC785;.</li>
-<li><code>data</code> String - &#xC804;&#xC1A1;&#xD560; &#xCEE8;&#xD150;&#xCE20;.</li>
+<li><code>contentType</code> String - &#xCF58;&#xD150;&#xCE20;&#xC758; MIME &#xD0C0;&#xC785;.</li>
+<li><code>data</code> String - &#xC804;&#xC1A1;&#xD560; &#xCF58;&#xD150;&#xCE20;.</li>
 </ul>
 </li>
 </ul>

@@ -53,7 +53,7 @@
         data-chapter-title="Empaquetamiento de la Aplicación"
         data-filepath="tutorial/application-packaging.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:58 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:39 GMT+0800 (CST)"
         data-innerlanguage="es">
     
 
@@ -625,8 +625,8 @@ Electron puede leer el contenido sin desempaquetar todos los archivos.</p>
 <pre><code class="lang-bash">$ asar pack your-app app.asar
 </code></pre>
 <h2 id="utilizando-los-paquetes-asar">Utilizando los paquetes <code>asar</code></h2>
-<p>En Electron existen dos tipos de APIs: las APIs de Node, prove&#xED;das por Node.js,
-y las APIs Web, prove&#xED;das por Chromium. Ambas APIs soportan la lecutra de paquetes <code>asar</code>.</p>
+<p>En Electron existen dos tipos de APIs: las APIs de Node, provistas por Node.js,
+y las APIs Web, provistas por Chromium. Ambas APIs soportan la lectura de paquetes <code>asar</code>.</p>
 <h3 id="api-node">API Node</h3>
 <p>Con parches especiales en Electron, las APIs de Node como <code>fs.readFile</code> and <code>require</code>
 tratan los paquetes <code>asar</code> como directorios virtuales, y el contenido es accesible como si se tratara
@@ -669,7 +669,7 @@ $.get(<span class="hljs-string">&apos;file:///path/to/example.asar/file.txt&apos
 </code></pre>
 <h3 id="utilizando-un-paquete-asar-como-un-archivo-normal">Utilizando un paquete <code>asar</code> como un archivo normal</h3>
 <p>En algunas situaciones necesitaremos acceder al paquete <code>asar</code> como archivo, por ejemplo,
-si necesitaramos verificar la integridad del archivo con un checksum.
+si necesit&#xE1;ramos verificar la integridad del archivo con un checksum.
 Para casos as&#xED; es posible utilizar el m&#xF3;dulo  <code>original-fs</code>, que provee la API <code>fs</code> original:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> originalFs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;original-fs&apos;</span>);
 originalFs.readFileSync(<span class="hljs-string">&apos;/path/to/example.asar&apos;</span>);
@@ -677,7 +677,7 @@ originalFs.readFileSync(<span class="hljs-string">&apos;/path/to/example.asar&ap
 <h2 id="limitaciones-de-la-api-node">Limitaciones de la API Node:</h2>
 <p>A pesar de que hemos intentado que los paquetes  <code>asar</code> funcionen como directorios de la mejor forma posible,
 a&#xFA;n existen limitaciones debido a la naturaleza de bajo nivel de la API Node.</p>
-<h3 id="los-paquetes-son-de-s&#xF3;lo-lecutra">Los paquetes son de s&#xF3;lo lecutra</h3>
+<h3 id="los-paquetes-son-de-s&#xF3;lo-lectura">Los paquetes son de s&#xF3;lo lectura</h3>
 <p>Los paquetes <code>asar</code> no pueden ser modificados, por lo cual todas las funciones que modifiquen archivos
 no funcionar&#xE1;n.</p>
 <h2 id="los-directorios-del-paquete-no-pueden-establecerse-como-working-directories">Los directorios del paquete no pueden establecerse como working directories</h2>
@@ -693,19 +693,19 @@ el archivo a una ruta temporal. Esto agrega un overhead a algunas APIs.</p>
 <li><code>child_process.execFile</code></li>
 <li><code>fs.open</code></li>
 <li><code>fs.openSync</code></li>
-<li><code>process.dlopen</code> - Utilizado po <code>require</code> en los m&#xF3;dulos nativos</li>
+<li><code>process.dlopen</code> - Utilizado por <code>require</code> en los m&#xF3;dulos nativos</li>
 </ul>
 <h3 id="informaci&#xF3;n-falsa-en-fsstat">Informaci&#xF3;n falsa en <code>fs.stat</code></h3>
 <p>El objeto <code>Stats</code> retornado por <code>fs.stat</code> y otras funciones relacionadas,
-no es preciso, ya que los archivos del paquete <code>asar</code> no existen el sistema de archivos.
+no es preciso, ya que los archivos del paquete <code>asar</code> no existen en el sistema de archivos.
 La utilizaci&#xF3;n del objeto <code>Stats</code> s&#xF3;lo es recomendable para obtener el tama&#xF1;o del archivo y/o
 comprobar el tipo de archivo.</p>
 <h2 id="agregando-archivos-al-paquete-asar">Agregando archivos al paquete <code>asar</code></h2>
 <p>Como se menciona arriba, algunas APIs de Node desempaquetar&#xE1;n archivos cuando exista una llamada
 que los referencie, adem&#xE1;s de los problemas de rendimiento que esto podr&#xED;a ocasionar, tambi&#xE9;n
 podr&#xED;a accionar alertas falsas en software antivirus.</p>
-<p>Para lidiar con esto, puedes desempaquetar algunos archivos utilizando la opci&#xF3;n <code>--unpack</code>,
-a continuaci&#xF3;n un ejemplo que excluye las librer&#xED;as compartidas de los m&#xF3;dulos nativos:</p>
+<p>Para lidiar con esto, puedes desempaquetar algunos archivos utilizando la opci&#xF3;n <code>--unpack</code>.
+A continuaci&#xF3;n, un ejemplo que excluye las librer&#xED;as compartidas de los m&#xF3;dulos nativos:</p>
 <pre><code class="lang-bash">$ asar pack app app.asar --unpack *.node
 </code></pre>
 <p>Despu&#xE9;s de ejecutar este comando, adem&#xE1;s del archivo <code>app.asar</code>, tambi&#xE9;n se crear&#xE1;

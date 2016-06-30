@@ -53,7 +53,7 @@
         data-chapter-title="Application Distribution"
         data-filepath="tutorial/application-distribution.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -927,10 +927,10 @@
                     
                         <h1 id="application-distribution">Application Distribution</h1>
 <p>To distribute your app with Electron, the folder containing your app should be
-named <code>app</code> and placed under Electron&apos;s resources directory (on OS X it is
+named <code>app</code> and placed under Electron&apos;s resources directory (on macOS it is
 <code>Electron.app/Contents/Resources/</code> and on Linux and Windows it is <code>resources/</code>),
 like this:</p>
-<p>On OS X:</p>
+<p>On macOS:</p>
 <pre><code class="lang-text">electron/Electron.app/Contents/Resources/app/
 &#x251C;&#x2500;&#x2500; package.json
 &#x251C;&#x2500;&#x2500; main.js
@@ -947,12 +947,12 @@ and Electron will start as your app. The <code>electron</code> directory will th
 your distribution to deliver to final users.</p>
 <h2 id="packaging-your-app-into-a-file">Packaging Your App into a File</h2>
 <p>Apart from shipping your app by copying all of its source files, you can also
-package your app into an <a href="https://github.com/atom/asar" target="_blank">asar</a> archive to avoid
+package your app into an <a href="https://github.com/electron/asar" target="_blank">asar</a> archive to avoid
 exposing your app&apos;s source code to users.</p>
 <p>To use an <code>asar</code> archive to replace the <code>app</code> folder, you need to rename the
 archive to <code>app.asar</code>, and put it under Electron&apos;s resources directory like
 below, and Electron will then try to read the archive and start from it.</p>
-<p>On OS X:</p>
+<p>On macOS:</p>
 <pre><code class="lang-text">electron/Electron.app/Contents/Resources/
 &#x2514;&#x2500;&#x2500; app.asar
 </code></pre>
@@ -967,7 +967,7 @@ before distributing it to users.</p>
 <h3 id="windows">Windows</h3>
 <p>You can rename <code>electron.exe</code> to any name you like, and edit its icon and other
 information with tools like <a href="https://github.com/atom/rcedit" target="_blank">rcedit</a>.</p>
-<h3 id="os-x">OS X</h3>
+<h3 id="macos">macOS</h3>
 <p>You can rename <code>Electron.app</code> to any name you want, and you also have to rename
 the <code>CFBundleDisplayName</code>, <code>CFBundleIdentifier</code> and <code>CFBundleName</code> fields in
 following files:</p>
@@ -998,6 +998,13 @@ file&apos;s name.</p>
             &#x2514;&#x2500;&#x2500; MyApp Helper
 </code></pre><h3 id="linux">Linux</h3>
 <p>You can rename the <code>electron</code> executable to any name you like.</p>
+<h2 id="packaging-tools">Packaging Tools</h2>
+<p>Apart from packaging your app manually, you can also choose to use third party
+packaging tools to do the work for you:</p>
+<ul>
+<li><a href="https://github.com/maxogden/electron-packager" target="_blank">electron-packager</a></li>
+<li><a href="https://github.com/loopline-systems/electron-builder" target="_blank">electron-builder</a></li>
+</ul>
 <h2 id="rebranding-by-rebuilding-electron-from-source">Rebranding by Rebuilding Electron from Source</h2>
 <p>It is also possible to rebrand Electron by changing the product name and
 building it from source. To do this you need to modify the <code>atom.gyp</code> file and
@@ -1009,13 +1016,51 @@ a Grunt task has been created that will handle this automatically:
 <p>This task will automatically handle editing the <code>.gyp</code> file, building from
 source, then rebuilding your app&apos;s native Node modules to match the new
 executable name.</p>
-<h2 id="packaging-tools">Packaging Tools</h2>
-<p>Apart from packaging your app manually, you can also choose to use third party
-packaging tools to do the work for you:</p>
+<h3 id="creating-a-custom-electron-fork">Creating a Custom Electron Fork</h3>
+<p>Creating a custom fork of Electron is almost certainly not something you will
+need to do in order to build your app, even for &quot;Production Level&quot; applications.
+Using a tool such as <code>electron-packager</code> or <code>electron-builder</code> will allow you to
+&quot;Rebrand&quot; Electron without having to do these steps.</p>
+<p>You need to fork Electron when you have custom C++ code that you have patched
+directly into Electron, that either cannot be upstreamed, or has been rejected
+from the official version. As maintainers of Electron, we very much would like
+to make your scenario work, so please try as hard as you can to get your changes
+into the official version of Electron, it will be much much easier on you, and
+we appreciate your help.</p>
+<h4 id="creating-a-custom-release-with-surfbuild">Creating a Custom Release with surf-build</h4>
+<ol>
+<li><p>Install <a href="https://github.com/surf-build/surf" target="_blank">Surf</a>, via npm:
+<code>npm install -g surf-build@latest</code></p>
+</li>
+<li><p>Create a new S3 bucket and create the following empty directory structure:</p>
+</li>
+</ol>
+<pre><code>- atom-shell/
+  - symbols/
+  - dist/
+</code></pre><ol>
+<li><p>Set the following Environment Variables:</p>
 <ul>
-<li><a href="https://github.com/maxogden/electron-packager" target="_blank">electron-packager</a></li>
-<li><a href="https://github.com/loopline-systems/electron-builder" target="_blank">electron-builder</a></li>
+<li><code>ELECTRON_GITHUB_TOKEN</code> - a token that can create releases on GitHub</li>
+<li><code>ELECTRON_S3_ACCESS_KEY</code>, <code>ELECTRON_S3_BUCKET</code>, <code>ELECTRON_S3_SECRET_KEY</code> -
+the place where you&apos;ll upload node.js headers as well as symbols</li>
+<li><code>ELECTRON_RELEASE</code> - Set to <code>true</code> and the upload part will run, leave unset
+and <code>surf-build</code> will just do CI-type checks, appropriate to run for every
+pull request.</li>
+<li><code>CI</code> - Set to <code>true</code> or else it will fail</li>
+<li><code>GITHUB_TOKEN</code> - set it to the same as <code>ELECTRON_GITHUB_TOKEN</code></li>
+<li><code>SURF_TEMP</code> - set to <code>C:\Temp</code> on Windows to prevent path too long issues</li>
+<li><code>TARGET_ARCH</code> - set to <code>ia32</code> or <code>x64</code>  </li>
 </ul>
+</li>
+<li><p>In <code>script/upload.py</code>, you <em>must</em> set <code>ELECTRON_REPO</code> to your fork (<code>MYORG/electron</code>),
+especially if you are a contributor to Electron proper.</p>
+</li>
+<li><p><code>surf-build -r https://github.com/MYORG/electron -s YOUR_COMMIT -n &apos;surf-PLATFORM-ARCH&apos;</code></p>
+</li>
+<li><p>Wait a very, very long time for the build to complete.</p>
+</li>
+</ol>
 
                     
                     </section>

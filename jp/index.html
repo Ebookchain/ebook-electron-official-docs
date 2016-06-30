@@ -51,7 +51,7 @@
         data-chapter-title="Introduction"
         data-filepath="README.md"
         data-basepath="."
-        data-revision="Mon Jun 06 2016 19:58:56 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:31 GMT+0800 (CST)"
         data-innerlanguage="jp">
     
 
@@ -854,8 +854,11 @@
 <h2 id="&#x30AC;&#x30A4;&#x30C9;">&#x30AC;&#x30A4;&#x30C9;</h2>
 <ul>
 <li><a href="tutorial/supported-platforms.html">&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3059;&#x308B;&#x30D7;&#x30E9;&#x30C3;&#x30C8;&#x30D5;&#x30A9;&#x30FC;&#x30E0;</a></li>
+<li><a href="tutorial/security.md">&#x30BB;&#x30AD;&#x30E5;&#x30EA;&#x30C6;&#x30A3;</a></li>
+<li><a href="tutorial/electron-versioning.md">Electron&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x7BA1;&#x7406;</a></li>
 <li><a href="tutorial/application-distribution.html">&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x914D;&#x5E03;</a></li>
 <li><a href="tutorial/mac-app-store-submission-guide.html">Mac App Store &#x63D0;&#x51FA;&#x30AC;&#x30A4;&#x30C9;</a></li>
+<li>Windows Store Guide (tutorial/windows-store-guide.md)</li>
 <li><a href="tutorial/application-packaging.html">&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x5316;</a></li>
 <li><a href="tutorial/using-native-node-modules.html">&#x30CD;&#x30A4;&#x30C6;&#x30A3;&#x30D6;&#x306E;Node&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;</a></li>
 <li><a href="tutorial/debugging-main-process.html">&#x30E1;&#x30A4;&#x30F3;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306E;&#x30C7;&#x30D0;&#x30C3;&#x30B0;</a></li>
@@ -863,6 +866,7 @@
 <li><a href="tutorial/devtools-extension.html">DevTools &#x30A8;&#x30AF;&#x30B9;&#x30C6;&#x30F3;&#x30B7;&#x30E7;&#x30F3;</a></li>
 <li><a href="tutorial/using-pepper-flash-plugin.html">Pepper Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;</a></li>
 <li><a href="tutorial/using-widevine-cdm-plugin.html">Widevine CDM&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;</a></li>
+<li>Testing on Headless CI Systems (Travis, Jenkins) (tutorial/testing-on-headless-ci.md)</li>
 </ul>
 <h1 id="&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;">&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;</h1>
 <ul>
@@ -880,14 +884,14 @@
 <h3 id="&#x30AB;&#x30B9;&#x30BF;&#x30E0;dom&#x8981;&#x7D20;">&#x30AB;&#x30B9;&#x30BF;&#x30E0;DOM&#x8981;&#x7D20;:</h3>
 <ul>
 <li><a href="api/file-object.html"><code>File</code> Object</a></li>
-<li><code>&lt;webview&gt;</code> Tag</li>
+<li><a href="api/web-view-tag.md"><code>&lt;webview&gt;</code> &#x30BF;&#x30B0;</a></li>
 <li><a href="api/window-open.html"><code>window.open</code> &#x95A2;&#x6570;</a></li>
 </ul>
 <h3 id="main-process&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;">Main Process&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;:</h3>
 <ul>
 <li><a href="api/app.html">app</a></li>
 <li><a href="api/auto-updater.html">autoUpdater</a></li>
-<li>BrowserWindow<ul>
+<li>BrowserWindow (api/browser-window.md)<ul>
 <li><a href="api/frameless-window.html">&#x30D5;&#x30EC;&#x30FC;&#x30E0;&#x306E;&#x7121;&#x3044;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;</a></li>
 </ul>
 </li>
@@ -901,7 +905,8 @@
 <li><a href="api/power-save-blocker.html">powerSaveBlocker</a></li>
 <li><a href="api/protocol.html">protocol</a></li>
 <li><a href="api/session.html">session</a></li>
-<li>webContents</li>
+<li>systemPreferences (api/system-preferences.md)</li>
+<li>webContents (api/web-contents.md)</li>
 <li><a href="api/tray.html">Tray</a></li>
 </ul>
 <h3 id="renderer-process&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;-web-page">Renderer Process&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB; (Web Page):</h3>
@@ -921,14 +926,15 @@
 </ul>
 <h2 id="&#x958B;&#x767A;">&#x958B;&#x767A;</h2>
 <ul>
-<li>Coding Style</li>
-<li>Source Code Directory Structure</li>
-<li>Technical Differences to NW.js (formerly node-webkit)</li>
-<li>Build System Overview</li>
-<li>Build Instructions (OS X)</li>
-<li>Build Instructions (Windows)</li>
-<li>Build Instructions (Linux)</li>
-<li>Setting Up Symbol Server in debugger</li>
+<li>Coding Style (development/coding-style.md)</li>
+<li>Source Code Directory Structure (development/source-code-directory-structure.md)</li>
+<li>Technical Differences to NW.js  (formerly node-webkit)(development/atom-shell-vs-node-webkit.md)</li>
+<li>Build System Overview (development/build-system-overview.md)</li>
+<li>Build Instructions (macOS) (development/build-instructions-osx.md)</li>
+<li>Build Instructions (Windows) (development/build-instructions-windows.md)</li>
+<li>Build Instructions (Linux) (development/build-instructions-linux.md)</li>
+<li>Debug Instructions (Windows) (development/debug-instructions-windows.md)</li>
+<li>Setting Up Symbol Server in debugger (development/setting-up-symbol-server.md)</li>
 </ul>
 
                     

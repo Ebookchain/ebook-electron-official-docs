@@ -53,7 +53,7 @@
         data-chapter-title="アプリケーションの配布"
         data-filepath="tutorial/application-distribution.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:56 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:31 GMT+0800 (CST)"
         data-innerlanguage="jp">
     
 
@@ -844,9 +844,9 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x914D;&#x5E03;">&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x914D;&#x5E03;</h1>
-<p>Electron&#x3067;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x914D;&#x5E03;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;<code>app</code> &#x3068;&#x3044;&#x3046;&#x540D;&#x524D;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x3057;&#x3001;Electron&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;(OS X &#x3067;&#x306F;
+<p>Electron&#x3067;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x914D;&#x5E03;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;<code>app</code> &#x3068;&#x3044;&#x3046;&#x540D;&#x524D;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x3057;&#x3001;Electron&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;(macOS &#x3067;&#x306F;
 <code>Electron.app/Contents/Resources/</code> &#x3001;Linux &#x3068; Windows &#x3067;&#x306F; <code>resources/</code>)&#x914D;&#x4E0B;&#x306B;&#x7F6E;&#x304F;&#x3079;&#x304D;&#x3067;&#x3059;,</p>
-<p>OS X:</p>
+<p>macOS:</p>
 <pre><code class="lang-text">electron/Electron.app/Contents/Resources/app/
 &#x251C;&#x2500;&#x2500; package.json
 &#x251C;&#x2500;&#x2500; main.js
@@ -860,9 +860,9 @@
 </code></pre>
 <p><code>Electron.app</code> (&#x307E;&#x305F;&#x306F; Linux&#x4E0A;&#x3067;&#x306F;&#x3001;<code>electron</code>&#x3001;Windows&#x4E0A;&#x3067;&#x306F;&#x3001; <code>electron.exe</code>)&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x3001;Electron&#x306F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x958B;&#x59CB;&#x3057;&#x307E;&#x3059;&#x3002;<code>electron</code> &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x6700;&#x7D42;&#x7684;&#x306A;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306B;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x914D;&#x5E03;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <h2 id="&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x30F3;&#x30B0;&#x3059;&#x308B;">&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x30F3;&#x30B0;&#x3059;&#x308B;</h2>
-<p>&#x3059;&#x3079;&#x3066;&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3068;&#x306F;&#x5225;&#x306B;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306B;&#x898B;&#x3048;&#x308B;&#x306E;&#x3092;&#x907F;&#x3051;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;<a href="https://github.com/atom/asar" target="_blank">asar</a> &#x306B;&#x30A2;&#x30FC;&#x30AB;&#x30A4;&#x30D6;&#x3057;&#x3066;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x5316;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3059;&#x3079;&#x3066;&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3068;&#x306F;&#x5225;&#x306B;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306B;&#x898B;&#x3048;&#x308B;&#x306E;&#x3092;&#x907F;&#x3051;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;<a href="https://github.com/electron/asar" target="_blank">asar</a> &#x306B;&#x30A2;&#x30FC;&#x30AB;&#x30A4;&#x30D6;&#x3057;&#x3066;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x5316;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <p><code>app</code> &#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x306E;&#x4EE3;&#x308F;&#x308A;&#x306B; <code>asar</code> &#x30A2;&#x30FC;&#x30AB;&#x30A4;&#x30D6;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x306F;&#x3001;&#x30A2;&#x30FC;&#x30AB;&#x30A4;&#x30D6;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092; <code>app.asar</code> &#x3068;&#x3044;&#x3046;&#x540D;&#x524D;&#x306B;&#x5909;&#x66F4;&#x3057;&#x3001;Electron &#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x914D;&#x7F6E;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x3059;&#x308B;&#x3068;&#x3001;Electron &#x306F;&#x30A2;&#x30FC;&#x30AB;&#x30A4;&#x30D6;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3082;&#x3046;&#x3068;&#x3057;&#x3001;&#x305D;&#x308C;&#x3092;&#x958B;&#x59CB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p>OS X:</p>
+<p>macOS:</p>
 <pre><code class="lang-text">electron/Electron.app/Contents/Resources/
 &#x2514;&#x2500;&#x2500; app.asar
 </code></pre>
@@ -876,7 +876,7 @@
 <h3 id="windows">Windows</h3>
 <p><code>electron.exe</code>&#x3092;&#x4EFB;&#x610F;&#x306E;&#x540D;&#x524D;&#x306B;&#x5909;&#x66F4;&#x3067;&#x304D;&#x3001;<a href="https://github.com/atom/rcedit" target="_blank">rcedit</a>
 &#x306E;&#x3088;&#x3046;&#x306A;&#x30C4;&#x30FC;&#x30EB;&#x3067;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3084;&#x305D;&#x306E;&#x4ED6;&#x306E;&#x60C5;&#x5831;&#x3092;&#x7DE8;&#x96C6;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
-<h3 id="os-x">OS X</h3>
+<h3 id="macos">macOS</h3>
 <p><code>Electron.app</code> &#x3092;&#x4EFB;&#x610F;&#x306E;&#x540D;&#x524D;&#x306B;&#x5909;&#x66F4;&#x3067;&#x304D;&#x3001;&#x6B21;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E; <code>CFBundleDisplayName</code>&#x3068; <code>CFBundleIdentifier</code>&#x3001; <code>CFBundleName</code>&#x306E;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x306E;&#x540D;&#x524D;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <ul>
 <li><code>Electron.app/Contents/Info.plist</code></li>

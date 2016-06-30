@@ -53,7 +53,7 @@
         data-chapter-title="Tray"
         data-filepath="api/tray.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:59 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:40 GMT+0800 (CST)"
         data-innerlanguage="zh-CN">
     
 
@@ -962,8 +962,8 @@ appIcon.setContextMenu(contextMenu);
 </li>
 </ul>
 <p>&#x5F53;tray icon&#x88AB;&#x70B9;&#x51FB;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x51FA;&#x4E8B;&#x4EF6;.</p>
-<p><strong>&#x6CE8;&#x610F;:</strong> <code>bounds</code> &#x53EA;&#x5728; OS X &#x548C; Windows &#x4E0A;&#x8D77;&#x6548;.</p>
-<h3 id="event-rightclick-os-x-windows">Event: &apos;right-click&apos; <em>OS X</em> <em>Windows</em></h3>
+<p><strong>&#x6CE8;&#x610F;:</strong> <code>bounds</code> &#x53EA;&#x5728; macOS &#x548C; Windows &#x4E0A;&#x8D77;&#x6548;.</p>
+<h3 id="event-rightclick-macos-windows">Event: &apos;right-click&apos; <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>event</code> Event<ul>
 <li><code>altKey</code> Boolean</li>
@@ -981,7 +981,7 @@ appIcon.setContextMenu(contextMenu);
 </li>
 </ul>
 <p>&#x5F53;tray icon&#x88AB;&#x9F20;&#x6807;&#x53F3;&#x952E;&#x70B9;&#x51FB;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x51FA;&#x4E8B;&#x4EF6;.</p>
-<h3 id="event-doubleclick-os-x-windows">Event: &apos;double-click&apos; <em>OS X</em> <em>Windows</em></h3>
+<h3 id="event-doubleclick-macos-windows">Event: &apos;double-click&apos; <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>event</code> Event<ul>
 <li><code>altKey</code> Boolean</li>
@@ -1005,20 +1005,20 @@ appIcon.setContextMenu(contextMenu);
 <p>&#x5F53;tray &#x6C14;&#x6CE1;&#x88AB;&#x70B9;&#x51FB;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x51FA;&#x4E8B;&#x4EF6;.</p>
 <h3 id="event-balloonclosed-windows">Event: &apos;balloon-closed&apos; <em>Windows</em></h3>
 <p>&#x5F53;tray &#x6C14;&#x6CE1;&#x5173;&#x95ED;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x51FA;&#x4E8B;&#x4EF6;&#xFF0C;&#x56E0;&#x4E3A;&#x8D85;&#x65F6;&#x6216;&#x4EBA;&#x4E3A;&#x5173;&#x95ED;.</p>
-<h3 id="event-drop-os-x">Event: &apos;drop&apos; <em>OS X</em></h3>
+<h3 id="event-drop-macos">Event: &apos;drop&apos; <em>macOS</em></h3>
 <p>&#x5F53;tray icon&#x4E0A;&#x7684;&#x4EFB;&#x4F55;&#x53EF;&#x62D6;&#x52A8;&#x9879;&#x88AB;&#x5220;&#x9664;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x51FA;&#x4E8B;&#x4EF6;.</p>
-<h3 id="event-dropfiles-os-x">Event: &apos;drop-files&apos; <em>OS X</em></h3>
+<h3 id="event-dropfiles-macos">Event: &apos;drop-files&apos; <em>macOS</em></h3>
 <ul>
 <li><code>event</code></li>
 <li><code>files</code> Array - &#x5DF2;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;.</li>
 </ul>
 <p>&#x5F53;tray icon&#x4E0A;&#x7684;&#x53EF;&#x62D6;&#x52A8;&#x6587;&#x4EF6;&#x88AB;&#x5220;&#x9664;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x51FA;&#x4E8B;&#x4EF6;.</p>
-<h3 id="event-dragenter-os-x">Event: &apos;drag-enter&apos; <em>OS X</em></h3>
+<h3 id="event-dragenter-macos">Event: &apos;drag-enter&apos; <em>macOS</em></h3>
 <p>&#x5F53;&#x4E00;&#x4E2A;&#x62D6;&#x52A8;&#x64CD;&#x4F5C;&#x8FDB;&#x5165;tray icon&#x7684;&#x65F6;&#x5019;&#x53D1;&#x51FA;&#x4E8B;&#x4EF6;.</p>
-<h3 id="event-dragleave-os-x">Event: &apos;drag-leave&apos; <em>OS X</em></h3>
+<h3 id="event-dragleave-macos">Event: &apos;drag-leave&apos; <em>macOS</em></h3>
 <p>&#x5F53;&#x4E00;&#x4E2A;&#x62D6;&#x52A8;&#x64CD;&#x4F5C;&#x79BB;&#x5F00;tray icon&#x7684;&#x65F6;&#x5019;&#x53D1;&#x51FA;&#x4E8B;&#x4EF6;.
 Emitted when a drag operation exits the tray icon.</p>
-<h3 id="event-dragend-os-x">Event: &apos;drag-end&apos; <em>OS X</em></h3>
+<h3 id="event-dragend-macos">Event: &apos;drag-end&apos; <em>macOS</em></h3>
 <p>&#x5F53;&#x4E00;&#x4E2A;&#x62D6;&#x52A8;&#x64CD;&#x4F5C;&#x5728;tray icon&#x4E0A;&#x6216;&#x5176;&#x5B83;&#x5730;&#x65B9;&#x505C;&#x6B62;&#x62D6;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x51FA;&#x4E8B;&#x4EF6;.</p>
 <h2 id="&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</h2>
 <p><code>Tray</code> &#x6A21;&#x5757;&#x6709;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;:</p>
@@ -1030,22 +1030,22 @@ Emitted when a drag operation exits the tray icon.</p>
 <li><code>image</code> <a href="native-image.html">NativeImage</a></li>
 </ul>
 <p>&#x8BA9; <code>image</code> &#x4E0E; tray icon &#x5173;&#x8054;&#x8D77;&#x6765;.</p>
-<h3 id="traysetpressedimageimage-os-x"><code>Tray.setPressedImage(image)</code> <em>OS X</em></h3>
+<h3 id="traysetpressedimageimage-macos"><code>Tray.setPressedImage(image)</code> <em>macOS</em></h3>
 <ul>
 <li><code>image</code> <a href="native-image.html">NativeImage</a></li>
 </ul>
-<p>&#x5F53;&#x5728; OS X &#x4E0A;&#x6309;&#x538B; tray icon &#x7684;&#x65F6;&#x5019;&#xFF0C; &#x8BA9; <code>image</code> &#x4E0E; tray icon &#x5173;&#x8054;&#x8D77;&#x6765;.</p>
+<p>&#x5F53;&#x5728; macOS &#x4E0A;&#x6309;&#x538B; tray icon &#x7684;&#x65F6;&#x5019;&#xFF0C; &#x8BA9; <code>image</code> &#x4E0E; tray icon &#x5173;&#x8054;&#x8D77;&#x6765;.</p>
 <h3 id="traysettooltiptooltip"><code>Tray.setToolTip(toolTip)</code></h3>
 <ul>
 <li><code>toolTip</code> String</li>
 </ul>
 <p>&#x4E3A; tray icon &#x8BBE;&#x7F6E; hover text.</p>
-<h3 id="traysettitletitle-os-x"><code>Tray.setTitle(title)</code> <em>OS X</em></h3>
+<h3 id="traysettitletitle-macos"><code>Tray.setTitle(title)</code> <em>macOS</em></h3>
 <ul>
 <li><code>title</code> String</li>
 </ul>
 <p>&#x5728;&#x72B6;&#x6001;&#x680F;&#x6CBF;&#x7740; tray icon &#x8BBE;&#x7F6E;&#x6807;&#x9898;.</p>
-<h3 id="traysethighlightmodehighlight-os-x"><code>Tray.setHighlightMode(highlight)</code> <em>OS X</em></h3>
+<h3 id="traysethighlightmodehighlight-macos"><code>Tray.setHighlightMode(highlight)</code> <em>macOS</em></h3>
 <ul>
 <li><code>highlight</code> Boolean</li>
 </ul>
@@ -1060,7 +1060,7 @@ Emitted when a drag operation exits the tray icon.</p>
 </li>
 </ul>
 <p>&#x5C55;&#x793A;&#x4E00;&#x4E2A; tray balloon.</p>
-<h3 id="traypopupcontextmenumenu-position-os-x-windows"><code>Tray.popUpContextMenu([menu, position])</code> <em>OS X</em> <em>Windows</em></h3>
+<h3 id="traypopupcontextmenumenu-position-macos-windows"><code>Tray.popUpContextMenu([menu, position])</code> <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>menu</code> Menu (optional)</li>
 <li><code>position</code> Object (&#x53EF;&#x9009;) - &#x4E0A;&#x6258;&#x4F4D;&#x7F6E;.<ul>

@@ -53,7 +53,7 @@
         data-chapter-title="webFrame"
         data-filepath="api/web-frame.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,15 +926,16 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="webframe">webFrame</h1>
-<p><code>web-frame</code> &#xBAA8;&#xB4C8;&#xC740; &#xD604;&#xC7AC; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xB79C;&#xB354;&#xB9C1; &#xC0C1;&#xD0DC;&#xB97C; &#xC124;&#xC815; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xAD00;&#xB828; &#xC720;&#xD2F8;&#xB9AC;&#xD2F0;&#xB97C;
-&#xC81C;&#xACF5;&#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; &#xD604;&#xC7AC; &#xD398;&#xC774;&#xC9C0;&#xB97C; 200% &#xC90C; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> webFrame = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).webFrame;
+<blockquote>
+<p>&#xD604;&#xC7AC; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xB80C;&#xB354;&#xB9C1; &#xC0C1;&#xD0DC;&#xB97C; &#xCEE4;&#xC2A4;&#xD130;&#xB9C8;&#xC774;&#xC988;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xD604;&#xC7AC; &#xD398;&#xC774;&#xC9C0;&#xB97C; 200% &#xC90C; &#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {webFrame} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
 webFrame.setZoomFactor(<span class="hljs-number">2</span>);
 </code></pre>
 <h2 id="methods">Methods</h2>
-<p><code>web-frame</code> &#xBAA8;&#xB4C8;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<p><code>webFrame</code> &#xBAA8;&#xB4C8;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <h3 id="webframesetzoomfactorfactor"><code>webFrame.setZoomFactor(factor)</code></h3>
 <ul>
 <li><code>factor</code> Number - Zoom &#xAC12;</li>
@@ -967,9 +968,9 @@ webFrame.setZoomFactor(<span class="hljs-number">2</span>);
 <p>Input field&#xB098; text area&#xC5D0; &#xCCA0;&#xC790; &#xAC80;&#xC0AC;(spell checking) &#xC81C;&#xACF5;&#xC790;&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p><code>provider</code>&#xB294; &#xBC18;&#xB4DC;&#xC2DC; &#xC804;&#xB2EC;&#xB41C; &#xB2E8;&#xC5B4;&#xC758; &#xCCA0;&#xC790;&#xAC00; &#xB9DE;&#xC558;&#xB294;&#xC9C0; &#xAC80;&#xC0AC;&#xD558;&#xB294; <code>spellCheck</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C;
 &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<p><a href="https://github.com/atom/node-spellchecker" target="_blank">node-spellchecker</a>&#xB97C; &#xCCA0;&#xC790; &#xAC80;&#xC0AC; &#xC81C;&#xACF5;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript">webFrame.setSpellCheckProvider(<span class="hljs-string">&quot;en-US&quot;</span>, <span class="hljs-literal">true</span>, {
-  spellCheck: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">text</span>) </span>{
+<p><a href="https://github.com/atom/node-spellchecker" target="_blank">node-spellchecker</a>&#xB97C; &#xCCA0;&#xC790; &#xAC80;&#xC0AC; &#xC81C;&#xACF5;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript">webFrame.setSpellCheckProvider(<span class="hljs-string">&apos;en-US&apos;</span>, <span class="hljs-literal">true</span>, {
+  spellCheck(text) {
     <span class="hljs-keyword">return</span> !(<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;spellchecker&apos;</span>).isMisspelled(text));
   }
 });
@@ -979,13 +980,13 @@ webFrame.setZoomFactor(<span class="hljs-number">2</span>);
 <li><code>scheme</code> String</li>
 </ul>
 <p><code>scheme</code>&#xC744; &#xBCF4;&#xC548; &#xC2A4;&#xD0B4;&#xC73C;&#xB85C; &#xB4F1;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xBCF4;&#xC548; &#xC2A4;&#xD0B4;&#xC740; &#xD63C;&#xD569;&#xB41C; &#xCEE8;&#xD150;&#xCE20; &#xACBD;&#xACE0;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>https</code> &#xC640; <code>data</code>&#xB294;
+<p>&#xBCF4;&#xC548; &#xC2A4;&#xD0B4;&#xC740; &#xD63C;&#xD569;&#xB41C; &#xCF58;&#xD150;&#xCE20; &#xACBD;&#xACE0;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4; <code>https</code> &#xC640; <code>data</code>&#xB294;
 &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xACF5;&#xACA9;&#xC790;&#xB85C;&#xBD80;&#xD130; &#xC190;&#xC0C1;&#xB420; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBCF4;&#xC548; &#xC2A4;&#xD0B4;&#xC774;&#xB77C;&#xACE0; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webframeregisterurlschemeasbypassingcspscheme"><code>webFrame.registerURLSchemeAsBypassingCSP(scheme)</code></h3>
 <ul>
 <li><code>scheme</code> String</li>
 </ul>
-<p>&#xD604;&#xC7AC; &#xD398;&#xC774;&#xC9C0; &#xCEE8;&#xD150;&#xCE20;&#xC758; &#xBCF4;&#xC548; &#xC815;&#xCC45;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; <code>scheme</code>&#xB85C;&#xBD80;&#xD130; &#xB9AC;&#xC18C;&#xC2A4;&#xAC00; &#xB85C;&#xB4DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD604;&#xC7AC; &#xD398;&#xC774;&#xC9C0; &#xCF58;&#xD150;&#xCE20;&#xC758; &#xBCF4;&#xC548; &#xC815;&#xCC45;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; <code>scheme</code>&#xB85C;&#xBD80;&#xD130; &#xB9AC;&#xC18C;&#xC2A4;&#xAC00; &#xB85C;&#xB4DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webframeregisterurlschemeasprivilegedscheme"><code>webFrame.registerURLSchemeAsPrivileged(scheme)</code></h3>
 <ul>
 <li><code>scheme</code> String</li>
@@ -1005,6 +1006,32 @@ ServiceWorker&#xC758; &#xB4F1;&#xB85D;&#xACFC; fetch API&#xB97C; &#xC0AC;&#xC6A9
 <p>&#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; <code>code</code>&#xB97C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0;&#xC11C; &#xC5B4;&#xB5A4; <code>requestFullScreen</code> &#xAC19;&#xC740; HTML API&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC2B9;&#xC778;&#xC774;
 &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. <code>userGesture</code>&#xB97C; <code>true</code>&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xC774;&#xB7EC;&#xD55C; &#xC81C;&#xC57D;&#xC744; &#xC81C;&#xAC70;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="webframegetresourceusage"><code>webFrame.getResourceUsage()</code></h3>
+<p>Blink&#xC758; &#xB0B4;&#xBD80; &#xBA54;&#xBAA8;&#xB9AC; &#xCE90;&#xC2DC; &#xC0AC;&#xC6A9; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0;&#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(webFrame.getResourceUsage())
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xC774; &#xCD9C;&#xB825;&#xB429;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript">{
+  images: {
+    count: <span class="hljs-number">22</span>,
+    size: <span class="hljs-number">2549</span>,
+    liveSize: <span class="hljs-number">2542</span>,
+    decodedSize: <span class="hljs-number">478</span>,
+    purgedSize: <span class="hljs-number">0</span>,
+    purgeableSize: <span class="hljs-number">0</span>
+  },
+  cssStyleSheets: { <span class="hljs-comment">/* same with &quot;images&quot; */</span> },
+  xslStyleSheets: { <span class="hljs-comment">/* same with &quot;images&quot; */</span> },
+  fonts: { <span class="hljs-comment">/* same with &quot;images&quot; */</span> },
+  other: { <span class="hljs-comment">/* same with &quot;images&quot; */</span> },
+}
+</code></pre>
+<h3 id="webframeclearcache"><code>webFrame.clearCache()</code></h3>
+<p>&#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xBA54;&#xBAA8;&#xB9AC; &#xBE44;&#xC6B0;&#xAE30;&#xB97C; &#xC2DC;&#xB3C4;&#xD569;&#xB2C8;&#xB2E4;. (&#xC774;&#xC804; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xC774;&#xBBF8;&#xC9C0; &#xB4F1;)</p>
+<p>&#xCC38;&#xACE0;&#xB85C; &#xB9F9;&#xBAA9;&#xC801;&#xC73C;&#xB85C; &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC774; &#xBE48; &#xCE90;&#xC2DC;&#xB97C; &#xB2E4;&#xC2DC; &#xCC44;&#xC6CC;&#xC57C;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
+Electron&#xC744; &#xB290;&#xB9AC;&#xAC8C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xC608;&#xC0C1;&#xD588;&#xB358; &#xAC83; &#xBCF4;&#xB2E4; &#xC2E4;&#xC9C8;&#xC801;&#xC73C;&#xB85C; &#xB354;
+&#xC801;&#xC740; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAC8C; &#xB9CC;&#xB4DC;&#xB294; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC744; &#xB54C;&#xB9CC; &#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+(i.e. &#xC544;&#xC8FC; &#xBB34;&#xAC70;&#xC6B4; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; &#xAC70;&#xC758; &#xBE48; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;&#xD55C; &#xD6C4; &#xACC4;&#xC18D; &#xC720;&#xC9C0;&#xD560; &#xACBD;&#xC6B0;)</p>
 
                     
                     </section>

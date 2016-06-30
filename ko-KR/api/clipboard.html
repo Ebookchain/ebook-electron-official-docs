@@ -53,7 +53,7 @@
         data-chapter-title="clipboard"
         data-filepath="api/clipboard.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,12 +926,14 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="clipboard">clipboard</h1>
-<p><code>clipboard</code> &#xBAA8;&#xB4C8;&#xC740; &#xBCF5;&#xC0AC;/&#xBD99;&#xC5EC;&#xB123;&#xAE30; &#xC791;&#xC5C5;&#xC744; &#xC218;&#xD589;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294;
-&#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xC5D0; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC501;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> clipboard = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).clipboard;
+<blockquote>
+<p>&#xC2DC;&#xC2A4;&#xD15C; &#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xC5D0; &#xBCF5;&#xC0AC;&#xC640; &#xBD99;&#xC5EC;&#xB123;&#xAE30;&#xB97C; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xC5D0; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC4F0;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {clipboard} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 clipboard.writeText(<span class="hljs-string">&apos;Example String&apos;</span>);
 </code></pre>
-<p>X Window &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC120; selection &#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xB3C4; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xC778;&#xC790; &#xB4A4;&#xC5D0;
+<p>X Window &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC120; selection &#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xB3C4; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xC778;&#xC218; &#xB4A4;&#xC5D0;
 <code>selection</code> &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xAC19;&#xC774; &#xC9C0;&#xC815;&#xD574;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-javascript">clipboard.writeText(<span class="hljs-string">&apos;Example String&apos;</span>, <span class="hljs-string">&apos;selection&apos;</span>);
 <span class="hljs-built_in">console</span>.log(clipboard.readText(<span class="hljs-string">&apos;selection&apos;</span>));
@@ -944,19 +946,19 @@ clipboard.writeText(<span class="hljs-string">&apos;Example String&apos;</span>)
 <ul>
 <li><code>type</code> String (optional)</li>
 </ul>
-<p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC; &#xCEE8;&#xD150;&#xCE20;&#xB97C; <code>plain text</code>&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC; &#xCF58;&#xD150;&#xCE20;&#xB97C; <code>plain text</code>&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="clipboardwritetexttext-type"><code>clipboard.writeText(text[, type])</code></h3>
 <ul>
 <li><code>text</code> String</li>
 <li><code>type</code> String (optional)</li>
 </ul>
 <p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xC5D0; <code>plain text</code>&#xB85C; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC501;&#xB2C8;&#xB2E4;.</p>
-<h3 id="clipboardreadhtmltype"><code>clipboard.readHtml([type])</code></h3>
+<h3 id="clipboardreadhtmltype"><code>clipboard.readHTML([type])</code></h3>
 <ul>
 <li><code>type</code> String (optional)</li>
 </ul>
-<p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC; &#xCEE8;&#xD150;&#xCE20;&#xB97C; <code>markup</code>&#xC73C;&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="clipboardwritehtmlmarkup-type"><code>clipboard.writeHtml(markup[, type])</code></h3>
+<p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC; &#xCF58;&#xD150;&#xCE20;&#xB97C; <code>markup</code>&#xC73C;&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="clipboardwritehtmlmarkup-type"><code>clipboard.writeHTML(markup[, type])</code></h3>
 <ul>
 <li><code>markup</code> String</li>
 <li><code>type</code> String (optional)</li>
@@ -973,12 +975,12 @@ clipboard.writeText(<span class="hljs-string">&apos;Example String&apos;</span>)
 <li><code>type</code> String (optional)</li>
 </ul>
 <p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xC5D0; <code>image</code>&#xB97C; &#xC501;&#xB2C8;&#xB2E4;.</p>
-<h3 id="clipboardreadrtftype"><code>clipboard.readRtf([type])</code></h3>
+<h3 id="clipboardreadrtftype"><code>clipboard.readRTF([type])</code></h3>
 <ul>
 <li><code>type</code> String (optional)</li>
 </ul>
-<p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xB85C;&#xBD80;&#xD130; RTF &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xCEE8;&#xD150;&#xCE20;&#xB97C; &#xC77D;&#xC5B4;&#xC635;&#xB2C8;&#xB2E4;.</p>
-<h3 id="clipboardwritertftext-type"><code>clipboard.writeRtf(text[, type])</code></h3>
+<p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xB85C;&#xBD80;&#xD130; RTF &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xC77D;&#xC5B4;&#xC635;&#xB2C8;&#xB2E4;.</p>
+<h3 id="clipboardwritertftext-type"><code>clipboard.writeRTF(text[, type])</code></h3>
 <ul>
 <li><code>text</code> String</li>
 <li><code>type</code> String (optional)</li>
@@ -988,7 +990,7 @@ clipboard.writeText(<span class="hljs-string">&apos;Example String&apos;</span>)
 <ul>
 <li><code>type</code> String (optional)</li>
 </ul>
-<p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xC5D0; &#xC800;&#xC7A5;&#xB41C; &#xBAA8;&#xB4E0; &#xCEE8;&#xD150;&#xCE20;&#xB97C; &#xC0AD;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xC5D0; &#xC800;&#xC7A5;&#xB41C; &#xBAA8;&#xB4E0; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xC0AD;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="clipboardavailableformatstype">clipboard.availableFormats([type])</h3>
 <p>&#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xC758; <code>type</code>&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; &#xC9C0;&#xC6D0;&#xD558;&#xB294; <code>format</code>&#xC744; &#xBB38;&#xC790;&#xC5F4;&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="clipboardhasdata-type"><code>clipboard.has(data[, type])</code></h3>
@@ -1015,7 +1017,7 @@ clipboard.writeText(<span class="hljs-string">&apos;Example String&apos;</span>)
 </li>
 <li><code>type</code> String (optional)</li>
 </ul>
-<pre><code class="lang-javascript">clipboard.write({text: <span class="hljs-string">&apos;test&apos;</span>, html: <span class="hljs-string">&quot;&lt;b&gt;test&lt;/b&gt;&quot;</span>});
+<pre><code class="lang-javascript">clipboard.write({text: <span class="hljs-string">&apos;test&apos;</span>, html: <span class="hljs-string">&apos;&lt;b&gt;test&lt;/b&gt;&apos;</span>});
 </code></pre>
 <p><code>data</code>&#xB97C; &#xD074;&#xB9BD;&#xBCF4;&#xB4DC;&#xC5D0; &#xC501;&#xB2C8;&#xB2E4;.</p>
 

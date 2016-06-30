@@ -53,7 +53,7 @@
         data-chapter-title="크롬 명령줄 스위치 지원"
         data-filepath="api/chrome-command-line-switches.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,26 +926,28 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#xD06C;&#xB86C;-&#xBA85;&#xB839;&#xC904;-&#xC2A4;&#xC704;&#xCE58;-&#xC9C0;&#xC6D0;">&#xD06C;&#xB86C; &#xBA85;&#xB839;&#xC904; &#xC2A4;&#xC704;&#xCE58; &#xC9C0;&#xC6D0;</h1>
-<p>&#xD06C;&#xB86C; &#xBA85;&#xB839;&#xC904;(Command-Line) &#xC2A4;&#xC704;&#xCE58;&#xB294; &#xD06C;&#xB86C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xB418;&#xB294; &#xCD94;&#xAC00; &#xC635;&#xC158;&#xC774;&#xBA70;
-Electron&#xC5D0;&#xC11C;&#xB3C4; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;. <a href="app.html">app</a>&#xC758; <a href="app.html#event-ready">ready</a>&#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xC791;&#xB3D9;&#xD558;&#xAE30; &#xC804;&#xC5D0;
-<a href="app.html#appcommandlineappendswitchswitch-value">app.commandLine.appendSwitch</a> API&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB0B4;&#xBD80;&#xC5D0;&#xC11C;
-&#xC2A4;&#xC704;&#xCE58;&#xB97C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).app;
+<blockquote>
+<p>Electron&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xCEE4;&#xB9E8;&#xB4DC; &#xBA85;&#xB839;&#xC904; &#xC2A4;&#xC704;&#xCE58;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xBA54;&#xC778; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; <a href="app.html">app</a> &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; <a href="app.html#event-ready">ready</a> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xAE30;
+&#xC804;&#xC5D0; <a href="app.html#appcommandlineappendswitchswitch-value">app.commandLine.appendSwitch</a>&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74;, &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758;
+&#xBA85;&#xB839;&#xC904; &#xC635;&#xC158;&#xC744; &#xCD94;&#xAC00;&#xB85C; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 app.commandLine.appendSwitch(<span class="hljs-string">&apos;remote-debugging-port&apos;</span>, <span class="hljs-string">&apos;8315&apos;</span>);
 app.commandLine.appendSwitch(<span class="hljs-string">&apos;host-rules&apos;</span>, <span class="hljs-string">&apos;MAP * 127.0.0.1&apos;</span>);
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
   <span class="hljs-comment">// Your code here</span>
 });
 </code></pre>
-<h2 id="clientcertificatepath">--client-certificate=<code>path</code></h2>
-<p><code>path</code>&#xB97C; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC778;&#xC99D;&#xC11C;&#xB85C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="ignoreconnectionslimitdomains">--ignore-connections-limit=<code>domains</code></h2>
 <p><code>domains</code> &#xB9AC;&#xC2A4;&#xD2B8;(<code>,</code>&#xB85C; &#xAD6C;&#xBD84;)&#xC758; &#xC5F0;&#xACB0; &#xC81C;&#xD55C;&#xC744; &#xBB34;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="disablehttpcache">--disable-http-cache</h2>
-<p>HTTP &#xC694;&#xCCAD; &#xCE90;&#xC2DC;&#xB97C; &#xBE44;&#xD65C;&#xC131;&#xD654; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>HTTP &#xC694;&#xCCAD; &#xCE90;&#xC2DC;&#xB97C; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="disablehttp2">--disable-http2</h2>
+<p>HTTP/2&#xC640; SPDY/3.1 &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="remotedebuggingportport">--remote-debugging-port=<code>port</code></h2>
-<p>&#xC9C0;&#xC815;&#xD55C; <code>port</code>&#xC5D0; HTTP &#xAE30;&#xBC18;&#xC758; &#xB9AC;&#xBAA8;&#xD2B8; &#xB514;&#xBC84;&#xAC70;&#xB97C; &#xD65C;&#xC131;&#xD654; &#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;. (&#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C;)</p>
+<p>&#xC9C0;&#xC815;&#xD55C; <code>port</code>&#xC5D0; HTTP &#xAE30;&#xBC18;&#xC758; &#xB9AC;&#xBAA8;&#xD2B8; &#xB514;&#xBC84;&#xAC70;&#xB97C; &#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;. (&#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C;)</p>
 <h2 id="jsflagsflags">--js-flags=<code>flags</code></h2>
 <p>JS &#xC5D4;&#xC9C4;&#xC5D0; &#xC9C0;&#xC815;&#xD55C; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. <code>flags</code>&#xB97C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xD65C;&#xC131;&#xD654;&#xD558;&#xACE0;&#xC790; &#xD55C;&#xB2E4;&#xBA74;,
 Electron&#xC774; &#xC2DC;&#xC791;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xC2A4;&#xC704;&#xCE58;&#xB97C; &#xC804;&#xB2EC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -987,6 +989,15 @@ Electron&#xC774; &#xC2DC;&#xC791;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xC2A4;&#xC7
 resolver, http &#xD504;&#xB85D;&#xC2DC; &#xC5F0;&#xACB0;&#xC758; <code>CONNECT</code>, <code>SOCKS</code> &#xD504;&#xB85D;&#xC2DC; &#xC5F0;&#xACB0;&#xC758; endpoint &#xD638;&#xC2A4;&#xD2B8;)</p>
 <h2 id="hostresolverrulesrules">--host-resolver-rules=<code>rules</code></h2>
 <p><code>--host-rules</code> &#xD50C;&#xB798;&#xADF8;&#xC640; &#xBE44;&#xC2B7;&#xD558;&#xC9C0;&#xB9CC; &#xC774; &#xD50C;&#xB798;&#xADF8;&#xB294; host resolver&#xC5D0;&#xB9CC; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h2 id="authserverwhitelisturl">--auth-server-whitelist=<code>url</code></h2>
+<p>&#xD1B5;&#xD569; &#xC778;&#xC99D;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD560; &#xC27C;&#xD45C;&#xB85C; &#xAD6C;&#xBD84;&#xB41C; &#xC11C;&#xBC84;&#xC758; &#xB9AC;&#xC2A4;&#xD2B8;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;:</p>
+<pre><code>--auth-server-whitelist=&apos;*example.com, *foobar.com, *baz&apos;
+</code></pre><p>&#xADF8;&#xB9AC;&#xACE0; &#xBAA8;&#xB4E0; <code>example.com</code>, <code>foobar.com</code>, <code>baz</code>&#xB85C; &#xB05D;&#xB098;&#xB294; <code>url</code>&#xC740; &#xD1B5;&#xD569; &#xC778;&#xC99D;&#xC744;
+&#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;. <code>*</code> &#xC811;&#xB450;&#xC5B4;&#xAC00; &#xC5C6;&#xB2E4;&#xBA74; url&#xC740; &#xC815;&#xD655;&#xD788; &#xC77C;&#xCE58;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="authnegotiatedelegatewhitelisturl">--auth-negotiate-delegate-whitelist=<code>url</code></h2>
+<p>&#xD544;&#xC218;&#xC801;&#xC778; &#xC0AC;&#xC6A9;&#xC790; &#xC790;&#xACA9; &#xC99D;&#xBA85;&#xC744; &#xBCF4;&#xB0B4;&#xC57C; &#xD560; &#xC27C;&#xD45C;&#xB85C; &#xAD6C;&#xBD84;&#xB41C; &#xC11C;&#xBC84;&#xC758; &#xB9AC;&#xC2A4;&#xD2B8;.
+<code>*</code> &#xC811;&#xB450;&#xC5B4;&#xAC00; &#xC5C6;&#xB2E4;&#xBA74; url&#xC740; &#xC815;&#xD655;&#xD788; &#xC77C;&#xCE58;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="ignorecertificateerrors">--ignore-certificate-errors</h2>
 <p>&#xC778;&#xC99D;&#xC11C; &#xC5D0;&#xB7EC;&#xB97C; &#xBB34;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="ppapiflashpathpath">--ppapi-flash-path=<code>path</code></h2>
@@ -996,18 +1007,17 @@ resolver, http &#xD504;&#xB85D;&#xC2DC; &#xC5F0;&#xACB0;&#xC758; <code>CONNECT</
 <h2 id="lognetlogpath">--log-net-log=<code>path</code></h2>
 <p>Net log &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xD65C;&#xC131;&#xD654;&#xD558;&#xACE0; <code>path</code>&#xC5D0; &#xB85C;&#xADF8;&#xB97C; &#xAE30;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="sslversionfallbackminversion">--ssl-version-fallback-min=<code>version</code></h2>
-<p>TLS fallback&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; SSL/TLS &#xCD5C;&#xC18C; &#xBC84;&#xC804;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. (&quot;tls1&quot;, &quot;tls1.1&quot;,
-&quot;tls1.2&quot;)</p>
+<p>TLS fallback&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; SSL/TLS &#xCD5C;&#xC18C; &#xBC84;&#xC804;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. (<code>tls1</code>, <code>tls1.1</code>, <code>tls1.2</code>)</p>
 <h2 id="ciphersuiteblacklistciphersuites">--cipher-suite-blacklist=<code>cipher_suites</code></h2>
 <p>SSL &#xC554;&#xD638;&#xD654;&#xB97C; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD560; &#xB300;&#xC0C1; &#xBAA9;&#xB85D;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. (<code>,</code>&#xB85C; &#xAD6C;&#xBD84;)</p>
 <h2 id="disablerendererbackgrounding">--disable-renderer-backgrounding</h2>
-<p>Chromium&#xC774; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xB294; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xB97C; &#xB0AE;&#xCD94;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774; &#xD50C;&#xB798;&#xADF8;&#xB294; &#xC804;&#xC5ED;&#xC801;&#xC774;&#xBA70; &#xBAA8;&#xB4E0; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xD558;&#xB098;&#xC758; &#xC708;&#xB3C4;&#xC6B0;&#xCC3D;&#xC5D0;&#xB9CC;
+<p>Chromium&#xC774; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xB294; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xB97C; &#xB0AE;&#xCD94;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xD50C;&#xB798;&#xADF8;&#xB294; &#xC804;&#xC5ED;&#xC801;&#xC774;&#xBA70; &#xBAA8;&#xB4E0; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xD558;&#xB098;&#xC758; &#xC708;&#xB3C4;&#xC6B0;&#xCC3D;&#xC5D0;&#xB9CC;
 &#xC2A4;&#xB85C;&#xD2C0;&#xB9C1;&#xC744; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; <a href="https://github.com/atom/atom/pull/9485/files" target="_blank">&#xC870;&#xC6A9;&#xD55C; &#xC624;&#xB514;&#xC624;&#xB97C; &#xC7AC;&#xC0DD;&#xD558;&#xB294;</a> &#xD575;&#xC744; &#xC0AC;&#xC6A9;&#xD560;
 &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="enablelogging">--enable-logging</h2>
 <p>Chromium&#xC758; &#xB85C;&#xADF8;&#xB97C; &#xCF58;&#xC194;&#xC5D0; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774; &#xC2A4;&#xC704;&#xCE58;&#xB294; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xB85C;&#xB4DC;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xBD84;&#xC11D; &#xB418;&#xBBC0;&#xB85C; <code>app.commandLine.appendSwitch</code>
+<p>&#xC774; &#xC2A4;&#xC704;&#xCE58;&#xB294; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xB85C;&#xB4DC;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xBD84;&#xC11D; &#xB418;&#xBBC0;&#xB85C; <code>app.commandLine.appendSwitch</code>
 &#xBA54;&#xC11C;&#xB4DC;&#xC5D0;&#xC120; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; <code>ELECTRON_ENABLE_LOGGING</code> &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xB97C; &#xC124;&#xC815;&#xD558;&#xBA74;
 &#xBCF8; &#xC2A4;&#xC704;&#xCE58;&#xB97C; &#xC9C0;&#xC815;&#xD55C; &#xAC83;&#xACFC; &#xAC19;&#xC740; &#xD6A8;&#xACFC;&#xB97C; &#xB0BC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="vloglevel">--v=<code>log_level</code></h2>

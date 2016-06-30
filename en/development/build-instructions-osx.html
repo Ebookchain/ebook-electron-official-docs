@@ -53,7 +53,7 @@
         data-chapter-title="Build Instructions (OS X)"
         data-filepath="development/build-instructions-osx.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -925,11 +925,11 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="build-instructions-os-x">Build Instructions (OS X)</h1>
-<p>Follow the guidelines below for building Electron on OS X.</p>
+                        <h1 id="build-instructions-macos">Build Instructions (macOS)</h1>
+<p>Follow the guidelines below for building Electron on macOS.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>OS X &gt;= 10.8</li>
+<li>macOS &gt;= 10.8</li>
 <li><a href="https://developer.apple.com/technologies/tools/" target="_blank">Xcode</a> &gt;= 5.1</li>
 <li><a href="http://nodejs.org" target="_blank">node.js</a> (external)</li>
 </ul>
@@ -943,8 +943,8 @@ following python modules:</p>
 </code></pre>
 <h2 id="bootstrapping">Bootstrapping</h2>
 <p>The bootstrap script will download all necessary build dependencies and create
-the build project files. Notice that we&apos;re using <a href="https://ninja-build.org/" target="_blank">ninja</a> to build Electron so
-there is no Xcode project generated.</p>
+the build project files. Notice that we&apos;re using <a href="https://ninja-build.org/" target="_blank">ninja</a>
+to build Electron so there is no Xcode project generated.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> electron
 $ ./script/bootstrap.py -v
 </code></pre>
@@ -957,8 +957,8 @@ $ ./script/bootstrap.py -v
 </code></pre>
 <p>After building is done, you can find <code>Electron.app</code> under <code>out/D</code>.</p>
 <h2 id="32bit-support">32bit Support</h2>
-<p>Electron can only be built for a 64bit target on OS X and there is no plan to
-support 32bit OS X in future.</p>
+<p>Electron can only be built for a 64bit target on macOS and there is no plan to
+support 32bit macOS in future.</p>
 <h2 id="tests">Tests</h2>
 <p>Test your changes conform to the project coding style using:</p>
 <pre><code class="lang-bash">$ ./script/cpplint.py

@@ -53,7 +53,7 @@
         data-chapter-title="Using Selenium and WebDriver"
         data-filepath="tutorial/using-selenium-and-webdriver.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -934,14 +934,47 @@ JavaScript execution, and more. ChromeDriver is a standalone server which
 implements WebDriver&apos;s wire protocol for Chromium. It is being developed by
 members of the Chromium and WebDriver teams.</p>
 </blockquote>
-<p>In order to use <code>chromedriver</code> with Electron you have to tell it where to
-find Electron and make it think Electron is the Chrome browser.</p>
+<h2 id="setting-up-spectron">Setting up Spectron</h2>
+<p><a href="http://electron.atom.io/spectron" target="_blank">Spectron</a> is the officially supported ChromeDriver testing framework
+for Electron. It is built on top of <a href="http://webdriver.io/" target="_blank">WebdriverIO</a> and
+has helpers to access Electron APIs in your tests and bundles ChromeDriver.</p>
+<pre><code class="lang-bash">$ npm install --save-dev spectron
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// A simple test to verify a visible window is opened with a title</span>
+<span class="hljs-keyword">var</span> Application = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;spectron&apos;</span>).Application
+<span class="hljs-keyword">var</span> assert = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;assert&apos;</span>)
+
+<span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Application({
+  path: <span class="hljs-string">&apos;/Applications/MyApp.app/Contents/MacOS/MyApp&apos;</span>
+})
+
+app.start().then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Check if the window is visible</span>
+  <span class="hljs-keyword">return</span> app.browserWindow.isVisible()
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">isVisible</span>) </span>{
+  <span class="hljs-comment">// Verify the window is visible</span>
+  assert.equal(isVisible, <span class="hljs-literal">true</span>)
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Get the window&apos;s title</span>
+  <span class="hljs-keyword">return</span> app.client.getTitle()
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">title</span>) </span>{
+  <span class="hljs-comment">// Verify the window&apos;s title</span>
+  assert.equal(title, <span class="hljs-string">&apos;My App&apos;</span>)
+}).catch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+  <span class="hljs-comment">// Log any failures</span>
+  <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Test failed&apos;</span>, error.message)
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Stop the application</span>
+  <span class="hljs-keyword">return</span> app.stop()
+})
+</code></pre>
 <h2 id="setting-up-with-webdriverjs">Setting up with WebDriverJs</h2>
 <p><a href="https://code.google.com/p/selenium/wiki/WebDriverJs" target="_blank">WebDriverJs</a> provides
 a Node package for testing with web driver, we will use it as an example.</p>
 <h3 id="1-start-chromedriver">1. Start ChromeDriver</h3>
 <p>First you need to download the <code>chromedriver</code> binary, and run it:</p>
-<pre><code class="lang-bash">$ ./chromedriver
+<pre><code class="lang-bash">$ npm install electron-chromedriver
+$ ./node_modules/.bin/chromedriver
 Starting ChromeDriver (v2.<span class="hljs-number">10.291558</span>) on port <span class="hljs-number">9515</span>
 Only <span class="hljs-built_in">local</span> connections are allowed.
 </code></pre>
@@ -955,7 +988,7 @@ upstream, except that you have to manually specify how to connect chrome driver
 and where to find Electron&apos;s binary:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> webdriver = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;selenium-webdriver&apos;</span>);
 
-<span class="hljs-keyword">var</span> driver = <span class="hljs-keyword">new</span> webdriver.Builder()
+<span class="hljs-keyword">const</span> driver = <span class="hljs-keyword">new</span> webdriver.Builder()
   <span class="hljs-comment">// The &quot;9515&quot; is the port opened by chrome driver.</span>
   .usingServer(<span class="hljs-string">&apos;http://localhost:9515&apos;</span>)
   .withCapabilities({
@@ -970,8 +1003,8 @@ and where to find Electron&apos;s binary:</p>
 driver.get(<span class="hljs-string">&apos;http://www.google.com&apos;</span>);
 driver.findElement(webdriver.By.name(<span class="hljs-string">&apos;q&apos;</span>)).sendKeys(<span class="hljs-string">&apos;webdriver&apos;</span>);
 driver.findElement(webdriver.By.name(<span class="hljs-string">&apos;btnG&apos;</span>)).click();
-driver.wait(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
- <span class="hljs-keyword">return</span> driver.getTitle().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">title</span>) </span>{
+driver.wait(() =&gt; {
+ <span class="hljs-keyword">return</span> driver.getTitle().then((title) =&gt; {
    <span class="hljs-keyword">return</span> title === <span class="hljs-string">&apos;webdriver - Google Search&apos;</span>;
  });
 }, <span class="hljs-number">1000</span>);
@@ -983,7 +1016,8 @@ driver.quit();
 driver.</p>
 <h3 id="1-start-chromedriver">1. Start ChromeDriver</h3>
 <p>First you need to download the <code>chromedriver</code> binary, and run it:</p>
-<pre><code class="lang-bash">$ chromedriver --url-base=wd/hub --port=<span class="hljs-number">9515</span>
+<pre><code class="lang-bash">$ npm install electron-chromedriver
+$ ./node_modules/.bin/chromedriver --url-base=wd/hub --port=<span class="hljs-number">9515</span>
 Starting ChromeDriver (v2.<span class="hljs-number">10.291558</span>) on port <span class="hljs-number">9515</span>
 Only <span class="hljs-built_in">local</span> connections are allowed.
 </code></pre>
@@ -993,29 +1027,29 @@ Only <span class="hljs-built_in">local</span> connections are allowed.
 </code></pre>
 <h3 id="3-connect-to-chrome-driver">3. Connect to chrome driver</h3>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> webdriverio = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webdriverio&apos;</span>);
-<span class="hljs-keyword">var</span> options = {
-    host: <span class="hljs-string">&quot;localhost&quot;</span>, <span class="hljs-comment">// Use localhost as chrome driver server</span>
-    port: <span class="hljs-number">9515</span>,        <span class="hljs-comment">// &quot;9515&quot; is the port opened by chrome driver.</span>
-    desiredCapabilities: {
-        browserName: <span class="hljs-string">&apos;chrome&apos;</span>,
-        chromeOptions: {
-          binary: <span class="hljs-string">&apos;/Path-to-Your-App/electron&apos;</span>, <span class="hljs-comment">// Path to your Electron binary.</span>
-          args: [<span class="hljs-comment">/* cli arguments */</span>]           <span class="hljs-comment">// Optional, perhaps &apos;app=&apos; + /path/to/your/app/</span>
-        }
+<span class="hljs-keyword">const</span> options = {
+  host: <span class="hljs-string">&apos;localhost&apos;</span>, <span class="hljs-comment">// Use localhost as chrome driver server</span>
+  port: <span class="hljs-number">9515</span>,        <span class="hljs-comment">// &quot;9515&quot; is the port opened by chrome driver.</span>
+  desiredCapabilities: {
+    browserName: <span class="hljs-string">&apos;chrome&apos;</span>,
+    chromeOptions: {
+      binary: <span class="hljs-string">&apos;/Path-to-Your-App/electron&apos;</span>, <span class="hljs-comment">// Path to your Electron binary.</span>
+      args: [<span class="hljs-comment">/* cli arguments */</span>]           <span class="hljs-comment">// Optional, perhaps &apos;app=&apos; + /path/to/your/app/</span>
     }
+  }
 };
 
-<span class="hljs-keyword">var</span> client = webdriverio.remote(options);
+<span class="hljs-keyword">let</span> client = webdriverio.remote(options);
 
 client
-    .init()
-    .url(<span class="hljs-string">&apos;http://google.com&apos;</span>)
-    .setValue(<span class="hljs-string">&apos;#q&apos;</span>, <span class="hljs-string">&apos;webdriverio&apos;</span>)
-    .click(<span class="hljs-string">&apos;#btnG&apos;</span>)
-    .getTitle().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">title</span>) </span>{
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Title was: &apos;</span> + title);
-    })
-    .end();
+  .init()
+  .url(<span class="hljs-string">&apos;http://google.com&apos;</span>)
+  .setValue(<span class="hljs-string">&apos;#q&apos;</span>, <span class="hljs-string">&apos;webdriverio&apos;</span>)
+  .click(<span class="hljs-string">&apos;#btnG&apos;</span>)
+  .getTitle().then((title) =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Title was: &apos;</span> + title);
+  })
+  .end();
 </code></pre>
 <h2 id="workflow">Workflow</h2>
 <p>To test your application without rebuilding Electron, simply

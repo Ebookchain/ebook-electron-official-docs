@@ -53,7 +53,7 @@
         data-chapter-title="Using Pepper Flash Plugin"
         data-filepath="tutorial/using-pepper-flash-plugin.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,44 +926,65 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="using-pepper-flash-plugin">Using Pepper Flash Plugin</h1>
-<p>Electron now supports the Pepper Flash plugin. To use the Pepper Flash plugin in
+<p>Electron supports the Pepper Flash plugin. To use the Pepper Flash plugin in
 Electron, you should manually specify the location of the Pepper Flash plugin
 and then enable it in your application.</p>
 <h2 id="prepare-a-copy-of-flash-plugin">Prepare a Copy of Flash Plugin</h2>
-<p>On OS X and Linux, the details of the Pepper Flash plugin can be found by
+<p>On macOS and Linux, the details of the Pepper Flash plugin can be found by
 navigating to <code>chrome://plugins</code> in the Chrome browser. Its location and version
 are useful for Electron&apos;s Pepper Flash support. You can also copy it to another
 location.</p>
 <h2 id="add-electron-switch">Add Electron Switch</h2>
-<p>You can directly add <code>--ppapi-flash-path</code> and <code>ppapi-flash-version</code> to the
+<p>You can directly add <code>--ppapi-flash-path</code> and <code>--ppapi-flash-version</code> to the
 Electron command line or by using the <code>app.commandLine.appendSwitch</code> method
-before the app ready event. Also, add the <code>plugins</code> switch of <code>browser-window</code>.
-For example:</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// Specify flash path.</span>
-<span class="hljs-comment">// On Windows, it might be /path/to/pepflashplayer.dll</span>
-<span class="hljs-comment">// On OS X, /path/to/PepperFlashPlayer.plugin</span>
-<span class="hljs-comment">// On Linux, /path/to/libpepflashplayer.so</span>
-app.commandLine.appendSwitch(<span class="hljs-string">&apos;ppapi-flash-path&apos;</span>, <span class="hljs-string">&apos;/path/to/libpepflashplayer.so&apos;</span>);
+before the app ready event. Also, turn on <code>plugins</code> option of <code>BrowserWindow</code>.</p>
+<p>For example:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Specify flash path, supposing it is placed in the same directory with main.js.</span>
+<span class="hljs-keyword">let</span> pluginName
+<span class="hljs-keyword">switch</span> (process.platform) {
+  <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;win32&apos;</span>:
+    pluginName = <span class="hljs-string">&apos;pepflashplayer.dll&apos;</span>
+    <span class="hljs-keyword">break</span>
+  <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;darwin&apos;</span>:
+    pluginName = <span class="hljs-string">&apos;PepperFlashPlayer.plugin&apos;</span>
+    <span class="hljs-keyword">break</span>
+  <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;linux&apos;</span>:
+    pluginName = <span class="hljs-string">&apos;libpepflashplayer.so&apos;</span>
+    <span class="hljs-keyword">break</span>
+}
+app.commandLine.appendSwitch(<span class="hljs-string">&apos;ppapi-flash-path&apos;</span>, path.join(__dirname, pluginName))
 
-<span class="hljs-comment">// Specify flash version, for example, v17.0.0.169</span>
-app.commandLine.appendSwitch(<span class="hljs-string">&apos;ppapi-flash-version&apos;</span>, <span class="hljs-string">&apos;17.0.0.169&apos;</span>);
+<span class="hljs-comment">// Optional: Specify flash version, for example, v17.0.0.169</span>
+app.commandLine.appendSwitch(<span class="hljs-string">&apos;ppapi-flash-version&apos;</span>, <span class="hljs-string">&apos;17.0.0.169&apos;</span>)
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  mainWindow = <span class="hljs-keyword">new</span> BrowserWindow({
-    <span class="hljs-string">&apos;width&apos;</span>: <span class="hljs-number">800</span>,
-    <span class="hljs-string">&apos;height&apos;</span>: <span class="hljs-number">600</span>,
-    <span class="hljs-string">&apos;web-preferences&apos;</span>: {
-      <span class="hljs-string">&apos;plugins&apos;</span>: <span class="hljs-literal">true</span>
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  win = <span class="hljs-keyword">new</span> BrowserWindow({
+    width: <span class="hljs-number">800</span>,
+    height: <span class="hljs-number">600</span>,
+    webPreferences: {
+      plugins: <span class="hljs-literal">true</span>
     }
-  });
-  mainWindow.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/index.html&apos;</span>);
+  })
+  win.loadURL(<span class="hljs-string">`file://<span class="hljs-subst">${__dirname}</span>/index.html`</span>)
   <span class="hljs-comment">// Something else</span>
 });
 </code></pre>
+<p>You can also try loading the system wide Pepper Flash plugin instead of shipping
+the plugins yourself, its path can be received by calling
+<code>app.getPath(&apos;pepperFlashSystemPlugin&apos;)</code>.</p>
 <h2 id="enable-flash-plugin-in-a-webview-tag">Enable Flash Plugin in a <code>&lt;webview&gt;</code> Tag</h2>
 <p>Add <code>plugins</code> attribute to <code>&lt;webview&gt;</code> tag.</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;http://www.adobe.com/software/flash/about/&quot;</span> <span class="hljs-attribute">plugins</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
 </code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>You can check if Pepper Flash plugin was loaded by inspecting
+<code>navigator.plugins</code> in the console of devtools (although you can&apos;t know if the
+plugin&apos;s path is correct).</p>
+<p>The architecture of Pepper Flash plugin has to match Electron&apos;s one. On Windows,
+a common error is to use 32bit version of Flash plugin against 64bit version of
+Electron.</p>
+<p>On Windows the path passed to <code>--ppapi-flash-path</code> has to use <code>\</code> as path
+delimiter, using POSIX-style paths will not work.</p>
 
                     
                     </section>

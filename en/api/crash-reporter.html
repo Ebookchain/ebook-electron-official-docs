@@ -53,7 +53,7 @@
         data-chapter-title="crashReporter"
         data-filepath="api/crash-reporter.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,10 +926,12 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="crashreporter">crashReporter</h1>
-<p>The <code>crash-reporter</code> module enables sending your app&apos;s crash reports.</p>
+<blockquote>
+<p>Submit crash reports to a remote server.</p>
+</blockquote>
 <p>The following is an example of automatically submitting a crash report to a
 remote server:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> crashReporter = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).crashReporter;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {crashReporter} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
 crashReporter.start({
   productName: <span class="hljs-string">&apos;YourName&apos;</span>,
@@ -942,7 +944,7 @@ crashReporter.start({
 following projects:</p>
 <ul>
 <li><a href="https://github.com/mozilla/socorro" target="_blank">socorro</a></li>
-<li><a href="https://github.com/atom/mini-breakpad-server" target="_blank">mini-breakpad-server</a></li>
+<li><a href="https://github.com/electron/mini-breakpad-server" target="_blank">mini-breakpad-server</a></li>
 </ul>
 <h2 id="methods">Methods</h2>
 <p>The <code>crash-reporter</code> module has the following methods:</p>
@@ -963,7 +965,7 @@ supported.</li>
 </ul>
 <p>You are required to call this method before using other <code>crashReporter</code>
 APIs.</p>
-<p><strong>Note:</strong> On OS X, Electron uses a new <code>crashpad</code> client, which is different
+<p><strong>Note:</strong> On macOS, Electron uses a new <code>crashpad</code> client, which is different
 from <code>breakpad</code> on Windows and Linux. To enable the crash collection feature,
 you are required to call the <code>crashReporter.start</code> API to initialize <code>crashpad</code>
 in the main process and in each renderer process from which you wish to collect
@@ -975,7 +977,8 @@ sent or the crash reporter has not been started, <code>null</code> is returned.<
 <p>Returns all uploaded crash reports. Each report contains the date and uploaded
 ID.</p>
 <h2 id="crashreporter-payload">crash-reporter Payload</h2>
-<p>The crash reporter will send the following data to the <code>submitURL</code> as a <code>multipart/form-data</code> <code>POST</code>:</p>
+<p>The crash reporter will send the following data to the <code>submitURL</code> as
+a <code>multipart/form-data</code> <code>POST</code>:</p>
 <ul>
 <li><code>ver</code> String - The version of Electron.</li>
 <li><code>platform</code> String - e.g. &apos;win32&apos;.</li>

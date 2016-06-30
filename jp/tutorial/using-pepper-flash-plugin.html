@@ -53,7 +53,7 @@
         data-chapter-title="Pepper Flashプラグインを使用する"
         data-filepath="tutorial/using-pepper-flash-plugin.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:56 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:31 GMT+0800 (CST)"
         data-innerlanguage="jp">
     
 
@@ -845,15 +845,14 @@
                     
                         <h1 id="pepper-flash-&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;">Pepper Flash &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;</h1>
 <p>Electron&#x306F;&#x3001;Pepper Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;Electron&#x3067;Pepper Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x30DE;&#x30CB;&#x30E5;&#x30A2;&#x30EB;&#x3067;Pepper Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x30D1;&#x30B9;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x6709;&#x52B9;&#x5316;&#x3057;&#x306A;&#x3051;&#x308C;&#x3070;&#x306A;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</p>
-<p>Electron now supports the Pepper Flash plugin. To use the Pepper Flash plugin in</p>
 <h2 id="flash-&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x6E96;&#x5099;">Flash &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x6E96;&#x5099;</h2>
-<p>OS X&#x3068;Linux&#x3067;&#x306F;&#x3001;Pepper Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x8A73;&#x7D30;&#x306F;&#x3001;Chrome&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x30FC;&#x3067;&#x3001;<code>chrome://plugins</code> &#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x305D;&#x3053;&#x3067;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x30D1;&#x30B9;&#x3068;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306F;&#x3001;Electron&#x306E;Pepper Flash&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x306B;&#x5F79;&#x7ACB;&#x3061;&#x307E;&#x3059;&#x3002;&#x305D;&#x308C;&#x3092;&#x5225;&#x306E;&#x30D1;&#x30B9;&#x306B;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>macOS&#x3068;Linux&#x3067;&#x306F;&#x3001;Pepper Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x8A73;&#x7D30;&#x306F;&#x3001;Chrome&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x30FC;&#x3067;&#x3001;<code>chrome://plugins</code> &#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x305D;&#x3053;&#x3067;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x30D1;&#x30B9;&#x3068;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306F;&#x3001;Electron&#x306E;Pepper Flash&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x306B;&#x5F79;&#x7ACB;&#x3061;&#x307E;&#x3059;&#x3002;&#x305D;&#x308C;&#x3092;&#x5225;&#x306E;&#x30D1;&#x30B9;&#x306B;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <h2 id="electron-&#x30B9;&#x30A4;&#x30C3;&#x30C1;&#x306E;&#x8FFD;&#x52A0;">Electron &#x30B9;&#x30A4;&#x30C3;&#x30C1;&#x306E;&#x8FFD;&#x52A0;</h2>
 <p>&#x76F4;&#x63A5;&#x3001;Electron&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x306B;<code>--ppapi-flash-path</code> &#x3068; <code>ppapi-flash-version</code> &#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x304B;&#x3001; &#x30A2;&#x30D7;&#x30EA;&#x306E;ready&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x306E;&#x524D;&#x306B;&#x3001;<code>app.commandLine.appendSwitch</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;<code>browser-window</code>&#x306E;<code>plugins</code>&#x30B9;&#x30A4;&#x30C3;&#x30C1;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x4F8B;:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// Specify flash path.</span>
 <span class="hljs-comment">// On Windows, it might be /path/to/pepflashplayer.dll</span>
-<span class="hljs-comment">// On OS X, /path/to/PepperFlashPlayer.plugin</span>
+<span class="hljs-comment">// On macOS, /path/to/PepperFlashPlayer.plugin</span>
 <span class="hljs-comment">// On Linux, /path/to/libpepflashplayer.so</span>
 app.commandLine.appendSwitch(<span class="hljs-string">&apos;ppapi-flash-path&apos;</span>, <span class="hljs-string">&apos;/path/to/libpepflashplayer.so&apos;</span>);
 
@@ -872,10 +871,13 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
   <span class="hljs-comment">// Something else</span>
 });
 </code></pre>
-<h2 id="webview-&#x30BF;&#x30B0;&#x3067;flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x6709;&#x52B9;&#x304B;"><code>&lt;webview&gt;</code> &#x30BF;&#x30B0;&#x3067;Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x6709;&#x52B9;&#x304B;</h2>
+<h2 id="webview-&#x30BF;&#x30B0;&#x3067;flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x6709;&#x52B9;&#x5316;"><code>&lt;webview&gt;</code> &#x30BF;&#x30B0;&#x3067;Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x6709;&#x52B9;&#x5316;</h2>
 <p><code>&lt;webview&gt;</code> &#x30BF;&#x30B0;&#x306B;<code>plugins</code>&#x5C5E;&#x6027;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;http://www.adobe.com/software/flash/about/&quot;</span> <span class="hljs-attribute">plugins</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
 </code></pre>
+<h2 id="&#x30C8;&#x30E9;&#x30D6;&#x30EB;&#x30B7;&#x30E5;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;">&#x30C8;&#x30E9;&#x30D6;&#x30EB;&#x30B7;&#x30E5;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;</h2>
+<p>Pepper Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x306F;&#x3001;devtools&#x306E;console&#x3067;<code>navigator.plugins</code>&#x3092;&#x898B;&#x308B;&#x3053;&#x3068;&#x3067;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;(&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x30D1;&#x30B9;&#x304C;&#x6B63;&#x3057;&#x3044;&#x304B;&#x304C;&#x308F;&#x304B;&#x3089;&#x306A;&#x304F;&#x3066;&#x3082;)</p>
+<p>Pepper Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x306F;Electron&#x306E;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x3068;&#x4E00;&#x81F4;&#x3057;&#x3066;&#x3044;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;Windows&#x3067;&#x3001;64bit Electron&#x306B;32bit Flash&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x306E;&#x306F;&#x3088;&#x304F;&#x3042;&#x308B;&#x9593;&#x9055;&#x3044;&#x3067;&#x3059;&#x3002;</p>
 
                     
                     </section>

@@ -53,7 +53,7 @@
         data-chapter-title="dialog"
         data-filepath="api/dialog.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,20 +926,18 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="dialog">dialog</h1>
-<p><code>dialog</code> &#xBAA8;&#xB4C8;&#xC740; &#xD30C;&#xC77C; &#xC5F4;&#xAE30;, &#xC54C;&#xB9BC;&#xACFC; &#xAC19;&#xC740; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xC870;&#xC791;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD560;
-&#xC218; &#xC788;&#xB294; &#xBAA8;&#xB4C8;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC6F9; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C; &#xC77C;&#xBC18; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xACFC;
-&#xBE44;&#xC2B7;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACBD;&#xD5D8;&#xC744; &#xC81C;&#xACF5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; &#xD30C;&#xC77C;&#xACFC; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xB2E4;&#xC911;&#xC73C;&#xB85C; &#xC120;&#xD0DD;&#xD558;&#xB294; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> win = ...;  <span class="hljs-comment">// &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; BrowserWindow &#xAC1D;&#xCCB4;</span>
-<span class="hljs-keyword">const</span> dialog = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).dialog;
-<span class="hljs-built_in">console</span>.log(dialog.showOpenDialog({ properties: [ <span class="hljs-string">&apos;openFile&apos;</span>, <span class="hljs-string">&apos;openDirectory&apos;</span>, <span class="hljs-string">&apos;multiSelections&apos;</span> ]}));
+<blockquote>
+<p>&#xD30C;&#xC77C;&#xC744; &#xC5F4;&#xAC70;&#xB098; &#xC800;&#xC7A5;&#xD558;&#xACE0;, &#xC54C;&#xB9BC;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC2DC;&#xC2A4;&#xD15C; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xD30C;&#xC77C;&#xACFC; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xB2E4;&#xC911;&#xC73C;&#xB85C; &#xC120;&#xD0DD;&#xD558;&#xB294; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> win = ...;  <span class="hljs-comment">// &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; BrowserWindow &#xAC1D;&#xCCB4;</span>
+<span class="hljs-keyword">const</span> {dialog} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+<span class="hljs-built_in">console</span>.log(dialog.showOpenDialog({properties: [<span class="hljs-string">&apos;openFile&apos;</span>, <span class="hljs-string">&apos;openDirectory&apos;</span>, <span class="hljs-string">&apos;multiSelections&apos;</span>]}));
 </code></pre>
-<p>&#xB300;&#xD654; &#xC0C1;&#xC790;&#xB294; Electron&#xC758; &#xBA54;&#xC778; &#xC2A4;&#xB808;&#xB4DC;&#xC5D0;&#xC11C; &#xC5F4;&#xB9BD;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB300;&#xD654; &#xC0C1;&#xC790;
+<p>&#xB300;&#xD654; &#xC0C1;&#xC790;&#xB294; Electron&#xC758; &#xBA54;&#xC778; &#xC2A4;&#xB808;&#xB4DC;&#xC5D0;&#xC11C; &#xC5F4;&#xB9BD;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB300;&#xD654; &#xC0C1;&#xC790;
 &#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, <code>remote</code>&#xB97C; &#xD1B5;&#xD574; &#xC811;&#xADFC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xACE0;&#xB824;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> dialog = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote.dialog;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {dialog} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote;
 </code></pre>
-<p><strong>OS X &#xCC38;&#xACE0;</strong>: &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xC2DC;&#xD2B8;&#xCC98;&#xB7FC; &#xBCF4;&#xC5EC;&#xC9C0;&#xAC8C; &#xD558;&#xB824;&#xBA74; <code>browserWindow</code> &#xC778;&#xC790;&#xC5D0;
-<code>BrowserWindow</code> &#xAC1D;&#xCCB4;&#xC758; &#xCC38;&#xC870;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="methods">Methods</h2>
 <p><code>dialog</code> &#xBAA8;&#xB4C8;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <h3 id="dialogshowopendialogbrowserwindow-options-callback"><code>dialog.showOpenDialog([browserWindow, ]options[, callback])</code></h3>
@@ -948,6 +946,8 @@
 <li><code>options</code> Object<ul>
 <li><code>title</code> String</li>
 <li><code>defaultPath</code> String</li>
+<li><code>buttonLabel</code> String - &#xD655;&#xC778; &#xBC84;&#xD2BC;&#xC744; &#xC704;&#xD55C; &#xCEE4;&#xC2A4;&#xD140; &#xB77C;&#xBCA8;&#xC774;&#xBA70;, &#xBE48;&#xCE78;&#xC73C;&#xB85C; &#xB458; &#xACBD;&#xC6B0; &#xAE30;&#xBCF8;
+&#xB77C;&#xBCA8;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</li>
 <li><code>filters</code> Array</li>
 <li><code>properties</code> Array - &#xB300;&#xD654; &#xC0C1;&#xC790;&#xAC00; &#xC0AC;&#xC6A9;&#xD560; &#xAE30;&#xB2A5;(&#xBAA8;&#xB4DC;)&#xC774; &#xB2F4;&#xAE34; &#xBC30;&#xC5F4;&#xC785;&#xB2C8;&#xB2E4;.
 &#xB2E4;&#xC74C;&#xC744; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;: <code>openFile</code>, <code>openDirectory</code>, <code>multiSelections</code>,
@@ -964,10 +964,10 @@
 &#xC218; &#xC788;&#xB294; &#xD0C0;&#xC785;&#xC5D0; &#xC81C;&#xD55C;&#xC744; &#xB450;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-javascript">{
   filters: [
-    { name: <span class="hljs-string">&apos;Images&apos;</span>, extensions: [<span class="hljs-string">&apos;jpg&apos;</span>, <span class="hljs-string">&apos;png&apos;</span>, <span class="hljs-string">&apos;gif&apos;</span>] },
-    { name: <span class="hljs-string">&apos;Movies&apos;</span>, extensions: [<span class="hljs-string">&apos;mkv&apos;</span>, <span class="hljs-string">&apos;avi&apos;</span>, <span class="hljs-string">&apos;mp4&apos;</span>] },
-    { name: <span class="hljs-string">&apos;Custom File Type&apos;</span>, extensions: [<span class="hljs-string">&apos;as&apos;</span>] },
-    { name: <span class="hljs-string">&apos;All Files&apos;</span>, extensions: [<span class="hljs-string">&apos;*&apos;</span>] }
+    {name: <span class="hljs-string">&apos;Images&apos;</span>, extensions: [<span class="hljs-string">&apos;jpg&apos;</span>, <span class="hljs-string">&apos;png&apos;</span>, <span class="hljs-string">&apos;gif&apos;</span>]},
+    {name: <span class="hljs-string">&apos;Movies&apos;</span>, extensions: [<span class="hljs-string">&apos;mkv&apos;</span>, <span class="hljs-string">&apos;avi&apos;</span>, <span class="hljs-string">&apos;mp4&apos;</span>]},
+    {name: <span class="hljs-string">&apos;Custom File Type&apos;</span>, extensions: [<span class="hljs-string">&apos;as&apos;</span>]},
+    {name: <span class="hljs-string">&apos;All Files&apos;</span>, extensions: [<span class="hljs-string">&apos;*&apos;</span>]}
   ]
 }
 </code></pre>
@@ -986,6 +986,8 @@
 <li><code>options</code> Object<ul>
 <li><code>title</code> String</li>
 <li><code>defaultPath</code> String</li>
+<li><code>buttonLabel</code> String - &#xD655;&#xC778; &#xBC84;&#xD2BC;&#xC744; &#xC704;&#xD55C; &#xCEE4;&#xC2A4;&#xD140; &#xB77C;&#xBCA8;&#xC774;&#xBA70;, &#xBE48;&#xCE78;&#xC73C;&#xB85C; &#xB458; &#xACBD;&#xC6B0; &#xAE30;&#xBCF8;
+&#xB77C;&#xBCA8;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</li>
 <li><code>filters</code> Array</li>
 </ul>
 </li>
@@ -1004,7 +1006,8 @@
 <li><code>type</code> String - <code>&quot;none&quot;</code>, <code>&quot;info&quot;</code>, <code>&quot;error&quot;</code>, <code>&quot;question&quot;</code>, <code>&quot;warning&quot;</code> &#xC911;
 &#xD558;&#xB098;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. Windows&#xC5D0;&#xC120; &#xB530;&#xB85C; <code>icon</code>&#xC744; &#xC124;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xC774;&#xC0C1;
 &quot;question&quot;&#xACFC; &quot;info&quot;&#xB294; &#xAC19;&#xC740; &#xC544;&#xC774;&#xCF58;&#xC73C;&#xB85C; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</li>
-<li><code>buttons</code> Array - &#xBC84;&#xD2BC;&#xB4E4;&#xC758; &#xB77C;&#xBCA8;&#xC744; &#xD3EC;&#xD568;&#xD55C; &#xBC30;&#xC5F4;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>buttons</code> Array - &#xBC84;&#xD2BC;&#xB4E4;&#xC758; &#xB77C;&#xBCA8;&#xC744; &#xD3EC;&#xD568;&#xD55C; &#xBC30;&#xC5F4;&#xC785;&#xB2C8;&#xB2E4;. Windows&#xC5D0;&#xC11C; &#xBE48; &#xBC30;&#xC5F4;&#xB85C; &#xB458;
+&#xACBD;&#xC6B0;, &quot;OK&quot; &#xBC84;&#xD2BC; &#xD558;&#xB098;&#xAC00; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.</li>
 <li><code>defaultId</code> Integer - &#xBA54;&#xC2DC;&#xC9C0; &#xBC15;&#xC2A4;&#xAC00; &#xC5F4;&#xB838;&#xC744; &#xB54C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC120;&#xD0DD;&#xB420; &#xBC84;&#xD2BC; &#xBC30;&#xC5F4;&#xC758;
 &#xBC84;&#xD2BC; &#xC778;&#xB371;&#xC2A4;&#xC785;&#xB2C8;&#xB2E4;.</li>
 <li><code>title</code> String - &#xB300;&#xD654; &#xC0C1;&#xC790;&#xC758; &#xC81C;&#xBAA9;&#xC785;&#xB2C8;&#xB2E4;. &#xBA87;&#xBA87; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xC120; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
@@ -1014,20 +1017,20 @@
 <li><code>cancelId</code> Integer - &#xC720;&#xC800;&#xAC00; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xC758; &#xBC84;&#xD2BC;&#xC744; &#xD074;&#xB9AD;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xCDE8;&#xC18C;&#xD588;&#xC744;
 &#xB54C; &#xBC18;&#xD658;&#xB418;&#xB294; &#xBC84;&#xD2BC;&#xC758; &#xC778;&#xB371;&#xC2A4;&#xC785;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBC84;&#xD2BC; &#xB9AC;&#xC2A4;&#xD2B8;&#xAC00; &quot;cancel&quot; &#xB610;&#xB294; &quot;no&quot;
 &#xB77C;&#xBCA8;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC744; &#xB54C; &#xD574;&#xB2F9; &#xBC84;&#xD2BC;&#xC758; &#xC778;&#xB371;&#xC2A4;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB85C; &#xB450; &#xB77C;&#xBCA8;&#xC774; &#xC9C0;&#xC815;&#xB418;&#xC9C0;
-&#xC54A;&#xC740; &#xACBD;&#xC6B0; 0&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. OS X&#xC640; Windows&#xC5D0;&#xC120; <code>cancelId</code> &#xC9C0;&#xC815; &#xC5EC;&#xBD80;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774;
+&#xC54A;&#xC740; &#xACBD;&#xC6B0; 0&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. macOS&#xC640; Windows&#xC5D0;&#xC120; <code>cancelId</code> &#xC9C0;&#xC815; &#xC5EC;&#xBD80;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774;
 &quot;Cancel&quot; &#xBC84;&#xD2BC;&#xC774; &#xC5B8;&#xC81C;&#xB098; <code>cancelId</code>&#xB85C; &#xC9C0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</li>
-<li><code>noLink</code> Boolean - Windows Electron&#xC740; &quot;Cancel&quot;&#xC774;&#xB098; &quot;Yes&quot;&#xC640; &#xAC19;&#xC740; &#xD754;&#xD788; &#xC0AC;&#xC6A9;&#xB418;&#xB294;
-&#xBC84;&#xD2BC;&#xC744; &#xCC3E;&#xC73C;&#xB824;&#xACE0; &#xC2DC;&#xB3C4;&#xD558;&#xACE0; &#xB300;&#xD654; &#xC0C1;&#xC790; &#xB0B4;&#xC5D0;&#xC11C; &#xD574;&#xB2F9; &#xBC84;&#xD2BC;&#xC744; &#xCEE4;&#xB9E8;&#xB4DC; &#xB9C1;&#xD06C;&#xCC98;&#xB7FC; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.
-&#xC774; &#xAE30;&#xB2A5;&#xC73C;&#xB85C; &#xC571;&#xC744; &#xC880; &#xB354; Modern Windows &#xC571;&#xCC98;&#xB7FC; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xAE30;&#xB2A5;&#xC744; &#xC6D0;&#xD558;&#xC9C0;
-&#xC54A;&#xC73C;&#xBA74; <code>noLink</code>&#xB97C; true&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</li>
+<li><code>noLink</code> Boolean - Windows&#xC5D0;&#xC11C; Electron&#xC740; (&quot;Cancel&quot;&#xC774;&#xB098; &quot;Yes&quot;&#xC640; &#xAC19;&#xC740;) &#xD754;&#xD788;
+&#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBC84;&#xD2BC;&#xC744; &#xCC3E;&#xC73C;&#xB824;&#xACE0; &#xC2DC;&#xB3C4;&#xD558;&#xACE0; &#xB300;&#xD654; &#xC0C1;&#xC790; &#xB0B4;&#xC5D0;&#xC11C; &#xD574;&#xB2F9; &#xBC84;&#xD2BC;&#xC744; &#xCEE4;&#xB9E8;&#xB4DC; &#xB9C1;&#xD06C;&#xCC98;&#xB7FC;
+&#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. &#xC774; &#xAE30;&#xB2A5;&#xC73C;&#xB85C; &#xC571;&#xC744; &#xC880; &#xB354; &#xD604;&#xB300;&#xC801;&#xC778; Windows &#xC571;&#xCC98;&#xB7FC; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;
+&#xAE30;&#xB2A5;&#xC744; &#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>noLink</code>&#xB97C; true&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</li>
 </ul>
 </li>
 <li><code>callback</code> Function (optional)</li>
 </ul>
 <p>&#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. <code>browserWindow</code>&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xBA74; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xAC00; &#xC644;&#xC804;&#xD788; &#xB2EB;&#xD790; &#xB54C;&#xAE4C;&#xC9C0;
 &#xC9C0;&#xC815;&#xD55C; &#xCC3D;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC644;&#xB8CC; &#xC2DC; &#xC720;&#xC800;&#xAC00; &#xC120;&#xD0DD;&#xD55C; &#xBC84;&#xD2BC;&#xC758; &#xC778;&#xB371;&#xC2A4;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC5ED;&#xC8FC;: &#xBD80;&#xC815;&#xC744; &#xD45C;&#xD604;&#xD558;&#xB294; &quot;&#xC544;&#xB2C8;&#xC624;&quot;, &quot;&#xCDE8;&#xC18C;&quot;&#xC640; &#xAC19;&#xC740; &#xD55C;&#xAE00; &#xB2E8;&#xC5B4;&#xB294; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D;
-OS X &#xB610;&#xB294; Windows&#xC5D0;&#xC11C; &quot;&#xD655;&#xC778;&quot;, &quot;&#xCDE8;&#xC18C;&quot;&#xC640; &#xAC19;&#xC740; &#xC21C;&#xC11C;&#xB85C; &#xBC84;&#xD2BC;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xAC8C; &#xB420; &#xB54C; Alt + f4&#xB85C;
+<p><strong>&#xC5ED;&#xC790;&#xC8FC;:</strong> &#xBD80;&#xC815;&#xC744; &#xD45C;&#xD604;&#xD558;&#xB294; &quot;&#xC544;&#xB2C8;&#xC624;&quot;, &quot;&#xCDE8;&#xC18C;&quot;&#xC640; &#xAC19;&#xC740; &#xD55C;&#xAE00; &#xB2E8;&#xC5B4;&#xB294; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D;
+macOS &#xB610;&#xB294; Windows&#xC5D0;&#xC11C; &quot;&#xD655;&#xC778;&quot;, &quot;&#xCDE8;&#xC18C;&quot;&#xC640; &#xAC19;&#xC740; &#xC21C;&#xC11C;&#xB85C; &#xBC84;&#xD2BC;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xAC8C; &#xB420; &#xB54C; Alt + f4&#xB85C;
 &#xD574;&#xB2F9; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xB044;&#xAC8C; &#xB418;&#xBA74; &quot;&#xD655;&#xC778;&quot;&#xC744; &#xB204;&#xB978; &#xAC83;&#xC73C;&#xB85C; &#xD310;&#xB2E8;&#xB418;&#xC5B4; &#xBC84;&#xB9BD;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xB824;&#xBA74;
 &quot;Cancel&quot;&#xC744; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098; BrowserWindow API&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xC9C1;&#xC811; &#xAD6C;&#xD604;&#xD574;&#xC57C;
 &#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -1035,8 +1038,16 @@ OS X &#xB610;&#xB294; Windows&#xC5D0;&#xC11C; &quot;&#xD655;&#xC778;&quot;, &quo
 &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h3 id="dialogshowerrorboxtitle-content"><code>dialog.showErrorBox(title, content)</code></h3>
 <p>&#xC5D0;&#xB7EC; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774; API&#xB294; <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294;
-&#xBCF4;&#xD1B5; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC2DC;&#xC791;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xD2B9;&#xC815;&#xD55C; &#xC5D0;&#xB7EC;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xD568;&#xC218;&#xB294; <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294;
+&#xBCF4;&#xD1B5; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC2DC;&#xC791;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xD2B9;&#xC815;&#xD55C; &#xC5D0;&#xB7EC;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D;
+Linux&#xC5D0;&#xC11C; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xC774; API&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xACBD;&#xC6B0;, &#xBA54;&#xC2DC;&#xC9C0;&#xB294; stderr&#xB97C;
+&#xD1B5;&#xD574;&#xC11C; &#xD45C;&#xC2DC;&#xB418;&#xBA70; GUI &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB294; &#xD45C;&#xC2DC;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="sheets">Sheets</h2>
+<p>macOS&#xC5D0;&#xC120;, <code>browserWindow</code> &#xC778;&#xC218;&#xC5D0; <code>BrowserWindow</code> &#xAC1D;&#xCCB4; &#xCC38;&#xC870;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xBA74; &#xB300;&#xD654;
+&#xC0C1;&#xC790;&#xAC00; &#xD574;&#xB2F9; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xC2DC;&#xD2B8;&#xCC98;&#xB7FC; &#xD45C;&#xC2DC;&#xB418;&#xB3C4;&#xB85D; &#xD45C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC708;&#xB3C4;&#xC6B0;&#xC758; &#xAC1D;&#xCCB4; &#xCC38;&#xC870;&#xAC00;
+&#xC81C;&#xACF5;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xBAA8;&#xB2EC; &#xD615;&#xD0DC;&#xB85C; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><code>BrowserWindow.getCurrentWindow().setSheetOffset(offset)</code>&#xC744; &#xD1B5;&#xD574; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xBD80;&#xCC29;&#xB420;
+&#xC2DC;&#xD2B8;&#xC758; &#xC704;&#xCE58;&#xB97C; &#xC870;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 
                     
                     </section>

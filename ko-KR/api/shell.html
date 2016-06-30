@@ -53,7 +53,7 @@
         data-chapter-title="shell"
         data-filepath="api/shell.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,9 +926,13 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="shell">shell</h1>
+<blockquote>
+<p>&#xD30C;&#xC77C;&#xACFC; URL&#xC744; &#xAC01; &#xAE30;&#xBCF8; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD1B5;&#xD574; &#xAD00;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 <p><code>shell</code> &#xBAA8;&#xB4C8;&#xC740; &#xB370;&#xC2A4;&#xD06C;&#xD1B1; &#xD658;&#xACBD; &#xD1B5;&#xD569;&#xC5D0; &#xAD00;&#xB828;&#xD55C; &#xC720;&#xD2F8;&#xB9AC;&#xD2F0;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; &#xC124;&#xC815;&#xB41C; URL&#xC744; &#xC720;&#xC800;&#xC758; &#xAE30;&#xBCF8; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB85C; &#xC5FD;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> shell = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).shell;
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xC124;&#xC815;&#xB41C; URL&#xC744; &#xC720;&#xC800;&#xC758; &#xAE30;&#xBCF8; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB85C; &#xC5FD;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {shell} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+
 shell.openExternal(<span class="hljs-string">&apos;https://github.com&apos;</span>);
 </code></pre>
 <h2 id="methods">Methods</h2>
@@ -946,21 +950,20 @@ shell.openExternal(<span class="hljs-string">&apos;https://github.com&apos;</spa
 <h3 id="shellopenexternalurl-options"><code>shell.openExternal(url[, options])</code></h3>
 <ul>
 <li><code>url</code> String</li>
-<li><code>options</code> Object (optional) <em>OS X</em><ul>
-<li><code>activate</code> Boolean - <code>true</code>&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xBC14;&#xB85C; &#xD65C;&#xC131;&#xD654; &#xC0C1;&#xD0DC;&#xB85C;
+<li><code>options</code> Object (optional) <em>macOS</em><ul>
+<li><code>activate</code> Boolean - <code>true</code>&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xBC14;&#xB85C; &#xD65C;&#xC131;&#xD654; &#xC0C1;&#xD0DC;&#xB85C;
 &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>true</code>&#xC785;&#xB2C8;&#xB2E4;.</li>
 </ul>
 </li>
 </ul>
 <p>&#xC81C;&#xACF5;&#xB41C; &#xC678;&#xBD80; &#xD504;&#xB85C;&#xD1A0;&#xCF5C; URL&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xB370;&#xC2A4;&#xD06C;&#xD1B1;&#xC758; &#xAE30;&#xBCF8; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC73C;&#xB85C; &#xC5FD;&#xB2C8;&#xB2E4;. (&#xC608;&#xB97C; &#xB4E4;&#xC5B4;
-mailto: URL&#xC740; &#xC720;&#xC800;&#xC758; &#xAE30;&#xBCF8; &#xC774;&#xBA54;&#xC77C; &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xB85C; URL&#xC744; &#xC5FD;&#xB2C8;&#xB2E4;.) &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xD574;&#xB2F9; URL&#xC744;
+mailto: URL&#xC740; &#xC720;&#xC800;&#xC758; &#xAE30;&#xBCF8; &#xC774;&#xBA54;&#xC77C; &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xB85C; URL&#xC744; &#xC5FD;&#xB2C8;&#xB2E4;.) &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xD574;&#xB2F9; URL&#xC744;
 &#xC5F4; &#xC218; &#xC788;&#xC744; &#xB54C; <code>true</code>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. &#xC544;&#xB2C8;&#xB77C;&#xBA74; <code>false</code>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC5ED;&#xC8FC;: &#xD3F4;&#xB354;&#xB294; &apos;file:\\C:\&apos;&#xC640; &#xAC19;&#xC774; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xC5F4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. (Windows&#xC758; &#xACBD;&#xC6B0;)</p>
+<p><strong>&#xC5ED;&#xC790;&#xC8FC;:</strong> &#xD0D0;&#xC0C9;&#xAE30;&#xB85C; &#xD3F4;&#xB354;&#xB9CC; &#xD45C;&#xC2DC;&#xD558;&#xB824;&#xBA74; <code>&apos;file://&#xACBD;&#xB85C;&apos;</code>&#xC640; &#xAC19;&#xC774; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xC5F4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="shellmoveitemtotrashfullpath"><code>shell.moveItemToTrash(fullPath)</code></h3>
 <ul>
 <li><code>fullPath</code> String</li>
 </ul>
-<p>Move the given file to trash and returns boolean status for the operation.</p>
 <p>&#xC9C0;&#xC815;&#xD55C; &#xD30C;&#xC77C;&#xC744; &#xD734;&#xC9C0;&#xD1B5;&#xC73C;&#xB85C; &#xC774;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;. &#xC791;&#xC5C5;&#xC758; &#xC131;&#xACF5;&#xC5EC;&#xBD80;&#xB97C; boolean &#xD615;&#xC73C;&#xB85C; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="shellbeep"><code>shell.beep()</code></h3>
 <p>&#xBE44;&#xD504;&#xC74C;&#xC744; &#xC7AC;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>

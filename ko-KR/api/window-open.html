@@ -53,7 +53,7 @@
         data-chapter-title="`window.open` 함수"
         data-filepath="api/window-open.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,6 +926,9 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="windowopen-&#xD568;&#xC218;"><code>window.open</code> &#xD568;&#xC218;</h1>
+<blockquote>
+<p>&#xC0C8; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xC5F4;&#xACE0; URL&#xC744; &#xB85C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 <p><code>window.open</code> &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB418;&#xBA74; &#xC0C8; &#xCC3D;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xACE0; <code>url</code> &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xBD88;&#xB7EC;&#xC635;&#xB2C8;&#xB2E4;. &#xC774; &#xCC3D;&#xC740;
 &#xC9C0;&#xC815;&#xD55C; <code>url</code>&#xC744; &#xB85C;&#xB4DC;&#xD558;&#xC5EC; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; <code>BrowserWindow</code>&#xC758; &#xC0C8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC774;&#xBA70; &#xBCF8;&#xB798; &#xCC3D; &#xAC1D;&#xCCB4; &#xB300;&#xC2E0;
 &#xD398;&#xC774;&#xC9C0;&#xC758; &#xCEE8;&#xD2B8;&#xB864;&#xC774; &#xC81C;&#xD55C;&#xB41C; &#xD504;&#xB85D;&#xC2DC; &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -933,7 +936,7 @@
 &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCC3D;&#xC758; &#xBAA8;&#xB4E0; &#xCEE8;&#xD2B8;&#xB864; &#xAD8C;&#xD55C;&#xC744; &#xAC00;&#xC9C0;&#xB824;&#xBA74; <code>BrowserWindow</code>&#xB97C; &#xC9C1;&#xC811; &#xC0DD;&#xC131;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C;
 &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC0C8;&#xB86D;&#xAC8C; &#xC0DD;&#xC131;&#xB41C; <code>BrowserWindow</code>&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBD80;&#xBAA8; &#xCC3D;&#xC758; &#xC635;&#xC158;&#xC744; &#xC0C1;&#xC18D;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC635;&#xC158;&#xC744;
-&#xBCC0;&#xACBD;&#xD558;&#xB824;&#xBA74; &#xC0C8; &#xCC3D;&#xC744; &#xC5F4; &#xB54C; <code>features</code> &#xC778;&#xC790;&#xB97C; &#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+&#xBCC0;&#xACBD;&#xD558;&#xB824;&#xBA74; &#xC0C8; &#xCC3D;&#xC744; &#xC5F4; &#xB54C; <code>features</code> &#xC778;&#xC218;&#xB97C; &#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="windowopenurl-framename-features"><code>window.open(url[, frameName][, features])</code></h3>
 <ul>
 <li><code>url</code> String</li>
@@ -966,6 +969,8 @@
 <p>&#xC790;&#xC2DD; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0;&#xC11C; &#xD2B9;&#xC815; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="browserwindowproxyfocus"><code>BrowserWindowProxy.focus()</code></h3>
 <p>&#xC790;&#xC2DD; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xD3EC;&#xCEE4;&#xC2A4;&#xB97C; &#xB9DE;&#xCDA5;&#xB2C8;&#xB2E4;. (&#xCC3D;&#xC744; &#xB9E8; &#xC55E;&#xC73C;&#xB85C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;)</p>
+<h3 id="browserwindowproxyprint"><code>BrowserWindowProxy.print()</code></h3>
+<p>&#xC790;&#xC2DD; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xD504;&#xB9B0;&#xD2B8; &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB97C; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="browserwindowproxypostmessagemessage-targetorigin"><code>BrowserWindowProxy.postMessage(message, targetOrigin)</code></h3>
 <ul>
 <li><code>message</code> String</li>

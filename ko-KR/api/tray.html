@@ -53,7 +53,7 @@
         data-chapter-title="Tray"
         data-filepath="api/tray.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,23 +926,21 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="tray">Tray</h1>
-<p><code>Tray</code>&#xB294; OS&#xC758; &#xC54C;&#xB9BC; &#xC601;&#xC5ED;&#xC5D0; &#xC544;&#xC774;&#xCF58;&#xC744; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. &#xBCF4;&#xD1B5; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;(context menu)&#xB97C;
-&#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
-<span class="hljs-keyword">const</span> app = electron.app;
-<span class="hljs-keyword">const</span> Menu = electron.Menu;
-<span class="hljs-keyword">const</span> Tray = electron.Tray;
+<blockquote>
+<p>&#xC544;&#xC774;&#xCF58;&#xACFC; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xB97C; &#xC2DC;&#xC2A4;&#xD15C; &#xC54C;&#xB9BC; &#xC601;&#xC5ED;&#xC5D0; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, Menu, Tray} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-<span class="hljs-keyword">var</span> appIcon = <span class="hljs-literal">null</span>;
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-  appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/my/icon&apos;</span>); <span class="hljs-comment">// &#xD604;&#xC7AC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xD558;&#xB824;&#xBA74; `__dirname + &apos;/images/tray.png&apos;` &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xC785;&#xB825;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
-  <span class="hljs-keyword">var</span> contextMenu = Menu.buildFromTemplate([
-    { label: <span class="hljs-string">&apos;Item1&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span> },
-    { label: <span class="hljs-string">&apos;Item2&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span> },
-    { label: <span class="hljs-string">&apos;Item3&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span>, checked: <span class="hljs-literal">true</span> },
-    { label: <span class="hljs-string">&apos;Item4&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span> }
+<span class="hljs-keyword">let</span> appIcon = <span class="hljs-literal">null</span>;
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/my/icon&apos;</span>); <span class="hljs-comment">// &#xD604;&#xC7AC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xD558;&#xB824;&#xBA74; `__dirname + &apos;/images/tray.png&apos;` &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xC785;&#xB825;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
+  <span class="hljs-keyword">const</span> contextMenu = Menu.buildFromTemplate([
+    {label: <span class="hljs-string">&apos;Item1&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span>},
+    {label: <span class="hljs-string">&apos;Item2&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span>},
+    {label: <span class="hljs-string">&apos;Item3&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span>, checked: <span class="hljs-literal">true</span>},
+    {label: <span class="hljs-string">&apos;Item4&apos;</span>, type: <span class="hljs-string">&apos;radio&apos;</span>}
   ]);
-  appIcon.setToolTip(<span class="hljs-string">&apos;&#xC774;&#xAC83;&#xC740; &#xB098;&#xC758; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC785;&#xB2C8;&#xB2E4;!&apos;</span>);
+  appIcon.setToolTip(<span class="hljs-string">&apos;&#xC774;&#xAC83;&#xC740; &#xB098;&#xC758; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC785;&#xB2C8;&#xB2E4;!&apos;</span>);
   appIcon.setContextMenu(contextMenu);
 });
 </code></pre>
@@ -954,6 +952,8 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 &#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC774; &#xC791;&#xB3D9;&#xD558;&#xB3C4;&#xB85D; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
 <li>&#xC571; &#xC54C;&#xB9BC; &#xD45C;&#xC2DC;&#xAE30;&#xB294; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC744; &#xB54C;&#xB9CC; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</li>
 <li>Linux&#xC5D0;&#xC11C; &#xC571; &#xD45C;&#xC2DC;&#xAE30;&#xAC00; &#xC0AC;&#xC6A9;&#xB420; &#xACBD;&#xC6B0;, <code>click</code> &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xBB34;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li>Windows&#xC5D0;&#xC120; &#xAC00;&#xC7A5; &#xC88B;&#xC740; &#xC2DC;&#xAC01;&#xC801; &#xD6A8;&#xACFC;&#xB97C; &#xC5BB;&#xAE30; &#xC704;&#xD574; <code>ICO</code> &#xC544;&#xC774;&#xCF58;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC744;
+&#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li>Linux&#xC5D0;&#xC11C; &#xAC01;&#xAC01; &#xAC1C;&#xBCC4; <code>MenuItem</code>&#xC758; &#xBCC0;&#xACBD;&#xC744; &#xC801;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>setContextMenu</code>&#xB97C; &#xB2E4;&#xC2DC;
 &#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;:</li>
 </ul>
@@ -990,8 +990,8 @@ appIcon.setContextMenu(contextMenu);
 </li>
 </ul>
 <p>&#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC774; &#xD074;&#xB9AD;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xCC38;&#xACE0;:</strong> <code>bounds</code>&#xB294; OS X &#xC640; Windows&#xC5D0;&#xC11C;&#xB9CC; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-rightclick-os-x-windows">Event: &apos;right-click&apos; <em>OS X</em> <em>Windows</em></h3>
+<p><strong>&#xCC38;&#xACE0;:</strong> <code>bounds</code>&#xB294; macOS &#xC640; Windows&#xC5D0;&#xC11C;&#xB9CC; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="event-rightclick-macos-windows">Event: &apos;right-click&apos; <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>event</code> Event<ul>
 <li><code>altKey</code> Boolean</li>
@@ -1009,7 +1009,7 @@ appIcon.setContextMenu(contextMenu);
 </li>
 </ul>
 <p>&#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC744; &#xC624;&#xB978;&#xCABD; &#xD074;&#xB9AD;&#xB420; &#xB54C; &#xD638;&#xCD9C; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-doubleclick-os-x-windows">Event: &apos;double-click&apos; <em>OS X</em> <em>Windows</em></h3>
+<h3 id="event-doubleclick-macos-windows">Event: &apos;double-click&apos; <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>event</code> Event<ul>
 <li><code>altKey</code> Boolean</li>
@@ -1033,19 +1033,19 @@ appIcon.setContextMenu(contextMenu);
 <p>&#xD48D;&#xC120; &#xD31D;&#xC5C5;&#xC774; &#xD074;&#xB9AD;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-balloonclosed-windows">Event: &apos;balloon-closed&apos; <em>Windows</em></h3>
 <p>&#xD48D;&#xC120; &#xD31D;&#xC5C5;&#xC774; &#xC2DC;&#xAC04;&#xC774; &#xC9C0;&#xB098; &#xC0AC;&#xB77C;&#xC9C0;&#xAC70;&#xB098; &#xC720;&#xC800;&#xAC00; &#xD074;&#xB9AD;&#xD558;&#xC5EC; &#xB2EB;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-drop-os-x">Event: &apos;drop&apos; <em>OS X</em></h3>
+<h3 id="event-drop-macos">Event: &apos;drop&apos; <em>macOS</em></h3>
 <p>&#xB4DC;&#xB798;&#xADF8; &#xAC00;&#xB2A5;&#xD55C; &#xC544;&#xC774;&#xD15C;&#xC774; &#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC5D0; &#xB4DC;&#xB86D;&#xB418;&#xBA74; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-dropfiles-os-x">Event: &apos;drop-files&apos; <em>OS X</em></h3>
+<h3 id="event-dropfiles-macos">Event: &apos;drop-files&apos; <em>macOS</em></h3>
 <ul>
 <li><code>event</code></li>
 <li><code>files</code> Array - &#xB4DC;&#xB86D;&#xB41C; &#xD30C;&#xC77C;&#xC758; &#xACBD;&#xB85C;</li>
 </ul>
 <p>&#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC5D0; &#xD30C;&#xC77C;&#xC774; &#xB4DC;&#xB86D;&#xB418;&#xBA74; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-dragenter-os-x">Event: &apos;drag-enter&apos; <em>OS X</em></h3>
+<h3 id="event-dragenter-macos">Event: &apos;drag-enter&apos; <em>macOS</em></h3>
 <p>&#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC5D0; &#xB4DC;&#xB798;&#xADF8; &#xC791;&#xC5C5;&#xC774; &#xC2DC;&#xC791;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-dragleave-os-x">Event: &apos;drag-leave&apos; <em>OS X</em></h3>
+<h3 id="event-dragleave-macos">Event: &apos;drag-leave&apos; <em>macOS</em></h3>
 <p>&#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC5D0; &#xB4DC;&#xB798;&#xADF8; &#xC791;&#xC5C5;&#xC774; &#xC885;&#xB8CC;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-dragend-os-x">Event: &apos;drag-end&apos; <em>OS X</em></h3>
+<h3 id="event-dragend-macos">Event: &apos;drag-end&apos; <em>macOS</em></h3>
 <p>&#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC5D0; &#xB4DC;&#xB798;&#xADF8; &#xC791;&#xC5C5;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xAC70;&#xB098; &#xB2E4;&#xB978; &#xC704;&#xCE58;&#xC5D0;&#xC11C; &#xC885;&#xB8CC;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h2 id="methods">Methods</h2>
 <p><code>Tray</code> &#xBAA8;&#xB4C8;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
@@ -1057,7 +1057,7 @@ appIcon.setContextMenu(contextMenu);
 <li><code>image</code> <a href="native-image.html">NativeImage</a></li>
 </ul>
 <p><code>image</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC758; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="traysetpressedimageimage-os-x"><code>Tray.setPressedImage(image)</code> <em>OS X</em></h3>
+<h3 id="traysetpressedimageimage-macos"><code>Tray.setPressedImage(image)</code> <em>macOS</em></h3>
 <ul>
 <li><code>image</code> <a href="native-image.html">NativeImage</a></li>
 </ul>
@@ -1067,12 +1067,12 @@ appIcon.setContextMenu(contextMenu);
 <li><code>toolTip</code> String</li>
 </ul>
 <p>&#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC758; &#xD234;&#xD301; &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="traysettitletitle-os-x"><code>Tray.setTitle(title)</code> <em>OS X</em></h3>
+<h3 id="traysettitletitle-macos"><code>Tray.setTitle(title)</code> <em>macOS</em></h3>
 <ul>
 <li><code>title</code> String</li>
 </ul>
 <p>&#xC0C1;&#xD0DC;&#xBC14;&#xC5D0;&#xC11C; &#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58; &#xC606;&#xC5D0; &#xD45C;&#xC2DC;&#xB418;&#xB294; &#xC81C;&#xBAA9; &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="traysethighlightmodehighlight-os-x"><code>Tray.setHighlightMode(highlight)</code> <em>OS X</em></h3>
+<h3 id="traysethighlightmodehighlight-macos"><code>Tray.setHighlightMode(highlight)</code> <em>macOS</em></h3>
 <ul>
 <li><code>highlight</code> Boolean</li>
 </ul>
@@ -1088,7 +1088,7 @@ appIcon.setContextMenu(contextMenu);
 </li>
 </ul>
 <p>&#xD2B8;&#xB808;&#xC774;&#xC5D0; &#xD48D;&#xC120; &#xD31D;&#xC5C5;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="traypopupcontextmenumenu-position-os-x-windows"><code>Tray.popUpContextMenu([menu, position])</code> <em>OS X</em> <em>Windows</em></h3>
+<h3 id="traypopupcontextmenumenu-position-macos-windows"><code>Tray.popUpContextMenu([menu, position])</code> <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>menu</code> Menu (optional)</li>
 <li><code>position</code> Object (optional) - &#xD31D;&#xC5C5; &#xBA54;&#xB274;&#xC758; &#xC704;&#xCE58;<ul>
@@ -1098,7 +1098,7 @@ appIcon.setContextMenu(contextMenu);
 </li>
 </ul>
 <p>&#xD2B8;&#xB808;&#xC774; &#xC544;&#xC774;&#xCF58;&#xC758; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274;&#xB97C; &#xD31D;&#xC5C5;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;. <code>menu</code>&#xAC00; &#xC804;&#xB2EC;&#xB418;&#xBA74;, <code>menu</code>&#xAC00; &#xD2B8;&#xB808;&#xC774;
-&#xBA54;&#xB274;&#xC758; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274; &#xB300;&#xC2E0; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+&#xC544;&#xC774;&#xCF58;&#xC758; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBA54;&#xB274; &#xB300;&#xC2E0; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p><code>position</code>&#xC740; Windows&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xAE30;&#xBCF8;&#xAC12;&#xC740; (0, 0)&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="traysetcontextmenumenu"><code>Tray.setContextMenu(menu)</code></h3>
 <ul>

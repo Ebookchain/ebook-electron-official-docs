@@ -53,7 +53,7 @@
         data-chapter-title="进程对象"
         data-filepath="api/process.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:59 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:40 GMT+0800 (CST)"
         data-innerlanguage="zh-CN">
     
 
@@ -907,8 +907,8 @@
 <ul>
 <li><code>process.type</code> String - &#x8FDB;&#x7A0B;&#x7C7B;&#x578B;, &#x53EF;&#x4EE5;&#x662F; <code>browser</code> (i.e. main process)
 &#x6216; <code>renderer</code>.</li>
-<li><code>process.versions[&apos;electron&apos;]</code> String - Electron&#x7684;&#x7248;&#x672C;.</li>
-<li><code>process.versions[&apos;chrome&apos;]</code> String - Chromium&#x7684;&#x7248;&#x672C;.</li>
+<li><code>process.versions.electron</code> String - Electron&#x7684;&#x7248;&#x672C;.</li>
+<li><code>process.versions.chrome</code> String - Chromium&#x7684;&#x7248;&#x672C;.</li>
 <li><code>process.resourcesPath</code> String - JavaScript&#x6E90;&#x4EE3;&#x7801;&#x8DEF;&#x5F84;.</li>
 <li><code>process.mas</code> Boolean - &#x5728;Mac App Store &#x521B;&#x5EFA;, &#x5B83;&#x7684;&#x503C;&#x4E3A; <code>true</code>, &#x5728;&#x5176;&#x5B83;&#x7684;&#x5730;&#x65B9;&#x503C;&#x4E3A; <code>undefined</code>.</li>
 </ul>
@@ -930,8 +930,8 @@ process.once(<span class="hljs-string">&apos;loaded&apos;</span>, <span class="h
 <h2 id="&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</h2>
 <p><code>process</code> &#x5BF9;&#x8C61;&#x6709;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;:</p>
 <h3 id="processhang"><code>process.hang()</code></h3>
-<p>&#x4F7F;&#x5F53;&#x524D;&#x8FDB;&#x7A0B;&#x7684;&#x4E3B;&#x7EBF;&#x6210;&#x6302;&#x8D77;.</p>
-<h3 id="processsetfdlimitmaxdescriptors-os-x-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>OS X</em> <em>Linux</em></h3>
+<p>&#x4F7F;&#x5F53;&#x524D;&#x8FDB;&#x7A0B;&#x7684;&#x4E3B;&#x7EBF;&#x7A0B;&#x6302;&#x8D77;.</p>
+<h3 id="processsetfdlimitmaxdescriptors-macos-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>macOS</em> <em>Linux</em></h3>
 <ul>
 <li><code>maxDescriptors</code> Integer</li>
 </ul>

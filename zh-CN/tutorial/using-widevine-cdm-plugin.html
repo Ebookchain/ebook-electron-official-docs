@@ -53,7 +53,7 @@
         data-chapter-title="使用 Widevine CDM 插件"
         data-filepath="tutorial/using-widevine-cdm-plugin.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:59 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:40 GMT+0800 (CST)"
         data-innerlanguage="zh-CN">
     
 
@@ -907,14 +907,14 @@
 <h2 id="&#x83B7;&#x53D6;&#x63D2;&#x4EF6;">&#x83B7;&#x53D6;&#x63D2;&#x4EF6;</h2>
 <p>Electron &#x6CA1;&#x6709;&#x4E3A; Widevine CDM &#x63D2;&#x4EF6; &#x914D;&#x5236;&#x8BB8;&#x53EF; reasons, &#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x5B83;&#xFF0C;&#x9996;&#x5148;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x5B98;&#x65B9;&#x7684; chrome &#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x8FD9;&#x5339;&#x914D;&#x4E86;&#x4F53;&#x7CFB;&#x67B6;&#x6784;&#x548C; Electron &#x6784;&#x5EFA;&#x4F7F;&#x7528;&#x7684; chrome &#x7248;&#x672C; .</p>
 <p><strong>&#x6CE8;&#x610F;:</strong> Chrome &#x6D4F;&#x89C8;&#x5668;&#x7684;&#x4E3B;&#x8981;&#x7248;&#x672C;&#x5FC5;&#x987B;&#x548C; Electron &#x4F7F;&#x7528;&#x7684;&#x7248;&#x672C;&#x4E00;&#x6837;&#xFF0C;&#x5426;&#x5219;&#x63D2;&#x4EF6;&#x4E0D;&#x4F1A;&#x6709;&#x6548;&#xFF0C;&#x867D;&#x7136; <code>navigator.plugins</code> &#x4F1A;&#x663E;&#x793A;&#x4F60;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x4E86;&#x5B83; .</p>
-<h3 id="windows--os-x">Windows &amp; OS X</h3>
+<h3 id="windows--macos">Windows &amp; macOS</h3>
 <p>&#x5728; Chrome &#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6253;&#x5F00; <code>chrome://components/</code> &#xFF0C;&#x627E;&#x5230; <code>WidevineCdm</code> &#x5E76;&#x4E14;&#x786E;&#x5B9A;&#x5B83;&#x66F4;&#x65B0;&#x5230;&#x6700;&#x65B0;&#x7248;&#x672C;&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x53EF;&#x4EE5;&#x4ECE; <code>APP_DATA/Google/Chrome/WidevineCDM/VERSION/_platform_specific/PLATFORM_ARCH/</code> &#x8DEF;&#x5F84;&#x627E;&#x5230;&#x6240;&#x6709;&#x7684;&#x63D2;&#x4EF6;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6; .</p>
 <p><code>APP_DATA</code> &#x662F;&#x7CFB;&#x7EDF;&#x5B58;&#x653E;&#x6570;&#x636E;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5728; Windows &#x4E0A;&#x5B83;&#x662F;
-<code>%LOCALAPPDATA%</code>, &#x5728; OS X &#x4E0A;&#x5B83;&#x662F; <code>~/Library/Application Support</code>. <code>VERSION</code> &#x662F;
+<code>%LOCALAPPDATA%</code>, &#x5728; macOS &#x4E0A;&#x5B83;&#x662F; <code>~/Library/Application Support</code>. <code>VERSION</code> &#x662F;
 Widevine CDM &#x63D2;&#x4EF6;&#x7684;&#x7248;&#x672C;&#x5B57;&#x7B26;&#x4E32;, &#x7C7B;&#x4F3C; <code>1.4.8.866</code>. <code>PLATFORM</code> &#x662F; <code>mac</code> &#x6216;
 <code>win</code>. <code>ARCH</code> &#x662F; <code>x86</code> &#x6216; <code>x64</code>.</p>
 <p>&#x5728; Windows&#xFF0C;&#x5FC5;&#x8981;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x662F; <code>widevinecdm.dll</code> and
-<code>widevinecdmadapter.dll</code>, &#x5728; OS X &#xFF0C;&#x5B83;&#x4EEC;&#x662F; <code>libwidevinecdm.dylib</code> &#x548C;
+<code>widevinecdmadapter.dll</code>, &#x5728; macOS &#xFF0C;&#x5B83;&#x4EEC;&#x662F; <code>libwidevinecdm.dylib</code> &#x548C;
 <code>widevinecdmadapter.plugin</code>. &#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x590D;&#x5236;&#x5230;&#x4EFB;&#x4F55;&#x4F60;&#x559C;&#x6B22;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4EEC;&#x5FC5;&#x987B;&#x8981;&#x653E;&#x5728;&#x4E00;&#x8D77;.</p>
 <h3 id="linux">Linux</h3>
 <p>&#x5728; Linux &#xFF0C;Chrome &#x6D4F;&#x89C8;&#x5668;&#x5C06;&#x63D2;&#x4EF6;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x88C5;&#x8F7D;&#x5728;&#x4E00;&#x8D77; , &#x4F60;&#x53EF;&#x4EE5;&#x5728; <code>/opt/google/chrome</code> &#x4E0B;&#x627E;&#x5230;,&#x6587;&#x4EF6;&#x540D;&#x662F; <code>libwidevinecdm.so</code> &#x548C;
@@ -925,7 +925,7 @@ Widevine CDM &#x63D2;&#x4EF6;&#x7684;&#x7248;&#x672C;&#x5B57;&#x7B26;&#x4E32;, &
 <p>&#x5FC5;&#x987B;&#x5728; <code>app</code> &#x6A21;&#x5757;&#x7684; <code>ready</code> &#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x5F00;&#x5173;&#xFF0C;&#x5E76;&#x4E14; page &#x4F7F;&#x7528;&#x7684;&#x63D2;&#x4EF6;&#x5FC5;&#x987B;&#x6FC0;&#x6D3B;.</p>
 <p>&#x793A;&#x4F8B;&#x4EE3;&#x7801; :</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// You have to pass the filename of `widevinecdmadapter` here, it is</span>
-<span class="hljs-comment">// * `widevinecdmadapter.plugin` on OS X,</span>
+<span class="hljs-comment">// * `widevinecdmadapter.plugin` on macOS,</span>
 <span class="hljs-comment">// * `libwidevinecdmadapter.so` on Linux,</span>
 <span class="hljs-comment">// * `widevinecdmadapter.dll` on Windows.</span>
 app.commandLine.appendSwitch(<span class="hljs-string">&apos;widevine-cdm-path&apos;</span>, <span class="hljs-string">&apos;/path/to/widevinecdmadapter.plugin&apos;</span>);

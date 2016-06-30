@@ -53,7 +53,7 @@
         data-chapter-title="Desktop Environment Integration"
         data-filepath="tutorial/desktop-environment-integration.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -932,19 +932,19 @@ applications can put shortcuts in the JumpList of task bar, and on Mac,
 applications can put a custom menu in the dock menu.</p>
 <p>This guide explains how to integrate your application into those desktop
 environments with Electron APIs.</p>
-<h2 id="notifications-windows-linux-os-x">Notifications (Windows, Linux, OS X)</h2>
+<h2 id="notifications-windows-linux-macos">Notifications (Windows, Linux, macOS)</h2>
 <p>All three operating systems provide means for applications to send notifications
 to the user. Electron conveniently allows developers to send notifications with
 the <a href="https://notifications.spec.whatwg.org/" target="_blank">HTML5 Notification API</a>, using
 the currently running operating system&apos;s native notification APIs to display it.</p>
 <p><strong>Note:</strong> Since this is an HTML5 API it is only available in the renderer process.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myNotification = <span class="hljs-keyword">new</span> Notification(<span class="hljs-string">&apos;Title&apos;</span>, {
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> myNotification = <span class="hljs-keyword">new</span> Notification(<span class="hljs-string">&apos;Title&apos;</span>, {
   body: <span class="hljs-string">&apos;Lorem Ipsum Dolor Sit Amet&apos;</span>
 });
 
-myNotification.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Notification clicked&apos;</span>)
-}
+myNotification.onclick = () =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Notification clicked&apos;</span>);
+};
 </code></pre>
 <p>While code and user experience across operating systems are similar, there
 are fine differences.</p>
@@ -965,14 +965,13 @@ characters.</p>
 desktop environment that follows <a href="https://developer.gnome.org/notification-spec/" target="_blank">Desktop Notifications
 Specification</a>, including Cinnamon, Enlightenment, Unity,
 GNOME, KDE.</p>
-<h3 id="os-x">OS X</h3>
-<p>Notifications are straight-forward on OS X, you should however be aware of
-<a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/NotificationCenter.html" target="_blank">Apple&apos;s Human Interface guidelines regarding
-notifications</a>.</p>
+<h3 id="macos">macOS</h3>
+<p>Notifications are straight-forward on macOS, you should however be aware of
+<a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/NotificationCenter.html" target="_blank">Apple&apos;s Human Interface guidelines regarding notifications</a>.</p>
 <p>Note that notifications are limited to 256 bytes in size - and will be truncated
 if you exceed that limit.</p>
-<h2 id="recent-documents-windows--os-x">Recent documents (Windows &amp; OS X)</h2>
-<p>Windows and OS X provide easy access to a list of recent documents opened by
+<h2 id="recent-documents-windows--macos">Recent documents (Windows &amp; macOS)</h2>
+<p>Windows and macOS provide easy access to a list of recent documents opened by
 the application via JumpList or dock menu, respectively.</p>
 <p><strong>JumpList:</strong></p>
 <p><img src="http://i.msdn.microsoft.com/dynimg/IC420538.png" alt="JumpList Recent Files"></p>
@@ -993,22 +992,22 @@ won&apos;t appear in JumpList even after you have added it. You can find everyth
 on registering your application in <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ee872121(v=vs.85).aspx" target="_blank">Application Registration</a>.</p>
 <p>When a user clicks a file from the JumpList, a new instance of your application
 will be started with the path of the file added as a command line argument.</p>
-<h3 id="os-x-notes">OS X Notes</h3>
+<h3 id="macos-notes">macOS Notes</h3>
 <p>When a file is requested from the recent documents menu, the <code>open-file</code> event
 of <code>app</code> module will be emitted for it.</p>
-<h2 id="custom-dock-menu-os-x">Custom Dock Menu (OS X)</h2>
-<p>OS X enables developers to specify a custom menu for the dock, which usually
+<h2 id="custom-dock-menu-macos">Custom Dock Menu (macOS)</h2>
+<p>macOS enables developers to specify a custom menu for the dock, which usually
 contains some shortcuts for commonly used features of your application:</p>
 <p><strong>Dock menu of Terminal.app:</strong></p>
 <p><img src="https://cloud.githubusercontent.com/assets/639601/5069962/6032658a-6e9c-11e4-9953-aa84006bdfff.png" height="354" width="341"></p>
 <p>To set your custom dock menu, you can use the <code>app.dock.setMenu</code> API, which is
-only available on OS X:</p>
+only available on macOS:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 <span class="hljs-keyword">const</span> app = electron.app;
 <span class="hljs-keyword">const</span> Menu = electron.Menu;
 
-<span class="hljs-keyword">var</span> dockMenu = Menu.buildFromTemplate([
-  { label: <span class="hljs-string">&apos;New Window&apos;</span>, click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;New Window&apos;</span>); } },
+<span class="hljs-keyword">const</span> dockMenu = Menu.buildFromTemplate([
+  { label: <span class="hljs-string">&apos;New Window&apos;</span>, click() { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;New Window&apos;</span>); } },
   { label: <span class="hljs-string">&apos;New Window with Settings&apos;</span>, submenu: [
     { label: <span class="hljs-string">&apos;Basic&apos;</span> },
     { label: <span class="hljs-string">&apos;Pro&apos;</span>}
@@ -1039,7 +1038,7 @@ change.</p>
 </blockquote>
 <p><strong>Tasks of Internet Explorer:</strong></p>
 <p><img src="http://i.msdn.microsoft.com/dynimg/IC420539.png" alt="IE"></p>
-<p>Unlike the dock menu in OS X which is a real menu, user tasks in Windows work
+<p>Unlike the dock menu in macOS which is a real menu, user tasks in Windows work
 like application shortcuts such that when user clicks a task, a program will be
 executed with specified arguments.</p>
 <p>To set user tasks for your application, you can use
@@ -1079,24 +1078,25 @@ such as play, pause, mute, and stop.</p>
 <p><img src="https://i-msdn.sec.s-msft.com/dynimg/IC420540.png" alt="player"></p>
 <p>You can use <a href="../api/browser-window.html#winsetthumbarbuttonsbuttons-windows-7">BrowserWindow.setThumbarButtons</a> to set
 thumbnail toolbar in your application:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).BrowserWindow;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
 
-<span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({
   width: <span class="hljs-number">800</span>,
   height: <span class="hljs-number">600</span>
 });
+
 win.setThumbarButtons([
   {
-    tooltip: <span class="hljs-string">&quot;button1&quot;</span>,
+    tooltip: <span class="hljs-string">&apos;button1&apos;</span>,
     icon: path.join(__dirname, <span class="hljs-string">&apos;button1.png&apos;</span>),
-    click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;button2 clicked&quot;</span>); }
+    click() { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;button1 clicked&apos;</span>); }
   },
   {
-    tooltip: <span class="hljs-string">&quot;button2&quot;</span>,
+    tooltip: <span class="hljs-string">&apos;button2&apos;</span>,
     icon: path.join(__dirname, <span class="hljs-string">&apos;button2.png&apos;</span>),
-    flags:[<span class="hljs-string">&apos;enabled&apos;</span>, <span class="hljs-string">&apos;dismissonclick&apos;</span>],
-    click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;button2 clicked.&quot;</span>); }
+    flags: [<span class="hljs-string">&apos;enabled&apos;</span>, <span class="hljs-string">&apos;dismissonclick&apos;</span>],
+    click() { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;button2 clicked.&apos;</span>); }
   }
 ]);
 </code></pre>
@@ -1109,19 +1109,19 @@ with an empty array:</p>
 <code>.desktop</code> file, see <a href="https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles#Adding_shortcuts_to_a_launcher" target="_blank">Adding Shortcuts to a Launcher</a>.</p>
 <p><strong>Launcher shortcuts of Audacious:</strong></p>
 <p><img src="https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles?action=AttachFile&amp;do=get&amp;target=shortcuts.png" alt="audacious"></p>
-<h2 id="progress-bar-in-taskbar-windows-os-x-unity">Progress Bar in Taskbar (Windows, OS X, Unity)</h2>
+<h2 id="progress-bar-in-taskbar-windows-macos-unity">Progress Bar in Taskbar (Windows, macOS, Unity)</h2>
 <p>On Windows a taskbar button can be used to display a progress bar. This enables
 a window to provide progress information to the user without the user having to
 switch to the window itself.</p>
-<p>On OS X the progress bar will be displayed as a part of the dock icon.</p>
+<p>On macOS the progress bar will be displayed as a part of the dock icon.</p>
 <p>The Unity DE also has a similar feature that allows you to specify the progress
 bar in the launcher.</p>
 <p><strong>Progress bar in taskbar button:</strong></p>
 <p><img src="https://cloud.githubusercontent.com/assets/639601/5081682/16691fda-6f0e-11e4-9676-49b6418f1264.png" alt="Taskbar Progress Bar"></p>
 <p>To set the progress bar for a Window, you can use the
 <a href="../api/browser-window.html#winsetprogressbarprogress">BrowserWindow.setProgressBar</a> API:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});
-<span class="hljs-built_in">window</span>.setProgressBar(<span class="hljs-number">0.5</span>);
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({...});
+win.setProgressBar(<span class="hljs-number">0.5</span>);
 </code></pre>
 <h2 id="icon-overlays-in-taskbar-windows">Icon Overlays in Taskbar (Windows)</h2>
 <p>On Windows a taskbar button can use a small overlay to display application
@@ -1141,11 +1141,11 @@ presented with constantly changing overlays or animations.</p>
 <p><img src="https://i-msdn.sec.s-msft.com/dynimg/IC420441.png" alt="Overlay on taskbar button"></p>
 <p>To set the overlay icon for a window, you can use the
 <a href="../api/browser-window.html#winsetoverlayiconoverlay-description-windows-7">BrowserWindow.setOverlayIcon</a> API:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});
-<span class="hljs-built_in">window</span>.setOverlayIcon(<span class="hljs-string">&apos;path/to/overlay.png&apos;</span>, <span class="hljs-string">&apos;Description for overlay&apos;</span>);
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({...});
+win.setOverlayIcon(<span class="hljs-string">&apos;path/to/overlay.png&apos;</span>, <span class="hljs-string">&apos;Description for overlay&apos;</span>);
 </code></pre>
-<h2 id="represented-file-of-window-os-x">Represented File of Window (OS X)</h2>
-<p>On OS X a window can set its represented file, so the file&apos;s icon can show in
+<h2 id="represented-file-of-window-macos">Represented File of Window (macOS)</h2>
+<p>On macOS a window can set its represented file, so the file&apos;s icon can show in
 the title bar and when users Command-Click or Control-Click on the title a path
 popup will show.</p>
 <p>You can also set the edited state of a window so that the file icon can indicate
@@ -1155,9 +1155,9 @@ whether the document in this window has been modified.</p>
 <p>To set the represented file of window, you can use the
 <a href="../api/browser-window.html#winsetrepresentedfilenamefilename-os-x">BrowserWindow.setRepresentedFilename</a> and
 <a href="../api/browser-window.html#winsetdocumenteditededited-os-x">BrowserWindow.setDocumentEdited</a> APIs:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});
-<span class="hljs-built_in">window</span>.setRepresentedFilename(<span class="hljs-string">&apos;/etc/passwd&apos;</span>);
-<span class="hljs-built_in">window</span>.setDocumentEdited(<span class="hljs-literal">true</span>);
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({...});
+win.setRepresentedFilename(<span class="hljs-string">&apos;/etc/passwd&apos;</span>);
+win.setDocumentEdited(<span class="hljs-literal">true</span>);
 </code></pre>
 
                     

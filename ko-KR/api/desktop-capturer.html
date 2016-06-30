@@ -53,7 +53,7 @@
         data-chapter-title="desktopCapturer"
         data-filepath="api/desktop-capturer.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,15 +926,17 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="desktopcapturer">desktopCapturer</h1>
-<p><code>desktopCapturer</code> &#xBAA8;&#xB4C8;&#xC740; <code>getUserMedia</code>&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xC18C;&#xC2A4;&#xB97C; &#xAC00;&#xC838;&#xC62C; &#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;
-&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xB9C8;&#xC774;&#xD06C;, &#xCE74;&#xBA54;&#xB77C; &#xB610;&#xB294; &#xD654;&#xBA74;&#xC5D0;&#xC11C; &#xC624;&#xB514;&#xC624;, &#xBE44;&#xB514;&#xC624; &#xADF8;&#xB9AC;&#xACE0; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xCEA1;&#xCCD0;&#xD558;&#xAE30; &#xC704;&#xD55C;
+<code>getUserMedia</code> &#xC18C;&#xC2A4;&#xB97C; &#xB098;&#xC5F4;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
 <pre><code class="lang-javascript"><span class="hljs-comment">// &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xB0B4;&#xBD80;</span>
-<span class="hljs-keyword">var</span> desktopCapturer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).desktopCapturer;
+<span class="hljs-keyword">const</span> {desktopCapturer} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-desktopCapturer.getSources({types: [<span class="hljs-string">&apos;window&apos;</span>, <span class="hljs-string">&apos;screen&apos;</span>]}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, sources</span>) </span>{
+desktopCapturer.getSources({types: [<span class="hljs-string">&apos;window&apos;</span>, <span class="hljs-string">&apos;screen&apos;</span>]}, (error, sources) =&gt; {
   <span class="hljs-keyword">if</span> (error) <span class="hljs-keyword">throw</span> error;
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; sources.length; ++i) {
-    <span class="hljs-keyword">if</span> (sources[i].name == <span class="hljs-string">&quot;Electron&quot;</span>) {
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; sources.length; ++i) {
+    <span class="hljs-keyword">if</span> (sources[i].name === <span class="hljs-string">&apos;Electron&apos;</span>) {
       navigator.webkitGetUserMedia({
         audio: <span class="hljs-literal">false</span>,
         video: {
@@ -991,7 +993,7 @@ desktopCapturer.getSources({types: [<span class="hljs-string">&apos;window&apos;
 <li><code>name</code> String - &#xCEA1;&#xCCD0;&#xB41C; &#xD654;&#xBA74;&#xACFC; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xB300;&#xD574; &#xBB18;&#xC0AC;&#xB41C; &#xC774;&#xB984;&#xC785;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xC18C;&#xC2A4;&#xAC00;
 &#xD654;&#xBA74;&#xC774;&#xB77C;&#xBA74;, <code>Entire Screen</code> &#xB610;&#xB294; <code>Screen &lt;index&gt;</code>&#xAC00; &#xB420; &#xAC83;&#xC774;&#xACE0; &#xC18C;&#xC2A4;&#xAC00; &#xC708;&#xB3C4;&#xC6B0;&#xB77C;&#xBA74;,
 &#xD574;&#xB2F9; &#xC708;&#xB3C4;&#xC6B0;&#xC758; &#xC81C;&#xBAA9;&#xC774; &#xBC18;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.</li>
-<li><code>thumbnail</code> <a href="NativeImage.md">NativeImage</a> - &#xC12C;&#xB124;&#xC77C; &#xC774;&#xBBF8;&#xC9C0;.</li>
+<li><code>thumbnail</code> <a href="native-image.html">NativeImage</a> - &#xC12C;&#xB124;&#xC77C; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC774;&#xBBF8;&#xC9C0;.</li>
 </ul>
 <p><strong>&#xCC38;&#xACE0;:</strong> <code>source.thumbnail</code>&#xC758; &#xD06C;&#xAE30;&#xB294; &#xC5B8;&#xC81C;&#xB098; <code>options</code>&#xC758; <code>thumnbailSize</code>&#xC640; &#xAC19;&#xB2E4;&#xACE0;
 &#xBCF4;&#xC7A5;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC12C;&#xB124;&#xC77C;&#xC758; &#xD06C;&#xAE30;&#xB294; &#xD654;&#xBA74;&#xACFC; &#xC708;&#xB3C4;&#xC6B0;&#xC758; &#xD06C;&#xAE30;&#xC5D0; &#xC758;&#xC874;&#xD558;&#xC5EC; &#xC870;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</p>

@@ -53,7 +53,7 @@
         data-chapter-title="Selenium と WebDriverを使用する"
         data-filepath="tutorial/using-selenium-and-webdriver.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:56 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:31 GMT+0800 (CST)"
         data-innerlanguage="jp">
     
 
@@ -849,7 +849,40 @@
 <p>WebDriver&#x306F;&#x3001;&#x8907;&#x6570;&#x306E;&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x9593;&#x3067;Web&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x81EA;&#x52D5;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30AA;&#x30FC;&#x30D7;&#x30F3;&#x30BD;&#x30FC;&#x30B9;&#x30C4;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;Web&#x30DA;&#x30FC;&#x30B8;&#x306E;&#x79FB;&#x52D5;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x5165;&#x529B;&#x3001;JavaScript&#x306E;&#x5B9F;&#x884C;&#x306A;&#x3069;&#x3092;&#x53EF;&#x80FD;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;ChromeDriver&#x306F;Chromium&#x7528;&#x306E;WebDriver&#x306E;&#x30EF;&#x30A4;&#x30E4;&#x30FC;&#x30D7;&#x30ED;&#x30C8;&#x30B3;&#x30EB;&#x3067;&#x5B9F;&#x88C5;&#x3055;&#x308C;&#x305F;&#x30B9;&#x30BF;&#x30F3;&#x30C9;&#x30A2;&#x30ED;&#x30F3;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3067;&#x3059;&#x3002;Chromium&#x3068;WebDriver&#x30C1;&#x30FC;&#x30E0;&#x30E1;&#x30F3;&#x30D0;&#x30FC;&#x304C;&#x958B;&#x767A;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 </blockquote>
 <p>Electron&#x3067; <code>chromedriver</code> &#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;Electron&#x304C;&#x3069;&#x3053;&#x306B;&#x3042;&#x308B;&#x304B;&#x3092;&#x793A;&#x3057;&#x3001;Electron&#x306F;Chrome&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x30FC;&#x3067;&#x3042;&#x308B;&#x3068;&#x601D;&#x308F;&#x305B;&#x307E;&#x3059;&#x3002;</p>
-<h2 id="webdriverjs&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;">WebDriverJs&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;</h2>
+<h2 id="spectron&#x306E;&#x8A2D;&#x5B9A;">Spectron&#x306E;&#x8A2D;&#x5B9A;</h2>
+<p><a href="http://electron.atom.io/spectron" target="_blank">Spectron</a>&#x306F;Electron&#x306E;&#x305F;&#x3081;&#x306E;&#x516C;&#x5F0F;&#x306A;ChromeDriver&#x30C6;&#x30B9;&#x30C8;&#x30D5;&#x30EC;&#x30FC;&#x30E0;&#x30EF;&#x30FC;&#x30AF;&#x3067;&#x3059;&#x3002;
+<a href="http://webdriver.io/" target="_blank">WebdriverIO</a>&#x306B;&#x57FA;&#x3065;&#x3044;&#x3066;&#x30D3;&#x30EB;&#x30C9;&#x3055;&#x308C;&#x3066;&#x304A;&#x308A;&#x3001;&#x30C6;&#x30B9;&#x30C8;&#x306E;&#x4E2D;&#x3067;Electron API&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x30D8;&#x30EB;&#x30D1;&#x30FC;&#x3084;ChromeDrive&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-bash">$ npm install --save-dev spectron
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x53EF;&#x8996;&#x306E;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x304C;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x4ED8;&#x304D;&#x3067;&#x958B;&#x304B;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x8ABF;&#x3079;&#x308B;&#x7C21;&#x5358;&#x306A;&#x30C6;&#x30B9;&#x30C8;</span>
+<span class="hljs-keyword">var</span> Application = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;spectron&apos;</span>).Application
+<span class="hljs-keyword">var</span> assert = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;assert&apos;</span>)
+
+<span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Application({
+  path: <span class="hljs-string">&apos;/Applications/MyApp.app/Contents/MacOS/MyApp&apos;</span>
+})
+
+app.start().then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// &#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306F;&#x8868;&#x793A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#xFF1F;</span>
+  <span class="hljs-keyword">return</span> app.browserWindow.isVisible()
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">isVisible</span>) </span>{
+  <span class="hljs-comment">// &#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x78BA;&#x8A8D;</span>
+  assert.equal(isVisible, <span class="hljs-literal">true</span>)
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// &#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306E;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x3092;&#x53D6;&#x5F97;</span>
+  <span class="hljs-keyword">return</span> app.client.getTitle()
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">title</span>) </span>{
+  <span class="hljs-comment">// &#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306E;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x3092;&#x78BA;&#x8A8D;</span>
+  assert.equal(title, <span class="hljs-string">&apos;My App&apos;</span>)
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// &#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x6B62;&#x3081;&#x308B;</span>
+  <span class="hljs-keyword">return</span> app.stop()
+}).catch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+  <span class="hljs-comment">// &#x5931;&#x6557;&#x3057;&#x305F;&#x5834;&#x5408;&#x30ED;&#x30B0;&#x3092;&#x6B8B;&#x3059;</span>
+  <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Test failed&apos;</span>, error.message)
+})
+</code></pre>
+<h2 id="webdriverjs&#x3092;&#x8A2D;&#x5B9A;">WebDriverJs&#x3092;&#x8A2D;&#x5B9A;</h2>
 <p><a href="https://code.google.com/p/selenium/wiki/WebDriverJs" target="_blank">WebDriverJs</a> &#x306F;&#x3001;web driver &#x3067;&#x30C6;&#x30B9;&#x30C8;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;Node&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x63D0;&#x4F9B;&#x3057;&#x307E;&#x3059;&#x3002;&#x4F8B;&#x306E;&#x3088;&#x3046;&#x306B;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <h3 id="1-chromedriver&#x3092;&#x958B;&#x59CB;">1. ChromeDriver&#x3092;&#x958B;&#x59CB;</h3>
 <p>&#x6700;&#x521D;&#x306B;&#x3001; <code>chromedriver</code> &#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x3001;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;:</p>
@@ -865,7 +898,7 @@ Only <span class="hljs-built_in">local</span> connections are allowed.
 <p>Electron&#x3067;&#x306E; <code>selenium-webdriver</code> &#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x306F;&#x3001;chrome driver&#x3078;&#x306E;&#x63A5;&#x7D9A;&#x65B9;&#x6CD5;&#x3068;Electron&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x304C;&#x3069;&#x3053;&#x306B;&#x3042;&#x308B;&#x304B;&#x3092;&#x30DE;&#x30CB;&#x30E5;&#x30A2;&#x30EB;&#x3067;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x4EE5;&#x5916;&#x306F;&#x3001;upstream&#x3068;&#x57FA;&#x672C;&#x7684;&#x306B;&#x540C;&#x3058;&#x3067;&#x3059;&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> webdriver = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;selenium-webdriver&apos;</span>);
 
-<span class="hljs-keyword">var</span> driver = <span class="hljs-keyword">new</span> webdriver.Builder()
+<span class="hljs-keyword">const</span> driver = <span class="hljs-keyword">new</span> webdriver.Builder()
   <span class="hljs-comment">// The &quot;9515&quot; is the port opened by chrome driver.</span>
   .usingServer(<span class="hljs-string">&apos;http://localhost:9515&apos;</span>)
   .withCapabilities({
@@ -902,7 +935,7 @@ Only <span class="hljs-built_in">local</span> connections are allowed.
 </code></pre>
 <h3 id="3-chrome-driver&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;">3. chrome driver&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;</h3>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> webdriverio = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webdriverio&apos;</span>);
-<span class="hljs-keyword">var</span> options = {
+<span class="hljs-keyword">const</span> options = {
     host: <span class="hljs-string">&quot;localhost&quot;</span>, <span class="hljs-comment">// Use localhost as chrome driver server</span>
     port: <span class="hljs-number">9515</span>,        <span class="hljs-comment">// &quot;9515&quot; is the port opened by chrome driver.</span>
     desiredCapabilities: {
@@ -914,21 +947,21 @@ Only <span class="hljs-built_in">local</span> connections are allowed.
     }
 };
 
-<span class="hljs-keyword">var</span> client = webdriverio.remote(options);
+<span class="hljs-keyword">let</span> client = webdriverio.remote(options);
 
 client
     .init()
     .url(<span class="hljs-string">&apos;http://google.com&apos;</span>)
     .setValue(<span class="hljs-string">&apos;#q&apos;</span>, <span class="hljs-string">&apos;webdriverio&apos;</span>)
     .click(<span class="hljs-string">&apos;#btnG&apos;</span>)
-    .getTitle().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">title</span>) </span>{
+    .getTitle().then((title) =&gt; {
         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Title was: &apos;</span> + title);
     })
     .end();
 </code></pre>
 <h2 id="&#x30EF;&#x30FC;&#x30AF;&#x30D5;&#x30ED;&#x30FC;">&#x30EF;&#x30FC;&#x30AF;&#x30D5;&#x30ED;&#x30FC;</h2>
 <p>Electron&#x306F;&#x30EA;&#x30D3;&#x30EB;&#x30C9;&#x305B;&#x305A;&#x306B;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30C6;&#x30B9;&#x30C8;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x5358;&#x7D14;&#x306B;Electron&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3067;&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x3092;<a href="https://github.com/electron/electron/blob/master/docs/tutorial/application-distribution.md" target="_blank">&#x914D;&#x7F6E;&#x3057;&#x307E;&#x3059;</a>&#x3002;</p>
-<p>&#x3082;&#x3057;&#x304F;&#x306F;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x30FC;&#x3092;&#x5F15;&#x6570;&#x306B;&#x3057;&#x3066;Electron&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x308C;&#x306F;&#x3001;Electron&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x30A2;&#x30D7;&#x30EA;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#xFF06;&#x30DA;&#x30FC;&#x30B9;&#x30C8;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x6027;&#x3092;&#x9664;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3082;&#x3057;&#x304F;&#x306F;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x30FC;&#x3092;&#x5F15;&#x6570;&#x306B;&#x3057;&#x3066;Electron&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x308C;&#x306B;&#x3088;&#x3063;&#x3066;&#x3001;Electron&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x30A2;&#x30D7;&#x30EA;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#xFF06;&#x30DA;&#x30FC;&#x30B9;&#x30C8;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x306A;&#x304F;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 
                     
                     </section>

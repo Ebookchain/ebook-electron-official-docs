@@ -53,7 +53,7 @@
         data-chapter-title="Source Code Directory Structure"
         data-filepath="development/source-code-directory-structure.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -933,38 +933,38 @@ architecture</a>
 to understand the source code better.</p>
 <h2 id="structure-of-source-code">Structure of Source Code</h2>
 <pre><code>Electron
-&#x251C;&#x2500;&#x2500; atom - C++ source code.
-|   &#x251C;&#x2500;&#x2500; app - System entry code.
-|   &#x251C;&#x2500;&#x2500; browser - The frontend including the main window, UI, and all of the
+&#x251C;&#x2500;&#x2500; atom/ - C++ source code.
+|   &#x251C;&#x2500;&#x2500; app/ - System entry code.
+|   &#x251C;&#x2500;&#x2500; browser/ - The frontend including the main window, UI, and all of the
 |   |   main process things. This talks to the renderer to manage web pages.
-|   |   &#x251C;&#x2500;&#x2500; ui - Implementation of UI stuff for different platforms.
-|   |   |   &#x251C;&#x2500;&#x2500; cocoa - Cocoa specific source code.
-|   |   |   &#x251C;&#x2500;&#x2500; gtk - GTK+ specific source code.
-|   |   |   &#x2514;&#x2500;&#x2500; win - Windows GUI specific source code.
-|   |   &#x251C;&#x2500;&#x2500; api - The implementation of the main process APIs.
-|   |   &#x251C;&#x2500;&#x2500; net - Network related code.
-|   |   &#x251C;&#x2500;&#x2500; mac - Mac specific Objective-C source code.
-|   |   &#x2514;&#x2500;&#x2500; resources - Icons, platform-dependent files, etc.
-|   &#x251C;&#x2500;&#x2500; renderer - Code that runs in renderer process.
-|   |   &#x2514;&#x2500;&#x2500; api - The implementation of renderer process APIs.
-|   &#x2514;&#x2500;&#x2500; common - Code that used by both the main and renderer processes,
+|   |   &#x251C;&#x2500;&#x2500; ui/ - Implementation of UI stuff for different platforms.
+|   |   |   &#x251C;&#x2500;&#x2500; cocoa/ - Cocoa specific source code.
+|   |   |   &#x251C;&#x2500;&#x2500; win/ - Windows GUI specific source code.
+|   |   |   &#x2514;&#x2500;&#x2500; x/ - X11 specific source code.
+|   |   &#x251C;&#x2500;&#x2500; api/ - The implementation of the main process APIs.
+|   |   &#x251C;&#x2500;&#x2500; net/ - Network related code.
+|   |   &#x251C;&#x2500;&#x2500; mac/ - Mac specific Objective-C source code.
+|   |   &#x2514;&#x2500;&#x2500; resources/ - Icons, platform-dependent files, etc.
+|   &#x251C;&#x2500;&#x2500; renderer/ - Code that runs in renderer process.
+|   |   &#x2514;&#x2500;&#x2500; api/ - The implementation of renderer process APIs.
+|   &#x2514;&#x2500;&#x2500; common/ - Code that used by both the main and renderer processes,
 |       including some utility functions and code to integrate node&apos;s message
 |       loop into Chromium&apos;s message loop.
-|       &#x2514;&#x2500;&#x2500; api - The implementation of common APIs, and foundations of
+|       &#x2514;&#x2500;&#x2500; api/ - The implementation of common APIs, and foundations of
 |           Electron&apos;s built-in modules.
-&#x251C;&#x2500;&#x2500; chromium_src - Source code that copied from Chromium.
-&#x251C;&#x2500;&#x2500; default_app - The default page to show when Electron is started without
+&#x251C;&#x2500;&#x2500; chromium_src/ - Source code that copied from Chromium.
+&#x251C;&#x2500;&#x2500; default_app/ - The default page to show when Electron is started without
 |   providing an app.
-&#x251C;&#x2500;&#x2500; docs - Documentations.
-&#x251C;&#x2500;&#x2500; lib  - JavaScript source code.
-|   &#x251C;&#x2500;&#x2500; browser - Javascript main process initialization code.
-|   |   &#x2514;&#x2500;&#x2500; api - Javascript API implementation.
-|   &#x251C;&#x2500;&#x2500; common - JavaScript used by both the main and renderer processes
-|   |   &#x2514;&#x2500;&#x2500; api - Javascript API implementation.
-|   &#x2514;&#x2500;&#x2500; renderer - Javascript renderer process initialization code.
-|       &#x2514;&#x2500;&#x2500; api - Javascript API implementation.
-&#x251C;&#x2500;&#x2500; spec - Automatic tests.
-&#x251C;&#x2500;&#x2500; atom.gyp - Building rules of Electron.
+&#x251C;&#x2500;&#x2500; docs/ - Documentations.
+&#x251C;&#x2500;&#x2500; lib/ - JavaScript source code.
+|   &#x251C;&#x2500;&#x2500; browser/ - Javascript main process initialization code.
+|   |   &#x2514;&#x2500;&#x2500; api/ - Javascript API implementation.
+|   &#x251C;&#x2500;&#x2500; common/ - JavaScript used by both the main and renderer processes
+|   |   &#x2514;&#x2500;&#x2500; api/ - Javascript API implementation.
+|   &#x2514;&#x2500;&#x2500; renderer/ - Javascript renderer process initialization code.
+|       &#x2514;&#x2500;&#x2500; api/ - Javascript API implementation.
+&#x251C;&#x2500;&#x2500; spec/ - Automatic tests.
+&#x251C;&#x2500;&#x2500; electron.gyp - Building rules of Electron.
 &#x2514;&#x2500;&#x2500; common.gypi - Compiler specific settings and building rules for other
     components like `node` and `breakpad`.
 </code></pre><h2 id="structure-of-other-directories">Structure of Other Directories</h2>
@@ -983,7 +983,23 @@ when creating a distribution.</li>
 <li><strong>external_binaries</strong> - Downloaded binaries of third-party frameworks which
 do not support building with <code>gyp</code>.</li>
 </ul>
+<h2 id="keeping-git-submodules-up-to-date">Keeping Git Submodules Up to Date</h2>
+<p>The Electron repository has a few vendored dependencies, found in the
+<a href="https://github.com/electron/electron/tree/master/vendor" target="_blank">/vendor</a> directory. Occasionally you might see a message like this
+when running <code>git status</code>:</p>
+<pre><code class="lang-sh">$ git status
 
+    modified:   vendor/brightray (new commits)
+    modified:   vendor/node (new commits)
+</code></pre>
+<p>To update these vendored dependencies, run the following command:</p>
+<pre><code class="lang-sh">git submodule update --init --recursive
+</code></pre>
+<p>If you find yourself running this command often, you can create an alias for it
+in your <code>~/.gitconfig</code> file:</p>
+<pre><code>[alias]
+    su = submodule update --init --recursive
+</code></pre>
                     
                     </section>
                 

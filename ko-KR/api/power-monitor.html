@@ -53,7 +53,7 @@
         data-chapter-title="powerMonitor"
         data-filepath="api/power-monitor.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,15 +926,16 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="powermonitor">powerMonitor</h1>
-<p><code>power-monitor</code> &#xBAA8;&#xB4C8;&#xC740; PC&#xC758; &#xD30C;&#xC6CC; &#xC0C1;&#xD0DC;&#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;. (&#xC8FC;&#xB85C; &#xB178;&#xD2B8;&#xBD81; &#xB4F1;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;)
-&#xC774; &#xBAA8;&#xB4C8;&#xC740; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70;, (remote &#xBAA8;&#xB4C8;(RPC)&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xC791;&#xB3D9;&#xC774;
-&#xB429;&#xB2C8;&#xB2E4;) &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; <code>app</code> &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; &#xC0AC;&#xC6A9;&#xD560; &#xC218;
-&#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC608;&#xC81C;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;app&apos;</span>);
+<blockquote>
+<p>&#xD30C;&#xC6CC;&#xC758; &#xC0C1;&#xD0DC; &#xBCC0;&#xACBD;&#xC744; &#xBAA8;&#xB2C8;&#xD130;&#xB9C1;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xC774; &#xBAA8;&#xB4C8;&#xC740; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00;
+&#xBC1C;&#xC0DD;&#xD55C; &#xC774;&#xD6C4;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xC2DC;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).powerMonitor.on(<span class="hljs-string">&apos;suspend&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
+  <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).powerMonitor.on(<span class="hljs-string">&apos;suspend&apos;</span>, () =&gt; {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#xC808;&#xC804;&#xBAA8;&#xB4DC;&#xB85C; &#xC9C4;&#xC785;&#xD569;&#xB2C8;&#xB2E4;!&apos;</span>);
   });
 });

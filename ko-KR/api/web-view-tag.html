@@ -53,7 +53,7 @@
         data-chapter-title="`&lt;webview&gt;` 태그"
         data-filepath="api/web-view-tag.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,44 +926,70 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="webview-&#xD0DC;&#xADF8;"><code>&lt;webview&gt;</code> &#xD0DC;&#xADF8;</h1>
-<p><code>guest</code> &#xCEE8;&#xD150;&#xCE20;(&#xC6F9; &#xD398;&#xC774;&#xC9C0;)&#xB97C; Electron &#xC571; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xC0BD;&#xC785;&#xD558;&#xAE30; &#xC704;&#xD574; <code>webview</code> &#xD0DC;&#xADF8;&#xB97C;
-&#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC8C;&#xC2A4;&#xD2B8; &#xCEE8;&#xD150;&#xCE20;&#xB294; <code>webview</code> &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC5D0; &#xB2F4;&#xACA8; &#xB300;&#xC0C1; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xC0BD;&#xC785;&#xB418;&#xACE0;
-&#xD574;&#xB2F9; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC120; &#xAC8C;&#xC2A4;&#xD2B8; &#xCEE8;&#xD150;&#xCE20;&#xC758; &#xBC30;&#xCE58; &#xBC0F; &#xB80C;&#xB354;&#xB9C1; &#xACFC;&#xC815;&#xC744; &#xC870;&#xC791;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><code>iframe</code>&#xACFC;&#xB294; &#xB2EC;&#xB9AC; <code>webview</code>&#xB294; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xACFC; &#xBD84;&#xB9AC;&#xB41C; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.
-&#xC774;&#xB294; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC640; &#xAC19;&#xC740; &#xAD8C;&#xD55C;&#xC744; &#xAC00;&#xC9C0;&#xC9C0; &#xC54A;&#xACE0; &#xC571;&#xACFC; &#xC784;&#xBCA0;&#xB514;&#xB4DC;(&#xAC8C;&#xC2A4;&#xD2B8;) &#xCEE8;&#xD150;&#xCE20;&#xAC04;&#xC758; &#xBAA8;&#xB4E0;
-&#xC0C1;&#xD638;&#xC791;&#xC6A9;&#xC774; &#xBE44;&#xB3D9;&#xAE30;&#xB85C; &#xC791;&#xB3D9;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC784;&#xBCA0;&#xB514;&#xB4DC; &#xCEE8;&#xD150;&#xCE20;&#xB85C;&#xBD80;&#xD130;
-&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC548;&#xC804;&#xD558;&#xAC8C; &#xC720;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h2 id="&#xC608;&#xC81C;">&#xC608;&#xC81C;</h2>
-<p>&#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0; &#xC0BD;&#xC785;&#xD558;&#xB824;&#xBA74; <code>webview</code> &#xD0DC;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xC6D0;&#xD558;&#xB294; &#xD0C0;&#xAC9F; &#xD398;&#xC774;&#xC9C0;&#xC5D0;
-&#xCD94;&#xAC00;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. (&#xAC8C;&#xC2A4;&#xD2B8; &#xCEE8;&#xD150;&#xCE20;&#xAC00; &#xC571; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xCD94;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;) &#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xB85C; <code>webview</code>
+<blockquote>
+<p>&#xC678;&#xBD80; &#xC6F9; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xACE0;&#xB9BD;&#xB41C; &#xD504;&#xB808;&#xC784;&#xACFC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p><code>guest</code> &#xCF58;&#xD150;&#xCE20;(&#xC6F9; &#xD398;&#xC774;&#xC9C0;)&#xB97C; Electron &#xC571; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xC0BD;&#xC785;&#xD558;&#xAE30; &#xC704;&#xD574; <code>webview</code> &#xD0DC;&#xADF8;&#xB97C;
+&#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC8C;&#xC2A4;&#xD2B8; &#xCF58;&#xD150;&#xCE20;&#xB294; <code>webview</code> &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC5D0; &#xB2F4;&#xACA8; &#xB300;&#xC0C1; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xC0BD;&#xC785;&#xB418;&#xACE0;
+&#xD574;&#xB2F9; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC120; &#xAC8C;&#xC2A4;&#xD2B8; &#xCF58;&#xD150;&#xCE20;&#xC758; &#xBC30;&#xCE58; &#xBC0F; &#xB80C;&#xB354;&#xB9C1; &#xACFC;&#xC815;&#xC744; &#xC870;&#xC791;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>iframe</code>&#xACFC;&#xB294; &#xB2EC;&#xB9AC; <code>webview</code>&#xB294; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xACFC; &#xBD84;&#xB9AC;&#xB41C; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB294; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xC640; &#xAC19;&#xC740; &#xAD8C;&#xD55C;&#xC744; &#xAC00;&#xC9C0;&#xC9C0; &#xC54A;&#xACE0; &#xC571;&#xACFC; &#xC784;&#xBCA0;&#xB514;&#xB4DC;(&#xAC8C;&#xC2A4;&#xD2B8;) &#xCF58;&#xD150;&#xCE20;&#xAC04;&#xC758; &#xBAA8;&#xB4E0;
+&#xC0C1;&#xD638;&#xC791;&#xC6A9;&#xC774; &#xBE44;&#xB3D9;&#xAE30;&#xB85C; &#xC791;&#xB3D9;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC784;&#xBCA0;&#xB514;&#xB4DC; &#xCF58;&#xD150;&#xCE20;&#xB85C;&#xBD80;&#xD130;
+&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC548;&#xC804;&#xD558;&#xAC8C; &#xC720;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBCF4;&#xC548;&#xC0C1;&#xC758; &#xC774;&#xC720;&#xB85C;, <code>webview</code>&#xB294; <code>nodeIntegration</code>&#xC774; &#xD65C;&#xC131;&#xD654;&#xB41C; <code>BrowserWindow</code>&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xC608;&#xC2DC;">&#xC608;&#xC2DC;</h2>
+<p>&#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0; &#xC0BD;&#xC785;&#xD558;&#xB824;&#xBA74; <code>webview</code> &#xD0DC;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xC6D0;&#xD558;&#xB294; &#xD0C0;&#xAC9F; &#xD398;&#xC774;&#xC9C0;&#xC5D0;
+&#xCD94;&#xAC00;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. (&#xAC8C;&#xC2A4;&#xD2B8; &#xCF58;&#xD150;&#xCE20;&#xAC00; &#xC571; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xCD94;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;) &#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xB85C; <code>webview</code>
 &#xD0DC;&#xADF8;&#xC758; <code>src</code> &#xC18D;&#xC131;&#xC5D0; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xACE0; css &#xC2A4;&#xD0C0;&#xC77C;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC758; &#xC678;&#xAD00;&#xC744; &#xC124;&#xC815;&#xD560;
 &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;foo&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.github.com/&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;display:inline-flex; width:640px; height:480px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
 </code></pre>
+<p>&#xAC8C;&#xC2A4;&#xD2B8; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xC870;&#xC791;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB85C; <code>webview</code> &#xD0DC;&#xADF8;&#xC758; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xB9AC;&#xC2A4;&#xB2DD; &#xD558;&#xC5EC;
+&#xC751;&#xB2F5;&#xC744; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;: &#xCCAB;&#xBC88;&#xC9F8; &#xB9AC;&#xC2A4;&#xB108;&#xB294; &#xD398;&#xC774;&#xC9C0; &#xB85C;&#xB529; &#xC2DC;&#xC791;&#xC2DC;&#xC758;
+&#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xD655;&#xC778;&#xD558;&#xACE0; &#xB450;&#xBC88;&#xC9F8; &#xB9AC;&#xC2A4;&#xB108;&#xB294; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xB85C;&#xB529;&#xC774; &#xB05D;&#xB09C;&#xC2DC;&#xC810;&#xC744; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0;
+&#xD398;&#xC774;&#xC9C0;&#xB97C; &#xB85C;&#xB4DC;&#xD558;&#xB294; &#xB3D9;&#xC548; &quot;loading...&quot; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  onload = () =&gt; {
+    <span class="hljs-keyword">const</span> webview = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;foo&apos;</span>);
+    <span class="hljs-keyword">const</span> indicator = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;.indicator&apos;</span>);
+
+    <span class="hljs-keyword">const</span> loadstart = () =&gt; {
+      indicator.innerText = <span class="hljs-string">&apos;loading...&apos;</span>;
+    };
+
+    <span class="hljs-keyword">const</span> loadstop = () =&gt; {
+      indicator.innerText = <span class="hljs-string">&apos;&apos;</span>;
+    };
+
+    webview.addEventListener(<span class="hljs-string">&apos;did-start-loading&apos;</span>, loadstart);
+    webview.addEventListener(<span class="hljs-string">&apos;did-stop-loading&apos;</span>, loadstop);
+  };
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h2 id="css-&#xC2A4;&#xD0C0;&#xC77C;&#xB9C1;-&#xCC38;&#xACE0;">CSS &#xC2A4;&#xD0C0;&#xC77C;&#xB9C1; &#xCC38;&#xACE0;</h2>
 <p>&#xC8FC;&#xC758;&#xD560; &#xC810;&#xC740; <code>webview</code> &#xD0DC;&#xADF8;&#xC758; &#xC2A4;&#xD0C0;&#xC77C;&#xC740; &#xC804;&#xD1B5;&#xC801;&#xC778; flexbox &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC744; &#xC0AC;&#xC6A9;&#xD588;&#xC744; &#xB54C; &#xC790;&#xC2DD;
 <code>object</code> &#xC694;&#xC18C;&#xAC00; &#xD574;&#xB2F9; <code>webview</code> &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC758; &#xC804;&#xCCB4; &#xB192;&#xC774;&#xC640; &#xB113;&#xC774;&#xB97C; &#xD655;&#xC2E4;&#xD788; &#xCC44;&#xC6B0;&#xB3C4;&#xB85D;
 &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; <code>display:flex;</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. (v0.36.11 &#xBD80;&#xD130;) &#xB530;&#xB77C;&#xC11C; &#xC778;&#xB77C;&#xC778; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC744;
 &#xC704;&#xD574; <code>display:inline-flex;</code>&#xB97C; &#xC4F0;&#xC9C0; &#xC54A;&#xB294; &#xD55C;, &#xAE30;&#xBCF8; <code>display:flex;</code> CSS &#xC18D;&#xC131;&#xC744;
 &#xB36E;&#xC5B4;&#xC4F0;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xAC8C;&#xC2A4;&#xD2B8; &#xCEE8;&#xD150;&#xCE20;&#xB97C; &#xC870;&#xC791;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB85C; <code>webview</code> &#xD0DC;&#xADF8;&#xC758; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xB9AC;&#xC2A4;&#xB2DD; &#xD558;&#xC5EC;
-&#xC751;&#xB2F5;&#xC744; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;: &#xCCAB;&#xBC88;&#xC9F8; &#xB9AC;&#xC2A4;&#xB108;&#xB294; &#xD398;&#xC774;&#xC9C0; &#xB85C;&#xB529; &#xC2DC;&#xC791;&#xC2DC;&#xC758;
-&#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xD655;&#xC778;&#xD558;&#xACE0; &#xB450;&#xBC88;&#xC9F8; &#xB9AC;&#xC2A4;&#xB108;&#xB294; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xB85C;&#xB529;&#xC774; &#xB05D;&#xB09C;&#xC2DC;&#xC810;&#xC744; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0;
-&#xD398;&#xC774;&#xC9C0;&#xB97C; &#xB85C;&#xB4DC;&#xD558;&#xB294; &#xB3D9;&#xC548; &quot;loading...&quot; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> webview = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;foo&quot;</span>);
-    <span class="hljs-keyword">var</span> indicator = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.indicator&quot;</span>);
-
-    <span class="hljs-keyword">var</span> loadstart = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-      indicator.innerText = <span class="hljs-string">&quot;loading...&quot;</span>;
-    }
-    <span class="hljs-keyword">var</span> loadstop = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-      indicator.innerText = <span class="hljs-string">&quot;&quot;</span>;
-    }
-    webview.addEventListener(<span class="hljs-string">&quot;did-start-loading&quot;</span>, loadstart);
-    webview.addEventListener(<span class="hljs-string">&quot;did-stop-loading&quot;</span>, loadstop);
-  }
-</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<p><code>webview</code>&#xB294; <code>hidden</code> &#xB610;&#xB294; <code>display: none;</code> &#xC18D;&#xC131;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xBB38;&#xC81C;&#xB97C; &#xD55C; &#xAC00;&#xC9C0;
+&#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC790;&#xC2DD; <code>browserplugin</code> &#xAC1D;&#xCCB4; &#xB0B4;&#xC5D0;&#xC11C; &#xBE44;&#xC815;&#xC0C1;&#xC801;&#xC778; &#xB79C;&#xB354;&#xB9C1; &#xB3D9;&#xC791;&#xC744; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0AC; &#xC218;
+&#xC788;&#xC73C;&#xBA70; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xB85C;&#xB4DC;&#xB418;&#xC5C8;&#xC744; &#xB54C;, <code>webview</code>&#xAC00; &#xC228;&#xACA8;&#xC9C0;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB54C;, &#xBC18;&#xB300;&#xB85C; &#xADF8;&#xB0E5; &#xBC14;&#xB85C;
+&#xB2E4;&#xC2DC; &#xBCF4;&#xC774;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. <code>webview</code>&#xB97C; &#xC228;&#xAE30;&#xB294; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xAC00;&#xC7A5; &#xAD8C;&#xC7A5;&#xB418;&#xB294; &#xBC29;&#xBC95;&#xC740; <code>width</code> &amp;
+<code>height</code>&#xB97C; 0&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xB294; CSS&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774;&#xBA70; <code>flex</code>&#xB97C; &#xD1B5;&#xD574; 0px&#xB85C; &#xC694;&#xC18C;&#xB97C; &#xC218;&#xCD95;&#xD560; &#xC218;
+&#xC788;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+  <span class="hljs-tag">webview</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">inline-flex</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">640px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">480px</span></span></span>;
+  }</span>
+  <span class="hljs-tag">webview</span><span class="hljs-class">.hide</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">flex</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">1</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">0px</span></span></span>;
+  }</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
 </code></pre>
 <h2 id="&#xD0DC;&#xADF8;-&#xC18D;&#xC131;">&#xD0DC;&#xADF8; &#xC18D;&#xC131;</h2>
 <p><code>webview</code> &#xD0DC;&#xADF8;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
@@ -1023,7 +1049,7 @@ API&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. 
 &#xD398;&#xC774;&#xC9C0;&#xB294; &#xC778; &#xBA54;&#xBAA8;&#xB9AC; &#xC138;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xB3D9;&#xC77C;&#xD55C; <code>partition</code>&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xB2E4;&#xC911; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C;
 &#xB3D9;&#xC77C;&#xD55C; &#xC138;&#xC158;&#xC744; &#xACF5;&#xC720;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; <code>partition</code>&#xC774; &#xC9C0;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC571;&#xC758;
 &#xAE30;&#xBCF8; &#xC138;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774; &#xAC12;&#xC740; &#xCCAB; &#xD0D0;&#xC0C9; &#xC774;&#xC804;&#xC5D0;&#xB9CC; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC989;. &#xC791;&#xB3D9;&#xC911;&#xC778; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xC138;&#xC158;&#xC740;
+<p>&#xC774; &#xAC12;&#xC740; &#xCCAB; &#xD0D0;&#xC0C9; &#xC774;&#xC804;&#xC5D0;&#xB9CC; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC989;. &#xC791;&#xB3D9;&#xC911;&#xC778; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xC138;&#xC158;&#xC740;
 &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xD6C4; &#xC774; &#xAC12;&#xC744; &#xBC14;&#xAFB8;&#xB824;&#xACE0; &#xC2DC;&#xB3C4;&#xD558;&#xBA74; DOM &#xC608;&#xC678;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="allowpopups"><code>allowpopups</code></h3>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.github.com/&quot;</span> <span class="hljs-attribute">allowpopups</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
@@ -1032,14 +1058,20 @@ API&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. 
 <h3 id="blinkfeatures"><code>blinkfeatures</code></h3>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.github.com/&quot;</span> <span class="hljs-attribute">blinkfeatures</span>=<span class="hljs-value">&quot;PreciseMemoryInfo, CSSVariables&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
 </code></pre>
-<p>&#xD65C;&#xC131;&#xD654;&#xD560; blink &#xAE30;&#xB2A5;&#xC744; &#xC9C0;&#xC815;&#xD55C; <code>,</code>&#xB85C; &#xAD6C;&#xBD84;&#xB41C; &#xBB38;&#xC790;&#xC5F4;&#xC758; &#xB9AC;&#xC2A4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xAE30;&#xB2A5; &#xBB38;&#xC790;&#xC5F4;&#xC758;
-&#xC804;&#xCCB4; &#xBAA9;&#xB85D;&#xC740; <a href="https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/platform/RuntimeEnabledFeatures.cpp&amp;sq=package:chromium&amp;type=cs&amp;l=527" target="_blank">setFeatureEnabledFromString</a> &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xCC3E;&#xC744; &#xC218;
-&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD65C;&#xC131;&#xD654;&#xD560; blink &#xAE30;&#xB2A5;&#xC744; &#xC9C0;&#xC815;&#xD55C; <code>,</code>&#xB85C; &#xAD6C;&#xBD84;&#xB41C; &#xBB38;&#xC790;&#xC5F4;&#xC758; &#xB9AC;&#xC2A4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xAE30;&#xB2A5;
+&#xBB38;&#xC790;&#xC5F4;&#xC758; &#xC804;&#xCCB4; &#xBAA9;&#xB85D;&#xC740; <a href="https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/RuntimeEnabledFeatures.in" target="_blank">RuntimeEnabledFeatures.in</a> &#xD30C;&#xC77C;&#xC5D0;&#xC11C;
+&#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="disableblinkfeatures"><code>disableblinkfeatures</code></h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">webview</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://www.github.com/&quot;</span> <span class="hljs-attribute">disableblinkfeatures</span>=<span class="hljs-value">&quot;PreciseMemoryInfo, CSSVariables&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">webview</span>&gt;</span>
+</code></pre>
+<p>&#xBE44;&#xD65C;&#xC131;&#xD654;&#xD560; blink &#xAE30;&#xB2A5;&#xC744; &#xC9C0;&#xC815;&#xD55C; <code>,</code>&#xB85C; &#xAD6C;&#xBD84;&#xB41C; &#xBB38;&#xC790;&#xC5F4;&#xC758; &#xB9AC;&#xC2A4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xAE30;&#xB2A5;
+&#xBB38;&#xC790;&#xC5F4;&#xC758; &#xC804;&#xCCB4; &#xBAA9;&#xB85D;&#xC740; <a href="https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/RuntimeEnabledFeatures.in" target="_blank">RuntimeEnabledFeatures.in</a> &#xD30C;&#xC77C;&#xC5D0;&#xC11C;
+&#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="methods">Methods</h2>
 <p><code>webview</code> &#xD0DC;&#xADF8;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <p><strong>&#xCC38;&#xACE0;:</strong> <webview> &#xD0DC;&#xADF8; &#xAC1D;&#xCCB4;&#xC758; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xD398;&#xC774;&#xC9C0; &#xB85C;&#xB4DC;&#xAC00; &#xB05D;&#xB09C; &#xB4A4;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</webview></p>
-<p><strong>&#xC608;&#xC81C;</strong></p>
-<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&quot;dom-ready&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<p><strong>&#xC608;&#xC2DC;</strong></p>
+<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;dom-ready&apos;</span>, () =&gt; {
   webview.openDevTools();
 });
 </code></pre>
@@ -1095,7 +1127,7 @@ API&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. 
 </ul>
 <p>&#xD398;&#xC774;&#xC9C0;&#xB85C;&#xBD80;&#xD130; <code>offset</code> &#xB9CC;&#xD07C; &#xC774;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webviewiscrashed"><code>&lt;webview&gt;.isCrashed()</code></h3>
-<p>&#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xD06C;&#xB798;&#xC2DC; &#xB42C;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xD06C;&#xB798;&#xC2DC; &#xB42C;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webviewsetuseragentuseragent"><code>&lt;webview&gt;.setUserAgent(userAgent)</code></h3>
 <ul>
 <li><code>userAgent</code> String</li>
@@ -1121,7 +1153,7 @@ API&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. 
 <p>&#xB9CC;&#xC57D; <code>userGesture</code>&#xAC00; <code>true</code>&#xB85C; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBA74; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xC720;&#xC800; &#xC81C;&#xC2A4;&#xCCD0; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.
 &#xC774; &#xC635;&#xC158;&#xC744; &#xD65C;&#xC131;&#xD654; &#xC2DC;&#xD0A4;&#xBA74; <code>requestFullScreen</code>&#xC640; &#xAC19;&#xC740; HTML API&#xC5D0;&#xC11C; &#xC720;&#xC800;&#xC758; &#xC2B9;&#xC778;&#xC744;
 &#xBB34;&#xC2DC;&#xD558;&#xACE0; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; API&#xB97C; &#xBC14;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC5ED;&#xC8FC;: &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC120; &#xC804;&#xCCB4;&#xD654;&#xBA74;, &#xC6F9;&#xCEA0;, &#xD30C;&#xC77C; &#xC5F4;&#xAE30;&#xB4F1;&#xC758; API&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xC720;&#xC800;&#xC758;
+<p><strong>&#xC5ED;&#xC790;&#xC8FC;:</strong> &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC120; &#xC804;&#xCCB4;&#xD654;&#xBA74;, &#xC6F9;&#xCEA0;, &#xD30C;&#xC77C; &#xC5F4;&#xAE30;&#xB4F1;&#xC758; API&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xC720;&#xC800;&#xC758;
 &#xC2B9;&#xC778;(&#xC774;&#xBCA4;&#xD2B8;)&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webviewopendevtools"><code>&lt;webview&gt;.openDevTools()</code></h3>
 <p>&#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C;&#xB97C; &#xC5FD;&#xB2C8;&#xB2E4;.</p>
@@ -1174,7 +1206,7 @@ API&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. 
 <p>&#xD3EC;&#xCEE4;&#xC2A4;&#xB41C; &#xC694;&#xC18C;&#xC5D0; <code>text</code>&#xB97C; &#xC0BD;&#xC785;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webcontentsfindinpagetext-options"><code>webContents.findInPage(text[, options])</code></h3>
 <ul>
-<li><code>text</code> String - &#xCC3E;&#xC744; &#xCEE8;&#xD150;&#xCE20;, &#xBC18;&#xB4DC;&#xC2DC; &#xACF5;&#xBC31;&#xC774; &#xC544;&#xB2C8;&#xC5EC;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>text</code> String - &#xCC3E;&#xC744; &#xCF58;&#xD150;&#xCE20;, &#xBC18;&#xB4DC;&#xC2DC; &#xACF5;&#xBC31;&#xC774; &#xC544;&#xB2C8;&#xC5EC;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
 <li><code>options</code> Object (optional)<ul>
 <li><code>forward</code> Boolean - &#xC55E;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xAC80;&#xC0C9;&#xD560;&#xC9C0; &#xB4A4;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xAC80;&#xC0C9;&#xD560;&#xC9C0; &#xC5EC;&#xBD80;&#xC785;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740;
 <code>true</code>&#xC785;&#xB2C8;&#xB2E4;.</li>
@@ -1198,34 +1230,36 @@ API&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. 
 <ul>
 <li><code>action</code> String - <a href="web-view-tag.html#webviewtagfindinpage"><code>&lt;webview&gt;.findInPage</code></a>
 &#xC694;&#xCCAD;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xC77C;&#xC5B4;&#xB0A0; &#xC218; &#xC788;&#xB294; &#xC791;&#xC5C5;&#xC744; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.<ul>
-<li><code>clearSelection</code> - &#xC120;&#xD0DD;&#xC744; &#xC77C;&#xBC18; &#xC120;&#xD0DD;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.</li>
-<li><code>keepSelection</code> - &#xC120;&#xD0DD;&#xC744; &#xCDE8;&#xC18C;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>clearSelection</code> - &#xC120;&#xD0DD;&#xC744; &#xCDE8;&#xC18C;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>keepSelection</code> - &#xC120;&#xD0DD;&#xC744; &#xC77C;&#xBC18; &#xC120;&#xD0DD;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li><code>activateSelection</code> - &#xD3EC;&#xCEE4;&#xC2A4;&#xD55C; &#xD6C4; &#xC120;&#xD0DD;&#xB41C; &#xB178;&#xB4DC;&#xB97C; &#xD074;&#xB9AD;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ul>
 </li>
 </ul>
 <p>&#xC81C;&#xACF5;&#xB41C; <code>action</code>&#xC5D0; &#xB300;&#xD55C; <code>webContents</code>&#xC758; &#xBAA8;&#xB4E0; <code>findInPage</code> &#xC694;&#xCCAD;&#xC744; &#xC911;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webviewprintoptions"><code>&lt;webview&gt;.print([options])</code></h3>
-<p>Webview &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC778;&#xC1C4;&#xD569;&#xB2C8;&#xB2E4;. <code>webContents.print([options])</code> &#xBA54;&#xC11C;&#xB4DC;&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>webview</code> &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC778;&#xC1C4;&#xD569;&#xB2C8;&#xB2E4;. <code>webContents.print([options])</code> &#xBA54;&#xC11C;&#xB4DC;&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webviewprinttopdfoptions-callback"><code>&lt;webview&gt;.printToPDF(options, callback)</code></h3>
-<p>Webview &#xD398;&#xC774;&#xC9C0;&#xB97C; PDF &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xC778;&#xC1C4;&#xD569;&#xB2C8;&#xB2E4;.
+<p><code>webview</code> &#xD398;&#xC774;&#xC9C0;&#xB97C; PDF &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xC778;&#xC1C4;&#xD569;&#xB2C8;&#xB2E4;.
 <code>webContents.printToPDF(options, callback)</code> &#xBA54;&#xC11C;&#xB4DC;&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webviewsendchannel-arg1-arg2-"><code>&lt;webview&gt;.send(channel[, arg1][, arg2][, ...])</code></h3>
 <ul>
 <li><code>channel</code> String</li>
 <li><code>args</code> (optional)</li>
 </ul>
-<p><code>channel</code>&#xC744; &#xD1B5;&#xD574; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xBE44;&#xB3D9;&#xAE30; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; <code>args</code>&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xC5EC;
-&#xC784;&#xC758;&#xC758; &#xC778;&#xC790;&#xB97C; &#xBCF4;&#xB0BC; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB294; <code>ipcRenderer</code> &#xBAA8;&#xB4C8;&#xC758; <code>channel</code>
+<p><code>channel</code>&#xC744; &#xD1B5;&#xD574; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xBE44;&#xB3D9;&#xAE30; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; <code>args</code>&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xC5EC;
+&#xC784;&#xC758;&#xC758; &#xC778;&#xC218;&#xB97C; &#xBCF4;&#xB0BC; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB294; <code>ipcRenderer</code> &#xBAA8;&#xB4C8;&#xC758; <code>channel</code>
 &#xC774;&#xBCA4;&#xD2B8;&#xB85C; &#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBC1B;&#xC544; &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC608;&#xC81C;&#xB294; <a href="web-contents.html#webcontentssendchannel-args">webContents.send</a>&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
+<p>&#xC608;&#xC2DC;&#xB294; <a href="web-contents.html#webcontentssendchannel-args">webContents.send</a>&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
 <h3 id="webviewsendinputeventevent"><code>&lt;webview&gt;.sendInputEvent(event)</code></h3>
 <ul>
 <li><code>event</code> Object</li>
 </ul>
-<p>&#xD398;&#xC774;&#xC9C0;&#xC5D0; input <code>event</code>&#xB97C; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xC785;&#xB825; <code>event</code>&#xB97C; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
 <p><code>event</code> &#xAC1D;&#xCCB4;&#xC5D0; &#xB300;&#xD574; &#xC790;&#xC138;&#xD788; &#xC54C;&#xC544;&#xBCF4;&#xB824;&#xBA74; <a href="web-contents.html##webcontentssendinputeventevent">webContents.sendInputEvent</a>&#xB97C;
 &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
+<h3 id="webviewshowdefinitionforselection-macos"><code>&lt;webview&gt;.showDefinitionForSelection()</code> <em>macOS</em></h3>
+<p>&#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; &#xC120;&#xD0DD;&#xB41C; &#xB2E8;&#xC5B4;&#xC5D0; &#xB300;&#xD55C; &#xC0AC;&#xC804; &#xAC80;&#xC0C9; &#xACB0;&#xACFC; &#xD31D;&#xC5C5;&#xC744; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="webviewgetwebcontents"><code>&lt;webview&gt;.getWebContents()</code></h3>
 <p>&#xC774; <code>webview</code>&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; <a href="web-contents.html">WebContents</a>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="dom-&#xC774;&#xBCA4;&#xD2B8;">DOM &#xC774;&#xBCA4;&#xD2B8;</h2>
@@ -1248,9 +1282,10 @@ API&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. 
 <li><code>errorCode</code> Integer</li>
 <li><code>errorDescription</code> String</li>
 <li><code>validatedURL</code> String</li>
+<li><code>isMainFrame</code> Boolean</li>
 </ul>
-<p><code>did-finish-load</code>&#xC640; &#xBE44;&#xC2B7;&#xD569;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; <code>window.stop()</code>&#xACFC; &#xAC19;&#xC740; &#xBB34;&#xC5B8;&#xAC00;&#xB85C;
-&#xC778;&#xD574; &#xB85C;&#xB4DC;&#xC5D0; &#xC2E4;&#xD328;&#xD588;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><code>did-finish-load</code>&#xC640; &#xBE44;&#xC2B7;&#xD569;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; <code>window.stop()</code>&#xACFC; &#xAC19;&#xC774; &#xCDE8;&#xC18C;
+&#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB418;&#xC5C8;&#xAC70;&#xB098; &#xB85C;&#xB4DC;&#xC5D0; &#xC2E4;&#xD328;&#xD588;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-didframefinishload">Event: &apos;did-frame-finish-load&apos;</h3>
 <p>Returns:</p>
 <ul>
@@ -1313,9 +1348,9 @@ URL&#xC5D0;&#xC11C; &#xD569;&#xC131;(synthesised)&#xB41C; &#xC81C;&#xBAA9;&#xC77
 <li><code>sourceId</code> String</li>
 </ul>
 <p><code>console.log</code> API&#xC5D0; &#xC758;&#xD574; &#xB85C;&#xAE45;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; &#xBAA8;&#xB4E0; &#xB85C;&#xADF8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xB85C;&#xADF8; &#xB808;&#xBCA8;&#xC774;&#xB098; &#xB2E4;&#xB978; &#xC18D;&#xC131;&#xC5D0; &#xAD00;&#xB828; &#xC5C6;&#xC774; &#xD638;&#xC2A4;&#xD2B8; &#xD398;&#xC774;&#xC9C0;&#xC758;
-&#xCF58;&#xC194;&#xC5D0; &#xB2E4;&#xC2DC; &#xB85C;&#xAE45;&#xD558;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;console-message&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xBAA8;&#xB4E0; &#xB85C;&#xADF8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xB85C;&#xADF8; &#xB808;&#xBCA8;&#xC774;&#xB098; &#xB2E4;&#xB978; &#xC18D;&#xC131;&#xC5D0; &#xAD00;&#xB828; &#xC5C6;&#xC774; &#xD638;&#xC2A4;&#xD2B8; &#xD398;&#xC774;&#xC9C0;&#xC758;
+&#xCF58;&#xC194;&#xC5D0; &#xB2E4;&#xC2DC; &#xB85C;&#xAE45;&#xD558;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;console-message&apos;</span>, (e) =&gt; {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Guest page logged a message:&apos;</span>, e.message);
 });
 </code></pre>
@@ -1333,12 +1368,12 @@ URL&#xC5D0;&#xC11C; &#xD569;&#xC131;(synthesised)&#xB41C; &#xC81C;&#xBAA9;&#xC77
 </ul>
 <p><a href="web-contents.html#webcontentsfindinpage"><code>webContents.findInPage</code></a> &#xC694;&#xCCAD;&#xC758; &#xACB0;&#xACFC;&#xB97C;
 &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;found-in-page&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;found-in-page&apos;</span>, (e) =&gt; {
   <span class="hljs-keyword">if</span> (e.result.finalUpdate)
-    webview.stopFindInPage(<span class="hljs-string">&quot;keepSelection&quot;</span>);
+    webview.stopFindInPage(<span class="hljs-string">&apos;keepSelection&apos;</span>);
 });
 
-<span class="hljs-keyword">const</span> rquestId = webview.findInPage(<span class="hljs-string">&quot;test&quot;</span>);
+<span class="hljs-keyword">const</span> requestId = webview.findInPage(<span class="hljs-string">&apos;test&apos;</span>);
 </code></pre>
 <h3 id="event-newwindow">Event: &apos;new-window&apos;</h3>
 <p>Returns:</p>
@@ -1350,11 +1385,13 @@ URL&#xC5D0;&#xC11C; &#xD569;&#xC131;(synthesised)&#xB41C; &#xC81C;&#xBAA9;&#xC77
 <li><code>options</code> Object - &#xC0C8;&#xB85C;&#xC6B4; <code>BrowserWindow</code>&#xB97C; &#xB9CC;&#xB4E4; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB294; &#xC635;&#xC158;.</li>
 </ul>
 <p>&#xD398;&#xC774;&#xC9C0;&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xCC3D;&#xC744; &#xC0DD;&#xC131;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C; &#xCF54;&#xB4DC;&#xB294; &#xC0C8; URL&#xC744; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xAE30;&#xBCF8; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB85C; &#xC5EC;&#xB294; &#xCF54;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;new-window&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-  <span class="hljs-keyword">var</span> protocol = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;url&apos;</span>).parse(e.url).protocol;
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC; &#xCF54;&#xB4DC;&#xB294; &#xC0C8; URL&#xC744; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xAE30;&#xBCF8; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB85C; &#xC5EC;&#xB294; &#xCF54;&#xB4DC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {shell} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+
+webview.addEventListener(<span class="hljs-string">&apos;new-window&apos;</span>, (e) =&gt; {
+  <span class="hljs-keyword">const</span> protocol = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;url&apos;</span>).parse(e.url).protocol;
   <span class="hljs-keyword">if</span> (protocol === <span class="hljs-string">&apos;http:&apos;</span> || protocol === <span class="hljs-string">&apos;https:&apos;</span>) {
-    <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).shell.openExternal(e.url);
+    shell.openExternal(e.url);
   }
 });
 </code></pre>
@@ -1389,9 +1426,9 @@ URL&#xC5D0;&#xC11C; &#xD569;&#xC131;(synthesised)&#xB41C; &#xC81C;&#xBAA9;&#xC77
 &#xB54C;&#xB85C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-close">Event: &apos;close&apos;</h3>
 <p>&#xD398;&#xC774;&#xC9C0;&#xAC00; &#xC790;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xB2EB;&#xD790; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C; &#xCF54;&#xB4DC;&#xB294; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xC790;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xB2EB;&#xD790; &#xB54C; <code>webview</code>&#xB97C; <code>about:blank</code> &#xD398;&#xC774;&#xC9C0;&#xB85C;
-&#xC774;&#xB3D9;&#xC2DC;&#xD0A4;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;close&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC; &#xCF54;&#xB4DC;&#xB294; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xC790;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xB2EB;&#xD790; &#xB54C; <code>webview</code>&#xB97C; <code>about:blank</code> &#xD398;&#xC774;&#xC9C0;&#xB85C;
+&#xC774;&#xB3D9;&#xC2DC;&#xD0A4;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-javascript">webview.addEventListener(<span class="hljs-string">&apos;close&apos;</span>, () =&gt; {
   webview.src = <span class="hljs-string">&apos;about:blank&apos;</span>;
 });
 </code></pre>
@@ -1405,20 +1442,20 @@ URL&#xC5D0;&#xC11C; &#xD569;&#xC131;(synthesised)&#xB41C; &#xC81C;&#xBAA9;&#xC77
 <p><code>sendToHost</code> &#xBA54;&#xC18C;&#xB4DC;&#xC640; <code>ipc-message</code> &#xC774;&#xBCA4;&#xD2B8;&#xB85C; &#xD638;&#xC2A4;&#xD2B8; &#xD398;&#xC774;&#xC9C0;&#xC640; &#xC27D;&#xAC8C; &#xD1B5;&#xC2E0;&#xC744; &#xD560; &#xC218;
 &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In embedder page.</span>
-webview.addEventListener(<span class="hljs-string">&apos;ipc-message&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+webview.addEventListener(<span class="hljs-string">&apos;ipc-message&apos;</span>, (event) =&gt; {
   <span class="hljs-built_in">console</span>.log(event.channel);
   <span class="hljs-comment">// Prints &quot;pong&quot;</span>
 });
 webview.send(<span class="hljs-string">&apos;ping&apos;</span>);
 </code></pre>
 <pre><code class="lang-javascript"><span class="hljs-comment">// In guest page.</span>
-<span class="hljs-keyword">var</span> ipcRenderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).ipcRenderer;
-ipcRenderer.on(<span class="hljs-string">&apos;ping&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-keyword">const</span> {ipcRenderer} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+ipcRenderer.on(<span class="hljs-string">&apos;ping&apos;</span>, () =&gt; {
   ipcRenderer.sendToHost(<span class="hljs-string">&apos;pong&apos;</span>);
 });
 </code></pre>
 <h3 id="event-crashed">Event: &apos;crashed&apos;</h3>
-<p>&#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xD06C;&#xB798;&#xC2DC; &#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xD06C;&#xB798;&#xC2DC; &#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-gpucrashed">Event: &apos;gpu-crashed&apos;</h3>
 <p>GPU &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xD06C;&#xB798;&#xC2DC; &#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-plugincrashed">Event: &apos;plugin-crashed&apos;</h3>
@@ -1435,10 +1472,20 @@ ipcRenderer.on(<span class="hljs-string">&apos;ping&apos;</span>, <span class="h
 <h3 id="event-mediapaused">Event: &apos;media-paused&apos;</h3>
 <p>&#xBBF8;&#xB514;&#xC5B4;&#xAC00; &#xC911;&#xC9C0;&#xB418;&#xAC70;&#xB098; &#xC7AC;&#xC0DD;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-didchangethemecolor">Event: &apos;did-change-theme-color&apos;</h3>
+<p>Returns:</p>
+<ul>
+<li><code>themeColor</code> String</li>
+</ul>
 <p>&#xD398;&#xC774;&#xC9C0;&#xC758; &#xD14C;&#xB9C8; &#xC0C9;&#xC774; &#xBCC0;&#xACBD;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xBCF4;&#xD1B5; meta &#xD0DC;&#xADF8;&#xC5D0;
 &#xC758;&#xD574;&#xC11C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&apos;theme-color&apos;</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">&apos;#ff0000&apos;</span>&gt;</span>
 </code></pre>
+<h3 id="event-updatetargeturl">Event: &apos;update-target-url&apos;</h3>
+<p>Returns:</p>
+<ul>
+<li><code>url</code> String</li>
+</ul>
+<p>&#xB9C8;&#xC6B0;&#xC2A4;&#xB098; &#xD0A4;&#xBCF4;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xB9C1;&#xD06C;&#xC5D0; &#xD3EC;&#xCEE4;&#xC2A4;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-devtoolsopened">Event: &apos;devtools-opened&apos;</h3>
 <p>&#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C;&#xAC00; &#xC5F4;&#xB838;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-devtoolsclosed">Event: &apos;devtools-closed&apos;</h3>

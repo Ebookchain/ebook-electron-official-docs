@@ -53,7 +53,7 @@
         data-chapter-title="`window.open` Function"
         data-filepath="api/window-open.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -925,7 +925,10 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="the-windowopen-function">The <code>window.open</code> function</h1>
+                        <h1 id="windowopen-function"><code>window.open</code> Function</h1>
+<blockquote>
+<p>Open a new window and load a URL.</p>
+</blockquote>
 <p>When <code>window.open</code> is called to create a new window in a web page, a new instance
 of <code>BrowserWindow</code> will be created for the <code>url</code> and a proxy will be returned
 to <code>window.open</code> to let the page have limited control over it.</p>
@@ -969,6 +972,8 @@ limited functionality with the child window.</p>
 <p>Evaluates the code in the child window.</p>
 <h3 id="browserwindowproxyfocus"><code>BrowserWindowProxy.focus()</code></h3>
 <p>Focuses the child window (brings the window to front).</p>
+<h3 id="browserwindowproxyprint"><code>BrowserWindowProxy.print()</code></h3>
+<p>Invokes the print dialog on the child window.</p>
 <h3 id="browserwindowproxypostmessagemessage-targetorigin"><code>BrowserWindowProxy.postMessage(message, targetOrigin)</code></h3>
 <ul>
 <li><code>message</code> String</li>

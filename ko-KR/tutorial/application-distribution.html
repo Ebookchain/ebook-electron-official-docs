@@ -53,7 +53,7 @@
         data-chapter-title="어플리케이션 배포"
         data-filepath="tutorial/application-distribution.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -925,12 +925,12 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;-&#xBC30;&#xD3EC;">&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xBC30;&#xD3EC;</h1>
-<p>Electron &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xBC30;&#xD3EC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+                        <h1 id="&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;-&#xBC30;&#xD3EC;">&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xBC30;&#xD3EC;</h1>
+<p>Electron &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xBC30;&#xD3EC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xBA3C;&#xC800; &#xD3F4;&#xB354; &#xC774;&#xB984;&#xC744; <code>app</code>&#xB85C; &#xC9C0;&#xC815;&#xD55C; &#xD6C4; Electron &#xB9AC;&#xC18C;&#xC2A4; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0; &#xD3F4;&#xB354;&#xB97C; &#xD1B5;&#xC9F8;&#xB85C; &#xC9D1;&#xC5B4;&#xB123;&#xAE30;&#xB9CC;
-&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xB9AC;&#xC18C;&#xC2A4; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB294; OS X&#xC758; &#xACBD;&#xC6B0;: <code>Electron.app/Contents/Resources/</code>
+&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xB9AC;&#xC18C;&#xC2A4; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB294; macOS&#xC758; &#xACBD;&#xC6B0;: <code>Electron.app/Contents/Resources/</code>
 Windows&#xC640; Linux&#xC758; &#xACBD;&#xC6B0;: <code>resources/</code> &#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>OS X&#xC758; &#xACBD;&#xC6B0;:</p>
+<p>macOS&#xC758; &#xACBD;&#xC6B0;:</p>
 <pre><code class="lang-text">electron/Electron.app/Contents/Resources/app/
 &#x251C;&#x2500;&#x2500; package.json
 &#x251C;&#x2500;&#x2500; main.js
@@ -947,11 +947,11 @@ Windows&#xC640; Linux&#xC758; &#xACBD;&#xC6B0;: <code>resources/</code> &#xC785;
 &#xBC30;&#xD3EC;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="asar&#xB85C;-&#xC571;-&#xD328;&#xD0A4;&#xC9D5;-&#xD558;&#xAE30;">asar&#xB85C; &#xC571; &#xD328;&#xD0A4;&#xC9D5; &#xD558;&#xAE30;</h2>
 <p>&#xC18C;&#xC2A4;&#xD30C;&#xC77C; &#xC804;&#xCCB4;&#xB97C; &#xBCF5;&#xC0AC;&#xD574;&#xC11C; &#xBC30;&#xD3EC;&#xD558;&#xB294; &#xAC83;&#xACFC;&#xB294; &#xBCC4;&#xAC1C;&#xB85C; <a href="https://github.com/electron/asar" target="_blank">asar</a>
-&#xC544;&#xCE74;&#xC774;&#xBE0C;&#xB97C; &#xD1B5;&#xD574; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC18C;&#xC2A4;&#xCF54;&#xB4DC;&#xAC00; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xB178;&#xCD9C;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><code>asar</code> &#xC544;&#xCE74;&#xC774;&#xBE0C;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB550; &#xB2E8;&#xC21C;&#xD788; <code>app</code> &#xD3F4;&#xB354; &#xB300;&#xC2E0;&#xC5D0; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD328;&#xD0A4;&#xC9D5;&#xD55C;
+&#xC544;&#xCE74;&#xC774;&#xBE0C;&#xB97C; &#xD1B5;&#xD574; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xAC00; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xB178;&#xCD9C;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>asar</code> &#xC544;&#xCE74;&#xC774;&#xBE0C;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB550; &#xB2E8;&#xC21C;&#xD788; <code>app</code> &#xD3F4;&#xB354; &#xB300;&#xC2E0;&#xC5D0; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD328;&#xD0A4;&#xC9D5;&#xD55C;
 <code>app.asar</code> &#xD30C;&#xC77C;&#xB85C; &#xB300;&#xCCB4;&#xD558;&#xBA74;&#xB429;&#xB2C8;&#xB2E4;. Electron&#xC740; &#xC790;&#xB3D9;&#xC73C;&#xB85C; <code>app</code>&#xD3F4;&#xB354; &#xB300;&#xC2E0; asar &#xC544;&#xCE74;&#xC774;&#xBE0C;&#xB97C;
-&#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>OS X&#xC758; &#xACBD;&#xC6B0;:</p>
+&#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>macOS&#xC758; &#xACBD;&#xC6B0;:</p>
 <pre><code class="lang-text">electron/Electron.app/Contents/Resources/
 &#x2514;&#x2500;&#x2500; app.asar
 </code></pre>
@@ -959,14 +959,14 @@ Windows&#xC640; Linux&#xC758; &#xACBD;&#xC6B0;: <code>resources/</code> &#xC785;
 <pre><code class="lang-text">electron/resources/
 &#x2514;&#x2500;&#x2500; app.asar
 </code></pre>
-<p>&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="application-packaging.html">&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xD328;&#xD0A4;&#xC9D5;</a>&#xC5D0;&#xC11C; &#xCC3E;&#xC544;&#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="application-packaging.html">&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xD328;&#xD0A4;&#xC9D5;</a>&#xC5D0;&#xC11C; &#xCC3E;&#xC544;&#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD55C;-&#xBC14;&#xC774;&#xB108;&#xB9AC;&#xC758;-&#xB9AC;&#xC18C;&#xC2A4;&#xB97C;-&#xC571;&#xC5D0;-&#xB9DE;&#xAC8C;-&#xC218;&#xC815;&#xD558;&#xAE30;">&#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD55C; &#xBC14;&#xC774;&#xB108;&#xB9AC;&#xC758; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C; &#xC571;&#xC5D0; &#xB9DE;&#xAC8C; &#xC218;&#xC815;&#xD558;&#xAE30;</h2>
-<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; Electron&#xC5D0; &#xBC88;&#xB4E4;&#xB9C1;&#xD55C; &#xD6C4; &#xD574;&#xB2F9; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0; &#xB9DE;&#xAC8C; &#xB9AC;&#xBE0C;&#xB79C;&#xB529; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; Electron&#xC5D0; &#xBC88;&#xB4E4;&#xB9C1;&#xD55C; &#xD6C4; &#xD574;&#xB2F9; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0; &#xB9DE;&#xAC8C; &#xB9AC;&#xBE0C;&#xB79C;&#xB529; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="windows">Windows</h3>
 <p><a href="https://github.com/atom/rcedit" target="_blank">rcedit</a>&#xB97C; &#xD1B5;&#xD574; <code>electron.exe</code>&#xC744; &#xC6D0;&#xD558;&#xB294; &#xC774;&#xB984;&#xC73C;&#xB85C;
 &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xACE0;, &#xB610;&#xD55C; &#xC544;&#xC774;&#xCF58;&#xACFC; &#xAE30;&#xD0C0; &#xC815;&#xBCF4;&#xB3C4; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h3 id="os-x">OS X</h3>
-<p><code>Electron.app</code>&#xC744; &#xC6D0;&#xD558;&#xB294; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xB2E4;&#xC74C; &#xD45C;&#xC2DC;&#xB41C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;
+<h3 id="macos">macOS</h3>
+<p><code>Electron.app</code>&#xC744; &#xC6D0;&#xD558;&#xB294; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xB2E4;&#xC74C; &#xD45C;&#xC2DC;&#xB41C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;
 &#xB0B4;&#xBD80; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; <code>CFBundleDisplayName</code>, <code>CFBundleIdentifier</code> &#xADF8;&#xB9AC;&#xACE0; <code>CFBundleName</code>
 &#xD544;&#xB4DC;&#xB97C; &#xC6D0;&#xD558;&#xB294; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;:</p>
 <ul>
@@ -975,9 +975,9 @@ Windows&#xC640; Linux&#xC758; &#xACBD;&#xC6B0;: <code>resources/</code> &#xC785;
 </ul>
 <p>&#xB610;&#xD55C; helper &#xC571;&#xC774; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xBAA8;&#xB2C8;&#xD130;&#xC5D0; <code>Electron Helper</code>&#xB85C; &#xB098;&#xC624;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xC774;&#xB984;&#xC744;
 &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xBC18;&#xB4DC;&#xC2DC; &#xB0B4;&#xBD80; &#xBC0F; &#xBAA8;&#xB4E0; helper &#xC571;&#xC758; &#xC774;&#xB984;&#xC744; &#xBCC0;&#xACBD;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC544;&#xC774;&#xCF58;&#xC740; <code>Electron.app/Contents/Resources/atom.icns</code>&#xC744; &#xC6D0;&#xD558;&#xB294;
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC544;&#xC774;&#xCF58;&#xC740; <code>Electron.app/Contents/Resources/atom.icns</code>&#xC744; &#xC6D0;&#xD558;&#xB294;
 &#xC544;&#xC774;&#xCF58;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC774;&#xB984;&#xC744; &#xC6D0;&#xD558;&#xB294; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD55C; &#xC608;&#xC2DC;:</p>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC774;&#xB984;&#xC744; &#xC6D0;&#xD558;&#xB294; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD55C; &#xC608;&#xC2DC;:</p>
 <pre><code>MyApp.app/Contents
 &#x251C;&#x2500;&#x2500; Info.plist
 &#x251C;&#x2500;&#x2500; MacOS/
@@ -996,37 +996,70 @@ Windows&#xC640; Linux&#xC758; &#xACBD;&#xC6B0;: <code>resources/</code> &#xC785;
         &#x2514;&#x2500;&#x2500; MacOS/
             &#x2514;&#x2500;&#x2500; MyApp Helper
 </code></pre><h3 id="linux">Linux</h3>
-<p>&#xC2E4;&#xD589;&#xD30C;&#xC77C; <code>electron</code>&#xC758; &#xC774;&#xB984;&#xC744; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xBC14;&#xAFC0; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9AC;&#xB205;&#xC2A4; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758;
+<p>&#xC2E4;&#xD589;&#xD30C;&#xC77C; <code>electron</code>&#xC758; &#xC774;&#xB984;&#xC744; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xBC14;&#xAFC0; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9AC;&#xB205;&#xC2A4; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758;
 &#xC544;&#xC774;&#xCF58;&#xC740; <a href="https://developer.gnome.org/integration-guide/stable/desktop-files.html.en" target="_blank">.desktop</a>
 &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h2 id="electron-&#xC18C;&#xC2A4;&#xCF54;&#xB4DC;&#xB97C;-&#xB2E4;&#xC2DC;-&#xBE4C;&#xB4DC;&#xD558;&#xC5EC;-&#xB9AC;&#xC18C;&#xC2A4;-&#xC218;&#xC815;&#xD558;&#xAE30;">Electron &#xC18C;&#xC2A4;&#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD558;&#xC5EC; &#xB9AC;&#xC18C;&#xC2A4; &#xC218;&#xC815;&#xD558;&#xAE30;</h2>
-<p>&#xB610;&#xD55C; Electron &#xC18C;&#xC2A4;&#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD560; &#xB54C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC774;&#xB984;&#xC744; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><code>GYP_DEFINES</code> &#xD658;&#xACBD;&#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<p><strong>Windows</strong></p>
-<pre><code class="lang-bash">&gt; <span class="hljs-built_in">set</span> <span class="hljs-string">&quot;GYP_DEFINES=project_name=myapp product_name=MyApp&quot;</span>
-&gt; python script\clean.py
-&gt; python script\bootstrap.py
-&gt; python script\build.py -c R -t myapp
-</code></pre>
-<p><strong>Bash</strong></p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">export</span> GYP_DEFINES=<span class="hljs-string">&quot;project_name=myapp product_name=MyApp&quot;</span>
-$ script/clean.py
-$ script/bootstrap.py
-$ script/build.py -c Release -t myapp
-</code></pre>
-<h3 id="gruntbuildatomshell">grunt-build-atom-shell</h3>
-<p>Electron&#xC758; &#xC18C;&#xC2A4;&#xCF54;&#xB4DC;&#xB97C; &#xC218;&#xC815;&#xD558;&#xACE0; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD558;&#xB294; &#xC791;&#xC5C5;&#xC740; &#xC0C1;&#xB2F9;&#xD788; &#xBCF5;&#xC7A1;&#xD569;&#xB2C8;&#xB2E4;. &#xC77C;&#xC77C;&#xC774;
-&#xC18C;&#xC2A4;&#xCF54;&#xB4DC;&#xB97C; &#xC218;&#xC815;&#xD558;&#xB294; &#xB300;&#xC2E0; <a href="https://github.com/paulcbetts/grunt-build-atom-shell" target="_blank">grunt-build-atom-shell</a>&#xC744;
-&#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBE4C;&#xB4DC;&#xB97C; &#xC790;&#xB3D9;&#xD654; &#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774; &#xD234;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC790;&#xB3D9;&#xC73C;&#xB85C; <code>.gyp</code>&#xD30C;&#xC77C;&#xC744; &#xC218;&#xC815;&#xD558;&#xACE0; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758;
-&#xB124;&#xC774;&#xD2F0;&#xBE0C; Node &#xBAA8;&#xB4C8; &#xB610;&#xD55C; &#xC0C8;&#xB85C;&#xC6B4; &#xC2E4;&#xD589;&#xD30C;&#xC77C; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC77C;&#xCE58;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xD328;&#xD0A4;&#xC9D5;-&#xD234;">&#xD328;&#xD0A4;&#xC9D5; &#xD234;</h2>
-<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC77C;&#xC77C;&#xC774; &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xD328;&#xD0A4;&#xC9C0;&#xB85C; &#xB9CC;&#xB4DC;&#xB294; &#xB300;&#xC2E0;, &#xC11C;&#xB4DC; &#xD30C;&#xD2F0; &#xD328;&#xD0A4;&#xC9D5; &#xD234;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA70;
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC77C;&#xC77C;&#xC774; &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xD328;&#xD0A4;&#xC9C0;&#xB85C; &#xB9CC;&#xB4DC;&#xB294; &#xB300;&#xC2E0;, &#xC11C;&#xB4DC; &#xD30C;&#xD2F0; &#xD328;&#xD0A4;&#xC9D5; &#xD234;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA70;
 &#xC774;&#xB7EC;&#xD55C; &#xC791;&#xC5C5;&#xC744; &#xC790;&#xB3D9;&#xD654; &#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
 <li><a href="https://github.com/maxogden/electron-packager" target="_blank">electron-packager</a></li>
 <li><a href="https://github.com/loopline-systems/electron-builder" target="_blank">electron-builder</a></li>
 </ul>
+<h2 id="electron-&#xC18C;&#xC2A4;-&#xCF54;&#xB4DC;&#xB97C;-&#xB2E4;&#xC2DC;-&#xBE4C;&#xB4DC;&#xD558;&#xC5EC;-&#xB9AC;&#xC18C;&#xC2A4;-&#xC218;&#xC815;&#xD558;&#xAE30;">Electron &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD558;&#xC5EC; &#xB9AC;&#xC18C;&#xC2A4; &#xC218;&#xC815;&#xD558;&#xAE30;</h2>
+<p>&#xB610;&#xD55C; Electron &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xB97C; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD560; &#xB54C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC774;&#xB984;&#xC744; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>atom.gyp</code> &#xD30C;&#xC77C;&#xC744; &#xC218;&#xC815;&#xD558;&#xC5EC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<h3 id="gruntbuildatomshell">grunt-build-atom-shell</h3>
+<p>Electron&#xC758; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xB97C; &#xC218;&#xC815;&#xD558;&#xACE0; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD558;&#xB294; &#xC791;&#xC5C5;&#xC740; &#xC0C1;&#xB2F9;&#xD788; &#xBCF5;&#xC7A1;&#xD569;&#xB2C8;&#xB2E4;. &#xC77C;&#xC77C;&#xC774;
+&#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xB97C; &#xC218;&#xC815;&#xD558;&#xB294; &#xB300;&#xC2E0; <a href="https://github.com/paulcbetts/grunt-build-atom-shell" target="_blank">grunt-build-atom-shell</a>&#xC744;
+&#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBE4C;&#xB4DC;&#xB97C; &#xC790;&#xB3D9;&#xD654; &#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xD234;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC790;&#xB3D9;&#xC73C;&#xB85C; <code>.gyp</code>&#xD30C;&#xC77C;&#xC744; &#xC218;&#xC815;&#xD558;&#xACE0; &#xB2E4;&#xC2DC; &#xBE4C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758;
+&#xB124;&#xC774;&#xD2F0;&#xBE0C; Node &#xBAA8;&#xB4C8; &#xB610;&#xD55C; &#xC0C8;&#xB85C;&#xC6B4; &#xC2E4;&#xD589;&#xD30C;&#xC77C; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC77C;&#xCE58;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="electron-&#xCEE4;&#xC2A4;&#xD140;-&#xD3EC;&#xD06C;-&#xB9CC;&#xB4E4;&#xAE30;">Electron &#xCEE4;&#xC2A4;&#xD140; &#xD3EC;&#xD06C; &#xB9CC;&#xB4E4;&#xAE30;</h3>
+<p>Electron&#xC758; &#xCEE4;&#xC2A4;&#xD140; &#xD3EC;&#xD06C;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xAC83;&#xC740; &#xAC70;&#xC758; &#xD655;&#xC2E4;&#xD788; &#xC571;&#xC744; &#xB9CC;&#xB4DC;&#xB294;&#xB370; &#xC788;&#xC5B4;&#xC11C; &#xD544;&#xC694;&#xD55C; &#xC791;&#xC5C5;&#xC774;
+&#xC544;&#xB2D0; &#xC218; &#xC788;&#xC73C;&#xBA70;, &#xC2EC;&#xC9C0;&#xC5B4; &quot;&#xC81C;&#xD488; &#xB4F1;&#xAE09;&quot;&#xC758; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774;&#xB77C;&#xB3C4; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>electron-packager</code> &#xB610;&#xB294; <code>electron-builder</code>&#xC640; &#xAC19;&#xC740; &#xB3C4;&#xAD6C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB2E4;&#xB978; &#xD2B9;&#xBCC4;&#xD55C;
+&#xACFC;&#xC815; &#xC5C6;&#xC774; Electron&#xC744; &quot;Rebrand&quot; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC5C5;&#xC2A4;&#xD2B8;&#xB9BC; &#xB2E8;&#xC5D0;&#xC11C; &#xCD94;&#xAC00;&#xB420; &#xC218; &#xC5C6;&#xB294; &#xAE30;&#xB2A5;&#xC774;&#xB098; &#xC774;&#xBBF8; &#xACF5;&#xC2DD; &#xBC84;&#xC804;&#xC5D0;&#xC11C; &#xAC70;&#xBD80;&#xB41C; &#xAE30;&#xB2A5;&#xC744; Electron&#xC5D0;
+&#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C; &#xD328;&#xCE58;&#xD558;&#xAE30; &#xC704;&#xD574; &#xCEE4;&#xC2A4;&#xD140; C++&#xB97C; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xBA74; Electron&#xC744; &#xD3EC;&#xD06C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+Electron&#xC758; &#xAC1C;&#xBC1C;&#xC790;&#xB85C;&#xC368;, Electron&#xC744; &#xB9E4;&#xC6B0; &#xB9CE;&#xC740; &#xC2DC;&#xB098;&#xB9AC;&#xC624;&#xC5D0;&#xC11C;&#xB3C4; &#xC791;&#xB3D9;&#xD558;&#xB3C4;&#xB85D; &#xB9CC;&#xB4E4;&#xB824;&#xACE0;
+&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xAC00;&#xB2A5;&#xD55C;&#xD55C; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC744; &#xACF5;&#xC2DD; &#xBC84;&#xC804;&#xC758; Electron&#xC5D0; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC2DC;&#xB3C4;&#xD574;
+&#xC8FC;&#xAE38; &#xBC14;&#xB77C;&#xBA70;, &#xB2F9;&#xC2E0;&#xC5D0;&#xAC90; &#xC544;&#xC8FC; &#xC544;&#xC8FC; &#xC26C;&#xC6B4; &#xC791;&#xC5C5;&#xC77C; &#xAC83;&#xC774;&#xACE0; &#xC774;&#xB7EC;&#xD55C; &#xB2F9;&#xC2E0;&#xC758; &#xB3C4;&#xC6C0;&#xC5D0; &#xB300;&#xD574; &#xAC10;&#xC0AC;&#xD558;&#xAC8C;
+&#xC0DD;&#xAC01;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="surfbuild&#xC640;-&#xD568;&#xAED8;-&#xCEE4;&#xC2A4;&#xD140;-&#xB9B4;&#xB9AC;&#xC988;-&#xB9CC;&#xB4E4;&#xAE30;">surf-build&#xC640; &#xD568;&#xAED8; &#xCEE4;&#xC2A4;&#xD140; &#xB9B4;&#xB9AC;&#xC988; &#xB9CC;&#xB4E4;&#xAE30;</h4>
+<ol>
+<li><p>npm&#xC744; &#xD1B5;&#xD574; <a href="https://github.com/surf-build/surf" target="_blank">Surf</a>&#xB97C; &#xC124;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;:
+<code>npm install -g surf-build@latest</code></p>
+</li>
+<li><p>&#xC0C8;&#xB85C;&#xC6B4; S3 bucket&#xC744; &#xB9CC;&#xB4E4;&#xACE0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBE48; &#xB514;&#xB809;&#xD1A0;&#xB9AC; &#xAD6C;&#xC870;&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;:</p>
+</li>
+</ol>
+<pre><code>- atom-shell/
+  - symbols/
+  - dist/
+</code></pre><ol>
+<li><p>&#xB2E4;&#xC74C;&#xC758; &#xD658;&#xACBD; &#xBCC0;&#xC218;&#xB4E4;&#xC744; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li><code>ELECTRON_GITHUB_TOKEN</code> - GitHub&#xC5D0; &#xB9B4;&#xB9AC;&#xC988;&#xB97C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB294; &#xD1A0;&#xD070;.</li>
+<li><code>ELECTRON_S3_ACCESS_KEY</code>, <code>ELECTRON_S3_BUCKET</code>, <code>ELECTRON_S3_SECRET_KEY</code> -
+node.js &#xD5E4;&#xB354; &#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xC2EC;&#xBCFC;&#xC744; &#xC5C5;&#xB85C;&#xB4DC;&#xD560; &#xC7A5;&#xC18C;.</li>
+<li><code>ELECTRON_RELEASE</code> - <code>true</code>&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xACE0; &#xC5C5;&#xB85C;&#xB4DC; &#xBD80;&#xBD84;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xBA74;, &#xC124;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC740;
+&#xBD80;&#xBD84;&#xC744; &#xB0A8;&#xAE30;&#xACE0; <code>surf-build</code>&#xAC00; CI-type &#xD655;&#xC778;&#xC744; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;. &#xBAA8;&#xB4E0; pull request&#xB97C;
+&#xC2E4;&#xD589;&#xD560; &#xB54C; &#xC801;&#xD569;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>CI</code> - <code>true</code> &#xB610;&#xB294; &#xB2E4;&#xB978; &#xAC83;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xBA74; &#xC2E4;&#xD328;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>GITHUB_TOKEN</code> -  <code>ELECTRON_GITHUB_TOKEN</code>&#xC640; &#xAC19;&#xAC8C; &#xC124;&#xC815;</li>
+<li><code>SURF_TEMP</code> - Windows&#xC5D0;&#xC120; <code>C:\Temp</code>&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xAE34; &#xACBD;&#xB85C; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>TARGET_ARCH</code> - <code>ia32</code> &#xB610;&#xB294; <code>x64</code>&#xB97C; &#xC9C0;&#xC815;.</li>
+</ul>
+</li>
+<li><p>Electron&#xC5D0; &#xAE30;&#xC5EC;&#xB97C; &#xD558;&#xB294; &#xAE30;&#xC5EC;&#xC790;&#xB77C;&#xBA74;, <em>&#xBC18;&#xB4DC;&#xC2DC;</em> <code>script/upload.py</code>&#xC5D0;&#xC11C; &#xD3EC;&#xD06C;&#xB97C; &#xC704;&#xD574;
+<code>ELECTRON_REPO</code>&#xB97C; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. (<code>MYORG/electron</code>)</p>
+</li>
+<li><p><code>surf-build -r https://github.com/MYORG/electron -s YOUR_COMMIT -n &apos;surf-PLATFORM-ARCH&apos;</code></p>
+</li>
+<li><p>&#xBE4C;&#xB4DC;&#xAC00; &#xC644;&#xB8CC;&#xB420; &#xB54C;&#xAE4C;&#xC9C0; &#xC544;&#xC8FC; &#xC544;&#xC8FC; &#xAE34; &#xC2DC;&#xAC04;&#xC744; &#xAE30;&#xB2E4;&#xB9BD;&#xB2C8;&#xB2E4;.</p>
+</li>
+</ol>
 
                     
                     </section>

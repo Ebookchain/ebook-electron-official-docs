@@ -53,7 +53,7 @@
         data-chapter-title="Process 객체"
         data-filepath="api/process.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,16 +926,10 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="process">process</h1>
-<p>Electron&#xC758; <code>process</code> &#xAC1D;&#xCCB4;&#xB294; &#xAE30;&#xC874;&#xC758; node&#xC640;&#xB294; &#xB2EC;&#xB9AC; &#xC57D;&#xAC04;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<ul>
-<li><code>process.type</code> String - &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xD0C0;&#xC785;, <code>browser</code> (&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;) &#xB610;&#xB294;
-<code>renderer</code>&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</li>
-<li><code>process.versions[&apos;electron&apos;]</code> String - Electron&#xC758; &#xBC84;&#xC804;.</li>
-<li><code>process.versions[&apos;chrome&apos;]</code> String - Chromium&#xC758; &#xBC84;&#xC804;.</li>
-<li><code>process.resourcesPath</code> String - JavaScript &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xC758; &#xACBD;&#xB85C;.</li>
-<li><code>process.mas</code> Boolean - Mac &#xC571; &#xC2A4;&#xD1A0;&#xC5B4;&#xC6A9; &#xBE4C;&#xB4DC;&#xC77C; &#xB54C; <code>true</code>&#xB85C; &#xC9C0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB978;
-&#xBE4C;&#xB4DC;&#xC77C; &#xB550; <code>undefined</code>&#xB85C; &#xC9C0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</li>
-</ul>
+<blockquote>
+<p>process &#xAC1D;&#xCCB4;&#xC5D0; &#xB300;&#xD55C; &#xD655;&#xC7A5; &#xAE30;&#xB2A5;.</p>
+</blockquote>
+<p><code>process</code> &#xAC1D;&#xCCB4;&#xB294; Electron&#xC5D0;&#xC11C; &#xC57D;&#xAC04; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xAE30;&#xB2A5;&#xC774; &#xC788;&#xC73C;&#xBA70; API&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <h2 id="events">Events</h2>
 <h3 id="event-loaded">Event: &apos;loaded&apos;</h3>
 <p>Electron &#xB0B4;&#xBD80; &#xCD08;&#xAE30;&#xD654; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; &#xB85C;&#xB4DC;&#xAC00; &#xC644;&#xB8CC;&#xB418;&#xACE0;, &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xB098; &#xBA54;&#xC778; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xB85C;&#xB4DC;&#xD558;&#xAE30;
@@ -943,22 +937,87 @@
 <p>&#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; preload &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xD1B5;&#xD574; node &#xD1B5;&#xD569;&#xC774; &#xAEBC;&#xC838;&#xC788;&#xB294; &#xC804;&#xC5ED; &#xC2A4;&#xCF54;&#xD504;&#xC5D0; node&#xC758; &#xC804;&#xC5ED;
 &#xC2EC;&#xBCFC;&#xB4E4;&#xC744; &#xB2E4;&#xC2DC; &#xCD94;&#xAC00;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// preload.js</span>
-<span class="hljs-keyword">var</span> _setImmediate = setImmediate;
-<span class="hljs-keyword">var</span> _clearImmediate = clearImmediate;
-process.once(<span class="hljs-string">&apos;loaded&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-keyword">const</span> _setImmediate = setImmediate;
+<span class="hljs-keyword">const</span> _clearImmediate = clearImmediate;
+process.once(<span class="hljs-string">&apos;loaded&apos;</span>, () =&gt; {
   global.setImmediate = _setImmediate;
   global.clearImmediate = _clearImmediate;
 });
 </code></pre>
 <h2 id="properties">Properties</h2>
 <h3 id="processnoasar"><code>process.noAsar</code></h3>
+<p>Setting this to <code>true</code> can disable the support for <code>asar</code> archives in Node&apos;s
+built-in modules.</p>
+<h3 id="processtype"><code>process.type</code></h3>
+<p>Current process&apos;s type, can be <code>&quot;browser&quot;</code> (i.e. main process) or <code>&quot;renderer&quot;</code>.</p>
+<h3 id="processversionselectron"><code>process.versions.electron</code></h3>
+<p>Electron&apos;s version string.</p>
+<h3 id="processversionschrome"><code>process.versions.chrome</code></h3>
+<p>Chrome&apos;s version string.</p>
+<h3 id="processresourcespath"><code>process.resourcesPath</code></h3>
+<p>Path to the resources directory.</p>
+<h3 id="processmas"><code>process.mas</code></h3>
+<p>For Mac App Store build, this property is <code>true</code>, for other builds it is
+<code>undefined</code>.</p>
+<h3 id="processwindowsstore"><code>process.windowsStore</code></h3>
+<p>If the app is running as a Windows Store app (appx), this property is <code>true</code>,
+for otherwise it is <code>undefined</code>.</p>
+<h3 id="processdefaultapp"><code>process.defaultApp</code></h3>
+<p>When app is started by being passed as parameter to the default app, this
+property is <code>true</code> in the main process, otherwise it is <code>undefined</code>.</p>
+<h2 id="methods">Methods</h2>
+<p>The <code>process</code> object has the following method:</p>
+<h3 id="processcrash"><code>process.crash()</code></h3>
+<p>Causes the main thread of the current process crash.</p>
+<h3 id="processhang"><code>process.hang()</code></h3>
+<p>Causes the main thread of the current process hang.</p>
+<h3 id="processsetfdlimitmaxdescriptors-macos-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>macOS</em> <em>Linux</em></h3>
+<ul>
+<li><code>maxDescriptors</code> Integer</li>
+</ul>
+<p>Sets the file descriptor soft limit to <code>maxDescriptors</code> or the OS hard
+limit, whichever is lower for the current process.</p>
+<h3 id="processgetprocessmemoryinfo"><code>process.getProcessMemoryInfo()</code></h3>
+<p>Returns an object giving memory usage statistics about the current process. Note
+that all statistics are reported in Kilobytes.</p>
+<ul>
+<li><code>workingSetSize</code> - The amount of memory currently pinned to actual physical
+RAM.</li>
+<li><code>peakWorkingSetSize</code> - The maximum amount of memory that has ever been pinned
+to actual physical RAM.</li>
+<li><code>privateBytes</code> - The amount of memory not shared by other processes, such as
+JS heap or HTML content.</li>
+<li><code>sharedBytes</code> - The amount of memory shared between processes, typically
+memory consumed by the Electron code itself</li>
+</ul>
+<h3 id="processgetsystemmemoryinfo"><code>process.getSystemMemoryInfo()</code></h3>
+<p>Returns an object giving memory usage statistics about the entire system. Note
+that all statistics are reported in Kilobytes.</p>
+<ul>
+<li><code>total</code> - The total amount of physical memory in Kilobytes available to the
+system.</li>
+<li><code>free</code> - The total amount of memory not being used by applications or disk
+cache.</li>
+</ul>
+<p>On Windows / Linux:</p>
+<ul>
+<li><code>swapTotal</code> - The total amount of swap memory in Kilobytes available to the
+system.</li>
+<li><code>swapFree</code> - The free amount of swap memory in Kilobytes available to the
+system.</li>
+</ul>
+<hr>
+<h2 id="properties">Properties</h2>
+<h3 id="processnoasar"><code>process.noAsar</code></h3>
 <p>&#xC774; &#xC18D;&#xC131;&#xC744; <code>true</code>&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xBA74; Node &#xBE4C;&#xD2B8;&#xC778; &#xBAA8;&#xB4C8;&#xC758; <code>asar</code> &#xC544;&#xCE74;&#xC774;&#xBE0C; &#xC9C0;&#xC6D0;&#xC744; &#xBE44;&#xD65C;&#xC131;&#xD654; &#xC2DC;&#xD0AC;
 &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="methods">Methods</h2>
 <p><code>process</code> &#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<h3 id="processcrash"><code>process.crash()</code></h3>
+<p>&#xD604;&#xC7AC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xBA54;&#xC778; &#xC2A4;&#xB808;&#xB4DC;&#xC5D0; &#xD06C;&#xB798;&#xC2DC;&#xB97C; &#xC77C;&#xC73C;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="processhang"><code>process.hang()</code></h3>
 <p>&#xD604;&#xC7AC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xC8FC; &#xC2A4;&#xB808;&#xB4DC;&#xB97C; &#xC911;&#xB2E8;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
-<h3 id="processsetfdlimitmaxdescriptors-os-x-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>OS X</em> <em>Linux</em></h3>
+<h3 id="processsetfdlimitmaxdescriptors-macos-linux"><code>process.setFdLimit(maxDescriptors)</code> <em>macOS</em> <em>Linux</em></h3>
 <ul>
 <li><code>maxDescriptors</code> Integer</li>
 </ul>

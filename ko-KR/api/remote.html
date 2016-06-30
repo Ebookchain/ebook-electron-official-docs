@@ -53,7 +53,7 @@
         data-chapter-title="remote"
         data-filepath="api/remote.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,93 +926,92 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="remote">remote</h1>
-<p><code>remote</code> &#xBAA8;&#xB4C8;&#xC740; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC640; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;(&#xC6F9; &#xD398;&#xC774;&#xC9C0;) &#xC0AC;&#xC774;&#xC758; inter-process
+<blockquote>
+<p>&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xBAA8;&#xB4C8;&#xC744; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p><code>remote</code> &#xBAA8;&#xB4C8;&#xC740; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC640; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;(&#xC6F9; &#xD398;&#xC774;&#xC9C0;) &#xC0AC;&#xC774;&#xC758; inter-process
 (IPC) &#xD1B5;&#xC2E0;&#xC744; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xCD94;&#xC0C1;&#xD654; &#xD55C; &#xBAA8;&#xB4C8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>Electron&#xC758; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC120; GUI&#xC640; &#xAD00;&#xB828; &#xC788;&#xB294;(<code>dialog</code>, <code>menu</code>&#xB4F1;) &#xBAA8;&#xB4C8;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218;
-&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC774;&#xB7EC;&#xD55C; &#xBAA8;&#xB4C8;&#xB4E4;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>ipc</code> &#xBAA8;&#xB4C8;&#xC744; &#xD1B5;&#xD574; &#xBA54;&#xC778;
+&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC774;&#xB7EC;&#xD55C; &#xBAA8;&#xB4C8;&#xB4E4;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; <code>ipc</code> &#xBAA8;&#xB4C8;&#xC744; &#xD1B5;&#xD574; &#xBA54;&#xC778;
 &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC640; inter-process &#xD1B5;&#xC2E0;&#xC744; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C;, <code>remote</code> &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74;
 inter-process &#xD1B5;&#xC2E0;&#xC744; &#xD558;&#xC9C0; &#xC54A;&#xACE0;&#xB3C4; &#xAC04;&#xB2E8;&#xD55C; API&#xB97C; &#xD1B5;&#xD574; &#xC9C1;&#xC811; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xBAA8;&#xB4C8;&#xACFC;
 &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xAC1C;&#xB150;&#xC740; Java&#xC758; <a href="http://en.wikipedia.org/wiki/Java_remote_method_invocation" target="_blank">RMI</a>&#xC640; &#xBE44;&#xC2B7;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xCC3D;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> remote = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote;
-<span class="hljs-keyword">const</span> BrowserWindow = remote.BrowserWindow;
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xCC3D;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote;
 
-<span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({ width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span> });
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
 win.loadURL(<span class="hljs-string">&apos;https://github.com&apos;</span>);
 </code></pre>
-<p><strong>&#xCC38;&#xACE0;:</strong> &#xBC18;&#xB300;&#xB85C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xC811;&#xADFC; &#xD558;&#xB824;&#xBA74; <a href="web-contents.html#webcontentsexecutejavascriptcode-usergesture">webContents.executeJavascript</a>
+<p><strong>&#xCC38;&#xACE0;:</strong> &#xBC18;&#xB300;&#xB85C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xC811;&#xADFC; &#xD558;&#xB824;&#xBA74; <a href="web-contents.html#webcontentsexecutejavascriptcode-usergesture">webContents.executeJavascript</a>
 &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="remote-&#xAC1D;&#xCCB4;">Remote &#xAC1D;&#xCCB4;</h2>
 <p><code>remote</code> &#xBAA8;&#xB4C8;&#xB85C;&#xBD80;&#xD130; &#xBC18;&#xD658;&#xB41C; &#xAC01; &#xAC1D;&#xCCB4;(&#xBA54;&#xC11C;&#xB4DC; &#xD3EC;&#xD568;)&#xB294; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xCD94;&#xC0C1;&#xD654; &#xD55C;
 &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. (&#xC6B0;&#xB9AC;&#xB294; &#xADF8;&#xAC83;&#xC744; remote &#xAC1D;&#xCCB4; &#xB610;&#xB294; remote &#xD568;&#xC218;&#xB77C;&#xACE0; &#xBD80;&#xB985;&#xB2C8;&#xB2E4;) Remote &#xBAA8;&#xB4C8;&#xC758;
 &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xAC70;&#xB098;, &#xAC1D;&#xCCB4;&#xC5D0; &#xC811;&#xADFC;&#xD558;&#xAC70;&#xB098;, &#xC0DD;&#xC131;&#xC790;&#xB85C; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xB4F1;&#xC758; &#xC791;&#xC5C5;&#xC740; &#xC2E4;&#xC9C8;&#xC801;&#xC73C;&#xB85C;
 &#xB3D9;&#xAE30;&#xD615; inter-process &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC704;&#xC758; &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C; &#xB450; <code>BrowserWindow</code>&#xC640; <code>win</code>&#xC740; remote &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0;
-<code>new BrowserWindow</code>&#xC774; &#xC0DD;&#xC131;&#xD558;&#xB294; <code>BrowserWindow</code> &#xAC1D;&#xCCB4;&#xB294; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xB418;&#xC9C0;
-&#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0;&#xC5D0; &#xC774; <code>BrowserWindow</code> &#xAC1D;&#xCCB4;&#xB294; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xB418;&#xBA70; &#xB79C;&#xB354;&#xB7EC;
+<p>&#xC704;&#xC758; &#xC608;&#xC2DC;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C; &#xB450; <code>BrowserWindow</code>&#xC640; <code>win</code>&#xC740; remote &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0;
+<code>new BrowserWindow</code>&#xC774; &#xC0DD;&#xC131;&#xD558;&#xB294; <code>BrowserWindow</code> &#xAC1D;&#xCCB4;&#xB294; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xB418;&#xC9C0;
+&#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0;&#xC5D0; &#xC774; <code>BrowserWindow</code> &#xAC1D;&#xCCB4;&#xB294; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xB418;&#xBA70; &#xB80C;&#xB354;&#xB7EC;
 &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; <code>win</code> &#xAC1D;&#xCCB4;&#xC640; &#xAC19;&#xC774; &#xC774;&#xC5D0; &#xB300;&#xC751;&#xD558;&#xB294; remote &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xCC38;&#xACE0;&#xB85C; remote&#xB97C; &#xD1B5;&#xD574;&#xC120; <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Enumerability_and_ownership_of_properties" target="_blank">enumerable &#xC18D;&#xC131;</a>&#xC744;
-&#xAC00;&#xC9C4; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0;&#xB9CC; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCC38;&#xACE0;&#xB85C; remote &#xAC1D;&#xCCB4;&#xAC00; &#xCC98;&#xC74C; &#xCC38;&#xC870;&#xB420; &#xB54C; &#xD45C;&#xC2DC;&#xB418;&#xB294;
+<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Enumerability_and_ownership_of_properties" target="_blank">enumerable &#xC18D;&#xC131;</a>&#xC740;
+remote&#xB97C; &#xD1B5;&#xD574;&#xC11C;&#xB9CC; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h2 id="remote-&#xAC1D;&#xCCB4;&#xC758;-&#xC0DD;&#xBA85;-&#xC8FC;&#xAE30;">Remote &#xAC1D;&#xCCB4;&#xC758; &#xC0DD;&#xBA85; &#xC8FC;&#xAE30;</h2>
-<p>Electron&#xC740; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; remote &#xAC1D;&#xCCB4;&#xAC00; &#xC0B4;&#xC544;&#xC788;&#xB294; &#xD55C;(&#xB2E4;&#xC2DC; &#xB9D0;&#xD574;&#xC11C; GC(garbage
+<p>Electron&#xC740; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; remote &#xAC1D;&#xCCB4;&#xAC00; &#xC0B4;&#xC544;&#xC788;&#xB294; &#xD55C;(&#xB2E4;&#xC2DC; &#xB9D0;&#xD574;&#xC11C; GC(garbage
 collection)&#xAC00; &#xC77C;&#xC5B4;&#xB098;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;) &#xB300;&#xC751;&#xD558;&#xB294; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xAC1D;&#xCCB4;&#xB294; &#xB9B4;&#xB9AC;&#xC988;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
 Remote &#xAC1D;&#xCCB4;&#xAC00; GC &#xB418;&#xB824;&#xBA74; &#xB300;&#xC751;&#xD558;&#xB294; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xB0B4;&#xBD80; &#xAC1D;&#xCCB4;&#xC758; &#xCC38;&#xC870;&#xAC00; &#xD574;&#xC81C;&#xB418;&#xC5B4;&#xC57C;&#xB9CC; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB9CC;&#xC57D; remote &#xAC1D;&#xCCB4;&#xAC00; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB204;&#xC218;&#xAC00; &#xC0DD;&#xACBC;&#xB2E4;&#xBA74; (&#xC608;&#xC2DC;: &#xB9F5;&#xC5D0; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xD560;&#xB2F9;
+<p>&#xB9CC;&#xC57D; remote &#xAC1D;&#xCCB4;&#xAC00; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB204;&#xC218;&#xAC00; &#xC0DD;&#xACBC;&#xB2E4;&#xBA74; (&#xC608;&#xC2DC;: &#xB9F5;&#xC5D0; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xD560;&#xB2F9;
 &#xD574;&#xC81C;&#xD558;&#xC9C0; &#xC54A;&#xC74C;) &#xB300;&#xC751;&#xD558;&#xB294; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xAC1D;&#xCCB4;&#xB3C4; &#xB204;&#xC218;&#xAC00; &#xC0DD;&#xAE41;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; remote &#xAC1D;&#xCCB4;&#xB97C;
 &#xC0AC;&#xC6A9;&#xD560; &#xB550; &#xBA54;&#xBAA8;&#xB9AC; &#xB204;&#xC218;&#xAC00; &#xC0DD;&#xAE30;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xB9E4;&#xC6B0; &#xC8FC;&#xC758;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xCC38;&#xACE0;&#xB85C; &#xBB38;&#xC790;&#xC5F4;, &#xC22B;&#xC790;&#xC640; &#xAC19;&#xC740; &#xC6D0;&#xC2DC; &#xAC12; &#xD0C0;&#xC785;&#xC740; &#xBCF5;&#xC0AC;&#xC5D0; &#xC758;&#xD55C; &#xCC38;&#xC870;&#xB85C; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xBA54;&#xC778;-&#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C;-&#xCF5C;&#xBC31;-&#xB118;&#xAE30;&#xAE30;">&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xCF5C;&#xBC31; &#xB118;&#xAE30;&#xAE30;</h2>
-<p>&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xCF54;&#xB4DC;&#xB294; <code>remote</code> &#xBAA8;&#xB4C8;&#xC744; &#xD1B5;&#xD574; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xB97C;
+<p>&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xCF54;&#xB4DC;&#xB294; <code>remote</code> &#xBAA8;&#xB4C8;&#xC744; &#xD1B5;&#xD574; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xB97C;
 &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774; &#xC791;&#xC5C5;&#xC740; &#xBC18;&#xB4DC;&#xC2DC; &#xC8FC;&#xC758;&#xB97C; &#xAE30;&#xC6B8;&#xC5EC; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xCCAB;&#xC9F8;, &#xB370;&#xB4DC;&#xB77D;&#xC744; &#xD53C;&#xD558;&#xAE30; &#xC704;&#xD574; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xC804;&#xB2EC;&#xB41C; &#xCF5C;&#xBC31;&#xB4E4;&#xC740; &#xBE44;&#xB3D9;&#xAE30;&#xB85C; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C;
-&#xC774;&#xC720;&#xB85C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xC804;&#xB2EC;&#xB41C; &#xCF5C;&#xBC31;&#xB4E4;&#xC758; &#xBC18;&#xD658; &#xAC12;&#xC744; &#xB0B4;&#xBD80; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xC5B8;&#xC81C;&#xB098; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xBC1B;&#xC744;
+&#xC774;&#xC720;&#xB85C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xC804;&#xB2EC;&#xB41C; &#xCF5C;&#xBC31;&#xC758; &#xBC18;&#xD658; &#xAC12;&#xC744; &#xB0B4;&#xBD80; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xC5B8;&#xC81C;&#xB098; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xBC1B;&#xC744;
 &#xAC83;&#xC774;&#xB77C;&#xACE0; &#xC608;&#xCE21;&#xD574;&#xC120; &#xC548;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; <code>Array.map</code> &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C;
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; <code>Array.map</code> &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C;
 &#xC804;&#xB2EC;&#xB41C; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC120; &#xC548;&#xB429;&#xB2C8;&#xB2E4;:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// mapNumbers.js &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;</span>
-exports.withRendererCallback = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">mapper</span>) </span>{
+exports.withRendererCallback = (mapper) =&gt; {
   <span class="hljs-keyword">return</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>].map(mapper);
-}
+;
 
-exports.withLocalCallback = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">return</span> exports.mapNumbers(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{
-    <span class="hljs-keyword">return</span> x + <span class="hljs-number">1</span>;
-  });
-}
+exports.withLocalCallback = () =&gt; {
+  <span class="hljs-keyword">return</span> exports.mapNumbers(x =&gt; x + <span class="hljs-number">1</span>);
+};
 </code></pre>
-<pre><code class="lang-javascript"><span class="hljs-comment">// &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;</span>
-<span class="hljs-keyword">var</span> mapNumbers = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;remote&quot;</span>).require(<span class="hljs-string">&quot;./mapNumbers&quot;</span>);
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;</span>
+<span class="hljs-keyword">const</span> mapNumbers = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote.require(<span class="hljs-string">&apos;./mapNumbers&apos;</span>);
 
-<span class="hljs-keyword">var</span> withRendererCb = mapNumbers.withRendererCallback(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{
-  <span class="hljs-keyword">return</span> x + <span class="hljs-number">1</span>;
-})
+<span class="hljs-keyword">const</span> withRendererCb = mapNumbers.withRendererCallback(x =&gt; x + <span class="hljs-number">1</span>);
 
-<span class="hljs-keyword">var</span> withLocalCb = mapNumbers.withLocalCallback()
+<span class="hljs-keyword">const</span> withLocalCb = mapNumbers.withLocalCallback();
 
-<span class="hljs-built_in">console</span>.log(withRendererCb, withLocalCb) <span class="hljs-comment">// [true, true, true], [2, 3, 4]</span>
+<span class="hljs-built_in">console</span>.log(withRendererCb, withLocalCb); <span class="hljs-comment">// [true, true, true], [2, 3, 4]</span>
 </code></pre>
-<p>&#xBCF4;&#xB2E4;&#xC2DC;&#xD53C; &#xB79C;&#xB354;&#xB7EC; &#xCF5C;&#xBC31;&#xC758; &#xB3D9;&#xAE30; &#xBC18;&#xD658; &#xAC12;&#xC740; &#xC608;&#xC0C1;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xCC98;&#xB9AC;&#xC785;&#xB2C8;&#xB2E4;.
-&#xADF8;&#xB9AC;&#xACE0; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xCC98;&#xB9AC;&#xD55C; &#xD568;&#xC218;&#xC758; &#xBC18;&#xD658; &#xAC12;&#xACFC; &#xC77C;&#xCE58;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBCF4;&#xB2E4;&#xC2DC;&#xD53C; &#xB3D9;&#xAE30;&#xC801;&#xC778; &#xB80C;&#xB354;&#xB7EC; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xC758; &#xBC18;&#xD658; &#xAC12;&#xC740; &#xC608;&#xC0C1;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xBA54;&#xC778;
+&#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xCC98;&#xB9AC;&#xD55C; &#xD568;&#xC218;&#xC758; &#xBC18;&#xD658; &#xAC12;&#xACFC; &#xC77C;&#xCE58;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB458;&#xC9F8;, &#xCF5C;&#xBC31;&#xB4E4;&#xC740; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xC804;&#xB2EC;, &#xD638;&#xCD9C;&#xB41C; &#xC774;&#xD6C4;&#xC5D0;&#xB3C4; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD568;&#xC218;&#xC758; &#xCC38;&#xC870;&#xAC00; &#xB9B4;&#xB9AC;&#xC988; &#xB418;&#xC9C0;
 &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD568;&#xC218; &#xCC38;&#xC870;&#xB294; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; GC&#xAC00; &#xC77C;&#xC5B4;&#xB098;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; &#xACC4;&#xC18D; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xB0A8;&#xC544;&#xC788;&#xAC8C;
 &#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; &#xBCF4;&#xBA74; &#xB290;&#xB08C;&#xC774; &#xC62C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xC608;&#xC81C;&#xB294; remote &#xAC1D;&#xCCB4;&#xC5D0; <code>close</code> &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31;&#xC744;
-&#xC124;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> remote = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;remote&apos;</span>);
+<p>&#xB2E4;&#xC74C; &#xCF54;&#xB4DC;&#xB97C; &#xBCF4;&#xBA74; &#xB290;&#xB08C;&#xC774; &#xC62C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xC608;&#xC2DC;&#xB294; remote &#xAC1D;&#xCCB4;&#xC5D0; <code>close</code> &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31;&#xC744;
+&#xB4F1;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> remote = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;remote&apos;</span>);
 
-remote.getCurrentWindow().on(<span class="hljs-string">&apos;close&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+remote.getCurrentWindow().on(<span class="hljs-string">&apos;close&apos;</span>, () =&gt; {
   <span class="hljs-comment">// blabla...</span>
 });
 </code></pre>
-<p>&#xD558;&#xC9C0;&#xB9CC; &#xC774; &#xCF54;&#xB4DC; &#xCC98;&#xB7FC; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xAC70;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC774;&#xC0C1; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xC758; &#xCC38;&#xC870;&#xAC00; &#xACC4;&#xC18D;&#xD574;&#xC11C;
-&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xB0A8;&#xC544;&#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xCF5C;&#xBC31;&#xC744; &#xC81C;&#xAC70;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xB9E4; &#xBC88; &#xCC3D;&#xC744;
-&#xC0C8;&#xB85C;&#xACE0;&#xCE68; &#xD560; &#xB54C;&#xB9C8;&#xB2E4; &#xCF5C;&#xBC31;&#xC744; &#xC0C8;&#xB85C; &#xC124;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;. &#xAC8C;&#xB2E4;&#xAC00; &#xC774;&#xC804; &#xCF5C;&#xBC31;&#xC774; &#xC81C;&#xAC70;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xACC4;&#xC18D;&#xD574;&#xC11C;
-&#xC313;&#xC774;&#xBA74;&#xC11C; &#xBA54;&#xBAA8;&#xB9AC; &#xB204;&#xC218;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC124;&#xC0C1;&#xAC00;&#xC0C1;&#xC73C;&#xB85C; &#xC774;&#xC804;&#xC5D0; &#xC124;&#xCE58;&#xB41C; &#xCF5C;&#xBC31;&#xC758; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xAC00; &#xB9B4;&#xB9AC;&#xC988; &#xB418;&#xACE0; &#xB09C; &#xD6C4;(&#xC608;: &#xD398;&#xC774;&#xC9C0; &#xC0C8;&#xB85C;&#xACE0;&#xCE68;)
+<p>&#xD558;&#xC9C0;&#xB9CC; &#xC774; &#xCF54;&#xB4DC;&#xC640; &#xAC19;&#xC774; &#xB4F1;&#xB85D;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xAC70;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC774;&#xC0C1; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xC758; &#xCC38;&#xC870;&#xAC00;
+&#xACC4;&#xC18D;&#xD574;&#xC11C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0; &#xB0A8;&#xC544;&#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xCF5C;&#xBC31;&#xC744; &#xC81C;&#xAC70;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xB9E4; &#xBC88;
+&#xCC3D;&#xC744; &#xC0C8;&#xB85C;&#xACE0;&#xCE68; &#xD560; &#xB54C;&#xB9C8;&#xB2E4; &#xCF5C;&#xBC31;&#xC744; &#xC0C8;&#xB85C; &#xC124;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;. &#xAC8C;&#xB2E4;&#xAC00; &#xC774;&#xC804; &#xCF5C;&#xBC31;&#xC774; &#xC81C;&#xAC70;&#xB418;&#xC9C0; &#xC54A;&#xACE0;
+&#xACC4;&#xC18D;&#xD574;&#xC11C; &#xC313;&#xC774;&#xBA74;&#xC11C; &#xBA54;&#xBAA8;&#xB9AC; &#xB204;&#xC218;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC124;&#xC0C1;&#xAC00;&#xC0C1;&#xC73C;&#xB85C; &#xC774;&#xC804;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C; &#xCF5C;&#xBC31;&#xC758; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xAC00; &#xB9B4;&#xB9AC;&#xC988; &#xB418;&#xACE0; &#xB09C; &#xD6C4; (e.g. &#xD398;&#xC774;&#xC9C0; &#xC0C8;&#xB85C;&#xACE0;&#xCE68;)
 <code>close</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xBA74; &#xC608;&#xC678;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xACE0; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC791;&#xB3D9; &#xC911;&#xC9C0;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xB97C; &#xD53C;&#xD558;&#xB824;&#xBA74; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xB118;&#xAE34; &#xD568;&#xC218;&#xC758; &#xCC38;&#xC870;&#xB97C; &#xC0AC;&#xC6A9; &#xD6C4;
+<p>&#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xB97C; &#xD53C;&#xD558;&#xB824;&#xBA74; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C; &#xB118;&#xAE34; &#xD568;&#xC218;&#xC758; &#xCC38;&#xC870;&#xB97C; &#xC0AC;&#xC6A9; &#xD6C4;
 &#xD655;&#xC2E4;&#xD558;&#xAC8C; &#xC81C;&#xAC70;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC791;&#xC5C5; &#xD6C4; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &#xCC45;&#xC784; &#xC788;&#xAC8C; &#xD568;&#xC218;&#xC758; &#xCC38;&#xC870;&#xB97C;
-&#xC81C;&#xAC70;&#xD558;&#xAC70;&#xB098; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB79C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; &#xD568;&#xC218; &#xCC38;&#xC870;&#xB97C;
+&#xC81C;&#xAC70;&#xD558;&#xAC70;&#xB098; &#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C; &#xB80C;&#xB354;&#xB7EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; &#xD568;&#xC218; &#xCC38;&#xC870;&#xB97C;
 &#xC81C;&#xAC70;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xACC4;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h2 id="&#xBA54;&#xC778;-&#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758;-&#xBE4C;&#xD2B8;&#xC778;-&#xBAA8;&#xB4C8;&#xC5D0;-&#xC811;&#xADFC;">&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xBE4C;&#xD2B8;&#xC778; &#xBAA8;&#xB4C8;&#xC5D0; &#xC811;&#xADFC;</h2>
 <p>&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xBE4C;&#xD2B8;&#xC778; &#xBAA8;&#xB4C8;&#xC740; <code>remote</code> &#xBAA8;&#xB4C8;&#xC5D0; getter&#xB85C; &#xB4F1;&#xB85D;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C;

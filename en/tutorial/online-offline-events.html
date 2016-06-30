@@ -53,7 +53,7 @@
         data-chapter-title="Online/Offline Event Detection"
         data-filepath="tutorial/online-offline-events.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -933,10 +933,11 @@ using standard HTML5 APIs, as shown in the following example.</p>
 <span class="hljs-keyword">const</span> app = electron.app;
 <span class="hljs-keyword">const</span> BrowserWindow = electron.BrowserWindow;
 
-<span class="hljs-keyword">var</span> onlineStatusWindow;
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-keyword">let</span> onlineStatusWindow;
+
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
   onlineStatusWindow = <span class="hljs-keyword">new</span> BrowserWindow({ width: <span class="hljs-number">0</span>, height: <span class="hljs-number">0</span>, show: <span class="hljs-literal">false</span> });
-  onlineStatusWindow.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/online-status.html&apos;</span>);
+  onlineStatusWindow.loadURL(<span class="hljs-string">`file://<span class="hljs-subst">${__dirname}</span>/online-status.html`</span>);
 });
 </code></pre>
 <p><em>online-status.html</em></p>
@@ -944,7 +945,7 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
 <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">var</span> alertOnlineStatus = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> alertOnlineStatus = () =&gt; {
     <span class="hljs-built_in">window</span>.alert(navigator.onLine ? <span class="hljs-string">&apos;online&apos;</span> : <span class="hljs-string">&apos;offline&apos;</span>);
   };
 
@@ -967,13 +968,14 @@ to the main process and handled as needed, as shown in the following example.</p
 <span class="hljs-keyword">const</span> ipcMain = electron.ipcMain;
 <span class="hljs-keyword">const</span> BrowserWindow = electron.BrowserWindow;
 
-<span class="hljs-keyword">var</span> onlineStatusWindow;
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-keyword">let</span> onlineStatusWindow;
+
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
   onlineStatusWindow = <span class="hljs-keyword">new</span> BrowserWindow({ width: <span class="hljs-number">0</span>, height: <span class="hljs-number">0</span>, show: <span class="hljs-literal">false</span> });
-  onlineStatusWindow.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/online-status.html&apos;</span>);
+  onlineStatusWindow.loadURL(<span class="hljs-string">`file://<span class="hljs-subst">${__dirname}</span>/online-status.html`</span>);
 });
 
-ipcMain.on(<span class="hljs-string">&apos;online-status-changed&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, status</span>) </span>{
+ipcMain.on(<span class="hljs-string">&apos;online-status-changed&apos;</span>, (event, status) =&gt; {
   <span class="hljs-built_in">console</span>.log(status);
 });
 </code></pre>
@@ -982,8 +984,8 @@ ipcMain.on(<span class="hljs-string">&apos;online-status-changed&apos;</span>, <
 <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">const</span> ipcRenderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).ipcRenderer;
-  <span class="hljs-keyword">var</span> updateOnlineStatus = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> {ipcRenderer} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+  <span class="hljs-keyword">const</span> updateOnlineStatus = () =&gt; {
     ipcRenderer.send(<span class="hljs-string">&apos;online-status-changed&apos;</span>, navigator.onLine ? <span class="hljs-string">&apos;online&apos;</span> : <span class="hljs-string">&apos;offline&apos;</span>);
   };
 

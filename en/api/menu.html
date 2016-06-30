@@ -53,7 +53,7 @@
         data-chapter-title="Menu"
         data-filepath="api/menu.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,10 +926,10 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="menu">Menu</h1>
-<p>The <code>menu</code> class is used to create native menus that can be used as
-application menus and
-<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/PopupGuide/ContextMenus" target="_blank">context menus</a>.
-This module is a main process module which can be used in a render process via
+<blockquote>
+<p>Create native application menus and context menus.</p>
+</blockquote>
+<p>This module is a main process module which can be used in a render process via
 the <code>remote</code> module.</p>
 <p>Each menu consists of multiple <a href="menu-item.html">menu items</a> and each menu item can
 have a submenu.</p>
@@ -938,16 +938,15 @@ have a submenu.</p>
 the user right clicks the page:</p>
 <pre><code class="lang-html"><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-<span class="hljs-keyword">const</span> remote = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote;
-<span class="hljs-keyword">const</span> Menu = remote.Menu;
-<span class="hljs-keyword">const</span> MenuItem = remote.MenuItem;
+<span class="hljs-keyword">const</span> {remote} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+<span class="hljs-keyword">const</span> {Menu, MenuItem} = remote;
 
-<span class="hljs-keyword">var</span> menu = <span class="hljs-keyword">new</span> Menu();
-menu.append(<span class="hljs-keyword">new</span> MenuItem({ label: <span class="hljs-string">&apos;MenuItem1&apos;</span>, click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;item 1 clicked&apos;</span>); } }));
-menu.append(<span class="hljs-keyword">new</span> MenuItem({ type: <span class="hljs-string">&apos;separator&apos;</span> }));
-menu.append(<span class="hljs-keyword">new</span> MenuItem({ label: <span class="hljs-string">&apos;MenuItem2&apos;</span>, type: <span class="hljs-string">&apos;checkbox&apos;</span>, checked: <span class="hljs-literal">true</span> }));
+<span class="hljs-keyword">const</span> menu = <span class="hljs-keyword">new</span> Menu();
+menu.append(<span class="hljs-keyword">new</span> MenuItem({label: <span class="hljs-string">&apos;MenuItem1&apos;</span>, click() { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;item 1 clicked&apos;</span>); }}));
+menu.append(<span class="hljs-keyword">new</span> MenuItem({type: <span class="hljs-string">&apos;separator&apos;</span>}));
+menu.append(<span class="hljs-keyword">new</span> MenuItem({label: <span class="hljs-string">&apos;MenuItem2&apos;</span>, type: <span class="hljs-string">&apos;checkbox&apos;</span>, checked: <span class="hljs-literal">true</span>}));
 
-<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&apos;contextmenu&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&apos;contextmenu&apos;</span>, (e) =&gt; {
   e.preventDefault();
   menu.popup(remote.getCurrentWindow());
 }, <span class="hljs-literal">false</span>);
@@ -955,41 +954,35 @@ menu.append(<span class="hljs-keyword">new</span> MenuItem({ label: <span class=
 </code></pre>
 <p>An example of creating the application menu in the render process with the
 simple template API:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> template = [
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> template = [
   {
     label: <span class="hljs-string">&apos;Edit&apos;</span>,
     submenu: [
       {
-        label: <span class="hljs-string">&apos;Undo&apos;</span>,
-        accelerator: <span class="hljs-string">&apos;CmdOrCtrl+Z&apos;</span>,
         role: <span class="hljs-string">&apos;undo&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Redo&apos;</span>,
-        accelerator: <span class="hljs-string">&apos;Shift+CmdOrCtrl+Z&apos;</span>,
         role: <span class="hljs-string">&apos;redo&apos;</span>
       },
       {
         type: <span class="hljs-string">&apos;separator&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Cut&apos;</span>,
-        accelerator: <span class="hljs-string">&apos;CmdOrCtrl+X&apos;</span>,
         role: <span class="hljs-string">&apos;cut&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Copy&apos;</span>,
-        accelerator: <span class="hljs-string">&apos;CmdOrCtrl+C&apos;</span>,
         role: <span class="hljs-string">&apos;copy&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Paste&apos;</span>,
-        accelerator: <span class="hljs-string">&apos;CmdOrCtrl+V&apos;</span>,
         role: <span class="hljs-string">&apos;paste&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Select All&apos;</span>,
-        accelerator: <span class="hljs-string">&apos;CmdOrCtrl+A&apos;</span>,
+        role: <span class="hljs-string">&apos;pasteandmatchstyle&apos;</span>
+      },
+      {
+        role: <span class="hljs-string">&apos;delete&apos;</span>
+      },
+      {
         role: <span class="hljs-string">&apos;selectall&apos;</span>
       },
     ]
@@ -1000,81 +993,57 @@ simple template API:</p>
       {
         label: <span class="hljs-string">&apos;Reload&apos;</span>,
         accelerator: <span class="hljs-string">&apos;CmdOrCtrl+R&apos;</span>,
-        click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item, focusedWindow</span>) </span>{
-          <span class="hljs-keyword">if</span> (focusedWindow)
-            focusedWindow.reload();
+        click(item, focusedWindow) {
+          <span class="hljs-keyword">if</span> (focusedWindow) focusedWindow.reload();
         }
       },
       {
-        label: <span class="hljs-string">&apos;Toggle Full Screen&apos;</span>,
-        accelerator: (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-          <span class="hljs-keyword">if</span> (process.platform == <span class="hljs-string">&apos;darwin&apos;</span>)
-            <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;Ctrl+Command+F&apos;</span>;
-          <span class="hljs-keyword">else</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;F11&apos;</span>;
-        })(),
-        click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item, focusedWindow</span>) </span>{
-          <span class="hljs-keyword">if</span> (focusedWindow)
-            focusedWindow.setFullScreen(!focusedWindow.isFullScreen());
-        }
+        role: <span class="hljs-string">&apos;togglefullscreen&apos;</span>
       },
       {
         label: <span class="hljs-string">&apos;Toggle Developer Tools&apos;</span>,
-        accelerator: (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-          <span class="hljs-keyword">if</span> (process.platform == <span class="hljs-string">&apos;darwin&apos;</span>)
-            <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;Alt+Command+I&apos;</span>;
-          <span class="hljs-keyword">else</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;Ctrl+Shift+I&apos;</span>;
-        })(),
-        click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item, focusedWindow</span>) </span>{
+        accelerator: process.platform === <span class="hljs-string">&apos;darwin&apos;</span> ? <span class="hljs-string">&apos;Alt+Command+I&apos;</span> : <span class="hljs-string">&apos;Ctrl+Shift+I&apos;</span>,
+        click(item, focusedWindow) {
           <span class="hljs-keyword">if</span> (focusedWindow)
-            focusedWindow.toggleDevTools();
+            focusedWindow.webContents.toggleDevTools();
         }
       },
     ]
   },
   {
-    label: <span class="hljs-string">&apos;Window&apos;</span>,
     role: <span class="hljs-string">&apos;window&apos;</span>,
     submenu: [
       {
-        label: <span class="hljs-string">&apos;Minimize&apos;</span>,
-        accelerator: <span class="hljs-string">&apos;CmdOrCtrl+M&apos;</span>,
         role: <span class="hljs-string">&apos;minimize&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Close&apos;</span>,
-        accelerator: <span class="hljs-string">&apos;CmdOrCtrl+W&apos;</span>,
         role: <span class="hljs-string">&apos;close&apos;</span>
       },
     ]
   },
   {
-    label: <span class="hljs-string">&apos;Help&apos;</span>,
     role: <span class="hljs-string">&apos;help&apos;</span>,
     submenu: [
       {
         label: <span class="hljs-string">&apos;Learn More&apos;</span>,
-        click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).shell.openExternal(<span class="hljs-string">&apos;http://electron.atom.io&apos;</span>) }
+        click() { <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).shell.openExternal(<span class="hljs-string">&apos;http://electron.atom.io&apos;</span>); }
       },
     ]
   },
 ];
 
-<span class="hljs-keyword">if</span> (process.platform == <span class="hljs-string">&apos;darwin&apos;</span>) {
-  <span class="hljs-keyword">var</span> name = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote.app.getName();
+<span class="hljs-keyword">if</span> (process.platform === <span class="hljs-string">&apos;darwin&apos;</span>) {
+  <span class="hljs-keyword">const</span> name = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote.app.getName();
   template.unshift({
     label: name,
     submenu: [
       {
-        label: <span class="hljs-string">&apos;About &apos;</span> + name,
         role: <span class="hljs-string">&apos;about&apos;</span>
       },
       {
         type: <span class="hljs-string">&apos;separator&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Services&apos;</span>,
         role: <span class="hljs-string">&apos;services&apos;</span>,
         submenu: []
       },
@@ -1082,31 +1051,38 @@ simple template API:</p>
         type: <span class="hljs-string">&apos;separator&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Hide &apos;</span> + name,
-        accelerator: <span class="hljs-string">&apos;Command+H&apos;</span>,
         role: <span class="hljs-string">&apos;hide&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Hide Others&apos;</span>,
-        accelerator: <span class="hljs-string">&apos;Command+Alt+H&apos;</span>,
         role: <span class="hljs-string">&apos;hideothers&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Show All&apos;</span>,
         role: <span class="hljs-string">&apos;unhide&apos;</span>
       },
       {
         type: <span class="hljs-string">&apos;separator&apos;</span>
       },
       {
-        label: <span class="hljs-string">&apos;Quit&apos;</span>,
-        accelerator: <span class="hljs-string">&apos;Command+Q&apos;</span>,
-        click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ app.quit(); }
+        role: <span class="hljs-string">&apos;quit&apos;</span>
       },
     ]
   });
   <span class="hljs-comment">// Window menu.</span>
-  template[<span class="hljs-number">3</span>].submenu.push(
+  template[<span class="hljs-number">3</span>].submenu = [
+    {
+      label: <span class="hljs-string">&apos;Close&apos;</span>,
+      accelerator: <span class="hljs-string">&apos;CmdOrCtrl+W&apos;</span>,
+      role: <span class="hljs-string">&apos;close&apos;</span>
+    },
+    {
+      label: <span class="hljs-string">&apos;Minimize&apos;</span>,
+      accelerator: <span class="hljs-string">&apos;CmdOrCtrl+M&apos;</span>,
+      role: <span class="hljs-string">&apos;minimize&apos;</span>
+    },
+    {
+      label: <span class="hljs-string">&apos;Zoom&apos;</span>,
+      role: <span class="hljs-string">&apos;zoom&apos;</span>
+    },
     {
       type: <span class="hljs-string">&apos;separator&apos;</span>
     },
@@ -1114,10 +1090,10 @@ simple template API:</p>
       label: <span class="hljs-string">&apos;Bring All to Front&apos;</span>,
       role: <span class="hljs-string">&apos;front&apos;</span>
     }
-  );
+  ];
 }
 
-<span class="hljs-keyword">var</span> menu = Menu.buildFromTemplate(template);
+<span class="hljs-keyword">const</span> menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
 </code></pre>
 <h2 id="class-menu">Class: Menu</h2>
@@ -1129,17 +1105,20 @@ Menu.setApplicationMenu(menu);
 <ul>
 <li><code>menu</code> Menu</li>
 </ul>
-<p>Sets <code>menu</code> as the application menu on OS X. On Windows and Linux, the <code>menu</code>
+<p>Sets <code>menu</code> as the application menu on macOS. On Windows and Linux, the <code>menu</code>
 will be set as each window&apos;s top menu.</p>
-<h3 id="menusendactiontofirstresponderaction-os-x"><code>Menu.sendActionToFirstResponder(action)</code> <em>OS X</em></h3>
+<p><strong>Note:</strong> This API has to be called after the <code>ready</code> event of <code>app</code> module.</p>
+<h3 id="menugetapplicationmenu"><code>Menu.getApplicationMenu()</code></h3>
+<p>Returns the application menu (an instance of <code>Menu</code>), if set, or <code>null</code>, if not set.</p>
+<h3 id="menusendactiontofirstresponderaction-macos"><code>Menu.sendActionToFirstResponder(action)</code> <em>macOS</em></h3>
 <ul>
 <li><code>action</code> String</li>
 </ul>
 <p>Sends the <code>action</code> to the first responder of application. This is used for
 emulating default Cocoa menu behaviors, usually you would just use the
 <code>role</code> property of <code>MenuItem</code>.</p>
-<p>See the <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/EventOverview/EventArchitecture/EventArchitecture.html#//apple_ref/doc/uid/10000060i-CH3-SW7" target="_blank">OS X Cocoa Event Handling Guide</a>
-for more information on OS X&apos;s native actions.</p>
+<p>See the <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/EventOverview/EventArchitecture/EventArchitecture.html#//apple_ref/doc/uid/10000060i-CH3-SW7" target="_blank">macOS Cocoa Event Handling Guide</a>
+for more information on macOS&apos; native actions.</p>
 <h3 id="menubuildfromtemplatetemplate"><code>Menu.buildFromTemplate(template)</code></h3>
 <ul>
 <li><code>template</code> Array</li>
@@ -1155,7 +1134,7 @@ will become properties of the constructed menu items.</p>
 <li><code>browserWindow</code> BrowserWindow (optional) - Default is <code>null</code>.</li>
 <li><code>x</code> Number (optional) - Default is -1.</li>
 <li><code>y</code> Number (<strong>required</strong> if <code>x</code> is used) - Default is -1.</li>
-<li><code>positioningItem</code> Number (optional) <em>OS X</em> - The index of the menu item to
+<li><code>positioningItem</code> Number (optional) <em>macOS</em> - The index of the menu item to
 be positioned under the mouse cursor at the specified coordinates. Default is
 -1.</li>
 </ul>
@@ -1177,11 +1156,11 @@ at the current mouse cursor position.</p>
 <p><code>menu</code> objects also have the following properties:</p>
 <h3 id="menuitems"><code>menu.items</code></h3>
 <p>Get an array containing the menu&apos;s items.</p>
-<h2 id="notes-on-os-x-application-menu">Notes on OS X Application Menu</h2>
-<p>OS X has a completely different style of application menu from Windows and
+<h2 id="notes-on-macos-application-menu">Notes on macOS Application Menu</h2>
+<p>macOS has a completely different style of application menu from Windows and
 Linux, here are some notes on making your app&apos;s menu more native-like.</p>
 <h3 id="standard-menus">Standard Menus</h3>
-<p>On OS X there are many system defined standard menus, like the <code>Services</code> and
+<p>On macOS there are many system defined standard menus, like the <code>Services</code> and
 <code>Windows</code> menus. To make your menu a standard menu, you should set your menu&apos;s
 <code>role</code> to one of following and Electron will recognize them and make them
 become standard menus:</p>
@@ -1191,11 +1170,11 @@ become standard menus:</p>
 <li><code>services</code></li>
 </ul>
 <h3 id="standard-menu-item-actions">Standard Menu Item Actions</h3>
-<p>OS X has provided standard actions for some menu items, like <code>About xxx</code>,
+<p>macOS has provided standard actions for some menu items, like <code>About xxx</code>,
 <code>Hide xxx</code>, and <code>Hide Others</code>. To set the action of a menu item to a standard
 action, you should set the <code>role</code> attribute of the menu item.</p>
 <h3 id="main-menus-name">Main Menu&apos;s Name</h3>
-<p>On OS X the label of application menu&apos;s first item is always your app&apos;s name,
+<p>On macOS the label of application menu&apos;s first item is always your app&apos;s name,
 no matter what label you set. To change it you have to change your app&apos;s name
 by modifying your app bundle&apos;s <code>Info.plist</code> file. See <a href="https://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html" target="_blank">About Information
 Property List Files</a> for more information.</p>

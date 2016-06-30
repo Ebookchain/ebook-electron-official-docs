@@ -53,7 +53,7 @@
         data-chapter-title="contentTracing"
         data-filepath="api/content-tracing.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,22 +926,24 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="contenttracing">contentTracing</h1>
-<p><code>content-tracing</code> &#xBAA8;&#xB4C8;&#xC740; Chromium &#xCEE8;&#xD150;&#xCE20; &#xBAA8;&#xB4C8;&#xB2E8;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC218;&#xC9D1;&#xD558;&#xACE0;
-&#xCD94;&#xC801;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC774; &#xBAA8;&#xB4C8;&#xC740; &#xC6F9; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xC73C;&#xBA70; &#xD06C;&#xB86C;
-&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; <code>chrome://tracing/</code> &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC5F4;&#xC5B4; &#xC0DD;&#xC131;&#xB41C; &#xD30C;&#xC77C;&#xC744; &#xB85C;&#xB4DC;&#xD558;&#xBA74; &#xACB0;&#xACFC;&#xB97C; &#xBCFC; &#xC218;
-&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> contentTracing = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).contentTracing;
+<blockquote>
+<p>&#xC131;&#xB2A5;&#xC0C1;&#xC758; &#xBCD1;&#xBAA9; &#xD604;&#xC0C1;&#xACFC; &#xB290;&#xB9B0; &#xC791;&#xC5C5;&#xC744; &#xCC3E;&#xAE30; &#xC704;&#xD574; Chromium&#xC758; &#xCF58;&#xD150;&#xCE20; &#xBAA8;&#xB4C8;&#xC5D0;&#xC11C; &#xCD94;&#xC801; &#xB370;&#xC774;&#xD130;&#xB97C;
+&#xC218;&#xC9D1;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xC774; &#xBAA8;&#xB4C8;&#xC740; &#xC6F9; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xC73C;&#xBA70; Chrome &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C;
+<code>chrome://tracing/</code> &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC5F4;&#xACE0; &#xC0DD;&#xC131;&#xB41C; &#xD30C;&#xC77C;&#xC744; &#xB85C;&#xB4DC;&#xD558;&#xBA74; &#xACB0;&#xACFC;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {contentTracing} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
 
 <span class="hljs-keyword">const</span> options = {
   categoryFilter: <span class="hljs-string">&apos;*&apos;</span>,
   traceOptions: <span class="hljs-string">&apos;record-until-full,enable-sampling&apos;</span>
 };
 
-contentTracing.startRecording(options, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+contentTracing.startRecording(options, () =&gt; {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Tracing started&apos;</span>);
 
-  setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    contentTracing.stopRecording(<span class="hljs-string">&apos;&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">path</span>) </span>{
+  setTimeout(() =&gt; {
+    contentTracing.stopRecording(<span class="hljs-string">&apos;&apos;</span>, (path) =&gt; {
       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Tracing data recorded to &apos;</span> + path);
     });
   }, <span class="hljs-number">5000</span>);
@@ -955,7 +957,7 @@ contentTracing.startRecording(options, <span class="hljs-function"><span class="
 </ul>
 <p>&#xCE74;&#xD14C;&#xACE0;&#xB9AC; &#xADF8;&#xB8F9; &#xC138;&#xD2B8;&#xB97C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;. &#xCE74;&#xD14C;&#xACE0;&#xB9AC; &#xADF8;&#xB8F9;&#xC740; &#xB3C4;&#xB2EC;&#xB41C; &#xCF54;&#xB4DC; &#xACBD;&#xB85C;&#xB97C; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>&#xBAA8;&#xB4E0; child &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; <code>getCategories</code> &#xC694;&#xCCAD;&#xC744; &#xC2B9;&#xC778;&#xD558;&#xBA74; <code>callback</code>&#xC774; &#xD55C; &#xBC88; &#xD638;&#xCD9C;&#xB418;&#xBA70;
-&#xC778;&#xC790;&#xC5D0; &#xCE74;&#xD14C;&#xACE0;&#xB9AC; &#xADF8;&#xB8F9;&#xC758; &#xBC30;&#xC5F4;&#xC774; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+&#xC778;&#xC218;&#xC5D0; &#xCE74;&#xD14C;&#xACE0;&#xB9AC; &#xADF8;&#xB8F9;&#xC758; &#xBC30;&#xC5F4;&#xC774; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <h3 id="contenttracingstartrecordingoptions-callback"><code>contentTracing.startRecording(options, callback)</code></h3>
 <ul>
 <li><code>options</code> Object<ul>
@@ -972,7 +974,7 @@ EnableRecording &#xC694;&#xCCAD;&#xC744; &#xBC1B;&#xAC8C; &#xB429;&#xB2C8;&#xB2E
 <p><code>categoryFilter</code>&#xB294; &#xC5B4;&#xB5A4; &#xCE74;&#xD14C;&#xACE0;&#xB9AC; &#xADF8;&#xB8F9;&#xC774; &#xD2B8;&#xB808;&#xC774;&#xC2F1; &#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB294;&#xC9C0; &#xD544;&#xD130;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xD544;&#xD130;&#xB294; <code>-</code> &#xC811;&#xB450;&#xC0AC;&#xB97C; &#xD1B5;&#xD574; &#xD2B9;&#xC815; &#xCE74;&#xD14C;&#xACE0;&#xB9AC; &#xADF8;&#xB8F9;&#xC744; &#xC81C;&#xC678;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCE74;&#xD14C;&#xACE0;&#xB9AC; &#xD328;&#xD134;&#xC740; &#xAC19;&#xC740;
 &#xB9AC;&#xC2A4;&#xD2B8; &#xB0B4;&#xC5D0;&#xC11C; &#xD3EC;&#xD568;&#xACFC; &#xC81C;&#xC678;&#xB97C; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC608;&#xC81C;:</p>
+<p>&#xC608;&#xC2DC;:</p>
 <ul>
 <li><code>test_MyTest*</code>,</li>
 <li><code>test_MyTest*,test_OtherStuff</code>,</li>

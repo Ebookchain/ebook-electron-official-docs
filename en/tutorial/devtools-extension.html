@@ -53,7 +53,7 @@
         data-chapter-title="DevTools Extension"
         data-filepath="tutorial/devtools-extension.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,45 +926,54 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="devtools-extension">DevTools Extension</h1>
-<p>To make debugging easier, Electron has basic support for the
-<a href="https://developer.chrome.com/extensions/devtools" target="_blank">Chrome DevTools Extension</a>.</p>
-<p>For most DevTools extensions you can simply download the source code and use
-the <code>BrowserWindow.addDevToolsExtension</code> API to load them. The loaded extensions
-will be remembered so you don&apos;t need to call the API every time when creating
-a window.</p>
-<p><strong> NOTE: React DevTools does not work, follow the issue here <a href="https://github.com/electron/electron/issues/915" target="_blank">https://github.com/electron/electron/issues/915</a> </strong></p>
-<p>For example, to use the <a href="https://github.com/facebook/react-devtools" target="_blank">React DevTools Extension</a>
-, first you need to download its source code:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> /some-directory
-$ git <span class="hljs-built_in">clone</span> --recursive https://github.com/facebook/react-devtools.git
-</code></pre>
-<p>Follow the instructions in <a href="https://github.com/facebook/react-devtools/blob/master/shells/chrome/Readme.md" target="_blank"><code>react-devtools/shells/chrome/Readme.md</code></a> to build the extension.</p>
-<p>Then you can load the extension in Electron by opening DevTools in any window,
-and running the following code in the DevTools console:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).remote.BrowserWindow;
-BrowserWindow.addDevToolsExtension(<span class="hljs-string">&apos;/some-directory/react-devtools/shells/chrome&apos;</span>);
-</code></pre>
-<p>To unload the extension, you can call the <code>BrowserWindow.removeDevToolsExtension</code>
-API with its name and it will not load the next time you open the DevTools:</p>
-<pre><code class="lang-javascript">BrowserWindow.removeDevToolsExtension(<span class="hljs-string">&apos;React Developer Tools&apos;</span>);
-</code></pre>
-<h2 id="format-of-devtools-extension">Format of DevTools Extension</h2>
-<p>Ideally all DevTools extensions written for the Chrome browser can be loaded by
-Electron, but they have to be in a plain directory. For those packaged with
-<code>crx</code> extensions, there is no way for Electron to load them unless you find a
-way to extract them into a directory.</p>
-<h2 id="background-pages">Background Pages</h2>
-<p>Currently Electron doesn&apos;t support the background pages feature in Chrome
-extensions, so some DevTools extensions that rely on this feature may
-not work in Electron.</p>
-<h2 id="chrome-apis"><code>chrome.*</code> APIs</h2>
-<p>Some Chrome extensions may use <code>chrome.*</code> APIs for features and while there has
-been some effort to implement those APIs in Electron, not all have been
-implemented.</p>
-<p>Given that not all <code>chrome.*</code> APIs are implemented if the DevTools extension is
-using APIs other than <code>chrome.devtools.*</code>, the extension is very likely not to
-work. You can report failing extensions in the issue tracker so that we can add
-support for those APIs.</p>
+<p>Electron supports the <a href="https://developer.chrome.com/extensions/devtools" target="_blank">Chrome DevTools Extension</a>, which can
+be used to extend the ability of devtools for debugging popular web frameworks.</p>
+<h2 id="how-to-load-a-devtools-extension">How to load a DevTools Extension</h2>
+<p>To load an extension in Electron, you need to download it in Chrome browser,
+locate its filesystem path, and then load it by calling the
+<code>BrowserWindow.addDevToolsExtension(extension)</code> API.</p>
+<p>Using the <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" target="_blank">React Developer Tools</a> as example:</p>
+<ol>
+<li>Install it in Chrome browser.</li>
+<li>Navigate to <code>chrome://extensions</code>, and find its extension ID, which is a hash
+string like <code>fmkadmapgofadopljbjfkapdkoienihi</code>.</li>
+<li>Find out filesystem location used by Chrome for storing extensions:<ul>
+<li>on Windows it is <code>%LOCALAPPDATA%\Google\Chrome\User Data\Default\Extensions</code>;</li>
+<li>on Linux it could be:<ul>
+<li><code>~/.config/google-chrome/Default/Extensions/</code></li>
+<li><code>~/.config/google-chrome-beta/Default/Extensions/</code></li>
+<li><code>~/.config/google-chrome-canary/Default/Extensions/</code></li>
+<li><code>~/.config/chromium/Default/Extensions/</code></li>
+</ul>
+</li>
+<li>on macOS it is <code>~/Library/Application Support/Google/Chrome/Default/Extensions</code>.</li>
+</ul>
+</li>
+<li>Pass the location of the extension to <code>BrowserWindow.addDevToolsExtension</code>
+API, for the React Developer Tools, it is something like:
+<code>~/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/0.14.10_0</code></li>
+</ol>
+<p>The name of the extension is returned by <code>BrowserWindow.addDevToolsExtension</code>,
+and you can pass the name of the extension to the <code>BrowserWindow.removeDevToolsExtension</code>
+API to unload it.</p>
+<h2 id="supported-devtools-extensions">Supported DevTools Extensions</h2>
+<p>Electron only supports a limited set of <code>chrome.*</code> APIs, so some extensions
+using unsupported <code>chrome.*</code> APIs for chrome extension features may not work.
+Following Devtools Extensions are tested and guaranteed to work in Electron:</p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi" target="_blank">Ember Inspector</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" target="_blank">React Developer Tools</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/backbone-debugger/bhljhndlimiafopmmhjlgfpnnchjjbhd" target="_blank">Backbone Debugger</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/jquery-debugger/dbhhnnnpaeobfddmlalhnehgclcmjimi" target="_blank">jQuery Debugger</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk" target="_blank">AngularJS Batarang</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd" target="_blank">Vue.js devtools</a></li>
+</ul>
+<h3 id="what-should-i-do-if-a-devtools-extension-is-not-working">What should I do if a DevTools Extension is not working?</h3>
+<p>First please make sure the extension is still being maintained, some extensions
+can not even work for recent versions of Chrome browser, and we are not able to
+do anything for them.</p>
+<p>Then file a bug at Electron&apos;s issues list, and describe which part of the
+extension is not working as expected.</p>
 
                     
                     </section>

@@ -1,0 +1,676 @@
+<!DOCTYPE HTML>
+<html lang="ru" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Mac App Store Submission Guide | Руководства</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="Imfly">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../tutorial/application-packaging.html" />
+    
+    
+    <link rel="prev" href="../tutorial/application-distribution.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3"
+        data-chapter-title="Mac App Store Submission Guide"
+        data-filepath="tutorial/mac-app-store-submission-guide.md"
+        data-basepath=".."
+        data-revision="Thu Jun 30 2016 10:43:46 GMT+0800 (CST)"
+        data-innerlanguage="ru-RU">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Введение
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="tutorial/supported-platforms.html">
+            
+                
+                    <a href="../tutorial/supported-platforms.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Поддерживаемые платформы
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="tutorial/application-distribution.html">
+            
+                
+                    <a href="../tutorial/application-distribution.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Application Distribution
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3" data-path="tutorial/mac-app-store-submission-guide.html">
+            
+                
+                    <a href="../tutorial/mac-app-store-submission-guide.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Mac App Store Submission Guide
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="tutorial/application-packaging.html">
+            
+                
+                    <a href="../tutorial/application-packaging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Application Packaging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="tutorial/using-native-node-modules.html">
+            
+            <span><b>5.</b> Using Native Node Modules</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="tutorial/debugging-main-process.html">
+            
+            <span><b>6.</b> Отладка главного процесса</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="tutorial/using-selenium-and-webdriver.html">
+            
+            <span><b>7.</b> Использование Selenium и WebDriver</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="tutorial/devtools-extension.html">
+            
+            <span><b>8.</b> DevTools Extension</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="tutorial/using-pepper-flash-plugin.html">
+            
+            <span><b>9.</b> Использование Pepper Flash Plugin</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="tutorial/quick-start.html">
+            
+                
+                    <a href="../tutorial/quick-start.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Быстрый старт
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="tutorial/desktop-environment-integration.html">
+            
+            <span><b>11.</b> Desktop Environment Integration</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="tutorial/online-offline-events.html">
+            
+            <span><b>12.</b> Online/Offline Event Detection</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="api/synopsis.html">
+            
+            <span><b>13.</b> Краткий обзор</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="api/process.html">
+            
+            <span><b>14.</b> Process Object</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="api/chrome-command-line-switches.html">
+            
+            <span><b>15.</b> Поддерживаемые параметры командной строки Chrome</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="api/file-object.html">
+            
+            <span><b>16.</b> `File` Object</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="api/web-view-tag.html">
+            
+            <span><b>17.</b> `&lt;webview&gt;` Tag</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="api/window-open.html">
+            
+            <span><b>18.</b> `window.open` Function</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="19" data-path="api/app.html">
+            
+            <span><b>19.</b> app</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="20" data-path="api/auto-updater.html">
+            
+            <span><b>20.</b> autoUpdater</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="21" data-path="api/browser-window.html">
+            
+            <span><b>21.</b> BrowserWindow</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="22" data-path="api/content-tracing.html">
+            
+            <span><b>22.</b> contentTracing</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="23" data-path="api/dialog.html">
+            
+            <span><b>23.</b> dialog</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="24" data-path="api/global-shortcut.html">
+            
+            <span><b>24.</b> globalShortcut</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="25" data-path="api/ipc-main.html">
+            
+            <span><b>25.</b> ipcMain</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="26" data-path="api/menu.html">
+            
+            <span><b>26.</b> Menu</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="27" data-path="api/menu-item.html">
+            
+            <span><b>27.</b> MenuItem</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="28" data-path="api/power-monitor.html">
+            
+            <span><b>28.</b> powerMonitor</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="29" data-path="api/power-save-blocker.html">
+            
+            <span><b>29.</b> powerSaveBlocker</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="30" data-path="api/protocol.html">
+            
+            <span><b>30.</b> protocol</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="31" data-path="api/session.html">
+            
+            <span><b>31.</b> session</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="32" data-path="api/web-contents.html">
+            
+            <span><b>32.</b> webContents</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="33" data-path="api/tray.html">
+            
+            <span><b>33.</b> Tray</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="34" data-path="api/ipc-renderer.html">
+            
+            <span><b>34.</b> ipcRenderer</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="35" data-path="api/remote.html">
+            
+            <span><b>35.</b> remote</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="36" data-path="api/web-frame.html">
+            
+            <span><b>36.</b> webFrame</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="37" data-path="api/clipboard.html">
+            
+            <span><b>37.</b> clipboard</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="38" data-path="api/crash-reporter.html">
+            
+            <span><b>38.</b> crashReporter</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="39" data-path="api/native-image.html">
+            
+            <span><b>39.</b> nativeImage</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="40" data-path="api/screen.html">
+            
+            <span><b>40.</b> screen</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="41" data-path="api/shell.html">
+            
+            <span><b>41.</b> shell</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42" data-path="development/coding-style.html">
+            
+            <span><b>42.</b> Стиль кодирования</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="43" data-path="development/source-code-directory-structure.html">
+            
+            <span><b>43.</b> Source Code Directory Structure</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="44" data-path="development/atom-shell-vs-node-webkit.html">
+            
+            <span><b>44.</b> Technical Differences to NW.js (formerly node-webkit)</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="45" data-path="development/build-system-overview.html">
+            
+            <span><b>45.</b> Обзор системы сборки</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="46" data-path="development/build-instructions-osx.html">
+            
+            <span><b>46.</b> Инструкции по сборке (OS X)</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="47" data-path="development/build-instructions-windows.html">
+            
+            <span><b>47.</b> Инструкции по сборке (Windows)</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="48" data-path="development/build-instructions-linux.html">
+            
+            <span><b>48.</b> Инструкции по сборке (Linux)</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="49" data-path="development/setting-up-symbol-server.html">
+            
+            <span><b>49.</b> Настройка сервера символов для отладчика</span>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Опубликовано с помощью GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Руководства</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x440;&#x443;&#x43A;&#x43E;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E;-&#x43F;&#x43E;-&#x443;&#x442;&#x432;&#x435;&#x440;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x44E;-&#x432;&#x430;&#x448;&#x435;&#x433;&#x43E;-&#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F;-&#x432;-app-store">&#x420;&#x443;&#x43A;&#x43E;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E; &#x43F;&#x43E; &#x443;&#x442;&#x432;&#x435;&#x440;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x44E; &#x432;&#x430;&#x448;&#x435;&#x433;&#x43E; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F; &#x432; App Store</h1>
+<p>&#x41D;&#x430;&#x447;&#x438;&#x43D;&#x430;&#x44F; &#x441; &#x432;&#x435;&#x440;&#x441;&#x438;&#x438; v0.34.0 Electron &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x412;&#x430;&#x43C; &#x441;&#x444;&#x43E;&#x440;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x434;&#x43B;&#x44F; App Store &#x43A; &#x432;&#x430;&#x448;&#x435;&#x43C;&#x443; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44E;.
+&#x414;&#x430;&#x43D;&#x43D;&#x43E;&#x435; &#x440;&#x443;&#x43A;&#x43E;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x441;&#x43E;&#x431;&#x43E;&#x439; &#x43F;&#x43E;&#x448;&#x430;&#x433;&#x43E;&#x432;&#x443;&#x44E; &#x438;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43A;&#x446;&#x438;&#x44E; &#x43F;&#x43E; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x44E; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x444;&#x430;&#x439;&#x43B;&#x43E;&#x432;.</p>
+<p>&#x41F;&#x43E;&#x43C;&#x43D;&#x438;&#x442;&#x435;, &#x447;&#x442;&#x43E; &#x43A;&#x43E;&#x433;&#x434;&#x430; &#x412;&#x44B; &#x43F;&#x43E;&#x434;&#x430;&#x435;&#x442;&#x435; &#x441;&#x432;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x440;&#x430;&#x441;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x43D;&#x438;&#x435; &#x432; App Store &#x412;&#x44B; &#x434;&#x43E;&#x43B;&#x436;&#x43D;&#x44B; &#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x442;&#x44C; &#x430;&#x43A;&#x43A;&#x430;&#x443;&#x43D;&#x442;&#x43E;&#x43C; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x447;&#x438;&#x43A;&#x430;,
+&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x441;&#x442;&#x43E;&#x438;&#x442; &#x434;&#x435;&#x43D;&#x435;&#x433;.</p>
+<h2 id="&#x43A;&#x430;&#x43A;-&#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C;-&#x441;&#x432;&#x43E;&#x435;-&#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435;-&#x43D;&#x430;-&#x440;&#x430;&#x441;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x43D;&#x438;&#x435;-&#x432;-app-store">&#x41A;&#x430;&#x43A; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x432;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x440;&#x430;&#x441;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x43D;&#x438;&#x435; &#x432; App Store</h2>
+<p>&#x41F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x448;&#x430;&#x433;&#x438; &#x43F;&#x43E;&#x434;&#x440;&#x43E;&#x431;&#x43D;&#x43E; &#x43E;&#x43F;&#x438;&#x441;&#x44B;&#x432;&#x430;&#x44E;&#x442;, &#x447;&#x442;&#x43E; &#x438; &#x432; &#x43A;&#x430;&#x43A;&#x43E;&#x439; &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x412;&#x430;&#x43C; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x441;&#x434;&#x435;&#x43B;&#x430;&#x442;&#x44C;, &#x43D;&#x43E; &#x43D;&#x435; &#x433;&#x430;&#x440;&#x430;&#x43D;&#x442;&#x438;&#x440;&#x443;&#x44E;&#x442;, &#x447;&#x442;&#x43E; &#x412;&#x430;&#x448;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x431;&#x443;&#x434;&#x435;&#x442; &#x440;&#x430;&#x441;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x43D;&#x43E; Apple. &#x41C;&#x44B; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x43C; &#x412;&#x430;&#x43C; &#x43F;&#x440;&#x43E;&#x447;&#x438;&#x442;&#x430;&#x442;&#x44C; &#x43E;&#x444;&#x438;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x443;&#x44E; &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x446;&#x438;&#x44E; &#x43F;&#x43E; &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44E; &#x441;&#x432;&#x43E;&#x435;&#x433;&#x43E; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F; &#x438; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x438; &#x43A; &#x43D;&#x435;&#x43C;&#x443;, &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x43F;&#x440;&#x43E;&#x439;&#x442;&#x438; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x443; &#x432; App Store.</p>
+<h2 id="&#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435;-&#x441;&#x435;&#x440;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x442;&#x430;">&#x41F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x435;&#x440;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x442;&#x430;</h2>
+<p>&#x41F;&#x435;&#x440;&#x435;&#x434; &#x442;&#x435;&#x43C;, &#x43A;&#x430;&#x43A; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x432;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x412;&#x44B; &#x434;&#x43E;&#x43B;&#x436;&#x43D;&#x44B; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x441;&#x435;&#x440;&#x442;&#x435;&#x444;&#x438;&#x43A;&#x430;&#x442;, &#x43A;&#x430;&#x43A; &#x44D;&#x442;&#x43E; &#x43E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x43E; &#x432; &#x44D;&#x442;&#x43E;&#x43C; <a href="https://github.com/nwjs/nw.js/wiki/Mac-App-Store-%28MAS%29-Submission-Guideline#first-steps" title="&#x421;&#x441;&#x44B;&#x43B;&#x43A;&#x430; &#x43D;&#x430; &#x440;&#x443;&#x43A;&#x43E;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E;" target="_blank">&#x440;&#x443;&#x43A;&#x43E;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x435;</a></p>
+<h2 id="&#x440;&#x435;&#x433;&#x438;&#x441;&#x442;&#x440;&#x438;&#x440;&#x443;&#x435;&#x43C;-&#x441;&#x432;&#x43E;&#x435;-&#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435;-&#x43F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x44B;&#x432;&#x430;&#x435;&#x43C;">&#x420;&#x435;&#x433;&#x438;&#x441;&#x442;&#x440;&#x438;&#x440;&#x443;&#x435;&#x43C; &#x441;&#x432;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; (&#x43F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x44B;&#x432;&#x430;&#x435;&#x43C;)</h2>
+<p>&#x41F;&#x43E;&#x441;&#x43B;&#x435; &#x442;&#x43E;&#x433;&#x43E;, &#x43A;&#x430;&#x43A; &#x412;&#x44B; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x43B;&#x438; &#x441;&#x435;&#x440;&#x442;&#x435;&#x444;&#x438;&#x43A;&#x430;&#x442;, &#x412;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x443;&#x43F;&#x430;&#x43A;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x441;&#x432;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x435;&#x436;&#x43D;&#x438;&#x435; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44F; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x430;&#x43C; Application Distribution, 
+&#x430; &#x437;&#x430;&#x442;&#x435;&#x43C; &#x43F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x430;&#x442;&#x44C; &#x441;&#x432;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435;. &#x42D;&#x442;&#x43E;&#x442; &#x448;&#x430;&#x433; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x431;&#x430;&#x437;&#x43E;&#x432;&#x44B;&#x43C;, &#x43D;&#x43E; &#x43F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x441;&#x432;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430;&#x43C; &#x43D;&#x443;&#x436;&#x43D;&#x43E; &#x432;&#x441;&#x435;&#x433;&#x43E; &#x43B;&#x438;&#x448;&#x44C; &#x43E;&#x434;&#x438;&#x43D; &#x440;&#x430;&#x437;.</p>
+<p>&#x412;&#x43E;-&#x43F;&#x435;&#x440;&#x432;&#x44B;&#x445;, &#x43D;&#x430;&#x43C; &#x43D;&#x443;&#x436;&#x43D;&#x43E; &#x43F;&#x43E;&#x434;&#x433;&#x43E;&#x442;&#x43E;&#x432;&#x438;&#x442;&#x44C; &#x434;&#x432;&#x430; &#x444;&#x430;&#x439;&#x43B;&#x430;:</p>
+<p><code>child.plist</code>:</p>
+<pre><code class="lang-xml">    <span class="hljs-pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+    <span class="hljs-doctype">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">plist</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;1.0&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">dict</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">key</span>&gt;</span>com.apple.security.app-sandbox<span class="hljs-tag">&lt;/<span class="hljs-title">key</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">true</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">key</span>&gt;</span>com.apple.security.inherit<span class="hljs-tag">&lt;/<span class="hljs-title">key</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">true</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">dict</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">plist</span>&gt;</span>
+</code></pre>
+<p><code>parent.plist</code>:</p>
+<pre><code class="lang-xml">    <span class="hljs-pi">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+    <span class="hljs-doctype">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">plist</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;1.0&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">dict</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">key</span>&gt;</span>com.apple.security.app-sandbox<span class="hljs-tag">&lt;/<span class="hljs-title">key</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">true</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">key</span>&gt;</span>com.apple.security.temporary-exception.sbpl<span class="hljs-tag">&lt;/<span class="hljs-title">key</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">string</span>&gt;</span>(allow mach-lookup (global-name-regex #&quot;^org.chromium.Chromium.rohitfork.[0-9]+$&quot;))<span class="hljs-tag">&lt;/<span class="hljs-title">string</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">dict</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">plist</span>&gt;</span>
+</code></pre>
+<p>&#x417;&#x430;&#x442;&#x435;&#x43C; &#x43F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x44B;&#x432;&#x430;&#x435;&#x43C; &#x441;&#x432;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435;, &#x441; &#x43F;&#x43E;&#x43C;&#x43E;&#x449;&#x44C;&#x44E; &#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x446;&#x435;&#x43D;&#x430;&#x440;&#x438;&#x44F;:</p>
+<pre><code class="lang-bash">    <span class="hljs-comment">#!/bin/bash</span>
+
+    <span class="hljs-comment"># &#x418;&#x43C;&#x44F; &#x432;&#x430;&#x448;&#x435;&#x433;&#x43E; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F;.</span>
+    APP=<span class="hljs-string">&quot;YourApp&quot;</span>
+    <span class="hljs-comment"># &#x41F;&#x443;&#x442;&#x44C; &#x434;&#x43E; &#x432;&#x430;&#x448;&#x435;&#x439;&#x433;&#x43E; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F;.</span>
+    APP_PATH=<span class="hljs-string">&quot;/path/to/YourApp.app&quot;</span>
+    <span class="hljs-comment"># &#x41F;&#x443;&#x442;&#x44C; &#x434;&#x43E; &#x432;&#x430;&#x448;&#x435;&#x433;&#x43E; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43E;&#x447;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x430;.</span>
+    RESULT_PATH=<span class="hljs-string">&quot;~/Desktop/<span class="hljs-variable">$APP</span>.pkg&quot;</span>
+    <span class="hljs-comment"># &#x418;&#x43C;&#x44F; &#x441;&#x435;&#x440;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x442;&#x430; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x435; &#x432;&#x44B; &#x445;&#x43E;&#x442;&#x438;&#x442;&#x435;.</span>
+    APP_KEY=<span class="hljs-string">&quot;3rd Party Mac Developer Application: Company Name (APPIDENTITY)&quot;</span>
+    INSTALLER_KEY=<span class="hljs-string">&quot;3rd Party Mac Developer Installer: Company Name (APPIDENTITY)&quot;</span>
+
+    FRAMEWORKS_PATH=<span class="hljs-string">&quot;<span class="hljs-variable">$APP_PATH</span>/Contents/Frameworks&quot;</span>
+
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Electron Framework.framework/Versions/A/Electron Framework&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Electron Framework.framework/Versions/A/Libraries/libffmpeg.dylib&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Electron Framework.framework/Versions/A/Libraries/libnode.dylib&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/Electron Framework.framework&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper.app/Contents/MacOS/<span class="hljs-variable">$APP</span> Helper&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper.app/&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper EH.app/Contents/MacOS/<span class="hljs-variable">$APP</span> Helper EH&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper EH.app/&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper NP.app/Contents/MacOS/<span class="hljs-variable">$APP</span> Helper NP&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$FRAMEWORKS_PATH</span>/<span class="hljs-variable">$APP</span> Helper NP.app/&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements child.plist <span class="hljs-string">&quot;<span class="hljs-variable">$APP_PATH</span>/Contents/MacOS/<span class="hljs-variable">$APP</span>&quot;</span>
+    codesign <span class="hljs-operator">-s</span> <span class="hljs-string">&quot;<span class="hljs-variable">$APP_KEY</span>&quot;</span> <span class="hljs-operator">-f</span> --entitlements parent.plist <span class="hljs-string">&quot;<span class="hljs-variable">$APP_PATH</span>&quot;</span>
+
+    productbuild --component <span class="hljs-string">&quot;<span class="hljs-variable">$APP_PATH</span>&quot;</span> /Applications --sign <span class="hljs-string">&quot;<span class="hljs-variable">$INSTALLER_KEY</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$RESULT_PATH</span>&quot;</span>
+</code></pre>
+<p>&#x415;&#x441;&#x43B;&#x438; &#x432;&#x44B; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43D;&#x430;&#x447;&#x430;&#x43B;&#x438; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x430;&#x442;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x43F;&#x43E;&#x434; macOS, &#x442;&#x43E; &#x43C;&#x44B; &#x441;&#x43E;&#x432;&#x435;&#x442;&#x443;&#x435;&#x43C; &#x412;&#x430;&#x43C; &#x43F;&#x440;&#x43E;&#x447;&#x438;&#x442;&#x430;&#x442;&#x44C; <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html" title="&#x421;&#x441;&#x44B;&#x43B;&#x43A;&#x430; &#x434;&#x43B;&#x44F; &#x43D;&#x43E;&#x432;&#x438;&#x447;&#x43A;&#x43E;&#x432; &#x432; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x439; &#x434;&#x43B;&#x44F; macOS" target="_blank">App SandBox</a></p>
+<h2 id="&#x43E;&#x431;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435;-&#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F;">&#x41E;&#x431;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F;</h2>
+<p>&#x41F;&#x43E;&#x441;&#x43B;&#x435; &#x442;&#x43E;&#x433;&#x43E;, &#x43A;&#x430;&#x43A; &#x412;&#x44B; &#x43F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x430;&#x43B;&#x438; &#x441;&#x432;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x412;&#x44B; &#x441;&#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x437;&#x430;&#x433;&#x440;&#x443;&#x437;&#x438;&#x442;&#x44C; &#x435;&#x433;&#x43E; &#x432; Itunes Connect &#x434;&#x43B;&#x44F; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x438;, &#x443;&#x431;&#x435;&#x434;&#x438;&#x442;&#x435;&#x441;&#x44C;, &#x447;&#x442;&#x43E; &#x412;&#x44B; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43B;&#x438; <a href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/CreatingiTunesConnectRecord.html" title="&#x441;&#x441;&#x44B;&#x43B;&#x43A;&#x430; &#x43D;&#x430; &#x43F;&#x43E;&#x43A;&#x430;&#x437; &#x43A;&#x430;&#x43A; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x432;&#x430;&#x442;&#x44C; &#x437;&#x430;&#x43F;&#x438;&#x441;&#x44C; &#x432; Itunes Connect" target="_blank">&#x437;&#x430;&#x43F;&#x438;&#x441;&#x44C;</a> &#x43F;&#x435;&#x440;&#x435;&#x434; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x43E;&#x439;.</p>
+<h2 id="&#x43E;&#x431;&#x44A;&#x44F;&#x441;&#x43D;&#x435;&#x43D;&#x438;&#x435;-&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;-temporaryexception">&#x41E;&#x431;&#x44A;&#x44F;&#x441;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &apos;temporary-exception&apos;</h2>
+<p>&#x41A;&#x43E;&#x433;&#x434;&#x430; &#x43F;&#x435;&#x441;&#x43E;&#x447;&#x43D;&#x438;&#x446;&#x430; Apple &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E; &#x438;&#x441;&#x43A;&#x43B;&#x44E;&#x447;&#x438;&#x43B;&#x430; &#x432;&#x430;&#x448;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435;, &#x441;&#x43E;&#x433;&#x43B;&#x430;&#x441;&#x43D;&#x43E; <a href="https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/AppSandboxTemporaryExceptionEntitlements.html" title="&#x414;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x446;&#x438;&#x44F; &#x43F;&#x43E; &#x438;&#x441;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x44F;&#x43C;" target="_blank">&#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x446;&#x438;&#x438;</a> &#x412;&#x430;&#x43C; &#x43D;&#x443;&#x436;&#x43D;&#x43E; &#x43E;&#x431;&#x44A;&#x44F;&#x441;&#x43D;&#x438;&#x442;&#x44C; &#x43D;&#x430;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x44D;&#x442;&#x43E; &#x432;&#x430;&#x436;&#x43D;&#x43E;&#x435; &#x438;&#x441;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435;:</p>
+<blockquote>
+<p>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x447;&#x430;&#x43D;&#x438;&#x435;: &#x435;&#x441;&#x43B;&#x438; &#x412;&#x44B; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E; &#x438;&#x441;&#x43A;&#x43B;&#x44E;&#x447;&#x430;&#x435;&#x442;&#x435; &#x441;&#x432;&#x43E;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435;, &#x43E;&#x431;&#x44F;&#x437;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x43F;&#x440;&#x43E;&#x447;&#x438;&#x442;&#x430;&#x439;&#x442;&#x435; &#x438; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43F;&#x440;&#x430;&#x432;&#x430;&#x43C; &#x43D;&#x430; &#x438;&#x441;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435;.
+&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43F;&#x440;&#x435;&#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x44E;&#x442;&#x441;&#x44F; &#x432; Itunes Connect. &#x421;&#x430;&#x43C;&#x43E;&#x435; &#x432;&#x430;&#x436;&#x43D;&#x43E;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x442;&#x44C; &#x43F;&#x43E;&#x447;&#x435;&#x43C;&#x443; &#x432;&#x430;&#x448;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x434;&#x43E;&#x43B;&#x436;&#x43D;&#x43E; &#x431;&#x44B;&#x442;&#x44C; &#x438;&#x441;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x43D;&#x43E;.</p>
+</blockquote>
+<p>&#x412;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x43E;&#x431;&#x44A;&#x44F;&#x441;&#x43D;&#x438;&#x442;&#x44C;, &#x447;&#x442;&#x43E; &#x432;&#x430;&#x448;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x43E;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43D;&#x43E; &#x43D;&#x430; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x435; &#x431;&#x440;&#x430;&#x443;&#x437;&#x435;&#x440;&#x430; Chromium, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442; Mach &#x438;&#x437;-&#x437;&#x430; &#x435;&#x433;&#x43E; &#x43C;&#x443;&#x43B;&#x44C;&#x442;&#x438;&#x43F;&#x440;&#x43E;&#x446;&#x435;&#x441;&#x441;&#x43D;&#x43E;&#x439; &#x430;&#x440;&#x445;&#x438;&#x442;&#x435;&#x43A;&#x442;&#x443;&#x440;&#x44B;. &#x41D;&#x43E; &#x435;&#x441;&#x442;&#x44C; &#x435;&#x449;&#x435; &#x432;&#x435;&#x440;&#x43E;&#x44F;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44C;, &#x447;&#x442;&#x43E; &#x432;&#x430;&#x448;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x435; &#x443;&#x434;&#x430;&#x43B;&#x43E;&#x441;&#x44C; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x438;&#x43C;&#x435;&#x43D;&#x43D;&#x43E; &#x438;&#x437;-&#x437;&#x430; &#x44D;&#x442;&#x43E;&#x433;&#x43E;.</p>
+<h2 id="&#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430;-&#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F;-&#x43D;&#x430;-&#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x443;">&#x41E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F; &#x43D;&#x430; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x443;</h2>
+<p>&#x421;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x448;&#x430;&#x433;&#x438; &#x43E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x44B; &#x432; &#x43E;&#x444;&#x438;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; <a href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/SubmittingTheApp.html" title="&#x41E;&#x444;&#x438;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x441;&#x442;&#x430;&#x442;&#x44C;&#x44F; &#x43F;&#x43E; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x435; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F; &#x43D;&#x430; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x443;" target="_blank">&#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x446;&#x438;&#x438;</a></p>
+<h1 id="&#x43E;&#x433;&#x440;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x43D;&#x438;&#x44F;-&#x432;-mac-app-store">&#x41E;&#x433;&#x440;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x432; Mac App Store</h1>
+<p>&#x414;&#x43B;&#x44F; &#x442;&#x43E;&#x433;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x443;&#x434;&#x43E;&#x432;&#x43B;&#x435;&#x442;&#x432;&#x43E;&#x440;&#x438;&#x442;&#x44C; &#x432;&#x441;&#x435;&#x43C; &#x43F;&#x440;&#x43E;&#x441;&#x44C;&#x431;&#x430;&#x43C; SandBox App Store, &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x438;&#x437; &#x43C;&#x43E;&#x434;&#x443;&#x43B;&#x435;&#x439; &#x431;&#x44B;&#x43B;&#x438; &#x43E;&#x442;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x44B;:</p>
+<ul>
+<li>crashReporter</li>
+<li>autoUpdater</li>
+</ul>
+<p>&#x410; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x43F;&#x440;&#x43E;&#x431;&#x43B;&#x435;&#x43C;&#x44B; &#x431;&#x44B;&#x43B;&#x438; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x44B;:</p>
+<ul>
+<li>&#x417;&#x430;&#x445;&#x432;&#x430;&#x442; &#x432;&#x438;&#x434;&#x435;&#x43E; &#x43D;&#x430; &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x445; &#x43C;&#x430;&#x448;&#x438;&#x43D;&#x430;&#x445; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x43D;&#x435; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x442;&#x44C;</li>
+<li>&#x41D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x43D;&#x435; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x442;&#x44C;</li>
+<li>&#x41F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F; &#x43D;&#x435; &#x431;&#x443;&#x434;&#x443;&#x442; &#x432; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x44F; DNS</li>
+</ul>
+<p>&#x422;&#x430;&#x43A;&#x436;&#x435; &#x438;&#x437;-&#x437;&#x430; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; SandBox App Store &#x43D;&#x435;&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x431;&#x44B;&#x442;&#x44C; &#x43D;&#x435; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x44B; &#x438;&#x43B;&#x438; &#x43E;&#x433;&#x440;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x43D;&#x44B;, &#x43F;&#x43E;&#x434;&#x440;&#x43E;&#x431;&#x43D;&#x435;&#x435; &#x43E; &#x43E;&#x433;&#x440;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x43D;&#x438;&#x44F;&#x445; 
+&#x412;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x43F;&#x440;&#x43E;&#x447;&#x438;&#x442;&#x430;&#x442;&#x44C; &#x432; <a href="https://developer.apple.com/app-sandboxing/" title="&#x421;&#x441;&#x44B;&#x43B;&#x43A;&#x430; &#x43D;&#x430; &#x43E;&#x433;&#x440;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x432; SandBox AppStore" target="_blank">&#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x446;&#x438;&#x438;</a></p>
+<h1 id="&#x43A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x433;&#x440;&#x430;&#x444;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435;-&#x430;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C;&#x44B;-&#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435;-&#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;-electron">&#x41A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x433;&#x440;&#x430;&#x444;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x430;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C;&#x44B; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442; Electron</h1>
+<p>&#x421;&#x43C;&#x43E;&#x442;&#x440;&#x44F; &#x432; &#x43A;&#x430;&#x43A;&#x43E;&#x439; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x435; &#x438; &#x433;&#x43E;&#x440;&#x43E;&#x434;&#x435; &#x412;&#x44B; &#x43D;&#x430;&#x445;&#x43E;&#x434;&#x438;&#x442;&#x435;&#x441;&#x44C;, Apple &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x43F;&#x43E;&#x442;&#x440;&#x435;&#x431;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x43E;&#x442; &#x412;&#x430;&#x441; &#x437;&#x430;&#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x430;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C;&#x44B; &#x43A;&#x440;&#x438;&#x43F;&#x442;&#x43E;&#x433;&#x440;&#x430;&#x444;&#x438;&#x438; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x412;&#x44B; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x435;
+&#x438; &#x435;&#x441;&#x43B;&#x438; &#x43F;&#x43E;&#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F;, &#x442;&#x43E; &#x43F;&#x43E;&#x43F;&#x440;&#x43E;&#x441;&#x438;&#x442; &#x412;&#x430;&#x441; &#x43F;&#x440;&#x435;&#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x43A;&#x43E;&#x43F;&#x438;&#x44E; &#x440;&#x435;&#x433;&#x438;&#x441;&#x442;&#x440;&#x430;&#x446;&#x438;&#x438; &#x432;&#x430;&#x448;&#x435;&#x433;&#x43E; &#x430;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C;&#x430; &#x448;&#x438;&#x444;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;.</p>
+<p>Electron &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x430;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C;&#x44B; &#x448;&#x438;&#x444;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;:</p>
+<ul>
+<li>AES - NIST SP 800-38A, NIST SP 800-38D, RFC 3394</li>
+<li>HMAC - FIPS 198-1</li>
+<li>ECDSA - ANS X9.62&#x2013;2005</li>
+<li>ECDH - ANS X9.63&#x2013;2001</li>
+<li>HKDF - NIST SP 800-56C</li>
+<li>PBKDF2 - RFC 2898</li>
+<li>RSA - RFC 3447</li>
+<li>SHA - FIPS 180-4</li>
+<li>Blowfish - <a href="https://www.schneier.com/cryptography/blowfish/" target="_blank">https://www.schneier.com/cryptography/blowfish/</a></li>
+<li>CAST - RFC 2144, RFC 2612</li>
+<li>DES - FIPS 46-3</li>
+<li>DH - RFC 2631</li>
+<li>DSA - ANSI X9.30</li>
+<li>EC - SEC 1</li>
+<li>IDEA - &#x201C;On the Design and Security of Block Ciphers&#x201D; book by X. Lai</li>
+<li>MD2 - RFC 1319</li>
+<li>MD4 - RFC 6150</li>
+<li>MD5 - RFC 1321</li>
+<li>MDC2 - ISO/IEC 10118-2</li>
+<li>RC2 - RFC 2268</li>
+<li>RC4 - RFC 4345</li>
+<li>RC5 - <a href="http://people.csail.mit.edu/rivest/Rivest-rc5rev.pdf" target="_blank">http://people.csail.mit.edu/rivest/Rivest-rc5rev.pdf</a></li>
+<li>RIPEMD - ISO/IEC 10118-3</li>
+</ul>
+<p>&#x415;&#x441;&#x43B;&#x438; &#x412;&#x44B; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x435; &#x43D;&#x435;&#x43E;&#x431;&#x44B;&#x447;&#x43D;&#x44B;&#x439; &#x430;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C;, &#x442;&#x43E; &#x432;&#x43E;&#x442; &#x441;&#x442;&#x430;&#x442;&#x44C;&#x44F; &#x43E; &#x442;&#x43E;&#x43C;, &#x43A;&#x430;&#x43A; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x43E;&#x431;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x430;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C;&#x430; &#x448;&#x438;&#x444;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x432;
+&#x440;&#x430;&#x43C;&#x43A;&#x430;&#x445; &#x437;&#x430;&#x43A;&#x43E;&#x43D;&#x430; &#x421;&#x428;&#x410; - <a href="https://pupeno.com/2015/12/15/legally-submit-app-apples-app-store-uses-encryption-obtain-ern/" title="&#x421;&#x442;&#x430;&#x442;&#x44C;&#x44F; &#x43E; &#x442;&#x43E;&#x43C; &#x43A;&#x430;&#x43A; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430; &#x441;&#x432;&#x43E;&#x439; &#x430;&#x43B;&#x433;&#x43E;&#x440;&#x438;&#x442;&#x43C; &#x448;&#x438;&#x444;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;" target="_blank">&#x441;&#x442;&#x430;&#x442;&#x44C;&#x44F;</a></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../tutorial/application-distribution.html" class="navigation navigation-prev " aria-label="Previous page: Application Distribution"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../tutorial/application-packaging.html" class="navigation navigation-next " aria-label="Next page: Application Packaging"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-baidu/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        <script>var _hmt = _hmt || [];(function() {var hm = document.createElement('script');hm.src = '//hm.baidu.com/hm.js?acfc5cd60db044270ff996429917c2b7';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(hm, s);})();</script>
+    </body>
+    
+</html>

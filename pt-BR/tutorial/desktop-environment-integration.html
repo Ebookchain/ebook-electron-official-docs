@@ -53,7 +53,7 @@
         data-chapter-title="Integração com o Ambiente de Desenvolvimento"
         data-filepath="tutorial/desktop-environment-integration.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:51 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:22 GMT+0800 (CST)"
         data-innerlanguage="pt-BR">
     
 
@@ -620,8 +620,8 @@ inserir atalhos no JumpList da barra de tarefas, no Mac, aplica&#xE7;&#xF5;es po
 menu customizado na dock.</p>
 <p>Este guia explica como integrar suas aplica&#xE7;&#xF5;es no ambiente desktop com a API
 do Electron.</p>
-<h2 id="documentos-recentes-windows--os-x">Documentos Recentes (Windows &amp; OS X)</h2>
-<p>O Windows e o OS X disponibilizam um acesso f&#xE1;cil para a lista de arquivos
+<h2 id="documentos-recentes-windows--macos">Documentos Recentes (Windows &amp; macOS)</h2>
+<p>O Windows e o macOS disponibilizam um acesso f&#xE1;cil para a lista de arquivos
 abertos recentemente pela aplica&#xE7;&#xE3;o atrav&#xE9;s do JumpList ou Dock Menu respectivamente.</p>
 <p><strong>JumpList:</strong></p>
 <p><img src="http://i.msdn.microsoft.com/dynimg/IC420538.png" alt="JumpList Recent Files"></p>
@@ -645,17 +645,17 @@ Voc&#xEA; pode encontrar qualquer coisa sobre o registro da aplicac&#xE3;o em
 <p>Quando um usu&#xE1;rio clica em um arquivo na JumpList, uma nova inst&#xE2;ncia da sua aplicac&#xE3;o
 deve ser iniciada com o caminho do arquivo adicionado como um argumento de
 linha de comando.</p>
-<h3 id="notas-para-os-x">Notas para OS X</h3>
+<h3 id="notas-para-macos">Notas para macOS</h3>
 <p>Quando um arquivo for requisitado pelo menu de documentos recentes, o evento <code>open-file</code>
 do m&#xF3;dulo <code>app</code> ir&#xE1; ser emitido.</p>
-<h2 id="dock-menu-customizado-os-x">Dock Menu customizado (OS X)</h2>
-<p>OS X permite que desenvolvedores especifiquem um menu customizado para a dock,
+<h2 id="dock-menu-customizado-macos">Dock Menu customizado (macOS)</h2>
+<p>macOS permite que desenvolvedores especifiquem um menu customizado para a dock,
 que normalmente cont&#xE9;m alguns atalhos para as funcionalidades mais utilizadas
 da sua aplica&#xE7;&#xE3;o.</p>
 <p><strong>Dock menu do Terminal.app:</strong></p>
 <p><img src="https://cloud.githubusercontent.com/assets/639601/5069962/6032658a-6e9c-11e4-9953-aa84006bdfff.png" height="354" width="341"></p>
 <p>Para criar seu Dock Menu customizado, voc&#xEA; pode usar a API <code>app.dock.setMenu</code>,
-ela est&#xE1; dispon&#xED;vel apenas no OS X:</p>
+ela est&#xE1; dispon&#xED;vel apenas no macOS:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;app&apos;</span>);
 <span class="hljs-keyword">var</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;menu&apos;</span>);
 <span class="hljs-keyword">var</span> dockMenu = Menu.buildFromTemplate([
@@ -690,7 +690,7 @@ change.</p>
 </blockquote>
 <p><strong>Tarefas do Internet Explorer:</strong></p>
 <p><img src="http://i.msdn.microsoft.com/dynimg/IC420539.png" alt="IE"></p>
-<p>Ao contr&#xE1;rio do Menu Dock no OS X que &#xE9; um verdadeiro menu, tarefas do usu&#xE1;rio no Windows
+<p>Ao contr&#xE1;rio do Menu Dock no macOS que &#xE9; um verdadeiro menu, tarefas do usu&#xE1;rio no Windows
 funcionam como atalhos, de uma forma que quando o usu&#xE1;rio clica em uma tarefa, um programa
 deve ser executado com os argumentos especificados.</p>
 <p>Para setar tarefas do usu&#xE1;rio para sua aplica&#xE7;&#xE3;o, voc&#xEA; pode usar a API
@@ -776,8 +776,8 @@ de progresso no &#xED;cone do lan&#xE7;ador.</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});
 <span class="hljs-built_in">window</span>.setProgressBar(<span class="hljs-number">0.5</span>);
 </code></pre>
-<h2 id="representa&#xE7;&#xE3;o-do-arquivo-na-janela-os-x">Representa&#xE7;&#xE3;o do arquivo na janela (OS X)</h2>
-<p>No OS X, uma janela pode possuir a representa&#xE7;&#xE3;o de um arquivo na barra de t&#xED;tulo,
+<h2 id="representa&#xE7;&#xE3;o-do-arquivo-na-janela-macos">Representa&#xE7;&#xE3;o do arquivo na janela (macOS)</h2>
+<p>No macOS, uma janela pode possuir a representa&#xE7;&#xE3;o de um arquivo na barra de t&#xED;tulo,
 permitindo que ao usu&#xE1;rio acionar um Command-Click ou Control-Click sobre o t&#xED;tulo da janela,
 uma pop-up de navega&#xE7;&#xE3;o entre arquivos &#xE9; exibida.</p>
 <p>Voc&#xEA; tamb&#xE9;m pode inserir um estado de edi&#xE7;&#xE3;o na janela para que o &#xED;cone do arquivo

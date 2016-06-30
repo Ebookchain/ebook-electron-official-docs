@@ -53,7 +53,7 @@
         data-chapter-title="nativeImage"
         data-filepath="api/native-image.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:45 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:17 GMT+0800 (CST)"
         data-innerlanguage="en">
     
 
@@ -926,21 +926,31 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="nativeimage">nativeImage</h1>
+<blockquote>
+<p>Create tray, dock, and application icons using PNG or JPG files.</p>
+</blockquote>
 <p>In Electron, for the APIs that take images, you can pass either file paths or
 <code>nativeImage</code> instances. An empty image will be used when <code>null</code> is passed.</p>
 <p>For example, when creating a tray or setting a window&apos;s icon, you can pass an
 image file path as a <code>String</code>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
-<span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({icon: <span class="hljs-string">&apos;/Users/somebody/images/window.png&apos;</span>});
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({icon: <span class="hljs-string">&apos;/Users/somebody/images/window.png&apos;</span>});
 </code></pre>
 <p>Or read the image from the clipboard which returns a <code>nativeImage</code>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> image = clipboard.readImage();
-<span class="hljs-keyword">var</span> appIcon = <span class="hljs-keyword">new</span> Tray(image);
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> image = clipboard.readImage();
+<span class="hljs-keyword">const</span> appIcon = <span class="hljs-keyword">new</span> Tray(image);
 </code></pre>
 <h2 id="supported-formats">Supported Formats</h2>
 <p>Currently <code>PNG</code> and <code>JPEG</code> image formats are supported. <code>PNG</code> is recommended
 because of its support for transparency and lossless compression.</p>
-<p>On Windows, you can also load an <code>ICO</code> icon from a file path.</p>
+<p>On Windows, you can also load <code>ICO</code> icons from file paths, to get best visual
+effects it is recommended to include at least followings sizes in the icon:</p>
+<ul>
+<li>16x16</li>
+<li>32x32</li>
+<li>64x64</li>
+<li>256x256</li>
+</ul>
 <h2 id="high-resolution-image">High Resolution Image</h2>
 <p>On platforms that have high-DPI support, you can append <code>@2x</code> after image&apos;s
 base filename to mark it as a high resolution image.</p>
@@ -955,7 +965,7 @@ without DPI suffixes. For example:</p>
 &#x251C;&#x2500;&#x2500; icon@2x.png
 &#x2514;&#x2500;&#x2500; icon@3x.png
 </code></pre>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> appIcon = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
 </code></pre>
 <p>Following suffixes for DPI are also supported:</p>
 <ul>
@@ -977,7 +987,7 @@ Template images are not intended to be used as standalone images and are usually
 mixed with other content to create the desired final appearance.</p>
 <p>The most common case is to use template images for a menu bar icon so it can
 adapt to both light and dark menu bars.</p>
-<p><strong>Note:</strong> Template image is only supported on OS X.</p>
+<p><strong>Note:</strong> Template image is only supported on macOS.</p>
 <p>To mark an image as a template image, its filename should end with the word
 <code>Template</code>. For example:</p>
 <ul>
@@ -993,6 +1003,10 @@ adapt to both light and dark menu bars.</p>
 <li><code>path</code> String</li>
 </ul>
 <p>Creates a new <code>nativeImage</code> instance from a file located at <code>path</code>.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> nativeImage = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).nativeImage;
+
+<span class="hljs-keyword">let</span> image = nativeImage.createFromPath(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
+</code></pre>
 <h3 id="nativeimagecreatefrombufferbuffer-scalefactor"><code>nativeImage.createFromBuffer(buffer[, scaleFactor])</code></h3>
 <ul>
 <li><code>buffer</code> <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer" target="_blank">Buffer</a></li>
@@ -1007,22 +1021,18 @@ adapt to both light and dark menu bars.</p>
 <p>Creates a new <code>nativeImage</code> instance from <code>dataURL</code>.</p>
 <h2 id="instance-methods">Instance Methods</h2>
 <p>The following methods are available on instances of <code>nativeImage</code>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> nativeImage = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).nativeImage;
-
-<span class="hljs-keyword">var</span> image = nativeImage.createFromPath(<span class="hljs-string">&apos;/Users/somebody/images/icon.png&apos;</span>);
-</code></pre>
-<h3 id="imagetopng"><code>image.toPng()</code></h3>
+<h3 id="imagetopng"><code>image.toPNG()</code></h3>
 <p>Returns a <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer" target="_blank">Buffer</a> that contains the image&apos;s <code>PNG</code> encoded data.</p>
-<h3 id="imagetojpegquality"><code>image.toJpeg(quality)</code></h3>
+<h3 id="imagetojpegquality"><code>image.toJPEG(quality)</code></h3>
 <ul>
 <li><code>quality</code> Integer (<strong>required</strong>) - Between 0 - 100.</li>
 </ul>
 <p>Returns a <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer" target="_blank">Buffer</a> that contains the image&apos;s <code>JPEG</code> encoded data.</p>
 <h3 id="imagetodataurl"><code>image.toDataURL()</code></h3>
 <p>Returns the data URL of the image.</p>
-<h3 id="imagegetnativehandle-os-x"><code>image.getNativeHandle()</code> <em>OS X</em></h3>
+<h3 id="imagegetnativehandle-macos"><code>image.getNativeHandle()</code> <em>macOS</em></h3>
 <p>Returns a <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer" target="_blank">Buffer</a> that stores C pointer to underlying native handle of
-the image. On OS X, a pointer to <code>NSImage</code> instance would be returned.</p>
+the image. On macOS, a pointer to <code>NSImage</code> instance would be returned.</p>
 <p>Notice that the returned pointer is a weak pointer to the underlying native
 image instead of a copy, so you <em>must</em> ensure that the associated
 <code>nativeImage</code> instance is kept around.</p>

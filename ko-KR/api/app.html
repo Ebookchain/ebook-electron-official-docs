@@ -53,7 +53,7 @@
         data-chapter-title="app"
         data-filepath="api/app.md"
         data-basepath=".."
-        data-revision="Mon Jun 06 2016 19:58:52 GMT+0800 (CST)"
+        data-revision="Thu Jun 30 2016 10:43:23 GMT+0800 (CST)"
         data-innerlanguage="ko-KR">
     
 
@@ -926,51 +926,54 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="app">app</h1>
-<p><code>app</code> &#xBAA8;&#xB4C8;&#xC740; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC0DD;&#xBA85;&#xC8FC;&#xAE30; &#xC81C;&#xC5B4;&#xB97C; &#xCC45;&#xC784;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
-<p>&#xBC11;&#xC758; &#xC608;&#xC81C;&#xB294; &#xB9C8;&#xC9C0;&#xB9C9; &#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xC885;&#xB8CC;&#xB418;&#xC5C8;&#xC744; &#xB54C;, &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC885;&#xB8CC;&#xC2DC;&#xD0A4;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>).app;
-app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<blockquote>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC774;&#xBCA4;&#xD2B8; &#xC0DD;&#xBA85;&#xC8FC;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xBC11;&#xC758; &#xC608;&#xC2DC;&#xB294; &#xB9C8;&#xC9C0;&#xB9C9; &#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xC885;&#xB8CC;&#xB418;&#xC5C8;&#xC744; &#xB54C;, &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC885;&#xB8CC;&#xC2DC;&#xD0A4;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>);
+app.on(<span class="hljs-string">&apos;window-all-closed&apos;</span>, () =&gt; {
   app.quit();
 });
 </code></pre>
 <h2 id="events">Events</h2>
 <p><code>app</code> &#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <h3 id="event-willfinishlaunching">Event: &apos;will-finish-launching&apos;</h3>
-<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC2DC;&#xC791; &#xC900;&#xBE44;&#xB97C; &#xB9C8;&#xCE58;&#xBA74; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC2DC;&#xC791; &#xC900;&#xBE44;&#xB97C; &#xB9C8;&#xCE58;&#xBA74; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.
 Windows, Linux &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xC5D0;&#xC11C;&#xC758; <code>will-finish-launching</code> &#xC774;&#xBCA4;&#xD2B8;&#xB294; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xC640;
-&#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;. OS X&#xC5D0;&#xC11C;&#xC758; &#xC774;&#xBCA4;&#xD2B8;&#xB294; <code>NSApplication</code>&#xC758;
+&#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;. macOS&#xC5D0;&#xC11C;&#xC758; &#xC774;&#xBCA4;&#xD2B8;&#xB294; <code>NSApplication</code>&#xC758;
 <code>applicationWillFinishLaunching</code>&#xC5D0; &#xB300;&#xD55C; &#xC54C;&#xB9BC;&#xC73C;&#xB85C; &#xD45C;&#xD604;&#xB429;&#xB2C8;&#xB2E4;. &#xB300;&#xAC1C; &#xC774;&#xACF3;&#xC5D0;&#xC11C;
 <code>open-file</code>&#xACFC; <code>open-url</code> &#xC774;&#xBCA4;&#xD2B8; &#xB9AC;&#xC2A4;&#xB108;&#xB97C; &#xC124;&#xC815;&#xD558;&#xACE0; crash reporter&#xC640; auto updater&#xB97C;
 &#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB300;&#xBD80;&#xBD84;&#xC758; &#xACBD;&#xC6B0;, &#xBAA8;&#xB4E0; &#xAC83;&#xC744; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8; &#xD578;&#xB4E4;&#xB7EC;&#xB85C; &#xD574;&#xACB0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB300;&#xBD80;&#xBD84;&#xC758; &#xACBD;&#xC6B0;, &#xBAA8;&#xB4E0; &#xAC83;&#xC744; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8; &#xD578;&#xB4E4;&#xB7EC; &#xC548;&#xC5D0;&#xC11C; &#xD574;&#xACB0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-ready">Event: &apos;ready&apos;</h3>
 <p>Electron&#xC774; &#xCD08;&#xAE30;&#xD654;&#xB97C; &#xB05D;&#xB0C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-windowallclosed">Event: &apos;window-all-closed&apos;</h3>
 <p>&#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xC885;&#xB8CC;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC644;&#xC804;&#xD788; &#xC885;&#xB8CC;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB54C;&#xB9CC; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.
-&#xB9CC;&#xC57D; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; <code>Cmd + Q</code>&#xB97C; &#xC785;&#xB825;&#xD588;&#xAC70;&#xB098; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; <code>app.quit()</code>&#xB97C; &#xD638;&#xCD9C;&#xD588;&#xB2E4;&#xBA74;,
+<p>&#xB9CC;&#xC57D; &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xAD6C;&#xB3C5;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xC0C1;&#xD0DC;&#xB85C; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xB2EB;&#xD614;&#xC744; &#xB54C;&#xC758; &#xAE30;&#xBCF8; &#xB3D9;&#xC791;&#xC740; &#xC571;&#xC744;
+&#xC885;&#xB8CC;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC;, &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xAD6C;&#xB3C5;&#xD558;&#xBA74;, &#xC571;&#xC744; &#xC885;&#xB8CC;&#xD560;&#xC9C0; &#xB2E4;&#xB978; &#xC77C;&#xC744; &#xD560;&#xC9C0; &#xC81C;&#xC5B4;&#xD560;
+&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; <code>Cmd + Q</code>&#xB97C; &#xC785;&#xB825;&#xD588;&#xAC70;&#xB098; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; <code>app.quit()</code>&#xB97C; &#xD638;&#xCD9C;&#xD588;&#xB2E4;&#xBA74;,
 Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC758; &#xC885;&#xB8CC;&#xB97C; &#xC2DC;&#xB3C4;&#xD558;&#xACE0; <code>will-quit</code> &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB9AC;&#xACE0; <code>will-quit</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC744; &#xB550; <code>window-all-closed</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0;
 &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xC5ED;&#xC8FC;:</strong> &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xB9D0; &#xADF8;&#xB300;&#xB85C; &#xD604;&#xC7AC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C; &#xC708;&#xB3C4;&#xC6B0;&#xB9CC; &#xC644;&#xC804;&#xD788; &#xC885;&#xB8CC;&#xB42C;&#xC744; &#xB54C;
-&#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC644;&#xC804;&#xD788; &#xC885;&#xB8CC;&#xD558;&#xB824;&#xBA74; &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C;
+<p><strong>&#xC5ED;&#xC790;&#xC8FC;:</strong> &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xB9D0; &#xADF8;&#xB300;&#xB85C; &#xD604;&#xC7AC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C; &#xC708;&#xB3C4;&#xC6B0;&#xB9CC; &#xC644;&#xC804;&#xD788; &#xC885;&#xB8CC;&#xB42C;&#xC744; &#xB54C;
+&#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC644;&#xC804;&#xD788; &#xC885;&#xB8CC;&#xD558;&#xB824;&#xBA74; &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C;
 <code>app.quit()</code>&#xB97C; &#xD638;&#xCD9C;&#xD574; &#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-beforequit">Event: &apos;before-quit&apos;</h3>
 <p>Returns:</p>
 <ul>
 <li><code>event</code> Event</li>
 </ul>
-<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC774; &#xB2EB;&#xD788;&#xAE30; &#xC2DC;&#xC791;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC774; &#xB2EB;&#xD788;&#xAE30; &#xC2DC;&#xC791;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.
 <code>event.preventDefault()</code> &#xD638;&#xCD9C;&#xC740; &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xAE30;&#xBCF8; &#xB3D9;&#xC791;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
-&#xC774;&#xB97C; &#xD1B5;&#xD574; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC885;&#xB8CC;&#xB97C; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+&#xC774;&#xB97C; &#xD1B5;&#xD574; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC885;&#xB8CC;&#xB97C; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-willquit">Event: &apos;will-quit&apos;</h3>
 <p>Returns:</p>
 <ul>
 <li><code>event</code> Event</li>
 </ul>
-<p>&#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xACE0; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xAE30; &#xC2DC;&#xC791;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.
-<code>event.preventDefault()</code> &#xD638;&#xCD9C;&#xC744; &#xD1B5;&#xD574; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC885;&#xB8CC;&#xB97C; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p><code>will-quit</code> &#xC640; <code>window-all-closed</code> &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC744; &#xD655;&#xC778;&#xD558;&#xB824;&#xBA74; <code>window-all-close</code>
+<p>&#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xACE0; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xAE30; &#xC2DC;&#xC791;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.
+<code>event.preventDefault()</code> &#xD638;&#xCD9C;&#xC744; &#xD1B5;&#xD574; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC885;&#xB8CC;&#xB97C; &#xBC29;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>will-quit</code> &#xC640; <code>window-all-closed</code> &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC744; &#xD655;&#xC778;&#xD558;&#xB824;&#xBA74; <code>window-all-closed</code>
 &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xC124;&#xBA85;&#xC744; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
 <h3 id="event-quit">Event: &apos;quit&apos;</h3>
 <p>Returns:</p>
@@ -978,60 +981,82 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 <li><code>event</code> Event</li>
 <li><code>exitCode</code> Integer</li>
 </ul>
-<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC885;&#xB8CC;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-openfile-os-x">Event: &apos;open-file&apos; <em>OS X</em></h3>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC885;&#xB8CC;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="event-openfile-macos">Event: &apos;open-file&apos; <em>macOS</em></h3>
 <p>Returns:</p>
 <ul>
 <li><code>event</code> Event</li>
 <li><code>path</code> String</li>
 </ul>
-<p>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD1B5;&#xD574; &#xD30C;&#xC77C;&#xC744; &#xC5F4;&#xACE0;&#xC790; &#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p><code>open-file</code> &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xBCF4;&#xD1B5; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC5F4;&#xB824; &#xC788;&#xC744; &#xB54C; OS&#xAC00; &#xD30C;&#xC77C;&#xC744; &#xC5F4;&#xAE30; &#xC704;&#xD574;
-&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC7AC;&#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xD30C;&#xC77C;&#xC744; dock&#xC5D0; &#xB5A8;&#xC5B4;&#xD2B8;&#xB9B4; &#xB54C;,
-&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xAE30; &#xC804;&#xC5D0;&#xB3C4; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC81C;&#xB300;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xB824;&#xBA74;
-<code>open-file</code> &#xC774;&#xBCA4;&#xD2B8; &#xD578;&#xB4E4;&#xB7EC;&#xB97C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xB4F1;&#xB85D;&#xD574; &#xB193;&#xC558;&#xB294;&#xC9C0; &#xD655;&#xC2E4;&#xD788;
+<p>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD1B5;&#xD574; &#xD30C;&#xC77C;&#xC744; &#xC5F4;&#xACE0;&#xC790; &#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><code>open-file</code> &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xBCF4;&#xD1B5; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC5F4;&#xB824; &#xC788;&#xC744; &#xB54C; OS&#xAC00; &#xD30C;&#xC77C;&#xC744; &#xC5F4;&#xAE30; &#xC704;&#xD574;
+&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC7AC;&#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xD30C;&#xC77C;&#xC744; dock&#xC5D0; &#xB5A8;&#xC5B4;&#xD2B8;&#xB9B4; &#xB54C;,
+&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xAE30; &#xC804;&#xC5D0;&#xB3C4; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC81C;&#xB300;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xB824;&#xBA74;
+<code>open-file</code> &#xC774;&#xBCA4;&#xD2B8; &#xD578;&#xB4E4;&#xB7EC;&#xB97C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xB4F1;&#xB85D;&#xD574; &#xB193;&#xC558;&#xB294;&#xC9C0; &#xD655;&#xC2E4;&#xD788;
 &#xD655;&#xC778;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. (<code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC804;&#xC5D0;)</p>
 <p>&#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xCC98;&#xB9AC;&#xD560; &#xB550; &#xBC18;&#xB4DC;&#xC2DC; <code>event.preventDefault()</code>&#xB97C; &#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>Windows&#xC5D0;&#xC120; <code>process.argv</code> (&#xBA54;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C;)&#xB97C; &#xD1B5;&#xD574; &#xD30C;&#xC77C; &#xACBD;&#xB85C;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-openurl-os-x">Event: &apos;open-url&apos; <em>OS X</em></h3>
+<h3 id="event-openurl-macos">Event: &apos;open-url&apos; <em>macOS</em></h3>
 <p>Returns:</p>
 <ul>
 <li><code>event</code> Event</li>
 <li><code>url</code> String</li>
 </ul>
-<p>&#xC720;&#xC800;&#xAC00; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD1B5;&#xD574; URL&#xC744; &#xC5F4;&#xACE0;&#xC790; &#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C; URL&#xC744; &#xC5F4;&#xAE30; &#xC704;&#xD574; &#xBC18;&#xB4DC;&#xC2DC; URL &#xC2A4;&#xD0B4;&#xC774; &#xB4F1;&#xB85D;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC720;&#xC800;&#xAC00; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD1B5;&#xD574; URL&#xC744; &#xC5F4;&#xACE0;&#xC790; &#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C; URL&#xC744; &#xC5F4;&#xAE30; &#xC704;&#xD574; &#xBC18;&#xB4DC;&#xC2DC; URL &#xC2A4;&#xD0B4;&#xC774; &#xB4F1;&#xB85D;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xCC98;&#xB9AC;&#xD560; &#xB550; &#xBC18;&#xB4DC;&#xC2DC; <code>event.preventDefault()</code>&#xB97C; &#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-activate-os-x">Event: &apos;activate&apos; <em>OS X</em></h3>
+<h3 id="event-activate-macos">Event: &apos;activate&apos; <em>macOS</em></h3>
 <p>Returns:</p>
 <ul>
 <li><code>event</code> Event</li>
 <li><code>hasVisibleWindows</code> Boolean</li>
 </ul>
-<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xD65C;&#xC131;&#xD654; &#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.
-&#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; dock &#xC544;&#xC774;&#xCF58;&#xC744; &#xD074;&#xB9AD;&#xD588;&#xC744; &#xB54C; &#xC8FC;&#xB85C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xD65C;&#xC131;&#xD654; &#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xAC00;
+&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; dock &#xC544;&#xC774;&#xCF58;&#xC744; &#xD074;&#xB9AD;&#xD588;&#xC744; &#xB54C; &#xC8FC;&#xB85C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="event-continueactivity-macos">Event: &apos;continue-activity&apos; <em>macOS</em></h3>
+<p>Returns:</p>
+<ul>
+<li><code>event</code> Event</li>
+<li><code>type</code> String - Activity&#xB97C; &#xC2DD;&#xBCC4;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4;.
+<a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/activityType" target="_blank"><code>NSUserActivity.activityType</code></a>&#xC744; &#xB9F5;&#xD551;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>userInfo</code> Object - &#xB2E4;&#xB978; &#xAE30;&#xAE30;&#xC758; activity&#xC5D0;&#xC11C; &#xC800;&#xC7A5;&#xB41C; &#xC571;-&#xD2B9;&#xC815; &#xC0C1;&#xD0DC;&#xB97C; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#xB2E4;&#xB978; &#xAE30;&#xAE30;&#xC5D0;&#xC11C; &#xBC1B;&#xC544;&#xC628; activity&#xB97C; &#xC7AC;&#xAC1C;&#xD558;&#xB824;&#xACE0; &#xD560; &#xB54C; <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html" target="_blank">Handoff</a> &#xD558;&#xB294; &#xB3D9;&#xC548;
+&#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xCC98;&#xB9AC;&#xD558;&#xB824;&#xBA74; &#xBC18;&#xB4DC;&#xC2DC; <code>event.preventDefault()</code>&#xB97C;
+&#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC0AC;&#xC6A9;&#xC790; activity&#xB294; activity&#xC758; &#xC18C;&#xC2A4; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xACFC; &#xAC19;&#xC740; &#xAC1C;&#xBC1C;&#xC790; &#xD300; ID&#xB97C; &#xAC00;&#xC9C0;&#xB294;
+&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC548;&#xC5D0;&#xC11C;&#xB9CC; &#xC7AC;&#xAC1C;&#xB420; &#xC218; &#xC788;&#xACE0;, activity&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;. &#xC9C0;&#xC6D0;&#xD558;&#xB294;
+activity&#xC758; &#xD0C0;&#xC785;&#xC740; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; <code>Info.plist</code>&#xC758; <code>NSUserActivityTypes</code> &#xD0A4;&#xC5D0; &#xC5F4;&#xAC70;&#xB418;&#xC5B4;
+&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-browserwindowblur">Event: &apos;browser-window-blur&apos;</h3>
 <p>Returns:</p>
 <ul>
 <li><code>event</code> Event</li>
 <li><code>window</code> BrowserWindow</li>
 </ul>
-<p><a href="browser-window.html">browserWindow</a>&#xC5D0; &#xB300;&#xD55C; &#xD3EC;&#xCEE4;&#xC2A4;&#xAC00; &#xC0AC;&#xB77C;&#xC84C;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><a href="browser-window.html">browserWindow</a>&#xC5D0; &#xB300;&#xD55C; &#xD3EC;&#xCEE4;&#xC2A4;&#xAC00; &#xC0AC;&#xB77C;&#xC84C;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-browserwindowfocus">Event: &apos;browser-window-focus&apos;</h3>
 <p>Returns:</p>
 <ul>
 <li><code>event</code> Event</li>
 <li><code>window</code> BrowserWindow</li>
 </ul>
-<p><a href="browser-window.html">browserWindow</a>&#xC5D0; &#xB300;&#xD55C; &#xD3EC;&#xCEE4;&#xC2A4;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xC5ED;&#xC8FC;:</strong> <em>&#xD3EC;&#xCEE4;&#xC2A4;</em> &#xB294; &#xCC3D;&#xC744; &#xD074;&#xB9AD;&#xD574;&#xC11C; &#xD65C;&#xC131;&#xD654; &#xC2DC;&#xCF30;&#xC744; &#xB54C;&#xB97C; &#xB9D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><a href="browser-window.html">browserWindow</a>&#xC5D0; &#xB300;&#xD55C; &#xD3EC;&#xCEE4;&#xC2A4;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><strong>&#xC5ED;&#xC790;&#xC8FC;:</strong> <em>&#xD3EC;&#xCEE4;&#xC2A4;</em> &#xB294; &#xCC3D;&#xC744; &#xD074;&#xB9AD;&#xD574;&#xC11C; &#xD65C;&#xC131;&#xD654; &#xC2DC;&#xCF30;&#xC744; &#xB54C;&#xB97C; &#xB9D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-browserwindowcreated">Event: &apos;browser-window-created&apos;</h3>
 <p>Returns:</p>
 <ul>
 <li><code>event</code> Event</li>
 <li><code>window</code> BrowserWindow</li>
 </ul>
-<p>&#xC0C8;&#xB85C;&#xC6B4; <a href="browser-window.html">browserWindow</a>&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC0C8;&#xB85C;&#xC6B4; <a href="browser-window.html">browserWindow</a>&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="event-webcontentscreated">Event: &apos;web-contents-created&apos;</h3>
+<p>Returns:</p>
+<ul>
+<li><code>event</code> Event</li>
+<li><code>webContents</code> WebContents</li>
+</ul>
+<p>&#xC0C8;&#xB85C;&#xC6B4; <a href="web-contents.html">webContents</a>&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h3 id="event-certificateerror">Event: &apos;certificate-error&apos;</h3>
 <p>Returns:</p>
 <ul>
@@ -1049,9 +1074,9 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 <p><code>url</code>&#xC5D0; &#xB300;&#xD55C; <code>certificate</code> &#xC778;&#xC99D;&#xC11C;&#xC758; &#xC720;&#xD6A8;&#xC131; &#xAC80;&#xC99D;&#xC5D0; &#xC2E4;&#xD328;&#xD588;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.
 &#xC778;&#xC99D;&#xC11C;&#xB97C; &#xC2E0;&#xB8B0;&#xD55C;&#xB2E4;&#xBA74; <code>event.preventDefault()</code> &#xC640; <code>callback(true)</code>&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC5EC;
 &#xAE30;&#xBCF8; &#xB3D9;&#xC791;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xACE0; &#xC778;&#xC99D;&#xC744; &#xC2B9;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript">app.on(<span class="hljs-string">&apos;certificate-error&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, webContents, url, error, certificate, callback</span>) </span>{
-  <span class="hljs-keyword">if</span> (url == <span class="hljs-string">&quot;https://github.com&quot;</span>) {
-    <span class="hljs-comment">// Verification logic.</span>
+<pre><code class="lang-javascript">app.on(<span class="hljs-string">&apos;certificate-error&apos;</span>, (event, webContents, url, error, certificate, callback) =&gt; {
+  <span class="hljs-keyword">if</span> (url === <span class="hljs-string">&apos;https://github.com&apos;</span>) {
+    <span class="hljs-comment">// &#xD655;&#xC778; &#xB85C;&#xC9C1;.</span>
     event.preventDefault();
     callback(<span class="hljs-literal">true</span>);
   } <span class="hljs-keyword">else</span> {
@@ -1072,15 +1097,15 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 </li>
 <li><code>callback</code> Function</li>
 </ul>
-<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC778;&#xC99D;&#xC774; &#xC694;&#xCCAD;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC778;&#xC99D;&#xC774; &#xC694;&#xCCAD;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p><code>url</code>&#xC740; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC778;&#xC99D;&#xC11C;&#xB97C; &#xC694;&#xCCAD;&#xD558;&#xB294; &#xD0D0;&#xC0C9; &#xD56D;&#xBAA9;&#xC5D0; &#xD574;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;.
 &#xADF8;&#xB9AC;&#xACE0; <code>callback</code>&#xC740; &#xBAA9;&#xB85D;&#xC5D0;&#xC11C; &#xD544;&#xD130;&#xB9C1;&#xB41C; &#xD56D;&#xBAA9;&#xACFC; &#xD568;&#xAED8; &#xD638;&#xCD9C;&#xB420; &#xD544;&#xC694;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C;&#xC758; <code>event.preventDefault()</code> &#xD638;&#xCD9C;&#xC740; &#xCD08;&#xAE30; &#xC778;&#xC99D; &#xB54C; &#xC800;&#xC7A5;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;
 &#xAC83;&#xC744; &#xB9C9;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript">app.on(<span class="hljs-string">&apos;select-client-certificate&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, webContents, url, list, callback</span>) </span>{
+<pre><code class="lang-javascript">app.on(<span class="hljs-string">&apos;select-client-certificate&apos;</span>, (event, webContents, url, list, callback) =&gt; {
   event.preventDefault();
   callback(list[<span class="hljs-number">0</span>]);
-})
+});
 </code></pre>
 <h3 id="event-login">Event: &apos;login&apos;</h3>
 <p>Returns:</p>
@@ -1107,22 +1132,20 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 <p>&#xAE30;&#xBCF8; &#xB3D9;&#xC791;&#xC740; &#xC778;&#xC99D; &#xC694;&#xCCAD;&#xC744; &#xBAA8;&#xB450; &#xCDE8;&#xC18C;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.
 &#xB3D9;&#xC791;&#xC744; &#xC0C8;&#xB85C; &#xC815;&#xC758;&#xD558;&#xB824;&#xBA74; &#xBC18;&#xB4DC;&#xC2DC; <code>event.preventDefault()</code>&#xB97C; &#xD638;&#xCD9C;&#xD55C; &#xD6C4;
 <code>callback(username, password)</code> &#xD615;&#xD0DC;&#xC758; &#xCF5C;&#xBC31;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xC5EC; &#xC778;&#xC99D;&#xC744; &#xCC98;&#xB9AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-javascript">app.on(<span class="hljs-string">&apos;login&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event, webContents, request, authInfo, callback</span>) </span>{
+<pre><code class="lang-javascript">app.on(<span class="hljs-string">&apos;login&apos;</span>, (event, webContents, request, authInfo, callback) =&gt; {
   event.preventDefault();
   callback(<span class="hljs-string">&apos;username&apos;</span>, <span class="hljs-string">&apos;secret&apos;</span>);
-})
+});
 </code></pre>
 <h3 id="event-gpuprocesscrashed">Event: &apos;gpu-process-crashed&apos;</h3>
 <p>GPU&#xAC00; &#xC791;&#xB3D9;&#xD558;&#xB358; &#xC911; &#xD06C;&#xB798;&#xC2DC;&#xAC00; &#xC77C;&#xC5B4;&#xB0AC;&#xC744; &#xB54C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<h3 id="event-platformthemechanged-os-x">Event: &apos;platform-theme-changed&apos; <em>OS X</em></h3>
-<p>&#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xB2E4;&#xD06C; &#xBAA8;&#xB4DC; &#xD14C;&#xB9C8;&#xAC00; &#xD1A0;&#xAE00;&#xB418;&#xBA74; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <h2 id="methods">Methods</h2>
 <p><code>app</code> &#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <p><strong>&#xCC38;&#xACE0;:</strong> &#xBA87;&#xBA87; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xD2B9;&#xC815; &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xC11C;&#xB9CC; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appquit"><code>app.quit()</code></h3>
 <p>&#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0; &#xC885;&#xB8CC;&#xB97C; &#xC2DC;&#xB3C4;&#xD569;&#xB2C8;&#xB2E4;. <code>before-quit</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBA3C;&#xC800; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.
 &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C; &#xC885;&#xB8CC;&#xB418;&#xBA74; <code>will-quit</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xACE0; &#xAE30;&#xBCF8; &#xB3D9;&#xC791;&#xC5D0; &#xB530;&#xB77C;
-&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC885;&#xB8CC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC885;&#xB8CC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC774; &#xD568;&#xC218;&#xB294; &#xBAA8;&#xB4E0; <code>beforeunload</code>&#xC640; <code>unload</code> &#xC774;&#xBCA4;&#xD2B8; &#xD578;&#xB4E4;&#xB7EC;&#xAC00; &#xC81C;&#xB300;&#xB85C; &#xC2E4;&#xD589;&#xB428;&#xC744; &#xBCF4;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.
 <code>beforeunload</code> &#xC774;&#xBCA4;&#xD2B8; &#xD578;&#xB4E4;&#xB7EC;&#xC5D0;&#xC11C; <code>false</code>&#xB97C; &#xBC18;&#xD658;&#xD588;&#xC744; &#xB54C; &#xC708;&#xB3C4;&#xC6B0; &#xC885;&#xB8CC;&#xAC00; &#xCDE8;&#xC18C; &#xB420; &#xC218;
 &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
@@ -1130,36 +1153,57 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 <ul>
 <li><code>exitCode</code> Integer</li>
 </ul>
-<p><code>exitCode</code>&#xC640; &#xD568;&#xAED8; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC989;&#xC2DC; &#xC885;&#xB8CC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>exitCode</code>&#xC640; &#xD568;&#xAED8; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC989;&#xC2DC; &#xC885;&#xB8CC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xB3D9;&#xC758; &#xC5EC;&#xBD80;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xC989;&#xC2DC; &#xC885;&#xB8CC;&#xB418;&#xBA70; <code>before-quit</code> &#xC774;&#xBCA4;&#xD2B8;&#xC640;
 <code>will-quit</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="apprelaunchoptions"><code>app.relaunch([options])</code></h3>
+<ul>
+<li><code>options</code> Object (optional)<ul>
+<li><code>args</code> Array (optional)</li>
+<li><code>execPath</code> String (optional)</li>
+</ul>
+</li>
+</ul>
+<p>&#xD604;&#xC7AC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xC885;&#xB8CC;&#xB418;&#xBA74; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC7AC;&#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC0C8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB294; &#xAC19;&#xC740; &#xC791;&#xC5C5; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC758; &#xAC83;&#xACFC; &#xD568;&#xAED8; &#xD604;&#xC7AC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC758; &#xBA85;&#xB839;&#xC904; &#xC778;&#xC218;&#xB97C;
+&#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; <code>args</code>&#xAC00; &#xC9C0;&#xC815;&#xB418;&#xBA74;, <code>args</code>&#xAC00; &#xAE30;&#xBCF8; &#xBA85;&#xB839;&#xC904; &#xC778;&#xC218; &#xB300;&#xC2E0;&#xC5D0; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.
+<code>execPath</code>&#xAC00; &#xC9C0;&#xC815;&#xB418;&#xBA74;, &#xD604;&#xC7AC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB300;&#xC2E0; <code>execPath</code>&#xAC00; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCC38;&#xACE0;&#xB85C; &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC885;&#xB8CC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA70;, &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xB2E4;&#xC2DC; &#xC2DC;&#xC791;&#xC2DC;&#xD0A4;&#xB824;&#xBA74;
+<code>app.relaunch</code>&#xB97C; &#xD638;&#xCD9C;&#xD55C; &#xD6C4; <code>app.quit</code> &#xB610;&#xB294; <code>app.exit</code>&#xB97C; &#xC2E4;&#xD589;&#xD574;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>app.relaunch</code>&#xAC00; &#xC5EC;&#xB7EC; &#xBC88; &#xD638;&#xCD9C;&#xB418;&#xBA74;, &#xD604;&#xC7AC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xC885;&#xB8CC;&#xB41C; &#xD6C4; &#xC5EC;&#xB7EC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00;
+&#xC2DC;&#xC791;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xD604;&#xC7AC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC989;&#xC2DC; &#xC885;&#xB8CC;&#xC2DC;&#xD0A8; &#xD6C4; &#xC0C8;&#xB85C;&#xC6B4; &#xBA85;&#xB839;&#xC904; &#xC778;&#xC218;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xC0C8;
+&#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC758; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript">app.relaunch({args: process.argv.slice(<span class="hljs-number">1</span>) + [<span class="hljs-string">&apos;--relaunch&apos;</span>]})
+app.exit(<span class="hljs-number">0</span>)
+</code></pre>
 <h3 id="appfocus"><code>app.focus()</code></h3>
-<p>Linux&#xC5D0;&#xC120;, &#xCCAB; &#xBC88;&#xC9F8;&#xB85C; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xD3EC;&#xCEE4;&#xC2A4;&#xB429;&#xB2C8;&#xB2E4;. OS X&#xC5D0;&#xC120;, &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD65C;&#xC131;&#xD654;
-&#xC571; &#xC0C1;&#xD0DC;&#xB85C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. Windows&#xC5D0;&#xC120;, &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xCCAB; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xD3EC;&#xCEE4;&#xC2A4; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<h3 id="apphide-os-x"><code>app.hide()</code> <em>OS X</em></h3>
-<p>&#xCD5C;&#xC18C;&#xD654;&#xB97C; &#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC744; &#xC228;&#xAE41;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appshow-os-x"><code>app.show()</code> <em>OS X</em></h3>
-<p>&#xC228;&#xAE34; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC744; &#xB2E4;&#xC2DC; &#xBCF4;&#xC774;&#xAC8C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD3EC;&#xCEE4;&#xC2A4;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>Linux&#xC5D0;&#xC120;, &#xCCAB; &#xBC88;&#xC9F8;&#xB85C; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xC708;&#xB3C4;&#xC6B0;&#xAC00; &#xD3EC;&#xCEE4;&#xC2A4;&#xB429;&#xB2C8;&#xB2E4;. macOS&#xC5D0;&#xC120;, &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xD65C;&#xC131;&#xD654;
+&#xC571; &#xC0C1;&#xD0DC;&#xB85C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. Windows&#xC5D0;&#xC120;, &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xCCAB; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xD3EC;&#xCEE4;&#xC2A4; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<h3 id="apphide-macos"><code>app.hide()</code> <em>macOS</em></h3>
+<p>&#xCD5C;&#xC18C;&#xD654;&#xB97C; &#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC744; &#xC228;&#xAE41;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appshow-macos"><code>app.show()</code> <em>macOS</em></h3>
+<p>&#xC228;&#xAE34; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC708;&#xB3C4;&#xC6B0;&#xB4E4;&#xC744; &#xB2E4;&#xC2DC; &#xBCF4;&#xC774;&#xAC8C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;. &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD3EC;&#xCEE4;&#xC2A4;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appgetapppath"><code>app.getAppPath()</code></h3>
-<p>&#xD604;&#xC7AC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD604;&#xC7AC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appgetpathname"><code>app.getPath(name)</code></h3>
 <ul>
 <li><code>name</code> String</li>
 </ul>
 <p><code>name</code>&#xC5D0; &#xAD00;&#xB828;&#xD55C; &#xD2B9;&#xC815; &#xB514;&#xB809;&#xD130;&#xB9AC; &#xB610;&#xB294; &#xD30C;&#xC77C;&#xC758; &#xACBD;&#xB85C;&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
 &#xACBD;&#xB85C;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xB294; &#xB370; &#xC2E4;&#xD328;&#xD560; &#xACBD;&#xC6B0; <code>Error</code>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xC5ED;&#xC8FC;:</strong> &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xC5D0;&#xC11C; &#xC9C0;&#xC815;&#xD55C; &#xD2B9;&#xC218; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><strong>&#xC5ED;&#xC790;&#xC8FC;:</strong> &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xC5D0;&#xC11C; &#xC9C0;&#xC815;&#xD55C; &#xD2B9;&#xC218; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p><code>name</code>&#xC740; &#xB2E4;&#xC74C; &#xBAA9;&#xB85D;&#xC5D0; &#xC788;&#xB294; &#xACBD;&#xB85C; &#xC911; &#xD558;&#xB098;&#xB97C; &#xC120;&#xD0DD;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
 <ul>
 <li><code>home</code> - &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xD648; &#xB514;&#xB809;&#xD130;&#xB9AC;.</li>
-<li><code>appData</code> - &#xAC01; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB370;&#xC774;&#xD130; &#xB514;&#xB809;&#xD130;&#xB9AC;. &#xAE30;&#xBCF8; &#xACBD;&#xB85C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:<ul>
+<li><code>appData</code> - &#xAC01; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB370;&#xC774;&#xD130; &#xB514;&#xB809;&#xD130;&#xB9AC;. &#xAE30;&#xBCF8; &#xACBD;&#xB85C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;:<ul>
 <li><code>%APPDATA%</code> - Windows</li>
 <li><code>$XDG_CONFIG_HOME</code> &#xB610;&#xB294; <code>~/.config</code> - Linux</li>
-<li><code>~/Library/Application Support</code> - OS X</li>
+<li><code>~/Library/Application Support</code> - macOS</li>
 </ul>
 </li>
-<li><code>userData</code> - &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC124;&#xC815;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xB514;&#xB809;&#xD130;&#xB9AC;.
-&#xC774; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>appData</code>&#xC5D0; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xB41C; &#xD3F4;&#xB354;&#xAC00; &#xC9C0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li><code>userData</code> - &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC124;&#xC815;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xB514;&#xB809;&#xD130;&#xB9AC;.
+&#xC774; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>appData</code>&#xC5D0; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xB41C; &#xD3F4;&#xB354;&#xAC00; &#xC9C0;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</li>
 <li><code>temp</code> - &#xC784;&#xC2DC; &#xD3F4;&#xB354; &#xB514;&#xB809;&#xD130;&#xB9AC;.</li>
 <li><code>userDesktop</code> - &#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xB370;&#xC2A4;&#xD2B8;&#xD0D1; &#xB514;&#xB809;&#xD130;&#xB9AC;.</li>
 <li><code>exe</code> - &#xD604;&#xC7AC; &#xC2E4;&#xD589;&#xC911;&#xC778; Electron &#xBC14;&#xC774;&#xB108;&#xB9AC; &#xD30C;&#xC77C;.</li>
@@ -1170,6 +1214,7 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 <li><code>music</code> - &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC74C;&#xC545; &#xB514;&#xB809;&#xD130;&#xB9AC;.</li>
 <li><code>pictures</code> - &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC0AC;&#xC9C4; &#xB514;&#xB809;&#xD130;&#xB9AC;.</li>
 <li><code>videos</code> - &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xB3D9;&#xC601;&#xC0C1; &#xB514;&#xB809;&#xD130;&#xB9AC;.</li>
+<li><code>pepperFlashSystemPlugin</code> - &#xC2DC;&#xC2A4;&#xD15C; &#xBC84;&#xC804;&#xC758; Pepper Flash &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC758; &#xC804;&#xCCB4; &#xACBD;&#xB85C;.</li>
 </ul>
 <h3 id="appsetpathname-path"><code>app.setPath(name, path)</code></h3>
 <ul>
@@ -1184,35 +1229,35 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 &#xB9CC;&#xC57D; &#xC774; &#xC704;&#xCE58;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xACE0;&#xC790; &#xD55C;&#xB2E4;&#xBA74;, &#xBC18;&#xB4DC;&#xC2DC; <code>app</code> &#xBAA8;&#xB4C8;&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC804;&#xC5D0;
 <code>userData</code> &#xACBD;&#xB85C;&#xB97C; &#xC7AC;&#xC815;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appgetversion"><code>app.getVersion()</code></h3>
-<p>&#xB85C;&#xB4DC;&#xB41C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xBC84;&#xC804;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB9CC;&#xC57D; <code>package.json</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xBC84;&#xC804;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;, &#xD604;&#xC7AC; &#xBC88;&#xB4E4; &#xB610;&#xB294;
+<p>&#xB85C;&#xB4DC;&#xB41C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xBC84;&#xC804;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D; <code>package.json</code> &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xBC84;&#xC804;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;, &#xD604;&#xC7AC; &#xBC88;&#xB4E4; &#xB610;&#xB294;
 &#xC2E4;&#xD589; &#xD30C;&#xC77C;&#xC758; &#xBC84;&#xC804;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appgetname"><code>app.getName()</code></h3>
-<p><code>package.json</code>&#xC5D0;&#xC11C; &#xAE30;&#xC220;&#xB41C; &#xD604;&#xC7AC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC774;&#xB984;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>package.json</code>&#xC5D0;&#xC11C; &#xAE30;&#xC220;&#xB41C; &#xD604;&#xC7AC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC774;&#xB984;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>npm &#xBAA8;&#xB4C8; &#xADDC;&#xCE59;&#xC5D0; &#xB530;&#xB77C; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xACBD;&#xC6B0; <code>package.json</code>&#xC758; <code>name</code> &#xD544;&#xB4DC;&#xB294; &#xC18C;&#xBB38;&#xC790; &#xC774;&#xB984;&#xC744;
 &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; Electron&#xC740; <code>name</code>&#xB300;&#xC2E0; <code>productName</code> &#xD544;&#xB4DC;&#xB97C; &#xC8FC;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
-&#xBC18;&#xB4DC;&#xC2DC; &#xC774; &#xD544;&#xB4DC;&#xB3C4; &#xAC19;&#xC774; &#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xB9E8; &#xC55E;&#xAE00;&#xC790;&#xAC00; &#xB300;&#xBB38;&#xC790;&#xC778; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;
+&#xBC18;&#xB4DC;&#xC2DC; &#xC774; &#xD544;&#xB4DC;&#xB3C4; &#xAC19;&#xC774; &#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xB9E8; &#xC55E;&#xAE00;&#xC790;&#xAC00; &#xB300;&#xBB38;&#xC790;&#xC778; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;
 &#xC804;&#xCCB4; &#xC774;&#xB984;&#xC744; &#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appsetnamename"><code>app.setName(name)</code></h3>
 <ul>
 <li><code>name</code> String</li>
 </ul>
-<p>&#xD604;&#xC7AC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC774;&#xB984;&#xC744; &#xB36E;&#xC5B4;&#xC50C;&#xC6C1;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD604;&#xC7AC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC774;&#xB984;&#xC744; &#xB36E;&#xC5B4;&#xC50C;&#xC6C1;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appgetlocale"><code>app.getLocale()</code></h3>
-<p>&#xD604;&#xC7AC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; <a href="https://ko.wikipedia.org/wiki/%EB%A1%9C%EC%BC%80%EC%9D%BC" target="_blank">&#xB85C;&#xCF00;&#xC77C;</a>&#xC744;
+<p>&#xD604;&#xC7AC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; <a href="https://ko.wikipedia.org/wiki/%EB%A1%9C%EC%BC%80%EC%9D%BC" target="_blank">&#xB85C;&#xCF00;&#xC77C;</a>&#xC744;
 &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p><strong>&#xCC38;&#xACE0;:</strong> &#xD328;&#xD0A4;&#xC9D5;&#xB41C; &#xC571;&#xC744; &#xBC30;&#xD3EC;&#xD560; &#xB54C;, <code>locales</code> &#xD3F4;&#xB354;&#xB3C4; &#xAC19;&#xC774; &#xBC30;&#xD3EC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xCC38;&#xACE0;:</strong> Windows&#xC5D0;&#xC120; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C; &#xC774;&#xD6C4;&#xC5D0; &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appaddrecentdocumentpath-os-x-windows"><code>app.addRecentDocument(path)</code> <em>OS X</em> <em>Windows</em></h3>
+<p><strong>&#xCC38;&#xACE0;:</strong> Windows&#xC5D0;&#xC120; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C; &#xC774;&#xD6C4;&#xC5D0; &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appaddrecentdocumentpath-macos-windows"><code>app.addRecentDocument(path)</code> <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>path</code> String</li>
 </ul>
 <p>&#xCD5C;&#xADFC; &#xBB38;&#xC11C; &#xBAA9;&#xB85D;&#xC5D0; <code>path</code>&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>&#xC774; &#xBAA9;&#xB85D;&#xC740; OS&#xC5D0; &#xC758;&#xD574; &#xAD00;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;. &#xCD5C;&#xADFC; &#xBB38;&#xC11C; &#xBAA9;&#xB85D;&#xC740; Windows&#xC758; &#xACBD;&#xC6B0; &#xC791;&#xC5C5; &#xD45C;&#xC2DC;&#xC904;&#xC5D0;&#xC11C; &#xCC3E;&#xC744;
-&#xC218; &#xC788;&#xACE0;, OS X&#xC758; &#xACBD;&#xC6B0; dock &#xBA54;&#xB274;&#xC5D0;&#xC11C; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appclearrecentdocuments-os-x-windows"><code>app.clearRecentDocuments()</code> <em>OS X</em> <em>Windows</em></h3>
+&#xC218; &#xC788;&#xACE0;, macOS&#xC758; &#xACBD;&#xC6B0; dock &#xBA54;&#xB274;&#xC5D0;&#xC11C; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appclearrecentdocuments-macos-windows"><code>app.clearRecentDocuments()</code> <em>macOS</em> <em>Windows</em></h3>
 <p>&#xCD5C;&#xADFC; &#xBB38;&#xC11C; &#xBAA9;&#xB85D;&#xC744; &#xBAA8;&#xB450; &#xBE44;&#xC6C1;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appsetasdefaultprotocolclientprotocol-os-x-windows"><code>app.setAsDefaultProtocolClient(protocol)</code> <em>OS X</em> <em>Windows</em></h3>
+<h3 id="appsetasdefaultprotocolclientprotocol-macos-windows"><code>app.setAsDefaultProtocolClient(protocol)</code> <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>protocol</code> String - &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC758; &#xC774;&#xB984;, <code>://</code> &#xC81C;&#xC678;. &#xB9CC;&#xC57D; &#xC571;&#xC744; &#xD1B5;&#xD574; <code>electron://</code>&#xACFC;
 &#xAC19;&#xC740; &#xB9C1;&#xD06C;&#xB97C; &#xCC98;&#xB9AC;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xC5D0; <code>electron</code> &#xC778;&#xC218;&#xB97C; &#xB2F4;&#xC544; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</li>
@@ -1220,19 +1265,30 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 <p>&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xC9C0;&#xC815;&#xD55C; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;(URI scheme)&#xC5D0; &#xB300;&#xD574; &#xD604;&#xC7AC; &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xC744; &#xAE30;&#xBCF8; &#xD578;&#xB4E4;&#xB7EC;&#xB85C;
 &#xB4F1;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xD1B5;&#xD574; &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xC640; &#xB354; &#xAC00;&#xAE5D;&#xAC8C; &#xD1B5;&#xD569;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD55C; &#xBC88; &#xB4F1;&#xB85D;&#xB418;&#xBA74;,
 <code>your-protocol://</code>&#xACFC; &#xAC19;&#xC740; &#xBAA8;&#xB4E0; &#xB9C1;&#xD06C;&#xC5D0; &#xB300;&#xD574; &#xD638;&#xCD9C;&#xC2DC; &#xD604;&#xC7AC; &#xC2E4;&#xD589; &#xD30C;&#xC77C;&#xC774; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;.
-&#xBAA8;&#xB4E0; &#xB9C1;&#xD06C;, &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC778;&#xC218;&#xB85C; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xCC38;&#xACE0;:</strong> OS X&#xC5D0;&#xC120;, &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; <code>info.plist</code>&#xC5D0; &#xB4F1;&#xB85D;&#xD574;&#xB454; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218;
+&#xBAA8;&#xB4E0; &#xB9C1;&#xD06C;, &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC778;&#xC218;&#xB85C; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><strong>&#xCC38;&#xACE0;:</strong> macOS&#xC5D0;&#xC120;, &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; <code>info.plist</code>&#xC5D0; &#xB4F1;&#xB85D;&#xD574;&#xB454; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218;
 &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xB7F0;&#xD0C0;&#xC784;&#xC5D0;&#xC11C; &#xBCC0;&#xACBD;&#xB420; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xD30C;&#xC77C;&#xC740; &#xAC04;&#xB2E8;&#xD788; &#xD14D;&#xC2A4;&#xD2B8; &#xC5D0;&#xB514;&#xD130;&#xB97C;
-&#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098;, &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xBE4C;&#xB4DC;&#xD560; &#xB54C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xB3C4;&#xB85D; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C;
-&#xB0B4;&#xC6A9;&#xC740; <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-102207-TPXREF115" target="_blank">Apple&#xC758; &#xCC38;&#xC870; &#xBB38;&#xC11C;&#xB97C;</a> &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.</p>
+&#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098;, &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xBE4C;&#xB4DC;&#xD560; &#xB54C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xB3C4;&#xB85D; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C;
+&#xB0B4;&#xC6A9;&#xC740; <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-102207-TPXREF115" target="_blank">Apple&#xC758; &#xCC38;&#xC870; &#xBB38;&#xC11C;</a>&#xB97C; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.</p>
 <p>&#xC774; API&#xB294; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; Windows &#xB808;&#xC9C0;&#xC2A4;&#xD2B8;&#xB9AC;&#xC640; LSSetDefaultHandlerForURLScheme&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appremoveasdefaultprotocolclientprotocol-windows"><code>app.removeAsDefaultProtocolClient(protocol)</code> <em>Windows</em></h3>
+<h3 id="appremoveasdefaultprotocolclientprotocol-macos-windows"><code>app.removeAsDefaultProtocolClient(protocol)</code> <em>macOS</em> <em>Windows</em></h3>
 <ul>
 <li><code>protocol</code> String - &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC758; &#xC774;&#xB984;, <code>://</code> &#xC81C;&#xC678;.</li>
 </ul>
 <p>&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xD604;&#xC7AC; &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xC774; &#xC9C0;&#xC815;&#xD55C; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;(URI scheme)&#xC5D0; &#xB300;&#xD574; &#xAE30;&#xBCF8; &#xD578;&#xB4E4;&#xB7EC;&#xC778;&#xC9C0;&#xB97C;
 &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xADF8;&#xB807;&#xB2E4;&#xBA74;, &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xC571;&#xC744; &#xAE30;&#xBCF8; &#xD578;&#xB4E4;&#xB7EC;&#xC5D0;&#xC11C; &#xC81C;&#xAC70;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xCC38;&#xACE0;:</strong> OS X&#xC5D0;&#xC11C;&#xB294; &#xC571;&#xC744; &#xC81C;&#xAC70;&#xD558;&#xBA74; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xAE30;&#xBCF8; &#xD504;&#xB85C;&#xD1A0;&#xCF5C; &#xD578;&#xB4E4;&#xB7EC;&#xC5D0;&#xC11C; &#xC81C;&#xAC70;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appisdefaultprotocolclientprotocol-macos-windows"><code>app.isDefaultProtocolClient(protocol)</code> <em>macOS</em> <em>Windows</em></h3>
+<ul>
+<li><code>protocol</code> String - <code>://</code>&#xB97C; &#xC81C;&#xC678;&#xD55C; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC758; &#xC774;&#xB984;.</li>
+</ul>
+<p>&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xD604;&#xC7AC; &#xC2E4;&#xD589; &#xD30C;&#xC77C;&#xC774; &#xC9C0;&#xC815;&#xD55C; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC5D0; &#xB300;&#xD574; &#xAE30;&#xBCF8; &#xB3D9;&#xC791;&#xC778;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;. (URI
+&#xC2A4;&#xD0B4;) &#xB9CC;&#xC57D; &#xADF8;&#xB807;&#xB2E4;&#xBA74; <code>true</code>&#xB97C; &#xBC18;&#xD658;&#xD558;&#xACE0; &#xC544;&#xB2CC; &#xACBD;&#xC6B0; <code>false</code>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><strong>&#xCC38;&#xACE0;:</strong> macOS&#xC5D0;&#xC120;, &#xC751;&#xC6A9; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC774; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC5D0; &#xB300;&#xD55C; &#xAE30;&#xBCF8; &#xD504;&#xB85C;&#xD1A0;&#xCF5C; &#xB3D9;&#xC791;&#xC73C;&#xB85C;
+&#xB4F1;&#xB85D;&#xB418;&#xC5C8;&#xB294;&#xC9C0;&#xB97C; &#xD655;&#xC778;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; macOS&#xC5D0;&#xC11C;
+<code>~/Library/Preferences/com.apple.LaunchServices.plist</code>&#xB97C; &#xD655;&#xC778;&#xD558;&#xC5EC; &#xAC80;&#xC99D;&#xD560; &#xC218;&#xB3C4;
+&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="https://developer.apple.com/library/mac/documentation/Carbon/Reference/LaunchServicesReference/#//apple_ref/c/func/LSCopyDefaultHandlerForURLScheme" target="_blank">Apple&#xC758; &#xCC38;&#xC870; &#xBB38;&#xC11C;</a>&#xB97C;
+&#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
+<p>&#xC774; API&#xB294; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; Windows &#xB808;&#xC9C0;&#xC2A4;&#xD2B8;&#xB9AC;&#xC640; LSSetDefaultHandlerForURLScheme&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appsetusertaskstasks-windows"><code>app.setUserTasks(tasks)</code> <em>Windows</em></h3>
 <ul>
 <li><code>tasks</code> Array - <code>Task</code> &#xAC1D;&#xCCB4;&#xC758; &#xBC30;&#xC5F4;</li>
@@ -1242,54 +1298,46 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 <p><code>Task</code> Object:</p>
 <ul>
 <li><code>program</code> String - &#xC2E4;&#xD589;&#xD560; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xACBD;&#xB85C;.
-&#xBCF4;&#xD1B5; &#xD604;&#xC7AC; &#xC791;&#xB3D9;&#xC911;&#xC778; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xACBD;&#xB85C;&#xC778; <code>process.execPath</code>&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</li>
-<li><code>arguments</code> String - <code>program</code>&#xC774; &#xC2E4;&#xD589;&#xB420; &#xB54C; &#xC0AC;&#xC6A9;&#xB420; &#xBA85;&#xB839;&#xC904; &#xC778;&#xC790;.</li>
+&#xBCF4;&#xD1B5; &#xD604;&#xC7AC; &#xC791;&#xB3D9;&#xC911;&#xC778; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xACBD;&#xB85C;&#xC778; <code>process.execPath</code>&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>arguments</code> String - <code>program</code>&#xC774; &#xC2E4;&#xD589;&#xB420; &#xB54C; &#xC0AC;&#xC6A9;&#xB420; &#xBA85;&#xB839;&#xC904; &#xC778;&#xC218;.</li>
 <li><code>title</code> String - JumpList&#xC5D0; &#xD45C;&#xC2DC;&#xD560; &#xBB38;&#xC790;&#xC5F4;.</li>
 <li><code>description</code> String - &#xC774; &#xC791;&#xC5C5;&#xC5D0; &#xB300;&#xD55C; &#xC124;&#xBA85;.</li>
 <li><code>iconPath</code> String - JumpList&#xC5D0; &#xD45C;&#xC2DC;&#xB420; &#xC544;&#xC774;&#xCF58;&#xC758; &#xC808;&#xB300; &#xACBD;&#xB85C;.
 &#xC544;&#xC774;&#xCF58;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xB294; &#xC784;&#xC758;&#xC758; &#xB9AC;&#xC18C;&#xC2A4; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xBCF4;&#xD1B5; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC544;&#xC774;&#xCF58;&#xC744; &#xADF8;&#xB300;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; <code>process.execPath</code>&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</li>
+&#xBCF4;&#xD1B5; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC544;&#xC774;&#xCF58;&#xC744; &#xADF8;&#xB300;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; <code>process.execPath</code>&#xB97C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</li>
 <li><code>iconIndex</code> Integer - &#xC544;&#xC774;&#xCF58; &#xD30C;&#xC77C;&#xC758; &#xC778;&#xB371;&#xC2A4;. &#xB9CC;&#xC57D; &#xC544;&#xC774;&#xCF58; &#xD30C;&#xC77C;&#xC774; &#xB450; &#xAC1C; &#xC774;&#xC0C1;&#xC758;
 &#xC544;&#xC774;&#xCF58;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC744; &#xACBD;&#xC6B0;, &#xC0AC;&#xC6A9;&#xD560; &#xC544;&#xC774;&#xCF58;&#xC758; &#xC778;&#xB371;&#xC2A4;&#xB97C; &#xC774; &#xC635;&#xC158;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD574; &#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
 &#xB2E8;, &#xC544;&#xC774;&#xCF58;&#xC744; &#xD558;&#xB098;&#xB9CC; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xB294; &#xACBD;&#xC6B0; 0&#xC744; &#xC9C0;&#xC815;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</li>
 </ul>
-<h3 id="appallowntlmcredentialsforalldomainsallow"><code>app.allowNTLMCredentialsForAllDomains(allow)</code></h3>
-<ul>
-<li><code>allow</code> Boolean</li>
-</ul>
-<p>&#xD56D;&#xC0C1; &#xB3D9;&#xC801;&#xC73C;&#xB85C; HTTP NTLM &#xB610;&#xB294; Negotiate &#xC778;&#xC99D;&#xC5D0; &#xC790;&#xACA9; &#xC99D;&#xBA85;&#xC744; &#xBCF4;&#xB0BC; &#xAC83;&#xC778;&#xC9C0; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; Electron&#xC740; &quot;&#xB85C;&#xCEEC; &#xC778;&#xD130;&#xB137;&quot; &#xC0AC;&#xC774;&#xD2B8; URL&#xC5D0;&#xC11C; NTLM/Kerberos &#xC790;&#xACA9; &#xC99D;&#xBA85;&#xB9CC;&#xC744;
-&#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;. (&#xAC19;&#xC740; &#xB3C4;&#xBA54;&#xC778; &#xB0B4;&#xC5D0;&#xC11C;) &#xADF8;&#xB7EC;&#xB098; &#xAE30;&#xC5C5; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xAC00; &#xC798;&#xBABB; &#xAD6C;&#xC131;&#xB41C; &#xACBD;&#xC6B0; &#xC885;&#xC885; &#xC791;&#xC5C5;&#xC5D0;
-&#xC2E4;&#xD328;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB54C; &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xBAA8;&#xB4E0; URL&#xC744; &#xD5C8;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appmakesingleinstancecallback"><code>app.makeSingleInstance(callback)</code></h3>
 <ul>
 <li><code>callback</code> Function</li>
 </ul>
-<p>&#xD604;&#xC7AC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; <strong>Single Instance Application</strong> &#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC90D;&#xB2C8;&#xB2E4;.
-&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC5EC;&#xB7EC; &#xBC88; &#xC2E4;&#xD589;&#xB410;&#xC744; &#xB54C; &#xB2E4;&#xC911; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xB294; &#xB300;&#xC2E0; &#xD55C; &#xAC1C;&#xC758;
+<p>&#xD604;&#xC7AC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; <strong>Single Instance Application</strong> &#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC90D;&#xB2C8;&#xB2E4;.
+&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC5EC;&#xB7EC; &#xBC88; &#xC2E4;&#xD589;&#xB410;&#xC744; &#xB54C; &#xB2E4;&#xC911; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xB294; &#xB300;&#xC2E0; &#xD55C; &#xAC1C;&#xC758;
 &#xC8FC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB9CC; &#xC720;&#xC9C0;&#xB418;&#xB3C4;&#xB85D; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB54C; &#xC911;&#xBCF5; &#xC0DD;&#xC131;&#xB41C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB294; &#xC8FC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0;
 &#xC2E0;&#xD638;&#xB97C; &#xBCF4;&#xB0B4;&#xACE0; &#xC885;&#xB8CC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p><code>callback</code>&#xC740; &#xC8FC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB41C; &#xC774;&#xD6C4; &#xB610; &#xB2E4;&#xB978; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB410;&#xC744; &#xB54C;
 <code>callback(argv, workingDirectory)</code> &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;. <code>argv</code>&#xB294; &#xB450; &#xBC88;&#xC9F8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC758;
 &#xBA85;&#xB839;&#xC904; &#xC778;&#xC218;&#xC774;&#xBA70; <code>workingDirectory</code>&#xB294; &#xD604;&#xC7AC; &#xC791;&#xC5C5;&#xC911;&#xC778; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC785;&#xB2C8;&#xB2E4;. &#xBCF4;&#xD1B5; &#xB300;&#xBD80;&#xBD84;&#xC758;
-&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC740; &#xC774;&#xB7EC;&#xD55C; &#xCF5C;&#xBC31;&#xC774; &#xD638;&#xCD9C;&#xB420; &#xB54C; &#xC8FC; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xD3EC;&#xCEE4;&#xC2A4;&#xD558;&#xACE0; &#xCD5C;&#xC18C;&#xD654;&#xB418;&#xC5B4;&#xC788;&#xC73C;&#xBA74; &#xCC3D;
+&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC740; &#xC774;&#xB7EC;&#xD55C; &#xCF5C;&#xBC31;&#xC774; &#xD638;&#xCD9C;&#xB420; &#xB54C; &#xC8FC; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xD3EC;&#xCEE4;&#xC2A4;&#xD558;&#xACE0; &#xCD5C;&#xC18C;&#xD654;&#xB418;&#xC5B4;&#xC788;&#xC73C;&#xBA74; &#xCC3D;
 &#xBCF5;&#xAD6C;&#xB97C; &#xC2E4;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p><code>callback</code>&#xC740; <code>app</code>&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C; &#xD6C4; &#xC2E4;&#xD589;&#xB428;&#xC744; &#xBCF4;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xD604;&#xC7AC; &#xC2E4;&#xD589;&#xB41C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC8FC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC778; &#xACBD;&#xC6B0; <code>false</code>&#xB97C; &#xBC18;&#xD658;&#xD558;&#xACE0;
-&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xB85C;&#xB4DC;&#xAC00; &#xACC4;&#xC18D; &#xC9C4;&#xD589; &#xB418;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xB450; &#xBC88;&#xC9F8; &#xC911;&#xBCF5;&#xB41C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xC0DD;&#xC131;&#xC778;
+<p>&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xD604;&#xC7AC; &#xC2E4;&#xD589;&#xB41C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xC8FC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC778; &#xACBD;&#xC6B0; <code>false</code>&#xB97C; &#xBC18;&#xD658;&#xD558;&#xACE0;
+&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xB85C;&#xB4DC;&#xAC00; &#xACC4;&#xC18D; &#xC9C4;&#xD589; &#xB418;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xB450; &#xBC88;&#xC9F8; &#xC911;&#xBCF5;&#xB41C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xC0DD;&#xC131;&#xC778;
 &#xACBD;&#xC6B0; <code>true</code>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. (&#xB2E4;&#xB978; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC5D0; &#xC778;&#xC218;&#xAC00; &#xC804;&#xB2EC;&#xB42C;&#xC744; &#xB54C;) &#xC774; &#xBD88;&#xB9AC;&#xC5B8; &#xAC12;&#xC744; &#xD1B5;&#xD574;
 &#xC911;&#xBCF5; &#xC0DD;&#xC131;&#xB41C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB294; &#xC989;&#xC2DC; &#xC885;&#xB8CC;&#xC2DC;&#xCF1C;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>OS X&#xC5D0;&#xC120; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; Finder&#xC5D0;&#xC11C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xB450; &#xBC88;&#xC9F8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC5F4;&#xB824;&#xACE0; &#xD588;&#xC744; &#xB54C; &#xC790;&#xB3D9;&#xC73C;&#xB85C;
+<p>macOS&#xC5D0;&#xC120; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; Finder&#xC5D0;&#xC11C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xB450; &#xBC88;&#xC9F8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC5F4;&#xB824;&#xACE0; &#xD588;&#xC744; &#xB54C; &#xC790;&#xB3D9;&#xC73C;&#xB85C;
 <strong>Single Instance</strong> &#xD654; &#xD558;&#xACE0; <code>open-file</code>&#xACFC; <code>open-url</code> &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098;
-&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; CLI &#xD130;&#xBBF8;&#xB110;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC6B4;&#xC601;&#xCCB4;&#xC81C; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xC2F1;&#xAE00; &#xC778;&#xC2A4;&#xD134;&#xC2A4;
-&#xBA54;&#xCEE4;&#xB2C8;&#xC998;&#xC774; &#xBB34;&#xC2DC;&#xB418;&#xBA70; &#xADF8;&#xB300;&#xB85C; &#xC911;&#xBCF5; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; OS X&#xC5D0;&#xC11C;&#xB3C4; &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xD655;&#xC2E4;&#xD788;
+&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; CLI &#xD130;&#xBBF8;&#xB110;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC6B4;&#xC601;&#xCCB4;&#xC81C; &#xC2DC;&#xC2A4;&#xD15C;&#xC758; &#xC2F1;&#xAE00; &#xC778;&#xC2A4;&#xD134;&#xC2A4;
+&#xBA54;&#xCEE4;&#xB2C8;&#xC998;&#xC774; &#xBB34;&#xC2DC;&#xB418;&#xBA70; &#xADF8;&#xB300;&#xB85C; &#xC911;&#xBCF5; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; macOS&#xC5D0;&#xC11C;&#xB3C4; &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xD655;&#xC2E4;&#xD788;
 &#xC911;&#xBCF5; &#xC2E4;&#xD589;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; &#xB450; &#xBC88;&#xC9F8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xC911;&#xBCF5;&#xB41C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC885;&#xB8CC;&#xD558;&#xACE0; &#xC8FC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;
-&#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC758; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xD65C;&#xC131;&#xD654; &#xC2DC;&#xD0A4;&#xB294; &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myWindow = <span class="hljs-literal">null</span>;
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xB450; &#xBC88;&#xC9F8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xC911;&#xBCF5;&#xB41C; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC885;&#xB8CC;&#xD558;&#xACE0; &#xC8FC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;
+&#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC758; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xD65C;&#xC131;&#xD654; &#xC2DC;&#xD0A4;&#xB294; &#xC608;&#xC2DC;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> myWindow = <span class="hljs-literal">null</span>;
 
-<span class="hljs-keyword">var</span> shouldQuit = app.makeSingleInstance(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">commandLine, workingDirectory</span>) </span>{
-  <span class="hljs-comment">// &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC911;&#xBCF5; &#xC2E4;&#xD589;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC8FC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xD65C;&#xC131;&#xD654; &#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-keyword">const</span> shouldQuit = app.makeSingleInstance((commandLine, workingDirectory) =&gt; {
+  <span class="hljs-comment">// &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC911;&#xBCF5; &#xC2E4;&#xD589;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC8FC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xD65C;&#xC131;&#xD654; &#xD569;&#xB2C8;&#xB2E4;.</span>
   <span class="hljs-keyword">if</span> (myWindow) {
     <span class="hljs-keyword">if</span> (myWindow.isMinimized()) myWindow.restore();
     myWindow.focus();
@@ -1303,42 +1351,48 @@ Electron&#xC740; &#xBA3C;&#xC800; &#xBAA8;&#xB4E0; &#xC708;&#xB3C4;&#xC6B0;&#xC7
 }
 
 <span class="hljs-comment">// &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACE0; &#xAC01;&#xC885; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C; &#xB85C;&#xB4DC;&#xD558;&#xACE0; &#xC791;&#xC5C5;&#xD569;&#xB2C8;&#xB2E4;.</span>
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, () =&gt; {
 });
 </code></pre>
+<h3 id="appreleasesingleinstance"><code>app.releaseSingleInstance()</code></h3>
+<p>&#xBAA8;&#xB4E0; <code>makeSingleInstance</code>&#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xC131;&#xB41C; &#xC81C;&#xD55C;&#xC744; &#xD574;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xB2E4;&#xC2DC; &#xC5EC;&#xB7EC;
+&#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC758; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xB098;&#xB780;&#xD788; &#xC2E4;&#xD589;&#xB420; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appsetuseractivitytype-userinfo-webpageurl-macos"><code>app.setUserActivity(type, userInfo[, webpageURL])</code> <em>macOS</em></h3>
+<ul>
+<li><code>type</code> String - &#xACE0;&#xC720;&#xD558;&#xAC8C; activity&#xB97C; &#xC2DD;&#xBCC4;&#xD569;&#xB2C8;&#xB2E4;.
+<a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/activityType" target="_blank"><code>NSUserActivity.activityType</code></a>&#xC744; &#xB9F5;&#xD551;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>userInfo</code> Object - &#xB2E4;&#xB978; &#xAE30;&#xAE30;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC800;&#xC7A5;&#xD560; &#xC571;-&#xD2B9;&#xC815; &#xC0C1;&#xD0DC;.</li>
+<li><code>webpageURL</code> String - &#xC801;&#xB2F9;&#xD55C; &#xC571;&#xC774; &#xAE30;&#xAE30;&#xC5D0; &#xC124;&#xCE58;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB54C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xB85C;&#xB4DC;&#xD560;
+&#xC6F9; &#xD398;&#xC774;&#xC9C0;. &#xC2A4;&#xD0B4;&#xC740; &#xBC18;&#xB4DC;&#xC2DC; <code>http</code> &#xB610;&#xB294; <code>https</code>&#xAC00; &#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p><code>NSUserActivity</code>&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xD604;&#xC7AC; activity&#xC5D0; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; activity&#xB294; &#xC774;&#xD6C4; &#xB2E4;&#xB978; &#xAE30;&#xAE30;&#xC640;
+<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html" target="_blank">Handoff</a>&#xD560; &#xB54C; &#xC790;&#xACA9;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appgetcurrentactivitytype-macos"><code>app.getCurrentActivityType()</code> <em>macOS</em></h3>
+<p>&#xD604;&#xC7AC; &#xC791;&#xB3D9;&#xC911;&#xC778; activity&#xC758; &#xD0C0;&#xC785;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appsetappusermodelidid-windows"><code>app.setAppUserModelId(id)</code> <em>Windows</em></h3>
 <ul>
 <li><code>id</code> String</li>
 </ul>
-<p><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85).aspx" target="_blank">Application User Model ID</a>&#xB97C; <code>id</code>&#xB85C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appisaeroglassenabled-windows"><code>app.isAeroGlassEnabled()</code> <em>Windows</em></h3>
-<p>&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa969540.aspx" target="_blank">DWM &#xCEF4;&#xD3EC;&#xC9C0;&#xC158;</a>
-(Aero Glass)&#xAC00; &#xD65C;&#xC131;&#xD654; &#xB418;&#xC5B4;&#xC788;&#xC744; &#xB54C; <code>true</code>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. &#xC544;&#xB2CC; &#xACBD;&#xC6B0; <code>false</code>&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.
-&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xD22C;&#xBA85;&#xD55C; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5; &#xC5EC;&#xBD80;&#xB97C; &#xD655;&#xC778;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-(&#xD22C;&#xBA85;&#xD55C; &#xC708;&#xB3C4;&#xC6B0;&#xB294; DWM &#xCEF4;&#xD3EC;&#xC9C0;&#xC158;&#xC774; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xB418;&#xC5B4;&#xC788;&#xC744; &#xC2DC; &#xC791;&#xB3D9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;)</p>
-<p>&#xC0AC;&#xC6A9; &#xC608;&#xC2DC;:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">let</span> browserOptions = {width: <span class="hljs-number">1000</span>, height: <span class="hljs-number">800</span>};
-
-<span class="hljs-comment">// &#xD50C;&#xB7AB;&#xD3FC;&#xC774; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; &#xD22C;&#xBA85; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xC0DD;&#xC131;</span>
-<span class="hljs-keyword">if</span> (process.platform !== <span class="hljs-string">&apos;win32&apos;</span> || app.isAeroGlassEnabled()) {
-  browserOptions.transparent = <span class="hljs-literal">true</span>;
-  browserOptions.frame = <span class="hljs-literal">false</span>;
-}
-
-<span class="hljs-comment">// &#xC6D0;&#xB3C4;&#xC6B0; &#xC0DD;&#xC131;</span>
-win = <span class="hljs-keyword">new</span> BrowserWindow(browserOptions);
-
-<span class="hljs-comment">// &#xD398;&#xC774;&#xC9C0; &#xB85C;&#xB4DC;</span>
-<span class="hljs-keyword">if</span> (browserOptions.transparent) {
-  win.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/index.html&apos;</span>);
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-comment">// &#xD22C;&#xBA85; &#xC708;&#xB3C4;&#xC6B0; &#xC0C1;&#xD0DC;&#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xBA74;, &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xD3F4;&#xBC31; &#xC2A4;&#xD0C0;&#xC77C; &#xC0AC;&#xC6A9;</span>
-  win.loadURL(<span class="hljs-string">&apos;file://&apos;</span> + __dirname + <span class="hljs-string">&apos;/fallback.html&apos;</span>);
-}
-</code></pre>
-<h3 id="appisdarkmode-os-x"><code>app.isDarkMode()</code> <em>OS X</em></h3>
-<p>&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xB2E4;&#xD06C; &#xBAA8;&#xB4DC; &#xC0C1;&#xD0DC;&#xC778; &#xACBD;&#xC6B0; <code>true</code>&#xB97C; &#xBC18;&#xD658;&#xD558;&#xACE0; &#xC544;&#xB2D0; &#xACBD;&#xC6B0; <code>false</code>&#xB97C;
-&#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85).aspx" target="_blank">&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xBAA8;&#xB378; ID</a>&#xB97C; <code>id</code>&#xB85C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appimportcertificateoptions-callback-linux"><code>app.importCertificate(options, callback)</code> <em>LINUX</em></h3>
+<ul>
+<li><code>options</code> Object<ul>
+<li><code>certificate</code> String - pkcs12 &#xD30C;&#xC77C;&#xC758; &#xC704;&#xCE58;.</li>
+<li><code>password</code> String -  &#xC778;&#xC99D;&#xC11C;&#xC758; &#xC554;&#xD638;.</li>
+</ul>
+</li>
+<li><code>callback</code> Function<ul>
+<li><code>result</code> Integer - &#xAC00;&#xC838;&#xC624;&#xAE30;&#xC758; &#xACB0;&#xACFC;.</li>
+</ul>
+</li>
+</ul>
+<p>pkcs12 &#xD615;&#xC2DD;&#xC73C;&#xB85C;&#xB41C; &#xC778;&#xC99D;&#xC11C;&#xB97C; &#xD50C;&#xB7AB;&#xD3FC; &#xC778;&#xC99D;&#xC11C; &#xC800;&#xC7A5;&#xC18C;&#xB85C; &#xAC00;&#xC838;&#xC635;&#xB2C8;&#xB2E4;. <code>callback</code>&#xC740; &#xAC00;&#xC838;&#xC624;&#xAE30;&#xC758;
+&#xACB0;&#xACFC;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; <code>result</code> &#xAC1D;&#xCCB4;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &#xD638;&#xCD9C;&#xB429;&#xB2C8;&#xB2E4;. &#xAC12;&#xC774; <code>0</code> &#xC77C; &#xACBD;&#xC6B0; &#xC131;&#xACF5;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;
+&#xB2E4;&#xB978; &#xAC12;&#xC740; &#xBAA8;&#xB450; Chrominum&#xC758; <a href="https://code.google.com/p/chromium/codesearch#chromium/src/net/base/net_error_list.h" target="_blank">net_error_list</a>&#xC5D0;
+&#xB530;&#xB77C; &#xC2E4;&#xD328;&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appdisablehardwareacceleration"><code>app.disableHardwareAcceleration()</code></h3>
+<p>&#xD604;&#xC7AC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xD558;&#xB4DC;&#xC6E8;&#xC5B4; &#xAC00;&#xC18D;&#xC744; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; <code>app</code>&#xC758; <code>ready</code> &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xAE30; &#xC804;&#xC5D0;&#xB9CC; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <h3 id="appcommandlineappendswitchswitch-value"><code>app.commandLine.appendSwitch(switch[, value])</code></h3>
 <p>Chrominum&#xC758; &#xBA85;&#xB839;&#xC904;&#xC5D0; &#xC2A4;&#xC704;&#xCE58;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. <code>value</code>&#xB294; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xAC12;&#xC744; &#xB73B;&#xD558;&#xBA70; &#xC635;&#xC158;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p><strong>&#xCC38;&#xACE0;:</strong> &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; <code>process.argv</code>&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC1C;&#xBC1C;&#xC790;&#xB4E4;&#xC740; &#xBCF4;&#xD1B5;
@@ -1346,38 +1400,43 @@ Chrominum&#xC758; &#xB85C;&#xC6B0; &#xB808;&#xBCA8; &#xC218;&#xC900;&#xC758; &#x
 <h3 id="appcommandlineappendargumentvalue"><code>app.commandLine.appendArgument(value)</code></h3>
 <p>Chrominum&#xC758; &#xBA85;&#xB839;&#xC904;&#xC5D0; &#xC778;&#xC218;&#xB97C; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. &#xC778;&#xC218;&#xB294; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xC778;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p><strong>&#xCC38;&#xACE0;:</strong> &#xC774; &#xBA54;&#xC11C;&#xB4DC;&#xB294; <code>process.argv</code>&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appdockbouncetype-os-x"><code>app.dock.bounce([type])</code> <em>OS X</em></h3>
+<h3 id="appdockbouncetype-macos"><code>app.dock.bounce([type])</code> <em>macOS</em></h3>
 <ul>
 <li><code>type</code> String (optional) - <code>critical</code> &#xB610;&#xB294; <code>informational</code>&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>informational</code> &#xC785;&#xB2C8;&#xB2E4;.</li>
 </ul>
-<p><code>critical</code>&#xC774; &#xC804;&#xB2EC;&#xB418;&#xBA74; dock &#xC544;&#xC774;&#xCF58;&#xC774; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xD65C;&#xC131;&#xD654;&#xB418;&#xAC70;&#xB098; &#xC694;&#xCCAD;&#xC774; &#xC911;&#xC9C0;&#xB418;&#xAE30; &#xC804;&#xAE4C;&#xC9C0;
-&#xD1B5;&#xD1B5; &#xD291;&#xB2C8;&#xB2E4;.</p>
-<p><code>informational</code>&#xC774; &#xC804;&#xB2EC;&#xB418;&#xBA74; dock &#xC544;&#xC774;&#xCF58;&#xC774; 1&#xCD08;&#xB9CC; &#xD1B5;&#xD1B5; &#xD291;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774;
+<p><code>critical</code>&#xC774; &#xC804;&#xB2EC;&#xB418;&#xBA74; dock &#xC544;&#xC774;&#xCF58;&#xC774; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xD65C;&#xC131;&#xD654;&#xB418;&#xAC70;&#xB098; &#xC694;&#xCCAD;&#xC774; &#xC911;&#xC9C0;&#xB418;&#xAE30; &#xC804;&#xAE4C;&#xC9C0;
+&#xD1B5;&#xD1B5; &#xD280;&#xB294; &#xBC14;&#xC6B4;&#xC2A4; &#xD6A8;&#xACFC;&#xB97C; &#xC801;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>informational</code>&#xC774; &#xC804;&#xB2EC;&#xB418;&#xBA74; dock &#xC544;&#xC774;&#xCF58;&#xC774; 1&#xCD08;&#xB9CC; &#xD1B5;&#xD1B5; &#xD291;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774;
 &#xD65C;&#xC131;&#xD654;&#xB418;&#xAC70;&#xB098; &#xC694;&#xCCAD;&#xC774; &#xC911;&#xC9C0;&#xB418;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; &#xC694;&#xCCAD;&#xC740; &#xACC4;&#xC18D; &#xD65C;&#xC131;&#xD654;&#xB85C; &#xC720;&#xC9C0; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB610;&#xD55C; &#xC694;&#xCCAD;&#xC744; &#xCDE8;&#xC18C;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; ID&#xB97C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appdockcancelbounceid-os-x"><code>app.dock.cancelBounce(id)</code> <em>OS X</em></h3>
+<h3 id="appdockcancelbounceid-macos"><code>app.dock.cancelBounce(id)</code> <em>macOS</em></h3>
 <ul>
 <li><code>id</code> Integer</li>
 </ul>
-<p><code>app.dock.bounce([type])</code> &#xBA54;&#xC11C;&#xB4DC;&#xC5D0;&#xC11C; &#xBC18;&#xD658;&#xD55C; <code>id</code>&#xC758; &#xD1B5;&#xD1B5; &#xD280;&#xB294; &#xD6A8;&#xACFC;&#xB97C; &#xCDE8;&#xC18C;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appdocksetbadgetext-os-x"><code>app.dock.setBadge(text)</code> <em>OS X</em></h3>
+<p><code>app.dock.bounce([type])</code> &#xBA54;&#xC11C;&#xB4DC;&#xC5D0;&#xC11C; &#xBC18;&#xD658;&#xD55C; <code>id</code>&#xC758; &#xBC14;&#xC6B4;&#xC2A4; &#xD6A8;&#xACFC;&#xB97C; &#xCDE8;&#xC18C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appdockdownloadfinishedfilepath-macos"><code>app.dock.downloadFinished(filePath)</code> <em>macOS</em></h3>
+<ul>
+<li><code>filePath</code> String</li>
+</ul>
+<p><code>filePath</code>&#xAC00; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xD3F4;&#xB354;&#xC5D0; &#xB4E4;&#xC5B4;&#xC788;&#xB2E4;&#xBA74; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xC2A4;&#xD0DD;&#xC744; &#xBC14;&#xC6B4;&#xC2A4;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appdocksetbadgetext-macos"><code>app.dock.setBadge(text)</code> <em>macOS</em></h3>
 <ul>
 <li><code>text</code> String</li>
 </ul>
 <p>dock&#xC758; badge&#xC5D0; &#xD45C;&#xC2DC;&#xD560; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appdockgetbadge-os-x"><code>app.dock.getBadge()</code> <em>OS X</em></h3>
+<h3 id="appdockgetbadge-macos"><code>app.dock.getBadge()</code> <em>macOS</em></h3>
 <p>dock&#xC758; badge&#xC5D0; &#xC124;&#xC815;&#xB41C; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appdockhide-os-x"><code>app.dock.hide()</code> <em>OS X</em></h3>
+<h3 id="appdockhide-macos"><code>app.dock.hide()</code> <em>macOS</em></h3>
 <p>dock &#xC544;&#xC774;&#xCF58;&#xC744; &#xC228;&#xAE41;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appdockshow-os-x"><code>app.dock.show()</code> <em>OS X</em></h3>
+<h3 id="appdockshow-macos"><code>app.dock.show()</code> <em>macOS</em></h3>
 <p>dock &#xC544;&#xC774;&#xCF58;&#xC744; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appdocksetmenumenu-os-x"><code>app.dock.setMenu(menu)</code> <em>OS X</em></h3>
+<h3 id="appdocksetmenumenu-macos"><code>app.dock.setMenu(menu)</code> <em>macOS</em></h3>
 <ul>
 <li><code>menu</code> <a href="menu.html">Menu</a></li>
 </ul>
-<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; <a href="https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/customizing_docktile/concepts/dockconcepts.html#//apple_ref/doc/uid/TP30000986-CH2-TPXREF103" target="_blank">dock menu</a>&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h3 id="appdockseticonimage-os-x"><code>app.dock.setIcon(image)</code> <em>OS X</em></h3>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; <a href="https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/customizing_docktile/concepts/dockconcepts.html#//apple_ref/doc/uid/TP30000986-CH2-TPXREF103" target="_blank">dock menu</a>&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="appdockseticonimage-macos"><code>app.dock.setIcon(image)</code> <em>macOS</em></h3>
 <ul>
 <li><code>image</code> <a href="native-image.html">NativeImage</a></li>
 </ul>
