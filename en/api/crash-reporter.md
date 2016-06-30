@@ -1,12 +1,12 @@
 # crashReporter
 
-The `crash-reporter` module enables sending your app's crash reports.
+> Submit crash reports to a remote server.
 
 The following is an example of automatically submitting a crash report to a
 remote server:
 
 ```javascript
-const crashReporter = require('electron').crashReporter;
+const {crashReporter} = require('electron');
 
 crashReporter.start({
   productName: 'YourName',
@@ -20,7 +20,7 @@ For setting up a server to accept and process crash reports, you can use
 following projects:
 
 * [socorro](https://github.com/mozilla/socorro)
-* [mini-breakpad-server](https://github.com/atom/mini-breakpad-server)
+* [mini-breakpad-server](https://github.com/electron/mini-breakpad-server)
 
 ## Methods
 
@@ -42,7 +42,7 @@ The `crash-reporter` module has the following methods:
 You are required to call this method before using other `crashReporter`
 APIs.
 
-**Note:** On OS X, Electron uses a new `crashpad` client, which is different
+**Note:** On macOS, Electron uses a new `crashpad` client, which is different
 from `breakpad` on Windows and Linux. To enable the crash collection feature,
 you are required to call the `crashReporter.start` API to initialize `crashpad`
 in the main process and in each renderer process from which you wish to collect
@@ -60,7 +60,8 @@ ID.
 
 ## crash-reporter Payload
 
-The crash reporter will send the following data to the `submitURL` as a `multipart/form-data` `POST`:
+The crash reporter will send the following data to the `submitURL` as
+a `multipart/form-data` `POST`:
 
 * `ver` String - The version of Electron.
 * `platform` String - e.g. 'win32'.

@@ -3,10 +3,13 @@
 ## When will Electron upgrade to latest Chrome?
 
 The Chrome version of Electron is usually bumped within one or two weeks after
-a new stable Chrome version gets released.
+a new stable Chrome version gets released. This estimate is not guaranteed and
+depends on the amount of work involved with upgrading.
 
-Also we only use stable channel of Chrome. If an important fix is in beta or dev
+Only the stable channel of Chrome is used. If an important fix is in beta or dev
 channel, we will back-port it.
+
+For more information, please see the [security introduction](../tutorial/security.md).
 
 ## When will Electron upgrade to latest Node.js?
 
@@ -27,7 +30,7 @@ use HTML5 APIs which are already available in browsers. Good candidates are
 
 Or you can use the IPC system, which is specific to Electron, to store objects
 in the main process as a global variable, and then to access them from the
-renderers through the `remote` module:
+renderers through the `remote` property of `electron` module:
 
 ```javascript
 // In the main process.
@@ -38,12 +41,12 @@ global.sharedObject = {
 
 ```javascript
 // In page 1.
-require('remote').getGlobal('sharedObject').someProperty = 'new value';
+require('electron').remote.getGlobal('sharedObject').someProperty = 'new value';
 ```
 
 ```javascript
 // In page 2.
-console.log(require('remote').getGlobal('sharedObject').someProperty);
+console.log(require('electron').remote.getGlobal('sharedObject').someProperty);
 ```
 
 ## My app's window/tray disappeared after a few minutes.
@@ -60,31 +63,31 @@ If you want a quick fix, you can make the variables global by changing your
 code from this:
 
 ```javascript
-app.on('ready', function() {
-  var tray = new Tray('/path/to/icon.png');
-})
+app.on('ready', () => {
+  const tray = new Tray('/path/to/icon.png');
+});
 ```
 
 to this:
 
 ```javascript
-var tray = null;
-app.on('ready', function() {
+let tray = null;
+app.on('ready', () => {
   tray = new Tray('/path/to/icon.png');
-})
+});
 ```
 
 ## I can not use jQuery/RequireJS/Meteor/AngularJS in Electron.
 
 Due to the Node.js integration of Electron, there are some extra symbols
-inserted into the DOM like `module`, `exports`, `require`. This causes problems for
-some libraries since they want to insert the symbols with the same names.
+inserted into the DOM like `module`, `exports`, `require`. This causes problems
+for some libraries since they want to insert the symbols with the same names.
 
 To solve this, you can turn off node integration in Electron:
 
 ```javascript
 // In the main process.
-var mainWindow = new BrowserWindow({
+let win = new BrowserWindow({
   webPreferences: {
     nodeIntegration: false
   }

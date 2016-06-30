@@ -4,6 +4,7 @@
 
 ## Changelog
 
+- [x] Update to Electron-v1.2.5 2016-06-30
 - [x] Update to Electron-v1.2.1 2016-06-06
 - [x] Update to Electron-v0.37.8 2016-05-03
 - [x] Update to Electron-v0.37.6 2016-04-17

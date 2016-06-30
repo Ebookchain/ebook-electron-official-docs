@@ -1,11 +1,13 @@
 # shell
 
+> Manage files and URLs using their default applications.
+
 The `shell` module provides functions related to desktop integration.
 
 An example of opening a URL in the user's default browser:
 
 ```javascript
-const shell = require('electron').shell;
+const {shell} = require('electron');
 
 shell.openExternal('https://github.com');
 ```
@@ -29,7 +31,7 @@ Open the given file in the desktop's default manner.
 ### `shell.openExternal(url[, options])`
 
 * `url` String
-* `options` Object (optional) _OS X_
+* `options` Object (optional) _macOS_
   * `activate` Boolean - `true` to bring the opened application to the
     foreground. The default is `true`.
 

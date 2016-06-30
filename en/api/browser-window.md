@@ -1,26 +1,96 @@
 # BrowserWindow
 
-The `BrowserWindow` class gives you the ability to create a browser window. For
-example:
+> Create and control browser windows.
 
 ```javascript
 // In the main process.
-const BrowserWindow = require('electron').BrowserWindow;
+const {BrowserWindow} = require('electron')
 
 // Or in the renderer process.
-const BrowserWindow = require('electron').remote.BrowserWindow;
+const {BrowserWindow} = require('electron').remote
 
-var win = new BrowserWindow({ width: 800, height: 600, show: false });
-win.on('closed', function() {
-  win = null;
-});
+let win = new BrowserWindow({width: 800, height: 600})
+win.on('closed', () => {
+  win = null
+})
 
-win.loadURL('https://github.com');
-win.show();
+win.loadURL('https://github.com')
 ```
 
-You can also create a window without chrome by using
-[Frameless Window](frameless-window.md) API.
+## Frameless window
+
+To create a window without chrome, or a transparent window in arbitrary shape,
+you can use the [Frameless Window](frameless-window.md) API.
+
+## Showing window gracefully
+
+When loading a page in window directly, users will see the progress of loading
+page, which is not good experience for native app. To make the window display
+without visual flash, there are two solutions for different situations.
+
+### Using `ready-to-show` event
+
+While loading the page, the `ready-to-show` event will be emitted when renderer
+process has done drawing for the first time, showing window after this event
+will have no visual flash:
+
+```javascript
+let win = new BrowserWindow({show: false})
+win.once('ready-to-show', () => {
+  win.show()
+})
+```
+
+This is event is usually emitted after the `did-finish-load` event, but for
+pages with many remote resources, it may be emitted before the `did-finish-load`
+event.
+
+### Setting `backgroundColor`
+
+For a complex app, the `ready-to-show` event could be emitted too late, making
+the app feel slow. In this case, it is recommended to show the window
+immediately, and use a `backgroundColor` close to your app's background:
+
+```javascript
+let win = new BrowserWindow({backgroundColor: '#2e2c29'})
+win.loadURL('https://github.com')
+```
+
+Note that even for apps that use `ready-to-show` event, it is still recommended
+to set `backgroundColor` to make app feel more native.
+
+## Parent and child windows
+
+By using `parent` option, you can create child windows:
+
+```javascript
+let top = new BrowserWindow()
+let child = new BrowserWindow({parent: top})
+```
+
+The `child` window will always show on top of the `top` window.
+
+### Modal windows
+
+A modal window is a child window that disables parent window, to create a modal
+window, you have to set both `parent` and `modal` options:
+
+```javascript
+let child = new BrowserWindow({parent: top, modal: true, show: false})
+child.loadURL('https://github.com')
+child.once('ready-to-show', () => {
+  child.show()
+})
+```
+
+### Platform notices
+
+* On macOS the child windows will keep the relative position to parent window
+  when parent window moves, while on Windows and Linux child windows will not
+  move.
+* On Windows it is not supported to change parent window dynamically.
+* On Linux the type of modal windows will be changed to `dialog`.
+* On Linux many desktop environments do not support hiding a modal window.
 
 ## Class: BrowserWindow
 
@@ -34,10 +104,10 @@ It creates a new `BrowserWindow` with native properties as set by the `options`.
 * `options` Object
   * `width` Integer - Window's width in pixels. Default is `800`.
   * `height` Integer - Window's height in pixels. Default is `600`.
-  * `x` Integer - Window's left offset from screen. Default is to center the
-    window.
-  * `y` Integer - Window's top offset from screen. Default is to center the
-    window.
+  * `x` Integer (**required** if y is used) - Window's left offset from screen.
+    Default is to center the window.
+  * `y` Integer (**required** if x is used) - Window's top offset from screen.
+    Default is to center the window.
   * `useContentSize` Boolean - The `width` and `height` would be used as web
     page's size, which means the actual window's size will include window
     frame's size and be slightly larger. Default is `false`.
@@ -55,23 +125,33 @@ It creates a new `BrowserWindow` with native properties as set by the `options`.
     implemented on Linux. Default is `true`.
   * `closable` Boolean - Whether window is closable. This is not implemented
     on Linux. Default is `true`.
+  * `focusable` Boolean - Whether the window can be focused. Default is
+    `true`. On Windows setting `focusable: false` also implies setting
+    `skipTaskbar: true`. On Linux setting `focusable: false` makes the window
+    stop interacting with wm, so the window will always stay on top in all
+    workspaces.
   * `alwaysOnTop` Boolean - Whether the window should always stay on top of
     other windows. Default is `false`.
   * `fullscreen` Boolean - Whether the window should show in fullscreen. When
-    explicity set to `false` the fullscreen button will be hidden or disabled
-    on OS X. Default is `false`.
-  * `fullscreenable` Boolean - Whether the maximize/zoom button on OS X should
-    toggle full screen mode or maximize window. Default is `true`.
+    explicitly set to `false` the fullscreen button will be hidden or disabled
+    on macOS. Default is `false`.
+  * `fullscreenable` Boolean - Whether the window can be put into fullscreen
+    mode. On macOS, also whether the maximize/zoom button should toggle full
+    screen mode or maximize window. Default is `true`.
   * `skipTaskbar` Boolean - Whether to show the window in taskbar. Default is
     `false`.
   * `kiosk` Boolean - The kiosk mode. Default is `false`.
   * `title` String - Default window title. Default is `"Electron"`.
-  * `icon` [NativeImage](native-image.md) - The window icon, when omitted on
-    Windows the executable's icon would be used as window icon.
+  * `icon` [NativeImage](native-image.md) - The window icon. On Windows it is
+    recommended to use `ICO` icons to get best visual effects, you can also
+    leave it undefined so the executable's icon will be used.
   * `show` Boolean - Whether window should be shown when created. Default is
     `true`.
   * `frame` Boolean - Specify `false` to create a
     [Frameless Window](frameless-window.md). Default is `true`.
+  * `parent` BrowserWindow - Specify parent window. Default is `null`.
+  * `modal` Boolean - Whether this is a modal window. This only works when the
+    window is a child window. Default is `false`.
   * `acceptFirstMouse` Boolean - Whether the web view accepts a single
     mouse-down event that simultaneously activates the window. Default is
     `false`.
@@ -85,7 +165,7 @@ It creates a new `BrowserWindow` with native properties as set by the `options`.
     like `#66CD00` or `#FFF` or `#80FFFFFF` (alpha is supported). Default is
     `#FFF` (white).
   * `hasShadow` Boolean - Whether window should have a shadow. This is only
-    implemented on OS X. Default is `true`.
+    implemented on macOS. Default is `true`.
   * `darkTheme` Boolean - Forces using dark theme for the window, only works on
     some GTK+3 desktop environments. Default is `false`.
   * `transparent` Boolean - Makes the window [transparent](frameless-window.md).
@@ -97,12 +177,17 @@ It creates a new `BrowserWindow` with native properties as set by the `options`.
   * `webPreferences` Object - Settings of web page's features. See more about
     this below.
 
+When setting minimum or maximum window size with `minWidth`/`maxWidth`/
+`minHeight`/`maxHeight`, it only constrains the users, it won't prevent you from
+passing a size that does not follow size constraints to `setBounds`/`setSize` or
+to the constructor of `BrowserWindow`.
+
 The possible values and behaviors of `type` option are platform dependent,
 supported values are:
 
 * On Linux, possible types are `desktop`, `dock`, `toolbar`, `splash`,
   `notification`.
-* On OS X, possible types are `desktop`, `textured`.
+* On macOS, possible types are `desktop`, `textured`.
   * The `textured` type adds metal gradient appearance
     (`NSTexturedBackgroundWindowMask`).
   * The `desktop` type places the window at the desktop background window level
@@ -110,7 +195,7 @@ supported values are:
     focus, keyboard or mouse events, but you can use `globalShortcut` to receive
     input sparingly.
 
-The `titleBarStyle` option is only supported on OS X 10.10 Yosemite and newer.
+The `titleBarStyle` option is only supported on macOS 10.10 Yosemite and newer.
 Possible values are:
 
 * `default` or not specified, results in the standard gray opaque Mac title
@@ -166,10 +251,16 @@ The `webPreferences` option is an object that can have following properties:
   canvas features. Default is `false`.
 * `directWrite` Boolean - Enables DirectWrite font rendering system on
   Windows. Default is `true`.
+* `scrollBounce` Boolean - Enables scroll bounce (rubber banding) effect on
+  macOS. Default is `false`.
 * `blinkFeatures` String - A list of feature strings separated by `,`, like
-  `CSSVariables,KeyboardEventKey`. The full list of supported feature strings
-  can be found in the [setFeatureEnabledFromString][blink-feature-string]
-  function.
+  `CSSVariables,KeyboardEventKey` to enable. The full list of supported feature
+  strings can be found in the [RuntimeEnabledFeatures.in][blink-feature-string]
+  file.
+* `disableBlinkFeatures` String - A list of feature strings separated by `,`,
+  like `CSSVariables,KeyboardEventKey` to disable. The full list of supported
+  feature strings can be found in the
+  [RuntimeEnabledFeatures.in][blink-feature-string] file.
 * `defaultFontFamily` Object - Sets the default font for the font-family.
   * `standard` String - Defaults to `Times New Roman`.
   * `serif` String - Defaults to `Times New Roman`.
@@ -210,17 +301,17 @@ will cancel the close.
 
 Usually you would want to use the `beforeunload` handler to decide whether the
 window should be closed, which will also be called when the window is
-reloaded. In Electron, returning an empty string or `false` would cancel the
+reloaded. In Electron, returning any value other than `undefined` would cancel the
 close. For example:
 
 ```javascript
-window.onbeforeunload = function(e) {
+window.onbeforeunload = (e) => {
   console.log('I do not want to be closed');
 
-  // Unlike usual browsers, in which a string should be returned and the user is
-  // prompted to confirm the page unload, Electron gives developers more options.
-  // Returning empty string or false would prevent the unloading now.
-  // You can also use the dialog API to let the user confirm closing the application.
+  // Unlike usual browsers that a message box will be prompted to users, returning
+  // a non-void value will silently cancel the close.
+  // It is recommended to use the dialog API to let the user confirm closing the
+  // application.
   e.returnValue = false;
 };
 ```
@@ -254,6 +345,11 @@ Emitted when the window is shown.
 
 Emitted when the window is hidden.
 
+### Event: 'ready-to-show'
+
+Emitted when the web page has been rendered and window can be displayed without
+visual flash.
+
 ### Event: 'maximize'
 
 Emitted when window is maximized.
@@ -278,9 +374,9 @@ Emitted when the window is getting resized.
 
 Emitted when the window is getting moved to a new position.
 
-__Note__: On OS X this event is just an alias of `moved`.
+__Note__: On macOS this event is just an alias of `moved`.
 
-### Event: 'moved' _OS X_
+### Event: 'moved' _macOS_
 
 Emitted once when the window is moved to a new position.
 
@@ -311,11 +407,12 @@ Emitted when an [App Command](https://msdn.microsoft.com/en-us/library/windows/d
 is invoked. These are typically related to keyboard media keys or browser
 commands, as well as the "Back" button built into some mice on Windows.
 
-Commands are lowercased with underscores replaced with hyphens and the `APPCOMMAND_` prefix stripped off.
+Commands are lowercased with underscores replaced with hyphens and the
+`APPCOMMAND_` prefix stripped off.
 e.g. `APPCOMMAND_BROWSER_BACKWARD` is emitted as `browser-backward`.
 
-```js
-someWindow.on('app-command', function(e, cmd) {
+```javascript
+someWindow.on('app-command', (e, cmd) => {
   // Navigate the window back when the user hits their mouse back button
   if (cmd === 'browser-backward' && someWindow.webContents.canGoBack()) {
     someWindow.webContents.goBack();
@@ -323,15 +420,15 @@ someWindow.on('app-command', function(e, cmd) {
 });
 ```
 
-### Event: 'scroll-touch-begin' _OS X_
+### Event: 'scroll-touch-begin' _macOS_
 
 Emitted when scroll wheel event phase has begun.
 
-### Event: 'scroll-touch-end' _OS X_
+### Event: 'scroll-touch-end' _macOS_
 
 Emitted when scroll wheel event phase has ended.
 
-### Event: 'swipe' _OS X_
+### Event: 'swipe' _macOS_
 
 Returns:
 
@@ -371,7 +468,14 @@ Find a window according to its ID.
 Adds DevTools extension located at `path`, and returns extension's name.
 
 The extension will be remembered so you only need to call this API once, this
-API is not for programming use.
+API is not for programming use. If you try to add an extension that has already
+been loaded, this method will not return and instead log a warning to the
+console.
+
+Method will also not return if the extension's manifest is missing or incomplete.
+
+**Note:** This API cannot be called before the `ready` event of the `app` module
+is emitted.
 
 ### `BrowserWindow.removeDevToolsExtension(name)`
 
@@ -379,13 +483,30 @@ API is not for programming use.
 
 Remove the DevTools extension whose name is `name`.
 
+**Note:** This API cannot be called before the `ready` event of the `app` module
+is emitted.
+
+### `BrowserWindow.getDevToolsExtensions()`
+
+Returns an Object where the keys are the extension names and each value is
+an Object containing `name` and `version` properties.
+
+To check if a DevTools extension is installed you can run the following:
+
+```javascript
+let installed = BrowserWindow.getDevToolsExtensions().hasOwnProperty('devtron')
+```
+
+**Note:** This API cannot be called before the `ready` event of the `app` module
+is emitted.
+
 ## Instance Properties
 
 Objects created with `new BrowserWindow` have the following properties:
 
 ```javascript
 // In this example `win` is our instance
-var win = new BrowserWindow({ width: 800, height: 600 });
+let win = new BrowserWindow({width: 800, height: 600});
 ```
 
 ### `win.webContents`
@@ -421,11 +542,11 @@ the [close event](#event-close).
 
 ### `win.focus()`
 
-Focus on the window.
+Focuses on the window.
 
 ### `win.blur()`
 
-Remove focus on the window.
+Removes focus from the window.
 
 ### `win.isFocused()`
 
@@ -446,6 +567,10 @@ Hides the window.
 ### `win.isVisible()`
 
 Returns a boolean, whether the window is visible to the user.
+
+### `win.isModal()`
+
+Returns whether current window is a modal window.
 
 ### `win.maximize()`
 
@@ -482,7 +607,7 @@ Sets whether the window should be in fullscreen mode.
 
 Returns a boolean, whether the window is in fullscreen mode.
 
-### `win.setAspectRatio(aspectRatio[, extraSize])` _OS X_
+### `win.setAspectRatio(aspectRatio[, extraSize])` _macOS_
 
 * `aspectRatio` The aspect ratio we want to maintain for some portion of the
 content view.
@@ -512,7 +637,7 @@ height areas you have within the overall content view.
   * `y` Integer
   * `width` Integer
   * `height` Integer
-* `animate` Boolean (optional) _OS X_
+* `animate` Boolean (optional) _macOS_
 
 Resizes and moves the window to `width`, `height`, `x`, `y`.
 
@@ -524,7 +649,7 @@ Returns an object that contains window's width, height, x and y values.
 
 * `width` Integer
 * `height` Integer
-* `animate` Boolean (optional) _OS X_
+* `animate` Boolean (optional) _macOS_
 
 Resizes the window to `width` and `height`.
 
@@ -536,7 +661,7 @@ Returns an array that contains window's width and height.
 
 * `width` Integer
 * `height` Integer
-* `animate` Boolean (optional) _OS X_
+* `animate` Boolean (optional) _macOS_
 
 Resizes the window's client area (e.g. the web page) to `width` and `height`.
 
@@ -576,37 +701,37 @@ Sets whether the window can be manually resized by user.
 
 Returns whether the window can be manually resized by user.
 
-### `win.setMovable(movable)` _OS X_ _Windows_
+### `win.setMovable(movable)` _macOS_ _Windows_
 
 * `movable` Boolean
 
 Sets whether the window can be moved by user. On Linux does nothing.
 
-### `win.isMovable()` _OS X_ _Windows_
+### `win.isMovable()` _macOS_ _Windows_
 
 Returns whether the window can be moved by user. On Linux always returns
 `true`.
 
-### `win.setMinimizable(minimizable)` _OS X_ _Windows_
+### `win.setMinimizable(minimizable)` _macOS_ _Windows_
 
 * `minimizable` Boolean
 
 Sets whether the window can be manually minimized by user. On Linux does
 nothing.
 
-### `win.isMinimizable()` _OS X_ _Windows_
+### `win.isMinimizable()` _macOS_ _Windows_
 
 Returns whether the window can be manually minimized by user. On Linux always
 returns `true`.
 
-### `win.setMaximizable(maximizable)` _OS X_ _Windows_
+### `win.setMaximizable(maximizable)` _macOS_ _Windows_
 
 * `maximizable` Boolean
 
 Sets whether the window can be manually maximized by user. On Linux does
 nothing.
 
-### `win.isMaximizable()` _OS X_ _Windows_
+### `win.isMaximizable()` _macOS_ _Windows_
 
 Returns whether the window can be manually maximized by user. On Linux always
 returns `true`.
@@ -623,13 +748,13 @@ maximizes the window.
 Returns whether the maximize/zoom window button toggles fullscreen mode or
 maximizes the window.
 
-### `win.setClosable(closable)` _OS X_ _Windows_
+### `win.setClosable(closable)` _macOS_ _Windows_
 
 * `closable` Boolean
 
 Sets whether the window can be manually closed by user. On Linux does nothing.
 
-### `win.isClosable()` _OS X_ _Windows_
+### `win.isClosable()` _macOS_ _Windows_
 
 Returns whether the window can be manually closed by user. On Linux always
 returns `true`.
@@ -654,7 +779,7 @@ Moves window to the center of the screen.
 
 * `x` Integer
 * `y` Integer
-* `animate` Boolean (optional) _OS X_
+* `animate` Boolean (optional) _macOS_
 
 Moves window to `x` and `y`.
 
@@ -674,6 +799,17 @@ Returns the title of the native window.
 
 **Note:** The title of web page can be different from the title of the native
 window.
+
+### `win.setSheetOffset(offsetY[, offsetX])` _macOS_
+
+Changes the attachment point for sheets on macOS. By default, sheets are
+attached just below the window frame, but you may want to display them beneath
+a HTML-rendered toolbar. For example:
+
+```javascript
+let toolbarRect = document.getElementById('toolbar').getBoundingClientRect();
+win.setSheetOffset(toolbarRect.height);
+```
 
 ### `win.flashFrame(flag)`
 
@@ -701,7 +837,7 @@ Returns whether the window is in kiosk mode.
 
 Returns the platform-specific handle of the window as `Buffer`.
 
-The native type of the handle is `HWND` on Windows, `NSView*` on OS X, and
+The native type of the handle is `HWND` on Windows, `NSView*` on macOS, and
 `Window` (`unsigned long`) on Linux.
 
 ### `win.hookWindowMessage(message, callback)` _Windows_
@@ -728,25 +864,25 @@ Unhook the window message.
 
 Unhooks all of the window messages.
 
-### `win.setRepresentedFilename(filename)` _OS X_
+### `win.setRepresentedFilename(filename)` _macOS_
 
 * `filename` String
 
 Sets the pathname of the file the window represents, and the icon of the file
 will show in window's title bar.
 
-### `win.getRepresentedFilename()` _OS X_
+### `win.getRepresentedFilename()` _macOS_
 
 Returns the pathname of the file the window represents.
 
-### `win.setDocumentEdited(edited)` _OS X_
+### `win.setDocumentEdited(edited)` _macOS_
 
 * `edited` Boolean
 
 Specifies whether the window’s document has been edited, and the icon in title
 bar will become gray when set to `true`.
 
-### `win.isDocumentEdited()` _OS X_
+### `win.isDocumentEdited()` _macOS_
 
 Whether the window's document has been edited.
 
@@ -767,14 +903,6 @@ Captures a snapshot of the page within `rect`. Upon completion `callback` will
 be called with `callback(image)`. The `image` is an instance of
 [NativeImage](native-image.md) that stores data of the snapshot. Omitting
 `rect` will capture the whole visible page.
-
-### `win.print([options])`
-
-Same as `webContents.print([options])`
-
-### `win.printToPDF(options, callback)`
-
-Same as `webContents.printToPDF(options, callback)`
 
 ### `win.loadURL(url[, options])`
 
@@ -812,17 +940,17 @@ cleared
 * `description` String - a description that will be provided to Accessibility
 screen readers
 
-Sets a 16 x 16 pixel overlay onto the current taskbar icon, usually used to convey some
-sort of application status or to passively notify the user.
+Sets a 16 x 16 pixel overlay onto the current taskbar icon, usually used to
+convey some sort of application status or to passively notify the user.
 
-### `win.setHasShadow(hasShadow)` _OS X_
+### `win.setHasShadow(hasShadow)` _macOS_
 
-* `hasShadow` (Boolean)
+* `hasShadow` Boolean
 
 Sets whether the window should have a shadow. On Windows and Linux does
 nothing.
 
-### `win.hasShadow()` _OS X_
+### `win.hasShadow()` _macOS_
 
 Returns whether the window has a shadow. On Windows and Linux always returns
 `true`.
@@ -863,9 +991,15 @@ The `flags` is an array that can include following `String`s:
   button state is drawn. This value is intended for instances where the button
   is used in a notification.
 
-### `win.showDefinitionForSelection()` _OS X_
+### `win.showDefinitionForSelection()` _macOS_
 
-Shows pop-up dictionary that searches the selected word on the page.
+Same as `webContents.showDefinitionForSelection()`.
+
+### `win.setIcon(icon)` _Windows_ _Linux_
+
+* `icon` [NativeImage](native-image.md)
+
+Changes window icon.
 
 ### `win.setAutoHideMenuBar(hide)`
 
@@ -906,10 +1040,42 @@ Returns whether the window is visible on all workspaces.
 
 **Note:** This API always returns false on Windows.
 
-### `win.setIgnoreMouseEvents(ignore)` _OS X_
+### `win.setIgnoreMouseEvents(ignore)`
 
 * `ignore` Boolean
 
-Ignore all moused events that happened in the window.
+Makes the window ignore all mouse events.
 
-[blink-feature-string]: https://code.google.com/p/chromium/codesearch#chromium/src/out/Debug/gen/blink/platform/RuntimeEnabledFeatures.cpp&sq=package:chromium&type=cs&l=527
+All mouse events happened in this window will be passed to the window below
+this window, but if this window has focus, it will still receive keyboard
+events.
+
+### `win.setContentProtection(enable)` _macOS_ _Windows_
+
+Prevents the window contents from being captured by other apps.
+
+On macOS it sets the NSWindow's sharingType to NSWindowSharingNone.
+On Windows it calls SetWindowDisplayAffinity with WDA_MONITOR.
+
+### `win.setFocusable(focusable)` _Windows_
+
+* `focusable` Boolean
+
+Changes whether the window can be focused.
+
+[blink-feature-string]: https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/RuntimeEnabledFeatures.in
+
+### `win.setParentWindow(parent)` _Linux_ _macOS_
+
+* `parent` BrowserWindow
+
+Sets `parent` as current window's parent window, passing `null` will turn
+current window into a top-level window.
+
+### `win.getParentWindow()`
+
+Returns the parent window.
+
+### `win.getChildWindows()`
+
+Returns all child windows.

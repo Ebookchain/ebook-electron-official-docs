@@ -1,5 +1,7 @@
 # `window.open` 함수
 
+> 새 윈도우를 열고 URL을 로드합니다.
+
 `window.open` 함수가 호출되면 새 창을 생성하고 `url` 페이지를 불러옵니다. 이 창은
 지정한 `url`을 로드하여 만들어진 `BrowserWindow`의 새 인스턴스이며 본래 창 객체 대신
 페이지의 컨트롤이 제한된 프록시 객체를 반환합니다.
@@ -9,7 +11,7 @@
 합니다.
 
 새롭게 생성된 `BrowserWindow`는 기본적으로 부모 창의 옵션을 상속합니다. 이 옵션을
-변경하려면 새 창을 열 때 `features` 인자를 지정해야 합니다.
+변경하려면 새 창을 열 때 `features` 인수를 지정해야 합니다.
 
 ### `window.open(url[, frameName][, features])`
 
@@ -56,6 +58,10 @@
 ### `BrowserWindowProxy.focus()`
 
 자식 윈도우에 포커스를 맞춥니다. (창을 맨 앞으로 가져옵니다)
+
+### `BrowserWindowProxy.print()`
+
+자식 윈도우에 프린트 대화 상자를 호출합니다.
 
 ### `BrowserWindowProxy.postMessage(message, targetOrigin)`
 

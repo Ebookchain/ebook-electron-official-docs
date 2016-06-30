@@ -7,7 +7,7 @@
 **注意:** 在渲染进程 / 开发者工具栏, `window.screen` 是一个预设值的 DOM
 属性, 所以这样写 `var screen = require('electron').screen` 将不会工作.
 在我们下面的例子, 我们取代使用可变名字的 `electronScreen`.
-一个例子，创建一个充满真个屏幕的窗口 :
+一个例子，创建一个充满整个屏幕的窗口 :
 
 ```javascript
 const electron = require('electron');
@@ -23,7 +23,7 @@ app.on('ready', function() {
 });
 ```
 
-另一个例子，在次页外创建一个窗口:
+另一个例子，在此页外创建一个窗口:
 
 ```javascript
 const electron = require('electron');
@@ -54,7 +54,7 @@ app.on('ready', function() {
 
 ## `Display` 对象
 
-`Display` 对象表示了物力方式连接系统. 一个伪造的 `Display` 或许存在于一个无头系统中，或者一个 `Display` 相当于一个远程的、虚拟的 display.
+`Display` 对象表示一个连接到系统的物理显示. 一个虚设的 `Display` 或许存在于一个无头系统(headless system)中，或者一个 `Display` 对应一个远程的、虚拟的display.
 
 * `display` object
   * `id` Integer - 与display 相关的唯一性标志.

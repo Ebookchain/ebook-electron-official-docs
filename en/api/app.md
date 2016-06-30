@@ -1,13 +1,13 @@
 # app
 
-The `app` module is responsible for controlling the application's lifecycle.
+> Control your application's event lifecycle.
 
 The following example shows how to quit the application when the last window is
 closed:
 
 ```javascript
-const app = require('electron').app;
-app.on('window-all-closed', function() {
+const {app} = require('electron');
+app.on('window-all-closed', () => {
   app.quit();
 });
 ```
@@ -19,7 +19,7 @@ The `app` object emits the following events:
 ### Event: 'will-finish-launching'
 
 Emitted when the application has finished basic startup. On Windows and Linux,
-the `will-finish-launching` event is the same as the `ready` event; on OS X,
+the `will-finish-launching` event is the same as the `ready` event; on macOS,
 this event represents the `applicationWillFinishLaunching` notification of
 `NSApplication`. You would usually set up listeners for the `open-file` and
 `open-url` events here, and start the crash reporter and auto updater.
@@ -34,10 +34,12 @@ Emitted when Electron has finished initialization.
 
 Emitted when all windows have been closed.
 
-This event is only emitted when the application is not going to quit. If the
-user pressed `Cmd + Q`, or the developer called `app.quit()`, Electron will
-first try to close all the windows and then emit the `will-quit` event, and in
-this case the `window-all-closed` event would not be emitted.
+If you do not subscribe to this event and all windows are closed, the default
+behavior is to quit the app; however, if you subscribe, you control whether the
+app quits or not. If the user pressed `Cmd + Q`, or the developer called
+`app.quit()`, Electron will first try to close all the windows and then emit the
+`will-quit` event, and in this case the `window-all-closed` event would not be
+emitted.
 
 ### Event: 'before-quit'
 
@@ -71,7 +73,7 @@ Returns:
 
 Emitted when the application is quitting.
 
-### Event: 'open-file' _OS X_
+### Event: 'open-file' _macOS_
 
 Returns:
 
@@ -87,9 +89,10 @@ handle this case (even before the `ready` event is emitted).
 
 You should call `event.preventDefault()` if you want to handle this event.
 
-On Windows, you have to parse `process.argv` (in the main process) to get the filepath.
+On Windows, you have to parse `process.argv` (in the main process) to get the
+filepath.
 
-### Event: 'open-url' _OS X_
+### Event: 'open-url' _macOS_
 
 Returns:
 
@@ -101,15 +104,34 @@ must be registered to be opened by your application.
 
 You should call `event.preventDefault()` if you want to handle this event.
 
-### Event: 'activate' _OS X_
+### Event: 'activate' _macOS_
 
 Returns:
 
 * `event` Event
 * `hasVisibleWindows` Boolean
 
-Emitted when the application is activated, which usually happens when clicks on
-the applications's dock icon.
+Emitted when the application is activated, which usually happens when the user
+clicks on the application's dock icon.
+
+### Event: 'continue-activity' _macOS_
+
+Returns:
+
+* `event` Event
+* `type` String - A string identifying the activity. Maps to
+  [`NSUserActivity.activityType`][activity-type].
+* `userInfo` Object - Contains app-specific state stored by the activity on
+  another device.
+
+Emitted during [Handoff][handoff] when an activity from a different device wants
+to be resumed. You should call `event.preventDefault()` if you want to handle
+this event.
+
+A user activity can be continued only in an app that has the same developer Team
+ID as the activity's source app and that supports the activity's type.
+Supported activity types are specified in the app's `Info.plist` under the
+`NSUserActivityTypes` key.
 
 ### Event: 'browser-window-blur'
 
@@ -138,6 +160,15 @@ Returns:
 
 Emitted when a new [browserWindow](browser-window.md) is created.
 
+### Event: 'web-contents-created'
+
+Returns:
+
+* `event` Event
+* `webContents` WebContents
+
+Emitted when a new [webContents](web-contents.md) is created.
+
 ### Event: 'certificate-error'
 
 Returns:
@@ -156,8 +187,8 @@ certificate you should prevent the default behavior with
 `event.preventDefault()` and call `callback(true)`.
 
 ```javascript
-app.on('certificate-error', function(event, webContents, url, error, certificate, callback) {
-  if (url == "https://github.com") {
+app.on('certificate-error', (event, webContents, url, error, certificate, callback) => {
+  if (url === 'https://github.com') {
     // Verification logic.
     event.preventDefault();
     callback(true);
@@ -187,10 +218,10 @@ and `callback` needs to be called with an entry filtered from the list. Using
 certificate from the store.
 
 ```javascript
-app.on('select-client-certificate', function(event, webContents, url, list, callback) {
+app.on('select-client-certificate', (event, webContents, url, list, callback) => {
   event.preventDefault();
   callback(list[0]);
-})
+});
 ```
 
 ### Event: 'login'
@@ -218,25 +249,22 @@ should prevent the default behavior with `event.preventDefault()` and call
 `callback(username, password)` with the credentials.
 
 ```javascript
-app.on('login', function(event, webContents, request, authInfo, callback) {
+app.on('login', (event, webContents, request, authInfo, callback) => {
   event.preventDefault();
   callback('username', 'secret');
-})
+});
 ```
 
 ### Event: 'gpu-process-crashed'
 
 Emitted when the gpu process crashes.
 
-### Event: 'platform-theme-changed' _OS X_
-
-Emitted when the system's Dark Mode theme is toggled.
-
 ## Methods
 
 The `app` object has the following methods:
 
-**Note:** Some methods are only available on specific operating systems and are labeled as such.
+**Note:** Some methods are only available on specific operating systems and are
+labeled as such.
 
 ### `app.quit()`
 
@@ -257,18 +285,46 @@ Exits immediately with `exitCode`.
 All windows will be closed immediately without asking user and the `before-quit`
 and `will-quit` events will not be emitted.
 
+### `app.relaunch([options])`
+
+* `options` Object (optional)
+  * `args` Array (optional)
+  * `execPath` String (optional)
+
+Relaunches the app when current instance exits.
+
+By default the new instance will use the same working directory and command line
+arguments with current instance. When `args` is specified, the `args` will be
+passed as command line arguments instead. When `execPath` is specified, the
+`execPath` will be executed for relaunch instead of current app.
+
+Note that this method does not quit the app when executed, you have to call
+`app.quit` or `app.exit` after calling `app.relaunch` to make the app restart.
+
+When `app.relaunch` is called for multiple times, multiple instances will be
+started after current instance exited.
+
+An example of restarting current instance immediately and adding a new command
+line argument to the new instance:
+
+```javascript
+app.relaunch({args: process.argv.slice(1) + ['--relaunch']})
+app.exit(0)
+```
+
 ### `app.focus()`
 
-On Linux, focuses on the first visible window. On OS X, makes the application
+On Linux, focuses on the first visible window. On macOS, makes the application
 the active app. On Windows, focuses on the application's first window.
 
-### `app.hide()` _OS X_
+### `app.hide()` _macOS_
 
 Hides all application windows without minimizing them.
 
-### `app.show()` _OS X_
+### `app.show()` _macOS_
 
-Shows application windows after they were hidden. Does not automatically focus them.
+Shows application windows after they were hidden. Does not automatically focus
+them.
 
 ### `app.getAppPath()`
 
@@ -287,7 +343,7 @@ You can request the following paths by the name:
 * `appData` Per-user application data directory, which by default points to:
   * `%APPDATA%` on Windows
   * `$XDG_CONFIG_HOME` or `~/.config` on Linux
-  * `~/Library/Application Support` on OS X
+  * `~/Library/Application Support` on macOS
 * `userData` The directory for storing your app's configuration files, which by
   default it is the `appData` directory appended with your app's name.
 * `temp` Temporary directory.
@@ -299,6 +355,7 @@ You can request the following paths by the name:
 * `music` Directory for a user's music.
 * `pictures` Directory for a user's pictures.
 * `videos` Directory for a user's videos.
+* `pepperFlashSystemPlugin`  Full path to the system version of the Pepper Flash plugin.
 
 ### `app.setPath(name, path)`
 
@@ -346,20 +403,20 @@ Returns the current application locale.
 
 **Note:** On Windows you have to call it after the `ready` events gets emitted.
 
-### `app.addRecentDocument(path)` _OS X_ _Windows_
+### `app.addRecentDocument(path)` _macOS_ _Windows_
 
 * `path` String
 
 Adds `path` to the recent documents list.
 
 This list is managed by the OS. On Windows you can visit the list from the task
-bar, and on OS X you can visit it from dock menu.
+bar, and on macOS you can visit it from dock menu.
 
-### `app.clearRecentDocuments()` _OS X_ _Windows_
+### `app.clearRecentDocuments()` _macOS_ _Windows_
 
 Clears the recent documents list.
 
-### `app.setAsDefaultProtocolClient(protocol)` _OS X_ _Windows_
+### `app.setAsDefaultProtocolClient(protocol)` _macOS_ _Windows_
 
 * `protocol` String - The name of your protocol, without `://`. If you want your
   app to handle `electron://` links, call this method with `electron` as the
@@ -367,26 +424,38 @@ Clears the recent documents list.
 
 This method sets the current executable as the default handler for a protocol
 (aka URI scheme). It allows you to integrate your app deeper into the operating
-system. Once registered, all links with `your-protocol://` will be openend with
+system. Once registered, all links with `your-protocol://` will be opened with
 the current executable. The whole link, including protocol, will be passed to
 your application as a parameter.
 
-**Note:** On OS X, you can only register protocols that have been added to
+**Note:** On macOS, you can only register protocols that have been added to
 your app's `info.plist`, which can not be modified at runtime. You can however
 change the file with a simple text editor or script during build time.
 Please refer to [Apple's documentation][CFBundleURLTypes] for details.
 
 The API uses the Windows Registry and LSSetDefaultHandlerForURLScheme internally.
 
-### `app.removeAsDefaultProtocolClient(protocol)` _Windows_
+### `app.removeAsDefaultProtocolClient(protocol)` _macOS_ _Windows_
 
 * `protocol` String - The name of your protocol, without `://`.
 
-This method checks if the current executable as the default handler for a protocol
-(aka URI scheme). If so, it will remove the app as the default handler.
+This method checks if the current executable as the default handler for a
+protocol (aka URI scheme). If so, it will remove the app as the default handler.
 
-**Note:** On OS X, removing the app will automatically remove the app as the
-default protocol handler.
+### `app.isDefaultProtocolClient(protocol)` _macOS_ _Windows_
+
+* `protocol` String - The name of your protocol, without `://`.
+
+This method checks if the current executable is the default handler for a protocol
+(aka URI scheme). If so, it will return true. Otherwise, it will return false.
+
+**Note:** On macOS, you can use this method to check if the app has been
+registered as the default protocol handler for a protocol. You can also verify
+this by checking `~/Library/Preferences/com.apple.LaunchServices.plist` on the
+macOS machine. Please refer to
+[Apple's documentation][LSCopyDefaultHandlerForURLScheme] for details.
+
+The API uses the Windows Registry and LSCopyDefaultHandlerForURLScheme internally.
 
 ### `app.setUserTasks(tasks)` _Windows_
 
@@ -411,16 +480,6 @@ Adds `tasks` to the [Tasks][tasks] category of the JumpList on Windows.
   consists of two or more icons, set this value to identify the icon. If an
   icon file consists of one icon, this value is 0.
 
-### `app.allowNTLMCredentialsForAllDomains(allow)`
-
-* `allow` Boolean
-
-Dynamically sets whether to always send credentials for HTTP NTLM or Negotiate
-authentication - normally, Electron will only send NTLM/Kerberos credentials for
-URLs that fall under "Local Intranet" sites (i.e. are in the same domain as you).
-However, this detection often fails when corporate networks are badly configured,
-so this lets you co-opt this behavior and enable it for all URLs.
-
 ### `app.makeSingleInstance(callback)`
 
 * `callback` Function
@@ -444,7 +503,7 @@ application and your app should continue loading. And returns `true` if your
 process has sent its parameters to another instance, and you should immediately
 quit.
 
-On OS X the system enforces single instance automatically when users try to open
+On macOS the system enforces single instance automatically when users try to open
 a second instance of your app in Finder, and the `open-file` and `open-url`
 events will be emitted for that. However when users start your app in command
 line the system's single instance mechanism will be bypassed and you have to
@@ -453,10 +512,10 @@ use this method to ensure single instance.
 An example of activating the window of primary instance when a second instance
 starts:
 
-```js
-var myWindow = null;
+```javascript
+let myWindow = null;
 
-var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
+const shouldQuit = app.makeSingleInstance((commandLine, workingDirectory) => {
   // Someone tried to run a second instance, we should focus our window.
   if (myWindow) {
     if (myWindow.isMinimized()) myWindow.restore();
@@ -470,9 +529,29 @@ if (shouldQuit) {
 }
 
 // Create myWindow, load the rest of the app, etc...
-app.on('ready', function() {
+app.on('ready', () => {
 });
 ```
+
+### `app.releaseSingleInstance()`
+
+Releases all locks that were created by `makeSingleInstance`. This will allow
+multiple instances of the application to once again run side by side.
+
+### `app.setUserActivity(type, userInfo[, webpageURL])` _macOS_
+
+* `type` String - Uniquely identifies the activity. Maps to
+  [`NSUserActivity.activityType`][activity-type].
+* `userInfo` Object - App-specific state to store for use by another device.
+* `webpageURL` String - The webpage to load in a browser if no suitable app is
+  installed on the resuming device. The scheme must be `http` or `https`.
+
+Creates an `NSUserActivity` and sets it as the current activity. The activity
+is eligible for [Handoff][handoff] to another device afterward.
+
+### `app.getCurrentActivityType()` _macOS_
+
+Returns the type of the currently running activity.
 
 ### `app.setAppUserModelId(id)` _Windows_
 
@@ -480,39 +559,23 @@ app.on('ready', function() {
 
 Changes the [Application User Model ID][app-user-model-id] to `id`.
 
-### `app.isAeroGlassEnabled()` _Windows_
+### `app.importCertificate(options, callback)` _LINUX_
 
-This method returns `true` if [DWM composition](https://msdn.microsoft.com/en-us/library/windows/desktop/aa969540.aspx)
-(Aero Glass) is enabled, and `false` otherwise. You can use it to determine if
-you should create a transparent window or not (transparent windows won't work
-correctly when DWM composition is disabled).
+* `options` Object
+  * `certificate` String - Path for the pkcs12 file.
+  * `password` String - Passphrase for the certificate.
+* `callback` Function
+  * `result` Integer - Result of import.
 
-Usage example:
+Imports the certificate in pkcs12 format into the platform certificate store.
+`callback` is called with the `result` of import operation, a value of `0`
+indicates success while any other value indicates failure according to chromium [net_error_list](https://code.google.com/p/chromium/codesearch#chromium/src/net/base/net_error_list.h).
 
-```js
-let browserOptions = {width: 1000, height: 800};
+### `app.disableHardwareAcceleration()`
 
-// Make the window transparent only if the platform supports it.
-if (process.platform !== 'win32' || app.isAeroGlassEnabled()) {
-  browserOptions.transparent = true;
-  browserOptions.frame = false;
-}
+Disables hardware acceleration for current app.
 
-// Create the window.
-win = new BrowserWindow(browserOptions);
-
-// Navigate.
-if (browserOptions.transparent) {
-  win.loadURL('file://' + __dirname + '/index.html');
-} else {
-  // No transparency, so we load a fallback that uses basic styles.
-  win.loadURL('file://' + __dirname + '/fallback.html');
-}
-```
-
-### `app.isDarkMode()` _OS X_
-
-This method returns `true` if the system is in Dark Mode, and `false` otherwise.
+This method can only be called before app is ready.
 
 ### `app.commandLine.appendSwitch(switch[, value])`
 
@@ -528,7 +591,7 @@ correctly.
 
 **Note:** This will not affect `process.argv`.
 
-### `app.dock.bounce([type])` _OS X_
+### `app.dock.bounce([type])` _macOS_
 
 * `type` String (optional) - Can be `critical` or `informational`. The default is
  `informational`
@@ -542,43 +605,77 @@ or the request is canceled.
 
 Returns an ID representing the request.
 
-### `app.dock.cancelBounce(id)` _OS X_
+### `app.dock.cancelBounce(id)` _macOS_
 
 * `id` Integer
 
 Cancel the bounce of `id`.
 
-### `app.dock.setBadge(text)` _OS X_
+### `app.dock.downloadFinished(filePath)` _macOS_
+
+* `filePath` String
+
+Bounces the Downloads stack if the filePath is inside the Downloads folder.
+
+### `app.dock.setBadge(text)` _macOS_
 
 * `text` String
 
 Sets the string to be displayed in the dock’s badging area.
 
-### `app.dock.getBadge()` _OS X_
+### `app.dock.getBadge()` _macOS_
 
 Returns the badge string of the dock.
 
-### `app.dock.hide()` _OS X_
+### `app.dock.hide()` _macOS_
 
 Hides the dock icon.
 
-### `app.dock.show()` _OS X_
+### `app.dock.show()` _macOS_
 
 Shows the dock icon.
 
-### `app.dock.setMenu(menu)` _OS X_
+### `app.dock.setMenu(menu)` _macOS_
 
 * `menu` [Menu](menu.md)
 
 Sets the application's [dock menu][dock-menu].
 
-### `app.dock.setIcon(image)` _OS X_
+### `app.dock.setIcon(image)` _macOS_
 
 * `image` [NativeImage](native-image.md)
 
 Sets the `image` associated with this dock icon.
 
+### `app.launcher.setBadgeCount(count)` _Linux_
+* `count` Integer
+
+Sets the number to be displayed next to the app icon in the Unity launcher.
+Setting the count to `0` will hide the badge.
+
+**Note:** This feature is currently only supported on Ubuntu Unity. Calling this function has no effect when the application is running in a different environment.
+
+**Note:** You need to specify the .desktop file name to the `desktopName` field in package.json. By default, it will assume `app.getName().desktop` in packaged apps.
+
+### `app.launcher.getBadgeCount()` _Linux_
+
+Returns the current value displayed in the counter badge next to the launcher icon.
+
+**Note:** As `setBadgeCount` only supports Ubuntu Unity, the value will be 0 when the application is running in a different environment.
+
+### `app.launcher.isUnityRunning()` _Linux_
+
+This method checks if the current desktop environment is Unity and returns `true` in this case.
+
+### `app.launcher.isCounterBadgeAvailable()` _Linux_
+
+This method checks if the current desktop environment supports an app icon counter badge and returns `true` in this case.
+
+
 [dock-menu]:https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/customizing_docktile/concepts/dockconcepts.html#//apple_ref/doc/uid/TP30000986-CH2-TPXREF103
 [tasks]:http://msdn.microsoft.com/en-us/library/windows/desktop/dd378460(v=vs.85).aspx#tasks
 [app-user-model-id]: https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85).aspx
 [CFBundleURLTypes]: https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-102207-TPXREF115
+[LSCopyDefaultHandlerForURLScheme]: https://developer.apple.com/library/mac/documentation/Carbon/Reference/LaunchServicesReference/#//apple_ref/c/func/LSCopyDefaultHandlerForURLScheme
+[handoff]: https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html
+[activity-type]: https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/activityType

@@ -1,5 +1,7 @@
 # nativeImage
 
+> PNG 또는 JPG 파일을 사용하여 트레이, 독, 애플리케이션 아이콘을 생성합니다.
+
 Electron은 파일 경로 또는 `nativeImage` 인스턴스를 통해 이미지를 사용할 수 있는 API를
 가지고 있습니다. `null`을 전달할 경우 빈 이미지가 생성됩니다.
 
@@ -7,15 +9,15 @@ Electron은 파일 경로 또는 `nativeImage` 인스턴스를 통해 이미지�
 전달하여 이미지를 사용할 수 있습니다:
 
 ```javascript
-var appIcon = new Tray('/Users/somebody/images/icon.png');
-var window = new BrowserWindow({icon: '/Users/somebody/images/window.png'});
+const appIcon = new Tray('/Users/somebody/images/icon.png');
+let win = new BrowserWindow({icon: '/Users/somebody/images/window.png'});
 ```
 
-이 예제는 클립보드로부터 가져온 `nativeImage`로 트레이 메뉴를 생성합니다:
+이 예시는 클립보드로부터 가져온 `nativeImage`로 트레이 메뉴를 생성합니다:
 
 ```javascript
-var image = clipboard.readImage();
-var appIcon = new Tray(image);
+const image = clipboard.readImage();
+const appIcon = new Tray(image);
 ```
 
 ## 지원하는 포맷
@@ -23,7 +25,13 @@ var appIcon = new Tray(image);
 현재 `PNG` 와 `JPEG` 이미지 포맷을 지원하고 있습니다.
 손실 없는 이미지 압축과 투명도 지원을 위해 `PNG` 사용을 권장합니다.
 
-그리고 Windows에서는 `ICO` 포맷도 사용할 수 있습니다.
+Windows에서는 파일 경로로부터 `ICO` 포맷도 사용할 수 있으며, 가장 좋은 시각적 효과를
+얻기 위해 최소한 아이콘에 다음 사이즈를 포함하는 것을 권장합니다:
+
+* 16x16
+* 32x32
+* 64x64
+* 256x256
 
 ## 고해상도 이미지
 
@@ -46,7 +54,7 @@ images/
 
 
 ```javascript
-var appIcon = new Tray('/Users/somebody/images/icon.png');
+let appIcon = new Tray('/Users/somebody/images/icon.png');
 ```
 
 지원하는 DPI 접미사는 다음과 같습니다:
@@ -66,14 +74,14 @@ var appIcon = new Tray('/Users/somebody/images/icon.png');
 ## 템플릿 이미지
 
 템플릿 이미지는 검은색과 명확한 색상(알파 채널)으로 이루어져 있습니다. 템플릿 이미지는
-단독 이미지로 사용되지 않고 다른 컨텐츠와 혼합되어 최종 외관 만드는데 사용됩니다.
+단독 이미지로 사용되지 않고 다른 콘텐츠와 혼합되어 최종 외관 만드는데 사용됩니다.
 
 가장 일반적으로 템플릿 이미지는 밝고 어두운 테마 색상으로 변경할 수 있는 메뉴 바 아이콘
 등에 사용되고 있습니다.
 
-**참고:** 템플릿 이미지는 OS X 운영체제만 지원합니다.
+**참고:** 템플릿 이미지는 macOS 운영체제만 지원합니다.
 
-템플릿 이미지를 지정하려면 다음 예제와 같이 파일명에 `Template` 문자열을 추가해야
+템플릿 이미지를 지정하려면 다음 예시와 같이 파일명에 `Template` 문자열을 추가해야
 합니다:
 
 * `xxxTemplate.png`
@@ -93,6 +101,12 @@ var appIcon = new Tray('/Users/somebody/images/icon.png');
 
 `path`로부터 이미지를 로드하여 새로운 `nativeImage` 인스턴스를 만듭니다.
 
+```javascript
+const nativeImage = require('electron').nativeImage;
+
+let image = nativeImage.createFromPath('/Users/somebody/images/icon.png');
+```
+
 ### `nativeImage.createFromBuffer(buffer[, scaleFactor])`
 
 * `buffer` [Buffer][buffer]
@@ -109,19 +123,13 @@ var appIcon = new Tray('/Users/somebody/images/icon.png');
 
 ## Instance Methods
 
-`nativeImage` 인스턴스 객체에서 사용할 수 있는 메서드 입니다:
+`nativeImage` 인스턴스 객체에서 사용할 수 있는 메서드입니다.
 
-```javascript
-const nativeImage = require('electron').nativeImage;
-
-var image = nativeImage.createFromPath('/Users/somebody/images/icon.png');
-```
-
-### `image.toPng()`
+### `image.toPNG()`
 
 `PNG` 이미지를 인코딩한 데이터를 [Buffer][buffer]로 반환합니다.
 
-### `image.toJpeg(quality)`
+### `image.toJPEG(quality)`
 
 * `quality` Integer (**required**) 0 - 100 사이의 값
 
@@ -131,10 +139,10 @@ var image = nativeImage.createFromPath('/Users/somebody/images/icon.png');
 
 이미지를 data URL로 반환합니다.
 
-### `image.getNativeHandle()` _OS X_
+### `image.getNativeHandle()` _macOS_
 
 이미지의 네이티브 핸들 밑에 있는 C 포인터를 담은 [Buffer][buffer]을 반환합니다.
-OS X에선, `NSImage` 인스턴스가 반환됩니다.
+macOS에선, `NSImage` 인스턴스가 반환됩니다.
 
 참고로 반환된 포인터는 복사본이 아닌 네이티브 이미지의 밑에 있는 약한 포인터이며,
 따라서 반드시 관련된 `nativeImage` 인스턴스가 확실하게 유지되고 있는지를 인지해야

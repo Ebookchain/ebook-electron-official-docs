@@ -3,8 +3,8 @@ O objeto `process` no Electron tem as seguintes diferenças do objeto no upstrea
 
 * `process.type` String - Tipo de processo, pode ser `browser` (processo principal) 
 ou `renderer`.
-* `process.versions['electron']` String - Versão do Electron.
-* `process.versions['chrome']` String - Versão do Chromium.
+* `process.versions.electron` String - Versão do Electron.
+* `process.versions.chrome` String - Versão do Chromium.
 * `process.resourcesPath` String - Caminho para o código fonte JavaScript.
 * `process.mas` Boolean - Para build da Mac App Store, este valor é `true`, para outros builds é `undefined`.
 
@@ -40,7 +40,7 @@ O objeto `process` tem os seguintes métodos:
 
 Faz com que o *thread* principal do processo congele.
 
-### `process.setFdLimit(maxDescriptors)` _OS X_ _Linux_
+### `process.setFdLimit(maxDescriptors)` _macOS_ _Linux_
 
 * `maxDescriptors` Integer
 

@@ -1,4 +1,6 @@
-# The `window.open` function
+# `window.open` Function
+
+> Open a new window and load a URL.
 
 When `window.open` is called to create a new window in a web page, a new instance
 of `BrowserWindow` will be created for the `url` and a proxy will be returned
@@ -60,6 +62,10 @@ Evaluates the code in the child window.
 ### `BrowserWindowProxy.focus()`
 
 Focuses the child window (brings the window to front).
+
+### `BrowserWindowProxy.print()`
+
+Invokes the print dialog on the child window.
 
 ### `BrowserWindowProxy.postMessage(message, targetOrigin)`
 
