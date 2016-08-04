@@ -1,7 +1,7 @@
 Por favor, certifique-se de que está utilizando a documentação que corresponde à sua versão do Electron.
 O número da versão deve ser uma parte da URL da página. Se não for, você provavelmente está utilizando
 a documentação de um branch de desenvolvimento que pode conter mudanças na API que não são compatíveis
-com a sua versão do Electron. Se este for o caso, você pode mudar para uma versão diferente da 
+com a sua versão do Electron. Se este for o caso, você pode mudar para uma versão diferente da
 documentação na lista de [versões disponíveis](http://electron.atom.io/docs/) em atom.io,
 ou se você estiver usando a interface do GitHub, abra o *dropdown* "Switch branches/tags" e
 selecione a *tag* que corresponde à sua versão.
@@ -9,20 +9,20 @@ selecione a *tag* que corresponde à sua versão.
 ## FAQ
 
 Existem muitas perguntas comuns que são feitas, verifique antes de criar uma issue.
-* [Electron FAQ](../../docs/faq/electron-faq.md)
+* [Electron FAQ](../../docs/faq.md)
 
 ## Guias
 
 * [Plataformas Suportadas](tutorial/supported-platforms.md)
 * [Distribuição de Aplicações](tutorial/application-distribution.md)
-* [Guia de Submissão da Mac App Store](../../tutorial/mac-app-store-submission-guide.md)
+* [Guia de Submissão da Mac App Store](../../docs/tutorial/mac-app-store-submission-guide.md)
 * [Empacotamento da Aplicação](tutorial/application-packaging.md)
 * [Usando Módulos Nativos do Node](tutorial/using-native-node-modules.md)
 * [Depuração do Processo Principal](tutorial/debugging-main-process.md)
 * [Usando Selenium e WebDriver](../../docs/tutorial/using-selenium-and-webdriver.md)
-* [Extensão DevTools](../../docs/tutorial/devtools-extension.md)
+* [Extensão DevTools](tutorial/devtools-extension.md)
 * [Usando o Plugin Pepper Flash](tutorial/using-pepper-flash-plugin.md)
-* [Usando o Plugin Widevine CDM](../../tutorial/using-widevine-cdm-plugin.md)
+* [Usando o Plugin Widevine CDM](../../docs/tutorial/using-widevine-cdm-plugin.md)
 
 ## Tutoriais
 
@@ -52,10 +52,10 @@ Existem muitas perguntas comuns que são feitas, verifique antes de criar uma is
 * [contentTracing](../../docs/api/content-tracing.md)
 * [dialog](../../docs/api/dialog.md)
 * [globalShortcut](../../docs/api/global-shortcut.md)
-* [ipcMain](../../docs/api/ipc-main-process.md)
+* [ipcMain](../../docs/api/ipc-main.md)
 * [Menu](../../docs/api/menu.md)
 * [MenuItem](../../docs/api/menu-item.md)
-* [powerMonitor](../../docs/api/power-monitor.md)
+* [powerMonitor](api/power-monitor.md)
 * [powerSaveBlocker](../../docs/api/power-save-blocker.md)
 * [protocol](../../docs/api/protocol.md)
 * [session](../../docs/api/session.md)
@@ -64,7 +64,7 @@ Existem muitas perguntas comuns que são feitas, verifique antes de criar uma is
 
 ### Módulos para o Processo Renderizador:
 
-* [DesktopCapturer](../../docs/api/desktop-capturer)
+* [DesktopCapturer](../../docs/api/desktop-capturer.md)
 * [ipcRenderer](../../docs/api/ipc-renderer.md)
 * [remote](../../docs/api/remote.md)
 * [webFrame](../../docs/api/web-frame.md)
