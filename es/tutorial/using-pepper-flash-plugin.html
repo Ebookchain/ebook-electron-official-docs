@@ -53,7 +53,7 @@
         data-chapter-title="Utilizando el plugin Pepper Flash"
         data-filepath="tutorial/using-pepper-flash-plugin.md"
         data-basepath=".."
-        data-revision="Thu Aug 04 2016 11:25:19 GMT+0800 (CST)"
+        data-revision="Thu Aug 04 2016 15:08:31 GMT+0800 (CST)"
         data-innerlanguage="es">
     
 
@@ -355,7 +355,7 @@
             
         </li>
     
-        <li class="chapter " data-level="24" data-path="../../docs/api/ipc-main-process.html">
+        <li class="chapter " data-level="24" data-path="../../docs/api/ipc-main.html">
             
             <span><b>24.</b> ipc (proceso principal)</span>
             
@@ -543,13 +543,13 @@
                         
                             <b>45.</b>
                         
-                        Instrucciones de Compilación (Mac)
+                        Instrucciones de Compilación (macOS)
                     </a>
             
             
         </li>
     
-        <li class="chapter " data-level="46" data-path="../../development/build-instructions-windows.html">
+        <li class="chapter " data-level="46" data-path="development/build-instructions-windows.html">
             
             <span><b>46.</b> Instrucciones de Compilación (Windows)</span>
             
@@ -571,7 +571,7 @@
             
         </li>
     
-        <li class="chapter " data-level="48" data-path="../../development/setting-up-symbol-server.html">
+        <li class="chapter " data-level="48" data-path="development/setting-up-symbol-server.html">
             
             <span><b>48.</b> Configurando un Servidor de Símbolos en el depurador</span>
             
@@ -614,7 +614,7 @@
                         <h1 id="utilizando-el-plugin-pepper-flash">Utilizando el plugin Pepper Flash</h1>
 <p>El plugin Pepper Flash es soportado ahora. Para utilizar pepper flash en Electron, debes especificar la ubicaci&#xF3;n del plugin manualmente y activarlo en tu aplicaci&#xF3;n.</p>
 <h2 id="preparar-una-copia-del-plugin-flash">Preparar una copia del plugin Flash</h2>
-<p>En OSX y Linux, el detalle del plugin puede encontrarse accediendo a <code>chrome://plugins</code> en el navegador. Su ubicaci&#xF3;n y versi&#xF3;n son &#xFA;tiles para el soporte. Tambi&#xE9;n puedes copiarlo a otro lugar.</p>
+<p>En macOS y Linux, el detalle del plugin puede encontrarse accediendo a <code>chrome://plugins</code> en el navegador. Su ubicaci&#xF3;n y versi&#xF3;n son &#xFA;tiles para el soporte. Tambi&#xE9;n puedes copiarlo a otro lugar.</p>
 <h2 id="agrega-la-opci&#xF3;n-a-electron">Agrega la opci&#xF3;n a Electron</h2>
 <p>Puedes agregar la opci&#xF3;n <code>--ppapi-flash-path</code> y <code>ppapi-flash-version</code>  o utilizar el m&#xE9;todo <code>app.commandLine.appendSwitch</code> antes del evento ready de la aplicaci&#xF3;n.
 Tambi&#xE9;n puedes agregar la opci&#xF3;n <code>plugins</code> de <code>browser-window</code>. Por ejemplo,</p>
@@ -698,9 +698,13 @@ app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-fun
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
     gitbook.start(config);
 });
 </script>

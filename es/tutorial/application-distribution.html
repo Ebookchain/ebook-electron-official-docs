@@ -53,7 +53,7 @@
         data-chapter-title="Distribución de la Aplicación"
         data-filepath="tutorial/application-distribution.md"
         data-basepath=".."
-        data-revision="Thu Aug 04 2016 11:25:19 GMT+0800 (CST)"
+        data-revision="Thu Aug 04 2016 15:08:31 GMT+0800 (CST)"
         data-innerlanguage="es">
     
 
@@ -355,7 +355,7 @@
             
         </li>
     
-        <li class="chapter " data-level="24" data-path="../../docs/api/ipc-main-process.html">
+        <li class="chapter " data-level="24" data-path="../../docs/api/ipc-main.html">
             
             <span><b>24.</b> ipc (proceso principal)</span>
             
@@ -543,13 +543,13 @@
                         
                             <b>45.</b>
                         
-                        Instrucciones de Compilación (Mac)
+                        Instrucciones de Compilación (macOS)
                     </a>
             
             
         </li>
     
-        <li class="chapter " data-level="46" data-path="../../development/build-instructions-windows.html">
+        <li class="chapter " data-level="46" data-path="development/build-instructions-windows.html">
             
             <span><b>46.</b> Instrucciones de Compilación (Windows)</span>
             
@@ -571,7 +571,7 @@
             
         </li>
     
-        <li class="chapter " data-level="48" data-path="../../development/setting-up-symbol-server.html">
+        <li class="chapter " data-level="48" data-path="development/setting-up-symbol-server.html">
             
             <span><b>48.</b> Configurando un Servidor de Símbolos en el depurador</span>
             
@@ -614,7 +614,7 @@
                         <h1 id="distribuci&#xF3;n-de-la-aplicaci&#xF3;n">Distribuci&#xF3;n de la Aplicaci&#xF3;n</h1>
 <p>Para distribuir tu aplicaci&#xF3;n con Electron, el directorio que contiene la
 aplicaci&#xF3;n deber&#xE1; llamarse <code>app</code>, y ser colocado debajo del directorio de
-recursos de Electron (en OSX es <code>Electron.app/Contents/Resources/</code>, en Linux y
+recursos de Electron (en macOS es <code>Electron.app/Contents/Resources/</code>, en Linux y
 Windows es <code>resources/</code>), de esta forma:</p>
 <p>En macOS:</p>
 <pre><code class="lang-text">electron/Electron.app/Contents/Resources/app/
@@ -653,7 +653,7 @@ de distribuirlo a los usuarios.</p>
 <h3 id="windows">Windows</h3>
 <p>Puedes renombrar <code>electron.exe</code> a cualquier nombre que desees, y editar su &#xED;cono
 y otra informaci&#xF3;n con herramientas como <a href="https://github.com/atom/rcedit" target="_blank">rcedit</a>.</p>
-<h3 id="osx">OSX</h3>
+<h3 id="macos">macOS</h3>
 <p>Puedes renombrar <code>Electron.app</code> a cualquier nombre que desees, y tendr&#xE1;s que
 renombrar los campos <code>CFBundleDisplayName</code>, <code>CFBundleIdentifier</code> y <code>CFBundleName</code>
 en los siguientes archivos:</p>
@@ -737,9 +737,13 @@ coincidan con el nuevo nombre del ejecutable.</p>
     <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
     
 
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
     gitbook.start(config);
 });
 </script>
