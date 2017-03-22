@@ -3,22 +3,22 @@
 `content-tracing`モジュールは、Chromiumコンテンツモジュールによって生成されるトーレスデータを収集するのに使われます。このモジュールはウェブインターフェイスを含んでいないので、Chromeブラウザーで `chrome://tracing/`を開いて、結果を表示するために生成されたファイルを読み込む必要があります。
 
 ```javascript
-const contentTracing = require('electron').contentTracing;
+const contentTracing = require('electron').contentTracing
 
 const options = {
   categoryFilter: '*',
   traceOptions: 'record-until-full,enable-sampling'
 }
 
-contentTracing.startRecording(options, function() {
-  console.log('Tracing started');
+contentTracing.startRecording(options, function () {
+  console.log('Tracing started')
 
-  setTimeout(function() {
-    contentTracing.stopRecording('', function(path) {
-      console.log('Tracing data recorded to ' + path);
-    });
-  }, 5000);
-});
+  setTimeout(function () {
+    contentTracing.stopRecording('', function (path) {
+      console.log('Tracing data recorded to ' + path)
+    })
+  }, 5000)
+})
 ```
 
 ## メソッド
@@ -115,15 +115,3 @@ EnableRecordingリクエストを受信するとすぐに、子プロセス上�
 * `callback` Function
 
 プロセスのトレースバッファのプロセス間で最大使用量をフルの状態の何%かで取得します。TraceBufferUsage値が設定されていると、 `callback`がコールされます。
-
-### `contentTracing.setWatchEvent(categoryName, eventName, callback)`
-
-* `categoryName` String
-* `eventName` String
-* `callback` Function
-
-プロセス上でイベント発生すると、その度に`callback`がコールされます。
-
-### `contentTracing.cancelWatchEvent()`
-
-イベントウオッチをキャンセルします。トレースが有効になっていると、監視イベントのコールバックとの競合状態になる可能性があります。

@@ -18,7 +18,7 @@ has helpers to access Electron APIs in your tests and bundles ChromeDriver.
 $ npm install --save-dev spectron
 ```
 
-```js
+```javascript
 // A simple test to verify a visible window is opened with a title
 var Application = require('spectron').Application
 var assert = require('assert')
@@ -169,4 +169,4 @@ your app's folder. This eliminates the need to copy-paste your app into
 Electron's resource directory.
 
 [chrome-driver]: https://sites.google.com/a/chromium.org/chromedriver/
-[spectron]: http://electron.atom.io/spectron
+[spectron]: https://electron.atom.io/spectron

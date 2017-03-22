@@ -20,6 +20,11 @@ display primarily local content (or trusted, secure remote content without Node
 integration) – if your application executes code from an online source, it is
 your responsibility to ensure that the code is not malicious.
 
+## Reporting Security Issues
+
+For information on how to properly disclose an Electron vulnerability,
+see [SECURITY.md](https://github.com/electron/electron/tree/master/SECURITY.md)
+
 ## Chromium Security Issues and Upgrades
 
 While Electron strives to support new versions of Chromium as soon as possible,
@@ -36,6 +41,7 @@ things on top of Electron. Pull requests and contributions supporting this
 effort are always very welcome.
 
 ## Ignoring Above Advice
+
 A security issue exists whenever you receive code from a remote destination and
 execute it locally. As an example, consider a remote website being displayed
 inside a browser window. If an attacker somehow manages to change said content
@@ -49,22 +55,25 @@ your application) to execute Node code. To display remote content, use the
 `webview` tag and make sure to disable the `nodeIntegration`.
 
 #### Checklist
+
 This is not bulletproof, but at the least, you should attempt the following:
 
 * Only display secure (https) content
 * Disable the Node integration in all renderers that display remote content
-  (using `webPreferences`)
+  (setting `nodeIntegration` to `false` in `webPreferences`)
+* Enable context isolation in all renderers that display remote content
+  (setting `contextIsolation` to `true` in `webPreferences`)
+* Use `ses.setPermissionRequestHandler()` in all sessions that load remote content
 * Do not disable `webSecurity`. Disabling it will disable the same-origin policy.
 * Define a [`Content-Security-Policy`](http://www.html5rocks.com/en/tutorials/security/content-security-policy/)
 , and use restrictive rules (i.e. `script-src 'self'`)
 * [Override and disable `eval`](https://github.com/nylas/N1/blob/0abc5d5defcdb057120d726b271933425b75b415/static/index.js#L6-L8)
 , which allows strings to be executed as code.
-* Do not set `allowDisplayingInsecureContent` to true.
 * Do not set `allowRunningInsecureContent` to true.
 * Do not enable `experimentalFeatures` or `experimentalCanvasFeatures` unless
   you know what you're doing.
 * Do not use `blinkFeatures` unless you know what you're doing.
-* WebViews: Set `nodeintegration` to false
+* WebViews: Do not add the `nodeintegration` attribute.
 * WebViews: Do not use `disablewebsecurity`
 * WebViews: Do not use `allowpopups`
 * WebViews: Do not use `insertCSS` or `executeJavaScript` with remote CSS/JS.

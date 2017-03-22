@@ -1,9 +1,11 @@
 # Application Distribution
 
-To distribute your app with Electron, the folder containing your app should be
-named `app` and placed under Electron's resources directory (on macOS it is
-`Electron.app/Contents/Resources/` and on Linux and Windows it is `resources/`),
-like this:
+To distribute your app with Electron, you need to download Electron's [prebuilt
+binaries](https://github.com/electron/electron/releases). Next, the folder
+containing your app should be named `app` and placed in Electron's resources
+directory as shown in the following examples. Note that the location of
+Electron's prebuilt binaries is indicated with `electron/` in the examples
+below.
 
 On macOS:
 
@@ -66,7 +68,7 @@ information with tools like [rcedit](https://github.com/atom/rcedit).
 ### macOS
 
 You can rename `Electron.app` to any name you want, and you also have to rename
-the `CFBundleDisplayName`, `CFBundleIdentifier` and `CFBundleName` fields in
+the `CFBundleDisplayName`, `CFBundleIdentifier` and `CFBundleName` fields in the
 following files:
 
 * `Electron.app/Contents/Info.plist`
@@ -147,11 +149,11 @@ we appreciate your help.
 
 2. Create a new S3 bucket and create the following empty directory structure:
 
-```
-- atom-shell/
-  - symbols/
-  - dist/
-```
+    ```
+    - atom-shell/
+      - symbols/
+      - dist/
+    ```
 
 3. Set the following Environment Variables:
 

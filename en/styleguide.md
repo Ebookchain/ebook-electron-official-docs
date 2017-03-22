@@ -47,6 +47,8 @@ For API references, there are exceptions to this rule.
 * Use `bash` instead of `cmd` in code blocks (due to the syntax highlighter).
 * Lines should be wrapped at 80 columns.
 * No nesting lists more than 2 levels (due to the markdown renderer).
+* All `js` and `javascript` code blocks are linted with
+[standard-markdown](http://npm.im/standard-markdown).
 
 ## Picking words
 
@@ -99,8 +101,11 @@ Using `autoUpdater` as an example:
 * Constructors must be listed with `###`-level titles.
 * [Static Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static) must be listed under a `### Static Methods` chapter.
 * [Instance Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#Prototype_methods) must be listed under an `### Instance Methods` chapter.
+* All methods that have a return value must start their description with "Returns `[TYPE]` - Return description"
+  * If the method returns an `Object`, its structure can be specified using a colon followed by a newline then an unordered list of properties in the same style as function parameters.
 * Instance Events must be listed under an `### Instance Events` chapter.
 * Instance Properties must be listed under an `### Instance Properties` chapter.
+  * Instance properties must start with "A [Property Type] ..."
 
 Using the `Session` and `Cookies` classes as an example:
 
@@ -143,8 +148,8 @@ The methods chapter must be in the following form:
 ```markdown
 ### `objectName.methodName(required[, optional]))`
 
-* `required` String
-* `optional` Integer (optional)
+* `required` String - A parameter description.
+* `optional` Integer (optional) - Another parameter description.
 
 ...
 ```
@@ -175,14 +180,14 @@ of argument is notated by either the common types:
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 * [`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
-* Or a custom type like Electron's [`WebContent`](api/web-content.md)
+* Or a custom type like Electron's [`WebContent`](api/web-contents.md)
 
 If an argument or a method is unique to certain platforms, those platforms are
 denoted using a space-delimited italicized list following the datatype. Values
 can be `macOS`, `Windows`, or `Linux`.
 
 ```markdown
-* `animate` Boolean (optional) _macOS_ _Windows_
+* `animate` Boolean (optional) _macOS_ _Windows_ - Animate the thing.
 ```
 
 `Array` type arguments must specify what elements the array may include in

@@ -12,6 +12,8 @@ when there is nothing happening on a webpage, no frames are generated. The
 maximum frame rate is 60, because above that there is no benefit, just
 performance loss.
 
+**Note:** An offscreen window is always created as a [Frameless Window](../api/frameless-window.md).
+
 ## Two modes of rendering
 
 ### GPU accelerated
@@ -37,19 +39,18 @@ const {app, BrowserWindow} = require('electron')
 
 app.disableHardwareAcceleration()
 
-let win = new BrowserWindow({
-  width: 800,
-  height: 1500,
-  webPreferences: {
-    offscreen: true
-  }
-})
-win.loadURL('http://github.com')
-
-win.webContents.setFrameRate(30)
-
-win.webContents.on('paint', (event, dirty, data) => {
-  // updateBitmap(dirty, data)
+let win
+app.once('ready', () => {
+  win = new BrowserWindow({
+    webPreferences: {
+      offscreen: true
+    }
+  })
+  win.loadURL('http://github.com')
+  win.webContents.on('paint', (event, dirty, image) => {
+    // updateBitmap(dirty, image.getBitmap())
+  })
+  win.webContents.setFrameRate(30)
 })
 ```
 

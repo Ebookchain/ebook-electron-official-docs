@@ -1,6 +1,99 @@
-# Menu
+## Class: Menu
 
 > Create native application menus and context menus.
+
+Process: [Main](../glossary.md#main-process)
+
+### `new Menu()`
+
+Creates a new menu.
+
+### Static Methods
+
+The `menu` class has the following static methods:
+
+#### `Menu.setApplicationMenu(menu)`
+
+* `menu` Menu
+
+Sets `menu` as the application menu on macOS. On Windows and Linux, the `menu`
+will be set as each window's top menu.
+
+**Note:** This API has to be called after the `ready` event of `app` module.
+
+#### `Menu.getApplicationMenu()`
+
+Returns `Menu` - The application menu, if set, or `null`, if not set.
+
+#### `Menu.sendActionToFirstResponder(action)` _macOS_
+
+* `action` String
+
+Sends the `action` to the first responder of application. This is used for
+emulating default Cocoa menu behaviors, usually you would just use the
+`role` property of `MenuItem`.
+
+See the [macOS Cocoa Event Handling Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/EventOverview/EventArchitecture/EventArchitecture.html#//apple_ref/doc/uid/10000060i-CH3-SW7)
+for more information on macOS' native actions.
+
+#### `Menu.buildFromTemplate(template)`
+
+* `template` MenuItemConstructorOptions[]
+
+Returns `Menu`
+
+Generally, the `template` is just an array of `options` for constructing a
+[MenuItem](menu-item.md). The usage can be referenced above.
+
+You can also attach other fields to the element of the `template` and they
+will become properties of the constructed menu items.
+
+### Instance Methods
+
+The `menu` object has the following instance methods:
+
+#### `menu.popup([browserWindow, options])`
+
+* `browserWindow` BrowserWindow (optional) - Default is the focused window.
+* `options` Object (optional)
+  * `x` Number (optional) - Default is the current mouse cursor position.
+  * `y` Number (**required** if `x` is used) - Default is the current mouse
+    cursor position.
+  * `async` Boolean (optional) - Set to `true` to have this method return
+    immediately called, `false` to return after the menu has been selected
+    or closed. Defaults to `false`.
+  * `positioningItem` Number (optional) _macOS_ - The index of the menu item to
+    be positioned under the mouse cursor at the specified coordinates. Default
+    is -1.
+
+Pops up this menu as a context menu in the `browserWindow`.
+
+#### `menu.closePopup([browserWindow])`
+
+* `browserWindow` BrowserWindow (optional) - Default is the focused window.
+
+Closes the context menu in the `browserWindow`.
+
+#### `menu.append(menuItem)`
+
+* `menuItem` MenuItem
+
+Appends the `menuItem` to the menu.
+
+#### `menu.insert(pos, menuItem)`
+
+* `pos` Integer
+* `menuItem` MenuItem
+
+Inserts the `menuItem` to the `pos` position of the menu.
+
+### Instance Properties
+
+`menu` objects also have the following properties:
+
+#### `menu.items`
+
+A MenuItem[] array containing the menu's items.
 
 Each `Menu` consists of multiple [`MenuItem`](menu-item.md)s and each `MenuItem`
 can have a submenu.
@@ -16,7 +109,7 @@ An example of creating the application menu in the main process with the
 simple template API:
 
 ```javascript
-const {Menu} = require('electron')
+const {app, Menu} = require('electron')
 
 const template = [
   {
@@ -55,18 +148,25 @@ const template = [
     label: 'View',
     submenu: [
       {
-        label: 'Reload',
-        accelerator: 'CmdOrCtrl+R',
-        click (item, focusedWindow) {
-          if (focusedWindow) focusedWindow.reload()
-        }
+        role: 'reload'
       },
       {
-        label: 'Toggle Developer Tools',
-        accelerator: process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
-        click (item, focusedWindow) {
-          if (focusedWindow) focusedWindow.webContents.toggleDevTools()
-        }
+        role: 'forcereload'
+      },
+      {
+        role: 'toggledevtools'
+      },
+      {
+        type: 'separator'
+      },
+      {
+        role: 'resetzoom'
+      },
+      {
+        role: 'zoomin'
+      },
+      {
+        role: 'zoomout'
       },
       {
         type: 'separator'
@@ -92,16 +192,15 @@ const template = [
     submenu: [
       {
         label: 'Learn More',
-        click () { require('electron').shell.openExternal('http://electron.atom.io') }
+        click () { require('electron').shell.openExternal('https://electron.atom.io') }
       }
     ]
   }
 ]
 
 if (process.platform === 'darwin') {
-  const name = require('electron').remote.app.getName()
   template.unshift({
-    label: name,
+    label: app.getName(),
     submenu: [
       {
         role: 'about'
@@ -133,6 +232,23 @@ if (process.platform === 'darwin') {
       }
     ]
   })
+  // Edit menu.
+  template[1].submenu.push(
+    {
+      type: 'separator'
+    },
+    {
+      label: 'Speech',
+      submenu: [
+        {
+          role: 'startspeaking'
+        },
+        {
+          role: 'stopspeaking'
+        }
+      ]
+    }
+  )
   // Window menu.
   template[3].submenu = [
     {
@@ -187,85 +303,6 @@ window.addEventListener('contextmenu', (e) => {
 </script>
 ```
 
-## Class: Menu
-
-### `new Menu()`
-
-Creates a new menu.
-
-### Static Methods
-
-The `menu` class has the following static methods:
-
-#### `Menu.setApplicationMenu(menu)`
-
-* `menu` Menu
-
-Sets `menu` as the application menu on macOS. On Windows and Linux, the `menu`
-will be set as each window's top menu.
-
-**Note:** This API has to be called after the `ready` event of `app` module.
-
-#### `Menu.getApplicationMenu()`
-
-Returns the application menu (an instance of `Menu`), if set, or `null`, if not set.
-
-#### `Menu.sendActionToFirstResponder(action)` _macOS_
-
-* `action` String
-
-Sends the `action` to the first responder of application. This is used for
-emulating default Cocoa menu behaviors, usually you would just use the
-`role` property of `MenuItem`.
-
-See the [macOS Cocoa Event Handling Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/EventOverview/EventArchitecture/EventArchitecture.html#//apple_ref/doc/uid/10000060i-CH3-SW7)
-for more information on macOS' native actions.
-
-#### `Menu.buildFromTemplate(template)`
-
-* `template` Array
-
-Generally, the `template` is just an array of `options` for constructing a
-[MenuItem](menu-item.md). The usage can be referenced above.
-
-You can also attach other fields to the element of the `template` and they
-will become properties of the constructed menu items.
-
-### Instance Methods
-
-The `menu` object has the following instance methods:
-
-#### `menu.popup([browserWindow, x, y, positioningItem])`
-
-* `browserWindow` BrowserWindow (optional) - Default is `BrowserWindow.getFocusedWindow()`.
-* `x` Number (optional) - Default is the current mouse cursor position.
-* `y` Number (**required** if `x` is used) - Default is the current mouse cursor position.
-* `positioningItem` Number (optional) _macOS_ - The index of the menu item to
-  be positioned under the mouse cursor at the specified coordinates. Default is
-  -1.
-
-Pops up this menu as a context menu in the `browserWindow`.
-
-#### `menu.append(menuItem)`
-
-* `menuItem` MenuItem
-
-Appends the `menuItem` to the menu.
-
-#### `menu.insert(pos, menuItem)`
-
-* `pos` Integer
-* `menuItem` MenuItem
-
-Inserts the `menuItem` to the `pos` position of the menu.
-
-### Instance Properties
-
-`menu` objects also have the following properties:
-
-#### `menu.items`
-
-Get an array containing the menu's items.
 
 ## Notes on macOS Application Menu
 
@@ -330,7 +367,7 @@ the first item.
 
 Template:
 
-```
+```javascript
 [
   {label: '4', id: '4'},
   {label: '5', id: '5'},
@@ -352,7 +389,7 @@ Menu:
 
 Template:
 
-```
+```javascript
 [
   {label: 'a', position: 'endof=letters'},
   {label: '1', position: 'endof=numbers'},

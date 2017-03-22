@@ -3,7 +3,7 @@
 возможно, используете документацию ветки разработки, которая может содержать изменения api,
 которые не совместимы с вашей версией Electron. Если это так,
 Вы можете переключиться на другую версию документации в списке
-[доступные версии](http://electron.atom.io/docs/) на [atom.io](atom.io), или
+[доступные версии](https://electron.atom.io/docs/) на [atom.io](atom.io), или
 если Вы используете интерфейс GitHub, откройте список "переключение ветки/тега" и
 выберите тег, который соответствует вашей версии.
 
@@ -34,7 +34,7 @@
 ### Пользовательские элементы DOM:
 
 * [`File` Object](api/file-object.md)
-* [`<webview>` Tag](api/web-view-tag.md)
+* [`<webview>` Tag](api/webview-tag.md)
 * [`window.open` Function](api/window-open.md)
 
 ### Модули для Main Process:

@@ -1,7 +1,7 @@
 使用している Electron のバージョンに応じたドキュメントを使うように確認してください。
 ドキュメントのバージョン番号はページの URL の一部になっています。
 そうでない場合、おそらくご使用の Electron のバージョンと互換性のない API 変更を含んだ development ブランチのドキュメントを使っているものと思われます。
-その場合、atom.io の [available versions](http://electron.atom.io/docs/) リストにある別のバージョンのドキュメントに切り替えることができます。また GitHub で閲覧している場合、"Switch branches/tags" ドロップダウンを開いて、バージョンに対応したタグを選ぶこともできます。
+その場合、atom.io の [available versions](https://electron.atom.io/docs/) リストにある別のバージョンのドキュメントに切り替えることができます。また GitHub で閲覧している場合、"Switch branches/tags" ドロップダウンを開いて、バージョンに対応したタグを選ぶこともできます。
 
 _リンクになっていないリストは未翻訳のものです。_
 ## FAQ
@@ -44,7 +44,7 @@ _リンクになっていないリストは未翻訳のものです。_
 ### カスタムDOM要素:
 
 * [`File` Object](api/file-object.md)
-* [`<webview>` タグ](api/web-view-tag.md)
+* [`<webview>` タグ](api/webview-tag.md)
 * [`window.open` 関数](api/window-open.md)
 
 ### Main Processのモジュール:
@@ -91,6 +91,6 @@ _リンクになっていないリストは未翻訳のものです。_
 * Build System Overview (development/build-system-overview.md)
 * [ビルド方法(macOS)](development/build-instructions-osx.md)
 * Build Instructions (Windows) (development/build-instructions-windows.md)
-* Build Instructions (Linux) (development/build-instructions-linux.md)
+* [ビルド方法(Linux)](development/build-instructions-linux.md)
 * Debug Instructions (Windows) (development/debug-instructions-windows.md)
 * Setting Up Symbol Server in debugger (development/setting-up-symbol-server.md)

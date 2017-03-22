@@ -1,6 +1,6 @@
 Lütfen kullandığınız dokümanın Electron versiyonunuzla aynı olduğundan emin olun.
 Versiyon numarası okuduğunuz dokümanın URL'sindekiyle aynı olmalı. Eğer aynı değilse, muhtemelen geliştirme aşamasındaki API değişikliklerini içerebilecek dokümantasyonudur.
-Eğer öyleyse, atom.io üzerinden [mevcut sürümler](http://electron.atom.io/docs/)e göz atabilirsiniz ya da eğer GitHub arayüzünü kullanıyorsanız "Switch branches/tags" açılır menüsünden versiyonunuza uygun olanı seçebilirsiniz.
+Eğer öyleyse, atom.io üzerinden [mevcut sürümler](https://electron.atom.io/docs/)e göz atabilirsiniz ya da eğer GitHub arayüzünü kullanıyorsanız "Switch branches/tags" açılır menüsünden versiyonunuza uygun olanı seçebilirsiniz.
 
 ## SSS(Sıkça Sorulan Sorular)
 
@@ -37,7 +37,7 @@ Bir problem(issue) bildirmeden önce sıkça sorulan sorulara göz atın:
 ### Özel DOM Elementleri:
 
 * [`File` Nesnesi](api/file-object.md)
-* [`<webview>` Etiketi](https://github.com/electron/electron/tree/master/docs/api/web-view-tag.md)
+* [`<webview>` Etiketi](https://github.com/electron/electron/tree/master/docs/api/webview-tag.md)
 * [`window.open` Fonksiyonu](https://github.com/electron/electron/tree/master/docs/api/window-open.md)
 
 ### Ana Süreç(Main Process) Modülleri:

@@ -2,7 +2,11 @@
 
 > Extensions to process object.
 
-The `process` object is extended in Electron with following APIs:
+Process: [Main](../glossary.md#main-process), [Renderer](../glossary.md#renderer-process)
+
+Electron's `process` object is extended from the
+[Node.js `process` object](https://nodejs.org/api/process.html).
+It adds the following events, properties, and methods:
 
 ## Events
 
@@ -83,8 +87,7 @@ limit, whichever is lower for the current process.
 
 ### `process.getProcessMemoryInfo()`
 
-Returns an object giving memory usage statistics about the current process. Note
-that all statistics are reported in Kilobytes.
+Returns `Object`:
 
 * `workingSetSize` Integer - The amount of memory currently pinned to actual physical
   RAM.
@@ -95,10 +98,12 @@ that all statistics are reported in Kilobytes.
 * `sharedBytes` Integer - The amount of memory shared between processes, typically
   memory consumed by the Electron code itself
 
+Returns an object giving memory usage statistics about the current process. Note
+that all statistics are reported in Kilobytes.
+
 ### `process.getSystemMemoryInfo()`
 
-Returns an object giving memory usage statistics about the entire system. Note
-that all statistics are reported in Kilobytes.
+Returns `Object`:
 
 * `total` Integer - The total amount of physical memory in Kilobytes available to the
   system.
@@ -108,3 +113,6 @@ that all statistics are reported in Kilobytes.
   system.  _Windows_ _Linux_
 * `swapFree` Integer - The free amount of swap memory in Kilobytes available to the
   system.  _Windows_ _Linux_
+
+Returns an object giving memory usage statistics about the entire system. Note
+that all statistics are reported in Kilobytes.

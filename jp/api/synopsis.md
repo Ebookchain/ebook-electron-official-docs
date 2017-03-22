@@ -2,7 +2,7 @@
 
 > どうやってNode.jsとElectronのAPIを使うか。
 
-Electron では全ての [Node.js のビルトインモジュール](http://nodejs.org/api/) 利用可能です。また、サードパーティの Node モジュール ([ネイティブモジュール](../tutorial/using-native-node-modules.md)も含む) も完全にサポートされています。
+Electron では全ての [Node.js のビルトインモジュール](http://nodejs.org/api/) が利用可能です。また、サードパーティの Node モジュール ([ネイティブモジュール](../tutorial/using-native-node-modules.md)も含む) も完全にサポートされています。
 
 Electron はネイティブのデスクトップアプリケーション開発のための幾つかの追加のビルトインモジュールも提供しています。メインプロセスでだけ使えるモジュールもあれば、レンダラプロセス(ウェブページ)でだけ使えるモジュール、あるいはメインプロセス、レンダラプロセスどちらでも使えるモジュールもあります。
 
@@ -11,14 +11,14 @@ Electron はネイティブのデスクトップアプリケーション開発�
 メインプロセススクリプトは普通の Node.js スクリプトのようなものです：
 
 ```javascript
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow} = require('electron')
 
-let win = null;
+let win = null
 
 app.on('ready', () => {
-  win = new BrowserWindow({width: 800, height: 600});
-  win.loadURL('https://github.com');
-});
+  win = new BrowserWindow({width: 800, height: 600})
+  win.loadURL('https://github.com')
+})
 ```
 
 レンダラプロセスは Node モジュールを使うための追加機能を除いて、通常のウェブページとなんら違いはありません：
@@ -39,25 +39,25 @@ app.on('ready', () => {
 
 ## 分割代入
 
-0.37の時点で、 、[分割代入][desctructuring-assignment]でビルトインモジュールの使用をより簡単にできます：
+0.37の時点で、[分割代入][desctructuring-assignment]でビルトインモジュールの使用をより簡単にできます：
 
 ```javascript
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow} = require('electron')
 ```
 
 もし`electron`モジュール全体が必要であれば、requireして、それぞれのモジュールを`electron`からアクセスすることができます。
 
 ```javascript
-const electron = require('electron');
-const {app, BrowserWindow} = electron;
+const electron = require('electron')
+const {app, BrowserWindow} = electron
 ```
 
 これは、次のコードと同じ意味を持ちます。
 
 ```javascript
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const electron = require('electron')
+const app = electron.app
+const BrowserWindow = electron.BrowserWindow
 ```
 
 [gui]: https://en.wikipedia.org/wiki/Graphical_user_interface

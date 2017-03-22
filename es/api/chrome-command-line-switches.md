@@ -6,13 +6,13 @@ anexarlas en el script principal de tu aplicación antes de que el evento [ready
 módulo [app][app] sea emitido:
 
 ```javascript
-var app = require('app');
-app.commandLine.appendSwitch('remote-debugging-port', '8315');
-app.commandLine.appendSwitch('host-rules', 'MAP * 127.0.0.1');
+var app = require('app')
+app.commandLine.appendSwitch('remote-debugging-port', '8315')
+app.commandLine.appendSwitch('host-rules', 'MAP * 127.0.0.1')
 
-app.on('ready', function() {
+app.on('ready', function () {
   // Your code here
-});
+})
 ```
 
 ## --client-certificate=`path`
@@ -86,11 +86,6 @@ Asigna la versión `version` del pepper flash plugin.
 ## --log-net-log=`path`
 
 Permite guardar y escribir eventos de registros de red en `path`.
-
-## --ssl-version-fallback-min=`version`
-
-Establece la versión mínima de SSL/TLS ("tls1", "tls1.1" o "tls1.2") que
-el repliegue de TLC aceptará.
 
 ## --enable-logging
 

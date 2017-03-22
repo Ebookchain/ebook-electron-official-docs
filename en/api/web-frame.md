@@ -2,6 +2,8 @@
 
 > Customize the rendering of the current web page.
 
+Process: [Renderer](../glossary.md#renderer-process)
+
 An example of zooming current page to 200%.
 
 ```javascript
@@ -23,7 +25,7 @@ zoom percent divided by 100, so 300% = 3.0.
 
 ### `webFrame.getZoomFactor()`
 
-Returns the current zoom factor.
+Returns `Number` - The current zoom factor.
 
 ### `webFrame.setZoomLevel(level)`
 
@@ -35,20 +37,37 @@ limits of 300% and 50% of original size, respectively.
 
 ### `webFrame.getZoomLevel()`
 
-Returns the current zoom level.
+Returns `Number` - The current zoom level.
 
 ### `webFrame.setZoomLevelLimits(minimumLevel, maximumLevel)`
 
 * `minimumLevel` Number
 * `maximumLevel` Number
 
-Sets the maximum and minimum zoom level.
+**Deprecated:** Call `setVisualZoomLevelLimits` instead to set the visual zoom
+level limits. This method will be removed in Electron 2.0.
+
+### `webFrame.setVisualZoomLevelLimits(minimumLevel, maximumLevel)`
+
+* `minimumLevel` Number
+* `maximumLevel` Number
+
+Sets the maximum and minimum pinch-to-zoom level.
+
+### `webFrame.setLayoutZoomLevelLimits(minimumLevel, maximumLevel)`
+
+* `minimumLevel` Number
+* `maximumLevel` Number
+
+Sets the maximum and minimum layout-based (i.e. non-visual) zoom level.
 
 ### `webFrame.setSpellCheckProvider(language, autoCorrectWord, provider)`
 
 * `language` String
 * `autoCorrectWord` Boolean
 * `provider` Object
+  * `spellCheck` Function - Returns `Boolean`
+    * `text` String
 
 Sets a provider for spell checking in input fields and text areas.
 
@@ -83,12 +102,26 @@ attackers.
 Resources will be loaded from this `scheme` regardless of the current page's
 Content Security Policy.
 
-### `webFrame.registerURLSchemeAsPrivileged(scheme)`
+### `webFrame.registerURLSchemeAsPrivileged(scheme[, options])`
 
 * `scheme` String
+* `options` Object (optional)
+  * `secure` Boolean - (optional) Default true.
+  * `bypassCSP` Boolean - (optional) Default true.
+  * `allowServiceWorkers` Boolean - (optional) Default true.
+  * `supportFetchAPI` Boolean - (optional) Default true.
+  * `corsEnabled` Boolean - (optional) Default true.
 
 Registers the `scheme` as secure, bypasses content security policy for resources,
 allows registering ServiceWorker and supports fetch API.
+
+Specify an option with the value of `false` to omit it from the registration.
+An example of registering a privileged scheme, without bypassing Content Security Policy:
+
+```javascript
+const {webFrame} = require('electron')
+webFrame.registerURLSchemeAsPrivileged('foo', { bypassCSP: false })
+```
 
 ### `webFrame.insertText(text)`
 
@@ -96,10 +129,12 @@ allows registering ServiceWorker and supports fetch API.
 
 Inserts `text` to the focused element.
 
-### `webFrame.executeJavaScript(code[, userGesture])`
+### `webFrame.executeJavaScript(code[, userGesture, callback])`
 
 * `code` String
 * `userGesture` Boolean (optional) - Default is `false`.
+* `callback` Function (optional) - Called after script has been executed.
+  * `result` Any
 
 Evaluates `code` in page.
 
@@ -108,6 +143,14 @@ invoked by a gesture from the user. Setting `userGesture` to `true` will remove
 this limitation.
 
 ### `webFrame.getResourceUsage()`
+
+Returns `Object`:
+
+* `images` [MemoryUsageDetails](structures/memory-usage-details.md)
+* `cssStyleSheets` [MemoryUsageDetails](structures/memory-usage-details.md)
+* `xslStyleSheets` [MemoryUsageDetails](structures/memory-usage-details.md)
+* `fonts` [MemoryUsageDetails](structures/memory-usage-details.md)
+* `other` [MemoryUsageDetails](structures/memory-usage-details.md)
 
 Returns an object describing usage information of Blink's internal memory
 caches.
@@ -119,21 +162,18 @@ console.log(webFrame.getResourceUsage())
 
 This will generate:
 
-```
+```javascript
 {
   images: {
     count: 22,
     size: 2549,
-    liveSize: 2542,
-    decodedSize: 478,
-    purgedSize: 0,
-    purgeableSize: 0
+    liveSize: 2542
   },
   cssStyleSheets: { /* same with "images" */ },
   xslStyleSheets: { /* same with "images" */ },
   fonts: { /* same with "images" */ },
   other: { /* same with "images" */ }
-})
+}
 ```
 
 ### `webFrame.clearCache()`

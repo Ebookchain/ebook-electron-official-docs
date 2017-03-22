@@ -23,8 +23,8 @@ Electron 的用戶擁有在網頁中呼叫 Node.js APIs 的能力，允許低級
 
 ## 主行程與渲染行程的區別
 
-主行程創造網頁透過創造 `BroswerWindow` 實例。每一個 `BroswerWindow` 實例都在自己的渲染行程裡運行著一個網頁。
-當一個 `BroswerWindow` 實例被銷毀，對應的渲染行程也會被終止。主行程管理所有網頁和與之對應的渲染行程。
+主行程創造網頁透過創造 `BrowserWindow` 實例。每一個 `BrowserWindow` 實例都在自己的渲染行程裡運行著一個網頁。
+當一個 `BrowserWindow` 實例被銷毀，對應的渲染行程也會被終止。主行程管理所有網頁和與之對應的渲染行程。
 每一個渲染行程都是相互獨立的，並且只關心他們自己的網頁。
 
 在網頁中，是不允許呼叫原生 GUI 相關 APIs 因為管理原生 GUI 資源在網頁上是非常危險而且容易造成資源洩露。
@@ -46,7 +46,7 @@ your-app/
 `package.json` 的格式與 Node 的模組完全一樣，並且有個腳本被指定為 `main` 是用來啟動你的應用程式，它運行在主行程上。
 你應用裡的 一個範例在你的 `package.json` 看起來可能像這樣：
 
-```json
+```javascripton
 {
   "name"    : "your-app",
   "version" : "0.1.0",
@@ -70,7 +70,7 @@ var mainWindow = null;
 app.on('window-all-closed', function() {
   // 在macOS 上，通常使用者在明確地按下 Cmd + Q 之前
   // 應用會保持活動狀態
-  if (process.platform != 'darwin') {
+  if (process.platform !== 'darwin') {
     app.quit();
   }
 });
@@ -82,7 +82,7 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({width: 800, height: 600});
 
   // 載入應用程式的 index.html
-  mainWindow.loadURL('file://' + __dirname + '/index.html');
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   // 打開開發者工具
   mainWindow.webContents.openDevTools();

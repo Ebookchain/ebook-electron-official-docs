@@ -7,22 +7,22 @@
 `chrome://tracing/` 페이지를 열고 생성된 파일을 로드하면 결과를 볼 수 있습니다.
 
 ```javascript
-const {contentTracing} = require('electron');
+const {contentTracing} = require('electron')
 
 const options = {
   categoryFilter: '*',
   traceOptions: 'record-until-full,enable-sampling'
-};
+}
 
 contentTracing.startRecording(options, () => {
-  console.log('Tracing started');
+  console.log('Tracing started')
 
   setTimeout(() => {
     contentTracing.stopRecording('', (path) => {
-      console.log('Tracing data recorded to ' + path);
-    });
-  }, 5000);
-});
+      console.log('Tracing data recorded to ' + path)
+    })
+  }, 5000)
+})
 ```
 
 ## Methods
@@ -31,7 +31,8 @@ contentTracing.startRecording(options, () => {
 
 ### `contentTracing.getCategories(callback)`
 
-* `callback` Function
+* `callback` 
+  * `categories` String[]
 
 카테고리 그룹 세트를 가져옵니다. 카테고리 그룹은 도달된 코드 경로를 변경할 수 있습니다.
 
@@ -85,6 +86,7 @@ EnableRecording 요청을 받게 됩니다. 모든 child 프로세스가 `startR
 
 * `resultFilePath` String
 * `callback` Function
+  * `resultFilePath` String
 
 모든 프로세스에서 레코딩을 중지합니다.
 
@@ -127,6 +129,7 @@ Child 프로세스는 일반적으로 추적 데이터와 희귀한 플러시 �
 
 * `resultFilePath` String
 * `callback` Function
+  * `resultFilePath` String
 
 현재 모니터링 추적 데이터를 가져옵니다.
 
@@ -142,19 +145,8 @@ Child 프로세스는 일반적으로 추적 데이터와 희귀한 플러시 �
 ### `contentTracing.getTraceBufferUsage(callback)`
 
 * `callback` Function
+  * `value` Number
+  * `percentage` Number
 
 추적 버퍼 % 전체 상태의 프로세스간 최대치를 가져옵니다. TraceBufferUsage 값이
 결정되면 `callback`이 한 번 호출됩니다.
-
-### `contentTracing.setWatchEvent(categoryName, eventName, callback)`
-
-* `categoryName` String
-* `eventName` String
-* `callback` Function
-
-`callback`은 지정된 이벤트가 어떤 작업을 발생시킬 때마다 호출됩니다.
-
-### `contentTracing.cancelWatchEvent()`
-
-Watch 이벤트를 중단합니다. 만약 추적이 활성화되어 있다면 이 메서드는 watch 이벤트
-콜백과 race가 일어날 것입니다.

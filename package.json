@@ -1,6 +1,6 @@
 {
   "name": "electron-docs-gitbook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Electron 官方文档多语言电子书",
   "main": "index.js",
   "scripts": {

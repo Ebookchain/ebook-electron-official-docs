@@ -5,13 +5,13 @@
 アプリケーションのメインスクリプトで[app.commandLine.appendSwitch][append-switch]を使うことで、[app][app]モジュールの[ready][ready]イベントが発行される前にコマンドラインスイッチを追加できます。
 
 ```javascript
-const {app} = require('electron');
-app.commandLine.appendSwitch('remote-debugging-port', '8315');
-app.commandLine.appendSwitch('host-rules', 'MAP * 127.0.0.1');
+const {app} = require('electron')
+app.commandLine.appendSwitch('remote-debugging-port', '8315')
+app.commandLine.appendSwitch('host-rules', 'MAP * 127.0.0.1')
 
 app.on('ready', () => {
   // Your code here
-});
+})
 ```
 
 
@@ -96,14 +96,6 @@ pepper flash pluginの`version`を設定します。
 ## --log-net-log=`path`
 
 ネットログイベントを保存し、`path`に書き込みを有効化します。
-
-## --ssl-version-fallback-min=`version`
-
-TLSフォールバックを許可する最小のSSL/TLSバージョン ("tls1"や"tls1.1" 、 "tls1.2")を設定します。
-
-## --cipher-suite-blacklist=`cipher_suites`
-
-無効にするために、SSL暗号スイートのカンマ区切りのリストを指定します。
 
 ## --disable-renderer-backgrounding
 
