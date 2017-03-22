@@ -1,992 +1,936 @@
+
 <!DOCTYPE HTML>
-<html lang="zh-tw" >
-    
+<html lang="zh-CN" >
     <head>
-        
+        <title>桌面环境集成 · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>桌面环境集成 | 常见问题</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="generator" content="GitBook 3.2.0">
         <meta name="author" content="Imfly">
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-        
-    <link rel="stylesheet" href="../gitbook/style.css">
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
         
     
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+
+    
+
+    
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+    
         
     
+        
+    
+        
+    
+        
     
 
         
     
     
-    <link rel="next" href="../tutorial/online-offline-events.html" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="online-offline-events.html" />
     
     
-    <link rel="prev" href="../tutorial/quick-start.html" />
+    <link rel="prev" href="quick-start.html" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book"
-        data-level="13"
-        data-chapter-title="桌面环境集成"
-        data-filepath="tutorial/desktop-environment-integration.md"
-        data-basepath=".."
-        data-revision="Thu Aug 04 2016 15:32:14 GMT+0800 (CST)"
-        data-innerlanguage="zh-CN">
-    
-
-<div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
             
-            
-            
-            
-
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="../index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        介紹
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="faq/electron-faq.html">
-            
-                
-                    <a href="../faq/electron-faq.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        Electron 常见问题
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2" data-path="tutorial/supported-platforms.html">
-            
-                
-                    <a href="../tutorial/supported-platforms.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                        支持平台
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3" data-path="tutorial/application-distribution.html">
-            
-                
-                    <a href="../tutorial/application-distribution.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                        分发应用
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="tutorial/mac-app-store-submission-guide.html">
-            
-                
-                    <a href="../tutorial/mac-app-store-submission-guide.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                        提交应用到 Mac App Store
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="tutorial/application-packaging.html">
-            
-                
-                    <a href="../tutorial/application-packaging.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                        打包应用
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="tutorial/using-native-node-modules.html">
-            
-                
-                    <a href="../tutorial/using-native-node-modules.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                        使用 Node 原生模块
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7" data-path="tutorial/debugging-main-process.html">
-            
-                
-                    <a href="../tutorial/debugging-main-process.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>7.</b>
-                        
-                        主进程调试
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="8" data-path="tutorial/using-selenium-and-webdriver.html">
-            
-                
-                    <a href="../tutorial/using-selenium-and-webdriver.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>8.</b>
-                        
-                        使用 Selenium 和 WebDriver
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="9" data-path="tutorial/devtools-extension.html">
-            
-                
-                    <a href="../tutorial/devtools-extension.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>9.</b>
-                        
-                        使用开发人员工具扩展
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="10" data-path="tutorial/using-pepper-flash-plugin.html">
-            
-                
-                    <a href="../tutorial/using-pepper-flash-plugin.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>10.</b>
-                        
-                        使用 Pepper Flash 插件
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="11" data-path="tutorial/using-widevine-cdm-plugin.html">
-            
-                
-                    <a href="../tutorial/using-widevine-cdm-plugin.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>11.</b>
-                        
-                        使用 Widevine CDM 插件
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="12" data-path="tutorial/quick-start.html">
-            
-                
-                    <a href="../tutorial/quick-start.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>12.</b>
-                        
-                        快速入门
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter active" data-level="13" data-path="tutorial/desktop-environment-integration.html">
-            
-                
-                    <a href="../tutorial/desktop-environment-integration.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>13.</b>
-                        
-                        桌面环境集成
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="14" data-path="tutorial/online-offline-events.html">
-            
-                
-                    <a href="../tutorial/online-offline-events.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>14.</b>
-                        
-                        在线/离线事件探测
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="15" data-path="api/synopsis.html">
-            
-                
-                    <a href="../api/synopsis.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>15.</b>
-                        
-                        简介
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="16" data-path="api/process.html">
-            
-                
-                    <a href="../api/process.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.</b>
-                        
-                        进程对象
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="17" data-path="api/chrome-command-line-switches.html">
-            
-                
-                    <a href="../api/chrome-command-line-switches.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>17.</b>
-                        
-                        支持的 Chrome 命令行开关
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="18" data-path="api/environment-variables.html">
-            
-                
-                    <a href="../api/environment-variables.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>18.</b>
-                        
-                        环境变量
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="19" data-path="api/file-object.html">
-            
-                
-                    <a href="../api/file-object.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>19.</b>
-                        
-                        `File` 对象
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="20" data-path="api/web-view-tag.html">
-            
-                
-                    <a href="../api/web-view-tag.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>20.</b>
-                        
-                        `&lt;webview&gt;` 标签
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="21" data-path="api/window-open.html">
-            
-                
-                    <a href="../api/window-open.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>21.</b>
-                        
-                        `window.open` 函数
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="22" data-path="api/app.html">
-            
-                
-                    <a href="../api/app.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>22.</b>
-                        
-                        app
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="23" data-path="api/auto-updater.html">
-            
-                
-                    <a href="../api/auto-updater.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>23.</b>
-                        
-                        autoUpdater
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="24" data-path="api/browser-window.html">
-            
-                
-                    <a href="../api/browser-window.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>24.</b>
-                        
-                        BrowserWindow
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="25" data-path="api/content-tracing.html">
-            
-                
-                    <a href="../api/content-tracing.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>25.</b>
-                        
-                        contentTracing
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="26" data-path="api/dialog.html">
-            
-                
-                    <a href="../api/dialog.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>26.</b>
-                        
-                        dialog
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="27" data-path="api/global-shortcut.html">
-            
-                
-                    <a href="../api/global-shortcut.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>27.</b>
-                        
-                        globalShortcut
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="28" data-path="api/ipc-main.html">
-            
-                
-                    <a href="../api/ipc-main.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>28.</b>
-                        
-                        ipcMain
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="29" data-path="api/menu.html">
-            
-                
-                    <a href="../api/menu.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>29.</b>
-                        
-                        Menu
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="30" data-path="api/menu-item.html">
-            
-                
-                    <a href="../api/menu-item.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>30.</b>
-                        
-                        MenuItem
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="31" data-path="api/power-monitor.html">
-            
-                
-                    <a href="../api/power-monitor.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>31.</b>
-                        
-                        powerMonitor
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="32" data-path="api/power-save-blocker.html">
-            
-                
-                    <a href="../api/power-save-blocker.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>32.</b>
-                        
-                        powerSaveBlocker
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="33" data-path="api/protocol.html">
-            
-                
-                    <a href="../api/protocol.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>33.</b>
-                        
-                        protocol
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="34" data-path="api/session.html">
-            
-                
-                    <a href="../api/session.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>34.</b>
-                        
-                        session
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="35" data-path="api/web-contents.html">
-            
-                
-                    <a href="../api/web-contents.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>35.</b>
-                        
-                        webContents
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="36" data-path="api/tray.html">
-            
-                
-                    <a href="../api/tray.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>36.</b>
-                        
-                        Tray
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="37" data-path="api/desktop-capturer.html">
-            
-                
-                    <a href="../api/desktop-capturer.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>37.</b>
-                        
-                        desktopCapturer
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="38" data-path="api/ipc-renderer.html">
-            
-                
-                    <a href="../api/ipc-renderer.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>38.</b>
-                        
-                        ipcRenderer
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="39" data-path="api/remote.html">
-            
-                
-                    <a href="../api/remote.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>39.</b>
-                        
-                        remote
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="40" data-path="api/web-frame.html">
-            
-                
-                    <a href="../api/web-frame.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>40.</b>
-                        
-                        webFrame
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="41" data-path="api/clipboard.html">
-            
-                
-                    <a href="../api/clipboard.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>41.</b>
-                        
-                        clipboard
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="42" data-path="api/crash-reporter.html">
-            
-                
-                    <a href="../api/crash-reporter.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>42.</b>
-                        
-                        crashReporter
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="43" data-path="api/native-image.html">
-            
-                
-                    <a href="../api/native-image.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>43.</b>
-                        
-                        nativeImage
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="44" data-path="api/screen.html">
-            
-                
-                    <a href="../api/screen.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>44.</b>
-                        
-                        screen
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="45" data-path="api/shell.html">
-            
-                
-                    <a href="../api/shell.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>45.</b>
-                        
-                        shell
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="46" data-path="development/coding-style.html">
-            
-                
-                    <a href="../development/coding-style.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>46.</b>
-                        
-                        代码规范
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="47" data-path="development/source-code-directory-structure.html">
-            
-                
-                    <a href="../development/source-code-directory-structure.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>47.</b>
-                        
-                        源码目录结构
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="48" data-path="development/atom-shell-vs-node-webkit.html">
-            
-                
-                    <a href="../development/atom-shell-vs-node-webkit.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>48.</b>
-                        
-                        与 NW.js（原 node-webkit）在技术上的差异
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="49" data-path="development/build-system-overview.html">
-            
-                
-                    <a href="../development/build-system-overview.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>49.</b>
-                        
-                        构建系统概览
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="50" data-path="development/build-instructions-osx.html">
-            
-                
-                    <a href="../development/build-instructions-osx.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>50.</b>
-                        
-                        构建步骤（macOS）
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="51" data-path="development/build-instructions-windows.html">
-            
-                
-                    <a href="../development/build-instructions-windows.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>51.</b>
-                        
-                        构建步骤（Windows）
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="52" data-path="development/build-instructions-linux.html">
-            
-                
-                    <a href="../development/build-instructions-linux.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>52.</b>
-                        
-                        构建步骤（Linux）
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="53" data-path="development/setting-up-symbol-server.html">
-            
-                
-                    <a href="../development/setting-up-symbol-server.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>53.</b>
-                        
-                        在调试中使用 Symbol Server
-                    </a>
-            
-            
-        </li>
-    
-
-
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    本書使用 GitBook 釋出
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
 </div>
 
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">常见问题</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../faq/electron-faq.html">
+            
+                <a href="../faq/electron-faq.html">
+            
+                    
+                    Electron 常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">向导</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="supported-platforms.html">
+            
+                <a href="supported-platforms.html">
+            
+                    
+                    支持平台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="application-distribution.html">
+            
+                <a href="application-distribution.html">
+            
+                    
+                    分发应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="mac-app-store-submission-guide.html">
+            
+                <a href="mac-app-store-submission-guide.html">
+            
+                    
+                    提交应用到 Mac App Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="application-packaging.html">
+            
+                <a href="application-packaging.html">
+            
+                    
+                    打包应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="using-native-node-modules.html">
+            
+                <a href="using-native-node-modules.html">
+            
+                    
+                    使用 Node 原生模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="debugging-main-process.html">
+            
+                <a href="debugging-main-process.html">
+            
+                    
+                    主进程调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="using-selenium-and-webdriver.html">
+            
+                <a href="using-selenium-and-webdriver.html">
+            
+                    
+                    使用 Selenium 和 WebDriver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="devtools-extension.html">
+            
+                <a href="devtools-extension.html">
+            
+                    
+                    使用开发人员工具扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="using-pepper-flash-plugin.html">
+            
+                <a href="using-pepper-flash-plugin.html">
+            
+                    
+                    使用 Pepper Flash 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="using-widevine-cdm-plugin.html">
+            
+                <a href="using-widevine-cdm-plugin.html">
+            
+                    
+                    使用 Widevine CDM 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">教程</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="quick-start.html">
+            
+                <a href="quick-start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="desktop-environment-integration.html">
+            
+                <a href="desktop-environment-integration.html">
+            
+                    
+                    桌面环境集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="online-offline-events.html">
+            
+                <a href="online-offline-events.html">
+            
+                    
+                    在线/离线事件探测
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">API文档</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../api/synopsis.html">
+            
+                <a href="../api/synopsis.html">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../api/process.html">
+            
+                <a href="../api/process.html">
+            
+                    
+                    进程对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../api/chrome-command-line-switches.html">
+            
+                <a href="../api/chrome-command-line-switches.html">
+            
+                    
+                    支持的 Chrome 命令行开关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../api/environment-variables.html">
+            
+                <a href="../api/environment-variables.html">
+            
+                    
+                    环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../api/file-object.html">
+            
+                <a href="../api/file-object.html">
+            
+                    
+                    File 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../api/web-view-tag.html">
+            
+                <a href="../api/web-view-tag.html">
+            
+                    
+                    <webview> 标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../api/window-open.html">
+            
+                <a href="../api/window-open.html">
+            
+                    
+                    window.open 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../api/app.html">
+            
+                <a href="../api/app.html">
+            
+                    
+                    app
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../api/auto-updater.html">
+            
+                <a href="../api/auto-updater.html">
+            
+                    
+                    autoUpdater
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../api/browser-window.html">
+            
+                <a href="../api/browser-window.html">
+            
+                    
+                    BrowserWindow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../api/content-tracing.html">
+            
+                <a href="../api/content-tracing.html">
+            
+                    
+                    contentTracing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../api/dialog.html">
+            
+                <a href="../api/dialog.html">
+            
+                    
+                    dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../api/global-shortcut.html">
+            
+                <a href="../api/global-shortcut.html">
+            
+                    
+                    globalShortcut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../api/ipc-main.html">
+            
+                <a href="../api/ipc-main.html">
+            
+                    
+                    ipcMain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../api/menu.html">
+            
+                <a href="../api/menu.html">
+            
+                    
+                    Menu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../api/menu-item.html">
+            
+                <a href="../api/menu-item.html">
+            
+                    
+                    MenuItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../api/power-monitor.html">
+            
+                <a href="../api/power-monitor.html">
+            
+                    
+                    powerMonitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../api/power-save-blocker.html">
+            
+                <a href="../api/power-save-blocker.html">
+            
+                    
+                    powerSaveBlocker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../api/protocol.html">
+            
+                <a href="../api/protocol.html">
+            
+                    
+                    protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../api/session.html">
+            
+                <a href="../api/session.html">
+            
+                    
+                    session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../api/web-contents.html">
+            
+                <a href="../api/web-contents.html">
+            
+                    
+                    webContents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../api/tray.html">
+            
+                <a href="../api/tray.html">
+            
+                    
+                    Tray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../api/desktop-capturer.html">
+            
+                <a href="../api/desktop-capturer.html">
+            
+                    
+                    desktopCapturer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../api/ipc-renderer.html">
+            
+                <a href="../api/ipc-renderer.html">
+            
+                    
+                    ipcRenderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../api/remote.html">
+            
+                <a href="../api/remote.html">
+            
+                    
+                    remote
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../api/web-frame.html">
+            
+                <a href="../api/web-frame.html">
+            
+                    
+                    webFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../api/clipboard.html">
+            
+                <a href="../api/clipboard.html">
+            
+                    
+                    clipboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../api/crash-reporter.html">
+            
+                <a href="../api/crash-reporter.html">
+            
+                    
+                    crashReporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../api/native-image.html">
+            
+                <a href="../api/native-image.html">
+            
+                    
+                    nativeImage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../api/screen.html">
+            
+                <a href="../api/screen.html">
+            
+                    
+                    screen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../api/shell.html">
+            
+                <a href="../api/shell.html">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">开发</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../development/coding-style.html">
+            
+                <a href="../development/coding-style.html">
+            
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../development/source-code-directory-structure.html">
+            
+                <a href="../development/source-code-directory-structure.html">
+            
+                    
+                    源码目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../development/atom-shell-vs-node-webkit.html">
+            
+                <a href="../development/atom-shell-vs-node-webkit.html">
+            
+                    
+                    与 NW.js（原 node-webkit）在技术上的差异
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../development/build-system-overview.html">
+            
+                <a href="../development/build-system-overview.html">
+            
+                    
+                    构建系统概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../development/build-instructions-osx.html">
+            
+                <a href="../development/build-instructions-osx.html">
+            
+                    
+                    构建步骤（macOS）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../development/build-instructions-windows.html">
+            
+                <a href="../development/build-instructions-windows.html">
+            
+                    
+                    构建步骤（Windows）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../development/build-instructions-linux.html">
+            
+                <a href="../development/build-instructions-linux.html">
+            
+                    
+                    构建步骤（Linux）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../development/setting-up-symbol-server.html">
+            
+                <a href="../development/setting-up-symbol-server.html">
+            
+                    
+                    在调试中使用 Symbol Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >常见问题</a>
+        <a href=".." >桌面环境集成</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h1 id="&#x684C;&#x9762;&#x73AF;&#x5883;&#x96C6;&#x6210;">&#x684C;&#x9762;&#x73AF;&#x5883;&#x96C6;&#x6210;</h1>
-<p>&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5728;&#x5404;&#x81EA;&#x7684;&#x684C;&#x9762;&#x5E94;&#x7528;&#x4E0A;&#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x7279;&#x6027;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728; windows &#x4E0A;&#x5E94;&#x7528;&#x66FE;&#x7ECF;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x4EFB;&#x52A1;&#x680F;&#x7684;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#xFF0C;&#x5728; Mac &#x4E0A;&#xFF0C;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x628A;&#x81EA;&#x5B9A;&#x4E49;&#x83DC;&#x5355;&#x653E;&#x5728;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#x4E0A;&#x3002;</p>
-<p>&#x672C;&#x7AE0;&#x5C06;&#x4F1A;&#x8BF4;&#x660E;&#x600E;&#x6837;&#x4F7F;&#x7528; Electron APIs &#x628A;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x548C;&#x684C;&#x9762;&#x73AF;&#x5883;&#x96C6;&#x6210;&#x5230;&#x4E00;&#x5757;&#x3002;</p>
-<h2 id="notifications-windows-linux-macos">Notifications (Windows, Linux, macOS)</h2>
-<p>&#x8FD9;&#x4E09;&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x90FD;&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x4E86;&#x53D1;&#x9001;&#x901A;&#x77E5;&#x7684;&#x65B9;&#x6CD5;&#x3002;Electron&#x8BA9;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x901A;&#x8FC7;
-<a href="https://notifications.spec.whatwg.org/" target="_blank">HTML5 Notification API</a>
-&#x4FBF;&#x5229;&#x7684;&#x53BB;&#x53D1;&#x9001;&#x901A;&#x77E5;&#xFF0C;&#x7528;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684;&#x901A;&#x77E5;APIs&#x53BB;&#x663E;&#x793A;&#x3002;</p>
-<p><strong>Note:</strong> &#x56E0;&#x4E3A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;HTML5API&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x5728;&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#x4E2D;&#x8D77;&#x4F5C;&#x7528;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myNotification = <span class="hljs-keyword">new</span> Notification(<span class="hljs-string">&apos;Title&apos;</span>, {
-  body: <span class="hljs-string">&apos;Lorem Ipsum Dolor Sit Amet&apos;</span>
-});
 
-myNotification.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x684C;&#x9762;&#x73AF;&#x5883;&#x96C6;&#x6210;">&#x684C;&#x9762;&#x73AF;&#x5883;&#x96C6;&#x6210;</h1><p>&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5728;&#x5404;&#x81EA;&#x7684;&#x684C;&#x9762;&#x5E94;&#x7528;&#x4E0A;&#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x7279;&#x6027;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728; windows &#x4E0A;&#x5E94;&#x7528;&#x66FE;&#x7ECF;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x4EFB;&#x52A1;&#x680F;&#x7684;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#xFF0C;&#x5728; Mac &#x4E0A;&#xFF0C;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x628A;&#x81EA;&#x5B9A;&#x4E49;&#x83DC;&#x5355;&#x653E;&#x5728;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#x4E0A;&#x3002;</p><p>&#x672C;&#x7AE0;&#x5C06;&#x4F1A;&#x8BF4;&#x660E;&#x600E;&#x6837;&#x4F7F;&#x7528; Electron APIs &#x628A;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x548C;&#x684C;&#x9762;&#x73AF;&#x5883;&#x96C6;&#x6210;&#x5230;&#x4E00;&#x5757;&#x3002;</p><h2 id="notifications-windows-linux-macos">Notifications (Windows, Linux, macOS)</h2><p>&#x8FD9;&#x4E09;&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x90FD;&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x4E86;&#x53D1;&#x9001;&#x901A;&#x77E5;&#x7684;&#x65B9;&#x6CD5;&#x3002;Electron &#x8BA9;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x901A;&#x8FC7;
+<a href="https://notifications.spec.whatwg.org/" target="_blank">HTML5 Notification API</a>
+&#x4FBF;&#x5229;&#x7684;&#x53BB;&#x53D1;&#x9001;&#x901A;&#x77E5;&#xFF0C;&#x7528;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684;&#x901A;&#x77E5; APIs &#x53BB;&#x663E;&#x793A;&#x3002;</p><p><strong>Note:</strong> &#x56E0;&#x4E3A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A; HTML5 API&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x5728;&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#x4E2D;&#x8D77;&#x4F5C;&#x7528;.</p><pre><code class="lang-javascript"><span class="hljs-keyword">let</span> myNotification = <span class="hljs-keyword">new</span> Notification(<span class="hljs-string">&apos;Title&apos;</span>, {
+  body: <span class="hljs-string">&apos;Lorem Ipsum Dolor Sit Amet&apos;</span>
+})
+
+myNotification.onclick = () =&gt; {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Notification clicked&apos;</span>)
-}
-</code></pre>
-<p>&#x5C3D;&#x7BA1;&#x4EE3;&#x7801;&#x548C;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x6709;&#x4E00;&#x4E9B;&#x5DEE;&#x5F02;&#x3002;</p>
-<h3 id="windows">Windows</h3>
-<ul>
-<li>&#x5728;Windows 10&#x4E0A;, &#x901A;&#x77E5;&quot;&#x53EF;&#x4EE5;&#x5DE5;&#x4F5C;&quot;.</li>
-<li>&#x5728;Windows 8.1&#x548C;Windows 8&#x7CFB;&#x7EDF;&#x4E0B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5C06;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85).aspx" target="_blank">Application User
-Model ID</a>&#x5B89;&#x88C5;&#x5230;&#x5F00;&#x59CB;&#x5C4F;&#x5E55;&#x4E0A;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E0D;&#x662F;&#x5C06;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x56FA;&#x5B9A;&#x5230;&#x5F00;&#x59CB;&#x5C4F;&#x5E55;&#x3002;</li>
-<li>&#x5728;Windows 7&#x4EE5;&#x53CA;&#x66F4;&#x4F4E;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x901A;&#x77E5;&#x4E0D;&#x88AB;&#x652F;&#x6301;&#x3002;&#x4E0D;&#x8FC7;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="../api/tray.html#traydisplayballoonoptions-windows">Tray API</a>&#x53D1;&#x9001;&#x4E00;&#x4E2A;&quot;&#x6C14;&#x6CE1;&#x901A;&#x77E5;&quot;&#x3002;</li>
-</ul>
-<p>&#x6B64;&#x5916;&#xFF0C;&#x901A;&#x77E5;&#x652F;&#x6301;&#x7684;&#x6700;&#x5927;&#x5B57;&#x7B26;&#x957F;&#x961F;&#x4E3A;250&#x3002;Windows&#x56E2;&#x961F;&#x5EFA;&#x8BAE;&#x901A;&#x77E5;&#x5E94;&#x8BE5;&#x4FDD;&#x6301;&#x5728;200&#x4E2A;&#x5B57;&#x7B26;&#x4EE5;&#x4E0B;&#x3002;</p>
-<h3 id="linux">Linux</h3>
-<p>&#x901A;&#x77E5;&#x4F7F;&#x7528;<code>libnotify</code>&#x53D1;&#x9001;&#xFF0C;&#x5B83;&#x80FD;&#x5728;&#x4EFB;&#x4F55;&#x652F;&#x6301;<a href="https://developer.gnome.org/notification-spec/" target="_blank">Desktop Notifications
+}</code></pre>
+<p>&#x5C3D;&#x7BA1;&#x4EE3;&#x7801;&#x548C;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x6709;&#x4E00;&#x4E9B;&#x5DEE;&#x5F02;&#x3002;</p><h3 id="windows">Windows</h3><ul><li>&#x5728; Windows 10 &#x4E0A;, &#x901A;&#x77E5;&quot;&#x53EF;&#x4EE5;&#x5DE5;&#x4F5C;&quot;&#x3002;
+</li>
+<li>&#x5728; Windows 8.1 &#x548C; Windows 8 &#x7CFB;&#x7EDF;&#x4E0B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5C06;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;[Application User
+Model ID]<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85" target="_blank">app-user-model-id</a>.aspx)&#x5B89;&#x88C5;&#x5230;&#x5F00;&#x59CB;&#x5C4F;&#x5E55;&#x4E0A;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E0D;&#x662F;&#x5C06;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x56FA;&#x5B9A;&#x5230;&#x5F00;&#x59CB;&#x5C4F;&#x5E55;&#x3002;
+</li>
+<li>&#x5728; Windows 7 &#x4EE5;&#x53CA;&#x66F4;&#x4F4E;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x901A;&#x77E5;&#x4E0D;&#x88AB;&#x652F;&#x6301;&#x3002;&#x4E0D;&#x8FC7;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="../api/tray.html#traydisplayballoonoptions-windows">Tray API</a> &#x53D1;&#x9001;&#x4E00;&#x4E2A;&quot;&#x6C14;&#x6CE1;&#x901A;&#x77E5;&quot;&#x3002;
+</li></ul>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x901A;&#x77E5;&#x652F;&#x6301;&#x7684;&#x6700;&#x5927;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x4E3A;250&#x3002;Windows &#x56E2;&#x961F;&#x5EFA;&#x8BAE;&#x901A;&#x77E5;&#x5E94;&#x8BE5;&#x4FDD;&#x6301;&#x5728;200&#x4E2A;&#x5B57;&#x7B26;&#x4EE5;&#x4E0B;&#x3002;</p><h3 id="linux">Linux</h3><p>&#x901A;&#x77E5;&#x4F7F;&#x7528; <code>libnotify</code> &#x53D1;&#x9001;&#xFF0C;&#x5B83;&#x80FD;&#x5728;&#x4EFB;&#x4F55;&#x652F;&#x6301;<a href="https://developer.gnome.org/notification-spec/" target="_blank">Desktop Notifications
 Specification</a>&#x7684;&#x684C;&#x9762;&#x73AF;&#x5883;&#x4E2D;&#x663E;&#x793A;&#xFF0C;&#x5305;&#x62EC; Cinnamon, Enlightenment, Unity,
-GNOME, KDE&#x3002;</p>
-<h3 id="macos">macOS</h3>
-<p>&#x5728;macOS&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x901A;&#x77E5;&#x662F;&#x76F4;&#x63A5;&#x8F6C;&#x53D1;&#x7684;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x4E86;&#x89E3;<a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/NotificationCenter.html" target="_blank">Apple&apos;s Human Interface guidelines regarding notifications</a>&#x3002;</p>
-<p>&#x6CE8;&#x610F;&#x901A;&#x77E5;&#x88AB;&#x9650;&#x5236;&#x5728;256&#x4E2A;&#x5B57;&#x8282;&#x4EE5;&#x5185;&#xFF0C;&#x5982;&#x679C;&#x8D85;&#x51FA;&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x622A;&#x65AD;&#x3002;</p>
-<h2 id="&#x6700;&#x8FD1;&#x6587;&#x6863;-windows--macos">&#x6700;&#x8FD1;&#x6587;&#x6863; (Windows &amp; macOS)</h2>
-<p>Windows &#x548C; macOS &#x63D0;&#x4F9B;&#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x6587;&#x6863;&#x5217;&#x8868;&#x7684;&#x4FBF;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x6253;&#x5F00;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x6216;&#x8005;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#x3002;</p>
-<p>&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#xFF1A;
-<img src="https://camo.githubusercontent.com/3310597e01f138b1d687e07aa618c50908a88dec/687474703a2f2f692e6d73646e2e6d6963726f736f66742e636f6d2f64796e696d672f49433432303533382e706e67" alt="JumpList"></p>
-<p>&#x9C7C;&#x773C;&#x83DC;&#x5355;&#xFF1A;
-<img src="https://cloud.githubusercontent.com/assets/639601/5069610/2aa80758-6e97-11e4-8cfb-c1a414a10774.png" alt="Dock Menu"></p>
-<p>&#x4E3A;&#x4E86;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5230;&#x6700;&#x8FD1;&#x6587;&#x4EF6;&#x5217;&#x8868;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/app.md" target="_blank">app.addRecentDocument</a> API:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;app&apos;</span>);
-app.addRecentDocument(<span class="hljs-string">&apos;/Users/USERNAME/Desktop/work.type&apos;</span>);
-</code></pre>
-<p>&#x6216;&#x8005;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://github.com/electron/electron/blob/master/docs/tutorial/clearrecentdocuments" target="_blank">app.clearRecentDocuments</a> API &#x6765;&#x6E05;&#x7A7A;&#x6700;&#x8FD1;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x3002;</p>
-<pre><code class="lang-javascript">app.clearRecentDocuments();
-</code></pre>
-<h2 id="windows-&#x9700;&#x6CE8;&#x610F;">Windows &#x9700;&#x6CE8;&#x610F;</h2>
-<p>&#x4E3A;&#x4E86;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x5728; Windows &#x4E0A;&#x8868;&#x73B0;&#x6B63;&#x5E38;&#xFF0C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x9700;&#x8981;&#x88AB;&#x6CE8;&#x518C;&#x6210;&#x4E3A;&#x4E00;&#x79CD;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x7684;&#x53E5;&#x67C4;&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x5728;&#x4F60;&#x6CE8;&#x518C;&#x4E4B;&#x524D;&#xFF0C;&#x6587;&#x4EF6;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ee872121%28v=vs.85%29.aspx" target="_blank">Application Registration</a> &#x91CC;&#x627E;&#x5230;&#x4EFB;&#x4F55;&#x5173;&#x4E8E;&#x6CE8;&#x518C;&#x4E8B;&#x5B9C;&#x7684;&#x8BF4;&#x660E;&#x3002;</p>
-<h2 id="macos-&#x9700;&#x6CE8;&#x610F;">macOS &#x9700;&#x6CE8;&#x610F;</h2>
-<p>&#x5F53;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x88AB;&#x6700;&#x8FD1;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;<code>app</code> &#x6A21;&#x5757;&#x91CC;&#x7684; <code>open-file</code> &#x4E8B;&#x4EF6;&#x5C06;&#x4F1A;&#x88AB;&#x53D1;&#x51FA;&#x3002;</p>
-<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;macos">&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;(macOS)</h2>
-<p>macOS &#x53EF;&#x4EE5;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x5B9A;&#x5236;&#x81EA;&#x5DF1;&#x7684;&#x83DC;&#x5355;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7279;&#x6027;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x3002;</p>
-<h3 id="&#x83DC;&#x5355;&#x4E2D;&#x7684;&#x7EC8;&#x7AEF;">&#x83DC;&#x5355;&#x4E2D;&#x7684;&#x7EC8;&#x7AEF;</h3>
-<p><img src="https://cloud.githubusercontent.com/assets/639601/5069962/6032658a-6e9c-11e4-9953-aa84006bdfff.png" alt="Dock menu of Terminal.app"></p>
-<p>&#x4F7F;&#x7528; <code>app.dock.setMenu</code> API &#x6765;&#x8BBE;&#x7F6E;&#x4F60;&#x7684;&#x83DC;&#x5355;&#xFF0C;&#x8FD9;&#x4EC5;&#x5728; macOS &#x4E0A;&#x53EF;&#x884C;&#xFF1A;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;app&apos;</span>);
-<span class="hljs-keyword">var</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;menu&apos;</span>);
-<span class="hljs-keyword">var</span> dockMenu = Menu.buildFromTemplate([
-  { label: <span class="hljs-string">&apos;New Window&apos;</span>, click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;New Window&apos;</span>); } },
-  { label: <span class="hljs-string">&apos;New Window with Settings&apos;</span>, submenu: [
-    { label: <span class="hljs-string">&apos;Basic&apos;</span> },
-    { label: <span class="hljs-string">&apos;Pro&apos;</span>}
-  ]},
-  { label: <span class="hljs-string">&apos;New Command...&apos;</span>}
-]);
-app.dock.setMenu(dockMenu);
-</code></pre>
-<h2 id="&#x7528;&#x6237;&#x4EFB;&#x52A1;windows">&#x7528;&#x6237;&#x4EFB;&#x52A1;(Windows)</h2>
-<p>&#x5728; Windows&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7279;&#x522B;&#x5B9A;&#x4E49;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x7684; <code>Tasks</code> &#x76EE;&#x5F55;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5F15;&#x7528; MSDN &#x7684;&#x6587;&#x6863;&#xFF1A;</p>
-<blockquote>
-<p>Applications define tasks based on both the program&apos;s features and the key things a user is expected to do with them. Tasks should be context-free, in that the application does not need to be running for them to work. They should also be the statistically most common actions that a normal user would perform in an application, such as compose an email message or open the calendar in a mail program, create a new document in a word processor, launch an application in a certain mode, or launch one of its subcommands. An application should not clutter the menu with advanced features that standard users won&apos;t need or one-time actions such as registration. Do not use tasks for promotional items such as upgrades or special offers.</p>
-<p>It is strongly recommended that the task list be static. It should remain the same regardless of the state or status of the application. While it is possible to vary the list dynamically, you should consider that this could confuse the user who does not expect that portion of the destination list to change.</p>
-</blockquote>
-<h3 id="ie-&#x7684;&#x4EFB;&#x52A1;">IE &#x7684;&#x4EFB;&#x52A1;</h3>
-<p><img src="https://camo.githubusercontent.com/30154e0cc36acfc968ac9ae076a8f0d6600dd736/687474703a2f2f692e6d73646e2e6d6963726f736f66742e636f6d2f64796e696d672f49433432303533392e706e67" alt="IE">
-&#x4E0D;&#x540C;&#x4E8E; macOS &#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#xFF0C;Windows &#x4E0A;&#x7684;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#x8868;&#x73B0;&#x5F97;&#x66F4;&#x50CF;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x5F53;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x5C06;&#x4F1A;&#x88AB;&#x4F20;&#x5165;&#x7279;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x5E76;&#x4E14;&#x8FD0;&#x884C;&#x3002;</p>
-<p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://github.com/electron/electron/blob/master/docs/api/app.md#appsetusertaskstasks" target="_blank">app.setUserTasks</a> API &#x6765;&#x8BBE;&#x7F6E;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#xFF1A;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;app&apos;</span>);
+GNOME, KDE&#x3002;</p><h3 id="macos">macOS</h3><p>&#x5728; macOS &#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x901A;&#x77E5;&#x662F;&#x76F4;&#x63A5;&#x8F6C;&#x53D1;&#x7684;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x4E86;&#x89E3; <a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/NotificationCenter.html" target="_blank">Apple&apos;s Human Interface guidelines regarding notifications</a>&#x3002;</p><p>&#x6CE8;&#x610F;&#x901A;&#x77E5;&#x88AB;&#x9650;&#x5236;&#x5728;256&#x4E2A;&#x5B57;&#x8282;&#x4EE5;&#x5185;&#xFF0C;&#x5982;&#x679C;&#x8D85;&#x51FA;&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x622A;&#x65AD;&#x3002;</p><h2 id="&#x6700;&#x8FD1;&#x6587;&#x6863;-windows--macos">&#x6700;&#x8FD1;&#x6587;&#x6863; (Windows &amp; macOS)</h2><p>Windows &#x548C; macOS &#x63D0;&#x4F9B;&#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x6587;&#x6863;&#x5217;&#x8868;&#x7684;&#x4FBF;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x6253;&#x5F00;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x6216;&#x8005;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#x3002;</p><p><strong>&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#xFF1A;</strong></p><p><img alt="JumpList Recent Files" src="http://i.msdn.microsoft.com/dynimg/IC420538.png"></p><p><strong>&#x9C7C;&#x773C;&#x83DC;&#x5355;&#xFF1A;</strong></p><p><img src="https://cloud.githubusercontent.com/assets/639601/5069610/2aa80758-6e97-11e4-8cfb-c1a414a10774.png" height="353" width="428"></p><p>&#x4E3A;&#x4E86;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5230;&#x6700;&#x8FD1;&#x6587;&#x4EF6;&#x5217;&#x8868;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; [app.addRecentDocument][3] API:</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+app.addRecentDocument(<span class="hljs-string">&apos;/Users/USERNAME/Desktop/work.type&apos;</span>)</code></pre>
+<p>&#x6216;&#x8005;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; [app.clearRecentDocuments][4] API &#x6765;&#x6E05;&#x7A7A;&#x6700;&#x8FD1;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+app.clearRecentDocuments()</code></pre>
+<h2 id="windows-&#x9700;&#x6CE8;&#x610F;">Windows &#x9700;&#x6CE8;&#x610F;</h2><p>&#x4E3A;&#x4E86;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x5728; Windows &#x4E0A;&#x8868;&#x73B0;&#x6B63;&#x5E38;&#xFF0C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x9700;&#x8981;&#x88AB;&#x6CE8;&#x518C;&#x6210;&#x4E3A;&#x4E00;&#x79CD;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x7684;&#x53E5;&#x67C4;&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x5728;&#x4F60;&#x6CE8;&#x518C;&#x4E4B;&#x524D;&#xFF0C;&#x6587;&#x4EF6;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ee872121(v=vs.85" target="_blank">Application Registration</a>.aspx) &#x91CC;&#x627E;&#x5230;&#x4EFB;&#x4F55;&#x5173;&#x4E8E;&#x6CE8;&#x518C;&#x4E8B;&#x5B9C;&#x7684;&#x8BF4;&#x660E;&#x3002;</p><p>&#x5F53;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x4ECE;&#x201C;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x201D;&#x70B9;&#x51FB;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x65B0;&#x5B9E;&#x4F8B;
+&#x5C06;&#x4EE5;&#x6DFB;&#x52A0;&#x4E3A;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x542F;&#x52A8;&#x3002;</p><h2 id="macos-&#x9700;&#x6CE8;&#x610F;">macOS &#x9700;&#x6CE8;&#x610F;</h2><p>&#x5F53;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x88AB;&#x6700;&#x8FD1;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;<code>app</code> &#x6A21;&#x5757;&#x91CC;&#x7684; <code>open-file</code> &#x4E8B;&#x4EF6;&#x5C06;&#x4F1A;&#x88AB;&#x53D1;&#x51FA;&#x3002;</p><h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;macos">&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;(macOS)</h2><p>macOS &#x53EF;&#x4EE5;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x5B9A;&#x5236;&#x81EA;&#x5DF1;&#x7684;&#x83DC;&#x5355;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7279;&#x6027;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x3002;</p><h3 id="&#x83DC;&#x5355;&#x4E2D;&#x7684;&#x7EC8;&#x7AEF;">&#x83DC;&#x5355;&#x4E2D;&#x7684;&#x7EC8;&#x7AEF;</h3><p><strong>Dock menu of Terminal.app:</strong></p><p><img src="https://cloud.githubusercontent.com/assets/639601/5069962/6032658a-6e9c-11e4-9953-aa84006bdfff.png" height="354" width="341"></p><p>&#x4F7F;&#x7528; <code>app.dock.setMenu</code> API &#x6765;&#x8BBE;&#x7F6E;&#x4F60;&#x7684;&#x83DC;&#x5355;&#xFF0C;&#x8FD9;&#x4EC5;&#x5728; macOS &#x4E0A;&#x53EF;&#x884C;&#xFF1A;</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app, Menu} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+
+<span class="hljs-keyword">const</span> dockMenu = Menu.buildFromTemplate([
+  {label: <span class="hljs-string">&apos;New Window&apos;</span>, click () { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;New Window&apos;</span>) }},
+  {label: <span class="hljs-string">&apos;New Window with Settings&apos;</span>,
+    submenu: [
+      {label: <span class="hljs-string">&apos;Basic&apos;</span>},
+      {label: <span class="hljs-string">&apos;Pro&apos;</span>}
+    ]
+  },
+  {label: <span class="hljs-string">&apos;New Command...&apos;</span>}
+])
+app.dock.setMenu(dockMenu)</code></pre>
+<h2 id="&#x7528;&#x6237;&#x4EFB;&#x52A1;windows">&#x7528;&#x6237;&#x4EFB;&#x52A1;(Windows)</h2><p>&#x5728; Windows&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7279;&#x522B;&#x5B9A;&#x4E49;&#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x7684; <code>Tasks</code> &#x76EE;&#x5F55;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5F15;&#x7528; MSDN &#x7684;&#x6587;&#x6863;&#xFF1A;</p><blockquote><p>Applications define tasks based on both the program&apos;s features and the key things a user is expected to do with them. Tasks should be context-free, in that the application does not need to be running for them to work. They should also be the statistically most common actions that a normal user would perform in an application, such as compose an email message or open the calendar in a mail program, create a new document in a word processor, launch an application in a certain mode, or launch one of its subcommands. An application should not clutter the menu with advanced features that standard users won&apos;t need or one-time actions such as registration. Do not use tasks for promotional items such as upgrades or special offers.</p><p>It is strongly recommended that the task list be static. It should remain the same regardless of the state or status of the application. While it is possible to vary the list dynamically, you should consider that this could confuse the user who does not expect that portion of the destination list to change.</p></blockquote><h3 id="ie-&#x7684;&#x4EFB;&#x52A1;">IE &#x7684;&#x4EFB;&#x52A1;</h3><p><img alt="IE" src="http://i.msdn.microsoft.com/dynimg/IC420539.png"></p><p>&#x4E0D;&#x540C;&#x4E8E; macOS &#x7684;&#x9C7C;&#x773C;&#x83DC;&#x5355;&#xFF0C;Windows &#x4E0A;&#x7684;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#x8868;&#x73B0;&#x5F97;&#x66F4;&#x50CF;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x5F53;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x5C06;&#x4F1A;&#x88AB;&#x4F20;&#x5165;&#x7279;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x5E76;&#x4E14;&#x8FD0;&#x884C;&#x3002;</p><p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="../api/app.html#appsetusertaskstasks-windows">app.setUserTasks</a> API &#x6765;&#x8BBE;&#x7F6E;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#xFF1A;</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
 app.setUserTasks([
   {
     program: process.execPath,
@@ -996,121 +940,163 @@ app.setUserTasks([
     title: <span class="hljs-string">&apos;New Window&apos;</span>,
     description: <span class="hljs-string">&apos;Create a new window&apos;</span>
   }
-]);
-</code></pre>
-<p>&#x8C03;&#x7528; <code>app.setUserTasks</code> &#x5E76;&#x4F20;&#x5165;&#x7A7A;&#x6570;&#x7EC4;&#x5C31;&#x53EF;&#x4EE5;&#x6E05;&#x9664;&#x4F60;&#x7684;&#x4EFB;&#x52A1;&#x5217;&#x8868;&#xFF1A;</p>
-<pre><code class="lang-javascript">app.setUserTasks([]);
-</code></pre>
-<p>&#x5F53;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x5173;&#x95ED;&#x65F6;&#xFF0C;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#x4F1A;&#x4ECD;&#x7136;&#x4F1A;&#x51FA;&#x73B0;&#xFF0C;&#x5728;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x88AB;&#x5378;&#x8F7D;&#x524D;&#xFF0C;&#x4EFB;&#x52A1;&#x6307;&#x5B9A;&#x7684;&#x56FE;&#x6807;&#x548C;&#x7A0B;&#x5E8F;&#x7684;&#x8DEF;&#x5F84;&#x5FC5;&#x987B;&#x662F;&#x5B58;&#x5728;&#x7684;&#x3002;</p>
-<h3 id="&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;">&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;</h3>
-<p>&#x5728; Windows&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x52A1;&#x680F;&#x4E0A;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6309;&#x94AE;&#x6765;&#x5F53;&#x4F5C;&#x5E94;&#x7528;&#x7684;&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;&#x3002;&#x5B83;&#x5C06;&#x63D0;&#x4F9B;&#x7528;&#x6237;&#x4E00;&#x79CD;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x5E38;&#x7528;&#x7A97;&#x53E3;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x9700;&#x8981;&#x6062;&#x590D;&#x6216;&#x8005;&#x6FC0;&#x6D3B;&#x7A97;&#x53E3;&#x3002;</p>
-<p>&#x5728; MSDN&#xFF0C;&#x5B83;&#x88AB;&#x5982;&#x662F;&#x8BF4;&#xFF1A;</p>
-<blockquote>
-<p>This toolbar is simply the familiar standard toolbar common control. It has a maximum of seven buttons. Each button&apos;s ID, image, tooltip, and state are defined in a structure, which is then passed to the taskbar. The application can show, enable, disable, or hide buttons from the thumbnail toolbar as required by its current state.</p>
-<p>For example, Windows Media Player might offer standard media transport controls such as play, pause, mute, and stop.</p>
-</blockquote>
-<h3 id="windows-media-player-&#x7684;&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;">Windows Media Player &#x7684;&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;</h3>
-<p><img src="https://camo.githubusercontent.com/098cb0f52f27084a80ec6429e51a195df3d8c333/68747470733a2f2f692d6d73646e2e7365632e732d6d7366742e636f6d2f64796e696d672f49433432303534302e706e67" alt="Thumbnail toolbar of Windows Media Player">
-&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/browser-window.md" target="_blank">BrowserWindow.setThumbarButtons</a> &#x6765;&#x8BBE;&#x7F6E;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7684;&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;&#x3002;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;browser-window&apos;</span>);
-<span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
-<span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({
+])</code></pre>
+<p>&#x8C03;&#x7528; <code>app.setUserTasks</code> &#x5E76;&#x4F20;&#x5165;&#x7A7A;&#x6570;&#x7EC4;&#x5C31;&#x53EF;&#x4EE5;&#x6E05;&#x9664;&#x4F60;&#x7684;&#x4EFB;&#x52A1;&#x5217;&#x8868;&#xFF1A;</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {app} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+app.setUserTasks([])</code></pre>
+<p>&#x5F53;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x5173;&#x95ED;&#x65F6;&#xFF0C;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#x4F1A;&#x4ECD;&#x7136;&#x4F1A;&#x51FA;&#x73B0;&#xFF0C;&#x5728;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x88AB;&#x5378;&#x8F7D;&#x524D;&#xFF0C;&#x4EFB;&#x52A1;&#x6307;&#x5B9A;&#x7684;&#x56FE;&#x6807;&#x548C;&#x7A0B;&#x5E8F;&#x7684;&#x8DEF;&#x5F84;&#x5FC5;&#x987B;&#x662F;&#x5B58;&#x5728;&#x7684;&#x3002;</p><h3 id="&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;">&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;</h3><p>&#x5728; Windows&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x52A1;&#x680F;&#x4E0A;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6309;&#x94AE;&#x6765;&#x5F53;&#x4F5C;&#x5E94;&#x7528;&#x7684;&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;&#x3002;&#x5B83;&#x5C06;&#x63D0;&#x4F9B;&#x7528;&#x6237;&#x4E00;&#x79CD;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x5E38;&#x7528;&#x7A97;&#x53E3;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x9700;&#x8981;&#x6062;&#x590D;&#x6216;&#x8005;&#x6FC0;&#x6D3B;&#x7A97;&#x53E3;&#x3002;</p><p>&#x5728; MSDN&#xFF0C;&#x5B83;&#x88AB;&#x5982;&#x662F;&#x8BF4;&#xFF1A;</p><blockquote><p>This toolbar is simply the familiar standard toolbar common control. It has a maximum of seven buttons. Each button&apos;s ID, image, tooltip, and state are defined in a structure, which is then passed to the taskbar. The application can show, enable, disable, or hide buttons from the thumbnail toolbar as required by its current state.</p><p>For example, Windows Media Player might offer standard media transport controls such as play, pause, mute, and stop.</p></blockquote><h3 id="windows-media-player-&#x7684;&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;">Windows Media Player &#x7684;&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;</h3><p><img alt="Thumbnail toolbar of Windows Media Player" src="https://i-msdn.sec.s-msft.com/dynimg/IC420540.png"></p><p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="../api/browser-window.html#winsetthumbarbuttonsbuttons-windows-7">BrowserWindow.setThumbarButtons</a> &#x6765;&#x8BBE;&#x7F6E;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7684;&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>)
+
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({
   width: <span class="hljs-number">800</span>,
   height: <span class="hljs-number">600</span>
-});
+})
+
 win.setThumbarButtons([
   {
-    tooltip: <span class="hljs-string">&quot;button1&quot;</span>,
+    tooltip: <span class="hljs-string">&apos;button1&apos;</span>,
     icon: path.join(__dirname, <span class="hljs-string">&apos;button1.png&apos;</span>),
-    click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;button2 clicked&quot;</span>); }
+    click () { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;button1 clicked&apos;</span>) }
   },
   {
-    tooltip: <span class="hljs-string">&quot;button2&quot;</span>,
+    tooltip: <span class="hljs-string">&apos;button2&apos;</span>,
     icon: path.join(__dirname, <span class="hljs-string">&apos;button2.png&apos;</span>),
-    flags:[<span class="hljs-string">&apos;enabled&apos;</span>, <span class="hljs-string">&apos;dismissonclick&apos;</span>],
-    click: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;button2 clicked.&quot;</span>); }
+    flags: [<span class="hljs-string">&apos;enabled&apos;</span>, <span class="hljs-string">&apos;dismissonclick&apos;</span>],
+    click () { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;button2 clicked.&apos;</span>) }
   }
-]);
-</code></pre>
-<p>&#x8C03;&#x7528; <code>BrowserWindow.setThumbarButtons</code> &#x5E76;&#x4F20;&#x5165;&#x7A7A;&#x6570;&#x7EC4;&#x5373;&#x53EF;&#x6E05;&#x7A7A;&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;&#xFF1A;</p>
-<pre><code class="lang-javascript">win.setThumbarButtons([]);
-</code></pre>
-<h2 id="unity-launcher-&#x5FEB;&#x6377;&#x65B9;&#x5F0F;linux">Unity launcher &#x5FEB;&#x6377;&#x65B9;&#x5F0F;(Linux)</h2>
-<p>&#x5728; Unity,&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6539;&#x53D8; <code>.desktop</code> &#x6587;&#x4EF6;&#x6765;&#x589E;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x8FD0;&#x884C;&#x5668;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x8BE6;&#x60C5;&#x770B; <a href="https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles#Adding_shortcuts_to_a_launcher" target="_blank">Adding shortcuts to a launcher</a>&#x3002;</p>
-<h3 id="audacious-&#x8FD0;&#x884C;&#x5668;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF1A;">Audacious &#x8FD0;&#x884C;&#x5668;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF1A;</h3>
-<p><img src="https://camo.githubusercontent.com/b6f54e2bc3206ebf8e08dd029529af9ec84d58ae/68747470733a2f2f68656c702e7562756e74752e636f6d2f636f6d6d756e6974792f556e6974794c61756e6368657273416e644465736b746f7046696c65733f616374696f6e3d41747461636846696c6526646f3d676574267461726765743d73686f7274637574732e706e67" alt="Launcher shortcuts of Audacious"></p>
-<h2 id="&#x4EFB;&#x52A1;&#x680F;&#x7684;&#x8FDB;&#x5EA6;&#x6761;windows--unity">&#x4EFB;&#x52A1;&#x680F;&#x7684;&#x8FDB;&#x5EA6;&#x6761;(Windows &amp; Unity)</h2>
-<p>&#x5728; Windows&#xFF0C;&#x8FDB;&#x5EA6;&#x6761;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x680F;&#x6309;&#x94AE;&#x4E4B;&#x4E0A;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x8FDB;&#x5EA6;&#x4FE1;&#x606F;&#x7ED9;&#x7528;&#x6237;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x7528;&#x6237;&#x5207;&#x6362;&#x5E94;&#x7528;&#x7A97;&#x53E3;&#x3002;</p>
-<p>Unity DE &#x4E5F;&#x5177;&#x6709;&#x540C;&#x6837;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x5668;&#x4E0A;&#x663E;&#x793A;&#x8FDB;&#x5EA6;&#x6761;&#x3002;</p>
-<h3 id="&#x5728;&#x4EFB;&#x52A1;&#x680F;&#x4E0A;&#x7684;&#x8FDB;&#x5EA6;&#x6761;&#xFF1A;">&#x5728;&#x4EFB;&#x52A1;&#x680F;&#x4E0A;&#x7684;&#x8FDB;&#x5EA6;&#x6761;&#xFF1A;</h3>
-<p><img src="https://cloud.githubusercontent.com/assets/639601/5081682/16691fda-6f0e-11e4-9676-49b6418f1264.png" alt="Progress bar in taskbar button"></p>
-<h3 id="&#x5728;-unity-&#x8FD0;&#x884C;&#x5668;&#x4E0A;&#x7684;&#x8FDB;&#x5EA6;&#x6761;">&#x5728; Unity &#x8FD0;&#x884C;&#x5668;&#x4E0A;&#x7684;&#x8FDB;&#x5EA6;&#x6761;</h3>
-<p><img src="https://cloud.githubusercontent.com/assets/639601/5081747/4a0a589e-6f0f-11e4-803f-91594716a546.png" alt="Progress bar in Unity launcher"></p>
-<p>&#x7ED9;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x8BBE;&#x7F6E;&#x8FDB;&#x5EA6;&#x6761;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x7528; <a href="https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/browser-window.md" target="_blank">BrowserWindow.setProgressBar</a> API&#xFF1A;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});
-<span class="hljs-built_in">window</span>.setProgressBar(<span class="hljs-number">0.5</span>);
-</code></pre>
-<p>&#x5728; macOS&#xFF0C;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5B83;&#x5C55;&#x793A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x7684;&#x56FE;&#x6807;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x6807;&#x9898;&#x680F;&#xFF0C;&#x5F53;&#x7528;&#x6237; Command-Click &#x6216;&#x8005; Control-Click &#x6807;&#x9898;&#x680F;&#xFF0C;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x5F39;&#x7A97;&#x5C06;&#x4F1A;&#x51FA;&#x73B0;&#x3002;</p>
-<h3 id="&#x5C55;&#x793A;&#x6587;&#x4EF6;&#x5F39;&#x7A97;&#x83DC;&#x5355;&#xFF1A;">&#x5C55;&#x793A;&#x6587;&#x4EF6;&#x5F39;&#x7A97;&#x83DC;&#x5355;&#xFF1A;</h3>
-<p><img src="https://cloud.githubusercontent.com/assets/639601/5082061/670a949a-6f14-11e4-987a-9aaa04b23c1d.png" alt="Represented file popup menu"></p>
-<p>&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x7528; <a href="https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/browser-window.md" target="_blank">BrowserWindow.setRepresentedFilename</a> &#x548C; <a href="https://github.com/electron/electron/blob/master/docs-translations/zh-CN/api/browser-window.md" target="_blank">BrowserWindow.setDocumentEdited</a> APIs&#xFF1A;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-built_in">window</span> = <span class="hljs-keyword">new</span> BrowserWindow({...});
-<span class="hljs-built_in">window</span>.setRepresentedFilename(<span class="hljs-string">&apos;/etc/passwd&apos;</span>);
-<span class="hljs-built_in">window</span>.setDocumentEdited(<span class="hljs-literal">true</span>);
-</code></pre>
+])</code></pre>
+<p>&#x8C03;&#x7528; <code>BrowserWindow.setThumbarButtons</code> &#x5E76;&#x4F20;&#x5165;&#x7A7A;&#x6570;&#x7EC4;&#x5373;&#x53EF;&#x6E05;&#x7A7A;&#x7F29;&#x7565;&#x56FE;&#x5DE5;&#x5177;&#x680F;&#xFF1A;</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow()
+win.setThumbarButtons([])</code></pre>
+<h2 id="unity-launcher-&#x5FEB;&#x6377;&#x65B9;&#x5F0F;linux">Unity launcher &#x5FEB;&#x6377;&#x65B9;&#x5F0F;(Linux)</h2><p>&#x5728; Unity,&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6539;&#x53D8; <code>.desktop</code> &#x6587;&#x4EF6;&#x6765;&#x589E;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x8FD0;&#x884C;&#x5668;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x8BE6;&#x60C5;&#x770B; <a href="https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles#Adding_shortcuts_to_a_launcher" target="_blank">Adding Shortcuts to a Launcher</a>&#x3002;</p><p><strong>Launcher shortcuts of Audacious:</strong></p><p><img alt="audacious" src="https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles?action=AttachFile&amp;do=get&amp;target=shortcuts.png"></p><h3 id="audacious-&#x8FD0;&#x884C;&#x5668;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF1A;">Audacious &#x8FD0;&#x884C;&#x5668;&#x7684;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF1A;</h3><p>![Launcher shortcuts of Audacious][12]</p><h2 id="&#x4EFB;&#x52A1;&#x680F;&#x7684;&#x8FDB;&#x5EA6;&#x6761;windows-macos-unity">&#x4EFB;&#x52A1;&#x680F;&#x7684;&#x8FDB;&#x5EA6;&#x6761;(Windows, macOS, Unity)</h2><p>&#x5728; Windows&#xFF0C;&#x8FDB;&#x5EA6;&#x6761;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x680F;&#x6309;&#x94AE;&#x4E4B;&#x4E0A;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x8FDB;&#x5EA6;&#x4FE1;&#x606F;&#x7ED9;&#x7528;&#x6237;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x7528;&#x6237;&#x5207;&#x6362;&#x5E94;&#x7528;&#x7A97;&#x53E3;&#x3002;</p><p>&#x5728; macOS&#xFF0C;&#x8FDB;&#x5EA6;&#x6761;&#x5C06;&#x663E;&#x793A;&#x4E3A; dock &#x56FE;&#x6807;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p><p>Unity DE &#x4E5F;&#x5177;&#x6709;&#x540C;&#x6837;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x5668;&#x4E0A;&#x663E;&#x793A;&#x8FDB;&#x5EA6;&#x6761;&#x3002;</p><p><strong>Progress bar in taskbar button:</strong></p><p><img alt="Taskbar Progress Bar" src="https://cloud.githubusercontent.com/assets/639601/5081682/16691fda-6f0e-11e4-9676-49b6418f1264.png"></p><p>&#x7ED9;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x8BBE;&#x7F6E;&#x8FDB;&#x5EA6;&#x6761;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x7528; <a href="../api/browser-window.html#winsetprogressbarprogress">BrowserWindow.setProgressBar</a> API&#xFF1A;</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow()
+win.setProgressBar(<span class="hljs-number">0.5</span>)</code></pre>
+<h2 id="&#x4EFB;&#x52A1;&#x680F;&#x4E2D;&#x7684;&#x53E0;&#x52A0;&#x5C42;&#x56FE;&#x6807;-windows">&#x4EFB;&#x52A1;&#x680F;&#x4E2D;&#x7684;&#x53E0;&#x52A0;&#x5C42;&#x56FE;&#x6807; (Windows)</h2><p>&#x5728; Windows&#xFF0C;&#x4EFB;&#x52A1;&#x680F;&#x6309;&#x94AE;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5C0F;&#x578B;&#x53E0;&#x52A0;&#x5C42;&#x663E;&#x793A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;
+&#x72B6;&#x6001;&#xFF0C;&#x5F15;&#x7528; MSDN &#x7684;&#x6587;&#x6863;&#xFF1A;</p><blockquote><p>Icon overlays serve as a contextual notification of status, and are intended
+to negate the need for a separate notification area status icon to communicate
+that information to the user. For instance, the new mail status in Microsoft
+Outlook, currently shown in the notification area, can now be indicated
+through an overlay on the taskbar button. Again, you must decide during your
+development cycle which method is best for your application. Overlay icons are
+intended to supply important, long-standing status or notifications such as
+network status, messenger status, or new mail. The user should not be
+presented with constantly changing overlays or animations.</p></blockquote><p><strong>Overlay on taskbar button:</strong></p><p><img alt="Overlay on taskbar button" src="https://i-msdn.sec.s-msft.com/dynimg/IC420441.png"></p><p>&#x8981;&#x8BBE;&#x7F6E;&#x7A97;&#x53E3;&#x7684;&#x53E0;&#x52A0;&#x5C42;&#x56FE;&#x6807;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;
+<a href="../api/browser-window.html#winsetoverlayiconoverlay-description-windows-7">BrowserWindow.setOverlayIcon</a> API:</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow()
+win.setOverlayIcon(<span class="hljs-string">&apos;path/to/overlay.png&apos;</span>, <span class="hljs-string">&apos;Description for overlay&apos;</span>)</code></pre>
+<h2 id="&#x7A81;&#x51FA;&#x663E;&#x793A;&#x6846;&#x67B6;-windows">&#x7A81;&#x51FA;&#x663E;&#x793A;&#x6846;&#x67B6; (Windows)</h2><p>&#x5728; Windows&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7A81;&#x51FA;&#x663E;&#x793A;&#x4EFB;&#x52A1;&#x680F;&#x6309;&#x94AE;&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x7528;&#x6237;&#x7684;&#x5173;&#x6CE8;&#x3002;
+&#x8FD9;&#x7C7B;&#x4F3C;&#x4E8E;&#x5728; macOS &#x4E0A;&#x5F39;&#x51FA; dock &#x56FE;&#x6807;&#x3002;
+&#x5728; MSDN&#xFF0C;&#x5B83;&#x5982;&#x662F;&#x8BF4;&#xFF1A;</p><blockquote><p>Typically, a window is flashed to inform the user that the window requires
+attention but that it does not currently have the keyboard focus.</p></blockquote><p>&#x8981;&#x5728; BrowserWindow &#x7684;&#x4EFB;&#x52A1;&#x680F;&#x6309;&#x94AE;&#x7A81;&#x51FA;&#x663E;&#x793A;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;
+<a href="../api/browser-window.html#winflashframeflag">BrowserWindow.flashFrame</a> API:</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow()
+win.once(<span class="hljs-string">&apos;focus&apos;</span>, () =&gt; win.flashFrame(<span class="hljs-literal">false</span>))
+win.flashFrame(<span class="hljs-literal">true</span>)</code></pre>
+<p>&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;&#x5728;&#x8C03;&#x7528; <code>flashFrame</code> &#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x8BBE;&#x7F6E; <code>false</code> &#x6765;&#x5173;&#x95ED;&#x7A81;&#x51FA;&#x663E;&#x793A;&#x3002; &#x5728;
+&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5B83;&#x662F;&#x5728;&#x7A97;&#x53E3;&#x8FDB;&#x5165;&#x7126;&#x70B9;&#x65F6;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x4F46;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;
+&#x4F7F;&#x7528;&#x8D85;&#x65F6;&#x6216;&#x67D0;&#x4E9B;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;&#x6765;&#x7981;&#x7528;&#x5B83;&#x3002;</p><h2 id="&#x5C55;&#x793A;&#x6587;&#x4EF6;&#x7A97;&#x53E3;-macos">&#x5C55;&#x793A;&#x6587;&#x4EF6;&#x7A97;&#x53E3; (macOS)</h2><p>&#x5728; macOS&#xFF0C;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5B83;&#x5C55;&#x793A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x7684;&#x56FE;&#x6807;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x6807;&#x9898;&#x680F;&#xFF0C;&#x5F53;&#x7528;&#x6237; Command-Click &#x6216;&#x8005; Control-Click &#x6807;&#x9898;&#x680F;&#xFF0C;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x5F39;&#x7A97;&#x5C06;&#x4F1A;&#x51FA;&#x73B0;&#x3002;</p><p>&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x7A97;&#x53E3;&#x7684;&#x7F16;&#x8F91;&#x72B6;&#x6001;&#xFF0C;&#x4EE5;&#x4FBF;&#x6587;&#x4EF6;&#x56FE;&#x6807;&#x53EF;&#x4EE5;&#x6307;&#x793A;
+&#x8BE5;&#x7A97;&#x53E3;&#x4E2D;&#x7684;&#x6587;&#x6863;&#x662F;&#x5426;&#x5DF2;&#x4FEE;&#x6539;&#x3002;</p><p><strong>Represented file popup menu:</strong></p><p><img src="https://cloud.githubusercontent.com/assets/639601/5082061/670a949a-6f14-11e4-987a-9aaa04b23c1d.png" height="232" width="663"></p><p>&#x8981;&#x8BBE;&#x7F6E;&#x5C55;&#x793A;&#x6587;&#x4EF6;&#x7A97;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;
+<a href="../api/browser-window.html#winsetrepresentedfilenamefilename-os-x">BrowserWindow.setRepresentedFilename</a> &#x548C;
+<a href="../api/browser-window.html#winsetdocumenteditededited-os-x">BrowserWindow.setDocumentEdited</a> APIs&#xFF1A;</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {BrowserWindow} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+<span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow()
+win.setRepresentedFilename(<span class="hljs-string">&apos;/etc/passwd&apos;</span>)
+win.setDocumentEdited(<span class="hljs-literal">true</span>)</code></pre>
+<h2 id="&#x5C06;&#x6587;&#x4EF6;&#x62D6;&#x51FA;&#x7A97;&#x53E3;">&#x5C06;&#x6587;&#x4EF6;&#x62D6;&#x51FA;&#x7A97;&#x53E3;</h2><p>&#x5BF9;&#x4E8E;&#x67D0;&#x4E9B;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;
+&#x5C06;&#x6587;&#x4EF6;&#x4ECE; Electron &#x62D6;&#x52A8;&#x5230;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x662F;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x80FD;&#x529B;&#x3002;&#x8981;&#x5728; app &#x7684;&#x5B9E;&#x73B0;&#x6B64;&#x529F;&#x80FD;
+&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728; <code>ondragstart</code> &#x4E8B;&#x4EF6;&#x4E0A;&#x8C03;&#x7528; <code>webContents.startDrag(item)</code> API&#x3002;</p><p>&#x5728;&#x7F51;&#x9875;&#x7AEF;&#xFF1A;</p><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;drag&quot;</span>&gt;</span>item<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="javascript">
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;drag&apos;</span>).ondragstart = (event) =&gt; {
+    event.preventDefault()
+    ipcRenderer.send(<span class="hljs-string">&apos;ondragstart&apos;</span>, <span class="hljs-string">&apos;/path/to/item&apos;</span>)
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p>&#x5728;&#x4E3B;&#x8FDB;&#x7A0B;&#xFF1A;</p><pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {ipcMain} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
+ipcMain.on(<span class="hljs-string">&apos;ondragstart&apos;</span>, (event, filePath) =&gt; {
+  event.sender.startDrag({
+    file: filePath,
+    icon: <span class="hljs-string">&apos;/path/to/icon.png&apos;</span>
+  })
+})</code></pre>
 
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="../tutorial/quick-start.html" class="navigation navigation-prev " aria-label="Previous page: 快速入门"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="../tutorial/online-offline-events.html" class="navigation navigation-next " aria-label="Next page: 在线/离线事件探测"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="quick-start.html" class="navigation navigation-prev " aria-label="Previous page: 快速入门">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="online-offline-events.html" class="navigation navigation-next " aria-label="Next page: 在线/离线事件探测">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="../gitbook/app.js"></script>
+    </div>
 
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"桌面环境集成","level":"3.2","depth":1,"next":{"title":"在线/离线事件探测","level":"3.3","depth":1,"path":"tutorial/online-offline-events.md","ref":"tutorial/online-offline-events.md","articles":[]},"previous":{"title":"快速入门","level":"3.1","depth":1,"path":"tutorial/quick-start.md","ref":"tutorial/quick-start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["baidu","-livereload"],"license":"MIT","ignores":["backup","_book","styles","assets","node_modules","sources"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","repository":{"type":"git","url":"https://github.com/doc-ebooks/electron-docs-gitbook.git"},"keywords":["electron","nodejs","gitbook","ebook","doc"],"author":"Imfly","homepage":"https://github.com/doc-ebooks/electron-docs-gitbook","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"Electron 官方文档多语言电子书","variables":{},"language":"zh-CN","gitbook":"*","description":"Electron 官方文档多语言电子书","bugs":{"url":"https://github.com/doc-ebooks/electron-docs-gitbook/issues"}},"file":{"path":"tutorial/desktop-environment-integration.md","mtime":"2017-03-22T08:19:02.642Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-03-22T08:19:23.488Z"},"basePath":"..","book":{"language":"zh-CN"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
     
-    <script src="../gitbook/plugins/gitbook-plugin-baidu/plugin.js"></script>
+        
+        <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
-    gitbook.start(config);
-});
-</script>
-
-        <script>var _hmt = _hmt || [];(function() {var hm = document.createElement('script');hm.src = '//hm.baidu.com/hm.js?acfc5cd60db044270ff996429917c2b7';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(hm, s);})();</script>
     </body>
-    
 </html>
+

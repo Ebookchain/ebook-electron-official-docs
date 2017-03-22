@@ -1,769 +1,964 @@
+
 <!DOCTYPE HTML>
 <html lang="es" >
-    
     <head>
-        
+        <title>Empaquetamiento de la Aplicación · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Empaquetamiento de la Aplicación | Guías</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="generator" content="GitBook 3.2.0">
         <meta name="author" content="Imfly">
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-        
-    <link rel="stylesheet" href="../gitbook/style.css">
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
         
     
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+
+    
+
+    
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+    
         
     
+        
+    
+        
+    
+        
     
 
         
     
     
-    <link rel="next" href="../tutorial/using-native-node-modules.html" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="using-native-node-modules.html" />
     
     
-    <link rel="prev" href="../tutorial/application-distribution.html" />
+    <link rel="prev" href="application-distribution.html" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book"
-        data-level="3"
-        data-chapter-title="Empaquetamiento de la Aplicación"
-        data-filepath="tutorial/application-packaging.md"
-        data-basepath=".."
-        data-revision="Thu Aug 04 2016 15:32:26 GMT+0800 (CST)"
-        data-innerlanguage="es">
-    
-
-<div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
             
-            
-            
-            
-
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="../index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        Introducción
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="tutorial/supported-platforms.html">
-            
-                
-                    <a href="../tutorial/supported-platforms.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        Plataformas Soportadas
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2" data-path="tutorial/application-distribution.html">
-            
-                
-                    <a href="../tutorial/application-distribution.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                        Distribución de la Aplicación
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter active" data-level="3" data-path="tutorial/application-packaging.html">
-            
-                
-                    <a href="../tutorial/application-packaging.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                        Empaquetamiento de la Aplicación
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="tutorial/using-native-node-modules.html">
-            
-                
-                    <a href="../tutorial/using-native-node-modules.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                        Utilizando Módulos Node Nativos
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="tutorial/debugging-main-process.html">
-            
-                
-                    <a href="../tutorial/debugging-main-process.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                        Depurando el Proceso Principal
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="tutorial/using-selenium-and-webdriver.html">
-            
-                
-                    <a href="../tutorial/using-selenium-and-webdriver.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                        Utilizando Selenium y WebDriver
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7" data-path="tutorial/devtools-extension.html">
-            
-                
-                    <a href="../tutorial/devtools-extension.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>7.</b>
-                        
-                        Extensión DevTools
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="8" data-path="tutorial/using-pepper-flash-plugin.html">
-            
-                
-                    <a href="../tutorial/using-pepper-flash-plugin.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>8.</b>
-                        
-                        Utilizando el plugin Pepper Flash
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="9" data-path="tutorial/quick-start.html">
-            
-                
-                    <a href="../tutorial/quick-start.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>9.</b>
-                        
-                        Introducción
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="10" data-path="tutorial/desktop-environment-integration.html">
-            
-                
-                    <a href="../tutorial/desktop-environment-integration.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>10.</b>
-                        
-                        Integración con el entorno de escritorio
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="11" data-path="tutorial/online-offline-events.html">
-            
-                
-                    <a href="../tutorial/online-offline-events.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>11.</b>
-                        
-                        Detección del evento en línea/fuera de línea
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="12" data-path="api/synopsis.html">
-            
-                
-                    <a href="../api/synopsis.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>12.</b>
-                        
-                        Sinopsis
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="13" data-path="api/process.html">
-            
-                
-                    <a href="../api/process.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>13.</b>
-                        
-                        Proceso
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="14" data-path="api/chrome-command-line-switches.html">
-            
-                
-                    <a href="../api/chrome-command-line-switches.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>14.</b>
-                        
-                        Parámetros CLI soportados (Chrome)
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="15" data-path="../../docs/api/file-object.html">
-            
-            <span><b>15.</b> Objeto `File`</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="16" data-path="../../docs/api/web-view-tag.html">
-            
-            <span><b>16.</b> Etiqueta `&lt;webview&gt;`</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="17" data-path="../../docs/api/window-open.html">
-            
-            <span><b>17.</b> Función `window.open`</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="18" data-path="../../docs/api/app.html">
-            
-            <span><b>18.</b> app</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="19" data-path="../../docs/api/auto-updater.html">
-            
-            <span><b>19.</b> auto-updater</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="20" data-path="../../docs/api/browser-window.html">
-            
-            <span><b>20.</b> browser-window</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="21" data-path="../../docs/api/content-tracing.html">
-            
-            <span><b>21.</b> content-tracing</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="22" data-path="../../docs/api/dialog.html">
-            
-            <span><b>22.</b> dialog</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="23" data-path="../../docs/api/global-shortcut.html">
-            
-            <span><b>23.</b> global-shortcut</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="24" data-path="../../docs/api/ipc-main.html">
-            
-            <span><b>24.</b> ipc (proceso principal)</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="25" data-path="../../docs/api/menu.html">
-            
-            <span><b>25.</b> menu</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="26" data-path="../../docs/api/menu-item.html">
-            
-            <span><b>26.</b> menu-item</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="27" data-path="../../docs/api/power-monitor.html">
-            
-            <span><b>27.</b> power-monitor</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="28" data-path="../../docs/api/power-save-blocker.html">
-            
-            <span><b>28.</b> power-save-blocker</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="29" data-path="../../docs/api/protocol.html">
-            
-            <span><b>29.</b> protocol</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="30" data-path="../../docs/api/session.html">
-            
-            <span><b>30.</b> session</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="31" data-path="../../docs/api/web-contents.html">
-            
-            <span><b>31.</b> web-contents</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="32" data-path="../../docs/api/tray.html">
-            
-            <span><b>32.</b> tray</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="33" data-path="../../docs/api/ipc-renderer.html">
-            
-            <span><b>33.</b> ipc (renderizador)</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="34" data-path="../../docs/api/remote.html">
-            
-            <span><b>34.</b> remote</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="35" data-path="../../docs/api/web-frame.html">
-            
-            <span><b>35.</b> web-frame</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="36" data-path="../../docs/api/clipboard.html">
-            
-            <span><b>36.</b> clipboard</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="37" data-path="../../docs/api/crash-reporter.html">
-            
-            <span><b>37.</b> crash-reporter</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="38" data-path="../../docs/api/native-image.html">
-            
-            <span><b>38.</b> native-image</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="39" data-path="../../docs/api/screen.html">
-            
-            <span><b>39.</b> screen</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="40" data-path="../../docs/api/shell.html">
-            
-            <span><b>40.</b> shell</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="41" data-path="development/coding-style.html">
-            
-                
-                    <a href="../development/coding-style.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>41.</b>
-                        
-                        Guía de Estilo
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="42" data-path="development/source-code-directory-structure.html">
-            
-                
-                    <a href="../development/source-code-directory-structure.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>42.</b>
-                        
-                        Estructura de los directorios del Código Fuente
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="43" data-path="development/atom-shell-vs-node-webkit.html">
-            
-                
-                    <a href="../development/atom-shell-vs-node-webkit.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>43.</b>
-                        
-                        Diferencias Técnicas con NW.js (anteriormente conocido como node-webkit)
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="44" data-path="development/build-system-overview.html">
-            
-                
-                    <a href="../development/build-system-overview.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>44.</b>
-                        
-                        Repaso del Sistema de Compilación
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="45" data-path="development/build-instructions-osx.html">
-            
-                
-                    <a href="../development/build-instructions-osx.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>45.</b>
-                        
-                        Instrucciones de Compilación (macOS)
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="46" data-path="development/build-instructions-windows.html">
-            
-            <span><b>46.</b> Instrucciones de Compilación (Windows)</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="47" data-path="development/build-instructions-linux.html">
-            
-                
-                    <a href="../development/build-instructions-linux.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>47.</b>
-                        
-                        Instrucciones de Compilación (Linux)
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="48" data-path="development/setting-up-symbol-server.html">
-            
-            <span><b>48.</b> Configurando un Servidor de Símbolos en el depurador</span>
-            
-            
-        </li>
-    
-
-
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    Publicado con GitBook
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Escribe para buscar" />
 </div>
 
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Guías</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="supported-platforms.html">
+            
+                <a href="supported-platforms.html">
+            
+                    
+                    Plataformas Soportadas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="application-distribution.html">
+            
+                <a href="application-distribution.html">
+            
+                    
+                    Distribución de la Aplicación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="application-packaging.html">
+            
+                <a href="application-packaging.html">
+            
+                    
+                    Empaquetamiento de la Aplicación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="using-native-node-modules.html">
+            
+                <a href="using-native-node-modules.html">
+            
+                    
+                    Utilizando Módulos Node Nativos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="debugging-main-process.html">
+            
+                <a href="debugging-main-process.html">
+            
+                    
+                    Depurando el Proceso Principal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="using-selenium-and-webdriver.html">
+            
+                <a href="using-selenium-and-webdriver.html">
+            
+                    
+                    Utilizando Selenium y WebDriver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="devtools-extension.html">
+            
+                <a href="devtools-extension.html">
+            
+                    
+                    Extensión DevTools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="using-pepper-flash-plugin.html">
+            
+                <a href="using-pepper-flash-plugin.html">
+            
+                    
+                    Utilizando el plugin Pepper Flash
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tutoriales</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="quick-start.html">
+            
+                <a href="quick-start.html">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="desktop-environment-integration.html">
+            
+                <a href="desktop-environment-integration.html">
+            
+                    
+                    Integración con el entorno de escritorio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="online-offline-events.html">
+            
+                <a href="online-offline-events.html">
+            
+                    
+                    Detección del evento en línea/fuera de línea
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Referencias a la API</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../api/synopsis.html">
+            
+                <a href="../api/synopsis.html">
+            
+                    
+                    Sinopsis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../api/process.html">
+            
+                <a href="../api/process.html">
+            
+                    
+                    Proceso
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../api/chrome-command-line-switches.html">
+            
+                <a href="../api/chrome-command-line-switches.html">
+            
+                    
+                    Parámetros CLI soportados (Chrome)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Elementos DOM personalizados:</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../../docs/api/file-object.md">
+            
+                <span>
+            
+                    
+                    Objeto File
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../../docs/api/web-view-tag.md">
+            
+                <span>
+            
+                    
+                    Etiqueta <webview>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../../docs/api/window-open.md">
+            
+                <span>
+            
+                    
+                    Función window.open
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Módulos del Proceso Principal:</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../../docs/api/app.md">
+            
+                <span>
+            
+                    
+                    app
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../../docs/api/auto-updater.md">
+            
+                <span>
+            
+                    
+                    auto-updater
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../../../docs/api/browser-window.md">
+            
+                <span>
+            
+                    
+                    browser-window
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../../../docs/api/content-tracing.md">
+            
+                <span>
+            
+                    
+                    content-tracing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../../../docs/api/dialog.md">
+            
+                <span>
+            
+                    
+                    dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../../../docs/api/global-shortcut.md">
+            
+                <span>
+            
+                    
+                    global-shortcut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../../../docs/api/ipc-main.md">
+            
+                <span>
+            
+                    
+                    ipc (proceso principal)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../../../docs/api/menu.md">
+            
+                <span>
+            
+                    
+                    menu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="../../../docs/api/menu-item.md">
+            
+                <span>
+            
+                    
+                    menu-item
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="../../../docs/api/power-monitor.md">
+            
+                <span>
+            
+                    
+                    power-monitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="../../../docs/api/power-save-blocker.md">
+            
+                <span>
+            
+                    
+                    power-save-blocker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="../../../docs/api/protocol.md">
+            
+                <span>
+            
+                    
+                    protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="../../../docs/api/session.md">
+            
+                <span>
+            
+                    
+                    session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="../../../docs/api/web-contents.md">
+            
+                <span>
+            
+                    
+                    web-contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.15" data-path="../../../docs/api/tray.md">
+            
+                <span>
+            
+                    
+                    tray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Módulos del proceso de renderizado (Página Web):</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../../docs/api/ipc-renderer.md">
+            
+                <span>
+            
+                    
+                    ipc (renderizador)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../../../docs/api/remote.md">
+            
+                <span>
+            
+                    
+                    remote
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../../docs/api/web-frame.md">
+            
+                <span>
+            
+                    
+                    web-frame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Módulos de Ambos Procesos:</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../../docs/api/clipboard.md">
+            
+                <span>
+            
+                    
+                    clipboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../../docs/api/crash-reporter.md">
+            
+                <span>
+            
+                    
+                    crash-reporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../../docs/api/native-image.md">
+            
+                <span>
+            
+                    
+                    native-image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../../../docs/api/screen.md">
+            
+                <span>
+            
+                    
+                    screen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../../docs/api/shell.md">
+            
+                <span>
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Desarrollo</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../development/coding-style.html">
+            
+                <a href="../development/coding-style.html">
+            
+                    
+                    Guía de Estilo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../development/source-code-directory-structure.html">
+            
+                <a href="../development/source-code-directory-structure.html">
+            
+                    
+                    Estructura de los directorios del Código Fuente
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../development/atom-shell-vs-node-webkit.html">
+            
+                <a href="../development/atom-shell-vs-node-webkit.html">
+            
+                    
+                    Diferencias Técnicas con NW.js (anteriormente conocido como node-webkit)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../development/build-system-overview.html">
+            
+                <a href="../development/build-system-overview.html">
+            
+                    
+                    Repaso del Sistema de Compilación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../development/build-instructions-osx.html">
+            
+                <a href="../development/build-instructions-osx.html">
+            
+                    
+                    Instrucciones de Compilación (macOS)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../development/build-instructions-windows.md">
+            
+                <span>
+            
+                    
+                    Instrucciones de Compilación (Windows)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../development/build-instructions-linux.html">
+            
+                <a href="../development/build-instructions-linux.html">
+            
+                    
+                    Instrucciones de Compilación (Linux)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../development/setting-up-symbol-server.md">
+            
+                <span>
+            
+                    
+                    Configurando un Servidor de Símbolos en el depurador
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Publicado con GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >Guías</a>
+        <a href=".." >Empaquetamiento de la Aplicación</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h1 id="empaquetamiento-de-aplicaciones">Empaquetamiento de aplicaciones</h1>
-<p>Para proteger los recursos y el c&#xF3;digo fuente de tu aplicaci&#xF3;n, puedes optar por empaquetar
-tu aplicaci&#xF3;n en un paquete <a href="https://github.com/atom/asar" target="_blank">asar</a>.</p>
-<h2 id="generando-un-archivo-asar">Generando un archivo <code>asar</code></h2>
-<p>Un paquete <a href="https://github.com/atom/asar" target="_blank">asar</a> es un formato sencillo similar a tar, este formato concatena todos los archivos en uno,
-Electron puede leer el contenido sin desempaquetar todos los archivos.</p>
-<p>A continuaci&#xF3;n, los pasos para empaquetar tu aplicaci&#xF3;n con <code>asar</code>:</p>
-<h3 id="1-instalar-asar">1. Instalar asar</h3>
-<pre><code class="lang-bash">$ npm install -g asar
-</code></pre>
-<h3 id="2-empaquetar-utilizando-asar-pack">2. Empaquetar utilizando <code>asar pack</code></h3>
-<pre><code class="lang-bash">$ asar pack your-app app.asar
-</code></pre>
-<h2 id="utilizando-los-paquetes-asar">Utilizando los paquetes <code>asar</code></h2>
-<p>En Electron existen dos tipos de APIs: las APIs de Node, provistas por Node.js,
-y las APIs Web, provistas por Chromium. Ambas APIs soportan la lectura de paquetes <code>asar</code>.</p>
-<h3 id="api-node">API Node</h3>
-<p>Con parches especiales en Electron, las APIs de Node como <code>fs.readFile</code> and <code>require</code>
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="empaquetamiento-de-aplicaciones">Empaquetamiento de aplicaciones</h1><p>Para proteger los recursos y el c&#xF3;digo fuente de tu aplicaci&#xF3;n, puedes optar por empaquetar
+tu aplicaci&#xF3;n en un paquete <a href="https://github.com/atom/asar" target="_blank">asar</a>.</p><h2 id="generando-un-archivo-asar">Generando un archivo <code>asar</code></h2><p>Un paquete <a href="https://github.com/atom/asar" target="_blank">asar</a> es un formato sencillo similar a tar, este formato concatena todos los archivos en uno,
+Electron puede leer el contenido sin desempaquetar todos los archivos.</p><p>A continuaci&#xF3;n, los pasos para empaquetar tu aplicaci&#xF3;n con <code>asar</code>:</p><h3 id="1-instalar-asar">1. Instalar asar</h3><pre><code class="lang-bash">$ npm install -g asar</code></pre>
+<h3 id="2-empaquetar-utilizando-asar-pack">2. Empaquetar utilizando <code>asar pack</code></h3><pre><code class="lang-bash">$ asar pack your-app app.asar</code></pre>
+<h2 id="utilizando-los-paquetes-asar">Utilizando los paquetes <code>asar</code></h2><p>En Electron existen dos tipos de APIs: las APIs de Node, provistas por Node.js,
+y las APIs Web, provistas por Chromium. Ambas APIs soportan la lectura de paquetes <code>asar</code>.</p><h3 id="api-node">API Node</h3><p>Con parches especiales en Electron, las APIs de Node como <code>fs.readFile</code> and <code>require</code>
 tratan los paquetes <code>asar</code> como directorios virtuales, y el contenido es accesible como si se tratara
-de archivos normales en el sistema de archivos.</p>
-<p>Por ejemplo, supongamos que tenemos un paquete <code>example.asar</code> bajo <code>/path/to</code>:</p>
-<pre><code class="lang-bash">$ asar list /path/to/example.asar
+de archivos normales en el sistema de archivos.</p><p>Por ejemplo, supongamos que tenemos un paquete <code>example.asar</code> bajo <code>/path/to</code>:</p><pre><code class="lang-bash">$ asar list /path/to/example.asar
 /app.js
 /file.txt
 /dir/module.js
 /static/index.html
 /static/main.css
-/static/jquery.min.js
-</code></pre>
-<p>Leer un archivo de nuestro paquete <code>asar</code>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>);
-fs.readFileSync(<span class="hljs-string">&apos;/path/to/example.asar/file.txt&apos;</span>);
-</code></pre>
-<p>Listar todos los archivos de la ra&#xED;z:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>);
-fs.readdirSync(<span class="hljs-string">&apos;/path/to/example.asar&apos;</span>);
-</code></pre>
-<p>Utilizar un m&#xF3;dulo que se encuentra dentro del archivo:</p>
-<pre><code class="lang-javascript"><span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;/path/to/example.asar/dir/module.js&apos;</span>);
-</code></pre>
-<p>Tambi&#xE9;n puedes mostrar una p&#xE1;gina web contenida en un <code>asar</code> utilizando <code>BrowserWindow</code>.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;browser-window&apos;</span>);
-<span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>});
-win.loadURL(<span class="hljs-string">&apos;file:///path/to/example.asar/static/index.html&apos;</span>);
-</code></pre>
-<h3 id="api-web">API Web</h3>
-<p>En una p&#xE1;gin web, los archivos que se encuentran en el paquete son accesibles a trav&#xE9;s del protocolo <code>file:</code>.
-Al igual que la API Node, los paquetes <code>asar</code> son tratados como directorios.</p>
-<p>Por ejemplo, para obtener un archivo con <code>$.get</code>:</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+/static/jquery.min.js</code></pre>
+<p>Leer un archivo de nuestro paquete <code>asar</code>:</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>)
+fs.readFileSync(<span class="hljs-string">&apos;/path/to/example.asar/file.txt&apos;</span>)</code></pre>
+<p>Listar todos los archivos de la ra&#xED;z:</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>)
+fs.readdirSync(<span class="hljs-string">&apos;/path/to/example.asar&apos;</span>)</code></pre>
+<p>Utilizar un m&#xF3;dulo que se encuentra dentro del archivo:</p><pre><code class="lang-javascript"><span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;/path/to/example.asar/dir/module.js&apos;</span>)</code></pre>
+<p>Tambi&#xE9;n puedes mostrar una p&#xE1;gina web contenida en un <code>asar</code> utilizando <code>BrowserWindow</code>.</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> BrowserWindow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;browser-window&apos;</span>)
+<span class="hljs-keyword">var</span> win = <span class="hljs-keyword">new</span> BrowserWindow({width: <span class="hljs-number">800</span>, height: <span class="hljs-number">600</span>})
+win.loadURL(<span class="hljs-string">&apos;file:///path/to/example.asar/static/index.html&apos;</span>)</code></pre>
+<h3 id="api-web">API Web</h3><p>En una p&#xE1;gin web, los archivos que se encuentran en el paquete son accesibles a trav&#xE9;s del protocolo <code>file:</code>.
+Al igual que la API Node, los paquetes <code>asar</code> son tratados como directorios.</p><p>Por ejemplo, para obtener un archivo con <code>$.get</code>:</p><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
 <span class="hljs-keyword">var</span> $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./jquery.min.js&apos;</span>);
 $.get(<span class="hljs-string">&apos;file:///path/to/example.asar/file.txt&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
   <span class="hljs-built_in">console</span>.log(data);
 });
-</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-</code></pre>
-<h3 id="utilizando-un-paquete-asar-como-un-archivo-normal">Utilizando un paquete <code>asar</code> como un archivo normal</h3>
-<p>En algunas situaciones necesitaremos acceder al paquete <code>asar</code> como archivo, por ejemplo,
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<h3 id="utilizando-un-paquete-asar-como-un-archivo-normal">Utilizando un paquete <code>asar</code> como un archivo normal</h3><p>En algunas situaciones necesitaremos acceder al paquete <code>asar</code> como archivo, por ejemplo,
 si necesit&#xE1;ramos verificar la integridad del archivo con un checksum.
-Para casos as&#xED; es posible utilizar el m&#xF3;dulo  <code>original-fs</code>, que provee la API <code>fs</code> original:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> originalFs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;original-fs&apos;</span>);
-originalFs.readFileSync(<span class="hljs-string">&apos;/path/to/example.asar&apos;</span>);
-</code></pre>
-<h2 id="limitaciones-de-la-api-node">Limitaciones de la API Node:</h2>
-<p>A pesar de que hemos intentado que los paquetes  <code>asar</code> funcionen como directorios de la mejor forma posible,
-a&#xFA;n existen limitaciones debido a la naturaleza de bajo nivel de la API Node.</p>
-<h3 id="los-paquetes-son-de-s&#xF3;lo-lectura">Los paquetes son de s&#xF3;lo lectura</h3>
-<p>Los paquetes <code>asar</code> no pueden ser modificados, por lo cual todas las funciones que modifiquen archivos
-no funcionar&#xE1;n.</p>
-<h2 id="los-directorios-del-paquete-no-pueden-establecerse-como-working-directories">Los directorios del paquete no pueden establecerse como working directories</h2>
-<p>A pesar de que los paquetes <code>asar</code> son manejados virtualmente como directorios,
+Para casos as&#xED; es posible utilizar el m&#xF3;dulo  <code>original-fs</code>, que provee la API <code>fs</code> original:</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> originalFs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;original-fs&apos;</span>)
+originalFs.readFileSync(<span class="hljs-string">&apos;/path/to/example.asar&apos;</span>)</code></pre>
+<h2 id="limitaciones-de-la-api-node">Limitaciones de la API Node:</h2><p>A pesar de que hemos intentado que los paquetes  <code>asar</code> funcionen como directorios de la mejor forma posible,
+a&#xFA;n existen limitaciones debido a la naturaleza de bajo nivel de la API Node.</p><h3 id="los-paquetes-son-de-s&#xF3;lo-lectura">Los paquetes son de s&#xF3;lo lectura</h3><p>Los paquetes <code>asar</code> no pueden ser modificados, por lo cual todas las funciones que modifiquen archivos
+no funcionar&#xE1;n.</p><h2 id="los-directorios-del-paquete-no-pueden-establecerse-como-working-directories">Los directorios del paquete no pueden establecerse como working directories</h2><p>A pesar de que los paquetes <code>asar</code> son manejados virtualmente como directorios,
 estos directorios no existen en el sistema de archivos, por lo cual no es posible establecerlos
-como working directory, el uso de la opci&#xF3;n <code>cwd</code> en algunas APIs podr&#xED;a causar errores.</p>
-<h3 id="desempaquetamiento-adicional-en-algunas-apis">Desempaquetamiento adicional en algunas APIs</h3>
-<p>La mayor&#xED;a de las APIs <code>fs</code> pueden leer u obtener informaci&#xF3;n sobre un archivo en un paquete <code>asar</code> sin
+como working directory, el uso de la opci&#xF3;n <code>cwd</code> en algunas APIs podr&#xED;a causar errores.</p><h3 id="desempaquetamiento-adicional-en-algunas-apis">Desempaquetamiento adicional en algunas APIs</h3><p>La mayor&#xED;a de las APIs <code>fs</code> pueden leer u obtener informaci&#xF3;n sobre un archivo en un paquete <code>asar</code> sin
 la necesidad de desempaquetarlo, pero algunas APIs requieren la ruta real. En estos casos Electron extraer&#xE1;
-el archivo a una ruta temporal. Esto agrega un overhead a algunas APIs.</p>
-<p>Las APIs que requieren el desempaquetamiento adicional son:</p>
-<ul>
-<li><code>child_process.execFile</code></li>
-<li><code>fs.open</code></li>
-<li><code>fs.openSync</code></li>
-<li><code>process.dlopen</code> - Utilizado por <code>require</code> en los m&#xF3;dulos nativos</li>
-</ul>
-<h3 id="informaci&#xF3;n-falsa-en-fsstat">Informaci&#xF3;n falsa en <code>fs.stat</code></h3>
-<p>El objeto <code>Stats</code> retornado por <code>fs.stat</code> y otras funciones relacionadas,
+el archivo a una ruta temporal. Esto agrega un overhead a algunas APIs.</p><p>Las APIs que requieren el desempaquetamiento adicional son:</p><ul><li><code>child_process.execFile</code>
+</li>
+<li><code>fs.open</code>
+</li>
+<li><code>fs.openSync</code>
+</li>
+<li><code>process.dlopen</code> - Utilizado por <code>require</code> en los m&#xF3;dulos nativos
+</li></ul>
+<h3 id="informaci&#xF3;n-falsa-en-fsstat">Informaci&#xF3;n falsa en <code>fs.stat</code></h3><p>El objeto <code>Stats</code> retornado por <code>fs.stat</code> y otras funciones relacionadas,
 no es preciso, ya que los archivos del paquete <code>asar</code> no existen en el sistema de archivos.
 La utilizaci&#xF3;n del objeto <code>Stats</code> s&#xF3;lo es recomendable para obtener el tama&#xF1;o del archivo y/o
-comprobar el tipo de archivo.</p>
-<h2 id="agregando-archivos-al-paquete-asar">Agregando archivos al paquete <code>asar</code></h2>
-<p>Como se menciona arriba, algunas APIs de Node desempaquetar&#xE1;n archivos cuando exista una llamada
+comprobar el tipo de archivo.</p><h2 id="agregando-archivos-al-paquete-asar">Agregando archivos al paquete <code>asar</code></h2><p>Como se menciona arriba, algunas APIs de Node desempaquetar&#xE1;n archivos cuando exista una llamada
 que los referencie, adem&#xE1;s de los problemas de rendimiento que esto podr&#xED;a ocasionar, tambi&#xE9;n
-podr&#xED;a accionar alertas falsas en software antivirus.</p>
-<p>Para lidiar con esto, puedes desempaquetar algunos archivos utilizando la opci&#xF3;n <code>--unpack</code>.
-A continuaci&#xF3;n, un ejemplo que excluye las librer&#xED;as compartidas de los m&#xF3;dulos nativos:</p>
-<pre><code class="lang-bash">$ asar pack app app.asar --unpack *.node
-</code></pre>
+podr&#xED;a accionar alertas falsas en software antivirus.</p><p>Para lidiar con esto, puedes desempaquetar algunos archivos utilizando la opci&#xF3;n <code>--unpack</code>.
+A continuaci&#xF3;n, un ejemplo que excluye las librer&#xED;as compartidas de los m&#xF3;dulos nativos:</p><pre><code class="lang-bash">$ asar pack app app.asar --unpack *.node</code></pre>
 <p>Despu&#xE9;s de ejecutar este comando, adem&#xE1;s del archivo <code>app.asar</code>, tambi&#xE9;n se crear&#xE1;
 un directorio <code>app.asar.unpacked</code>, que contendr&#xE1; los archivos desempaquetados.
 Este directorio deber&#xE1; copiarse junto con el archivo <code>app.asar</code> a la hora de distribuir la aplicaci&#xF3;n.</p>
-
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="../tutorial/application-distribution.html" class="navigation navigation-prev " aria-label="Previous page: Distribución de la Aplicación"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="../tutorial/using-native-node-modules.html" class="navigation navigation-next " aria-label="Next page: Utilizando Módulos Node Nativos"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="application-distribution.html" class="navigation navigation-prev " aria-label="Previous page: Distribución de la Aplicación">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="using-native-node-modules.html" class="navigation navigation-next " aria-label="Next page: Utilizando Módulos Node Nativos">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="../gitbook/app.js"></script>
+    </div>
 
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Empaquetamiento de la Aplicación","level":"1.4","depth":1,"next":{"title":"Utilizando Módulos Node Nativos","level":"1.5","depth":1,"path":"tutorial/using-native-node-modules.md","ref":"tutorial/using-native-node-modules.md","articles":[]},"previous":{"title":"Distribución de la Aplicación","level":"1.3","depth":1,"path":"tutorial/application-distribution.md","ref":"tutorial/application-distribution.md","articles":[]},"dir":"ltr"},"config":{"plugins":["baidu","-livereload"],"license":"MIT","ignores":["backup","_book","styles","assets","node_modules","sources"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","repository":{"type":"git","url":"https://github.com/doc-ebooks/electron-docs-gitbook.git"},"keywords":["electron","nodejs","gitbook","ebook","doc"],"author":"Imfly","homepage":"https://github.com/doc-ebooks/electron-docs-gitbook","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"Electron 官方文档多语言电子书","variables":{},"language":"es","gitbook":"*","description":"Electron 官方文档多语言电子书","bugs":{"url":"https://github.com/doc-ebooks/electron-docs-gitbook/issues"}},"file":{"path":"tutorial/application-packaging.md","mtime":"2017-03-22T08:19:02.302Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-03-22T08:19:23.488Z"},"basePath":"..","book":{"language":"es"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
     
-    <script src="../gitbook/plugins/gitbook-plugin-baidu/plugin.js"></script>
+        
+        <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
-    gitbook.start(config);
-});
-</script>
-
-        <script>var _hmt = _hmt || [];(function() {var hm = document.createElement('script');hm.src = '//hm.baidu.com/hm.js?acfc5cd60db044270ff996429917c2b7';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(hm, s);})();</script>
     </body>
-    
 </html>
+

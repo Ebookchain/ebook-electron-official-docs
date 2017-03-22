@@ -1,634 +1,1037 @@
+
 <!DOCTYPE HTML>
-<html lang="fr" >
-    
+<html lang="fr-FR" >
     <head>
-        
+        <title>Electron FAQ · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Electron FAQ | FAQ</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="generator" content="GitBook 3.2.0">
         <meta name="author" content="Imfly">
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-        
-    <link rel="stylesheet" href="../gitbook/style.css">
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
         
     
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+
+    
+
+    
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+    
         
     
+        
+    
+        
+    
+        
     
 
         
     
     
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
     
-    <link rel="prev" href="../index.html" />
+    <link rel="next" href="../tutorial/supported-platforms.html" />
+    
+    
+    <link rel="prev" href="../" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book"
-        data-level="1"
-        data-chapter-title="Electron FAQ"
-        data-filepath="faq/electron-faq.md"
-        data-basepath=".."
-        data-revision="Thu Aug 04 2016 15:32:34 GMT+0800 (CST)"
-        data-innerlanguage="fr-FR">
-    
-
-<div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
             
-            
-            
-            
-
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="../index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        Introduction
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter active" data-level="1" data-path="faq/electron-faq.html">
-            
-                
-                    <a href="../faq/electron-faq.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        Electron FAQ
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2" data-path="tutorial/supported-platforms.html">
-            
-            <span><b>2.</b> Plateformes supportées</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3" data-path="tutorial/application-distribution.html">
-            
-            <span><b>3.</b> Distribution de l&#39;Application</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="tutorial/mac-app-store-submission-guide.html">
-            
-            <span><b>4.</b> Guide de Soumission Mac App Store</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="tutorial/application-packaging.html">
-            
-            <span><b>5.</b> Créer une archive</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="tutorial/using-native-node-modules.html">
-            
-            <span><b>6.</b> Utiliser Modules Natifs de Node</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7" data-path="tutorial/debugging-main-process.html">
-            
-            <span><b>7.</b> Debugger Processus Principal</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="8" data-path="tutorial/using-selenium-and-webdriver.html">
-            
-            <span><b>8.</b> Utiliser Selenium et WebDriver</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="9" data-path="tutorial/devtools-extension.html">
-            
-            <span><b>9.</b> Extension DevTools</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="10" data-path="tutorial/using-pepper-flash-plugin.html">
-            
-            <span><b>10.</b> Utiliser le Plugin Pepper Flash</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="11" data-path="tutorial/using-widevine-cdm-plugin.html">
-            
-            <span><b>11.</b> Utiliser le Plugin Widevine CDM</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="12" data-path="tutorial/quick-start.html">
-            
-            <span><b>12.</b> Démarrage Rapide</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="13" data-path="tutorial/desktop-environment-integration.html">
-            
-            <span><b>13.</b> Intégration Environnement de Bureau</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="14" data-path="tutorial/online-offline-events.html">
-            
-            <span><b>14.</b> Détection des Evènements En ligne/Hors ligne</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="15" data-path="api/synopsis.html">
-            
-            <span><b>15.</b> Synopsis</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="16" data-path="api/process.html">
-            
-            <span><b>16.</b> L&#39;objet Process</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="17" data-path="api/chrome-command-line-switches.html">
-            
-            <span><b>17.</b> Commandes Chromes Supportées</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="18" data-path="api/environment-variables.html">
-            
-            <span><b>18.</b> Variables d&#39;Environnement</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="19" data-path="api/file-object.html">
-            
-            <span><b>19.</b> Objet `File`</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="20" data-path="api/web-view-tag.html">
-            
-            <span><b>20.</b> Tag `&lt;webview&gt;`</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="21" data-path="api/window-open.html">
-            
-            <span><b>21.</b> Fonction `window.open`</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="22" data-path="api/app.html">
-            
-            <span><b>22.</b> app</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="23" data-path="api/auto-updater.html">
-            
-            <span><b>23.</b> autoUpdater</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="24" data-path="api/browser-window.html">
-            
-            <span><b>24.</b> BrowserWindow</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="25" data-path="api/content-tracing.html">
-            
-            <span><b>25.</b> contentTracing</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="26" data-path="api/dialog.html">
-            
-            <span><b>26.</b> dialog</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="27" data-path="api/global-shortcut.html">
-            
-            <span><b>27.</b> globalShortcut</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="28" data-path="api/ipc-main.html">
-            
-            <span><b>28.</b> ipcMain</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="29" data-path="api/menu.html">
-            
-            <span><b>29.</b> Menu</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="30" data-path="api/menu-item.html">
-            
-            <span><b>30.</b> MenuItem</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="31" data-path="api/power-monitor.html">
-            
-            <span><b>31.</b> powerMonitor</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="32" data-path="api/power-save-blocker.html">
-            
-            <span><b>32.</b> powerSaveBlocker</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="33" data-path="api/protocol.html">
-            
-            <span><b>33.</b> protocol</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="34" data-path="api/session.html">
-            
-            <span><b>34.</b> session</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="35" data-path="api/web-contents.html">
-            
-            <span><b>35.</b> webContents</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="36" data-path="api/tray.html">
-            
-            <span><b>36.</b> Tray</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="37" data-path="api/desktop-capturer.html">
-            
-            <span><b>37.</b> desktopCapturer</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="38" data-path="api/ipc-renderer.html">
-            
-            <span><b>38.</b> ipcRenderer</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="39" data-path="api/remote.html">
-            
-            <span><b>39.</b> remote</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="40" data-path="api/web-frame.html">
-            
-            <span><b>40.</b> webFrame</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="41" data-path="api/clipboard.html">
-            
-            <span><b>41.</b> clipboard</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="42" data-path="api/crash-reporter.html">
-            
-            <span><b>42.</b> crashReporter</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="43" data-path="api/native-image.html">
-            
-            <span><b>43.</b> nativeImage</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="44" data-path="api/screen.html">
-            
-            <span><b>44.</b> screen</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="45" data-path="api/shell.html">
-            
-            <span><b>45.</b> shell</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="46" data-path="development/coding-style.html">
-            
-            <span><b>46.</b> Style de Code</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="47" data-path="development/source-code-directory-structure.html">
-            
-            <span><b>47.</b> Hiérarchie du Code Source</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="48" data-path="development/atom-shell-vs-node-webkit.html">
-            
-            <span><b>48.</b> Différences Techniques par rapport à NW.js (anciennement node-webkit)</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="49" data-path="development/build-system-overview.html">
-            
-            <span><b>49.</b> Aperçu du Système de Build</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="50" data-path="development/build-instructions-osx.html">
-            
-            <span><b>50.</b> Instructions de Build (macOS)</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="51" data-path="development/build-instructions-windows.html">
-            
-            <span><b>51.</b> Instructions de Build (Windows)</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="52" data-path="development/build-instructions-linux.html">
-            
-            <span><b>52.</b> Instructions de Build (Linux)</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="53" data-path="development/setting-up-symbol-server.html">
-            
-            <span><b>53.</b> Installer un Serveur de Symbol dans le debugger</span>
-            
-            
-        </li>
-    
-
-
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    Publié avec GitBook
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Tapez pour rechercher" />
 </div>
 
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">FAQ</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="electron-faq.html">
+            
+                <a href="electron-faq.html">
+            
+                    
+                    Electron FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Guides</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../tutorial/supported-platforms.html">
+            
+                <a href="../tutorial/supported-platforms.html">
+            
+                    
+                    Plateformes supportées
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../tutorial/application-distribution.md">
+            
+                <span>
+            
+                    
+                    Distribution de l'Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../tutorial/mac-app-store-submission-guide.md">
+            
+                <span>
+            
+                    
+                    Guide de Soumission Mac App Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../tutorial/application-packaging.md">
+            
+                <span>
+            
+                    
+                    Créer une archive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../tutorial/using-native-node-modules.md">
+            
+                <span>
+            
+                    
+                    Utiliser Modules Natifs de Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../tutorial/debugging-main-process.md">
+            
+                <span>
+            
+                    
+                    Debugger Processus Principal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../tutorial/using-selenium-and-webdriver.md">
+            
+                <span>
+            
+                    
+                    Utiliser Selenium et WebDriver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../tutorial/devtools-extension.md">
+            
+                <span>
+            
+                    
+                    Extension DevTools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../tutorial/using-pepper-flash-plugin.md">
+            
+                <span>
+            
+                    
+                    Utiliser le Plugin Pepper Flash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../tutorial/using-widevine-cdm-plugin.md">
+            
+                <span>
+            
+                    
+                    Utiliser le Plugin Widevine CDM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tutoriels</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../tutorial/quick-start.html">
+            
+                <a href="../tutorial/quick-start.html">
+            
+                    
+                    Démarrage Rapide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../tutorial/desktop-environment-integration.md">
+            
+                <span>
+            
+                    
+                    Intégration Environnement de Bureau
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../tutorial/online-offline-events.md">
+            
+                <span>
+            
+                    
+                    Détection des Evènements En ligne/Hors ligne
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Références API</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../api/synopsis.md">
+            
+                <span>
+            
+                    
+                    Synopsis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../api/process.md">
+            
+                <span>
+            
+                    
+                    L'objet Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../api/chrome-command-line-switches.md">
+            
+                <span>
+            
+                    
+                    Commandes Chromes Supportées
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../api/environment-variables.md">
+            
+                <span>
+            
+                    
+                    Variables d'Environnement
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Eléments DOM Personnalisés:</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../api/file-object.md">
+            
+                <span>
+            
+                    
+                    Objet File
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../api/web-view-tag.md">
+            
+                <span>
+            
+                    
+                    Tag <webview>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../api/window-open.md">
+            
+                <span>
+            
+                    
+                    Fonction window.open
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Modules pour le Processus Principal :</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../api/app.md">
+            
+                <span>
+            
+                    
+                    app
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../api/auto-updater.md">
+            
+                <span>
+            
+                    
+                    autoUpdater
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../api/browser-window.md">
+            
+                <span>
+            
+                    
+                    BrowserWindow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../api/content-tracing.md">
+            
+                <span>
+            
+                    
+                    contentTracing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../api/dialog.md">
+            
+                <span>
+            
+                    
+                    dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../api/global-shortcut.md">
+            
+                <span>
+            
+                    
+                    globalShortcut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../api/ipc-main.md">
+            
+                <span>
+            
+                    
+                    ipcMain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../api/menu.md">
+            
+                <span>
+            
+                    
+                    Menu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../api/menu-item.md">
+            
+                <span>
+            
+                    
+                    MenuItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../api/power-monitor.md">
+            
+                <span>
+            
+                    
+                    powerMonitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../api/power-save-blocker.md">
+            
+                <span>
+            
+                    
+                    powerSaveBlocker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../api/protocol.md">
+            
+                <span>
+            
+                    
+                    protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../api/session.md">
+            
+                <span>
+            
+                    
+                    session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../api/web-contents.md">
+            
+                <span>
+            
+                    
+                    webContents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../api/tray.md">
+            
+                <span>
+            
+                    
+                    Tray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Modules pour le Processus d'Affichage (Page Web) :</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../api/desktop-capturer.md">
+            
+                <span>
+            
+                    
+                    desktopCapturer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../api/ipc-renderer.md">
+            
+                <span>
+            
+                    
+                    ipcRenderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../api/remote.md">
+            
+                <span>
+            
+                    
+                    remote
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../api/web-frame.md">
+            
+                <span>
+            
+                    
+                    webFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Modules pour les deux Processus :</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../api/clipboard.md">
+            
+                <span>
+            
+                    
+                    clipboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../api/crash-reporter.md">
+            
+                <span>
+            
+                    
+                    crashReporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../api/native-image.md">
+            
+                <span>
+            
+                    
+                    nativeImage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../api/screen.md">
+            
+                <span>
+            
+                    
+                    screen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../api/shell.md">
+            
+                <span>
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Développement</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../development/coding-style.md">
+            
+                <span>
+            
+                    
+                    Style de Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../development/source-code-directory-structure.md">
+            
+                <span>
+            
+                    
+                    Hiérarchie du Code Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../development/atom-shell-vs-node-webkit.md">
+            
+                <span>
+            
+                    
+                    Différences Techniques par rapport à NW.js (anciennement node-webkit)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../development/build-system-overview.md">
+            
+                <span>
+            
+                    
+                    Aperçu du Système de Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../development/build-instructions-osx.md">
+            
+                <span>
+            
+                    
+                    Instructions de Build (macOS)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../development/build-instructions-windows.md">
+            
+                <span>
+            
+                    
+                    Instructions de Build (Windows)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../development/build-instructions-linux.md">
+            
+                <span>
+            
+                    
+                    Instructions de Build (Linux)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../development/setting-up-symbol-server.md">
+            
+                <span>
+            
+                    
+                    Installer un Serveur de Symbol dans le debugger
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Publié avec GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >FAQ</a>
+        <a href=".." >Electron FAQ</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h1 id="electron-faq">Electron FAQ</h1>
-<h2 id="quand-est-mise-&#xE0;-jour-la-version-de-chrome-utilis&#xE9;e-par-electron-">Quand est mise &#xE0; jour la version de Chrome utilis&#xE9;e par Electron ?</h2>
-<p>La version de Chrome qu&apos;utilise Electron est en g&#xE9;n&#xE9;ral mise &#xE0; jour une ou deux
-semaines apr&#xE8;s la sortie d&apos;une nouvelle version stable de Chrome.</p>
-<p>Etant donn&#xE9; que nous n&apos;utilisons que les versions stables de Chrome, si un fix
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="electron-faq">Electron FAQ</h1><h2 id="quand-est-mise-&#xE0;-jour-la-version-de-chrome-utilis&#xE9;e-par-electron-">Quand est mise &#xE0; jour la version de Chrome utilis&#xE9;e par Electron ?</h2><p>La version de Chrome qu&apos;utilise Electron est en g&#xE9;n&#xE9;ral mise &#xE0; jour une ou deux
+semaines apr&#xE8;s la sortie d&apos;une nouvelle version stable de Chrome.</p><p>Etant donn&#xE9; que nous n&apos;utilisons que les versions stables de Chrome, si un fix
 important est en beta ou en dev, nous l&apos;int&#xE9;grerons &#xE0; la version que nous
-utilisons.</p>
-<h2 id="quand-est-mise-&#xE0;-jour-la-version-de-nodejs-utilis&#xE9;e-par-electron-">Quand est mise &#xE0; jour la version de Node.js utilis&#xE9;e par Electron ?</h2>
-<p>Quand une nouvelle version de Node.js sort, nous attendons en g&#xE9;n&#xE9;ral un mois
+utilisons.</p><h2 id="quand-est-mise-&#xE0;-jour-la-version-de-nodejs-utilis&#xE9;e-par-electron-">Quand est mise &#xE0; jour la version de Node.js utilis&#xE9;e par Electron ?</h2><p>Quand une nouvelle version de Node.js sort, nous attendons en g&#xE9;n&#xE9;ral un mois
 avant de mettre &#xE0; jour celle que nous utilisons dans Electron. Ceci afin
 d&apos;&#xE9;viter les bugs introduits par les nouvelles versions, ce qui arrive tr&#xE8;s
-souvent.</p>
-<p>Les nouvelles fonctionnalit&#xE9;s de Node.js arrivant la plupart du temps via V8,
+souvent.</p><p>Les nouvelles fonctionnalit&#xE9;s de Node.js arrivant la plupart du temps via V8,
 et Electron utilisant le V8 du navigateur Chrome, la nouvelle fonctionnalit&#xE9;
 JavaScript de la nouvelle version de Node.js est bien souvent d&#xE9;j&#xE0; dans
-Electron.</p>
-<h2 id="la-fen&#xEA;trebarre-d&#xE9;tat-de-mon-application-disparait-apr&#xE8;s-quelques-minutes">La fen&#xEA;tre/barre d&apos;&#xE9;tat de mon application disparait apr&#xE8;s quelques minutes.</h2>
-<p>Cela se produit quand la variable qui est utilis&#xE9;e pour stocker la fen&#xEA;tre/barre
-d&apos;&#xE9;tat est lib&#xE9;r&#xE9;e par le ramasse-miettes.</p>
-<p>Nous vous recommandons de lire les articles suivants quand vous rencontrez le
-probl&#xE8;me :</p>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management" target="_blank">Management de la M&#xE9;moire</a> (Anglais)</li>
-<li><a href="https://msdn.microsoft.com/library/bzt2dkta(v=vs.94).aspx" target="_blank">Port&#xE9;e d&apos;une Variable</a> (Anglais)</li>
-</ul>
+Electron.</p><h2 id="la-fen&#xEA;trebarre-d&#xE9;tat-de-mon-application-disparait-apr&#xE8;s-quelques-minutes">La fen&#xEA;tre/barre d&apos;&#xE9;tat de mon application disparait apr&#xE8;s quelques minutes.</h2><p>Cela se produit quand la variable qui est utilis&#xE9;e pour stocker la fen&#xEA;tre/barre
+d&apos;&#xE9;tat est lib&#xE9;r&#xE9;e par le ramasse-miettes.</p><p>Nous vous recommandons de lire les articles suivants quand vous rencontrez le
+probl&#xE8;me :</p><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management" target="_blank">Management de la M&#xE9;moire</a> (Anglais)
+</li>
+<li><a href="https://msdn.microsoft.com/library/bzt2dkta(v=vs.94" target="_blank">Port&#xE9;e d&apos;une Variable</a>.aspx) (Anglais)
+</li></ul>
 <p>Si vous voulez corriger rapidement le probl&#xE8;me, vous pouvez rendre les variables
-globales en changeant votre code de &#xE7;a :</p>
-<pre><code class="lang-javascript">app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">var</span> tray = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/icon.png&apos;</span>);
-})
-</code></pre>
-<p>&#xE0; &#xE7;a :</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> tray = <span class="hljs-literal">null</span>;
-app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  tray = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/icon.png&apos;</span>);
-})
-</code></pre>
-<h2 id="je-narrive-pas-&#xE0;-utiliser-jqueryrequirejsmeteorangularjs-dans-electron">Je n&apos;arrive pas &#xE0; utiliser jQuery/RequireJS/Meteor/AngularJS dans Electron.</h2>
-<p>A cause de l&apos;int&#xE9;gration de Node.js dans Electron, certains mots-cl&#xE9;s sont
+globales en changeant votre code de &#xE7;a :</p><pre><code class="lang-javascript">app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> tray = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/icon.png&apos;</span>)
+})</code></pre>
+<p>&#xE0; &#xE7;a :</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> tray = <span class="hljs-literal">null</span>
+app.on(<span class="hljs-string">&apos;ready&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  tray = <span class="hljs-keyword">new</span> Tray(<span class="hljs-string">&apos;/path/to/icon.png&apos;</span>)
+})</code></pre>
+<h2 id="je-narrive-pas-&#xE0;-utiliser-jqueryrequirejsmeteorangularjs-dans-electron">Je n&apos;arrive pas &#xE0; utiliser jQuery/RequireJS/Meteor/AngularJS dans Electron.</h2><p>A cause de l&apos;int&#xE9;gration de Node.js dans Electron, certains mots-cl&#xE9;s sont
 ins&#xE9;r&#xE9;s dans la DOM, comme <code>module</code>, <code>exports</code>, <code>require</code>. Ceci pose des
-probl&#xE8;mes pour certaines biblioth&#xE8;ques qui utilisent les m&#xEA;mes mots-cl&#xE9;s.</p>
-<p>Pour r&#xE9;soudre ce probl&#xE8;me, vous pouvez d&#xE9;sactiver l&apos;int&#xE9;gration de node dans
-Electron :</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// Dans le processus principal.</span>
+probl&#xE8;mes pour certaines biblioth&#xE8;ques qui utilisent les m&#xEA;mes mots-cl&#xE9;s.</p><p>Pour r&#xE9;soudre ce probl&#xE8;me, vous pouvez d&#xE9;sactiver l&apos;int&#xE9;gration de node dans
+Electron :</p><pre><code class="lang-javascript"><span class="hljs-comment">// Dans le processus principal.</span>
 <span class="hljs-keyword">var</span> mainWindow = <span class="hljs-keyword">new</span> BrowserWindow({
   webPreferences: {
     nodeIntegration: <span class="hljs-literal">false</span>
   }
-});
-</code></pre>
+})</code></pre>
 <p>Mais si vous voulez garder la possibilit&#xE9; d&apos;utiliser Node.js et les APIs
 Electron, vous devez renommer les mots-cl&#xE9;s dans la page avant d&apos;inclure
-d&apos;autres biblioth&#xE8;ques :</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+d&apos;autres biblioth&#xE8;ques :</p><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
 <span class="hljs-built_in">window</span>.nodeRequire = <span class="hljs-built_in">require</span>;
 <span class="hljs-keyword">delete</span> <span class="hljs-built_in">window</span>.require;
 <span class="hljs-keyword">delete</span> <span class="hljs-built_in">window</span>.exports;
 <span class="hljs-keyword">delete</span> <span class="hljs-built_in">window</span>.module;
-</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;jquery.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-</code></pre>
-<h2 id="requireelectronxxx-is-undefined"><code>require(&apos;electron&apos;).xxx</code> is undefined.</h2>
-<p>Lors de l&apos;utilisation des modules d&apos;Electron, vous pouvez avoir une erreur :</p>
-<pre><code>&gt; require(&apos;electron&apos;).webFrame.setZoomFactor(1.0);
-Uncaught TypeError: Cannot read property &apos;setZoomLevel&apos; of undefined
-</code></pre><p>Ceci se produit quand vous avez le <a href="https://www.npmjs.com/package/electron" target="_blank">module npm <code>electron</code></a>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;jquery.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+<h2 id="requireelectronxxx-is-undefined"><code>require(&apos;electron&apos;).xxx</code> is undefined.</h2><p>Lors de l&apos;utilisation des modules d&apos;Electron, vous pouvez avoir une erreur :</p><pre><code>&gt; require(&apos;electron&apos;).webFrame.setZoomFactor(1.0);
+Uncaught TypeError: Cannot read property &apos;setZoomLevel&apos; of undefined</code></pre>
+<p>Ceci se produit quand vous avez le <a href="https://www.npmjs.com/package/electron" target="_blank">module npm `electron`</a>
 d&apos;install&#xE9;, soit en local ou en global, ce qui a pour effet d&apos;&#xE9;craser les
-modules de base d&apos;Electron.</p>
-<p>Vous v&#xE9;rifiez que vous utilisez les bons modules, vous pouvez afficher le
-chemin du module <code>electron</code> :</p>
-<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&apos;electron&apos;</span>));
-</code></pre>
-<p>et v&#xE9;rifier si il est de la forme :</p>
-<pre><code>&quot;/path/to/Electron.app/Contents/Resources/atom.asar/renderer/api/lib/exports/electron.js&quot;
-</code></pre><p>S&apos;il est de la forme <code>node_modules/electron/index.js</code>, vous devez supprimer le
-module npm <code>electron</code>, ou le renommer.</p>
-<pre><code class="lang-bash">npm uninstall electron
-npm uninstall -g electron
-</code></pre>
+modules de base d&apos;Electron.</p><p>Vous v&#xE9;rifiez que vous utilisez les bons modules, vous pouvez afficher le
+chemin du module <code>electron</code> :</p><pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&apos;electron&apos;</span>))</code></pre>
+<p>et v&#xE9;rifier si il est de la forme :</p><pre><code>&quot;/path/to/Electron.app/Contents/Resources/atom.asar/renderer/api/lib/exports/electron.js&quot;</code></pre>
+<p>S&apos;il est de la forme <code>node_modules/electron/index.js</code>, vous devez supprimer le
+module npm <code>electron</code>, ou le renommer.</p><pre><code class="lang-bash">npm uninstall electron
+npm uninstall -g electron</code></pre>
 <p>Si vous utilisez le module de base mais que vous continuez d&apos;avoir
 l&apos;erreur, &#xE7;a vient probablement du fait que vous utilisez le module dans le
 mauvais processus. Par exemple <code>electron.app</code> peut uniquement &#xEA;tre utilis&#xE9;
 dans le processus principal, tandis que <code>electron.webFrame</code> est uniquement
 disponible dans le processus d&apos;affichage.</p>
-
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="../index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
-        
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../tutorial/supported-platforms.html" class="navigation navigation-next " aria-label="Next page: Plateformes supportées">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="../gitbook/app.js"></script>
+    </div>
 
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Electron FAQ","level":"1.2","depth":1,"next":{"title":"Plateformes supportées","level":"2.1","depth":1,"path":"tutorial/supported-platforms.md","ref":"tutorial/supported-platforms.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["baidu","-livereload"],"license":"MIT","ignores":["backup","_book","styles","assets","node_modules","sources"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","repository":{"type":"git","url":"https://github.com/doc-ebooks/electron-docs-gitbook.git"},"keywords":["electron","nodejs","gitbook","ebook","doc"],"author":"Imfly","homepage":"https://github.com/doc-ebooks/electron-docs-gitbook","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"Electron 官方文档多语言电子书","variables":{},"language":"fr-FR","gitbook":"*","description":"Electron 官方文档多语言电子书","bugs":{"url":"https://github.com/doc-ebooks/electron-docs-gitbook/issues"}},"file":{"path":"faq/electron-faq.md","mtime":"2017-03-22T08:19:02.314Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-03-22T08:19:23.488Z"},"basePath":"..","book":{"language":"fr-FR"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
     
-    <script src="../gitbook/plugins/gitbook-plugin-baidu/plugin.js"></script>
+        
+        <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
-    gitbook.start(config);
-});
-</script>
-
-        <script>var _hmt = _hmt || [];(function() {var hm = document.createElement('script');hm.src = '//hm.baidu.com/hm.js?acfc5cd60db044270ff996429917c2b7';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(hm, s);})();</script>
     </body>
-    
 </html>
+

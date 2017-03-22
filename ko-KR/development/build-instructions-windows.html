@@ -1,1073 +1,1009 @@
+
 <!DOCTYPE HTML>
-<html lang="ko" >
-    
+<html lang="ko-KR" >
     <head>
-        
+        <title>빌드 설명서 (Windows) · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>빌드 설명서 (Windows) | FAQ</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="generator" content="GitBook 3.2.0">
         <meta name="author" content="Imfly">
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-        
-    <link rel="stylesheet" href="../gitbook/style.css">
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
         
     
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+
+    
+
+    
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+    
         
     
+        
+    
+        
+    
+        
     
 
         
     
     
-    <link rel="next" href="../development/build-instructions-linux.html" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="build-instructions-linux.html" />
     
     
-    <link rel="prev" href="../development/build-instructions-osx.html" />
+    <link rel="prev" href="build-instructions-osx.html" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book"
-        data-level="56"
-        data-chapter-title="빌드 설명서 (Windows)"
-        data-filepath="development/build-instructions-windows.md"
-        data-basepath=".."
-        data-revision="Thu Aug 04 2016 15:32:20 GMT+0800 (CST)"
-        data-innerlanguage="ko-KR">
-    
-
-<div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
             
-            
-            
-            
-
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="../index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        소개
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="faq.html">
-            
-                
-                    <a href="../faq.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        Electron FAQ
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2" data-path="tutorial/supported-platforms.html">
-            
-                
-                    <a href="../tutorial/supported-platforms.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                        지원하는 플랫폼
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3" data-path="tutorial/security.html">
-            
-                
-                    <a href="../tutorial/security.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                        보안
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="tutorial/electron-versioning.html">
-            
-                
-                    <a href="../tutorial/electron-versioning.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                        Electron 버전 관리
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="tutorial/application-distribution.html">
-            
-                
-                    <a href="../tutorial/application-distribution.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                        애플리케이션 배포
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="tutorial/mac-app-store-submission-guide.html">
-            
-                
-                    <a href="../tutorial/mac-app-store-submission-guide.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                        Mac 앱스토어 애플리케이션 제출 가이드
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7" data-path="tutorial/windows-store-guide.html">
-            
-                
-                    <a href="../tutorial/windows-store-guide.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>7.</b>
-                        
-                        Windows 스토어 가이드
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="8" data-path="tutorial/application-packaging.html">
-            
-                
-                    <a href="../tutorial/application-packaging.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>8.</b>
-                        
-                        애플리케이션 패키징
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="9" data-path="tutorial/using-native-node-modules.html">
-            
-                
-                    <a href="../tutorial/using-native-node-modules.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>9.</b>
-                        
-                        네이티브 Node 모듈 사용하기
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="10" data-path="tutorial/debugging-main-process.html">
-            
-                
-                    <a href="../tutorial/debugging-main-process.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>10.</b>
-                        
-                        메인 프로세스 디버깅하기
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="11" data-path="tutorial/using-selenium-and-webdriver.html">
-            
-                
-                    <a href="../tutorial/using-selenium-and-webdriver.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>11.</b>
-                        
-                        Selenium 과 WebDriver 사용하기
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="12" data-path="tutorial/devtools-extension.html">
-            
-                
-                    <a href="../tutorial/devtools-extension.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>12.</b>
-                        
-                        개발자 도구 확장 기능
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="13" data-path="tutorial/using-pepper-flash-plugin.html">
-            
-                
-                    <a href="../tutorial/using-pepper-flash-plugin.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>13.</b>
-                        
-                        Pepper 플래시 플러그인 사용하기
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="14" data-path="tutorial/using-widevine-cdm-plugin.html">
-            
-                
-                    <a href="../tutorial/using-widevine-cdm-plugin.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>14.</b>
-                        
-                        Widevine CDM 플러그인 사용하기
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="15" data-path="tutorial/testing-on-headless-ci.html">
-            
-                
-                    <a href="../tutorial/testing-on-headless-ci.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>15.</b>
-                        
-                        Headless CI 시스템에서 테스팅하기 (Travis, Jenkins)
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="16" data-path="tutorial/quick-start.html">
-            
-                
-                    <a href="../tutorial/quick-start.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.</b>
-                        
-                        시작하기
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="17" data-path="tutorial/desktop-environment-integration.html">
-            
-                
-                    <a href="../tutorial/desktop-environment-integration.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>17.</b>
-                        
-                        데스크톱 환경 통합
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="18" data-path="tutorial/online-offline-events.html">
-            
-                
-                    <a href="../tutorial/online-offline-events.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>18.</b>
-                        
-                        온라인/오프라인 이벤트 감지
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="19" data-path="api/synopsis.html">
-            
-                
-                    <a href="../api/synopsis.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>19.</b>
-                        
-                        개요
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="20" data-path="api/process.html">
-            
-                
-                    <a href="../api/process.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>20.</b>
-                        
-                        Process 객체
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="21" data-path="api/chrome-command-line-switches.html">
-            
-                
-                    <a href="../api/chrome-command-line-switches.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>21.</b>
-                        
-                        크롬 명령줄 스위치 지원
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="22" data-path="api/environment-variables.html">
-            
-                
-                    <a href="../api/environment-variables.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>22.</b>
-                        
-                        환경 변수
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="23" data-path="api/file-object.html">
-            
-                
-                    <a href="../api/file-object.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>23.</b>
-                        
-                        `File` 객체
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="24" data-path="api/web-view-tag.html">
-            
-                
-                    <a href="../api/web-view-tag.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>24.</b>
-                        
-                        `&lt;webview&gt;` 태그
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="25" data-path="api/window-open.html">
-            
-                
-                    <a href="../api/window-open.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>25.</b>
-                        
-                        `window.open` 함수
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="26" data-path="api/app.html">
-            
-                
-                    <a href="../api/app.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>26.</b>
-                        
-                        app
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="27" data-path="api/auto-updater.html">
-            
-                
-                    <a href="../api/auto-updater.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>27.</b>
-                        
-                        autoUpdater
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="28" data-path="api/browser-window.html">
-            
-                
-                    <a href="../api/browser-window.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>28.</b>
-                        
-                        BrowserWindow
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="29" data-path="api/content-tracing.html">
-            
-                
-                    <a href="../api/content-tracing.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>29.</b>
-                        
-                        contentTracing
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="30" data-path="api/dialog.html">
-            
-                
-                    <a href="../api/dialog.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>30.</b>
-                        
-                        dialog
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="31" data-path="api/global-shortcut.html">
-            
-                
-                    <a href="../api/global-shortcut.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>31.</b>
-                        
-                        globalShortcut
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="32" data-path="api/ipc-main.html">
-            
-                
-                    <a href="../api/ipc-main.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>32.</b>
-                        
-                        ipcMain
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="33" data-path="api/menu.html">
-            
-                
-                    <a href="../api/menu.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>33.</b>
-                        
-                        Menu
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="34" data-path="api/menu-item.html">
-            
-                
-                    <a href="../api/menu-item.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>34.</b>
-                        
-                        MenuItem
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="35" data-path="api/power-monitor.html">
-            
-                
-                    <a href="../api/power-monitor.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>35.</b>
-                        
-                        powerMonitor
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="36" data-path="api/power-save-blocker.html">
-            
-                
-                    <a href="../api/power-save-blocker.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>36.</b>
-                        
-                        powerSaveBlocker
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="37" data-path="api/protocol.html">
-            
-                
-                    <a href="../api/protocol.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>37.</b>
-                        
-                        protocol
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="38" data-path="api/session.html">
-            
-                
-                    <a href="../api/session.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>38.</b>
-                        
-                        session
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="39" data-path="api/system-preferences.html">
-            
-                
-                    <a href="../api/system-preferences.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>39.</b>
-                        
-                        systemPreferences
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="40" data-path="api/tray.html">
-            
-                
-                    <a href="../api/tray.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>40.</b>
-                        
-                        Tray
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="41" data-path="api/web-contents.html">
-            
-                
-                    <a href="../api/web-contents.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>41.</b>
-                        
-                        webContents
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="42" data-path="api/desktop-capturer.html">
-            
-                
-                    <a href="../api/desktop-capturer.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>42.</b>
-                        
-                        desktopCapturer
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="43" data-path="api/ipc-renderer.html">
-            
-                
-                    <a href="../api/ipc-renderer.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>43.</b>
-                        
-                        ipcRenderer
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="44" data-path="api/remote.html">
-            
-                
-                    <a href="../api/remote.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>44.</b>
-                        
-                        remote
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="45" data-path="api/web-frame.html">
-            
-                
-                    <a href="../api/web-frame.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>45.</b>
-                        
-                        webFrame
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="46" data-path="api/clipboard.html">
-            
-                
-                    <a href="../api/clipboard.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>46.</b>
-                        
-                        clipboard
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="47" data-path="api/crash-reporter.html">
-            
-                
-                    <a href="../api/crash-reporter.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>47.</b>
-                        
-                        crashReporter
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="48" data-path="api/native-image.html">
-            
-                
-                    <a href="../api/native-image.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>48.</b>
-                        
-                        nativeImage
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="49" data-path="api/screen.html">
-            
-                
-                    <a href="../api/screen.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>49.</b>
-                        
-                        screen
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="50" data-path="api/shell.html">
-            
-                
-                    <a href="../api/shell.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>50.</b>
-                        
-                        shell
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="51" data-path="development/coding-style.html">
-            
-                
-                    <a href="../development/coding-style.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>51.</b>
-                        
-                        코딩 스타일
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="52" data-path="development/source-code-directory-structure.html">
-            
-                
-                    <a href="../development/source-code-directory-structure.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>52.</b>
-                        
-                        소스 코드 디렉터리 구조
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="53" data-path="development/atom-shell-vs-node-webkit.html">
-            
-                
-                    <a href="../development/atom-shell-vs-node-webkit.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>53.</b>
-                        
-                        NW.js(node-webkit)와 기술적으로 다른점
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="54" data-path="development/build-system-overview.html">
-            
-                
-                    <a href="../development/build-system-overview.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>54.</b>
-                        
-                        빌드 시스템 개요
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="55" data-path="development/build-instructions-osx.html">
-            
-                
-                    <a href="../development/build-instructions-osx.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>55.</b>
-                        
-                        빌드 설명서 (macOS)
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter active" data-level="56" data-path="development/build-instructions-windows.html">
-            
-                
-                    <a href="../development/build-instructions-windows.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>56.</b>
-                        
-                        빌드 설명서 (Windows)
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="57" data-path="development/build-instructions-linux.html">
-            
-                
-                    <a href="../development/build-instructions-linux.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>57.</b>
-                        
-                        빌드 설명서 (Linux)
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="58" data-path="development/debug-instructions-windows.html">
-            
-                
-                    <a href="../development/debug-instructions-windows.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>58.</b>
-                        
-                        디버그 설명서 (Windows)
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="59" data-path="development/setting-up-symbol-server.html">
-            
-                
-                    <a href="../development/setting-up-symbol-server.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>59.</b>
-                        
-                        디버거 심볼 서버 설정
-                    </a>
-            
-            
-        </li>
-    
-
-
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    GitBook에 게시
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
 </div>
 
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">FAQ</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    Electron FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">개발 가이드</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../tutorial/supported-platforms.html">
+            
+                <a href="../tutorial/supported-platforms.html">
+            
+                    
+                    지원하는 플랫폼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../tutorial/security.html">
+            
+                <a href="../tutorial/security.html">
+            
+                    
+                    보안
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../tutorial/electron-versioning.html">
+            
+                <a href="../tutorial/electron-versioning.html">
+            
+                    
+                    Electron 버전 관리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../tutorial/application-distribution.html">
+            
+                <a href="../tutorial/application-distribution.html">
+            
+                    
+                    애플리케이션 배포
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../tutorial/mac-app-store-submission-guide.html">
+            
+                <a href="../tutorial/mac-app-store-submission-guide.html">
+            
+                    
+                    Mac 앱스토어 애플리케이션 제출 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../tutorial/windows-store-guide.html">
+            
+                <a href="../tutorial/windows-store-guide.html">
+            
+                    
+                    Windows 스토어 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../tutorial/application-packaging.html">
+            
+                <a href="../tutorial/application-packaging.html">
+            
+                    
+                    애플리케이션 패키징
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../tutorial/using-native-node-modules.html">
+            
+                <a href="../tutorial/using-native-node-modules.html">
+            
+                    
+                    네이티브 Node 모듈 사용하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../tutorial/debugging-main-process.html">
+            
+                <a href="../tutorial/debugging-main-process.html">
+            
+                    
+                    메인 프로세스 디버깅하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../tutorial/using-selenium-and-webdriver.html">
+            
+                <a href="../tutorial/using-selenium-and-webdriver.html">
+            
+                    
+                    Selenium 과 WebDriver 사용하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../tutorial/devtools-extension.html">
+            
+                <a href="../tutorial/devtools-extension.html">
+            
+                    
+                    개발자 도구 확장 기능
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../tutorial/using-pepper-flash-plugin.html">
+            
+                <a href="../tutorial/using-pepper-flash-plugin.html">
+            
+                    
+                    Pepper 플래시 플러그인 사용하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../tutorial/using-widevine-cdm-plugin.html">
+            
+                <a href="../tutorial/using-widevine-cdm-plugin.html">
+            
+                    
+                    Widevine CDM 플러그인 사용하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../tutorial/testing-on-headless-ci.html">
+            
+                <a href="../tutorial/testing-on-headless-ci.html">
+            
+                    
+                    Headless CI 시스템에서 테스팅하기 (Travis, Jenkins)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">튜토리얼</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../tutorial/quick-start.html">
+            
+                <a href="../tutorial/quick-start.html">
+            
+                    
+                    시작하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../tutorial/desktop-environment-integration.html">
+            
+                <a href="../tutorial/desktop-environment-integration.html">
+            
+                    
+                    데스크톱 환경 통합
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../tutorial/online-offline-events.html">
+            
+                <a href="../tutorial/online-offline-events.html">
+            
+                    
+                    온라인/오프라인 이벤트 감지
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">API 레퍼런스</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../api/synopsis.html">
+            
+                <a href="../api/synopsis.html">
+            
+                    
+                    개요
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../api/process.html">
+            
+                <a href="../api/process.html">
+            
+                    
+                    Process 객체
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../api/chrome-command-line-switches.html">
+            
+                <a href="../api/chrome-command-line-switches.html">
+            
+                    
+                    크롬 명령줄 스위치 지원
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../api/environment-variables.html">
+            
+                <a href="../api/environment-variables.html">
+            
+                    
+                    환경 변수
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">커스텀 DOM 요소:</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../api/file-object.html">
+            
+                <a href="../api/file-object.html">
+            
+                    
+                    File 객체
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../api/web-view-tag.html">
+            
+                <a href="../api/web-view-tag.html">
+            
+                    
+                    <webview> 태그
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../api/window-open.html">
+            
+                <a href="../api/window-open.html">
+            
+                    
+                    window.open 함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">메인 프로세스에서 사용할 수 있는 모듈:</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../api/app.html">
+            
+                <a href="../api/app.html">
+            
+                    
+                    app
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../api/auto-updater.html">
+            
+                <a href="../api/auto-updater.html">
+            
+                    
+                    autoUpdater
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../api/browser-window.html">
+            
+                <a href="../api/browser-window.html">
+            
+                    
+                    BrowserWindow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../api/content-tracing.html">
+            
+                <a href="../api/content-tracing.html">
+            
+                    
+                    contentTracing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../api/dialog.html">
+            
+                <a href="../api/dialog.html">
+            
+                    
+                    dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../api/global-shortcut.html">
+            
+                <a href="../api/global-shortcut.html">
+            
+                    
+                    globalShortcut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../api/ipc-main.html">
+            
+                <a href="../api/ipc-main.html">
+            
+                    
+                    ipcMain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../api/menu.html">
+            
+                <a href="../api/menu.html">
+            
+                    
+                    Menu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../api/menu-item.html">
+            
+                <a href="../api/menu-item.html">
+            
+                    
+                    MenuItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../api/power-monitor.html">
+            
+                <a href="../api/power-monitor.html">
+            
+                    
+                    powerMonitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../api/power-save-blocker.html">
+            
+                <a href="../api/power-save-blocker.html">
+            
+                    
+                    powerSaveBlocker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../api/protocol.html">
+            
+                <a href="../api/protocol.html">
+            
+                    
+                    protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../api/session.html">
+            
+                <a href="../api/session.html">
+            
+                    
+                    session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../api/system-preferences.html">
+            
+                <a href="../api/system-preferences.html">
+            
+                    
+                    systemPreferences
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../api/tray.html">
+            
+                <a href="../api/tray.html">
+            
+                    
+                    Tray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../api/web-contents.html">
+            
+                <a href="../api/web-contents.html">
+            
+                    
+                    webContents
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">렌더러 프로세스에서 사용할 수 있는 모듈 (웹 페이지):</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../api/desktop-capturer.html">
+            
+                <a href="../api/desktop-capturer.html">
+            
+                    
+                    desktopCapturer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../api/ipc-renderer.html">
+            
+                <a href="../api/ipc-renderer.html">
+            
+                    
+                    ipcRenderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../api/remote.html">
+            
+                <a href="../api/remote.html">
+            
+                    
+                    remote
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../api/web-frame.html">
+            
+                <a href="../api/web-frame.html">
+            
+                    
+                    webFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">두 프로세스 모두 사용할 수 있는 모듈:</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../api/clipboard.html">
+            
+                <a href="../api/clipboard.html">
+            
+                    
+                    clipboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../api/crash-reporter.html">
+            
+                <a href="../api/crash-reporter.html">
+            
+                    
+                    crashReporter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../api/native-image.html">
+            
+                <a href="../api/native-image.html">
+            
+                    
+                    nativeImage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../api/screen.html">
+            
+                <a href="../api/screen.html">
+            
+                    
+                    screen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../api/shell.html">
+            
+                <a href="../api/shell.html">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">개발자용</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="coding-style.html">
+            
+                <a href="coding-style.html">
+            
+                    
+                    코딩 스타일
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="source-code-directory-structure.html">
+            
+                <a href="source-code-directory-structure.html">
+            
+                    
+                    소스 코드 디렉터리 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="atom-shell-vs-node-webkit.html">
+            
+                <a href="atom-shell-vs-node-webkit.html">
+            
+                    
+                    NW.js(node-webkit)와 기술적으로 다른점
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="build-system-overview.html">
+            
+                <a href="build-system-overview.html">
+            
+                    
+                    빌드 시스템 개요
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="build-instructions-osx.html">
+            
+                <a href="build-instructions-osx.html">
+            
+                    
+                    빌드 설명서 (macOS)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="9.6" data-path="build-instructions-windows.html">
+            
+                <a href="build-instructions-windows.html">
+            
+                    
+                    빌드 설명서 (Windows)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="build-instructions-linux.html">
+            
+                <a href="build-instructions-linux.html">
+            
+                    
+                    빌드 설명서 (Linux)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="debug-instructions-windows.html">
+            
+                <a href="debug-instructions-windows.html">
+            
+                    
+                    디버그 설명서 (Windows)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="setting-up-symbol-server.html">
+            
+                <a href="setting-up-symbol-server.html">
+            
+                    
+                    디버거 심볼 서버 설정
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >FAQ</a>
+        <a href=".." >빌드 설명서 (Windows)</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h1 id="&#xBE4C;&#xB4DC;-&#xC124;&#xBA85;&#xC11C;-windows">&#xBE4C;&#xB4DC; &#xC124;&#xBA85;&#xC11C; (Windows)</h1>
-<p>&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xB294; Windows &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xC5D0;&#xC11C; Electron&#xC744; &#xBE4C;&#xB4DC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h2 id="&#xBE4C;&#xB4DC;&#xC804;-&#xC694;&#xAD6C;-&#xC0AC;&#xD56D;">&#xBE4C;&#xB4DC;&#xC804; &#xC694;&#xAD6C; &#xC0AC;&#xD56D;</h2>
-<ul>
-<li>Windows 7 / Server 2008 R2 &#xB610;&#xB294; &#xCD5C;&#xC2E0; &#xBC84;&#xC804;</li>
-<li>Visual Studio 2015 - <a href="https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx" target="_blank">VS 2015 &#xCEE4;&#xBBA4;&#xB2C8;&#xD2F0; &#xC5D0;&#xB514;&#xC158; &#xBB34;&#xB8CC; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;</a></li>
-<li><a href="http://www.python.org/download/releases/2.7/" target="_blank">Python 2.7</a></li>
-<li><a href="http://nodejs.org/download/" target="_blank">Node.js</a></li>
-<li><a href="http://git-scm.com" target="_blank">Git</a></li>
-</ul>
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#xBE4C;&#xB4DC;-&#xC124;&#xBA85;&#xC11C;-windows">&#xBE4C;&#xB4DC; &#xC124;&#xBA85;&#xC11C; (Windows)</h1><p>&#xC774; &#xAC00;&#xC774;&#xB4DC;&#xB294; Windows &#xC6B4;&#xC601;&#xCCB4;&#xC81C;&#xC5D0;&#xC11C; Electron&#xC744; &#xBE4C;&#xB4DC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.</p><h2 id="&#xBE4C;&#xB4DC;&#xC804;-&#xC694;&#xAD6C;-&#xC0AC;&#xD56D;">&#xBE4C;&#xB4DC;&#xC804; &#xC694;&#xAD6C; &#xC0AC;&#xD56D;</h2><ul><li>Windows 7 / Server 2008 R2 &#xB610;&#xB294; &#xCD5C;&#xC2E0; &#xBC84;&#xC804;
+</li>
+<li>Visual Studio 2015 - <a href="https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx" target="_blank">VS 2015 &#xCEE4;&#xBBA4;&#xB2C8;&#xD2F0; &#xC5D0;&#xB514;&#xC158; &#xBB34;&#xB8CC; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;</a>
+</li>
+<li><a href="http://www.python.org/download/releases/2.7/" target="_blank">Python 2.7</a>
+</li>
+<li><a href="http://nodejs.org/download/" target="_blank">Node.js</a>
+</li>
+<li><a href="http://git-scm.com" target="_blank">Git</a>
+</li></ul>
 <p>&#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB294; PC&#xC5D0; Windows&#xB97C; &#xC124;&#xCE58;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;&#xBA74;
 <a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/" target="_blank">dev.microsoftedge.com</a>&#xC5D0;&#xC11C;
 &#xC0AC;&#xC6A9; &#xAE30;&#xD55C;&#xC774; &#xC815;&#xD574;&#xC838;&#xC788;&#xB294; &#xBB34;&#xB8CC; &#xAC00;&#xC0C1;&#xBA38;&#xC2E0; &#xBC84;&#xC804;&#xC758; Windows&#xB97C; &#xBC1B;&#xC544; Electron&#xC744; &#xBE4C;&#xB4DC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xB3C4;
-&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>Electron&#xC740; &#xBAA8;&#xB4E0; &#xBE4C;&#xB4DC;&#xB97C; command-line &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xD1B5;&#xD574; &#xBE4C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xBE4C;&#xB4DC;&#xC5D0; Visual
+&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p><p>Electron&#xC740; &#xBAA8;&#xB4E0; &#xBE4C;&#xB4DC;&#xB97C; command-line &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xD1B5;&#xD574; &#xBE4C;&#xB4DC;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xBE4C;&#xB4DC;&#xC5D0; Visual
 Studio&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC5EC;&#xC804;&#xD788; Electron&#xC744; &#xAC1C;&#xBC1C;&#xD560; &#xB550; &#xC5B4;&#xB5A4; &#xC5D0;&#xB514;&#xD130;&#xB4E0; &#xC0AC;&#xC6A9;&#xC774;
-&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xBE60;&#xB978; &#xC2DC;&#xC77C;&#xB0B4;&#xC5D0; Visual Studio&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xBE4C;&#xB4DC;&#xB3C4; &#xC9C0;&#xC6D0;&#xD560; &#xACC4;&#xD68D;&#xC785;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xCC38;&#xACE0;:</strong> Visual Studio&#xAC00; &#xC9C1;&#xC811; &#xBE4C;&#xB4DC;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xB354;&#xB77C;&#xB3C4; IDE&#xC640; &#xAC19;&#xC774; &#xC81C;&#xACF5;&#xB41C; &#xBE4C;&#xB4DC;
-&#xD234;&#xCCB4;&#xC778;&#xC774; &#xBE4C;&#xB4DC;&#xC5D0; <strong>&#xBC18;&#xB4DC;&#xC2DC;</strong> &#xC0AC;&#xC6A9;&#xB418;&#xBBC0;&#xB85C; &#xC5EC;&#xC804;&#xD788; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p><strong>&#xCC38;&#xACE0;:</strong> Visual Studio 2013&#xC740; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4; MSVS <strong>2015</strong> &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB294;&#xC9C0;
-&#xD655;&#xC778;&#xD574;&#xC8FC;&#xC138;&#xC694;.</p>
-<h2 id="&#xCF54;&#xB4DC;-&#xAC00;&#xC838;&#xC624;&#xAE30;">&#xCF54;&#xB4DC; &#xAC00;&#xC838;&#xC624;&#xAE30;</h2>
-<pre><code class="lang-powershell">$ git clone https://github.com/electron/electron.git
-</code></pre>
-<h2 id="&#xBD80;&#xD2B8;-&#xC2A4;&#xD2B8;&#xB7A9;">&#xBD80;&#xD2B8; &#xC2A4;&#xD2B8;&#xB7A9;</h2>
-<p>&#xBD80;&#xD2B8;&#xC2A4;&#xD2B8;&#xB7A9; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xD544;&#xC218;&#xC801;&#xC778; &#xBE4C;&#xB4DC; &#xC885;&#xC18D;&#xC131; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB4E4;&#xC744; &#xBAA8;&#xB450; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD558;&#xACE0; &#xD504;&#xB85C;&#xC81D;&#xD2B8;
+&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xBE60;&#xB978; &#xC2DC;&#xC77C;&#xB0B4;&#xC5D0; Visual Studio&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xBE4C;&#xB4DC;&#xB3C4; &#xC9C0;&#xC6D0;&#xD560; &#xACC4;&#xD68D;&#xC785;&#xB2C8;&#xB2E4;.</p><p><strong>&#xCC38;&#xACE0;:</strong> Visual Studio&#xAC00; &#xC9C1;&#xC811; &#xBE4C;&#xB4DC;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xB354;&#xB77C;&#xB3C4; IDE&#xC640; &#xAC19;&#xC774; &#xC81C;&#xACF5;&#xB41C; &#xBE4C;&#xB4DC;
+&#xD234;&#xCCB4;&#xC778;&#xC774; &#xBE4C;&#xB4DC;&#xC5D0; <strong>&#xBC18;&#xB4DC;&#xC2DC;</strong> &#xC0AC;&#xC6A9;&#xB418;&#xBBC0;&#xB85C; &#xC5EC;&#xC804;&#xD788; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p><p><strong>&#xCC38;&#xACE0;:</strong> Visual Studio 2013&#xC740; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4; MSVS <strong>2015</strong> &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xB294;&#xC9C0;
+&#xD655;&#xC778;&#xD574;&#xC8FC;&#xC138;&#xC694;.</p><h2 id="&#xCF54;&#xB4DC;-&#xAC00;&#xC838;&#xC624;&#xAE30;">&#xCF54;&#xB4DC; &#xAC00;&#xC838;&#xC624;&#xAE30;</h2><pre><code class="lang-powershell">$ git clone https://github.com/electron/electron.git</code></pre>
+<h2 id="&#xBD80;&#xD2B8;-&#xC2A4;&#xD2B8;&#xB7A9;">&#xBD80;&#xD2B8; &#xC2A4;&#xD2B8;&#xB7A9;</h2><p>&#xBD80;&#xD2B8;&#xC2A4;&#xD2B8;&#xB7A9; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xD544;&#xC218;&#xC801;&#xC778; &#xBE4C;&#xB4DC; &#xC758;&#xC874;&#xC131; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB4E4;&#xC744; &#xBAA8;&#xB450; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD558;&#xACE0; &#xD504;&#xB85C;&#xC81D;&#xD2B8;
 &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;. &#xCC38;&#xACE0;&#xB85C; Electron&#xC740; <code>ninja</code>&#xB97C; &#xBE4C;&#xB4DC; &#xD234;&#xCCB4;&#xC778;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; Visual
-Studio &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB294; &#xC0DD;&#xC131;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-powershell">$ cd electron
-$ python script\bootstrap.py -v
-</code></pre>
-<h2 id="&#xBE4C;&#xB4DC;&#xD558;&#xAE30;">&#xBE4C;&#xB4DC;&#xD558;&#xAE30;</h2>
-<p><code>Release</code> &#xC640; <code>Debug</code> &#xB450; &#xD0C0;&#xAC9F; &#xBAA8;&#xB450; &#xBE4C;&#xB4DC; &#xD569;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-powershell">$ python script\build.py
-</code></pre>
-<p>&#xB610;&#xB294; <code>Debug</code> &#xD0C0;&#xAC9F;&#xB9CC; &#xBE4C;&#xB4DC; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-powershell">$ python script\build.py -c D
-</code></pre>
+Studio &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB294; &#xC0DD;&#xC131;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p><pre><code class="lang-powershell">$ cd electron
+$ python script\bootstrap.py -v</code></pre>
+<h2 id="&#xBE4C;&#xB4DC;&#xD558;&#xAE30;">&#xBE4C;&#xB4DC;&#xD558;&#xAE30;</h2><p><code>Release</code> &#xC640; <code>Debug</code> &#xB450; &#xD0C0;&#xAC9F; &#xBAA8;&#xB450; &#xBE4C;&#xB4DC; &#xD569;&#xB2C8;&#xB2E4;:</p><pre><code class="lang-powershell">$ python script\build.py</code></pre>
+<p>&#xB610;&#xB294; <code>Debug</code> &#xD0C0;&#xAC9F;&#xB9CC; &#xBE4C;&#xB4DC; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p><pre><code class="lang-powershell">$ python script\build.py -c D</code></pre>
 <p>&#xBE4C;&#xB4DC;&#xAC00; &#xBAA8;&#xB450; &#xB05D;&#xB098;&#xBA74; <code>out/D</code> (&#xB514;&#xBC84;&#xADF8; &#xD0C0;&#xAC9F;) &#xB610;&#xB294; <code>out/R</code> (&#xB9B4;&#xB9AC;&#xC988; &#xD0C0;&#xAC9F;) &#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0;&#xC11C;
-<code>electron.exe</code> &#xC2E4;&#xD589; &#xD30C;&#xC77C;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h2 id="64&#xBE44;&#xD2B8;-&#xBE4C;&#xB4DC;">64&#xBE44;&#xD2B8; &#xBE4C;&#xB4DC;</h2>
-<p>64&#xBE44;&#xD2B8;&#xB97C; &#xD0C0;&#xAC9F;&#xC73C;&#xB85C; &#xBE4C;&#xB4DC; &#xD558;&#xB824;&#xBA74; &#xBD80;&#xD2B8;&#xC2A4;&#xD2B8;&#xB7A9; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD560; &#xB54C; <code>--target_arch=x64</code>
-&#xC778;&#xC218;&#xB97C; &#xAC19;&#xC774; &#xB118;&#xACA8;&#xC8FC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-powershell">$ python script\bootstrap.py -v --target_arch=x64
-</code></pre>
-<p>&#xB2E4;&#xB978; &#xBE4C;&#xB4DC; &#xB2E8;&#xACC4;&#xB3C4; &#xC815;&#xD655;&#xD558;&#xAC8C; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h2 id="&#xD14C;&#xC2A4;&#xD2B8;">&#xD14C;&#xC2A4;&#xD2B8;</h2>
-<p>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xCF54;&#xB529; &#xC2A4;&#xD0C0;&#xC77C;&#xC744; &#xD655;&#xC778;&#xD558;&#xB824;&#xBA74;:</p>
-<pre><code class="lang-powershell">$ python script\cpplint.py
-</code></pre>
-<p>&#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB824;&#xBA74;:</p>
-<pre><code class="lang-powershell">$ python script\test.py
-</code></pre>
-<p>&#xD14C;&#xC2A4;&#xD2B8; &#xC2E4;&#xD589;&#xC2DC; <code>runas</code>&#xC640; &#xAC19;&#xC740; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xBAA8;&#xB4C8;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294;&#xB370; &#xC774; &#xBAA8;&#xB4C8;&#xC740; &#xB514;&#xBC84;&#xADF8; &#xBE4C;&#xB4DC;&#xC5D0;&#xC11C; &#xAC19;&#xC774;
-&#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC5EC;&#xC804;&#xD788; &#xB9B4;&#xB9AC;&#xC988; &#xBE4C;&#xB4DC;&#xC5D0;&#xC120; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB9B4;&#xB9AC;&#xC988; &#xBE4C;&#xB4DC;&#xB85C; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C; &#xCEE4;&#xB9E8;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-powershell">$ python script\test.py -R
-</code></pre>
-<h2 id="&#xBB38;&#xC81C;-&#xD574;&#xACB0;">&#xBB38;&#xC81C; &#xD574;&#xACB0;</h2>
-<h3 id="command-xxxx-not-found">Command xxxx not found</h3>
-<p>&#xB9CC;&#xC57D; <code>Command xxxx not found</code>&#xC640; &#xAC19;&#xC740; &#xD615;&#xC2DD;&#xC758; &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xB2E4;&#xBA74;
-<code>VS2015 Command Prompt</code> &#xCF58;&#xC194;&#xB85C; &#xBE4C;&#xB4DC; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD574; &#xBCF4;&#xB294;&#xAC8C; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h3 id="fatal-internal-compiler-error-c1001">Fatal internal compiler error: C1001</h3>
-<p>Visual Studio&#xAC00; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xAE4C;&#xC9C0; &#xC644;&#xBCBD;&#xD558;&#xAC8C; &#xC124;&#xCE58;&#xB41C; &#xCD5C;&#xC2E0;&#xBC84;&#xC804;&#xC778;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.</p>
-<h3 id="assertion-failed-handleactivecnt--0">Assertion failed: ((handle))-&gt;activecnt &gt;= 0</h3>
-<p>Cygwin&#xC5D0;&#xC11C; &#xBE4C;&#xB4DC; &#xD560; &#xACBD;&#xC6B0; <code>bootstrap.py</code> &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xB2E4;&#xC74C;&#xC758; &#xC5D0;&#xB7EC;&#xC640; &#xD568;&#xAED8; &#xBE4C;&#xB4DC;&#xC5D0; &#xC2E4;&#xD328;&#xD560; &#xC218;
-&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
-<pre><code>Assertion failed: ((handle))-&gt;activecnt &gt;= 0, file src\win\pipe.c, line 1430
+<code>electron.exe</code> &#xC2E4;&#xD589; &#xD30C;&#xC77C;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p><h2 id="32&#xBE44;&#xD2B8;-&#xBE4C;&#xB4DC;">32&#xBE44;&#xD2B8; &#xBE4C;&#xB4DC;</h2><p>32&#xBE44;&#xD2B8;&#xB97C; &#xD0C0;&#xAC9F;&#xC73C;&#xB85C; &#xBE4C;&#xB4DC; &#xD558;&#xB824;&#xBA74; &#xBD80;&#xD2B8;&#xC2A4;&#xD2B8;&#xB7A9; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD560; &#xB54C; <code>--target_arch=ia32</code>
+&#xC778;&#xC218;&#xB97C; &#xAC19;&#xC774; &#xB118;&#xACA8;&#xC8FC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:</p><pre><code class="lang-powershell">$ python script\bootstrap.py -v --target_arch=ia32</code></pre>
+<p>&#xB2E4;&#xB978; &#xBE4C;&#xB4DC; &#xB2E8;&#xACC4;&#xB3C4; &#xC815;&#xD655;&#xD558;&#xAC8C; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p><h2 id="visual-studio-&#xD504;&#xB85C;&#xC81D;&#xD2B8;">Visual Studio &#xD504;&#xB85C;&#xC81D;&#xD2B8;</h2><p>Visual Studio &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB824;&#xBA74;, <code>--msvs</code> &#xC778;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p><pre><code class="lang-powershell">$ python script\bootstrap.py --msvs</code></pre>
+<h2 id="&#xC815;&#xB9AC;&#xD558;&#xAE30;">&#xC815;&#xB9AC;&#xD558;&#xAE30;</h2><p>&#xBE4C;&#xB4DC; &#xD30C;&#xC77C;&#xB4E4;&#xC744; &#xC815;&#xB9AC;&#xD558;&#xB824;&#xBA74;:</p><pre><code class="lang-powershell">$ npm run clean</code></pre>
+<h2 id="&#xD14C;&#xC2A4;&#xD2B8;">&#xD14C;&#xC2A4;&#xD2B8;</h2><p><a href="build-system-overview.html#tests">&#xBE4C;&#xB4DC; &#xC2DC;&#xC2A4;&#xD15C; &#xAC1C;&#xC694;: &#xD14C;&#xC2A4;&#xD2B8;</a>&#xB97C; &#xBCF4;&#xC138;&#xC694;.</p><h2 id="&#xBB38;&#xC81C;-&#xD574;&#xACB0;">&#xBB38;&#xC81C; &#xD574;&#xACB0;</h2><h3 id="command-xxxx-not-found">Command xxxx not found</h3><p>&#xB9CC;&#xC57D; <code>Command xxxx not found</code>&#xC640; &#xAC19;&#xC740; &#xD615;&#xC2DD;&#xC758; &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xB2E4;&#xBA74;
+<code>VS2015 Command Prompt</code> &#xCF58;&#xC194;&#xB85C; &#xBE4C;&#xB4DC; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD574; &#xBCF4;&#xB294;&#xAC8C; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</p><h3 id="fatal-internal-compiler-error-c1001">Fatal internal compiler error: C1001</h3><p>Visual Studio&#xAC00; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xAE4C;&#xC9C0; &#xC644;&#xBCBD;&#xD558;&#xAC8C; &#xC124;&#xCE58;&#xB41C; &#xCD5C;&#xC2E0;&#xBC84;&#xC804;&#xC778;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.</p><h3 id="assertion-failed-handle-activecnt--0">Assertion failed: ((handle))-&gt;activecnt &gt;= 0</h3><p>Cygwin&#xC5D0;&#xC11C; &#xBE4C;&#xB4DC; &#xD560; &#xACBD;&#xC6B0; <code>bootstrap.py</code> &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xB2E4;&#xC74C;&#xC758; &#xC5D0;&#xB7EC;&#xC640; &#xD568;&#xAED8; &#xBE4C;&#xB4DC;&#xC5D0; &#xC2E4;&#xD328;&#xD560; &#xC218;
+&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p><pre><code>Assertion failed: ((handle))-&gt;activecnt &gt;= 0, file src\win\pipe.c, line 1430
 
 Traceback (most recent call last):
   File &quot;script/bootstrap.py&quot;, line 87, in &lt;module&gt;
@@ -1078,74 +1014,93 @@ Traceback (most recent call last):
     execute([NPM, &apos;install&apos;])
   File &quot;/home/zcbenz/codes/raven/script/lib/util.py&quot;, line 118, in execute
     raise e
-subprocess.CalledProcessError: Command &apos;[&apos;npm.cmd&apos;, &apos;install&apos;]&apos; returned non-zero exit status 3
-</code></pre><p>&#xC774; &#xBC84;&#xADF8;&#xB294; Cygwin Python&#xACFC; Win32 Node&#xB97C; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xBD80;&#xD2B8;&#xC2A4;&#xD2B8;&#xB7A9;
+subprocess.CalledProcessError: Command &apos;[&apos;npm.cmd&apos;, &apos;install&apos;]&apos; returned non-zero exit status 3</code></pre>
+<p>&#xC774; &#xBC84;&#xADF8;&#xB294; Cygwin Python&#xACFC; Win32 Node&#xB97C; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. &#xBD80;&#xD2B8;&#xC2A4;&#xD2B8;&#xB7A9;
 &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C; Win32 Python&#xC744; &#xC0AC;&#xC6A9;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xC774; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. <code>C:\Python27</code>
-&#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0; Python&#xC774; &#xC124;&#xCE58;&#xB418;&#xC5C8;&#xB2E4;&#xB294; &#xAC00;&#xC815;&#xD558;&#xC5D0; &#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:</p>
-<pre><code class="lang-bash">$ /cygdrive/c/Python27/python.exe script/bootstrap.py
-</code></pre>
-<h3 id="lnk1181-cannot-open-input-file-kernel32lib">LNK1181: cannot open input file &apos;kernel32.lib&apos;</h3>
-<p>32&#xBE44;&#xD2B8; Node.js&#xB97C; &#xB2E4;&#xC2DC; &#xC124;&#xCE58;&#xD558;&#xC138;&#xC694;.</p>
-<h3 id="error-enoent-stat-cusersusernameappdataroamingnpm">Error: ENOENT, stat &apos;C:\Users\USERNAME\AppData\Roaming\npm&apos;</h3>
-<p>&#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xD574;&#xB2F9; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xBA74; <a href="http://stackoverflow.com/a/25095327/102704" target="_blank">&#xBB38;&#xC81C;&#xAC00; &#xD574;&#xACB0;&#xB420; &#xAC81;&#xB2C8;&#xB2E4;</a>:</p>
-<pre><code class="lang-powershell">$ mkdir ~\AppData\Roaming\npm
-</code></pre>
-<h3 id="nodegyp-is-not-recognized-as-an-internal-or-external-command">node-gyp is not recognized as an internal or external command</h3>
-<p>Git Bash&#xB85C; &#xBE4C;&#xB4DC; &#xD588;&#xC744; &#xB54C; &#xC774;&#xB7EC;&#xD55C; &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBC18;&#xB4DC;&#xC2DC; PowerShell&#xC774;&#xB098;
+&#xB514;&#xB809;&#xD130;&#xB9AC;&#xC5D0; Python&#xC774; &#xC124;&#xCE58;&#xB418;&#xC5C8;&#xB2E4;&#xB294; &#xAC00;&#xC815;&#xD558;&#xC5D0; &#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:</p><pre><code class="lang-bash">$ /cygdrive/c/Python27/python.exe script/bootstrap.py</code></pre>
+<h3 id="lnk1181-cannot-open-input-file-kernel32lib">LNK1181: cannot open input file &apos;kernel32.lib&apos;</h3><p>32&#xBE44;&#xD2B8; Node.js&#xB97C; &#xB2E4;&#xC2DC; &#xC124;&#xCE58;&#xD558;&#xC138;&#xC694;.</p><h3 id="error-enoent-stat-cusersusernameappdataroamingnpm">Error: ENOENT, stat &apos;C:\Users\USERNAME\AppData\Roaming\npm&apos;</h3><p>&#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xD574;&#xB2F9; &#xB514;&#xB809;&#xD130;&#xB9AC;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xBA74; <a href="http://stackoverflow.com/a/25095327/102704" target="_blank">&#xBB38;&#xC81C;&#xAC00; &#xD574;&#xACB0;&#xB420; &#xAC81;&#xB2C8;&#xB2E4;</a>:</p><pre><code class="lang-powershell">$ mkdir ~\AppData\Roaming\npm</code></pre>
+<h3 id="node-gyp-is-not-recognized-as-an-internal-or-external-command">node-gyp is not recognized as an internal or external command</h3><p>Git Bash&#xB85C; &#xBE4C;&#xB4DC; &#xD588;&#xC744; &#xB54C; &#xC774;&#xB7EC;&#xD55C; &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBC18;&#xB4DC;&#xC2DC; PowerShell&#xC774;&#xB098;
 VS2015 Command Prompt&#xC5D0;&#xC11C; &#xBE4C;&#xB4DC;&#xB97C; &#xC9C4;&#xD589;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="../development/build-instructions-osx.html" class="navigation navigation-prev " aria-label="Previous page: 빌드 설명서 (macOS)"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="../development/build-instructions-linux.html" class="navigation navigation-next " aria-label="Next page: 빌드 설명서 (Linux)"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="build-instructions-osx.html" class="navigation navigation-prev " aria-label="Previous page: 빌드 설명서 (macOS)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="build-instructions-linux.html" class="navigation navigation-next " aria-label="Next page: 빌드 설명서 (Linux)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="../gitbook/app.js"></script>
+    </div>
 
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"빌드 설명서 (Windows)","level":"9.6","depth":1,"next":{"title":"빌드 설명서 (Linux)","level":"9.7","depth":1,"path":"development/build-instructions-linux.md","ref":"development/build-instructions-linux.md","articles":[]},"previous":{"title":"빌드 설명서 (macOS)","level":"9.5","depth":1,"path":"development/build-instructions-osx.md","ref":"development/build-instructions-osx.md","articles":[]},"dir":"ltr"},"config":{"plugins":["baidu","-livereload"],"license":"MIT","ignores":["backup","_book","styles","assets","node_modules","sources"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","repository":{"type":"git","url":"https://github.com/doc-ebooks/electron-docs-gitbook.git"},"keywords":["electron","nodejs","gitbook","ebook","doc"],"author":"Imfly","homepage":"https://github.com/doc-ebooks/electron-docs-gitbook","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"Electron 官方文档多语言电子书","variables":{},"language":"ko-KR","gitbook":"*","description":"Electron 官方文档多语言电子书","bugs":{"url":"https://github.com/doc-ebooks/electron-docs-gitbook/issues"}},"file":{"path":"development/build-instructions-windows.md","mtime":"2017-03-22T08:19:02.406Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-03-22T08:19:23.488Z"},"basePath":"..","book":{"language":"ko-KR"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
     
-    <script src="../gitbook/plugins/gitbook-plugin-baidu/plugin.js"></script>
+        
+        <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"baidu":{"token":"acfc5cd60db044270ff996429917c2b7"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
-    gitbook.start(config);
-});
-</script>
-
-        <script>var _hmt = _hmt || [];(function() {var hm = document.createElement('script');hm.src = '//hm.baidu.com/hm.js?acfc5cd60db044270ff996429917c2b7';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(hm, s);})();</script>
     </body>
-    
 </html>
+
