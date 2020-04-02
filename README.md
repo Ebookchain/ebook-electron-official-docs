@@ -33,7 +33,7 @@ Brief introduction：
 (1) Clone the project
 
 ```
-$ git clone　https://github.com/imfly/electron-docs-gitbook.git
+$ git clone https://github.com/imfly/electron-docs-gitbook.git
 ```
 
 (2) Install dependences
